@@ -1,0 +1,29 @@
+# 数据（体积大，从 Kaggle 下载，不入库）
+data/
+!data/.gitkeep
+
+# 本地凭据
+.env
+*.token
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# 实验产物
+outputs/
+models/
+*.pkl
+*.joblib
+*.npy
+*.npz
+
+# Notebook
+.ipynb_checkpoints/
+
+# 系统
+.DS_Store
+Thumbs.db
