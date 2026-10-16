@@ -88,19 +88,31 @@ def main() -> None:
     print(f"  嵌入视图 OOF balanced accuracy = {s_emb:.4f}  ({time.time() - t0:.1f}s)")
     cvmod.summarize(y, oof_emb.argmax(axis=1), LABELS, LAB_OF, tag="嵌入视图")
 
+    # 先落盘自己的 OOF，这样下面扫描时能被统一收进视图池
+    safe = args.model.replace("/", "__")
+    np.save(out / f"oof_emb_{safe}.npy", oof_emb)
+
     # ---- 与 v2 视图池融合 ----
-    pool_files = sorted(out.glob("pool_v2_*.npy"))
-    if args.no_blend or not pool_files:
-        print("\n未找到 v2 视图池，跳过融合（先跑 python src/run_sweep.py）")
-        np.save(out / f"embemb_{args.model.replace('/', '__')}.npy", oof_emb)
+    if args.no_blend:
         return
 
-    pool = {}
-    for f in pool_files:
-        name = f.stem.replace("pool_v2_", "")
+    pool: dict[str, np.ndarray] = {}
+    for f in sorted(out.glob("pool_v2_*.npy")):
         arr = np.load(f)
         if arr.shape == oof_emb.shape:
-            pool[name] = arr
+            pool[f.stem.replace("pool_v2_", "")] = arr
+    # 收编所有历史上算过的嵌入视图（不同编码器之间往往互补）
+    for f in sorted(out.glob("oof_emb_*.npy")):
+        arr = np.load(f)
+        if arr.shape != oof_emb.shape:
+            continue
+        short = f.stem.replace("oof_emb_", "").replace("answerdotai__", "")
+        pool[f"emb:{short}"] = arr
+
+    if not pool:
+        print("\n未找到可融合的视图，跳过（先跑 python src/run_sweep.py）")
+        return
+
     print(f"\n视图池：{list(pool)}")
 
     base_w, base_alpha, base_s = greedy_weights(pool, y, np.arange(len(y)), priors)
