@@ -31,3 +31,7 @@ submission*.parquet
 # 系统
 .DS_Store
 Thumbs.db
+
+# 自造数据与模型 API 配置
+configs/models.json
+data/
