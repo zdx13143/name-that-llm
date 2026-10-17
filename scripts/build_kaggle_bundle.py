@@ -39,6 +39,7 @@ EMBED_FILES = [
     "src/cv.py",
     "src/run_sweep.py",
     "src/embeddings.py",
+    "src/assign.py",
     "src/inference.py",
     "configs/blend_v1.json",
 ]
