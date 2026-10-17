@@ -5,10 +5,12 @@
   "language": "python",
   "kernel_type": "script",
   "is_private": true,
-  "enable_gpu": false,
+  "enable_gpu": true,
   "enable_internet": false,
-  "dataset_sources": [
-    "zdx13143/name-that-llm-models"
+  "dataset_sources": [],
+  "model_sources": [
+    "answer-ai/modernbert/transformers/base/2",
+    "answer-ai/modernbert/transformers/large/2"
   ],
   "competition_sources": [
     "name-that-llm"
