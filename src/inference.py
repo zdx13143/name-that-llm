@@ -39,6 +39,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import LABELS, LABEL2IDX, ROOT  # noqa: E402
 from features import extract_features  # noqa: E402
 from run_sweep import BLOCK_DEFS  # noqa: E402
+import assign as assign_mod  # noqa: E402
 
 N_CLASSES = len(LABELS)
 
@@ -160,6 +161,10 @@ def main() -> None:
     ap.add_argument("--config", default=None)
     ap.add_argument("--out", default="submission.parquet")
     ap.add_argument("--no-embed", action="store_true", help="只用 TF-IDF 视图，快速验证")
+    ap.add_argument("--no-assign", action="store_true",
+                    help="关闭聚类+匈牙利的结构约束解码，回退到独立 argmax")
+    ap.add_argument("--n-groups", type=int, default=0,
+                    help="测试集 prompt 组数，0 表示自动按 ceil(n/18) 估计")
     ap.add_argument("--quiet", action="store_true")
     args = ap.parse_args()
     verbose = not args.quiet
@@ -263,7 +268,17 @@ def main() -> None:
     print(f"\n融合后训练集拟合率 {np.mean(blend_tr.argmax(1) == y):.4f}"
           f"（这是拟合率不是泛化分，别当成绩看）")
 
-    pred = blend_te.argmax(axis=1)
+    # ---------------- 结构约束解码 ----------------
+    # 测试集约 3,888 行 ≈ 216 个 prompt × 18 个模型各一条，
+    # 所以组内是一对一分配，而不是独立分类。实测值 +0.09。
+    if args.no_assign:
+        print("\n跳过结构约束解码（--no-assign）")
+        pred = blend_te.argmax(axis=1)
+    else:
+        print("\n结构约束解码（TF-IDF 聚类 + 带容量匈牙利）：")
+        pred, _ = assign_mod.decode(blend_te, test_texts,
+                                    n_groups=args.n_groups or None, verbose=True)
+
     labels = [LABELS[i] for i in pred]
 
     submission = pd.DataFrame({"id": test["id"], "model": labels})
