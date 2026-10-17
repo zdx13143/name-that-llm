@@ -63,6 +63,51 @@ def resolve_dirs() -> tuple[Path, Path]:
     return ROOT / "data" / "raw", ROOT / "models"
 
 
+def resolve_model_dir(name: str, model_root: Path) -> Path | None:
+    """找到某个嵌入模型的目录（含 config.json 的那一层）。
+
+    三种来源，按优先级：
+    1. 本地/自建数据集：<model_root>/<name>
+    2. Kaggle 官方模型挂载：/kaggle/input/*/pytorch/{base,large}
+    3. 上面两种再往下搜一层（Kaggle Models 有时会多套一级目录）
+    """
+    def locate(base: Path) -> Path | None:
+        if not base.exists():
+            return None
+        if (base / "config.json").exists():
+            return base
+        for cfg in sorted(base.rglob("config.json")):
+            return cfg.parent
+        return None
+
+    hit = locate(model_root / name)
+    if hit:
+        return hit
+
+    inp = Path("/kaggle/input")
+    if not inp.exists():
+        return None
+
+    variation = "large" if "large" in name.lower() else "base"
+
+    # 先试浅层固定模式
+    for pat in (f"*/transformers/{variation}", f"*/pytorch/{variation}",
+                f"*/models/{variation}", f"*/*/{variation}", f"*/{name}"):
+        for cand in sorted(inp.glob(pat)):
+            hit = locate(cand)
+            if hit:
+                return hit
+
+    # 再递归找：Kaggle 把挂载的 Model 放在 /kaggle/input/models/<owner>/... 这种深层路径
+    for cand in sorted(inp.rglob(variation)):
+        if not cand.is_dir() or cand.parent.name not in {"transformers", "pytorch"}:
+            continue
+        hit = locate(cand)
+        if hit:
+            return hit
+    return None
+
+
 def find_config(explicit: str | None) -> Path:
     """按优先级找配置：显式参数 > src/configs > 仓库 configs > 当前目录。"""
     here = Path(__file__).resolve().parent
@@ -189,11 +234,15 @@ def main() -> None:
     if not args.no_embed:
         print("\n嵌入视图：")
         for spec in cfg["embedding_views"]:
-            path = Path(spec["path"])
-            if not path.is_absolute():
-                path = model_root / path
-            if not path.exists():
-                print(f"  跳过 {spec['path']}（找不到 {path}）")
+            path = resolve_model_dir(spec["path"], model_root)
+            if path is None:
+                print(f"  跳过 {spec['path']} —— 找不到模型目录")
+                inp = Path("/kaggle/input")
+                if inp.exists():
+                    print(f"    /kaggle/input 下现有："
+                          f"{[p.name for p in sorted(inp.iterdir())][:12]}")
+                    for p in sorted(inp.rglob("config.json")):
+                        print(f"    发现 config.json: {p.parent}")
                 continue
             w = float(spec["weight"])
             p_te, p_tr = build_embedding_view(
