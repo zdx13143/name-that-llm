@@ -21,6 +21,10 @@ models/
 *.npy
 *.npz
 
+# Kaggle 打包产物（由 scripts/build_kaggle_bundle.py 生成，不入库）
+kaggle/
+submission*.parquet
+
 # Notebook
 .ipynb_checkpoints/
 
