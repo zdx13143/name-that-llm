@@ -161,8 +161,9 @@ def main() -> None:
     ap.add_argument("--config", default=None)
     ap.add_argument("--out", default="submission.parquet")
     ap.add_argument("--no-embed", action="store_true", help="只用 TF-IDF 视图，快速验证")
-    ap.add_argument("--no-assign", action="store_true",
-                    help="关闭聚类+匈牙利的结构约束解码，回退到独立 argmax")
+    ap.add_argument("--assign", action="store_true",
+                    help="启用聚类+匈牙利结构约束解码。**默认关闭**：本地 CV 显示 +0.09，"
+                         "但线上实测 0.381 → 0.339，说明测试集并非训练集那种 18 平衡结构")
     ap.add_argument("--n-groups", type=int, default=0,
                     help="测试集 prompt 组数，0 表示自动按 ceil(n/18) 估计")
     ap.add_argument("--quiet", action="store_true")
@@ -268,11 +269,11 @@ def main() -> None:
     print(f"\n融合后训练集拟合率 {np.mean(blend_tr.argmax(1) == y):.4f}"
           f"（这是拟合率不是泛化分，别当成绩看）")
 
-    # ---------------- 结构约束解码 ----------------
-    # 测试集约 3,888 行 ≈ 216 个 prompt × 18 个模型各一条，
-    # 所以组内是一对一分配，而不是独立分类。实测值 +0.09。
-    if args.no_assign:
-        print("\n跳过结构约束解码（--no-assign）")
+    # ---------------- 结构约束解码（默认关闭）----------------
+    # 曾经以为测试集是 216 × 18 的平衡结构（由提交文件字节数反推），
+    # 本地 CV 也确实 0.3978 → 0.4875。但线上实测 0.381 → 0.339，**假设被证伪**：
+    # 测试集不是训练集那种每 prompt 18 条的结构。默认回退到独立 argmax。
+    if not args.assign:
         pred = blend_te.argmax(axis=1)
     else:
         print("\n结构约束解码（TF-IDF 聚类 + 带容量匈牙利）：")
