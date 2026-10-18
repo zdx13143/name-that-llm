@@ -4,6 +4,15 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 **目标：银牌以上**（Featured 竞赛银牌 ≈ 队伍排名前 5%）。
 
+> **当前成绩：公开榜 0.554，第 ~188 / 1,495 队（前 13%）。**
+> 铜/银线同为 0.556，差 0.002。完整实验记录见 [EXPERIMENTS.md](EXPERIMENTS.md)。
+>
+> ⚠️ **成绩构成说明**：0.554 来自**复现社区公开方案**，不是原创模型。
+> 上游作者：Lucas Boesen（`lora-x-adaptive-centering`）、
+> Vladislav Lavrentev（`lightningv08`）、Zbigniew Kirchner、kirilltym、
+> pjmathematician（UltraBERT 权重）、seyitkaangunes（prompt 库）。
+> 我们自己做的是：打通默认镜像依赖、修正路径、判断方向、以及下面 v1/v2 的原创探索。
+
 ---
 
 ## 赛题一句话
