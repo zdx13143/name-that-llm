@@ -51,6 +51,32 @@ from synthetic_prompts import build_prompts  # noqa: E402
 COLUMNS = ["id", "prompt_id", "text", "model"]
 _write_lock = threading.Lock()
 
+# 支持从仓库根目录的 .env 读 key，省得去配系统环境变量。
+# .env 已在 .gitignore 与推送忽略列表里，不会入库。
+ENV_KEYS = (
+    "OPENAI_API_KEY", "GEMINI_API_KEY", "ANTHROPIC_API_KEY",
+    "DASHSCOPE_API_KEY", "ZHIPU_API_KEY", "MOONSHOT_API_KEY",
+)
+
+
+def load_dotenv() -> list[str]:
+    """把 .env 里的键值塞进 os.environ（不覆盖已有变量）。返回加载了哪些键。"""
+    loaded: list[str] = []
+    here = Path(__file__).resolve().parents[1]
+    for cand in (here / ".env", Path.cwd() / ".env"):
+        if not cand.exists():
+            continue
+        for raw in cand.read_text(encoding="utf-8").splitlines():
+            line = raw.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            k, v = line.split("=", 1)
+            k, v = k.strip(), v.strip().strip('"').strip("'")
+            if k and v and not os.environ.get(k):
+                os.environ[k] = v
+                loaded.append(k)
+    return loaded
+
 
 def make_id(prompt_id: str, model: str, sample: int) -> str:
     raw = f"{prompt_id}|{model}|{sample}".encode()
@@ -158,9 +184,12 @@ def main() -> None:
         report(out)
         return
 
+    loaded = load_dotenv()
+    if loaded:
+        print(f"从 .env 读到 {len(loaded)} 个 key：{', '.join(sorted(loaded))}\n")
+
     cfg = load_config(Path(args.config))
     active, skipped = cfg["active"], cfg["skipped"]
-
     print(f"可用模型 {len(active)} / 18")
     if active:
         for k in sorted(active):
