@@ -1,0 +1,45 @@
+{
+  "_说明": [
+    "Gemini 三个 flash 的生成配置。免费额度：每模型 1500 次日请求、15 RPM。",
+    "Batch API 免费层不可用 —— 必须用标准同步调用，15 RPM 跑 480 题约 32 分钟/模型。",
+    "Gemini 提供 OpenAI 兼容端点，所以直接用本仓库的 generate_synthetic.py 即可。",
+    "这台机器连不上 googleapis.com，需要在能访问 Google 的机器上跑。",
+    "max_tokens 必须给够：Gemini 3.x flash 带思考，450 会被思考吃完导致正文截断",
+    "reasoning_effort=low 必须加：与社区 proxy 协议一致，且把单条耗时从 88s 降到 71s"
+  ],
+  "providers": {
+    "gemini_compat": {
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "api_key_env": "GEMINI_API_KEY"
+    }
+  },
+  "models": {
+    "gemini-3.6-flash": {
+      "provider": "gemini_compat",
+      "model_id": "gemini-3.6-flash",
+      "extra": {
+        "temperature": 1.0,
+        "max_tokens": 4096,
+        "reasoning_effort": "low"
+      }
+    },
+    "gemini-3.7-flash": {
+      "provider": "gemini_compat",
+      "model_id": "gemini-3.7-flash",
+      "extra": {
+        "temperature": 1.0,
+        "max_tokens": 4096,
+        "reasoning_effort": "low"
+      }
+    },
+    "gemini-3.8-flash": {
+      "provider": "gemini_compat",
+      "model_id": "gemini-3.8-flash",
+      "extra": {
+        "temperature": 1.0,
+        "max_tokens": 4096,
+        "reasoning_effort": "low"
+      }
+    }
+  }
+}
