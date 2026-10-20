@@ -50,6 +50,20 @@ from synthetic_prompts import build_prompts  # noqa: E402
 
 COLUMNS = ["id", "prompt_id", "text", "model"]
 _write_lock = threading.Lock()
+_rate_lock = threading.Lock()
+_last_call = [0.0]
+
+
+def _throttle(min_interval: float) -> None:
+    """全局限速：保证相邻请求至少间隔 min_interval 秒（多线程共享）。"""
+    if min_interval <= 0:
+        return
+    with _rate_lock:
+        now = time.time()
+        wait = _last_call[0] + min_interval - now
+        if wait > 0:
+            time.sleep(wait)
+        _last_call[0] = time.time()
 
 # 支持从仓库根目录的 .env 读 key，省得去配系统环境变量。
 # .env 已在 .gitignore 与推送忽略列表里，不会入库。
@@ -108,8 +122,8 @@ def load_config(path: Path) -> dict:
 
 
 def call_once(spec: dict, prompt: str, timeout: int = 120,
-              max_tokens: int = 450, temperature: float = 0.9,
-              retries: int = 4) -> str:
+              max_tokens: int = 450, temperature: float = 1.0,
+              retries: int = 4, min_interval: float = 0.0) -> str:
     url = f"{spec['base_url']}/chat/completions"
     headers = {
         "Authorization": f"Bearer {spec['api_key']}",
@@ -171,8 +185,10 @@ def main() -> None:
     ap.add_argument("--limit-per-model", type=int, default=0,
                     help="每个模型最多生成多少条（试跑用）")
     ap.add_argument("--max-workers", type=int, default=8)
-    ap.add_argument("--max-tokens", type=int, default=450)
-    ap.add_argument("--temperature", type=float, default=0.9)
+    ap.add_argument("--min-interval", type=float, default=0.0,
+                    help="两次请求之间的最小间隔（秒）。Gemini 免费层 15 RPM 建议 4.5")
+    ap.add_argument("--max-tokens", type=int, default=4096)
+    ap.add_argument("--temperature", type=float, default=1.0)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--report-only", action="store_true")
     args = ap.parse_args()
@@ -244,7 +260,7 @@ def main() -> None:
         for label, pid, text, s in tasks:
             fut = pool.submit(
                 call_once, active[label], text, 120,
-                args.max_tokens, args.temperature,
+                args.max_tokens, args.temperature, 4, args.min_interval,
             )
             futures[fut] = (label, pid, s)
 
