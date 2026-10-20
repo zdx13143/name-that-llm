@@ -1,0 +1,48 @@
+{
+  "id": "zbigniewkirchner/0-574-in-style-qwen3-8b-lora-fully-public",
+  "id_no": 139530834,
+  "title": "0.574 | In-Style Qwen3-8B LoRA, Fully Public",
+  "code_file": "0-574-in-style-qwen3-8b-lora-fully-public.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": [
+    "gpu"
+  ],
+  "dataset_sources": [
+    "seyitkaangunes/ntl-extra-api-passages",
+    "zbigniewkirchner/ntl-extra-gpt-passages",
+    "abdullah1afify/ntl-generations",
+    "dophuchung/ntl-proxy-generations",
+    "zbigniewkirchner/ntl-qwen3-8b-lora-instyle",
+    "zbigniewkirchner/ntl-qwen3-8b-lora-claude-head",
+    "lucasboesen/ntl-free-proxy-generations",
+    "prvsiyan/prvsiyans-extended-name-that-llm-dataset",
+    "bbucxi/qwen35-9b-safetensors",
+    "pjmathematician/ultrabert-380m-ntl"
+  ],
+  "kernel_sources": [
+    "lucasboesen/name-that-llm-glm4-9b-trunc25",
+    "lucasboesen/name-that-llm-extract-encoders2",
+    "lucasboesen/name-that-llm-electra-large-weights",
+    "lucasboesen/name-that-llm-desklib-weights",
+    "lightningv08/ntl-lora24-fivefold-training",
+    "lucasboesen/name-that-llm-train-lora24-s7",
+    "lucasboesen/name-that-llm-train-tokattn",
+    "lucasboesen/name-that-llm-train-tokattn2",
+    "vnton37nguyn/ntl-train-lora-qwen25-instyle"
+  ],
+  "competition_sources": [
+    "name-that-llm"
+  ],
+  "model_sources": [
+    "qwen-lm/qwen-3/Transformers/8b-base/1",
+    "qwen-lm/qwen-3/Transformers/4b-base/1",
+    "qwen-lm/qwen2.5/Transformers/7b/1"
+  ],
+  "docker_image": "gcr.io/kaggle-images/python@sha256:81b1e7c4b4f0f2a7e0a33943c95754b1b7af6b30d65221633a284b6b601cd84a",
+  "machine_shape": "NvidiaTeslaT4"
+}
