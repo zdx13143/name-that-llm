@@ -117,4 +117,6 @@ python src/run_baseline.py          # 基线 + prompt 分组 CV
 
 独立分支 `exp/prompt-centering-20261021` 完成15次预定开发拟合（约145秒）。部分中心化的25%概率融合达到0.348673，对原对照0.340336通过开发门槛；相对上一轮最佳0.347281只高0.001393，差值95%区间[-0.010648, 0.013889]跨0、仅2/5折提升，尚不足以确认实际增量。本轮文本聚类几乎全部为单例，不能称话题去除机制已验证。保留开发候选，不替换冻结交付或提交Kaggle。
 
+用户随后明确授权一次提交，当前本人分支为 `exp/single-submission-20261021`。[独立候选Notebook](name-that-llm/notebooks/candidate_blend_offline.ipynb)已完成2次最终训练和3行公开占位test的本地接口验证，79项测试通过；CV没有变化。**尚未提交Kaggle**：本轮页面读取仍被保存的域名权限拒绝，解除前不绕过限制。固定候选、命令、hash与继续条件见[提交计划](name-that-llm/docs/SINGLE_SUBMISSION_PLAN.md)和[最新交接](name-that-llm/HANDOFF.md#2026-10-21-一次提交准备当前停止点)。
+
 完整[结果、每类召回及命令](name-that-llm/reports/PROMPT_CENTERING_COMPARISON.md)已记录。70项测试和独立OOF复核通过，旧30-prompt留出未重开。建议后续将ModernBERT等小编码器实验放到已有4060，CPU工作继续留本机；普通4060按8GB评估，不直接搬14B完整集成。已准备[Windows/WSL2评估与检测命令](name-that-llm/docs/WINDOWS_4060_ASSESSMENT.md)，目标电脑尚未实测。

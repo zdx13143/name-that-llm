@@ -1,6 +1,8 @@
 # 独立 CPU 实验入口
 
-当前接续分支：`exp/prompt-centering-20261021`。上一组队友视图比较已经完成且未达到采用门槛；本轮用户再次要求提升分数并评估4060 Windows，执行不同机制的[有限中心化计划](docs/PROMPT_CENTERING_PLAN.md)，并准备[迁移评估](docs/WINDOWS_4060_ASSESSMENT.md)。先读[队友工作审查](docs/TEAM_WORK_REVIEW.md)和[上一组结果](reports/TEAM_DEV_COMPARISON.md)。环境位于**仓库根 `.venv/`**，依赖为本模块 `requirements-team-cpu.txt`；它与旧原始工作区的已验证环境隔离。新实验只处理原120-prompt开发子集，不是重新启动下面的历史搜索。
+当前接续分支：`exp/single-submission-20261021`。用户已明确授权一次Kaggle提交；固定75% original_style + 25% partial候选的[提交计划](docs/SINGLE_SUBMISSION_PLAN.md)和[独立Notebook](notebooks/candidate_blend_offline.ipynb)已准备。本地全量最终训练与公开占位test接口检查通过，尚未上传、运行或提交Kaggle：本轮读取页面仍被保存的域名权限拒绝。下一步须等访问限制解除，再核对当前规则、账号/队伍、额度，使用独立私有Notebook提交至多一次。不得通过其它渠道绕过拒绝，或重复运行已经完成的本地训练。详细命令与证据见[HANDOFF末节](HANDOFF.md#2026-10-21-一次提交准备当前停止点)。
+
+上一轮[有限中心化实验](docs/PROMPT_CENTERING_PLAN.md)与[4060迁移评估](docs/WINDOWS_4060_ASSESSMENT.md)已结束；保留原始开发协议与结果，不据此次最终训练重新选模。环境位于**仓库根 `.venv/`**，Notebook检查依赖为本模块 `requirements-notebook-check.txt`（包含既有CPU依赖与nbformat）；它与旧原始工作区环境隔离。旧30-prompt最终留出已用，不得重新评分。
 
 以下为原上传快照说明，历史日期和来源保持不变。
 

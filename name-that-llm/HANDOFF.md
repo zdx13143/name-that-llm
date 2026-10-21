@@ -176,7 +176,7 @@ git ls-remote --heads origin refs/heads/main refs/heads/exp/cpu-stylegram-handof
 
 本机证据：`outputs/team_dev_20261021/` 保留首次失败；`recovery_01/` 有4个OOF、完整summary与独立复核收据；父目录和恢复目录分别保留两次运行的源码/配置快照。共享claim `outputs/continuation_claims/team-dev-groupkfold5-20261021.json` 为completed。输出、环境及所有行级数据受Git忽略，仅上传代码、测试、计划与聚合报告。Git推送仍不等于Kaggle Notebook同步或提交。
 
-## 2026-10-21 中心化与4060评估（当前停止点）
+## 2026-10-21 中心化与4060评估（已完成）
 
 用户本轮要求继续提升分数并评估带4060的Windows电脑；结合自主执行授权，从 `7a468a8` 新建本人分支 **`exp/prompt-centering-20261021`**。训练前提交 `b34e91e2b68ac8db709335456b39e1e2bd123408` 固定[15-fit计划](docs/PROMPT_CENTERING_PLAN.md)、配置、源码和测试。队友分支与main未改动，CASMI及原工作区保留。
 
@@ -206,3 +206,36 @@ git ls-remote --heads origin refs/heads/main refs/heads/exp/cpu-stylegram-handof
 GPU探测脚本为跨平台stdlib入口，12项风险测试通过；默认不分配tensor、不安装/下载，`--cuda-smoke`显式做小矩阵，`--output`拒绝覆盖。实际本机探测只确认Mac arm64/18GiB RAM且本环境Torch未安装；Windows目标机、实际4060可用显存、速度均未核验。没有下载神经模型或GPU训练。
 
 下一步在4060上先做独立环境探测，再登记并冻结ModernBERT-base开发特征方案（模型完整revision、文本/行序hash、pooling/长度/层/dtype缓存契约），使用同120-prompt开发协议检验互补。先取得队友成功强基线精确版本及同协议OOF，才能讨论对其0.601记录的增量。当前Kaggle保存权限仍拒绝，没有核验配额/现行规则或绕过；Windows运行也不等于Kaggle离线Notebook复现。旧已用留出始终封存。
+
+## 2026-10-21 一次提交准备（当前停止点）
+
+用户随后明确要求“请提交一次到kaggle我看看你的优化成果”。按[固定计划](docs/SINGLE_SUBMISSION_PLAN.md)，从 `d0f6cbe803b4c89847a22bdb6f39f7a2f5b32549` 建立本人分支 **`exp/single-submission-20261021`**；候选与提交代码冻结于 `645be5110bf6b719b9eefa2333574fa51719666b`。授权覆盖最终训练及至多一次正式提交，不再请求同一提交授权；没有重新调参、重评旧留出或更改已有开发分数。
+
+**尚未上传、执行或提交Kaggle，暂无本候选榜单分数。** 本轮从Chrome的比赛页再次请求读取，Browser Use自动审批审核拒绝：`www.kaggle.com`的保存权限或管理策略禁止访问。没有取得当前规则、账号/队伍、额度、Notebook版本或提交历史；没有用API/其它浏览器绕过。已请求用户解除该域名限制。解除后再走正常页面入口，新建独立私有CPU/Internet Off Notebook，挂官方比赛输入，确认成功版本后提交一次；不覆盖队友Notebook。若结果状态不明，先查提交历史，不能重复点击。
+
+本轮交付 [candidate_blend_offline.ipynb](notebooks/candidate_blend_offline.ipynb)，SHA256 `82931fb6a28441e01b884c2ce62c16ced6f35c39bc9ff092c2f53277308b3df8`。它内嵌固定源码，75% original_style + 25% partial，不依赖Git下载或外部模型。训练数据hash固定，test按实际`id,text`读取并保留顺序，输出`id,model`的`submission.parquet`。为二次方聚类内存设置执行前行数门槛：4,096行以内，4,097行拒绝；这不是任意规模或实际隐藏test的资源保证。若在线数据超过门槛，应停止并另行评估，不能静默换模型或调整阈值。
+
+本地仅执行一次真实候选流程，**2次分类器最终fit**，全部官方2,699行参与训练；这是固定模型最终拟合，不是留出验证。按已验证Notebook代码单元依序Python exec，**不是Jupyter内核或Kaggle运行**。公开test仅3条占位行，本地检查不说明榜单收益。总耗时30.044秒，峰值RSS1.438GiB，无警告、无数值库版本差异；从保存的两个分量独立重算融合，最大概率差0.0，类别映射、ID顺序、Parquet格式均通过。新执行claim为completed，旧holdout claim SHA仍为 `5a93d4efc1590e6acc63bdd3d40b3f3ebf860aa85e04d6af5bda582638c68db0`，未重评。累计本模块真实fit从289增至291，不含合成测试和队友运行。
+
+工具测试共**79项通过**（模块73、根6）；nbformat结构验证通过，跟踪Notebook无执行输出。合成测试覆盖非3行输入、类别/融合、训练hash与schema、预算claim以及行数门槛。独立合成4,000条短文本聚类约0.381秒、峰值0.779GiB，没有拟合真实模型，不能当真实隐藏test性能。另生成了本地执行记录HTML预览，但浏览器访问localhost超时，**未完成视觉检查**；未影响代码单元与输出审计。
+
+本地证据目录：`outputs/single_submission_20261021/local_reproduction/`，全部受Git忽略。
+
+| 产物 | SHA256 |
+| --- | --- |
+| verification.json | `ea4491e29a302c13582e6141ec7021e2a7afbeb3365522900660d6837cb4c07d` |
+| submission.parquet（3行公开占位检查） | `9975693f4e88f840597b655b0da083346f0955b766b418663261a7963bde5c00` |
+| probabilities.npz | `ae7b47089db1f229e439da8d4f233ac8c85be719191f3a76c5f8e3da3e6580d4` |
+| candidate_attempt.json | `f9dc368cdac606ba77ad8f6b5b0036ef05d76ecb5f9ec6058a877345fad6f4e4` |
+
+实际命令从仓库根执行；`NTL_DATA`是本机官方raw数据目录，`NTL_HOLDOUT_CLAIM`是原工作区已用留出claim路径，不随Git分发：
+
+```sh
+.venv/bin/python -m pip install 'nbformat==5.10.4'
+.venv/bin/python -m unittest discover -s name-that-llm/tests -v
+.venv/bin/python -m unittest discover -s tests -v
+# 下条真实训练已完成，只保留审计命令，不重复执行：
+.venv/bin/python name-that-llm/scripts/verify_candidate_notebook.py --data-dir "$NTL_DATA" --protected-claim "$NTL_HOLDOUT_CLAIM"
+```
+
+新环境的检查依赖入口为 `requirements-notebook-check.txt`。Git仅上传源码、未执行Notebook、测试及汇总文档；环境、数据、权重、概率、提交文件与执行版Notebook保留本地。Git push与Kaggle上传/运行/正式提交分别记录，不能混用。
