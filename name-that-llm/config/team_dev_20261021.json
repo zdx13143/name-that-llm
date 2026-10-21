@@ -6,7 +6,7 @@
   "development_rows": 2159,
   "development_groups": 120,
   "folds": 5,
-  "max_fits": 20,
+  "max_fits": 21,
   "max_seconds": 1800,
   "max_rss_bytes": 2684354560,
   "threads": 2,

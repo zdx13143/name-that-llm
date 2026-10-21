@@ -149,9 +149,19 @@ def build_model(spec, config):
 def validate_probabilities(probabilities, n_rows, n_labels):
     if probabilities.shape != (n_rows, n_labels) or probabilities.dtype.kind != "f":
         raise ValueError("Invalid probability schema")
+    tolerance = max(1e-8, min(1e-6, np.finfo(probabilities.dtype).eps * n_labels))
     if (not np.isfinite(probabilities).all() or np.any(probabilities < 0)
-            or np.any(probabilities > 1) or not np.allclose(probabilities.sum(axis=1), 1, atol=1e-8, rtol=0)):
+            or np.any(probabilities > 1) or not np.allclose(probabilities.sum(axis=1), 1, atol=tolerance, rtol=0)):
         raise ValueError("Invalid or uncovered probability rows")
+
+
+def canonical_probabilities(probabilities, n_rows, n_labels):
+    """Accept ordinary float32 roundoff, then persist normalized float64 values."""
+    validate_probabilities(probabilities, n_rows, n_labels)
+    probabilities = probabilities.astype(np.float64, copy=True)
+    probabilities /= probabilities.sum(axis=1, keepdims=True)
+    validate_probabilities(probabilities, n_rows, n_labels)
+    return probabilities
 
 
 def save_oof(path, probabilities, data, fold_id, contract_hash):
@@ -221,6 +231,56 @@ def claim_run(path, contract_hash):
     return claim
 
 
+def resume_float32_failure(path, original_output, contract, config):
+    """One explicitly documented numerical repair; preserve and charge first fit.
+
+    This cannot resume a scored/partially completed search or a second failure.
+    Original source, configuration, contract and failure remain on disk.
+    """
+    claim = json.loads(path.read_text())
+    old_contract = json.loads((original_output / "contract.json").read_text())
+    old_config_path = original_output / "config.json"
+    old_config = json.loads(old_config_path.read_text())
+    old_config_source = original_output / "source_snapshot/name-that-llm/config/team_dev_20261021.json"
+    if (claim["state"] != "failed" or claim["attempted_fits"] != 1
+            or claim["completed_fits"] != 0 or "recovery" in claim
+            or claim.get("current") != {"model": "original_style", "fold": 0}
+            or claim.get("error") != "ValueError: Invalid or uncovered probability rows"
+            or claim["contract_sha256"] != object_hash(old_contract)
+            or file_hash(old_config_source) != old_contract["config_sha256"]
+            or old_config != json.loads(old_config_source.read_text())):
+        raise ValueError("Only the documented first-fold float32 validation failure is resumable")
+    comparable = {k: v for k, v in config.items() if k != "max_fits"}
+    if (comparable != {k: v for k, v in old_config.items() if k != "max_fits"}
+            or old_config["max_fits"] != 20 or config["max_fits"] != 21):
+        raise ValueError("Recovery cannot change models, folds, weights or extend more than one fit")
+    ignored = {"source_sha256", "config_sha256"}
+    if {k: v for k, v in contract.items() if k not in ignored} != {k: v for k, v in old_contract.items() if k not in ignored}:
+        raise ValueError("Recovery input, split, labels or runtime identity changed")
+    allowed = {"name-that-llm/scripts/compare_team_cpu.py", "name-that-llm/config/team_dev_20261021.json",
+               "name-that-llm/docs/TEAM_CONTINUATION_PLAN.md"}
+    if set(contract["source_sha256"]) != set(old_contract["source_sha256"]):
+        raise ValueError("Recovery source inventory changed")
+    for relative, digest in old_contract["source_sha256"].items():
+        if file_hash(original_output / "source_snapshot" / relative) != digest:
+            raise ValueError("Original source snapshot changed")
+        if relative not in allowed and contract["source_sha256"][relative] != digest:
+            raise ValueError("Recovery cannot change model implementation")
+    if (original_output / "recovery_01").exists() or list(original_output.glob("*_oof.npz")):
+        raise ValueError("Recovery already started or prior scored artifacts exist")
+    failure_hash = file_hash(path)
+    with (original_output / "failed_claim.json").open("x") as handle:
+        handle.write(path.read_text())
+    claim.update(state="running", contract_sha256=object_hash(contract), recovery={
+        "original_contract_sha256": object_hash(old_contract), "failed_claim_sha256": failure_hash,
+        "discarded_first_fit_wall_seconds": claim["wall_seconds"],
+        "discarded_first_fold_fit": 1, "original_error": claim["error"],
+        "reason": "float32 rounding tolerance repair; no model selection change"})
+    claim.pop("error")
+    write_json(path, claim)
+    return claim
+
+
 def sources():
     paths = [Path(__file__), CONFIG, MODULE / "docs/TEAM_CONTINUATION_PLAN.md",
              MODULE / "scripts/model_cpu.py", MODULE / "scripts/model_cpu_round2.py",
@@ -229,24 +289,27 @@ def sources():
     return {str(p.relative_to(REPO)): file_hash(p) for p in paths}
 
 
-def run(data, folds, fold_id, config, contract):
+def run(data, folds, fold_id, config, contract, resume_float32=False):
     contract_hash = object_hash(contract)
-    claim = claim_run(CLAIM, contract_hash)
+    claim = (resume_float32_failure(CLAIM, OUTPUT, contract, config) if resume_float32
+             else claim_run(CLAIM, contract_hash))
+    output = OUTPUT / "recovery_01" if resume_float32 else OUTPUT
     started = time.monotonic()
+    prior_seconds = claim.get("recovery", {}).get("discarded_first_fit_wall_seconds", 0)
     def timeout(signum, frame):
         raise TimeoutError("Predeclared experiment wall-clock budget exhausted")
     previous_handler = signal.signal(signal.SIGALRM, timeout)
-    signal.setitimer(signal.ITIMER_REAL, config["max_seconds"])
+    signal.setitimer(signal.ITIMER_REAL, max(0.001, config["max_seconds"] - prior_seconds))
     try:
-        OUTPUT.mkdir(parents=True, exist_ok=False)
-        write_json(OUTPUT / "contract.json", contract)
-        write_json(OUTPUT / "config.json", config)
-        (OUTPUT / "source_snapshot").mkdir()
+        output.mkdir(parents=True, exist_ok=False)
+        write_json(output / "contract.json", contract)
+        write_json(output / "config.json", config)
+        (output / "source_snapshot").mkdir()
         for relative in contract["source_sha256"]:
-            destination = OUTPUT / "source_snapshot" / relative
+            destination = output / "source_snapshot" / relative
             destination.parent.mkdir(parents=True, exist_ok=True)
             destination.write_bytes((REPO / relative).read_bytes())
-        write_json(OUTPUT / "fold_manifest.json", {"row_index": data["row_index"].tolist(),
+        write_json(output / "fold_manifest.json", {"row_index": data["row_index"].tolist(),
             "ids": data["ids"].tolist(), "groups": data["groups"].tolist(), "fold_id": fold_id.tolist()})
         probabilities, results = {}, {}
         with threadpool_limits(limits=config["threads"]):
@@ -267,8 +330,7 @@ def run(data, folds, fold_id, config, contract):
                         model.fit(data["texts"][tr], data["truth"][tr])
                         if not np.array_equal(model.classes_, np.arange(len(data["labels"]))):
                             raise ValueError("Classifier class order mismatch")
-                        predicted = model.predict_proba(data["texts"][va])
-                    validate_probabilities(predicted, len(va), len(data["labels"]))
+                        predicted = canonical_probabilities(model.predict_proba(data["texts"][va]), len(va), len(data["labels"]))
                     oof[va] = predicted
                     convergence = sum(issubclass(w.category, ConvergenceWarning) for w in caught)
                     record = {"fold": number, "seconds": time.monotonic() - start_fit,
@@ -276,7 +338,7 @@ def run(data, folds, fold_id, config, contract):
                     fit_records.append(record)
                     claim["completed_fits"] += 1
                     write_json(CLAIM, claim)
-                    write_json(OUTPUT / f"{name}_progress.json", fit_records)
+                    write_json(output / f"{name}_progress.json", fit_records)
                     print(json.dumps({"model": name, **record}), flush=True)
                     del model
                     gc.collect()
@@ -284,7 +346,7 @@ def run(data, folds, fold_id, config, contract):
                         raise RuntimeError("Convergence warning: stop rather than silently retune")
                     if record["peak_rss_bytes"] > config["max_rss_bytes"]:
                         raise RuntimeError("Observed RSS budget exceeded")
-                artifact = OUTPUT / f"{name}_oof.npz"
+                artifact = output / f"{name}_oof.npz"
                 save_oof(artifact, oof, data, fold_id, contract_hash)
                 probabilities[name] = load_oof(artifact, data, fold_id, contract_hash)
                 results[name] = {**metrics(oof, data, fold_id), "fits": fit_records,
@@ -309,10 +371,13 @@ def run(data, folds, fold_id, config, contract):
         summary = {"protocol": config["protocol"], "scope": "adaptive development only; no new independent generalization estimate",
                    "contract_sha256": contract_hash, "attempted_fits": claim["attempted_fits"],
                    "completed_fits": claim["completed_fits"], "wall_seconds": time.monotonic() - started,
+                   "total_wall_seconds_including_failed_attempt": prior_seconds + time.monotonic() - started,
                    "peak_rss_bytes": peak_rss(), "final_holdout_evaluations": 0, "results": results,
+                   "recovery": claim.get("recovery"),
                    "engineering_stop": "predeclared finite comparison completed; old frozen delivery retained"}
-        write_json(OUTPUT / "summary.json", summary)
-        claim.update(state="completed", summary_sha256=file_hash(OUTPUT / "summary.json"), wall_seconds=summary["wall_seconds"])
+        write_json(output / "summary.json", summary)
+        claim.update(state="completed", summary_sha256=file_hash(output / "summary.json"),
+                     wall_seconds=summary["wall_seconds"], total_wall_seconds=summary["total_wall_seconds_including_failed_attempt"])
         write_json(CLAIM, claim)
         print(json.dumps({"completed_fits": claim["completed_fits"], "wall_seconds": summary["wall_seconds"], "results":
                           {name: result["balanced_accuracy"] for name, result in results.items()}}), flush=True)
@@ -330,7 +395,10 @@ def main():
     parser.add_argument("--train", required=True, type=Path)
     parser.add_argument("--split", required=True, type=Path)
     parser.add_argument("--run", action="store_true", help="Perform the one finite run; default only audits inputs")
+    parser.add_argument("--resume-float32-check", action="store_true", help="One guarded recovery of the recorded unscored first-fit failure")
     args = parser.parse_args()
+    if args.resume_float32_check and not args.run:
+        parser.error("--resume-float32-check requires --run")
     config = json.loads(CONFIG.read_text())
     data = load_development(args.train, args.split, MODULE / "config/labels.json", config)
     folds, fold_id = grouped_folds(data, config["folds"])
@@ -348,7 +416,7 @@ def main():
         "development_groups": len(set(data["groups"])), "contract_sha256": object_hash(contract),
         "claim_exists": CLAIM.exists()}), flush=True)
     if args.run:
-        run(data, folds, fold_id, config, contract)
+        run(data, folds, fold_id, config, contract, resume_float32=args.resume_float32_check)
 
 
 if __name__ == "__main__":
