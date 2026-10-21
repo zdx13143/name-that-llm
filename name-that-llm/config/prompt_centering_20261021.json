@@ -1,0 +1,19 @@
+{
+  "protocol": "prompt-centering-dev-20261021",
+  "train_sha256": "40a22ce8d88c5f46feb4637a099db815bef5f713ffe53e89dbe1b7b21de77707",
+  "split_sha256": "c8c24921f617ad483b9e14cb23d0d64a0fbbde44c0214868445e8d0e30d6e1db",
+  "labels_sha256": "d8c9dcad5979236fb0e5f5504dd2e53c676123bf75cbf06faa13bc1e86524b9d",
+  "baseline_oof_sha256": "40cf86da51cfaccc2ad6af396b62e1363c72ab27a871a3a1dca60c9be5feed75",
+  "baseline_contract_sha256": "4f8c614736e544884a3ccc362b015a4cd8356f375f93880e2b00dff08b466250",
+  "development_rows": 2159, "development_groups": 120, "folds": 5,
+  "max_fits": 15, "max_seconds": 1800, "max_rss_bytes": 3221225472,
+  "max_centered_csr_bytes": 734003200, "threads": 2, "seed": 20261021,
+  "char_max_features": 100000, "word_max_features": 60000, "word_weight": 0.5,
+  "cluster_distance_threshold": 0.65, "cluster_max_features": 60000,
+  "C": 16.0, "max_iter": 3000,
+  "models": [{"name": "plain", "strength": 0.0}, {"name": "partial", "strength": 0.5}, {"name": "full", "strength": 1.0}],
+  "blend_weights": [0.25, 0.5],
+  "bootstrap_seed": 20261021, "bootstrap_repeats": 2000,
+  "adoption_min_delta": 0.005, "adoption_min_positive_folds": 4,
+  "stress_min_delta": -0.005
+}

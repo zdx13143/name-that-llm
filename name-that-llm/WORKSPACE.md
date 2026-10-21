@@ -1,6 +1,6 @@
 # 独立 CPU 实验入口
 
-当前接续分支：`exp/dev-comparison-20261021`。用户在原上传完成后授权“分析队友的工作，在此基础上继续推进”。先读[队友工作审查](docs/TEAM_WORK_REVIEW.md)和[新开发比较方案](docs/TEAM_CONTINUATION_PLAN.md)。新环境位于**仓库根 `.venv/`**，依赖为本模块 `requirements-team-cpu.txt`；它与旧原始工作区的已验证环境隔离。新实验只处理原120-prompt开发子集，不是重新启动下面的历史搜索。
+当前接续分支：`exp/prompt-centering-20261021`。上一组队友视图比较已经完成且未达到采用门槛；本轮用户再次要求提升分数并评估4060 Windows，执行不同机制的[有限中心化计划](docs/PROMPT_CENTERING_PLAN.md)，并准备[迁移评估](docs/WINDOWS_4060_ASSESSMENT.md)。先读[队友工作审查](docs/TEAM_WORK_REVIEW.md)和[上一组结果](reports/TEAM_DEV_COMPARISON.md)。环境位于**仓库根 `.venv/`**，依赖为本模块 `requirements-team-cpu.txt`；它与旧原始工作区的已验证环境隔离。新实验只处理原120-prompt开发子集，不是重新启动下面的历史搜索。
 
 以下为原上传快照说明，历史日期和来源保持不变。
 

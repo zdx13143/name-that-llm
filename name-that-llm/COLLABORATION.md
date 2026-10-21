@@ -1,6 +1,6 @@
 # 本模块协作约定
 
-遵循仓库根 [README](../README.md#协作约定)：实验分支用 `exp/<主题>`，提交说明包含改动及 CV 影响；报告给出每类召回和对应命令，验证必须按 prompt 分组，不能用随机行切分或公榜调参。原上传分支为 `exp/cpu-stylegram-handoff-20261021`；后续审查与实验使用从它分出的 `exp/dev-comparison-20261021`。
+遵循仓库根 [README](../README.md#协作约定)：实验分支用 `exp/<主题>`，提交说明包含改动及 CV 影响；报告给出每类召回和对应命令，验证必须按 prompt 分组，不能用随机行切分或公榜调参。原上传分支为 `exp/cpu-stylegram-handoff-20261021`；后续审查与实验使用从它分出的 `exp/dev-comparison-20261021`，已完成。当前新增中心化实验使用 `exp/prompt-centering-20261021`，固定计划见 [PROMPT_CENTERING_PLAN](docs/PROMPT_CENTERING_PLAN.md)。
 
 原上传仅导入已有结果，CV 不发生变化。用户随后要求分析队友并继续推进，新的有限实验已单独定义于 [TEAM_CONTINUATION_PLAN](docs/TEAM_CONTINUATION_PLAN.md)，只对原120-prompt开发子集使用真正GroupKFold；不能把历史自定义分折的分数换标签。30-prompt最终留出已经使用，不能重新评分、调参或据新clone缺少claim而重开；也不能直接与队友全量五折或榜单数字比较。
 
