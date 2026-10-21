@@ -100,3 +100,10 @@ python src/run_baseline.py          # 基线 + prompt 分组 CV
 - 提交信息写清「改了什么 + CV 分数变化」，例如 `feat: 加入 em dash 特征, CV 0.385 -> 0.41`。
 - 任何「提升了分数」的结论都要附上可复现的命令。
 - 严禁提交 `.env`、凭据、以及 `data/` 下的原始数据。
+
+
+## 独立 CPU 实验交接（2026-10-21）
+
+独立分支导入的历史 CPU 实验位于 [name-that-llm/](name-that-llm/README.md)，包含源码、28 项工具测试、空输出离线 Notebook、[逐类召回率](name-that-llm/reports/PER_CLASS_RECALL.md)和[执行命令](name-that-llm/docs/CPU_RESUME.md)。既有根目录方案与实验记录保留。
+
+该模块使用固定 120 个 prompt 作五折分组开发验证，另 30 个 prompt 作一次最终留出；不等同于本仓库全量 150-prompt GroupKFold，不以两者数值大小判断改进。本次仅上传既有成果，CV 变化为 0，未重新训练或提交 Kaggle。新 clone 不含旧输出和 claim，不能据此重新开启已用留出。

@@ -1,0 +1,165 @@
+{
+  "source_repository": "https://github.com/zdx13143/kaggle-titanic",
+  "source_commit": "9d293904365f54acdfaa22775c0647d080d1b062",
+  "target_base_commit": "692ac87d6b7b3e16d0b74bdc85c476d47daac059",
+  "date": "2026-10-21",
+  "files": [
+    {
+      "path": "name-that-llm/HANDOFF.md",
+      "source_sha256": "d2e8062a6af775c39ca0f12c8f19dacab598c3b11dcc354a7bcaa88354a39bbf",
+      "uploaded_sha256": "d451cd527475afe3409fac5702bbb188dd87457f9867b3c08f0889458d194901",
+      "adapted": true
+    },
+    {
+      "path": "name-that-llm/README.md",
+      "source_sha256": "35822cbed82c44bbdfa37767b94839527deecf81df8333a660fb77ea9482499c",
+      "uploaded_sha256": "b8771c9b1965dd94dc10929280b914bd1edf0c6bb35d2c37596461c4230e22b7",
+      "adapted": true
+    },
+    {
+      "path": "name-that-llm/config/labels.json",
+      "source_sha256": "d8c9dcad5979236fb0e5f5504dd2e53c676123bf75cbf06faa13bc1e86524b9d",
+      "uploaded_sha256": "d8c9dcad5979236fb0e5f5504dd2e53c676123bf75cbf06faa13bc1e86524b9d",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/data/README.md",
+      "source_sha256": "9a18cc224d58def19ee180bbb2b16f84bffb161d4ab5137e928a521e72798621",
+      "uploaded_sha256": "9a18cc224d58def19ee180bbb2b16f84bffb161d4ab5137e928a521e72798621",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/docs/CPU_RESUME.md",
+      "source_sha256": "633180bf3ff2363fd555b9cfdf4679e013aa6f09aae12b010122fe44147d4e39",
+      "uploaded_sha256": "1bf00eff0fbe6e0f51718f20fe347248818574ceaa370d7eb7ef51ff1b73ee74",
+      "adapted": true
+    },
+    {
+      "path": "name-that-llm/docs/PLAN.md",
+      "source_sha256": "663c3f7508c417e93132df200b61d293f9716ccdc83da62416e5eb68640f9ccf",
+      "uploaded_sha256": "52693a454a3d247c7ccdb048051f6fee594a0b0dac5dcc552f7a366d6ce68971",
+      "adapted": true
+    },
+    {
+      "path": "name-that-llm/notebooks/cpu_offline.ipynb",
+      "source_sha256": "3186d5235f6435b6426820cc60dc106f2c1586a68ceb36152fc3e6093b41ab22",
+      "uploaded_sha256": "3186d5235f6435b6426820cc60dc106f2c1586a68ceb36152fc3e6093b41ab22",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/reports/CPU_EXPERIMENTS.md",
+      "source_sha256": "f964d9cd56a9d21890d785f8cfc350fa06bc7d8765941007c35f9760054e0b73",
+      "uploaded_sha256": "f964d9cd56a9d21890d785f8cfc350fa06bc7d8765941007c35f9760054e0b73",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/reports/INITIAL_DATA_AUDIT.md",
+      "source_sha256": "1d52549265f1dc96309b124811c67d88ac14f0596cd655379b19eb4bbbd56146",
+      "uploaded_sha256": "1d52549265f1dc96309b124811c67d88ac14f0596cd655379b19eb4bbbd56146",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/requirements.txt",
+      "source_sha256": "78dec4b19cb0889afaeb331c1c3435bc66b4c1f5aeb1e13c51f0b4564f9bdc17",
+      "uploaded_sha256": "78dec4b19cb0889afaeb331c1c3435bc66b4c1f5aeb1e13c51f0b4564f9bdc17",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/scripts/artifact_guards.py",
+      "source_sha256": "607c77c352e85412682eabed727788cd033613dcf4d14494d8bf009918fe0eee",
+      "uploaded_sha256": "607c77c352e85412682eabed727788cd033613dcf4d14494d8bf009918fe0eee",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/scripts/build_cpu_notebook.py",
+      "source_sha256": "b862c298a8e325ec0d97a73346d9aeaa74ab375470ef8b4c7fa078ac54785679",
+      "uploaded_sha256": "b862c298a8e325ec0d97a73346d9aeaa74ab375470ef8b4c7fa078ac54785679",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/scripts/finalize_cpu.py",
+      "source_sha256": "a73871193deaac1a8cedae2de67cf35da82adca02cfb1baedd41fd776bd58c69",
+      "uploaded_sha256": "a73871193deaac1a8cedae2de67cf35da82adca02cfb1baedd41fd776bd58c69",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/scripts/model_cpu.py",
+      "source_sha256": "fcfe8df6f52a077cdb5c8e0cddc7b917ef3354e2280854bb075059f0749cbcdc",
+      "uploaded_sha256": "fcfe8df6f52a077cdb5c8e0cddc7b917ef3354e2280854bb075059f0749cbcdc",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/scripts/model_cpu_round2.py",
+      "source_sha256": "5c1b2d1da22082d92137d25bf6a399428b9c0b98b944ad96fd3903a24ee509d1",
+      "uploaded_sha256": "5c1b2d1da22082d92137d25bf6a399428b9c0b98b944ad96fd3903a24ee509d1",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/scripts/profile_data.py",
+      "source_sha256": "40f011f9324e443048bec34704adcb06c285e0d7fd017cef70a9d58e40b315a3",
+      "uploaded_sha256": "40f011f9324e443048bec34704adcb06c285e0d7fd017cef70a9d58e40b315a3",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/scripts/train_cpu.py",
+      "source_sha256": "baf8f4c985ac48139d786c7ac93cd22bb18a8ce70469c24d995f3d1e12cce600",
+      "uploaded_sha256": "baf8f4c985ac48139d786c7ac93cd22bb18a8ce70469c24d995f3d1e12cce600",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/scripts/train_cpu_round2.py",
+      "source_sha256": "0e179f0a40e9f0184ce2084c9d922b20b960b5a3401a119ff458c8c98c150ac0",
+      "uploaded_sha256": "0e179f0a40e9f0184ce2084c9d922b20b960b5a3401a119ff458c8c98c150ac0",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/scripts/train_cpu_round3.py",
+      "source_sha256": "ce70777f034fe270a842248cbdc8c5f9efd0ebe95792445d7d1d37596c27f22b",
+      "uploaded_sha256": "ce70777f034fe270a842248cbdc8c5f9efd0ebe95792445d7d1d37596c27f22b",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/scripts/verify_cpu_notebook.py",
+      "source_sha256": "8c9d61ebf86b3fce7b79a5f459248c7ece8f96e33ae29d8f804f4dea3c2b2536",
+      "uploaded_sha256": "8c9d61ebf86b3fce7b79a5f459248c7ece8f96e33ae29d8f804f4dea3c2b2536",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/tests/test_artifact_guards.py",
+      "source_sha256": "6c6b123e1c3cdf20db15b86c8ab50cd6f4e11fd8f625d8ad6499958dc24eec32",
+      "uploaded_sha256": "6c6b123e1c3cdf20db15b86c8ab50cd6f4e11fd8f625d8ad6499958dc24eec32",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/tests/test_model_cpu.py",
+      "source_sha256": "8b050f8ff6be80328aea1822b019002ea8bbbcfcd21450cde4bf6bf5e982f114",
+      "uploaded_sha256": "8b050f8ff6be80328aea1822b019002ea8bbbcfcd21450cde4bf6bf5e982f114",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/tests/test_model_cpu_round2.py",
+      "source_sha256": "9c5214e08b159850db422788902f085be4c733f8468ebca61e9e9e3d14f0936f",
+      "uploaded_sha256": "9c5214e08b159850db422788902f085be4c733f8468ebca61e9e9e3d14f0936f",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/tests/test_notebook_builder.py",
+      "source_sha256": "a06488d36c3e6f03c7ba67ade4eba46a918a7553d66bada030da0f72e8f38f12",
+      "uploaded_sha256": "a06488d36c3e6f03c7ba67ade4eba46a918a7553d66bada030da0f72e8f38f12",
+      "adapted": false
+    },
+    {
+      "path": "name-that-llm/tests/test_profile_data.py",
+      "source_sha256": "98aeaa4d95b05c857f7d58110d55e824ad5f676b98421e97eb9922c6ff52d2de",
+      "uploaded_sha256": "98aeaa4d95b05c857f7d58110d55e824ad5f676b98421e97eb9922c6ff52d2de",
+      "adapted": false
+    }
+  ],
+  "scope": "Tracked Name That LLM files only; no raw data, model weights, cached predictions, environments, or CASMI code. Documentation adaptations are listed in HANDOFF.md.",
+  "adapted_source_files": [
+    "name-that-llm/HANDOFF.md",
+    "name-that-llm/README.md",
+    "name-that-llm/docs/CPU_RESUME.md",
+    "name-that-llm/docs/PLAN.md"
+  ]
+}

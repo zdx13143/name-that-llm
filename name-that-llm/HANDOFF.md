@@ -1,0 +1,136 @@
+# Name That LLM 交接
+
+更新：2026-10-21（Asia/Singapore）。本模块保存 Name That LLM 独立 CPU 实验；下文保留 2026-10-18 的历史运行记录，最新上传说明见文末。
+
+## 已完成与证据范围
+
+| 状态 | 内容 |
+| --- | --- |
+| 已核对 | Kaggle 登录页面显示已报名后的 `Submit Prediction`、`Team`、`Submissions`。 |
+| 已核对 | 官方 Overview：18 类、balanced accuracy、Notebook 提交、`submission.parquet`、关闭互联网、CPU/GPU 最长 9 小时。 |
+| 已实测 | 真实训练集 2,699 条、150 个 prompt、18 类；公开 test/sample 各 3 行。字段见 [data/README.md](data/README.md)。 |
+| 已完成 | 三个真实文件全量读取、SHA-256、schema、空值、重复及标签分布审计，退出码 0；详见 [审计报告](reports/INITIAL_DATA_AUDIT.md)。 |
+| 本轮完成 | 三轮 CPU 搜索、护栏修复、一次最终留出、全量模型及离线 Notebook 本地复现均完成。最新证据见文末；没有 GPU 实验或 Kaggle 提交。 |
+| 已授权 | [CPU 方案](docs/PLAN.md)及[整轮停止标准](docs/OPTIMIZATION_PLAN.md)；不逐次询问常规调参。 |
+
+## 待核对
+
+1. **数据描述冲突**：Overview 写交互测试 1 行，Data 页写 3 行。本次真实文件已核对为 3 行；推理代码必须适配任意行数，不能把公开样例当隐藏测试。
+2. **截止时间冲突**：Overview 最终提交为 `2027-01-13 23:59 UTC`；页头 `Close` 为新加坡 `2027-01-15 07:59`，对应 `2027-01-14 23:59 UTC`。保留两项证据，官方澄清前按较早日期安排。
+3. **完整规则**：每日提交数、最终可选提交数、队伍人数和外部资源条件尚未完整核对。
+4. **协作状态**：GitHub 分支隔离不等于 Kaggle 团队合并；如需要共享私有比赛材料，先核对实际队伍状态和规则。当前文档不声称已向队友发送内容。
+5. **算力状态**：用户当前免费 GPU 余额、可用型号和排队情况未核实。启动实验前在 Notebook Settings 检查并记录。
+
+## 接手后的顺序
+
+1. 阅读本文件、[数据说明](data/README.md)与[方案](docs/PLAN.md)。
+2. 本机数据已在 `data/raw/`；其他机器需另行下载，按审计报告核对哈希。不要将登录态、令牌或 Cookie 写入仓库。
+3. 用审计脚本复核数据版本和分组约束。审计结果与页面描述分别记录。
+4. 自主执行已批准 CPU 基线与有限优化；验证分数明确标为本地验证，不称为榜单分数。不要重用最终留出集调参。
+5. CPU 结果揭示改进方向后，再决定是否使用 Kaggle 免费 GPU；训练资源与离线提交资源分别准备。
+
+## Git 协作约定
+
+当前上传仓库：[zdx13143/name-that-llm](https://github.com/zdx13143/name-that-llm)，分支 `exp/cpu-stylegram-handoff-20261021`，遵循目标 README 的 `exp/<主题>` 约定。旧 `codex/name-that-llm-optimize`、`e434209` 及 `9d29390` 属于原 [kaggle-titanic](https://github.com/zdx13143/kaggle-titanic) 历史，不是本仓库祖先；本次仅移植文件快照。仅提交明确属于本任务的代码和文档，不重写队友分支、不强推、不直接合并默认分支。上传前检查暂存文件；不上传原始比赛数据、凭据、环境、模型权重或输出。远端是否同步以实际 push 与远端 SHA 核验为准。
+
+## 2026-10-18 持续优化准备（历史阶段）
+
+用户要求持续优化至效果不明显。已准备[整轮 CPU 模型方案与停止规则](docs/OPTIMIZATION_PLAN.md)，按用户刚提供的 `AGENTS.md` 提交审核，模型实施和训练尚待确认。当前 Kaggle 浏览器访问被权限检查拒绝，CLI 也未认证；未尝试绕过拒绝，真实数据仍未取得。访问条件未满足不能记为模型收益平台期。
+
+已实现 `scripts/profile_data.py` 和 `config/labels.json`，只做数据质量检查，不训练模型。可检查完整 CSV/Parquet、文件 SHA-256、schema/空值、ID 唯一性、类别与 prompt 覆盖、exact/空白归一重复及跨 prompt 标签冲突、train-test 重叠、sample ID 覆盖。标签表来自此前已核对的官方页面；与真实标签集不一致时报告差异，不擅自改写数据。
+
+本轮在仓库根执行：
+
+```sh
+enveda-casmi-2026/.venv/bin/python -m unittest discover -s name-that-llm/tests -v
+enveda-casmi-2026/.venv/bin/python name-that-llm/scripts/profile_data.py
+```
+
+8 项临时合成文件测试通过；第二条真实入口返回 `2`，正确报告缺少 `train.csv`、`test.csv`、`sample_submission.parquet`，未生成真实数据报告。默认输出 `reports/local_data_profile.json` 已确认受 Git 忽略。没有安装新依赖、生成预测或取得模型分数。
+
+官方依据：[Overview](https://www.kaggle.com/competitions/name-that-llm/overview/abstract)、[Data](https://www.kaggle.com/competitions/name-that-llm/data)、[Rules](https://www.kaggle.com/competitions/name-that-llm/rules)、[GPU 使用指南](https://www.kaggle.com/docs/efficient-gpu-usage)。
+
+## 2026-10-18 本地数据取得与自主实施授权
+
+用户先授权重试浏览器，但工具仍明确报告该域名存在已保存拒绝设置或管理策略。未绕过限制；用户随后自行将比赛 ZIP 下载至 `~/Downloads/name-that-llm.zip`。检查压缩包成员恰为三个预期文件、大小合理、CRC 全通过，解压时只写指定目标；若目标文件已存在且字节不同会停止，未盲目覆盖。
+
+从仓库根再次执行：
+
+```sh
+enveda-casmi-2026/.venv/bin/python name-that-llm/scripts/profile_data.py
+```
+
+本次成功退出 `0`，输出 `reports/local_data_profile.json`，审计时间 `2026-10-18T03:37:22Z`。训练 2,699 行、测试与 sample 各 3 行，必需字段完整、ID 唯一、标签合法；17 类各 150 行，`claude-fable-5` 为 149 行。150 个 prompt 中 149 个具有全部类别，另一个缺一类。完全/空白归一的重复文本以及 train/test 文本、ID 重叠均为 0。完整范围、哈希和局限见 [真实审计](reports/INITIAL_DATA_AUDIT.md)。
+
+用户随后明确说“请你自己做决定自动推进不用询问我”。该新指示覆盖此前模型方案等待审核的阶段，当前自主执行已经列出的 CPU 基线、有限优化及停止规则；不需要重复批准每个超参数。正式比赛提交、付费资源及绕过浏览器权限不在本轮执行范围。模型实验报告会另行记录真实结果，不把本次数据审计称为模型提升。
+
+## 2026-10-18 用户要求暂停（历史检查点，现已恢复）
+
+用户最新要求“请你现在在合适位置暂停下工作，后续再继续推进”。第二轮搜索已自然退出，当前无活动模型进程，无未完成 trial；第三轮、最终留出和真实最终 Notebook 尚未启动。**本次是用户主动暂停，不能称优化已收敛。**
+
+- 两轮合计 32 个配置、155 次主 CV 拟合和 40 次预定稳定性拟合，共 195 次真实分类器拟合。开发 BA 从初始最佳 0.281513，经首轮 0.295880，至文体统计增强模型 0.340799。两个稳定性种子的增益同向；这些均为开发验证，非最终留出或榜单结果。
+- 固定 120 个 prompt / 2,159 行开发数据与 30 个 prompt / 540 行最终留出保持不变。最终留出未打开。原始数据、OOF、特征缓存、划分、代码快照和暂停检查点留在 `outputs/cpu_round1/`、`outputs/cpu_round2/`、`outputs/PAUSED.json`，受 Git 忽略。
+- 已有 20 项审计、模型及 Notebook 合成行为测试通过。根任务另行只读复核首轮全部 24 个 trial artifact，重算 BA、核对 OOF 行序/标签及 prompt 隔离，全部一致；收据是 `reports/local_round1_reconciliation.json`。没有据此多跑真实拟合。
+- 新的统一 `finalize_cpu.py` 是未测试、未执行草稿；旧 round2 最终评估的跨轮 marker 失败路径与 prior OOF 标签/truth 校验仍需修复。实际本轮文件已另行核对一致，现有指标未因此失效。**恢复时先补齐这些护栏，不要直接运行旧 finalize。**
+- Notebook builder 的文体模型路径已通过合成端到端检查；真实全量模型、真实公开测试预测与真实最终 Notebook 尚未生成，不能写成 Kaggle 执行完成。
+
+完整指标、范围、源码快照及局限见 [CPU_EXPERIMENTS.md](reports/CPU_EXPERIMENTS.md)；恢复核验与第三轮固定配置表见 [CPU_RESUME.md](docs/CPU_RESUME.md)。第三轮入口尚未实现，不存在可直接续跑第三轮的训练命令。不要重跑已结束的两个 search，也不要通过换输出目录重置计数。
+
+## 2026-10-18 恢复后的第三轮 CPU 搜索
+
+用户已解除暂停，并要求本对话后续集中推进 Name That LLM。CASMI 的扩展结果与独立环境已交接至 `<historical-casmi-worktree>`，分支 `codex/casmi-continue`；当前工作目录 `<historical-workspace>` 使用 `codex/name-that-llm-optimize`。二者从已推送的双赛共同检查点 `e434209` 分出。不要在另一目录切换分支或共写输出。
+
+- 已修复统一最终评估入口；各轮旧入口都委托同一 `finalize_cpu.py`。按项目和训练文件 hash 创建持久独占 claim，先写 claim 再拟合；单轮 marker 写失败或留出预测后全量拟合失败也不能重开。所有 search 检查同一 claim，不能换输出目录重新调参。
+- 历史输入、标签、split、CSV/OOF schema、行序、真实标签、预测范围与重算 BA 均纳入校验。历史 JSON 未改写；追溯绑定合同明确是恢复时新增的核验，不能冒充第一轮运行时已存在。第三轮还冻结每份历史 trial JSON/OOF 的 hash，复用前再次核对。
+- 第三轮保持原 120 个 prompt / 2,159 行开发数据及 30 个 prompt / 540 行最终留出，已完成 9 个新配置、45 次主拟合、10 次新增稳定性拟合；旧 incumbent 两个种子的 10 次历史拟合直接复用，不重复计费。三轮合计 **41 个配置 / 250 次 CV 分类器拟合**，搜索墙钟约 **953.22 秒**。
+- 选择配置 `b316d0a5c48a`：char `(2,5)` + 文体统计权重 `0.25` + LR `C=16`。开发 BA **0.346818**，相对第二轮最佳 **+0.006019**，按 prompt 配对 95% 区间 **[-0.002782, 0.014819]**。两个预定稳定性种子的差值均为正，所有主/稳定性拟合无收敛警告。
+- 三个既定优化方向都未满足“确认提升”的完整判据，按事先工程规则结束这轮 CPU 搜索；区间仍允许超过 0.005 的收益，因此**不是已进入平台期或全局最优的证明**。不能用最终留出结果继续调参。
+
+精确源码、registry、配置、OOF 与 artifact contract 保留在 `outputs/cpu_round3/`，受 Git 忽略。完整命令、逐批比较、稳定性和本次最终交付状态见 [恢复执行记录](docs/CPU_RESUME.md) 与 [实验报告](reports/CPU_EXPERIMENTS.md)。
+
+## 2026-10-18 冻结、一次最终留出与离线交付（最新）
+
+独立只读复核通过后，按既定开发选择冻结 `b316d0a5c48a`，只执行一次统一最终评估。最终留出 **540 行 / 30 个 prompt**，BA **0.383333**，2,000 次按 prompt bootstrap 的 95% 区间 **[0.338889, 0.429630]**。留出拟合 8.719 秒，随后全部 2,699 条训练数据拟合交付模型 11.206 秒；没有根据留出结果更改配置。项目级 claim 为 `completed`，三轮均保留同一次开启标记；不得删除或通过换目录再次打开。
+
+实际命令从仓库根执行如下，均已经完成，**不要重复执行训练或 finalize**：
+
+```sh
+name-that-llm/.venv/bin/python name-that-llm/scripts/train_cpu_round3.py search
+name-that-llm/.venv/bin/python name-that-llm/scripts/finalize_cpu.py --output name-that-llm/outputs/cpu_round3
+name-that-llm/.venv/bin/python name-that-llm/scripts/build_cpu_notebook.py --run-dir name-that-llm/outputs/cpu_round3
+name-that-llm/.venv/bin/python name-that-llm/scripts/verify_cpu_notebook.py --run-dir name-that-llm/outputs/cpu_round3
+name-that-llm/.venv/bin/python -m unittest discover -s name-that-llm/tests -v
+```
+
+- [离线 Notebook](notebooks/cpu_offline.ipynb) 嵌入冻结配置与模型源码，交付文件无 cell 输出。已在当前本机 `.venv` 顺序执行导出的全部 4 个代码单元，完整重训一次，耗时 10.860 秒；这不是 Jupyter 内核或 Kaggle 会话执行。
+- Notebook 的公开 test 3 行 ID、标签预测与冻结模型完全一致，decision score 最大绝对差为 0，`runtime.json` 可解析、环境版本差异为空。两份 Parquet SHA 均为 `30c13d5c20118765fa8dc4f2d3fbc29846597c500244c96f0d6d539121807c89`；公开样例只验证接口与复现，不是隐藏测试成绩。
+- 总计 **250 次 CV + 2 次最终拟合 + 1 次 Notebook 复现 = 253 次真实拟合**。最终全套 **28 项测试通过**，涵盖一次性 claim 失败路径、标签/schema/OOF 校验和 Notebook 冻结配置篡改拒绝；`git diff --check` 通过。
+- 独立只读审查从 OOF/holdout NPZ 重算开发与最终 BA、分组区间、逐类 recall/confusion；源码/registry/contract、开发与留出互斥、冻结选择、模型/Notebook hash 和逐行公开预测均匹配，没有重训或再次评分留出。
+- 本地 `outputs/COMPLETED.json` 指向最终证据；历史 `PAUSED.json` 标记被本次完成状态取代。原始数据、环境、所有模型/预测、执行版 Notebook 与本地收据均受 Git 忽略，不上传。当前无活动训练进程。
+
+本轮 CPU 搜索按工程规则结束，不能据此证明平台期。后续本对话仍只负责 Name That LLM；先处理实际 Kaggle 运行环境和规则核对。若要研究新模型，先记录新的评估方案并声明这 30 个 prompt 已见，不可作为新的独立选模留出。Kaggle 访问限制尚未解除，没有使用 GPU、正式提交或榜单分数。
+
+
+## 2026-10-21 独立仓库上传
+
+用户指定上传到私有仓库 `zdx13143/name-that-llm`，并要求遵守队友约定。已读取目标 `README.md` 和 `EXPERIMENTS.md`；当次查询的 Issues、PR 列表为空。README 要求实验分支为 `exp/<主题>`、提交说明注明改动及 CV 变化、报告每类召回并附复现命令，故按用户最新指示使用 **`exp/cpu-stylegram-handoff-20261021`**，覆盖旧工作区默认的 `codex/` 命名。没有修改目标 main 或队友工作分支。
+
+- 目标基点：`main@692ac87d6b7b3e16d0b74bdc85c476d47daac059`。源快照：原 [kaggle-titanic](https://github.com/zdx13143/kaggle-titanic) 的 `9d293904365f54acdfaa22775c0647d080d1b062`。只导入 25 个受 Git 跟踪的 NTL 文件，不导入旧双赛 Git 历史、CASMI 项目、原始数据或本机输出。
+- 保留 `name-that-llm/` 子目录作为独立模块；目标已有 `src/`、`scripts/`、`configs/`、根依赖和 `EXPERIMENTS.md` 不变，根 README 仅追加模块入口。所有原有 Python 代码、测试、依赖、标签配置和空输出 Notebook 逐字节一致。
+- 适配本模块 README/HANDOFF/CPU_RESUME/PLAN 的仓库入口、根计划链接和个人绝对路径；新增本模块 AGENTS、WORKSPACE、COLLABORATION、局部忽略规则、NTL 原计划摘录、源文件 hash 清单及逐类指标。源/目标文件 hash 见 [SOURCE_SNAPSHOT.json](reports/SOURCE_SNAPSHOT.json)。
+- 队友要求的逐类召回见 [PER_CLASS_RECALL.md](reports/PER_CLASS_RECALL.md)：只从已有预测重算聚合，没有重新训练或打开最终留出。本模块五折实现是完整 prompt 分组后按固定 seed 划分，并非目标 `src/cv.py` 的 sklearn GroupKFold；样本也为 120-prompt 开发子集，不能将它写成队伍 150-prompt 全量同协议成绩或新增改进。
+- 上传前在目标目录用原已验证 Python 3.13.2 环境执行 `python -m unittest discover -s name-that-llm/tests -v`，**28 项通过，0.519 秒**；仅有临时合成数据拟合，没有新的真实数据实验。未在目标目录安装环境；Windows/Kaggle 未运行。
+- 原始数据、凭据、`.venv`、weights、缓存、OOF、预测、执行版 Notebook 及旧 claim 都不随 Git 上传。逐项检查忽略规则，数据说明 `data/README.md` 可正常提交。新 clone 不包含完整实验状态，不得把缺少 claim 当作已使用的 30-prompt 留出可以重开的理由。
+
+本次 CV 变化为 **0**；原开发 BA 0.346818 和一次留出 BA 0.383333 保持历史值。没有 Kaggle 操作、正式提交、付费资源或新模型优化。后续先读本模块 [WORKSPACE](WORKSPACE.md) 与目标仓库协作约定，避免盲目执行旧 search/finalize。
+
+本次上传使用的 Git 命令（先审查明确路径暂存的 diff，随后仅推本分支）：
+
+```sh
+git switch -c exp/cpu-stylegram-handoff-20261021
+git diff --cached --check
+git push -u origin HEAD:refs/heads/exp/cpu-stylegram-handoff-20261021
+git ls-remote --heads origin refs/heads/main refs/heads/exp/cpu-stylegram-handoff-20261021
+```
+
+实际是否上传成功以 push 返回值和远端 SHA 核对为准，不从本地 commit 推断已同步。

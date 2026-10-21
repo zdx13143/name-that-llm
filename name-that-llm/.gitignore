@@ -1,0 +1,46 @@
+# Local archives and machine-specific environments
+.local-backups/
+.DS_Store
+Thumbs.db
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Credentials never belong in this collaboration repository
+.env
+.env.*
+!.env.example
+.kaggle/
+kaggle.json
+access_token
+*.pem
+*.key
+
+# Keep only data instructions; download official inputs separately
+**/data/**
+!**/data/
+!**/data/README.md
+**/models/
+**/outputs/
+**/checkpoints/
+*.parquet
+*.zip
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.joblib
+*.pkl
+submission*.csv
+**/reports/local_*
+**/reports/executed_*.ipynb
+
+# Keep the data instructions; no input datasets.
+!data/
+data/*
+!data/README.md
+*.npz
+*.npy
