@@ -10,8 +10,8 @@ n-gram 空间**里。而这个组合有三个有利条件：
 
 1. 稀疏 TF-IDF 的组均值就是话题方向，减掉它等于做了一次「话题投影消除」
 2. 我们已验证 **TF-IDF 聚类恢复 prompt 分组纯度 0.986**，可以在测试集上无监督分组
-3. 它**不依赖「测试集 18 平衡」这个已被证伪的假设**——中心化是软操作，
-   分组不完美只是减了一个略微偏掉的均值，不会像硬分配那样把整组带崩
+3. 中心化不强制每组标签一一对应，但默认簇数仍按 n/18 估计，
+   **这是待验证的组大小假设**，不能视为已知的测试集结构。
 
 诚实的验证口径
 --------------
@@ -61,40 +61,59 @@ def build_features(texts_tr, texts_te):
 
 
 def center_by_groups(X: sparse.csr_matrix, groups: np.ndarray) -> sparse.csr_matrix:
-    """每个组减去组均值（组内 L2 归一化后再减，等价于去掉话题方向）。
+    """先逐行归一化，再对多行组的每一行减组均值，最后逐行归一化。
 
-    稀疏矩阵不支持广播减法，所以把组均值铺成一个同形的稀疏行重复矩阵再相减，
-    避免把 block 变成稠密（300k 维 × 组内行数会爆内存）。
+    单行组没有可估计的共享话题，保留其归一化向量；不修改输入矩阵。
+    用稀疏重复均值，避免把整个组变成稠密矩阵。
     """
-    X = normalize(X).tocsr()
-    out = X.copy().astype(np.float64)
-    n_feat = out.shape[1]
+    groups = np.asarray(groups)
+    if groups.ndim != 1 or len(groups) != X.shape[0]:
+        raise ValueError("groups must have one entry per input row")
+    X = sparse.csr_matrix(X, dtype=np.float64, copy=True)
+    if X.shape[0] == 0:
+        return X
+    X = normalize(X, copy=False).tocsr()
+    blocks, row_order = [], []
     for g in np.unique(groups):
-        m = groups == g
-        n_rows = int(m.sum())
-        if n_rows < 2:
-            continue
-        block = out[m]
-        mean = np.asarray(block.mean(0)).ravel()
-        nz = np.nonzero(mean)[0]
-        if len(nz) == 0:
-            continue
-        rep = sparse.csr_matrix(
-            (mean[nz], (np.zeros(len(nz), dtype=np.int64), nz)),
-            shape=(n_rows, n_feat),
-        )
-        out[m] = block - rep
-    return normalize(out).tocsr()
+        indices = np.flatnonzero(groups == g)
+        block = X[indices]
+        if len(indices) > 1:
+            mean = sparse.csr_matrix(block.mean(axis=0))
+            repeated_mean = sparse.vstack([mean] * len(indices), format="csr")
+            block = block - repeated_mean
+        blocks.append(block)
+        row_order.extend(indices)
+    if len(row_order) != X.shape[0]:
+        raise ValueError("groups must not contain missing values")
+    out = sparse.vstack(blocks, format="csr")[np.argsort(row_order)]
+    return normalize(out, copy=False).tocsr()
 
 
 def cluster_texts(texts, n_groups=None, dim=200, seed=0) -> np.ndarray:
-    """用词级 TF-IDF 聚类恢复 prompt 分组（已验证纯度 0.986）。"""
+    """仅从输入文本估计分组；默认 n/18 是组大小假设，不是已知题数。
+
+    空输入返回空标签；单行、单簇或无可用词汇时返回一个组。
+    n_groups 只应来自预先固定的设置，不能传验证集真实 prompt 数。
+    """
     n = len(texts)
-    k = n_groups or max(1, int(round(n / K)))
-    k = max(1, min(k, n - 1)) if n > 1 else 1
-    X = TfidfVectorizer(ngram_range=(1, 1), min_df=2, stop_words="english",
-                        sublinear_tf=True, max_features=60_000).fit_transform(texts)
-    dim = min(dim, max(2, X.shape[1] - 1), n - 1)
+    if n <= 1:
+        return np.zeros(n, dtype=np.int64)
+    k = max(1, int(round(n / K))) if n_groups is None else int(n_groups)
+    if k < 1:
+        raise ValueError("n_groups must be positive")
+    k = min(k, n)
+    if k == 1:
+        return np.zeros(n, dtype=np.int64)
+    try:
+        X = TfidfVectorizer(ngram_range=(1, 1), min_df=2, stop_words="english",
+                            sublinear_tf=True, max_features=60_000).fit_transform(texts)
+    except ValueError as exc:
+        if "empty vocabulary" in str(exc) or "After pruning, no terms remain" in str(exc):
+            return np.zeros(n, dtype=np.int64)
+        raise
+    if X.shape[1] < 2:
+        return np.zeros(n, dtype=np.int64)
+    dim = min(dim, X.shape[1] - 1, n - 1)
     S = TruncatedSVD(n_components=dim, random_state=seed).fit_transform(X)
     return KMeans(n_clusters=k, n_init=10, random_state=seed).fit_predict(normalize(S))
 
@@ -106,7 +125,7 @@ def main() -> None:
     texts = df["text"].astype(str).tolist()
 
     folds = list(GroupKFold(5).split(texts, y, groups))
-    n_prompts = df["prompt_id"].nunique()
+    print("分组提示：验证侧仅看文本，默认簇数按 n/18 估计；这是待验证的假设。")
 
     for C in (2.0, 8.0, 16.0):
         oof_plain = np.zeros((len(y), K))
@@ -125,7 +144,7 @@ def main() -> None:
 
             # 2) 训练侧用真实 prompt_id 中心化；验证侧用折内无监督聚类中心化
             A_c = center_by_groups(A, groups[tr])
-            g_va = cluster_texts(va_t, n_groups=len(np.unique(groups[va])))
+            g_va = cluster_texts(va_t)
             B_c = center_by_groups(B, g_va)
 
             clf2 = LogisticRegression(C=C, max_iter=2000,

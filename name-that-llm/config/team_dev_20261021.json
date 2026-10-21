@@ -1,0 +1,31 @@
+{
+  "protocol": "team-dev-groupkfold5-20261021",
+  "train_sha256": "40a22ce8d88c5f46feb4637a099db815bef5f713ffe53e89dbe1b7b21de77707",
+  "split_sha256": "c8c24921f617ad483b9e14cb23d0d64a0fbbde44c0214868445e8d0e30d6e1db",
+  "labels_sha256": "d8c9dcad5979236fb0e5f5504dd2e53c676123bf75cbf06faa13bc1e86524b9d",
+  "development_rows": 2159,
+  "development_groups": 120,
+  "folds": 5,
+  "max_fits": 20,
+  "max_seconds": 1800,
+  "max_rss_bytes": 2684354560,
+  "threads": 2,
+  "seed": 20261018,
+  "bootstrap_seed": 20261021,
+  "bootstrap_repeats": 2000,
+  "original_config": {
+    "classifier": "logistic", "C": 16.0, "class_weight": null,
+    "lowercase": false, "sublinear_tf": true, "min_df": 2,
+    "char_ngram": [2, 5], "word_ngram": [1, 2],
+    "representation": "char", "style_weight": 0.25
+  },
+  "models": [
+    {"name": "original_style"},
+    {"name": "team_charword", "view": "charword", "C": 16.0},
+    {"name": "team_char13", "view": "char13", "C": 4.0},
+    {"name": "team_fp", "view": "fp", "C": 0.25}
+  ],
+  "blend_team_weights": [0.25, 0.5],
+  "adoption_min_delta": 0.005,
+  "adoption_min_positive_folds": 4
+}

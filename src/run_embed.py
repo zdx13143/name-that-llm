@@ -1,10 +1,11 @@
-"""评估预训练模型隐藏状态特征的增量，并与已有视图融合。
+"""在开发集比较预训练隐藏状态特征，并与已有视图融合。
 
 流程：
   1. 冻结编码器，对全部训练文本算一次嵌入（缓存复用，不存在标签泄漏）
   2. 用同一套 prompt 分组 CV 评估「嵌入 + 线性分类器」
   3. 把嵌入视图加进 v2 的视图池，重新做加权融合，
-     用留一折评估判断它到底带来了多少真实增量
+     报告留一折权重比较。基础视图已用全量 OOF 选过超参，
+     所以这仍是开发对照，不是完整嵌套验证或独立泛化增量。
 
 用法：
     python src/run_embed.py --model microsoft/deberta-v3-small
@@ -49,6 +50,29 @@ def oof_from_embeddings(X, y, groups, n_splits, C):
     return oof
 
 
+def embedding_comparison_pools(out_dir: Path, current_oof_path: Path,
+                               current_oof: np.ndarray):
+    """历史视图作开发对照，当前嵌入仅在增强池中加入一次。
+
+    形状匹配仅用于兼容已有文件；不构成数据行序或模型版本身份校验。
+    """
+    baseline = {}
+    for path in sorted(out_dir.glob("pool_v2_*.npy")):
+        arr = np.load(path, allow_pickle=False)
+        if arr.shape == current_oof.shape:
+            baseline[path.stem.replace("pool_v2_", "")] = arr
+    for path in sorted(out_dir.glob("oof_emb_*.npy")):
+        if path.resolve() == current_oof_path.resolve():
+            continue
+        arr = np.load(path, allow_pickle=False)
+        if arr.shape == current_oof.shape:
+            short = path.stem.replace("oof_emb_", "").replace("answerdotai__", "")
+            baseline[f"emb:{short}"] = arr
+    augmented = dict(baseline)
+    augmented["emb"] = current_oof
+    return baseline, augmented
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="microsoft/deberta-v3-small")
@@ -88,26 +112,16 @@ def main() -> None:
     print(f"  嵌入视图 OOF balanced accuracy = {s_emb:.4f}  ({time.time() - t0:.1f}s)")
     cvmod.summarize(y, oof_emb.argmax(axis=1), LABELS, LAB_OF, tag="嵌入视图")
 
-    # 先落盘自己的 OOF，这样下面扫描时能被统一收进视图池
+    # 保存当前 OOF；构建对照池时显式排除此文件。
     safe = args.model.replace("/", "__")
-    np.save(out / f"oof_emb_{safe}.npy", oof_emb)
+    current_oof_path = out / f"oof_emb_{safe}.npy"
+    np.save(current_oof_path, oof_emb)
 
     # ---- 与 v2 视图池融合 ----
     if args.no_blend:
         return
 
-    pool: dict[str, np.ndarray] = {}
-    for f in sorted(out.glob("pool_v2_*.npy")):
-        arr = np.load(f)
-        if arr.shape == oof_emb.shape:
-            pool[f.stem.replace("pool_v2_", "")] = arr
-    # 收编所有历史上算过的嵌入视图（不同编码器之间往往互补）
-    for f in sorted(out.glob("oof_emb_*.npy")):
-        arr = np.load(f)
-        if arr.shape != oof_emb.shape:
-            continue
-        short = f.stem.replace("oof_emb_", "").replace("answerdotai__", "")
-        pool[f"emb:{short}"] = arr
+    pool, pool2 = embedding_comparison_pools(out, current_oof_path, oof_emb)
 
     if not pool:
         print("\n未找到可融合的视图，跳过（先跑 python src/run_sweep.py）")
@@ -116,15 +130,13 @@ def main() -> None:
     print(f"\n视图池：{list(pool)}")
 
     base_w, base_alpha, base_s = greedy_weights(pool, y, np.arange(len(y)), priors)
-    base_honest, base_std = honest_score(pool, y, groups, priors, n_splits=args.splits)
-    print(f"原有融合（不含嵌入）：全量 {base_s:.4f} / 留一折 {base_honest:.4f} ± {base_std:.4f}")
+    base_dev, base_std = honest_score(pool, y, groups, priors, n_splits=args.splits)
+    print(f"开发对照（不含当前嵌入，可含历史嵌入）：全量 {base_s:.4f} / 留一折 {base_dev:.4f} ± {base_std:.4f}")
 
-    pool2 = dict(pool)
-    pool2["emb"] = oof_emb
     new_w, new_alpha, new_s = greedy_weights(pool2, y, np.arange(len(y)), priors)
-    new_honest, new_std = honest_score(pool2, y, groups, priors, n_splits=args.splits)
-    print(f"加入嵌入后融合：全量 {new_s:.4f} / 留一折 {new_honest:.4f} ± {new_std:.4f}")
-    print(f"\n>>> 嵌入带来的真实增量 = {new_honest - base_honest:+.4f}")
+    new_dev, new_std = honest_score(pool2, y, groups, priors, n_splits=args.splits)
+    print(f"加入当前嵌入后的开发融合：全量 {new_s:.4f} / 留一折 {new_dev:.4f} ± {new_std:.4f}")
+    print(f"\n>>> 当前嵌入的开发对照差值 = {new_dev - base_dev:+.4f}（不是独立泛化估计）")
     print(f"    权重：{ {k: round(v, 3) for k, v in new_w.items() if v} }")
 
     blend = sum(w * pool2[v] for v, w in new_w.items() if w)
