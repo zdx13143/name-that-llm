@@ -175,3 +175,34 @@ git ls-remote --heads origin refs/heads/main refs/heads/exp/cpu-stylegram-handof
 最终工具测试共 **48项通过**（本模块42项、根修复6项），`git diff --check`通过。覆盖两处根bug、开发隔离/OOF契约、float32校验、一次恢复与预算、改善折数边界以及元数据恢复；合成测试拟合不混入真实比赛数据拟合计数。
 
 本机证据：`outputs/team_dev_20261021/` 保留首次失败；`recovery_01/` 有4个OOF、完整summary与独立复核收据；父目录和恢复目录分别保留两次运行的源码/配置快照。共享claim `outputs/continuation_claims/team-dev-groupkfold5-20261021.json` 为completed。输出、环境及所有行级数据受Git忽略，仅上传代码、测试、计划与聚合报告。Git推送仍不等于Kaggle Notebook同步或提交。
+
+## 2026-10-21 中心化与4060评估（当前停止点）
+
+用户本轮要求继续提升分数并评估带4060的Windows电脑；结合自主执行授权，从 `7a468a8` 新建本人分支 **`exp/prompt-centering-20261021`**。训练前提交 `b34e91e2b68ac8db709335456b39e1e2bd123408` 固定[15-fit计划](docs/PROMPT_CENTERING_PLAN.md)、配置、源码和测试。队友分支与main未改动，CASMI及原工作区保留。
+
+- 只用原120 prompt / 2,159行，沿用上一轮GroupKFold5和严格hash/身份匹配的original_style OOF；原30-prompt已用留出不训练、不评分。没有重跑旧search/finalize。
+- 本轮3个模型仅改变组均值扣除比例0/0.5/1，另做固定0.25/0.5融合；分类器共15次真实拟合，全部有效、无收敛警告。耗时145.132秒，2线程，峰值RSS1.291GiB。历史253+21+本轮15=289次本模块真实拟合，不含队友其它运行和合成测试。
+- 最佳开发候选：**75% original_style + 25% partial**，BA **0.348673**，对原style0.340336为 **+0.008337**，prompt配对95%区间 **[0.000926, 0.015741]**，5/5折提升，并通过预定半批/单例压力门槛。
+- 相对上一轮最佳0.347281的事后增量仅 **+0.001393**，区间 **[-0.010648, 0.013889]**，2/5折改善；相对同特征不中心化融合的区间也跨0。不能把通过旧对照门槛写成相对最好已有方案已确认提升。
+- 固定文本聚类在2,159验证行中只有10行进入双行簇，2,149行是单例。没有证明成功恢复题目或推理侧去除话题，不在看到结果后扩展阈值搜索。有限CPU计划已结束，登记候选而不替换冻结交付，不提交Kaggle；这是工程停止与证据不足，不是证明收敛。
+
+完整结果、每折/每类recall、压力检查、hash及复现边界见 [PROMPT_CENTERING_COMPARISON](reports/PROMPT_CENTERING_COMPARISON.md)。70项测试通过（模块64、根6）；独立审计不导入runner、不重训，重算9份OOF/9个候选及全部指标，最大差异4.44e-16。旧holdout claim仍为completed且SHA `5a93d4efc1590e6acc63bdd3d40b3f3ebf860aa85e04d6af5bda582638c68db0` 不变。审计自身的配置序列化字节比较错误已更正并留痕，实验结果未改写。
+
+本地 `outputs/prompt_centering_20261021/` 保存contract（规范hash `0cd3a6605134525cb428b78a4ead0d00c0c8007234a43c50ed503e05ff322e15`）、source_snapshot、9份OOF、summary和独立收据（SHA `91b4401fb32c4da160098fc6b6a9fb4a57c82dce42809cd3260d889b42dd8e25`）。新共享claim为 `outputs/continuation_claims/prompt-centering-dev-20261021.json`，completed。原始数据与行级输出不在Git；新clone也不含原baseline OOF，不能绕过hash或claim重跑本机协议。
+
+实际命令从仓库根执行，`NTL_TRAIN`/`NTL_SPLIT`意义同上：
+
+```sh
+.venv/bin/python -m unittest discover -s name-that-llm/tests -v
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python name-that-llm/scripts/compare_prompt_centering.py --train "$NTL_TRAIN" --split "$NTL_SPLIT"
+# 下条已完成，仅供审计，不再运行：
+.venv/bin/python name-that-llm/scripts/compare_prompt_centering.py --train "$NTL_TRAIN" --split "$NTL_SPLIT" --run
+.venv/bin/python name-that-llm/scripts/probe_gpu_environment.py --output name-that-llm/outputs/local_gpu_preflight_20261021.json
+```
+
+**4060判断：值得作为下一阶段小编码器GPU节点，无需把现有CPU工作整体迁移。** 普通4060桌面/笔记本均按8GB评估；ModernBERT-base冻结特征优先，有限微调其次，8B量化先实测，14B强集成不直接搬运。PyTorch/bitsandbytes当前官方支持Windows，现有CPU runner却用了Unix resource/定时器，复用它优先WSL2。官方来源、权重下界与具体检查命令见 [WINDOWS_4060_ASSESSMENT](docs/WINDOWS_4060_ASSESSMENT.md)。
+
+GPU探测脚本为跨平台stdlib入口，12项风险测试通过；默认不分配tensor、不安装/下载，`--cuda-smoke`显式做小矩阵，`--output`拒绝覆盖。实际本机探测只确认Mac arm64/18GiB RAM且本环境Torch未安装；Windows目标机、实际4060可用显存、速度均未核验。没有下载神经模型或GPU训练。
+
+下一步在4060上先做独立环境探测，再登记并冻结ModernBERT-base开发特征方案（模型完整revision、文本/行序hash、pooling/长度/层/dtype缓存契约），使用同120-prompt开发协议检验互补。先取得队友成功强基线精确版本及同协议OOF，才能讨论对其0.601记录的增量。当前Kaggle保存权限仍拒绝，没有核验配额/现行规则或绕过；Windows运行也不等于Kaggle离线Notebook复现。旧已用留出始终封存。

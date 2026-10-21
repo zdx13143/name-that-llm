@@ -112,3 +112,9 @@ python src/run_baseline.py          # 基线 + prompt 分组 CV
 独立分支 `exp/dev-comparison-20261021` 已修复组中心化只作用于首行和当前嵌入重复进入对照池的问题，修复不自动追认历史分数。新有限CPU实验只用原120-prompt开发子集，统一GroupKFold；原模型BA为0.340336，最佳固定融合为0.347281，差值区间跨0且仅3/5折改善，未达到预定采用标准，保留旧冻结交付。
 
 共21次实际拟合尝试（1次概率校验失败、20次有效），未重开最终留出、未使用GPU或提交Kaggle。完整[结果、逐类召回及命令](name-that-llm/reports/TEAM_DEV_COMPARISON.md)、[预定计划](name-that-llm/docs/TEAM_CONTINUATION_PLAN.md)和[队友工作审查](name-that-llm/docs/TEAM_WORK_REVIEW.md)已记录。完成的本机状态不要重跑训练；新clone可用 `restore_team_split.py` 只恢复哈希一致的原划分元数据。
+
+## 稀疏中心化与4060接续（2026-10-21）
+
+独立分支 `exp/prompt-centering-20261021` 完成15次预定开发拟合（约145秒）。部分中心化的25%概率融合达到0.348673，对原对照0.340336通过开发门槛；相对上一轮最佳0.347281只高0.001393，差值95%区间[-0.010648, 0.013889]跨0、仅2/5折提升，尚不足以确认实际增量。本轮文本聚类几乎全部为单例，不能称话题去除机制已验证。保留开发候选，不替换冻结交付或提交Kaggle。
+
+完整[结果、每类召回及命令](name-that-llm/reports/PROMPT_CENTERING_COMPARISON.md)已记录。70项测试和独立OOF复核通过，旧30-prompt留出未重开。建议后续将ModernBERT等小编码器实验放到已有4060，CPU工作继续留本机；普通4060按8GB评估，不直接搬14B完整集成。已准备[Windows/WSL2评估与检测命令](name-that-llm/docs/WINDOWS_4060_ASSESSMENT.md)，目标电脑尚未实测。
