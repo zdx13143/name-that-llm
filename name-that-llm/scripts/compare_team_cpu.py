@@ -217,6 +217,11 @@ def paired_interval(base, candidate, data, config):
     return np.quantile(differences, [.025, .975]).tolist()
 
 
+def positive_fold_count(reference, candidate):
+    """Do not count numerical residue at an equal score as an improvement."""
+    return int(np.sum(np.asarray(candidate) - np.asarray(reference) > 1e-12))
+
+
 def peak_rss():
     value = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     return int(value if sys.platform == "darwin" else value * 1024)
@@ -362,7 +367,7 @@ def run(data, folds, fold_id, config, contract, resume_float32=False):
             for name, result in results.items():
                 result["delta_vs_original"] = result["balanced_accuracy"] - base["balanced_accuracy"]
                 result["paired_prompt_ci95"] = paired_interval(probabilities["original_style"], probabilities[name], data, config)
-                result["positive_folds"] = int(np.sum(np.array(result["fold_balanced_accuracy"]) > np.array(base["fold_balanced_accuracy"])))
+                result["positive_folds"] = positive_fold_count(base["fold_balanced_accuracy"], result["fold_balanced_accuracy"])
                 result["passes_development_gate"] = bool(result["delta_vs_original"] >= config["adoption_min_delta"]
                     and result["paired_prompt_ci95"][0] > 1e-12
                     and result["positive_folds"] >= config["adoption_min_positive_folds"])

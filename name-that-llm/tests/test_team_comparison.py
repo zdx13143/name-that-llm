@@ -15,7 +15,7 @@ import numpy as np
 MODULE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(MODULE / "scripts"))
 from compare_team_cpu import (canonical_probabilities, claim_run, grouped_folds,
-                              load_development, load_oof, paired_interval,
+                              load_development, load_oof, paired_interval, positive_fold_count,
                               resume_float32_failure, save_oof,
                               validate_probabilities, write_json)
 from artifact_guards import object_hash
@@ -23,6 +23,11 @@ from model_cpu import file_hash
 
 
 class TeamComparisonSafetyTests(unittest.TestCase):
+    def test_equal_fold_scores_are_not_improvements_due_to_roundoff(self):
+        base = [.324074074074074, .4, .2, .3, .1]
+        candidate = [.3240740740740741, .41, .19, .3, .11]
+        self.assertEqual(positive_fold_count(base, candidate), 2)
+
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory(prefix="ntl-dev-guard-test-")
         self.addCleanup(self.temporary.cleanup)

@@ -134,3 +134,44 @@ git ls-remote --heads origin refs/heads/main refs/heads/exp/cpu-stylegram-handof
 ```
 
 实际是否上传成功以 push 返回值和远端 SHA 核对为准，不从本地 commit 推断已同步。
+
+## 2026-10-21 上传后审查队友与开发比较（最新）
+
+原上传已成功推送 `exp/cpu-stylegram-handoff-20261021@64ec4e7`。用户随后要求“上传完后分析队友的工作，在此基础上继续推进”，结合此前自主决策授权，本轮从它新建 **`exp/dev-comparison-20261021`**。遵循队友的 `exp/` 分支、prompt GroupKFold、逐类召回与可复现命令要求；main及队友分支不变。
+
+队友成果和局限见 [TEAM_WORK_REVIEW](docs/TEAM_WORK_REVIEW.md)。确认其折内TF-IDF/指纹和分组验证可以复用；修复 `src/centered_stylegram.py` 只从组首行减均值、验证时使用真实组数，以及 `src/run_embed.py` 当前嵌入进入基线后又重复加入增强池的问题。中心化现在每行正确减均值、保留单例并处理空词表；n/18仍是待验证假设，未开展真实中心化训练。嵌入比较只称开发对照，不声称完整嵌套泛化估计。裸缓存身份、外部语料重叠、epoch选择、完整嵌套融合等审查发现仍保留，未假装本轮全部修复。
+
+0.601有社区Notebook参考源码，但当前文件的合并版本/后处理与队友成功v8记录未绑定；旧打包入口只是早期CPU/ModernBERT方案。根README改为有日期的队友记录，不把它写成本轮核验的当前成绩。没有访问Kaggle、重新核对实际GPU配额或执行大模型；历史访问限制未在本轮证明解除，不通过其它入口绕过。
+
+### 实际执行与结果
+
+- 训练前方案为 [TEAM_CONTINUATION_PLAN](docs/TEAM_CONTINUATION_PLAN.md)，初版代码提交 `a88484a`。只用原**120 prompt / 2,159行开发数据**重新固定GroupKFold五折，旧**30 prompt / 540行最终留出**不训练、不评分；旧search/finalize没有执行。新代码没有全量拟合或测试预测入口。
+- 四个预定模型：旧冻结文体模型、队友charword/C16、char13/C4、指纹/C0.25。六个预定融合只使用队友权重0.25/0.5，不新增训练。新同协议基线BA **0.340336**，最佳等权charword融合 **0.347281**，差值 **+0.006944**，描述性prompt配对95%区间 **[-0.006011, 0.018974]**，仅 **3/5折改善**，全部方案未达到采用门槛。
+- 首次原模型首折已拟合返回，但float32概率行和被过严atol=1e-8拒绝，没有保存预测或得到CV分数。同管线合成数据复现合法float32误差2.384e-7；真实首次概率没有保存，不能事后逐值确认。修订为dtype适配检查后转float64归一化，配置/折/权重不变；提交 `ce92b24`，原failed claim/contract/source原样保留，只允许一次恢复且消耗计数不归零。
+- **累计21次真实拟合尝试 = 1次失效首折 + 20次有效拟合**；恢复96.824秒、包含首次8.958秒后合计105.782秒。峰值RSS约0.954GiB，数学库2线程；20个有效fold无收敛警告。此前本模块253次拟合保持历史记录，本次新增21次；队友其它实验次数不在这个计数内。
+- 独立核验不导入runner、不重训，从4个新OOF重算10方案BA、五折BA、18类recall和2,000次prompt配对CI，数值与原summary一致。原120/30组边界、输入顺序、概率及hash均匹配；旧最终claim SHA仍为 `5a93d4efc1590e6acc63bdd3d40b3f3ebf860aa85e04d6af5bda582638c68db0`，状态completed。
+- 复核另发现两个非最佳方案的“改善折数”计入了等分的浮点残差：char13权重0.25为3而非4，权重0.5为2而非3。原summary不改写，修正在独立收据及报告中明示；future runner采用差值>1e-12并有回归测试。没有影响BA、CI、最佳方案或全部不采用结论，没有重训。
+
+完整表格、每类recall、全部模型OOF hash、合成/真实证据界限见 [TEAM_DEV_COMPARISON](reports/TEAM_DEV_COMPARISON.md)。工程停止本组有限比较，保留原冻结Notebook/模型；不把区间跨0称为已经证明平台期。后续最有价值的是绑定队友成功强基线版本及同协议OOF，再评价新增互补，不继续盲目扩展这组CPU超参数。
+
+### 环境、文件与命令
+
+新环境为目标**仓库根 `.venv/`**，Python3.13.2；沿用旧numpy/scipy/sklearn版本，新增pandas3.0.6。旧原始工作区环境、数据、权重、输出、claim均未改动。依赖固定在 `requirements-team-cpu.txt`，没有修改根requirements。
+
+以下从目标仓库根运行；`NTL_TRAIN`和`NTL_SPLIT`分别代表原NTL项目的 `data/raw/train.csv` 和 `outputs/cpu_round3/split_manifest.json`（用变量替代本机个人绝对路径）：
+
+```sh
+.venv/bin/python -m pip install -r name-that-llm/requirements-team-cpu.txt
+.venv/bin/python name-that-llm/scripts/compare_team_cpu.py --train "$NTL_TRAIN" --split "$NTL_SPLIT"
+# 以下两条已经执行完成，仅保留审计命令，不要重复：
+.venv/bin/python name-that-llm/scripts/compare_team_cpu.py --train "$NTL_TRAIN" --split "$NTL_SPLIT" --run
+.venv/bin/python name-that-llm/scripts/compare_team_cpu.py --train "$NTL_TRAIN" --split "$NTL_SPLIT" --run --resume-float32-check
+.venv/bin/python -m unittest discover -s name-that-llm/tests -v
+.venv/bin/python -m unittest discover -s tests -v
+```
+
+`restore_team_split.py --train "$NTL_TRAIN"` 已实际执行一次，只读取id/prompt元数据生成既有manifest；429,318字节，和原文件逐字节一致，SHA `c8c24921f617ad483b9e14cb23d0d64a0fbbde44c0214868445e8d0e30d6e1db`。新clone可用它恢复 `outputs/team_inputs/split_manifest.json` 后进行开发输入核验。它拒绝不同输入/重建hash和覆盖冲突文件，**不重开已用最终留出**。
+
+最终工具测试共 **48项通过**（本模块42项、根修复6项），`git diff --check`通过。覆盖两处根bug、开发隔离/OOF契约、float32校验、一次恢复与预算、改善折数边界以及元数据恢复；合成测试拟合不混入真实比赛数据拟合计数。
+
+本机证据：`outputs/team_dev_20261021/` 保留首次失败；`recovery_01/` 有4个OOF、完整summary与独立复核收据；父目录和恢复目录分别保留两次运行的源码/配置快照。共享claim `outputs/continuation_claims/team-dev-groupkfold5-20261021.json` 为completed。输出、环境及所有行级数据受Git忽略，仅上传代码、测试、计划与聚合报告。Git推送仍不等于Kaggle Notebook同步或提交。

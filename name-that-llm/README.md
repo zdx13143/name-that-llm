@@ -1,5 +1,7 @@
 # Name That LLM
 
+> **2026-10-21 接续结果：** 已在 `exp/dev-comparison-20261021` 分支审查队友方案、修复两处bug，并完成统一开发GroupKFold比较。原模型0.340336，最佳固定融合0.347281，增益区间跨0，未达到采用标准；原冻结交付保持不变。见[本轮报告与逐类召回](reports/TEAM_DEV_COMPARISON.md)及[队友审查](docs/TEAM_WORK_REVIEW.md)。这是新开发探索，不是新的最终留出或榜单成绩。新环境为仓库根 `.venv/`，使用 `requirements-team-cpu.txt`。
+
 > 2026-10-21 上传说明：这是从旧双赛仓库 `9d293904365f54acdfaa22775c0647d080d1b062` 导入的独立 CPU 实验模块，保留 `name-that-llm/` 子目录，不替换仓库根部已有的 `src/`、`scripts/` 或模型方案。上传只改变文档与聚合交接，没有新增模型拟合。
 > 请先读 [协作与运行入口](WORKSPACE.md)、[逐类召回率](reports/PER_CLASS_RECALL.md)及 [迁移说明](HANDOFF.md#2026-10-21-独立仓库上传)。本模块的 120-prompt 开发验证不等同于队友的全量 150-prompt GroupKFold，分数不能直接比较优劣。旧最终留出已使用一次；新 clone 没有本机 claim 并不代表它未使用。
 
@@ -19,7 +21,7 @@
 | 比赛标识 | `name-that-llm` |
 | 本项目目录 | `name-that-llm/` |
 | 协作仓库 | [zdx13143/name-that-llm](https://github.com/zdx13143/name-that-llm)（私有，需仓库访问权限） |
-| 独立开发分支 | `exp/cpu-stylegram-handoff-20261021`（从目标仓库 `main@692ac87` 建立） |
+| 独立开发分支 | 当前 `exp/dev-comparison-20261021`；原上传 `exp/cpu-stylegram-handoff-20261021`（源于 `main@692ac87`） |
 | 数据说明 | [data/README.md](data/README.md) |
 | 下一阶段方案 | [docs/PLAN.md](docs/PLAN.md)、[整轮 CPU 优化及停止标准](docs/OPTIMIZATION_PLAN.md) |
 | 交接与待核对项 | [HANDOFF.md](HANDOFF.md) |

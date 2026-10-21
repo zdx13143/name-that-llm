@@ -4,10 +4,9 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 **目标：银牌以上**（Featured 竞赛银牌 ≈ 队伍排名前 5%）。
 
-> **当前成绩：公开榜 0.554，第 ~188 / 1,495 队（前 13%）。**
-> 铜/银线同为 0.556，差 0.002。完整实验记录见 [EXPERIMENTS.md](EXPERIMENTS.md)。
+> **队友2026-10-20实验记录：公开榜0.601，第86 / 2,084队。** 本分支尚未独立核验对应提交或当前排名；此前0.554为历史版本。完整记录见 [EXPERIMENTS.md](EXPERIMENTS.md)，版本证据缺口见[审查说明](name-that-llm/docs/TEAM_WORK_REVIEW.md)。
 >
-> ⚠️ **成绩构成说明**：0.554 来自**复现社区公开方案**，不是原创模型。
+> **成绩构成说明**：记录中的0.554和0.601来自**复现社区公开方案**。
 > 上游作者：Lucas Boesen（`lora-x-adaptive-centering`）、
 > Vladislav Lavrentev（`lightningv08`）、Zbigniew Kirchner、kirilltym、
 > pjmathematician（UltraBERT 权重）、seyitkaangunes（prompt 库）。
@@ -107,3 +106,9 @@ python src/run_baseline.py          # 基线 + prompt 分组 CV
 独立分支导入的历史 CPU 实验位于 [name-that-llm/](name-that-llm/README.md)，包含源码、28 项工具测试、空输出离线 Notebook、[逐类召回率](name-that-llm/reports/PER_CLASS_RECALL.md)和[执行命令](name-that-llm/docs/CPU_RESUME.md)。既有根目录方案与实验记录保留。
 
 该模块使用固定 120 个 prompt 作五折分组开发验证，另 30 个 prompt 作一次最终留出；不等同于本仓库全量 150-prompt GroupKFold，不以两者数值大小判断改进。本次仅上传既有成果，CV 变化为 0，未重新训练或提交 Kaggle。新 clone 不含旧输出和 claim，不能据此重新开启已用留出。
+
+## 队友审查后的接续（2026-10-21）
+
+独立分支 `exp/dev-comparison-20261021` 已修复组中心化只作用于首行和当前嵌入重复进入对照池的问题，修复不自动追认历史分数。新有限CPU实验只用原120-prompt开发子集，统一GroupKFold；原模型BA为0.340336，最佳固定融合为0.347281，差值区间跨0且仅3/5折改善，未达到预定采用标准，保留旧冻结交付。
+
+共21次实际拟合尝试（1次概率校验失败、20次有效），未重开最终留出、未使用GPU或提交Kaggle。完整[结果、逐类召回及命令](name-that-llm/reports/TEAM_DEV_COMPARISON.md)、[预定计划](name-that-llm/docs/TEAM_CONTINUATION_PLAN.md)和[队友工作审查](name-that-llm/docs/TEAM_WORK_REVIEW.md)已记录。完成的本机状态不要重跑训练；新clone可用 `restore_team_split.py` 只恢复哈希一致的原划分元数据。

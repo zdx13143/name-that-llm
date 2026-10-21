@@ -1,5 +1,9 @@
 # 独立 CPU 实验入口
 
+当前接续分支：`exp/dev-comparison-20261021`。用户在原上传完成后授权“分析队友的工作，在此基础上继续推进”。先读[队友工作审查](docs/TEAM_WORK_REVIEW.md)和[新开发比较方案](docs/TEAM_CONTINUATION_PLAN.md)。新环境位于**仓库根 `.venv/`**，依赖为本模块 `requirements-team-cpu.txt`；它与旧原始工作区的已验证环境隔离。新实验只处理原120-prompt开发子集，不是重新启动下面的历史搜索。
+
+以下为原上传快照说明，历史日期和来源保持不变。
+
 2026-10-21。仓库：[https://github.com/zdx13143/name-that-llm](https://github.com/zdx13143/name-that-llm)；上传分支：`exp/cpu-stylegram-handoff-20261021`。
 
 本模块是原 `kaggle-titanic` 仓库 `9d293904365f54acdfaa22775c0647d080d1b062` 的 Name That LLM 文件快照。目标主分支基准为 `692ac87d6b7b3e16d0b74bdc85c476d47daac059`。原文件清单与 hash 见 [SOURCE_SNAPSHOT.json](reports/SOURCE_SNAPSHOT.json)，本次不导入旧双赛 Git 历史或 CASMI 代码。
