@@ -239,3 +239,25 @@ GPU探测脚本为跨平台stdlib入口，12项风险测试通过；默认不分
 ```
 
 新环境的检查依赖入口为 `requirements-notebook-check.txt`。Git仅上传源码、未执行Notebook、测试及汇总文档；环境、数据、权重、概率、提交文件与执行版Notebook保留本地。Git push与Kaggle上传/运行/正式提交分别记录，不能混用。
+
+
+## 2026-10-23 Windows 保存与接续
+
+用户要求先保存 GitHub，后续在 Windows 电脑继续。已从 `exp/single-submission-20261021@4760f67fd06f59c602389595caafae090606331d` 建立独立 `exp/windows-handoff-20261023`，遵循队友 exp/ 命名；不更改 main 或队友分支。新增 [Windows 交接](docs/WINDOWS_HANDOFF.md)和根目录 [WINDOWS_NEXT_CHAT_PROMPT.md](../WINDOWS_NEXT_CHAT_PROMPT.md)，更新入口；本次仅文档及候选 Notebook 的 LF 检出规则，CV 变化为 0，没有训练或 Kaggle 网络操作。
+
+状态纠正：此前“尚未上传/运行/提交”仅指代理完成情况。用户随后手动创建带官方比赛输入的新 Notebook 草稿，并收到导入、保存运行及一次提交指导；尚未收到实际成功版本、submission ref 或评分。Windows 接续必须先核对已有状态，不能默认没有手动提交，也不能重复消耗一次授权。
+
+2026-10-22 已只读核验 Mac 的 Kaggle 本地规则为 allow，但浏览器工具实际仍拒绝发起该域名网络请求；访问问题未修复，迁移不构成绕过授权。故障原始材料及 CLI 手动包留本机，不上传配置、凭证或完整对话。Windows 本地环境探测可独立继续；实际 Kaggle 操作须等正常限制解除。
+
+此次检查：候选 Notebook 原字节 SHA256 与冻结值一致；新交接链接、命令中引用文件及 Git diff 做静态核验；为冻结候选添加精确路径的 .gitattributes LF 规则，并核对 core.autocrlf=true 检出字节哈希。不重跑已完成的 291 次真实拟合或已用最终留出。数据、OOF、claims、权重、环境、预测与 .local-backups 保留本地，未随 Git 迁移。Windows/CUDA 尚未运行。
+
+保存命令（远端是否成功以工具返回和最后 SHA 核对为准）：
+
+```sh
+git switch -c exp/windows-handoff-20261023
+git diff --check
+git add .gitattributes WINDOWS_NEXT_CHAT_PROMPT.md README.md name-that-llm/WORKSPACE.md name-that-llm/HANDOFF.md name-that-llm/docs/WINDOWS_HANDOFF.md
+git commit -m "docs: save Windows continuation handoff; CV unchanged"
+git push -u origin HEAD:refs/heads/exp/windows-handoff-20261023
+git ls-remote --heads origin refs/heads/main refs/heads/exp/windows-handoff-20261023
+```
