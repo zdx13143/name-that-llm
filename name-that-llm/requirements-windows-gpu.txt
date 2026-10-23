@@ -1,0 +1,7 @@
+# Install torch separately from the official CUDA wheel index, as recorded in
+# docs/WINDOWS_MODERNBERT_PLAN.md. This environment is for frozen GPU features.
+transformers==4.56.2
+huggingface-hub==0.34.4
+tokenizers==0.22.0
+safetensors==0.6.2
+numpy==2.2.6

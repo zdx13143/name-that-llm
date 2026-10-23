@@ -1,2 +1,5 @@
 # Preserve the frozen candidate hash across Windows and macOS checkouts.
 name-that-llm/notebooks/candidate_blend_offline.ipynb text eol=lf
+
+# This reference is byte-hashed by the existing development data contract.
+name-that-llm/config/labels.json text eol=lf

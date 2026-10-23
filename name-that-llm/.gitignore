@@ -3,6 +3,7 @@
 .DS_Store
 Thumbs.db
 .venv/
+.venv-gpu/
 venv/
 __pycache__/
 *.py[cod]
