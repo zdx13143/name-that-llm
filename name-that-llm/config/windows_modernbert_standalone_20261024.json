@@ -1,0 +1,27 @@
+{
+  "experiment_id": "windows-modernbert-frozen-dev-20261023",
+  "protocol_revision": "standalone-development-20261024",
+  "base_config": "windows_modernbert_20261023.json",
+  "scope": "Original 120-prompt development partition only; no historical OOF dependency, paired improvement claim, promotion, final fit or submission.",
+  "evaluation": {
+    "folds": 5,
+    "splitter": "GroupKFold(shuffle=False), original development order",
+    "classifier": {"C": 0.1, "solver": "lbfgs", "class_weight": "balanced", "max_iter": 5000, "random_state": 0},
+    "scaling": "StandardScaler fitted on each training fold only",
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 20261023
+  },
+  "runtime": {
+    "numpy": "2.2.6",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.56.2",
+    "huggingface-hub": "0.34.4",
+    "tokenizers": "0.22.0",
+    "safetensors": "0.6.2",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.2",
+    "threadpoolctl": "3.6.0",
+    "psutil": "7.0.0"
+  }
+}

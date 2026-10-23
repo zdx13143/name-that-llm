@@ -1,6 +1,6 @@
 # Name That LLM 交接
 
-更新：2026-10-23（Asia/Singapore）。本模块保存 Name That LLM 独立实验；下文保留历史运行记录，最新 Windows 接续与材料/提交边界见文末。
+更新：2026-10-24（Asia/Singapore）。本模块保存 Name That LLM 独立实验；下文保留历史运行记录，最新 Windows 接续与材料/提交边界见文末。
 
 ## 已完成与证据范围
 
@@ -274,8 +274,18 @@ git ls-remote --heads origin refs/heads/main refs/heads/exp/windows-handoff-2026
 
 修复了迁移时可确定的字节问题：autocrlf将labels.json检出为CRLF，使原hash契约拒绝。现增加精确LF属性，并恢复原Git blob字节；标签内容不变、hash检查不放宽。冻结候选Notebook SHA256仍为 `82931fb6a28441e01b884c2ce62c16ced6f35c39bc9ff092c2f53277308b3df8`，75/25权重和4096行门槛都未改。
 
-**材料缺口仍阻止真实开发。** 用户说明没有另行传输、认为材料都在GitHub；只读核查当前clone、可见6个分支、数据/报告目录、Release和Actions页面，没有找到原始CSV、split、历史OOF、claims或模型。未取得完整API递归tree，范围限制已在报告记录。GitHub中的代码/报告不是这些文件本体。原机器需另行授权传输train与original_style/partial OOF、contracts及claims，按计划中的既有hash核验；仅split元数据可用现有restore_team_split.py从正确train恢复。缺缓存不是重跑旧实验的理由。
+**2026-10-23材料盘点。** 用户说明没有另行传输、认为材料都在GitHub；只读核查当前clone、可见6个分支、数据/报告目录、Release和Actions页面，没有找到原始CSV、split、历史OOF、claims或模型。未取得完整API递归tree，范围限制已在报告记录。GitHub中的代码/报告不是这些文件本体。后续用户要求不依赖Mac，执行方案已按文末2026-10-24修订；不再要求从原机器转移历史OOF来启动单模型开发。缺缓存仍不是重跑旧实验的理由。
 
 **Kaggle一次提交尚待正常访问和历史核查。** 用户本轮说手动状态“不确定”，要求后续代理自动提交，并明确要求本轮结束后提交一次看分数；本轮目标包含至多一次正式提交。该授权不证明旧操作未提交，也不解除原origin-policy拒绝。已请求确认原限制是否经正式设置解除及现有Notebook链接；未确认前只做独立本地工作。正常恢复后先核对Notebook版本、运行和提交历史、账号/队伍/规则/额度；未知状态不重复点提交，不覆盖队友Notebook。没有访问Kaggle、运行Notebook、正式提交或取得新成绩。
 
 当前新增真实fit=0，旧holdout evaluation=0；历史291次fit及所有已登记开发/留出成绩保持原值。新GPU配置通过工程检查后仍需材料齐全才能实施真实开发，不能把合成前向包装为模型收益。只暂存明确代码、配置和聚合文档；数据、环境、模型、OOF、claims、安装日志与原始receipt留在忽略目录。
+
+## 2026-10-24 只依托仓库的原生Windows开发入口
+
+用户最新要求“直接根据GitHub仓库的东西推进，不用管Mac本地文件”。继续在本人 `exp/windows-4060-20261023` 分支实现 [windows_modernbert_dev.py](scripts/windows_modernbert_dev.py)及[修订协议](docs/WINDOWS_STANDALONE_DEV.md)：只需官方train.csv，不再要求原机器split、OOF或claims。现有恢复算法在内存重建原120/30分区并严格核对既有SHA；沿用固定ModernBERT、五折GroupKFold、折内StandardScaler和C=0.1 LR，只报告独立单模型开发指标，不进行旧OOF配对融合或候选替换。
+
+修订与原计划共用 `windows-modernbert-frozen-dev-20261023` experiment_id及固定claim，仍然总共最多5次新fit，失败也消耗预算；不是另开五次。原生supervisor实施1,800秒deadline和8GiB进程树RSS抽样限制，forward后检查6GiB CUDA allocated；2线程。缓存绑定完整输入/行序/特征/模型/源码/依赖身份，保留失败日志与次数；旧291fits和30-prompt已用留出不重跑。
+
+详细结果见 [WINDOWS_STANDALONE_DEV](reports/WINDOWS_STANDALONE_DEV.md)。隔离环境补齐固定Windows科学计算依赖，pip check通过。最终18项相关合成测试通过，3.299秒；独立只读审查后补齐终止异常留痕等边界。默认readiness退出2，只报告官方 `data/raw/train.csv` 缺失，模型6文件全部核验通过，未创建开发claim。新真实fit=0、新GPU forward=0、旧留出评分=0；此前成功合成probe未重跑。原冻结Notebook/labels字节SHA均未改变。
+
+本地完整证据在忽略的 `outputs/windows_4060/standalone_*`，reconciliation SHA `c20b64a50273bb9c3dc36651e3121395ee4b5b67fbb8d739251e05b69bb50a8e`。这里只提交代码、配置、测试及聚合报告，不上传数据、权重、环境或行级输出。正常恢复Kaggle访问后可从官方取得训练文件，无需回Mac取材料；一次正式提交前仍要核查手动操作历史。当前无Kaggle运行、正式提交或新榜单分数。

@@ -1,6 +1,6 @@
 # 独立 CPU 实验入口
 
-2026-10-23 Windows 当前入口：独立分支 `exp/windows-4060-20261023`，工作目录 `D:\kaggle\name_that_llm`。交接基点25c9a02已核验；硬件、CUDA小矩阵及固定ModernBERT的4条合成文本前向已实测通过，完整结果见 [Windows检查报告](reports/WINDOWS_4060_PREFLIGHT.md)，新模型有限方案见 [ModernBERT预登记](docs/WINDOWS_MODERNBERT_PLAN.md)。原始数据与历史OOF尚缺，不重跑旧实验。用户已要求本轮至多一次正式提交，但原Kaggle权限恢复和手动提交历史尚待核实；不能把下面历史“尚未提交”当成用户未曾操作的证明。最新状态以HANDOFF末节为准。
+2026-10-24 Windows 当前入口：独立分支 `exp/windows-4060-20261023`，工作目录 `D:\kaggle\name_that_llm`。硬件、CUDA小矩阵及固定ModernBERT的4条合成文本前向已实测通过，见 [Windows检查报告](reports/WINDOWS_4060_PREFLIGHT.md)。按用户要求，新增 [原生Windows独立开发协议](docs/WINDOWS_STANDALONE_DEV.md)与 `scripts/windows_modernbert_dev.py`：只需官方train.csv即可恢复原120/30分区并执行最多五折fit，不再依赖Mac文件或历史OOF；现仍缺官方train.csv，因此暂无真实开发分数。原291次fit与已用30-prompt留出不重跑。用户已要求本轮至多一次正式提交，但原Kaggle权限恢复和手动提交历史尚待核实；不能把下面历史“尚未提交”当成用户未曾操作的证明。最新状态以HANDOFF末节为准。
 
 当前接续分支：`exp/windows-handoff-20261023`。2026-10-23 已补充 [Windows 交接](docs/WINDOWS_HANDOFF.md)和[下一对话 prompt](../WINDOWS_NEXT_CHAT_PROMPT.md)。用户已手动创建比赛 Notebook 草稿，但是否运行/提交尚未确认，接续先核对历史，不能重复提交。下文“一次提交准备”的未上传表述是原自动化执行记录，不否定用户后来的手动操作。原候选来源分支为 `exp/single-submission-20261021`。用户已明确授权一次Kaggle提交；固定75% original_style + 25% partial候选的[提交计划](docs/SINGLE_SUBMISSION_PLAN.md)和[独立Notebook](notebooks/candidate_blend_offline.ipynb)已准备。本地全量最终训练与公开占位test接口检查通过，尚未上传、运行或提交Kaggle：本轮读取页面仍被保存的域名权限拒绝。下一步须等访问限制解除，再核对当前规则、账号/队伍、额度，使用独立私有Notebook提交至多一次。不得通过其它渠道绕过拒绝，或重复运行已经完成的本地训练。详细命令与证据见[HANDOFF末节](HANDOFF.md#2026-10-21-一次提交准备当前停止点)。
 
