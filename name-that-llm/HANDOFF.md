@@ -289,3 +289,15 @@ git ls-remote --heads origin refs/heads/main refs/heads/exp/windows-handoff-2026
 详细结果见 [WINDOWS_STANDALONE_DEV](reports/WINDOWS_STANDALONE_DEV.md)。隔离环境补齐固定Windows科学计算依赖，pip check通过。最终18项相关合成测试通过，3.299秒；独立只读审查后补齐终止异常留痕等边界。默认readiness退出2，只报告官方 `data/raw/train.csv` 缺失，模型6文件全部核验通过，未创建开发claim。新真实fit=0、新GPU forward=0、旧留出评分=0；此前成功合成probe未重跑。原冻结Notebook/labels字节SHA均未改变。
 
 本地完整证据在忽略的 `outputs/windows_4060/standalone_*`，reconciliation SHA `c20b64a50273bb9c3dc36651e3121395ee4b5b67fbb8d739251e05b69bb50a8e`。这里只提交代码、配置、测试及聚合报告，不上传数据、权重、环境或行级输出。正常恢复Kaggle访问后可从官方取得训练文件，无需回Mac取材料；一次正式提交前仍要核查手动操作历史。当前无Kaggle运行、正式提交或新榜单分数。
+
+## 2026-10-24 官方Kaggle访问恢复核查
+
+用户新指示：“需要官方资料请直接从kaggle下载，现在继续推进一轮”。当前Chrome已成功正常读取官方[Overview](https://www.kaggle.com/competitions/name-that-llm)、[Rules](https://www.kaggle.com/competitions/name-that-llm/rules)与[Data](https://www.kaggle.com/competitions/name-that-llm/data)。本次没有发生旧域名策略拒绝，也没有通过API或其它渠道绕过拒绝；不要把此前历史拒绝继续当作本次实时状态。
+
+当前页面显示Login/Sign Up，数据区域明确要求登录并确认参赛规则，尚不能取得账号/队伍、Notebook或提交历史。已打开原比赛返回地址的登录页并请求用户登录原参赛账号；未操作认证对话框、未索取密码/验证码/API key。只检查本机官方CLI及标准认证位置的存在性：CLI可用，标准凭据与认证环境变量均不存在，未读取或输出密钥。
+
+本次官网核实：团队最多5人、每天最多5次提交、最终可选2份；外部公开资源允许但须符合可访问性要求，团队外私下共享受限制。数据页列出train.csv/test.csv/sample_submission.parquet三文件，合计约2.14MB；训练为2,699行/150prompt，公开test说明为3行，隐藏重跑约4,000行。Overview的单行示例与Data的3行表述、时间线与页头日期差异仍存在，沿用既有记录而不擅自解释。以上是网页说明，尚未下载本次文件或核验其字节。
+
+独立只读复核冻结候选Notebook及生成/验证脚本、相关测试：SHA仍为 `82931fb6a28441e01b884c2ce62c16ced6f35c39bc9ff092c2f53277308b3df8`，官方输入路径、训练hash、75/25融合、4096通过/4097拒绝、id/model Parquet契约均保持一致，未发现确定提交阻塞，无网络或外部权重依赖。Kaggle镜像依赖版本、实际运行、成功版本、claim和隐藏测试行为仍须在线验证；没有重新运行已完成本地拟合。
+
+截至此检查点，真实开发尚未启动，官方文件尚未下载，Kaggle运行/正式提交=0，无新分数。当前需要用户完成登录，随后继续官方文件下载与哈希核验、固定五折开发和至多一次正式提交的历史核查；不需要再次批准已授权的常规工作。
