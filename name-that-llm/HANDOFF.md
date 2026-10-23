@@ -1,6 +1,6 @@
 # Name That LLM 交接
 
-更新：2026-10-21（Asia/Singapore）。本模块保存 Name That LLM 独立 CPU 实验；下文保留 2026-10-18 的历史运行记录，最新上传说明见文末。
+更新：2026-10-23（Asia/Singapore）。本模块保存 Name That LLM 独立实验；下文保留历史运行记录，最新 Windows 接续与材料/提交边界见文末。
 
 ## 已完成与证据范围
 
@@ -261,3 +261,21 @@ git commit -m "docs: save Windows continuation handoff; CV unchanged"
 git push -u origin HEAD:refs/heads/exp/windows-handoff-20261023
 git ls-remote --heads origin refs/heads/main refs/heads/exp/windows-handoff-20261023
 ```
+
+## 2026-10-23 Windows RTX 4060 接续
+
+本机目录为 `D:\kaggle\name_that_llm`。从用户指定交接分支克隆，HEAD 精确匹配 `25c9a02ccd18d36391e31e15ffda268ab735dd8e`，初始工作区干净；已新建独立 **`exp/windows-4060-20261023`**。主分支、交接分支和队友分支均未改写，没有强推或自动合并。
+
+详细检查、失败记录、材料与 GitHub 核查范围见 [WINDOWS_4060_PREFLIGHT](reports/WINDOWS_4060_PREFLIGHT.md)。计划在真实模型运行前由 `82fd612` 记录，合成 probe 和完整模型文件身份由 `861b809` 固定；[WINDOWS_MODERNBERT_PLAN](docs/WINDOWS_MODERNBERT_PLAN.md)规定唯一120-prompt开发协议、最多5次新分类器fit、对照与停止条件。原始已完成CPU搜索、最终训练及旧30-prompt留出都未重跑。
+
+本机已确认 RTX 4060 Laptop GPU / 8,188 MiB / 驱动596.36、i9-14900HX、约31.73GiB RAM、Python3.11.6，初次D盘空闲约70.09GiB。已有Ubuntu WSL2处于Stopped；未启动或改动。独立环境在 `name-that-llm/.venv-gpu/`，不复制Mac环境、不覆盖系统Python。旧resource/SIGALRM/setitimer CPU runner仍不可直接视作原生Windows可用。
+
+已在新环境确认torch2.8.0+cu128正常导入，CUDA12.8可用、设备计算能力8.9；既有probe的32×32 FP32小矩阵实测通过，最大绝对误差0。固定ModernBERT合成前向也已通过：4条合成文本、两次forward，特征4×3072、反序恢复差异0、峰值allocated约350.22MiB，总耗时50.931秒。完整6文件身份均已核验，claim为completed，结果SHA256为 `920300705ea14c0ca6b11adc6e9b324ed235566bce44990ecd35fc79c839db40`。12项原探测测试与7项新增身份/claim测试通过。这些工程检查不证明真实开发分数、完整吞吐或Kaggle成绩；不要重跑已完成的合成probe。
+
+修复了迁移时可确定的字节问题：autocrlf将labels.json检出为CRLF，使原hash契约拒绝。现增加精确LF属性，并恢复原Git blob字节；标签内容不变、hash检查不放宽。冻结候选Notebook SHA256仍为 `82931fb6a28441e01b884c2ce62c16ced6f35c39bc9ff092c2f53277308b3df8`，75/25权重和4096行门槛都未改。
+
+**材料缺口仍阻止真实开发。** 用户说明没有另行传输、认为材料都在GitHub；只读核查当前clone、可见6个分支、数据/报告目录、Release和Actions页面，没有找到原始CSV、split、历史OOF、claims或模型。未取得完整API递归tree，范围限制已在报告记录。GitHub中的代码/报告不是这些文件本体。原机器需另行授权传输train与original_style/partial OOF、contracts及claims，按计划中的既有hash核验；仅split元数据可用现有restore_team_split.py从正确train恢复。缺缓存不是重跑旧实验的理由。
+
+**Kaggle一次提交尚待正常访问和历史核查。** 用户本轮说手动状态“不确定”，要求后续代理自动提交，并明确要求本轮结束后提交一次看分数；本轮目标包含至多一次正式提交。该授权不证明旧操作未提交，也不解除原origin-policy拒绝。已请求确认原限制是否经正式设置解除及现有Notebook链接；未确认前只做独立本地工作。正常恢复后先核对Notebook版本、运行和提交历史、账号/队伍/规则/额度；未知状态不重复点提交，不覆盖队友Notebook。没有访问Kaggle、运行Notebook、正式提交或取得新成绩。
+
+当前新增真实fit=0，旧holdout evaluation=0；历史291次fit及所有已登记开发/留出成绩保持原值。新GPU配置通过工程检查后仍需材料齐全才能实施真实开发，不能把合成前向包装为模型收益。只暂存明确代码、配置和聚合文档；数据、环境、模型、OOF、claims、安装日志与原始receipt留在忽略目录。
