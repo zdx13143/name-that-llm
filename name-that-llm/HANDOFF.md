@@ -315,3 +315,15 @@ git ls-remote --heads origin refs/heads/main refs/heads/exp/windows-handoff-2026
 Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 20261021 Version1](https://www.kaggle.com/code/zephyrpong/ntl-blend-20261021?scriptVersionId=360768689)正式状态Succeeded、public **0.351**；其保存运行claim=completed、fit=2/2，Output全部provenance字段与本地冻结候选元数据一致，但未核对远端完整Notebook字节SHA。[队友ntl-ensemble-600 Version1](https://www.kaggle.com/code/zdx13143/ntl-ensemble-600?scriptVersionId=360258830)已有Succeeded、public **0.601**。这些是既有结果；本轮新增Kaggle运行/提交=0，未重复上传0.351版本，未按公榜调参。
 
 本地证据在忽略的 `outputs/windows_4060/` 与两次实际输出目录。`round_reconciliation_20261024.json` SHA为 `c6c47947074b6c0c58781ae595a022952b59cf673e88e0310df5c88995c7de18`；在线核对收据SHA为 `ff4294e7ce1cef7e0ce577417e08e5d07d2170d12f6a580e2452596b3c08ac68`。只推本人分支的明确代码/配置/测试/聚合文档，原始数据、日志、claims、环境和模型不入Git。后续新一轮先登记新的预算与停止条件，保留本轮失败与265次尝试，不能把未完成说成通过。
+
+## 2026-10-24 独立第二轮已完成，未达到提交门槛（当前）
+
+用户明确授权登记独立下一轮、保留失败、不重开旧留出，五折完成后有合格候选才提交一次。预登记、独立入口和测试已在真实运行前提交并推送为 `42a444c`。固定新ID `windows-modernbert-frozen-dev-20261024-r2`，原120 prompt / 2,159行、同一冻结ModernBERT配置与LR，不复用旧claim或旧计算预算；最多540个batch、5次CV fit，条件最终head最多1fit但仅在门槛通过后启用。
+
+本轮实际 **540/540 forward、5/5 fit，supervisor completed/exit0，总耗时67.288秒**。pooled BA **0.2899042951**；五折为 **0.2962962963、0.2824074074、0.3125000000、0.3009259259、0.2575483092**。整prompt描述性95% bootstrap区间 **[0.2704743425,0.3088898615]**。预登记要求pooled≥0.36且每折≥0.30；pooled及3折未通过。因此最终head fit、新Kaggle上传/运行/正式提交均为0，无新榜单分数，不修改门槛或追加参数搜索。
+
+33项相关合成测试通过，19.348秒。真实特征/OOF已保存，独立重算BA一致；主线程复核原开发行与缓存/OOF逐项身份、源码快照、哈希、资源与claim完成状态。抽样RSS峰值约1.806GiB，CUDA allocated约350.219MiB，监督进程已退出。再次只读readiness正确退出2拒绝已有claim/output，未增加计算。旧30prompt评分和全量最终fit均为0。
+
+两个旧claim哈希与第二轮启动前完全一致，第一轮265/264、0fit失败及原路径覆盖的法证/重建档案均保留。冻结75/25 Notebook与labels哈希也未变。本轮开发数据多次用于探索，且无历史逐行OOF，不把0.289904与历史0.348673的聚合比较写成配对显著性；既有0.351/0.601仍分别属于历史正式结果。
+
+详情见 [第二轮报告](reports/WINDOWS_ROUND2_20261024.md)，协议见 [预登记计划](docs/WINDOWS_ROUND2_PLAN_20261024.md)。本地产物 `outputs/windows_modernbert_dev_20261024_r2/`；最终收据 `outputs/windows_4060/round2_final_reconciliation_20261024.json` SHA为 `3ccd02e9ee6659bb668a5a22b080023b939901c6052baada8ae75b228c7f49a1`。本轮已关闭，不重跑`--round2 --run`，不删除claim；只将代码/配置/测试与聚合文档推送本人分支，原始数据、OOF、模型与环境保持本地。

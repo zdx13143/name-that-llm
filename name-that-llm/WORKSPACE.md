@@ -1,8 +1,8 @@
 # 独立 CPU 实验入口
 
-2026-10-24 最新状态：原账号已登录，官方ZIP及三个成员已取得并通过CRC/SHA核验。Windows真实开发**失败并关闭**：265次forward尝试、264次持久完成记录、0次fit，无特征缓存/OOF/新分数。启动器、原子日志替换、恢复claim默认参数路径三个问题已修复，30项相关测试通过；修复后没有重跑真实实验。两条claim现状和重建的首次零计算失败档案均保留，禁止删除、回滚或重新执行本轮入口。详情以 [本轮报告](reports/WINDOWS_ROUND_20261024.md)和HANDOFF末节为准。
+2026-10-24 最新状态：用户授权的独立第二轮**五折评估已完成，提交门槛未通过**。原120 prompt / 2,159行，540/540个提取batch、5/5次fit，pooled BA **0.289904**，五折BA为0.296296/0.282407/0.312500/0.300926/0.257548。预登记要求pooled≥0.36且每折≥0.30，故未做最终fit、上传或Kaggle提交。旧30-prompt留出评分=0。33项相关测试通过，真实supervisor退出0；产物完整性复核通过，入口已关闭。详见 [第二轮报告](reports/WINDOWS_ROUND2_20261024.md)及HANDOFF末节。
 
-当前独立分支 `exp/windows-4060-20261023`，工作目录 `D:\kaggle\name_that_llm`。已有Kaggle正式记录已核实：本账号 `NTL Blend 20261021` Version1为Succeeded、**0.351**；队友 `ntl-ensemble-600` Version1为Succeeded、**0.601**。前者输出provenance与冻结75/25候选一致。本轮没有新增上传/运行/提交；旧291次fit和已用30-prompt留出未重跑。现在不缺官方数据，也不需要Mac文件；缺的是完成的新开发结果。新一轮必须先记录新预算，不复用本轮失败入口。
+当前独立分支 `exp/windows-4060-20261023`，工作目录 `D:\kaggle\name_that_llm`。第二轮预登记及代码提交为 `42a444c`，结果未触发条件部署预算。原账号已登录、官方数据已核验，无Mac材料依赖。上一阶段已核实的正式Kaggle记录为本账号0.351、队友0.601；本轮没有新公榜分数。第一轮265次forward尝试、264次持久完成、0次fit的失败和法证记录保留，两个旧claim哈希未变，详见 [第一轮失败报告](reports/WINDOWS_ROUND_20261024.md)。旧291次fit和已用30-prompt留出未重跑；不能重开任一旧入口、删除claim或把第二轮成功改写成第一轮成功。
 
 以下保留2026-10-23交接记录，历史分支：`exp/windows-handoff-20261023`。2026-10-23 已补充 [Windows 交接](docs/WINDOWS_HANDOFF.md)和[下一对话 prompt](../WINDOWS_NEXT_CHAT_PROMPT.md)。用户已手动创建比赛 Notebook 草稿，但是否运行/提交尚未确认，接续先核对历史，不能重复提交。下文“一次提交准备”的未上传表述是原自动化执行记录，不否定用户后来的手动操作。原候选来源分支为 `exp/single-submission-20261021`。用户已明确授权一次Kaggle提交；固定75% original_style + 25% partial候选的[提交计划](docs/SINGLE_SUBMISSION_PLAN.md)和[独立Notebook](notebooks/candidate_blend_offline.ipynb)已准备。本地全量最终训练与公开占位test接口检查通过，尚未上传、运行或提交Kaggle：本轮读取页面仍被保存的域名权限拒绝。下一步须等访问限制解除，再核对当前规则、账号/队伍、额度，使用独立私有Notebook提交至多一次。不得通过其它渠道绕过拒绝，或重复运行已经完成的本地训练。详细命令与证据见[HANDOFF末节](HANDOFF.md#2026-10-21-一次提交准备当前停止点)。
 
