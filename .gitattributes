@@ -5,3 +5,4 @@ name-that-llm/notebooks/candidate_blend_offline.ipynb text eol=lf
 name-that-llm/config/labels.json text eol=lf
 name-that-llm/config/windows_modernbert_startup_recovery_20261024.json text eol=lf
 name-that-llm/config/windows_modernbert_round2_20261024.json text eol=lf
+name-that-llm/config/windows_prompt_gaussian_round3_20261024.json text eol=lf

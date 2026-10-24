@@ -1,0 +1,74 @@
+{
+  "experiment_id": "windows-prompt-gaussian-dev-20261024-r3",
+  "scope": "Original 120 prompts / 2159 development rows only; reuse completed frozen Round2 features, one fixed single-row Gaussian candidate.",
+  "base_config": "windows_modernbert_20261023.json",
+  "prior_output": "outputs/windows_modernbert_dev_20261024_r2",
+  "prior_contract_sha256": "973ca22331cd509d3117c7fc39b2f90da2c1949f1fa5e972ffa0335acd98396a",
+  "features_sha256": "f600b58712a6539ff84efe1630550de558dd76f1aedb41c84c13d768bdfcc7a0",
+  "baseline_oof_sha256": "105ce885457e15f5e70844e9941e519edd4c85f07deab17803f3d9833496a17b",
+  "preserved_claims": {
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023.json": "fc06fd719de08f08bc283136104753e020bb6cb4b2abcb73387aea8f6a120507",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023-startup-recovery-1.json": "86d89fc70b66e22fed20e8275d5b7af85309e731ab5e8c6ab2a1c36c0b8cc2c3",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261024-r2.json": "f66dc2185520703bfe5456b5a279e4ae5e67242a9ff4378c75cf01b3a3a67c30"
+  },
+  "method": {
+    "name": "within-prompt PCA plus single-row marginalized Gaussian",
+    "dimensions": 128,
+    "two_way_iterations": 4,
+    "residual_covariance": "unbiased residual covariance with Ledoit-Wolf shrinkage",
+    "prompt_covariance": "prompt-mean covariance minus finite-group residual noise, Ledoit-Wolf shrinkage",
+    "relative_residual_jitter": 1e-8,
+    "prompt_eigenvalue_floor": 1e-4,
+    "class_prior": "uniform",
+    "temperature": 1.0,
+    "prediction_uses_prompt_id": false,
+    "test_clustering_or_capacity_constraints": false,
+    "baseline_refits": 0
+  },
+  "evaluation": {
+    "folds": 5,
+    "splitter": "Exact saved Round2 GroupKFold identity",
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 20261024
+  },
+  "candidate_gate": {
+    "min_pooled_balanced_accuracy": 0.36,
+    "min_each_fold_balanced_accuracy": 0.30,
+    "min_paired_gain_over_round2": 0.02,
+    "paired_prompt_95ci_lower_exceeds": 0.0,
+    "min_improved_folds_over_round2": 4,
+    "requires_integrity_and_supervisor_completion": true,
+    "historical_75_25_descriptive_ba": 0.348673
+  },
+  "budget": {
+    "max_classifier_fit_attempts": 5,
+    "max_new_encoder_forward_calls": 0,
+    "development_timeout_seconds": 1800,
+    "max_host_rss_gib": 4,
+    "threads": 2,
+    "automatic_failed_run_retries": 0,
+    "old_holdout_evaluations": 0,
+    "full_data_final_fits": 0
+  },
+  "conditional_deployment_budget": {
+    "max_final_development_head_fit_attempts": 1,
+    "final_training_rows": 2159,
+    "final_training_groups": 120,
+    "reuse_verified_development_features": true,
+    "max_deployment_synthetic_forward_calls": 4,
+    "max_kaggle_saved_public_runs": 1,
+    "max_kaggle_formal_submissions": 1,
+    "max_test_rows": 4096,
+    "max_kaggle_runtime_hours": 9,
+    "old_holdout_evaluations": 0,
+    "full_data_final_fits": 0,
+    "failed_gate_action": "Stop without final fit, upload, submission, parameter search or fallback candidate."
+  },
+  "runtime": {
+    "numpy": "2.2.6",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "threadpoolctl": "3.6.0",
+    "psutil": "7.0.0"
+  }
+}
