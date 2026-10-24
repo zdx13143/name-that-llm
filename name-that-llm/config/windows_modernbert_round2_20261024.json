@@ -1,0 +1,66 @@
+{
+  "experiment_id": "windows-modernbert-frozen-dev-20261024-r2",
+  "parent_experiment_id": "windows-modernbert-frozen-dev-20261023",
+  "protocol_revision": "independent-round2-20261024",
+  "base_config": "windows_modernbert_20261023.json",
+  "scope": "Original 120-prompt development partition only; independent authorized round 2. No old holdout access or full-data fit.",
+  "preserved_claims": {
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023.json": "fc06fd719de08f08bc283136104753e020bb6cb4b2abcb73387aea8f6a120507",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023-startup-recovery-1.json": "86d89fc70b66e22fed20e8275d5b7af85309e731ab5e8c6ab2a1c36c0b8cc2c3"
+  },
+  "prior_round_consumption": {"attempted_forward_calls": 265, "durable_completed_forward_calls": 264, "attempted_fits": 0},
+  "evaluation": {
+    "folds": 5,
+    "splitter": "GroupKFold(shuffle=False), original development order",
+    "classifier": {"C": 0.1, "solver": "lbfgs", "class_weight": "balanced", "max_iter": 5000, "random_state": 0},
+    "scaling": "StandardScaler fitted on each training fold only",
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 20261023
+  },
+  "budget": {
+    "development_extraction_passes": 1,
+    "max_extraction_batches": 540,
+    "max_classifier_fit_attempts": 5,
+    "development_timeout_seconds": 1800,
+    "threads": 2,
+    "max_cuda_allocated_gib": 6,
+    "max_host_rss_gib": 8,
+    "final_holdout_evaluations": 0,
+    "full_data_final_fits": 0,
+    "automatic_failed_run_retries": 0
+  },
+  "candidate_gate": {
+    "min_pooled_balanced_accuracy": 0.36,
+    "min_each_fold_balanced_accuracy": 0.30,
+    "requires_completed_supervisor_and_integrity_checks": true,
+    "historical_descriptive_reference_ba": 0.348673,
+    "paired_baseline_available": false
+  },
+  "conditional_deployment_budget": {
+    "max_final_development_head_fit_attempts": 1,
+    "final_training_rows": 2159,
+    "final_training_groups": 120,
+    "reuse_verified_development_features": true,
+    "max_new_deployment_synthetic_forward_calls": 4,
+    "max_kaggle_saved_public_runs": 1,
+    "max_kaggle_formal_submissions": 1,
+    "max_hidden_test_rows": 4096,
+    "max_kaggle_runtime_hours": 9,
+    "old_holdout_evaluations": 0,
+    "full_data_final_fits": 0,
+    "gate_failure_action": "Stop this round without final fit, upload, submission, parameter search or fallback candidate."
+  },
+  "runtime": {
+    "numpy": "2.2.6",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.56.2",
+    "huggingface-hub": "0.34.4",
+    "tokenizers": "0.22.0",
+    "safetensors": "0.6.2",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.2",
+    "threadpoolctl": "3.6.0",
+    "psutil": "7.0.0"
+  }
+}

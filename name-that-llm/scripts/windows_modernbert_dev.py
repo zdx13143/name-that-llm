@@ -33,6 +33,9 @@ ORIGINAL_CLAIM, ORIGINAL_OUTPUT = CLAIM, OUTPUT
 RECOVERY_CONFIG = MODULE / "config/windows_modernbert_startup_recovery_20261024.json"
 RECOVERY_CONFIG_SHA256 = "f30618fa4b2c268e70c3e13466af1504e10e16b4963dd8f52a8eedcdde86295f"
 RECOVERY = None
+ROUND2 = False
+ROUND2_CONFIG = MODULE / "config/windows_modernbert_round2_20261024.json"
+ROUND2_CONFIG_SHA256 = "32bb45624a6969be47db8802be9c84a47d5cda78a9ad07e6453fcf6c89c8c5b5"
 SOURCES = (Path(__file__), Path(__file__).with_name("probe_modernbert.py"),
            Path(__file__).with_name("restore_team_split.py"), CONFIG, BASE, LABELS,
            MODULE / "requirements-windows-dev.txt", MODULE / "requirements-windows-gpu.txt")
@@ -40,6 +43,29 @@ SOURCES = (Path(__file__), Path(__file__).with_name("probe_modernbert.py"),
 
 def object_hash(value):
     return hashlib.sha256(canonical(value).encode("utf-8")).hexdigest()
+
+
+def verify_preserved_claims(config):
+    for relative, expected in config["preserved_claims"].items():
+        path = (MODULE / relative).resolve()
+        if not path.is_relative_to((MODULE / "outputs/continuation_claims").resolve()) or digest(path) != expected:
+            raise ValueError("Preserved prior-round claim identity differs")
+
+
+def activate_round2():
+    global CONFIG, CLAIM, OUTPUT, SOURCES, ROUND2
+    if RECOVERY is not None or digest(ROUND2_CONFIG) != ROUND2_CONFIG_SHA256:
+        raise ValueError("Round 2 protocol identity differs or recovery is active")
+    config = json.loads(ROUND2_CONFIG.read_bytes())
+    if config["experiment_id"] != "windows-modernbert-frozen-dev-20261024-r2":
+        raise ValueError("Unexpected round 2 experiment")
+    verify_preserved_claims(config)
+    previous_config = CONFIG
+    CONFIG = ROUND2_CONFIG
+    CLAIM = MODULE / "outputs/continuation_claims/windows-modernbert-frozen-dev-20261024-r2.json"
+    OUTPUT = MODULE / "outputs/windows_modernbert_dev_20261024_r2"
+    SOURCES = tuple(CONFIG if path == previous_config else path for path in SOURCES)
+    ROUND2 = True
 
 
 def verify_zero_work_startup(amendment, claim_path, output):
@@ -86,11 +112,14 @@ def activate_startup_recovery():
 def configuration():
     config = json.loads(CONFIG.read_bytes())
     base = json.loads(BASE.read_bytes())
-    if (config["experiment_id"] != base["experiment_id"]
+    parent_id = config["parent_experiment_id"] if ROUND2 else config["experiment_id"]
+    if (parent_id != base["experiment_id"]
             or config["base_config"] != BASE.name
             or config["evaluation"]["classifier"] != base["evaluation"]["classifier"]
             or config["evaluation"]["folds"] != 5):
         raise ValueError("Development amendment differs from its fixed parent plan")
+    if ROUND2 and any(base["budget"][key] != value for key, value in config["budget"].items()):
+        raise ValueError("Round 2 execution budget differs from its registration")
     implemented = {"dtype": "bfloat16", "pooling_dtype": "float32", "attention": "sdpa",
                    "reference_compile": False, "trust_remote_code": False,
                    "pooling": "attention-mask mean including special tokens, concatenate layers"}
@@ -166,6 +195,8 @@ def grouped_folds(data, n_splits=5):
 
 
 def contract(data, config, base, verified_files):
+    if ROUND2:
+        verify_preserved_claims(config)
     _, fold_id = grouped_folds(data, config["evaluation"]["folds"])
     value = {"config": config, "base_config": base, "model_files": verified_files,
             "sources": {str(p.relative_to(MODULE)): digest(p) for p in SOURCES},
@@ -368,6 +399,19 @@ def metrics(oof, data, fold_id, evaluation):
             "prompt_bootstrap_ba_95ci": np.quantile(((draws @ hits) / denominators).mean(1), [.025, .975]).tolist()}
 
 
+def candidate_gate(result, config):
+    gate = config["candidate_gate"]
+    folds = result["fold_balanced_accuracy"]
+    values = np.asarray([result["balanced_accuracy"], *folds], dtype=np.float64)
+    passed = (len(folds) == config["evaluation"]["folds"] and np.isfinite(values).all()
+              and np.all((values >= 0) & (values <= 1))
+              and result["balanced_accuracy"] >= gate["min_pooled_balanced_accuracy"]
+              and min(folds, default=-1) >= gate["min_each_fold_balanced_accuracy"])
+    return {"metric_gate_passed": bool(passed), "thresholds": gate,
+            "requires_completed_supervisor": True,
+            "final_fit_attempts": 0, "kaggle_submissions": 0}
+
+
 def require_live_supervisor(claim):
     """Accept a direct parent or the single Windows venv redirector we launched."""
     import psutil
@@ -423,6 +467,10 @@ def execute(train, config, base):
               "attempted_fits": claim["attempted_fits"], "completed_fits": claim["completed_fits"],
               "final_holdout_evaluations": 0, "full_data_final_fits": 0,
               "limitations": "Descriptive development evidence only; no paired baseline, model promotion or Kaggle score."}
+    if ROUND2:
+        verify_preserved_claims(config)
+        report["candidate_gate"] = candidate_gate(report["metrics"], config)
+        report["limitations"] = "Repeatedly used development partition; no paired baseline or independent holdout evidence. Metric gate alone does not establish submission readiness or a Kaggle score."
     write_json(OUTPUT / "summary.json", report)
     claim.update(state="worker_completed", summary_sha256=digest(OUTPUT / "summary.json"))
     write_json(CLAIM, claim, exclusive=False)
@@ -452,6 +500,15 @@ def terminate_worker(process):
     result["worker_still_running"] = process.poll() is None
     result["returncode"] = process.returncode
     return result
+
+
+def worker_command(train):
+    command = [sys.executable, str(Path(__file__).resolve()), "--train", str(train), "--execute"]
+    if RECOVERY is not None:
+        command.append("--recover-zero-work-startup")
+    if ROUND2:
+        command.append("--round2")
+    return command
 
 
 def supervise(train, value, base):
@@ -484,10 +541,7 @@ def supervise(train, value, base):
                "OMP_NUM_THREADS": "2", "MKL_NUM_THREADS": "2", "OPENBLAS_NUM_THREADS": "2",
                "TOKENIZERS_PARALLELISM": "false"}
         with (OUTPUT / "stdout.log").open("xb") as stdout, (OUTPUT / "stderr.log").open("xb") as stderr:
-            command = [sys.executable, str(Path(__file__).resolve()), "--train", str(train), "--execute"]
-            if RECOVERY is not None:
-                command.append("--recover-zero-work-startup")
-            process = subprocess.Popen(command,
+            process = subprocess.Popen(worker_command(train),
                                        env=env, stdout=stdout, stderr=stderr)
             phase = "worker"
             monitored = psutil.Process(process.pid)
@@ -507,11 +561,20 @@ def supervise(train, value, base):
         claim = json.loads(CLAIM.read_bytes())
         if (process.returncode != 0 or claim["state"] != "worker_completed"
                 or claim["attempted_fits"] != 5 or claim["completed_fits"] != 5
+                or claim["attempted_forward_calls"] != base["budget"]["max_extraction_batches"]
+                or claim["completed_forward_calls"] != claim["attempted_forward_calls"]
                 or digest(OUTPUT / "summary.json") != claim["summary_sha256"]):
             raise RuntimeError("Worker failed or returned an incomplete result; inspect retained logs")
+        if ROUND2:
+            verify_preserved_claims(value["config"])
         receipt = {"state": "completed", "wall_seconds": time.perf_counter() - started,
                    "sampled_peak_process_tree_rss_bytes": peak_rss, "exit_code": process.returncode,
                    "summary_sha256": claim["summary_sha256"]}
+        if ROUND2:
+            summary = json.loads((OUTPUT / "summary.json").read_bytes())
+            receipt["candidate_development_gate_passed"] = candidate_gate(
+                summary["metrics"], value["config"])["metric_gate_passed"]
+            receipt["candidate_deployment_validation_complete"] = False
         write_json(OUTPUT / "supervisor.json", receipt)
         claim.update(state="completed", supervisor_sha256=digest(OUTPUT / "supervisor.json"))
         write_json(CLAIM, claim, exclusive=False)
@@ -535,7 +598,9 @@ def supervise(train, value, base):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--train", type=Path, default=MODULE / "data/raw/train.csv")
-    parser.add_argument("--recover-zero-work-startup", action="store_true",
+    protocol = parser.add_mutually_exclusive_group()
+    protocol.add_argument("--round2", action="store_true", help="Use the separately registered independent round 2")
+    protocol.add_argument("--recover-zero-work-startup", action="store_true",
                         help="Use the documented one-time recovery of the exact zero-work launcher failure")
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--run", action="store_true")
@@ -543,6 +608,8 @@ def main():
     args = parser.parse_args()
     if args.recover_zero_work_startup:
         activate_startup_recovery()
+    if args.round2:
+        activate_round2()
     config, base = configuration()
     train = args.train.resolve()
     if args.execute:
