@@ -39,3 +39,11 @@
 只有全部通过，才允许额外一次最终微调：仍只用2159行/120prompt，同样4epoch固定配方、最多2160训练micro-batch和272optimizer step。条件阶段使用单独固定claim；最多4次部署合成forward、1次Kaggle公开保存运行、1次正式提交，测试上限4096行、断网运行9小时内。先验证离线依赖、checkpoint身份、数值行为、输出契约与公开运行成功，再正式提交。不能在Kaggle重新用全量训练数据拟合。
 
 门槛失败就停止，不改变epoch/lr/pooling、追加融合或以旧候选替代提交。更新根`PROJECT_LEARNING.md`和`PROJECT_LEARNING.html`，解释本轮学习到的监督微调、梯度、epoch和验证隔离。
+
+## 条件阶段实现补充（五折成绩产生前）
+
+`scripts/windows_modernbert_final_round4.py` 已准备，但没有执行。它要求本轮完整完成收据、开发门槛以及 `verify_round4_results.py` 的独立结果复核均通过；固定使用新claim `windows-modernbert-final-dev-20261025-r4.json`，已有claim/output即拒绝，不改变五折运行源码。
+
+最终训练seed固定为20261030（base_seed+5），其余配方与上述条件预算相同。四次部署合成forward固定为GPU原序、GPU倒序、导出后CPU原序、CPU倒序；要求各路argmax相同，最大概率误差≤0.005。CPU测试使用FP32/SDPA/reference_compile=false。两种顺序、两种设备共四次，不额外评估开发或旧留出，不以检查结果调参或重训。最终阶段继续受3600秒、12GiB进程树RSS、5/5.5GiB CUDA allocated/reserved约束。Windows合成检查不等同于Linux离线依赖验证或Kaggle提交成功。
+
+5项纯合成入口测试已通过：未完成CV、未通过门槛、未完成独立复核时不加载训练数据；错误开发分区拒绝；已有finalclaim阻断再次启动。完整的真实结果复核只在五折完成后执行，不新增模型forward或fit。

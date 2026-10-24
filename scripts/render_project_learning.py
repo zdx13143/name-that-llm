@@ -29,23 +29,30 @@ def inline(text):
 
 
 def score_chart(markdown):
-    match = re.search(r"\| pooled BA \| ([0-9.]+) \| ([0-9.]+) \|", markdown)
+    match = re.search(r"(?m)^\| pooled BA \|(.+)\|\s*$", markdown)
     if not match:
         raise ValueError("The score chart requires the journal's pooled BA comparison row")
+    values = [float(cell.strip()) for cell in match[1].split("|")]
+    preceding = markdown[:match.start()].rstrip().splitlines()
+    while preceding and preceding[-1].startswith("|"):
+        header = preceding.pop()
+    labels = [cell.strip() for cell in header.strip("|").split("|")][1:]
+    if len(labels) != len(values) or any(not 0 <= value <= 1 for value in values):
+        raise ValueError("Score labels and finite BA values must match")
     threshold_match = re.search(r"预登记要求 pooled BA 至少 ([0-9.]+)", markdown)
     if not threshold_match:
         raise ValueError("Missing preregistered pooled BA threshold")
     threshold = float(threshold_match[1])
-    rows = [("第二轮 · 冻结编码器 + LR", float(match[1]), "old"),
-            ("第三轮 · 题目噪声高斯头", float(match[2]), "new"),
-            ("预登记 pooled BA 门槛", threshold, "gate")]
-    scale = max(0.4, threshold)
+    rows = [(html.escape(label), value, "new" if i == len(values) - 1 else "old")
+            for i, (label, value) in enumerate(zip(labels, values))]
+    rows.append(("预登记 pooled BA 门槛", threshold, "gate"))
+    scale = max(0.4, threshold, *values)
     bars = []
     for label, value, kind in rows:
         bars.append(f'<div class="bar-row {kind}"><div class="bar-label">{label}'
                     f'<strong>{value:.6f}</strong></div><div class="bar-track">'
                     f'<span style="width:{value / scale * 100:.4f}%"></span></div></div>')
-    return '<figure class="chart"><figcaption>同一开发集 · pooled balanced accuracy</figcaption>' + "".join(bars) + f'<div class="axis"><span>0</span><span>{scale:g}</span></div><p class="chart-note">横轴从 0 起。第三轮略高，但两轮都未达绝对门槛；这张图不是 Kaggle 榜单。</p></figure>'
+    return '<figure class="chart"><figcaption>同一开发集 · pooled balanced accuracy</figcaption>' + "".join(bars) + f'<div class="axis"><span>0</span><span>{scale:g}</span></div><p class="chart-note">横轴从 0 起。图中仅展示 pooled BA；是否提交还取决于各折表现、配对比较和完整性检查。这张图不是 Kaggle 榜单。</p></figure>'
 
 
 FLOW = '<div class="flow" aria-label="实验流程">' + "".join(
