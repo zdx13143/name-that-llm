@@ -3,3 +3,4 @@ name-that-llm/notebooks/candidate_blend_offline.ipynb text eol=lf
 
 # This reference is byte-hashed by the existing development data contract.
 name-that-llm/config/labels.json text eol=lf
+name-that-llm/config/windows_modernbert_startup_recovery_20261024.json text eol=lf

@@ -1,0 +1,12 @@
+{
+  "experiment_id": "windows-modernbert-frozen-dev-20261023",
+  "recovery_number": 1,
+  "reason": "Correct the Windows venv redirector parent-PID check after the preserved startup failure, before any model forward or classifier fit.",
+  "scope": "Same experiment, data partition, model, five-fit total budget and 540-batch total budget. Preserve the original failed claim and outputs. No automatic retry, resumed computation, parameter change or additional budget.",
+  "original_artifact_sha256": {
+    "claim": "cdbe811ad0c7664bbfc3389e4ec862cd0e4935b96781118f1f17f3b184289738",
+    "contract": "1cd7f86418aa19d7c86f8f3db46ac058e6b303134bd3a3b77dcd1201e222b57a",
+    "stderr": "012dea462348e65ac2968ba49ee07975a71bbb9c958c10ac7eb9f34465bbada5",
+    "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

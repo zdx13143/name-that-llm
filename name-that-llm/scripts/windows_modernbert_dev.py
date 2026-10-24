@@ -29,6 +29,10 @@ LABELS = MODULE / "config/labels.json"
 OUTPUT = MODULE / "outputs/windows_modernbert_dev_20261023"
 # The amendment shares the original development allowance; it adds no new fits.
 CLAIM = MODULE / "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023.json"
+ORIGINAL_CLAIM, ORIGINAL_OUTPUT = CLAIM, OUTPUT
+RECOVERY_CONFIG = MODULE / "config/windows_modernbert_startup_recovery_20261024.json"
+RECOVERY_CONFIG_SHA256 = "f30618fa4b2c268e70c3e13466af1504e10e16b4963dd8f52a8eedcdde86295f"
+RECOVERY = None
 SOURCES = (Path(__file__), Path(__file__).with_name("probe_modernbert.py"),
            Path(__file__).with_name("restore_team_split.py"), CONFIG, BASE, LABELS,
            MODULE / "requirements-windows-dev.txt", MODULE / "requirements-windows-gpu.txt")
@@ -36,6 +40,47 @@ SOURCES = (Path(__file__), Path(__file__).with_name("probe_modernbert.py"),
 
 def object_hash(value):
     return hashlib.sha256(canonical(value).encode("utf-8")).hexdigest()
+
+
+def verify_zero_work_startup(amendment, claim_path, output):
+    paths = {"claim": claim_path, "contract": output / "contract.json",
+             "stderr": output / "stderr.log", "stdout": output / "stdout.log"}
+    if any(digest(path) != amendment["original_artifact_sha256"][key] for key, path in paths.items()):
+        raise ValueError("Startup recovery does not match the preserved failed attempt")
+    prior = json.loads(claim_path.read_bytes())
+    counters = ("attempted_forward_calls", "completed_forward_calls", "attempted_fits",
+                "completed_fits", "final_holdout_evaluations", "full_data_final_fits")
+    if (prior.get("state") != "failed" or prior.get("phase") != "reconcile"
+            or prior.get("experiment_id") != amendment["experiment_id"]
+            or any(prior.get(key) != 0 for key in counters)
+            or prior.get("termination", {}).get("worker_still_running") is not False
+            or prior.get("termination", {}).get("returncode") != 1):
+        raise ValueError("Only this zero-work startup failure can use the explicit recovery")
+    if {path.name for path in output.iterdir()} != {"contract.json", "source_snapshot", "stderr.log", "stdout.log"}:
+        raise ValueError("Unexpected artifacts in the failed startup")
+    previous = json.loads((output / "contract.json").read_bytes())
+    if object_hash(previous) != prior["contract_sha256"]:
+        raise ValueError("Original failed contract identity differs")
+    for relative, expected in previous["sources"].items():
+        target = (output / "source_snapshot" / relative).resolve()
+        if not target.is_relative_to((output / "source_snapshot").resolve()) or digest(target) != expected:
+            raise ValueError("Original failed source snapshot differs")
+    return previous
+
+
+def activate_startup_recovery():
+    """One named correction; the original failed claim is never overwritten."""
+    global CLAIM, OUTPUT, RECOVERY
+    if digest(RECOVERY_CONFIG) != RECOVERY_CONFIG_SHA256:
+        raise ValueError("Startup recovery amendment identity differs")
+    amendment = json.loads(RECOVERY_CONFIG.read_bytes())
+    if amendment["experiment_id"] != "windows-modernbert-frozen-dev-20261023" or amendment["recovery_number"] != 1:
+        raise ValueError("Unexpected startup recovery amendment")
+    previous = verify_zero_work_startup(amendment, ORIGINAL_CLAIM, ORIGINAL_OUTPUT)
+    RECOVERY = {"amendment": amendment, "amendment_sha256": digest(RECOVERY_CONFIG),
+                "original_contract": previous}
+    CLAIM = MODULE / "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023-startup-recovery-1.json"
+    OUTPUT = MODULE / "outputs/windows_modernbert_dev_20261023_startup_recovery_1"
 
 
 def configuration():
@@ -122,7 +167,7 @@ def grouped_folds(data, n_splits=5):
 
 def contract(data, config, base, verified_files):
     _, fold_id = grouped_folds(data, config["evaluation"]["folds"])
-    return {"config": config, "base_config": base, "model_files": verified_files,
+    value = {"config": config, "base_config": base, "model_files": verified_files,
             "sources": {str(p.relative_to(MODULE)): digest(p) for p in SOURCES},
             "text_sha256": object_hash(data["texts"].tolist()),
             "row_identity_sha256": object_hash({key: data[key].tolist() for key in
@@ -130,6 +175,17 @@ def contract(data, config, base, verified_files):
             "fold_sha256": object_hash(fold_id.tolist()), "rows": len(fold_id),
             "package_versions": {name: importlib.metadata.version(name) for name in config["runtime"]},
             "python": sys.version, "platform": sys.platform}
+    if RECOVERY is not None:
+        previous = RECOVERY["original_contract"]
+        if {key: item for key, item in value.items() if key != "sources"} != {
+                key: item for key, item in previous.items() if key != "sources"}:
+            raise ValueError("Startup recovery changed the registered experiment")
+        before, after = previous["sources"], value["sources"]
+        allowed = str(Path(__file__).relative_to(MODULE))
+        if set(before) != set(after) or any(before[key] != after[key] for key in before if key != allowed):
+            raise ValueError("Startup recovery changed sources outside the runner")
+        value["startup_recovery"] = {key: RECOVERY[key] for key in ("amendment", "amendment_sha256")}
+    return value
 
 
 def readiness(train, config, base):
@@ -187,7 +243,9 @@ def load_features(path, data, fold_id, contract_hash, dimensions):
     return features
 
 
-def consume(claim, key, limit, path=CLAIM):
+def consume(claim, key, limit, path=None):
+    if path is None:
+        path = CLAIM
     if claim[key] >= limit:
         raise RuntimeError(f"Budget exhausted: {key}")
     claim[key] += 1
@@ -231,7 +289,7 @@ def extract_features(data, base, claim):
         texts = data["texts"][start:start + feature["batch_size"]].tolist()
         batch = tokenizer(texts, padding=feature["padding"], truncation=True,
                           max_length=feature["max_length"], return_tensors="pt").to("cuda:0")
-        consume(claim, "attempted_forward_calls", budget["max_extraction_batches"])
+        consume(claim, "attempted_forward_calls", budget["max_extraction_batches"], CLAIM)
         with torch.inference_mode():
             output = model(**batch, output_hidden_states=True)
             embedded = masked_pool(output.hidden_states, batch["attention_mask"], feature["layers"])
@@ -262,7 +320,9 @@ def probabilities(value, rows, classes):
     return value / value.sum(1, keepdims=True)
 
 
-def fit_head(features, data, folds, evaluation, claim, max_attempts, claim_path=CLAIM):
+def fit_head(features, data, folds, evaluation, claim, max_attempts, claim_path=None):
+    if claim_path is None:
+        claim_path = CLAIM
     from sklearn.exceptions import ConvergenceWarning
     from sklearn.linear_model import LogisticRegression
     from sklearn.pipeline import make_pipeline
@@ -308,10 +368,36 @@ def metrics(oof, data, fold_id, evaluation):
             "prompt_bootstrap_ba_95ci": np.quantile(((draws @ hits) / denominators).mean(1), [.025, .975]).tolist()}
 
 
+def require_live_supervisor(claim):
+    """Accept a direct parent or the single Windows venv redirector we launched."""
+    import psutil
+    failure = "Execution requires the live supervisor and an unused claim"
+    if (claim.get("state") != "started" or any(claim.get(key) != 0 for key in
+            ("attempted_forward_calls", "completed_forward_calls", "attempted_fits", "completed_fits"))):
+        raise RuntimeError(failure)
+    try:
+        parent = psutil.Process().parent()
+        if parent is None:
+            raise RuntimeError(failure)
+        if parent.pid != claim.get("supervisor_pid"):
+            if (sys.platform != "win32" or sys.prefix == sys.base_prefix
+                    or Path(sys.executable).resolve() == Path(sys._base_executable).resolve()
+                    or os.path.normcase(str(Path(psutil.Process().exe()).resolve()))
+                    != os.path.normcase(str(Path(sys._base_executable).resolve()))
+                    or os.path.normcase(str(Path(parent.exe()).resolve()))
+                    != os.path.normcase(str(Path(sys.executable).resolve()))):
+                raise RuntimeError(failure)
+            parent = parent.parent()
+        if (parent is None or parent.pid != claim.get("supervisor_pid")
+                or parent.create_time() != claim.get("supervisor_create_time")):
+            raise RuntimeError(failure)
+    except psutil.Error as error:
+        raise RuntimeError(failure) from error
+
+
 def execute(train, config, base):
     claim = json.loads(CLAIM.read_bytes())
-    if claim["state"] != "started" or claim["supervisor_pid"] != os.getppid():
-        raise RuntimeError("Execution requires the live supervisor and an unused claim")
+    require_live_supervisor(claim)
     data = load_development(train, base["input"])
     verified = validate_files(MODULE / "models/modernbert-base" / base["revision"], base["model_files"])
     current = contract(data, config, base, verified)
@@ -328,7 +414,7 @@ def execute(train, config, base):
     features = load_features(cache, data, fold_id, claim["contract_sha256"], base["feature"]["dimensions"])
     with threadpool_limits(limits=base["budget"]["threads"]):
         oof, timings = fit_head(features, data, folds, config["evaluation"], claim,
-                               base["budget"]["max_classifier_fit_attempts"])
+                               base["budget"]["max_classifier_fit_attempts"], CLAIM)
     save_array(OUTPUT / "oof.npz", "probabilities", oof, data, fold_id, claim["contract_sha256"])
     report = {"scope": config["scope"], "contract_sha256": claim["contract_sha256"],
               "metrics": metrics(oof, data, fold_id, config["evaluation"]), "gpu": gpu,
@@ -372,10 +458,13 @@ def supervise(train, value, base):
     """External wall-clock/RSS guard works even while a native fit blocks Python."""
     import psutil
     claim = {"state": "started", "experiment_id": value["config"]["experiment_id"],
-             "supervisor_pid": os.getpid(), "contract_sha256": object_hash(value),
+             "supervisor_pid": os.getpid(), "supervisor_create_time": psutil.Process().create_time(),
+             "contract_sha256": object_hash(value),
              "attempted_forward_calls": 0, "completed_forward_calls": 0,
              "attempted_fits": 0, "completed_fits": 0, "final_holdout_evaluations": 0,
              "full_data_final_fits": 0, "started_unix_seconds": time.time()}
+    if RECOVERY is not None:
+        claim["startup_recovery"] = value["startup_recovery"]
     write_json(CLAIM, claim)  # Fixed exclusive path, independent of train/output arguments.
     process, phase = None, "pre_spawn"
     started, peak_rss = time.perf_counter(), 0
@@ -387,11 +476,18 @@ def supervise(train, value, base):
             target.parent.mkdir(parents=True, exist_ok=True)
             with target.open("xb") as handle:
                 handle.write(source.read_bytes())
+        if RECOVERY is not None:
+            target = OUTPUT / "source_snapshot" / RECOVERY_CONFIG.relative_to(MODULE)
+            with target.open("xb") as handle:
+                handle.write(RECOVERY_CONFIG.read_bytes())
         env = {**os.environ, "HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1",
                "OMP_NUM_THREADS": "2", "MKL_NUM_THREADS": "2", "OPENBLAS_NUM_THREADS": "2",
                "TOKENIZERS_PARALLELISM": "false"}
         with (OUTPUT / "stdout.log").open("xb") as stdout, (OUTPUT / "stderr.log").open("xb") as stderr:
-            process = subprocess.Popen([sys.executable, str(Path(__file__).resolve()), "--train", str(train), "--execute"],
+            command = [sys.executable, str(Path(__file__).resolve()), "--train", str(train), "--execute"]
+            if RECOVERY is not None:
+                command.append("--recover-zero-work-startup")
+            process = subprocess.Popen(command,
                                        env=env, stdout=stdout, stderr=stderr)
             phase = "worker"
             monitored = psutil.Process(process.pid)
@@ -439,10 +535,14 @@ def supervise(train, value, base):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--train", type=Path, default=MODULE / "data/raw/train.csv")
+    parser.add_argument("--recover-zero-work-startup", action="store_true",
+                        help="Use the documented one-time recovery of the exact zero-work launcher failure")
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--run", action="store_true")
     mode.add_argument("--execute", action="store_true", help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.recover_zero_work_startup:
+        activate_startup_recovery()
     config, base = configuration()
     train = args.train.resolve()
     if args.execute:

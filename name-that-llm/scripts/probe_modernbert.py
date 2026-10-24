@@ -57,7 +57,16 @@ def write_json(path, value, *, exclusive=True):
             handle.write(payload)
             handle.flush()
             os.fsync(handle.fileno())
-        os.replace(temporary, path)
+        # Windows readers/AV may briefly deny delete-sharing. Retry only the
+        # same fsync'd receipt bytes, never the model/fit that produced them.
+        for attempt in range(8):
+            try:
+                os.replace(temporary, path)
+                break
+            except OSError as error:
+                if os.name != "nt" or getattr(error, "winerror", None) not in (5, 32, 33) or attempt == 7:
+                    raise
+                time.sleep(min(0.01 * 2**attempt, 0.2))
 
 
 def validate_files(directory, manifest):

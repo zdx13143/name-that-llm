@@ -301,3 +301,17 @@ git ls-remote --heads origin refs/heads/main refs/heads/exp/windows-handoff-2026
 独立只读复核冻结候选Notebook及生成/验证脚本、相关测试：SHA仍为 `82931fb6a28441e01b884c2ce62c16ced6f35c39bc9ff092c2f53277308b3df8`，官方输入路径、训练hash、75/25融合、4096通过/4097拒绝、id/model Parquet契约均保持一致，未发现确定提交阻塞，无网络或外部权重依赖。Kaggle镜像依赖版本、实际运行、成功版本、claim和隐藏测试行为仍须在线验证；没有重新运行已完成本地拟合。
 
 截至此检查点，真实开发尚未启动，官方文件尚未下载，Kaggle运行/正式提交=0，无新分数。当前需要用户完成登录，随后继续官方文件下载与哈希核验、固定五折开发和至多一次正式提交的历史核查；不需要再次批准已授权的常规工作。
+
+## 2026-10-24 官方数据、真实运行失败与历史提交确认（最新）
+
+用户登录原账号并将官方ZIP放在仓库根。ZIP和3个成员的CRC/SHA全部匹配冻结记录，已首次导入 `data/raw/`。当前不缺官方数据，不需要Mac文件。原始ZIP保留并加入精确忽略规则。自动ZIP跳转曾被Chrome `ERR_BLOCKED_BY_CLIENT` 拦截，实际文件由用户手动下载；没有绕过访问拒绝。
+
+实际执行按原120-prompt / 2,159行、同一ModernBERT配置与5fit/540batch总预算开始。首次零计算启动因Windows venv redirector父PID检查失败；修复并登记具名一次启动修正后，真实提取在收据原子替换处发生WinError5并停止。最终交叉核对为 **265次forward尝试、264次持久完成记录、0次fit、0次旧留出评分、0次全量最终fit**；无特征缓存、OOF、开发指标或新提交候选。恢复运行105.022秒，抽样RSS峰值约1.615GiB，进程已退出。
+
+恢复入口另有默认参数路径缺陷：attempted计数误写回原claim路径，completed写入恢复claim。原失败claim路径因此被覆盖，不能声称始终原样保留；两个当前文件均另行归档。首次零计算失败JSON由启动前记录重建为单独档案，严格匹配原SHA `cdbe811ad0c7664bbfc3389e4ec862cd0e4935b96781118f1f17f3b184289738`，没有回滚/重置当前claim。原路径的started是遗留状态，不代表仍运行；两条记录属于同一次恢复执行，不能相加。**本轮及具名恢复入口均关闭，禁止删除claim、换目录或再次提取来解锁。**
+
+已修复监督者身份、Windows暂时占用下的收据原子替换、当前claim路径解析；永久写入拒绝仍停止。最终30项相关测试通过，9.793秒；包含真实Windows venv与临时文件锁回归，全部无需比赛数据/GPU。修复后没有重跑真实实验。完整事实、局限及命令见 [WINDOWS_ROUND_20261024](reports/WINDOWS_ROUND_20261024.md)。原Notebook SHA、标签、75/25权重及4096门槛均未改，旧CPU及旧留出未重跑。
+
+Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 20261021 Version1](https://www.kaggle.com/code/zephyrpong/ntl-blend-20261021?scriptVersionId=360768689)正式状态Succeeded、public **0.351**；其保存运行claim=completed、fit=2/2，Output全部provenance字段与本地冻结候选元数据一致，但未核对远端完整Notebook字节SHA。[队友ntl-ensemble-600 Version1](https://www.kaggle.com/code/zdx13143/ntl-ensemble-600?scriptVersionId=360258830)已有Succeeded、public **0.601**。这些是既有结果；本轮新增Kaggle运行/提交=0，未重复上传0.351版本，未按公榜调参。
+
+本地证据在忽略的 `outputs/windows_4060/` 与两次实际输出目录。`round_reconciliation_20261024.json` SHA为 `c6c47947074b6c0c58781ae595a022952b59cf673e88e0310df5c88995c7de18`；在线核对收据SHA为 `ff4294e7ce1cef7e0ce577417e08e5d07d2170d12f6a580e2452596b3c08ac68`。只推本人分支的明确代码/配置/测试/聚合文档，原始数据、日志、claims、环境和模型不入Git。后续新一轮先登记新的预算与停止条件，保留本轮失败与265次尝试，不能把未完成说成通过。

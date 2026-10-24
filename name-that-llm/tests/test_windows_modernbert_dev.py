@@ -144,6 +144,26 @@ class DevelopmentTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "Budget exhausted"):
             dev.consume(claim, "attempted_fits", 1, claim_path)
 
+    def test_forward_budget_uses_current_claim_after_path_switch(self):
+        current = self.root / "active-recovery.json"
+        claim = {"attempted_forward_calls": 0}
+        with patch.object(dev, "CLAIM", current), patch.object(dev, "write_json") as writer:
+            dev.consume(claim, "attempted_forward_calls", 5)
+        self.assertEqual(writer.call_args.args[0], current)
+        self.assertEqual(claim["attempted_forward_calls"], 1)
+
+    def test_fit_budget_uses_current_claim_after_path_switch(self):
+        current = self.root / "active-recovery.json"
+        data = self.data()
+        folds, _ = dev.grouped_folds(data)
+        claim = {"attempted_fits": 0, "completed_fits": 0}
+        with patch.object(dev, "CLAIM", current), patch.object(dev, "write_json") as writer:
+            with patch("sklearn.linear_model.LogisticRegression.fit", side_effect=RuntimeError("synthetic stop")):
+                with self.assertRaisesRegex(RuntimeError, "synthetic stop"):
+                    dev.fit_head(np.ones((2159, 2)), data, folds, dev.configuration()[0]["evaluation"], claim, 5)
+        self.assertEqual(writer.call_args.args[0], current)
+        self.assertEqual(claim["attempted_fits"], 1)
+
     def test_supervisor_kills_overdue_child_and_preserves_fixed_claim(self):
         claim, output = self.root / "claims/run.json", self.root / "run"
         config = {"config": {"experiment_id": "synthetic-only"}}
