@@ -1,6 +1,6 @@
 # Name That LLM
 
-> **2026-10-25 最新结果：** 第四轮ModernBERT监督微调五折完成，BA **0.264858**，相对第三轮0.298677下降3.382个百分点，五折全部下降，未达到提交门槛。最终训练、新Kaggle上传/运行/提交均为0，旧留出未重开。详见[第四轮报告](reports/WINDOWS_ROUND4_20261025.md)、[当前入口](WORKSPACE.md)及根[学习Markdown](../PROJECT_LEARNING.md)/[离线HTML](../PROJECT_LEARNING.html)。以下日期更早的CPU状态为历史记录。
+> **2026-10-25 最新结果：** 第五轮四视角风格五折完成，**风格对照BA 0.359325，固定融合候选0.323681**。风格对照比第三轮高6.0648个百分点；固定融合低于风格对照，且未达0.36，门槛失败。本轮5次fit、89.95秒、无新编码器前向；最终训练、新Kaggle上传/运行/提交均为0，旧留出未重开。详见[第五轮报告](reports/WINDOWS_ROUND5_20261025.md)、[当前入口](WORKSPACE.md)及根[学习Markdown](../PROJECT_LEARNING.md)/[离线HTML](../PROJECT_LEARNING.html)。第四轮0.264858及以下日期更早的CPU状态均保留为历史记录。
 
 > **2026-10-21 接续结果：** 已在 `exp/dev-comparison-20261021` 分支审查队友方案、修复两处bug，并完成统一开发GroupKFold比较。原模型0.340336，最佳固定融合0.347281，增益区间跨0，未达到采用标准；原冻结交付保持不变。见[本轮报告与逐类召回](reports/TEAM_DEV_COMPARISON.md)及[队友审查](docs/TEAM_WORK_REVIEW.md)。这是新开发探索，不是新的最终留出或榜单成绩。新环境为仓库根 `.venv/`，使用 `requirements-team-cpu.txt`。
 

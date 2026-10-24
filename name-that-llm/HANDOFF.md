@@ -11,7 +11,7 @@
 | 已实测 | 真实训练集 2,699 条、150 个 prompt、18 类；公开 test/sample 各 3 行。字段见 [data/README.md](data/README.md)。 |
 | 已完成 | 三个真实文件全量读取、SHA-256、schema、空值、重复及标签分布审计，退出码 0；详见 [审计报告](reports/INITIAL_DATA_AUDIT.md)。 |
 | 历史 CPU 阶段 | 三轮CPU搜索、护栏修复、一次最终留出、全量模型及离线Notebook本地复现已完成；该阶段记录不代表后续GPU或Kaggle状态。 |
-| 最新 Windows 阶段 | 第四轮真实GPU五折微调完成，BA 0.264858、性能门槛失败，无本轮新增Kaggle提交；既有正式提交与最新证据见文末。 |
+| 最新 Windows 阶段 | 第五轮CPU五折完成，风格对照BA 0.359325、固定融合候选0.323681，提交门槛失败，无本轮新增Kaggle提交；既有正式提交与最新证据见文末。 |
 | 已授权 | [CPU 方案](docs/PLAN.md)及[整轮停止标准](docs/OPTIMIZATION_PLAN.md)；不逐次询问常规调参。 |
 
 ## 待核对
@@ -341,7 +341,7 @@ Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 2026102
 
 根目录新增[PROJECT_LEARNING.md](../PROJECT_LEARNING.md)为文字源，[PROJECT_LEARNING.html](../PROJECT_LEARNING.html)为离线阅读版，根`scripts/render_project_learning.py`仅重新生成页面，不读取训练数据。内容含项目时间线、任务与验证流程、第二轮原因、第三轮方法、BA计算器、术语及练习；虚构例子和实测指标明确分开。**以后每轮同步维护这两个文件**，记录问题、预算、实际动作、结果、停止原因与证据，并解释本轮学习点。不要只更新技术报告或只交付分数；历史CV与Kaggle分数不混比。
 
-## 2026-10-25 第四轮监督微调完成，性能下降（当前）
+## 2026-10-25 第四轮监督微调完成，性能下降（历史）
 
 用户授权继续一轮，达到门槛的进步候选才提交一次Kaggle。第四轮计划、配置与训练实现于真实执行前推送为`78d529d`。新ID `windows-modernbert-finetune-dev-20261025-r4`，固定原120prompt/2159行、原五折身份，每fold从同一ModernBERT-base重新初始化分类头并全参数微调4epoch；无外部数据、无外层验证选epoch。9项合成CPU测试和独立训练数学/预算边界静态审查通过。第四轮自己的人工文本反向资源预检计入新预算，没有重用旧probe额度。
 
@@ -352,3 +352,15 @@ Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 2026102
 成绩产生前已准备并推送条件最终入口`windows_modernbert_final_round4.py`（`660460a`），5项合成准入测试通过。真实准入检查因gate失败返回blocked，final claim/output不存在。**条件最终训练=0，旧30prompt评估=0，全量2699行fit=0，新Kaggle上传/保存运行/正式提交=0**。没有因loss下降就宣称进步，没有修改门槛、追加参数搜索或用旧0.351候选代替提交。本轮再次只读确认历史本账号Notebook仍显示public0.351；不存在第四轮新公榜分数。
 
 根`PROJECT_LEARNING.md`与HTML已同步三轮BA对照和本轮失败解释，增加监督微调、loss/交叉熵、epoch、梯度累积，以及“训练loss下降不等于新题目识别更好”。本轮结论仅淘汰这套固定配方，不能从单次组合变化断定过拟合/欠拟合或所有微调方法无效。后续新实验仍需独立登记，不得重跑已结束claim或重开旧留出；全部原始输出、环境和权重保持本地，Git只发布本分支源码、测试及聚合文档。
+
+## 2026-10-25 第五轮完成：风格对照提升，固定融合失败（当前）
+
+用户要求参考队友继续优化一轮。亲读根EXPERIMENTS及相关Notebook源码后，登记四视角stylegram LinearSVC与第三轮Gaussian OOF固定80/20融合；纯风格仅作对照。运行前配置、源码、计划与测试已推送为`65d7e54`。未采用历史150-prompt调优融合权重，未复现完整0.601大模型集成。原style/partial完整OOF本地缺失，不能与其历史聚合分数作配对显著性比较。
+
+第五轮`windows-stylegram-fusion-dev-20261025-r5`完成CPU五折5/5次fit，89.948856秒，进程树RSS抽样峰值534601728 bytes（0.498GiB），新增编码器forward=0。每折仅训练折拟合TF-IDF与SVC；真实120prompt/2159行和R2折身份不变。**风格对照BA 0.3593253968；融合候选BA 0.3236811391**。融合相对第三轮+0.0250038904，配对95%区间[+0.0175925926,+0.0328703704]，5/5折改善；但相对风格对照-0.0356442577，0/5折改善。pooled≥.36和不得弱于风格对照两项失败，本轮关闭。
+
+风格对照相对第三轮+0.0606481481，描述性95%区间[+0.0384492702,+0.0828817499]，5/5折改善。对已保存OOF诊断发现风格softmax平均最高分0.0842，语义分数0.4933；融合在1969/2159条上跟随语义首选。当前固定融合相对风格纠错290条、改错367条。分数尺度是有依据的后续研究方向，但本轮未再试温度/权重、未做校准fit，不能声称问题已解决。
+
+8项合成测试通过；独立静态审计后补强worker自身父进程/预算守护及子进程终止确认。真实OOF、源快照、五个模型哈希、每类召回、混淆矩阵、bootstrap、固定融合及配对增益由`verify_round5_results.py`重算通过；五个历史claim哈希保持不变。默认readiness返回blocked拒绝已有claim/output。产物`outputs/windows_stylegram_20261025_r5/`，额外诊断`outputs/windows_4060/round5_diagnostics_20261025.json`，完整指标与哈希见[第五轮报告](reports/WINDOWS_ROUND5_20261025.md)。
+
+**条件最终fit=0、新Kaggle上传/保存运行/正式提交=0、旧30prompt评分=0。** 风格对照没有被事后改选为提交候选；其BA也低于.36，不能四舍五入判通过。条件部署入口/Notebook未构建，因开发门槛已失败，不需要启动该阶段。根学习Markdown/HTML同步新增TF-IDF、n-gram、LinearSVC、softmax、校准和“权重比例不等于决策影响比例”的解释。后续若另开一轮，需重新登记候选和预算；本轮不自动延伸搜索，不修改已冻结源文件或claim。
