@@ -1,6 +1,6 @@
 # Name That LLM 交接
 
-更新：2026-10-24（Asia/Singapore）。本模块保存 Name That LLM 独立实验；下文保留历史运行记录，最新 Windows 接续与材料/提交边界见文末。
+更新：2026-10-25（Asia/Singapore）。本模块保存 Name That LLM 独立实验；下文保留历史运行记录，最新 Windows 接续与材料/提交边界见文末。
 
 ## 已完成与证据范围
 
@@ -10,7 +10,8 @@
 | 已核对 | 官方 Overview：18 类、balanced accuracy、Notebook 提交、`submission.parquet`、关闭互联网、CPU/GPU 最长 9 小时。 |
 | 已实测 | 真实训练集 2,699 条、150 个 prompt、18 类；公开 test/sample 各 3 行。字段见 [data/README.md](data/README.md)。 |
 | 已完成 | 三个真实文件全量读取、SHA-256、schema、空值、重复及标签分布审计，退出码 0；详见 [审计报告](reports/INITIAL_DATA_AUDIT.md)。 |
-| 本轮完成 | 三轮 CPU 搜索、护栏修复、一次最终留出、全量模型及离线 Notebook 本地复现均完成。最新证据见文末；没有 GPU 实验或 Kaggle 提交。 |
+| 历史 CPU 阶段 | 三轮CPU搜索、护栏修复、一次最终留出、全量模型及离线Notebook本地复现已完成；该阶段记录不代表后续GPU或Kaggle状态。 |
+| 最新 Windows 阶段 | 第四轮真实GPU五折微调完成，BA 0.264858、性能门槛失败，无本轮新增Kaggle提交；既有正式提交与最新证据见文末。 |
 | 已授权 | [CPU 方案](docs/PLAN.md)及[整轮停止标准](docs/OPTIMIZATION_PLAN.md)；不逐次询问常规调参。 |
 
 ## 待核对
@@ -328,7 +329,7 @@ Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 2026102
 
 详情见 [第二轮报告](reports/WINDOWS_ROUND2_20261024.md)，协议见 [预登记计划](docs/WINDOWS_ROUND2_PLAN_20261024.md)。本地产物 `outputs/windows_modernbert_dev_20261024_r2/`；最终收据 `outputs/windows_4060/round2_final_reconciliation_20261024.json` SHA为 `3ccd02e9ee6659bb668a5a22b080023b939901c6052baada8ae75b228c7f49a1`。本轮已关闭，不重跑`--round2 --run`，不删除claim；只将代码/配置/测试与聚合文档推送本人分支，原始数据、OOF、模型与环境保持本地。
 
-## 2026-10-24 第三轮完成与根目录学习笔记（当前）
+## 2026-10-24 第三轮完成与根目录学习笔记
 
 用户授权分析第二轮、结合GitHub队友方案登记新预算执行，同时要求后续根目录维护Markdown和HTML，让AI初学者理解项目。实时核对远端main仍为`692ac87`，参考代码无diff。开发诊断表明冻结表示中题目结构明显，12.737%文本超过256token，但现有分组准确率不支持把截断断定为主要原因；未做额外编码器前向。完整[诊断](reports/MODERNBERT_ROUND2_DIAGNOSIS_20261024.md)区分事实和解释。
 
@@ -339,3 +340,15 @@ Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 2026102
 独立审查重算OOF及保存分类头推理，最大误差约2.11e-15；主线程核对真实开发行、缓存、源码快照、fold/labels、hash、supervisor退出与预算。三个先前claim逐字节哈希不变，第一轮失败与法证保留；旧30prompt评分和全量最终fit均为0。本轮入口已关闭，再次默认readiness退出2拒绝已有输出，不再次运行。产物`outputs/windows_prompt_gaussian_20261024_r3/`；最终收据`outputs/windows_4060/round3_final_reconciliation_20261024.json` SHA **`7ed26d4d23961379d5eefd403740c868c58a1295fce9b3c8667cc4dd7cb0cf9e`**。逐类召回、条件和身份见[实际结果](reports/WINDOWS_ROUND3_20261024.md)。
 
 根目录新增[PROJECT_LEARNING.md](../PROJECT_LEARNING.md)为文字源，[PROJECT_LEARNING.html](../PROJECT_LEARNING.html)为离线阅读版，根`scripts/render_project_learning.py`仅重新生成页面，不读取训练数据。内容含项目时间线、任务与验证流程、第二轮原因、第三轮方法、BA计算器、术语及练习；虚构例子和实测指标明确分开。**以后每轮同步维护这两个文件**，记录问题、预算、实际动作、结果、停止原因与证据，并解释本轮学习点。不要只更新技术报告或只交付分数；历史CV与Kaggle分数不混比。
+
+## 2026-10-25 第四轮监督微调完成，性能下降（当前）
+
+用户授权继续一轮，达到门槛的进步候选才提交一次Kaggle。第四轮计划、配置与训练实现于真实执行前推送为`78d529d`。新ID `windows-modernbert-finetune-dev-20261025-r4`，固定原120prompt/2159行、原五折身份，每fold从同一ModernBERT-base重新初始化分类头并全参数微调4epoch；无外部数据、无外层验证选epoch。9项合成CPU测试和独立训练数学/预算边界静态审查通过。第四轮自己的人工文本反向资源预检计入新预算，没有重用旧probe额度。
+
+真实结果：**5/5 fit完成，9183/9183逻辑forward、8641/8641backward、1081/1081optimizer step**；supervisor completed/exit0，耗时2031.168秒。抽样进程树RSS峰值2.911GiB，CUDA allocated/reserved峰值2.623/2.729GiB。pooled BA **0.2648576097**；五折 **0.2731481481、0.2569444444、0.2847222222、0.2384259259、0.2711352657**。对第三轮配对点增益 **-0.0338196390**，2000次整prompt描述性95%区间 **[-0.0541888971,-0.0143334118]**，0/5折改善。完整性通过，但全部性能条件失败。
+
+独立OOF核验与主线程`verify_round4_results.py`复算一致；源码快照、五份receipt/checkpoint、行/标签/fold身份、概率、逐类召回、混淆矩阵、bootstrap、计数与资源已核验。四个历史claim字节哈希不变，原失败与法证保留。默认readiness返回blocked拒绝已有输出。最终复核收据为`outputs/windows_4060/round4_final_reconciliation_20261025.json`，SHA **`f50c3e0d25d2926d5f7013da591d734f542408979b6f7b659824a475a19b5cea`**。真实产物在`outputs/windows_modernbert_finetune_20261025_r4/`，完整指标和18类对照见[第四轮报告](reports/WINDOWS_ROUND4_20261025.md)。
+
+成绩产生前已准备并推送条件最终入口`windows_modernbert_final_round4.py`（`660460a`），5项合成准入测试通过。真实准入检查因gate失败返回blocked，final claim/output不存在。**条件最终训练=0，旧30prompt评估=0，全量2699行fit=0，新Kaggle上传/保存运行/正式提交=0**。没有因loss下降就宣称进步，没有修改门槛、追加参数搜索或用旧0.351候选代替提交。本轮再次只读确认历史本账号Notebook仍显示public0.351；不存在第四轮新公榜分数。
+
+根`PROJECT_LEARNING.md`与HTML已同步三轮BA对照和本轮失败解释，增加监督微调、loss/交叉熵、epoch、梯度累积，以及“训练loss下降不等于新题目识别更好”。本轮结论仅淘汰这套固定配方，不能从单次组合变化断定过拟合/欠拟合或所有微调方法无效。后续新实验仍需独立登记，不得重跑已结束claim或重开旧留出；全部原始输出、环境和权重保持本地，Git只发布本分支源码、测试及聚合文档。

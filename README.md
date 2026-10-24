@@ -14,13 +14,13 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 ---
 
-## 当前进展与学习入口（2026-10-24）
+## 当前进展与学习入口（2026-10-25）
 
-自己的Windows分支为`exp/windows-4060-20261023`。第二轮冻结ModernBERT + LR的BA为0.289904；第三轮借鉴队友题目噪声建模，复用向量做PCA128 + 收缩高斯五折，BA为0.298677。小幅观察提升的配对区间跨0，未达提交门槛，因此没有新的最终拟合或Kaggle提交。旧30-prompt留出与既有失败记录保留。
+自己的Windows分支为`exp/windows-4060-20261023`。第四轮全参数ModernBERT监督微调五折已完成，BA **0.264858**，低于第三轮Gaussian的0.298677和第二轮冻结LR的0.289904。对第三轮配对增益-0.033820、95%区间[-0.054189,-0.014333]，0/5折改善，未达到提交门槛。没有最终训练或新Kaggle上传/运行/提交；旧30-prompt留出与既有失败记录保留。
 
 - **先读学习版：[项目进展与AI知识 Markdown](PROJECT_LEARNING.md) · [可离线打开的HTML](PROJECT_LEARNING.html)**。包含流程、术语、真实实验解释、BA互动计算器与练习；后续每轮同步维护。
-- 证据：[第二轮诊断](name-that-llm/reports/MODERNBERT_ROUND2_DIAGNOSIS_20261024.md)、[第三轮预登记](name-that-llm/docs/WINDOWS_ROUND3_PLAN_20261024.md)、[第三轮实际结果](name-that-llm/reports/WINDOWS_ROUND3_20261024.md)。
-- 下方旧迁移/未提交描述保留历史时间点；目前已核实本账号此前正式public 0.351、队友0.601，均不是第三轮的新成绩。当前状态以[WORKSPACE](name-that-llm/WORKSPACE.md)与HANDOFF末节为准。
+- 证据：[第四轮预登记](name-that-llm/docs/WINDOWS_ROUND4_PLAN_20261025.md)、[第四轮结果与逐类召回](name-that-llm/reports/WINDOWS_ROUND4_20261025.md)、[第三轮实际结果](name-that-llm/reports/WINDOWS_ROUND3_20261024.md)、[第二轮诊断](name-that-llm/reports/MODERNBERT_ROUND2_DIAGNOSIS_20261024.md)。
+- 下方旧迁移/未提交描述保留历史时间点；此前正式public 0.351、队友0.601均为历史成绩，不能当作第四轮分数。当前状态以[WORKSPACE](name-that-llm/WORKSPACE.md)与HANDOFF末节为准。
 
 ## 赛题一句话
 
