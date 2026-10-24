@@ -1,0 +1,55 @@
+{
+  "experiment_id": "windows-stylegram-fusion-dev-20261025-r5",
+  "scope": "One fixed four-view stylegram plus Round3 fusion; original 120 prompts / 2159 rows only.",
+  "baseline_output": "outputs/windows_prompt_gaussian_20261024_r3",
+  "baseline_contract_sha256": "e8fc011170cca61e50696ed6e91413544010e2a07388e096e59ed1f61af035f1",
+  "baseline_oof_sha256": "d0d8d3c413676c376eca0f74acfa03d4ee7a9959ddc1b57789b882948344e30f",
+  "fold_reference_output": "outputs/windows_modernbert_dev_20261024_r2",
+  "fold_reference_contract_sha256": "973ca22331cd509d3117c7fc39b2f90da2c1949f1fa5e972ffa0335acd98396a",
+  "preserved_claims": {
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023.json": "fc06fd719de08f08bc283136104753e020bb6cb4b2abcb73387aea8f6a120507",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023-startup-recovery-1.json": "86d89fc70b66e22fed20e8275d5b7af85309e731ab5e8c6ab2a1c36c0b8cc2c3",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261024-r2.json": "f66dc2185520703bfe5456b5a279e4ae5e67242a9ff4378c75cf01b3a3a67c30",
+    "outputs/continuation_claims/windows-prompt-gaussian-dev-20261024-r3.json": "8708ede039c4ee84f81f7fc5d809b360fef63bbc70d840708b1254b8fb371b9e",
+    "outputs/continuation_claims/windows-modernbert-finetune-dev-20261025-r4.json": "9403d878f2cd37ac1ba1cf18ec76e115ba077effd5e9ad35a8d998dfe938d8ef"
+  },
+  "method": {
+    "views": [
+      {"name":"char", "ngram_range":[3,5], "max_features":250000, "weight":1.0},
+      {"name":"word", "ngram_range":[1,3], "max_features":180000, "weight":0.7},
+      {"name":"shape", "ngram_range":[2,6], "max_features":60000, "weight":0.5},
+      {"name":"function", "ngram_range":[1,3], "max_features":50000, "weight":0.5}
+    ],
+    "classifier": {"C":0.5, "random_state":42, "max_iter":4000, "dual":true, "class_weight":null},
+    "style_weight":0.8,
+    "score_mapping":"softmax of raw SVC margins at temperature 1; normalized scores, not calibrated probabilities",
+    "fit_scope":"training fold only; no public pool, no group centering, no validation vocabulary",
+    "selection":"fusion is the sole candidate; style-only is diagnostic control, never fallback"
+  },
+  "evaluation":{"folds":5, "bootstrap_resamples":2000, "bootstrap_seed":20261025},
+  "candidate_gate":{
+    "min_pooled_balanced_accuracy":0.36,
+    "min_each_fold_balanced_accuracy":0.30,
+    "min_paired_gain_over_round3":0.02,
+    "paired_prompt_95ci_lower_exceeds":0.0,
+    "min_improved_folds_over_round3":4,
+    "min_paired_gain_over_style_control":0.0
+  },
+  "budget":{
+    "max_classifier_fit_attempts":5, "development_timeout_seconds":2700,
+    "threads":2, "max_host_rss_gib":12, "automatic_failed_run_retries":0,
+    "new_encoder_forward_calls":0, "old_holdout_evaluations":0, "full_data_final_fits":0
+  },
+  "conditional_deployment_budget":{
+    "max_final_style_fits":1, "max_final_gaussian_fits":1,
+    "final_training_rows":2159, "final_training_groups":120,
+    "development_timeout_seconds":3600, "max_host_rss_gib":12,
+    "new_development_encoder_forward_calls":0,
+    "max_synthetic_encoder_checks":4,
+    "max_kaggle_saved_runs":1, "max_kaggle_formal_submissions":1,
+    "max_test_rows":4096, "max_kaggle_runtime_hours":9,
+    "old_holdout_evaluations":0,
+    "failed_gate_action":"Stop; no final fit, fallback, new parameter search, upload or submission."
+  },
+  "runtime":{"numpy":"2.2.6", "scipy":"1.16.3", "scikit-learn":"1.7.2", "threadpoolctl":"3.6.0", "psutil":"7.0.0", "joblib":"1.5.2"}
+}
