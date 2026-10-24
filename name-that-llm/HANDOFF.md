@@ -316,7 +316,7 @@ Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 2026102
 
 本地证据在忽略的 `outputs/windows_4060/` 与两次实际输出目录。`round_reconciliation_20261024.json` SHA为 `c6c47947074b6c0c58781ae595a022952b59cf673e88e0310df5c88995c7de18`；在线核对收据SHA为 `ff4294e7ce1cef7e0ce577417e08e5d07d2170d12f6a580e2452596b3c08ac68`。只推本人分支的明确代码/配置/测试/聚合文档，原始数据、日志、claims、环境和模型不入Git。后续新一轮先登记新的预算与停止条件，保留本轮失败与265次尝试，不能把未完成说成通过。
 
-## 2026-10-24 独立第二轮已完成，未达到提交门槛（当前）
+## 2026-10-24 独立第二轮已完成，未达到提交门槛
 
 用户明确授权登记独立下一轮、保留失败、不重开旧留出，五折完成后有合格候选才提交一次。预登记、独立入口和测试已在真实运行前提交并推送为 `42a444c`。固定新ID `windows-modernbert-frozen-dev-20261024-r2`，原120 prompt / 2,159行、同一冻结ModernBERT配置与LR，不复用旧claim或旧计算预算；最多540个batch、5次CV fit，条件最终head最多1fit但仅在门槛通过后启用。
 
@@ -327,3 +327,15 @@ Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 2026102
 两个旧claim哈希与第二轮启动前完全一致，第一轮265/264、0fit失败及原路径覆盖的法证/重建档案均保留。冻结75/25 Notebook与labels哈希也未变。本轮开发数据多次用于探索，且无历史逐行OOF，不把0.289904与历史0.348673的聚合比较写成配对显著性；既有0.351/0.601仍分别属于历史正式结果。
 
 详情见 [第二轮报告](reports/WINDOWS_ROUND2_20261024.md)，协议见 [预登记计划](docs/WINDOWS_ROUND2_PLAN_20261024.md)。本地产物 `outputs/windows_modernbert_dev_20261024_r2/`；最终收据 `outputs/windows_4060/round2_final_reconciliation_20261024.json` SHA为 `3ccd02e9ee6659bb668a5a22b080023b939901c6052baada8ae75b228c7f49a1`。本轮已关闭，不重跑`--round2 --run`，不删除claim；只将代码/配置/测试与聚合文档推送本人分支，原始数据、OOF、模型与环境保持本地。
+
+## 2026-10-24 第三轮完成与根目录学习笔记（当前）
+
+用户授权分析第二轮、结合GitHub队友方案登记新预算执行，同时要求后续根目录维护Markdown和HTML，让AI初学者理解项目。实时核对远端main仍为`692ac87`，参考代码无diff。开发诊断表明冻结表示中题目结构明显，12.737%文本超过256token，但现有分组准确率不支持把截断断定为主要原因；未做额外编码器前向。完整[诊断](reports/MODERNBERT_ROUND2_DIAGNOSIS_20261024.md)区分事实和解释。
+
+独立第三轮`windows-prompt-gaussian-dev-20261024-r3`的[预登记](docs/WINDOWS_ROUND3_PLAN_20261024.md)、实现及6项合成测试已在真实拟合前提交并推送为`c85a5a4`。借鉴队友共享prompt Gaussian的统计思想，固定训练折StandardScaler、同题残差PCA128、4次双向均值与收缩协方差；未知题目逐行边缘预测，不接收验证prompt_id、不聚类或强制唯一分配。复用第二轮已核验的原120prompt特征和fold身份，没有复现完整0.601集成。
+
+实际新增encoder forward=0、classifier fit=5/5；supervisor completed/exit0，35.15199秒、抽样RSS峰值610803712字节（约0.569GiB）。BA **0.2986772487**，五折0.296296/0.284722/0.305556/0.314815/0.291868。对第二轮配对点增益**0.0087729536**、描述性95%区间**[-0.0069917101,+0.0249690083]**，3/5折提升。绝对BA、最低折、配对点增益、区间及改善折数门槛均未达，故条件最终fit、新Kaggle上传/保存运行/正式提交均为0。未加搜参数或改门槛，无新公榜分数。
+
+独立审查重算OOF及保存分类头推理，最大误差约2.11e-15；主线程核对真实开发行、缓存、源码快照、fold/labels、hash、supervisor退出与预算。三个先前claim逐字节哈希不变，第一轮失败与法证保留；旧30prompt评分和全量最终fit均为0。本轮入口已关闭，再次默认readiness退出2拒绝已有输出，不再次运行。产物`outputs/windows_prompt_gaussian_20261024_r3/`；最终收据`outputs/windows_4060/round3_final_reconciliation_20261024.json` SHA **`7ed26d4d23961379d5eefd403740c868c58a1295fce9b3c8667cc4dd7cb0cf9e`**。逐类召回、条件和身份见[实际结果](reports/WINDOWS_ROUND3_20261024.md)。
+
+根目录新增[PROJECT_LEARNING.md](../PROJECT_LEARNING.md)为文字源，[PROJECT_LEARNING.html](../PROJECT_LEARNING.html)为离线阅读版，根`scripts/render_project_learning.py`仅重新生成页面，不读取训练数据。内容含项目时间线、任务与验证流程、第二轮原因、第三轮方法、BA计算器、术语及练习；虚构例子和实测指标明确分开。**以后每轮同步维护这两个文件**，记录问题、预算、实际动作、结果、停止原因与证据，并解释本轮学习点。不要只更新技术报告或只交付分数；历史CV与Kaggle分数不混比。

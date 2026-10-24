@@ -4,7 +4,7 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 **目标：银牌以上**（Featured 竞赛银牌 ≈ 队伍排名前 5%）。
 
-> **队友2026-10-20实验记录：公开榜0.601，第86 / 2,084队。** 本分支尚未独立核验对应提交或当前排名；此前0.554为历史版本。完整记录见 [EXPERIMENTS.md](EXPERIMENTS.md)，版本证据缺口见[审查说明](name-that-llm/docs/TEAM_WORK_REVIEW.md)。
+> **队友2026-10-20实验记录：公开榜0.601，第86 / 2,084队。** 2026-10-24已核实对应历史正式提交Succeeded、public 0.601；上述排名仅为历史记录，不代表当前排名，也没有完成远端完整Notebook字节核对。此前0.554为历史版本。完整记录见 [EXPERIMENTS.md](EXPERIMENTS.md)，来源与边界见[最新交接](name-that-llm/HANDOFF.md)。
 >
 > **成绩构成说明**：记录中的0.554和0.601来自**复现社区公开方案**。
 > 上游作者：Lucas Boesen（`lora-x-adaptive-centering`）、
@@ -13,6 +13,14 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 > 我们自己做的是：打通默认镜像依赖、修正路径、判断方向、以及下面 v1/v2 的原创探索。
 
 ---
+
+## 当前进展与学习入口（2026-10-24）
+
+自己的Windows分支为`exp/windows-4060-20261023`。第二轮冻结ModernBERT + LR的BA为0.289904；第三轮借鉴队友题目噪声建模，复用向量做PCA128 + 收缩高斯五折，BA为0.298677。小幅观察提升的配对区间跨0，未达提交门槛，因此没有新的最终拟合或Kaggle提交。旧30-prompt留出与既有失败记录保留。
+
+- **先读学习版：[项目进展与AI知识 Markdown](PROJECT_LEARNING.md) · [可离线打开的HTML](PROJECT_LEARNING.html)**。包含流程、术语、真实实验解释、BA互动计算器与练习；后续每轮同步维护。
+- 证据：[第二轮诊断](name-that-llm/reports/MODERNBERT_ROUND2_DIAGNOSIS_20261024.md)、[第三轮预登记](name-that-llm/docs/WINDOWS_ROUND3_PLAN_20261024.md)、[第三轮实际结果](name-that-llm/reports/WINDOWS_ROUND3_20261024.md)。
+- 下方旧迁移/未提交描述保留历史时间点；目前已核实本账号此前正式public 0.351、队友0.601，均不是第三轮的新成绩。当前状态以[WORKSPACE](name-that-llm/WORKSPACE.md)与HANDOFF末节为准。
 
 ## 赛题一句话
 

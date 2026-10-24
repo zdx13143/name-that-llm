@@ -6,3 +6,8 @@ name-that-llm/config/labels.json text eol=lf
 name-that-llm/config/windows_modernbert_startup_recovery_20261024.json text eol=lf
 name-that-llm/config/windows_modernbert_round2_20261024.json text eol=lf
 name-that-llm/config/windows_prompt_gaussian_round3_20261024.json text eol=lf
+
+# Keep the generated learning page and its source fingerprint reproducible.
+PROJECT_LEARNING.md text eol=lf
+PROJECT_LEARNING.html text eol=lf
+scripts/render_project_learning.py text eol=lf

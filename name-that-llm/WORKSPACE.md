@@ -1,8 +1,10 @@
 # 独立 CPU 实验入口
 
-2026-10-24 最新状态：用户授权的独立第二轮**五折评估已完成，提交门槛未通过**。原120 prompt / 2,159行，540/540个提取batch、5/5次fit，pooled BA **0.289904**，五折BA为0.296296/0.282407/0.312500/0.300926/0.257548。预登记要求pooled≥0.36且每折≥0.30，故未做最终fit、上传或Kaggle提交。旧30-prompt留出评分=0。33项相关测试通过，真实supervisor退出0；产物完整性复核通过，入口已关闭。详见 [第二轮报告](reports/WINDOWS_ROUND2_20261024.md)及HANDOFF末节。
+2026-10-24 最新状态：第三轮**五折已完成，提交门槛未通过**。分析第二轮并核对GitHub队友源码后，选择题目残差PCA128 + 收缩高斯头；复用原120 prompt / 2,159行特征，新增编码器前向0次、5/5次fit。pooled BA **0.298677**，比第二轮高0.008773；配对95%区间[-0.006992,+0.024969]跨0、仅3/5折改善，绝对与配对门槛均未达。无最终fit、上传或Kaggle提交，旧留出评分=0。6项新增合成测试及实际OOF/分类头独立复核通过，supervisor退出0。详见[第三轮报告](reports/WINDOWS_ROUND3_20261024.md)及HANDOFF末节。
 
-当前独立分支 `exp/windows-4060-20261023`，工作目录 `D:\kaggle\name_that_llm`。第二轮预登记及代码提交为 `42a444c`，结果未触发条件部署预算。原账号已登录、官方数据已核验，无Mac材料依赖。上一阶段已核实的正式Kaggle记录为本账号0.351、队友0.601；本轮没有新公榜分数。第一轮265次forward尝试、264次持久完成、0次fit的失败和法证记录保留，两个旧claim哈希未变，详见 [第一轮失败报告](reports/WINDOWS_ROUND_20261024.md)。旧291次fit和已用30-prompt留出未重跑；不能重开任一旧入口、删除claim或把第二轮成功改写成第一轮成功。
+当前独立分支 `exp/windows-4060-20261023`，工作目录 `D:\kaggle\name_that_llm`。第三轮预登记及代码在运行前推送为`c85a5a4`；第二轮见[原报告](reports/WINDOWS_ROUND2_20261024.md)。原账号已登录、官方数据已核验，无Mac材料依赖。已核实历史正式Kaggle为本账号0.351、队友0.601，本轮无新公榜分数。第一轮265/264、0fit失败和法证记录保留，三个先前claim哈希均未变。旧291次fit和已用30-prompt留出未重跑；所有已结束入口保持关闭。
+
+**后续维护要求：每轮同步更新仓库根[PROJECT_LEARNING.md](../PROJECT_LEARNING.md)与[PROJECT_LEARNING.html](../PROJECT_LEARNING.html)**，记录假设、预算、实际动作、结果、停止原因和证据，同时面向AI初学者解释本轮知识。Markdown为文字源，根`scripts/render_project_learning.py`生成无外部依赖HTML；保留历史失败，教学虚构例子与真实指标分开。
 
 以下保留2026-10-23交接记录，历史分支：`exp/windows-handoff-20261023`。2026-10-23 已补充 [Windows 交接](docs/WINDOWS_HANDOFF.md)和[下一对话 prompt](../WINDOWS_NEXT_CHAT_PROMPT.md)。用户已手动创建比赛 Notebook 草稿，但是否运行/提交尚未确认，接续先核对历史，不能重复提交。下文“一次提交准备”的未上传表述是原自动化执行记录，不否定用户后来的手动操作。原候选来源分支为 `exp/single-submission-20261021`。用户已明确授权一次Kaggle提交；固定75% original_style + 25% partial候选的[提交计划](docs/SINGLE_SUBMISSION_PLAN.md)和[独立Notebook](notebooks/candidate_blend_offline.ipynb)已准备。本地全量最终训练与公开占位test接口检查通过，尚未上传、运行或提交Kaggle：本轮读取页面仍被保存的域名权限拒绝。下一步须等访问限制解除，再核对当前规则、账号/队伍、额度，使用独立私有Notebook提交至多一次。不得通过其它渠道绕过拒绝，或重复运行已经完成的本地训练。详细命令与证据见[HANDOFF末节](HANDOFF.md#2026-10-21-一次提交准备当前停止点)。
 

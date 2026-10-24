@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Name That LLM 实验过程与 AI 入门笔记：用实际结果理解验证、特征、分类与不确定性。">
+<meta name="source-sha256" content="371a3ea440802140c6a8b0eec237ebe217db49180e7861eca22a0fec34bf9e73"><title>Name That LLM · 项目进展与 AI 学习笔记</title><style>
+:root{color-scheme:light;--ink:#173331;--muted:#647572;--paper:#f6f5ef;--line:#dce4dc;--teal:#176b60;--amber:#a56c26;--white:#fffefa}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:25px}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Segoe UI","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.9}a{color:var(--teal);text-underline-offset:4px}a:hover{color:#114d45}a:focus-visible,button:focus-visible,input:focus-visible,.table-wrap:focus-visible{outline:3px solid #d3943c;outline-offset:4px}.skip{position:fixed;top:-100px;left:10px;z-index:5;background:white;padding:10px}.skip:focus{top:10px}.hero{padding:68px max(28px,calc((100vw - 1210px)/2)) 55px;background:var(--ink);color:#f3f4e9;overflow:hidden}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700}.hero .eyebrow{color:#b2d4c7}.hero h1{font-size:clamp(30px,4.1vw,54px);line-height:1.3;letter-spacing:-1.5px;margin:16px 0}.hero p{color:#c4d2cc;max-width:670px;margin:0}.hero .tag{display:inline-block;border:1px solid #67817b;border-radius:30px;padding:3px 13px;font-size:13px;margin-top:23px}.layout{max-width:1260px;margin:auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:52px;padding:42px 25px 80px}.sidebar{position:sticky;top:25px;align-self:start}.sidebar>span{color:var(--muted);font-size:12px;letter-spacing:2px}.sidebar nav{margin-top:18px;display:grid;gap:5px}.sidebar a{display:block;text-decoration:none;font-size:13px;line-height:1.7;padding:8px 12px;border-left:2px solid var(--line)}.sidebar a:hover,.sidebar a.active{background:#e7eee5;border-color:var(--teal)}.sidebar .source{margin-top:25px;border-left:0}main{min-width:0}h2{font-size:27px;line-height:1.5;margin:68px 0 24px;letter-spacing:-.6px;padding-top:15px;border-top:1px solid var(--line)}h3{font-size:19px;line-height:1.7;margin:30px 0 12px}p{margin:16px 0}strong{font-weight:650}li{padding:3px 0}li+li{margin-top:7px}.status{border-left:4px solid var(--teal);background:#e8eee5;padding:19px 23px;font-size:14px;color:#36534b;border-radius:0 8px 8px 0}.table-wrap{overflow:auto;margin:24px 0;border:1px solid var(--line);border-radius:10px;background:var(--white)}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.8;min-width:490px}th,td{text-align:left;padding:13px 15px;vertical-align:top;border-bottom:1px solid #e8ece4}th{background:#eaf0e8;font-weight:650}tr:last-child td{border-bottom:0}code{font-family:Consolas,monospace;font-size:.88em;background:#e9ede4;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{background:#153c36;color:#e5eee1;padding:22px;border-radius:10px;overflow:auto;line-height:1.7;font-size:14px}pre code{background:none;padding:0;white-space:pre;overflow-wrap:normal}.chart{margin:28px 0;padding:27px 30px;background:var(--white);border:1px solid var(--line);border-radius:14px}figcaption{font-size:14px;font-weight:650;margin-bottom:21px}.bar-row{margin:14px 0}.bar-label{display:flex;justify-content:space-between;gap:12px;font-size:13px}.bar-label strong{font-variant-numeric:tabular-nums}.bar-track{background:#ebeee6;border-radius:4px;height:13px;margin-top:7px;overflow:hidden}.bar-track span{display:block;height:100%;background:#899e96;border-radius:4px}.new .bar-track span{background:var(--teal)}.gate .bar-track span{background:repeating-linear-gradient(45deg,#bd904f,#bd904f 5px,#dfc49a 5px,#dfc49a 10px)}.axis{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}.chart-note{font-size:12px;color:var(--muted);margin-bottom:0}.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin:28px 0}.flow div{padding:15px 5px 15px 10px;border-top:2px solid #81a596;background:#eaf0e6}.flow span{font:12px Consolas,monospace;color:var(--teal);display:block}.flow b{font-size:12px;font-weight:600}.calculator{background:#fff8e9;border:1px solid #e7d9ba;border-radius:14px;padding:28px;margin:28px 0}.calculator .eyebrow{color:var(--amber)}.calculator h3{margin:10px 0}.calculator p{font-size:14px}.calc-grid{display:grid;gap:17px;margin:22px 0}.calc-grid label{font-size:14px}.calc-grid output{float:right;font-variant-numeric:tabular-nums}input[type=range]{width:100%;accent-color:var(--teal);display:block;margin:12px 0 0;min-height:24px}.calc-results{display:grid;grid-template-columns:1fr 1fr;gap:15px}.calc-results div{background:var(--white);border-radius:10px;padding:17px 20px}.calc-results small,.calc-results span{display:block;font-size:12px;color:var(--muted)}.calc-results strong{display:block;font-size:36px;color:var(--teal);line-height:1.5;font-variant-numeric:tabular-nums}.formula{font-variant-numeric:tabular-nums;overflow-wrap:anywhere}button{cursor:pointer;border:1px solid #9aab9f;border-radius:7px;background:transparent;padding:10px 16px;color:var(--ink);font:inherit;font-size:13px}button:hover{background:#e9eee1}footer{border-top:1px solid var(--line);padding:25px;text-align:center;font-size:12px;color:var(--muted);overflow-wrap:anywhere}.page-top{display:inline-block;margin-top:35px;font-size:13px}
+@media(max-width:900px){.layout{grid-template-columns:1fr;gap:25px;max-width:810px}.sidebar{position:static}.sidebar nav{grid-template-columns:1fr 1fr;gap:3px}.sidebar .source{margin-top:12px}.hero{padding:40px 25px}.sidebar>span{display:block}h2{margin-top:45px}}
+@media(max-width:540px){body{font-size:15px}.layout{padding:25px 18px 45px}.hero{padding:35px 20px}.hero h1{font-size:32px}.sidebar nav{grid-template-columns:1fr}.sidebar a{padding:6px 10px}.flow{grid-template-columns:repeat(3,1fr)}.chart,.calculator{padding:20px 17px}.bar-label{font-size:12px}.calc-results{gap:8px}.calc-results div{padding:13px 10px}.calc-results strong{font-size:31px}h2{font-size:23px}.status{padding:16px}table{min-width:480px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.sidebar,.skip,button,.page-top{display:none}.layout{display:block;padding:0}.hero{background:white;color:var(--ink);padding:0}.hero p,.hero .eyebrow{color:var(--ink)}body{background:white;font-size:11pt}.table-wrap{overflow:visible}table{min-width:0;font-size:9pt}.chart,.calculator{break-inside:avoid}h2{break-after:avoid}a{color:inherit}}
+</style></head>
+<body><a class="skip" href="#content">跳到正文</a><header class="hero" id="top"><div class="eyebrow">NAME THAT LLM / 实验与学习</div><h1>读懂每一次实验。</h1><p>从一段文本到一个判断，跟着真实项目理解 AI。记录做过什么，也理解为什么这样做、结果能说明什么。</p><span class="tag">项目进展 × 小白学习笔记 · 离线版</span></header>
+<div class="layout"><aside class="sidebar"><span>阅读目录</span><nav aria-label="章节目录"><a href="#section-1">1. 现在进行到哪里</a>
+<a href="#section-2">2. 这个 AI 任务到底在学什么</a>
+<a href="#section-3">3. 一次实验的完整流程</a>
+<a href="#section-4">4. 第二轮为什么效果差：哪些是事实，哪些还只是解释</a>
+<a href="#section-5">5. 第三轮学了队友的什么思路</a>
+<a href="#section-6">6. 怎样看懂 balanced accuracy</a>
+<a href="#section-7">7. 为什么按 prompt 分组，又为什么不能重开旧留出</a>
+<a href="#section-8">8. 常用术语速查</a>
+<a href="#section-9">9. 三个可以亲手完成的小练习</a>
+<a href="#section-10">10. 证据入口与以后怎样更新</a></nav><a class="source" href="PROJECT_LEARNING.md">查看 Markdown 原文 ↗</a></aside><main id="content"><aside class="status">更新：2026-10-25（实验运行于 2026-10-24）。当前状态：第三轮五折已完成，候选未达到提交门槛。本文件记录实际进展，也解释每一步的 AI 知识。HTML 版可离线打开；后续每轮继续更新这两个同名文件。</aside>
+<p>这份笔记的目标是让你能回答三个问题：<strong>我们想验证什么？实验怎样做到公平？结果究竟支持什么？</strong> 不需要先学完一门机器学习课，先跟着这个项目理解一条完整的实验链。</p>
+<h2 id="section-1">1. 现在进行到哪里</h2>
+<p>我们完成了第二轮的原因分析，并借鉴队友 GitHub 中的题目噪声建模方法，执行了新的第三轮。第三轮 BA 从 <strong>0.289904 提高到 0.298677</strong>，增加 <strong>0.8773 个百分点</strong>；但配对增益区间跨过 0，只有 3/5 折改善，仍未达到预先固定的提交要求。因此本轮没有最终拟合、上传或提交 Kaggle。</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table><thead><tr><th scope="col">阶段</th><th scope="col">做了什么</th><th scope="col">真实结果</th><th scope="col">学到什么</th></tr></thead><tbody><tr><td>历史 CPU 开发</td><td>文本风格、字符/词片段、有限融合</td><td>已有冻结开发候选；历史记录保留</td><td>简单模型也能识别书写习惯；探索越多，越需要谨慎解释验证分数</td></tr><tr><td>Windows 第一轮</td><td>迁移与真实向量提取</td><td>265 次尝试、264 次持久完成记录，0 次 fit；失败关闭</td><td>程序能启动、测试通过，都不等于真实实验完成</td></tr><tr><td>Windows 第二轮</td><td>冻结 ModernBERT + 标准化 + 逻辑回归</td><td>540/540 个 batch，5/5 次 fit；BA 0.289904</td><td>管线跑通了，但这个模型配置的表现仍然弱</td></tr><tr><td>Windows 第三轮</td><td>复用向量，题目残差 PCA + 收缩高斯分类头</td><td>新增编码器前向 0 次，5/5 次 fit；BA 0.298677</td><td>改变统计建模有小幅观察增益，但尚不足以证明稳定改善</td></tr></tbody></table></div>
+<figure class="chart"><figcaption>同一开发集 · pooled balanced accuracy</figcaption><div class="bar-row old"><div class="bar-label">第二轮 · 冻结编码器 + LR<strong>0.289904</strong></div><div class="bar-track"><span style="width:72.4760%"></span></div></div><div class="bar-row new"><div class="bar-label">第三轮 · 题目噪声高斯头<strong>0.298677</strong></div><div class="bar-track"><span style="width:74.6693%"></span></div></div><div class="bar-row gate"><div class="bar-label">预登记 pooled BA 门槛<strong>0.360000</strong></div><div class="bar-track"><span style="width:90.0000%"></span></div></div><div class="axis"><span>0</span><span>0.4</span></div><p class="chart-note">横轴从 0 起。第三轮略高，但两轮都未达绝对门槛；这张图不是 Kaggle 榜单。</p></figure>
+<p>第三轮五折 BA 为 <strong>0.296296、0.284722、0.305556、0.314815、0.291868</strong>。预登记要求 pooled BA 至少 0.36、每折至少 0.30，并通过配对比较和完整性检查。这些要求在看到结果前写好，不能因为结果不理想而临时降低。</p>
+<p>第二轮总耗时约 67.3 秒；第三轮约 35.2 秒、抽样内存峰值约 0.569 GiB。第三轮不用 GPU 重新读文本，因为它复用了已经保存、身份核验通过的冻结特征。</p>
+<p>此前核实的本账号 Kaggle 0.351、队友 0.601 属于历史正式提交，<strong>不是本轮的新成绩，也不能与本地 CV 直接相减</strong>。当前没有达到门槛的新候选。</p>
+<h2 id="section-2">2. 这个 AI 任务到底在学什么</h2>
+<p>可以把任务想成：拿到一篇英文作文，猜它是哪位“作者”写的。在这里，作者是 18 个大语言模型；prompt 是给作者的题目。</p>
+<p>同一个题目会让不同作者使用相似的主题词。例如，大家都写“海边旅行”，就容易出现海浪、沙滩、日落。这些词主要告诉我们<strong>在写什么</strong>。我们真正想利用的是<strong>怎样写</strong>：措辞、句式、标点、表达偏好，以及更细微的组合规律。</p>
+<p>官方训练数据共有 2,699 条、150 个 prompt。本项目已经固定：120 个 prompt、2,159 条用于开发；另外 30 个 prompt、540 条是已经使用过的旧留出，后续不再拿来训练、评分或挑方案。</p>
+<p><strong>这里做的是“18 类作者归属”，不是“这是不是 AI 写的”二分类。</strong> 模型必须在 18 个名字里选一个，难点经常是区分风格相近的型号。</p>
+<h2 id="section-3">3. 一次实验的完整流程</h2>
+<div class="flow" aria-label="实验流程"><div><span>01</span><b>提出假设</b></div><div><span>02</span><b>固定验证</b></div><div><span>03</span><b>生成特征</b></div><div><span>04</span><b>折内拟合</b></div><div><span>05</span><b>OOF 评分</b></div><div><span>06</span><b>门槛决策</b></div></div>
+<ol><li><strong>提出一个可检验的问题。</strong> 例如：向量里题目差异太明显，换一种建模方式能否更好地区分作者？</li><li><strong>先固定数据与验证方式。</strong> 哪些行能用、哪些不能用、五折怎样划分，都先确定。</li><li><strong>把文字转成数字。</strong> 模型无法直接对“文风”这个词做计算，需要把每篇文本转换成向量，也叫 embedding。</li><li><strong>在训练折上拟合。</strong> 通过训练样本估计分类器参数；缩放、降维等需要从数据学习的步骤也只能看训练折。</li><li><strong>对没参与该折拟合的文本预测。</strong> 收集所有折的 OOF 预测，计算总体、每折和每类指标。</li><li><strong>按预登记门槛决定是否进入提交。</strong> 完整性、资源、输出格式与离线运行也需要通过；开发分数好不代表已经提交成功。</li></ol>
+<p>五折不是简单地把同一批数据训练五遍。它轮流留出五组题目：每条样本的 OOF 预测，必须来自一个没有用这条样本及同题文本拟合的分类器。</p>
+<p>冻结编码器可以先生成全部开发文本的向量，是因为它没有用本任务数据更新参数，并且每篇文本独立编码。<strong>如果以后微调编码器，就要按每个训练折分别训练和编码，不能沿用这套复用理由。</strong></p>
+<h2 id="section-4">4. 第二轮为什么效果差：哪些是事实，哪些还只是解释</h2>
+<h3>已经确认的事实</h3>
+<p>运行和产物核验通过。输入行序、标签、特征、OOF 与哈希都对得上，因此目前没有发现“评错了标签”或“缓存串了”的证据。GPU 的作用主要是加速运算，换成 GPU 并不会自动提高模型分数。</p>
+<p>ModernBERT 在第二轮是<strong>冻结的</strong>：它以前接受过预训练，但我们没有用这 18 类作者标签修改它的内部参数。我们只在它输出的 3,072 维向量后面训练了一个逻辑回归分类头。</p>
+<p>每折训练约 1,727/1,728 条文本，输入却有 3,072 个坐标。坐标多不等于有效信息多；它们可能重复、相关，也可能主要描述题目。这个规模需要合理约束，但“维度多”本身不能证明发生了过拟合。</p>
+<h3>截断可能丢信息，但目前不是已证实的主要原因</h3>
+<p>token 可以粗略理解为模型读文字时使用的小块，它不严格等于一个英文单词。我们固定最多读取 256 token。</p>
+<p>开发文本中，<strong>275/2,159 条（12.7%）</strong>超过 256 token；中位数为 134，最大为 396。长文本确实有一部分没被读入，但它们现有的普通准确率为 35.3%，未截断组为 28.1%。两组的题目和作者构成不同，这不是公平的截断消融实验。</p>
+<p>所以正确表述是：<strong>截断存在，值得知道；还不能认定它造成了主要损失。</strong> 不能为了一个看起来合理的解释就立即增加长度和训练成本。</p>
+<h3>向量里能看到明显的题目结构</h3>
+<p>把向量长度归一化后，按 prompt 分组解释的平方差比例为 30.8%，按作者标签分组为 2.59%。因为 prompt 有 120 组、作者只有 18 类，组数多的一方天然更容易解释差异，所以还要看对应的随机分组基线。</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table><thead><tr><th scope="col">L2 归一化表示</th><th scope="col">观察解释比例</th><th scope="col">同组数随机基线</th><th scope="col">校正后比例</th></tr></thead><tbody><tr><td>按 prompt 分组</td><td>30.763%</td><td>5.514%</td><td>26.722%</td></tr><tr><td>按模型作者分组</td><td>2.591%</td><td>0.788%</td><td>1.818%</td></tr></tbody></table></div>
+<p>这支持“题目结构很明显”的诊断，但<strong>不是因果贡献表，也不意味着向量里没有作者信息</strong>。有用信息可能在幅度较小的方向，或需要更合适的组合才能被分类器利用。</p>
+<h2 id="section-5">5. 第三轮学了队友的什么思路</h2>
+<p>队友仓库的强方案参考中，有一种共享 prompt 的高斯建模思路：</p>
+<pre><code>一篇文本的表示 ≈ 作者风格 + 题目影响 + 剩余噪声</code></pre>
+<p>这是一个统计模型的假设，不是说我们已经知道每个向量坐标的真实含义。我们选了其中适合现有硬件、可复用已有向量的一部分，<strong>没有复现整个 8B/14B 强集成，也不继承它的榜单分数</strong>。</p>
+<h3>第一步：标准化，让不同坐标有可比较的尺度</h3>
+<p>可以类比“身高用厘米、体重用千克”：数字范围不同，不应只因为数值更大就得到更多重视。每折只在训练数据上计算均值和标准差，再用同一套变换处理验证数据。</p>
+<h3>第二步：从同题差异里选择 128 个方向</h3>
+<p>先在训练折中减去同题文本的均值，再做 PCA。直觉是先淡化大家共有的题目成分，再选择剩余差异中较有代表性的方向。</p>
+<p>PCA 是一种压缩方法。这里将后续统计建模的输入从 3,072 维降到 128 维，但<strong>压缩不保证只留下作者风格，也不能按保留方差多少直接判断分类会更好</strong>。本轮保留约 86.2%–86.4% 的训练同题残差方差，只是一个变换诊断。</p>
+<h3>第三步：估计各作者的位置，以及题目和噪声怎样波动</h3>
+<p>类别均值可以想成每位作者的“常见位置”。协方差描述哪些方向波动大、哪些方向会一起变化。某个方向本来就很不稳定，那么新文本在这个方向上偏远一点，就不应被过度惩罚。</p>
+<p>收缩（shrinkage）是在复杂的协方差估计与更保守的简单估计之间折中，减少小样本下估计不稳定的问题。它是一种正则化，不是额外取得了真实答案。</p>
+<h3>第四步：面对未知题目，仍然逐条预测</h3>
+<p>训练时允许使用训练折的 prompt_id 来学习“题目会带来怎样的变化”。验证时，分类头只接收向量，不接收真实 prompt_id；它将未知题目影响视作需要考虑的不确定性。</p>
+<p>我们没有假设测试集每题都有 18 条，也没有强制同题必须分配出 18 个不同作者。单条、批量、倒序预测都做了一致性检查，避免一个样本因为和谁一起送进模型而被改变答案。</p>
+<h3>实验结果怎样解释</h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table><thead><tr><th scope="col">比较项</th><th scope="col">第二轮 LR</th><th scope="col">第三轮 Gaussian</th></tr></thead><tbody><tr><td>pooled BA</td><td>0.289904</td><td>0.298677</td></tr><tr><td>新增编码器前向</td><td>540 个 batch</td><td>0</td></tr><tr><td>新增分类头 fit</td><td>5</td><td>5</td></tr><tr><td>对第二轮改善的 fold</td><td>不适用</td><td>3/5</td></tr><tr><td>是否达到提交门槛</td><td>否</td><td>否</td></tr></tbody></table></div>
+<p>配对增益为 <strong>+0.008773 BA</strong>，即 <strong>+0.8773 个百分点</strong>。2,000 次整 prompt 配对 bootstrap 的描述性 95% 区间为 <strong>[-0.006992, +0.024969]</strong>，换成百分点是约 <strong>[-0.699, +2.497]</strong>。</p>
+<p>区间同时包含下降和提升，所以目前不能认定有稳定收益。它也没有达到预登记的绝对 BA、最低折表现和配对增益门槛。<strong>一次合理假设带来小幅观察改善，不等于这个假设已经充分验证。</strong></p>
+<h2 id="section-6">6. 怎样看懂 balanced accuracy</h2>
+<p>先理解“召回率”：某一类真实有 10 条，模型正确认出 6 条，这一类的召回率就是 6/10=60%。</p>
+<p>普通 accuracy 把所有样本放在一起算答对比例。Balanced accuracy（BA）先分别算每一类召回率，再对各类等权平均。<strong>本项目有 18 类，所以是 18 个召回率的平均。</strong></p>
+<p>下面是专门用于学习的 <strong>3 类虚构例子，不是本项目实测数据</strong>：</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table><thead><tr><th scope="col">类别</th><th scope="col">真实数量</th><th scope="col">答对数量</th><th scope="col">召回率</th></tr></thead><tbody><tr><td>A</td><td>100</td><td>90</td><td>90%</td></tr><tr><td>B</td><td>10</td><td>4</td><td>40%</td></tr><tr><td>C</td><td>10</td><td>2</td><td>20%</td></tr></tbody></table></div>
+<p>普通准确率为 <code>(90+4+2)/(100+10+10)=80%</code>；BA 为 <code>(90%+40%+20%)/3=50%</code>。第一类样本多，能掩盖另外两类很差的表现；BA 让每一类都获得同等权重。</p>
+<section class="calculator" aria-labelledby="calculator-title">
+<div class="eyebrow">动手理解 · 虚构的 3 类示例</div><h3 id="calculator-title">同样一份预测，为什么会有两个分数？</h3>
+<p>真实数量固定为 A=100、B=10、C=10。拖动答对数量，观察两种指标的不同权重。</p>
+<div class="calc-grid">
+<label for="correct-a">A 类答对 <output id="value-a" for="correct-a">90 / 100</output><input id="correct-a" type="range" min="0" max="100" value="90"></label>
+<label for="correct-b">B 类答对 <output id="value-b" for="correct-b">4 / 10</output><input id="correct-b" type="range" min="0" max="10" value="4"></label>
+<label for="correct-c">C 类答对 <output id="value-c" for="correct-c">2 / 10</output><input id="correct-c" type="range" min="0" max="10" value="2"></label>
+</div><div class="calc-results" aria-live="polite"><div><small>普通 accuracy</small><strong id="accuracy">80.0%</strong><span>所有样本一起计数</span></div><div><small>Balanced accuracy</small><strong id="balanced">50.0%</strong><span>每一类获得同等权重</span></div></div>
+<p id="calc-formula" class="formula">accuracy = 96 / 120；BA = (90% + 40% + 20%) / 3</p>
+<button type="button" id="reset-example">恢复初始例子</button><noscript><p>启用 JavaScript 可操作滑块；初始例子的静态计算已展示在上方。</p></noscript></section>
+<p>本项目开发集各类数量接近，因此普通准确率与 BA 常常接近。不过逐类召回仍能告诉我们：一个整体数字背后，究竟哪些作者最难认。</p>
+<p>另一个常见混淆：<strong>模型给某个答案 80% 的概率，不等于这类答案实测有 80% 的正确率。</strong> 预测概率需要校准才能有这样的解释；本轮没有把概率置信度当成已验证的正确率。</p>
+<h2 id="section-7">7. 为什么按 prompt 分组，又为什么不能重开旧留出</h2>
+<p>如果把同一道题的不同作者答案随机分到训练和验证两边，模型就可能靠题目内容或同题细节拿到较高分数。但隐藏测试题目是新的，这种验证会偏乐观。</p>
+<p>GroupKFold 的规则是：同一 prompt 的所有文本必须待在同一折。验证时整道题目都没参与该折拟合，更接近我们真正关心的场景。</p>
+<p>OOF 是 out-of-fold 的缩写：一条样本的预测，由没有用它及同题文本拟合的那个模型给出。把五折中分别留下的预测拼起来，才能对每条开发样本进行一次相对公平的评分。</p>
+<p>旧留出已经用过一次。反复查看它，再根据结果修改方案，它就逐渐变成了开发数据，失去了原本的独立检查作用。因此我们保留它的历史，不再打开来选模型。</p>
+<p><strong>新建一个实验 ID、登记一份新预算，不会生成一个新的独立测试集。</strong> 当前 120 个 prompt 已被多次用于开发，所有 CV 与 bootstrap 结论都必须保留这个限制。Bootstrap 可以描述这批数据中的波动，不能抹掉多轮选模造成的乐观偏差。</p>
+<h2 id="section-8">8. 常用术语速查</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="可横向滚动的数据表"><table><thead><tr><th scope="col">术语</th><th scope="col">在本项目里怎么理解</th></tr></thead><tbody><tr><td>样本 / label</td><td>一段文本是一个样本；它由哪个模型写的是 label（真实标签）</td></tr><tr><td>prompt</td><td>写作题目；同题文本属于一个 group</td></tr><tr><td>特征 / embedding</td><td>把文本转换成供分类器计算的一组数字</td></tr><tr><td>token</td><td>模型读取文本时的小块；不严格等于一个词</td></tr><tr><td>pooling</td><td>把多个 token 的表示汇总成一篇文本的表示；第二轮使用带 mask 的平均</td></tr><tr><td>冻结</td><td>不更新编码器权重；仍然可以运行它提取特征</td></tr><tr><td>微调 / fine-tuning</td><td>用任务数据更新已有模型的参数；需要新的训练和隔离方案</td></tr><tr><td>分类头 / head</td><td>接在表示后面、输出 18 类分数的部分</td></tr><tr><td>LR</td><td>Logistic Regression，逻辑回归；本项目用于多类别分类，不是预测连续数值的普通线性回归</td></tr><tr><td>PCA</td><td>用较少方向表示数据变化；所有拟合步骤只看训练折</td></tr><tr><td>协方差</td><td>多个特征如何一起变化；高斯头用它衡量不同方向的不确定性</td></tr><tr><td>正则化 / 收缩</td><td>限制估计过度追随有限样本的细节，让估计更稳定</td></tr><tr><td>fit / inference</td><td>fit 从训练数据估计参数；inference 使用已有参数做预测</td></tr><tr><td>batch</td><td>一次一起处理的若干样本；本项目编码器提取 batch=4</td></tr><tr><td>CV / fold / OOF</td><td>交叉验证、其中一份划分、各样本在未参与拟合时取得的预测</td></tr><tr><td>recall / BA</td><td>某一类被认对的比例 / 各类别 recall 的等权平均</td></tr><tr><td>paired bootstrap</td><td>对同一批 prompt 成对重采样，比较两个模型在相同行上的差异</td></tr><tr><td>数据泄漏</td><td>让验证答案、真实分组或验证中学到的变换不恰当地进入训练或推理</td></tr><tr><td>claim / SHA256</td><td>claim 记录实验是否执行及消耗次数；SHA256 用于核对文件字节身份，不证明模型有效</td></tr></tbody></table></div>
+<h2 id="section-9">9. 三个可以亲手完成的小练习</h2>
+<h3>练习一：指标为什么会“看起来很好”</h3>
+<p>在 HTML 的计算器里，让 A 全部答对、B 和 C 全部答错。先猜普通准确率和 BA，再看结果。然后把 B、C 各改成全部答对，观察哪个指标更直接反映少数类的改善。</p>
+<p>答案：前一种情况普通准确率约 83.3%，BA 只有 33.3%。这个例子说明一个高总体分数可能掩盖类别短板，不是本项目的真实类别分布。</p>
+<h3>练习二：识别一次验证泄漏</h3>
+<p>假设 prompt P 的两条文本分别放进训练折和验证折，虽然 id 不同，这个划分是否适合本任务？如果先用全部开发数据拟合 PCA，再做五折，是否仍算严格的折内预处理？</p>
+<p>答案：两者都不符合本项目的严格开发协议。第一种泄漏同题信息；第二种让预处理提前看到了验证特征。预训练且未受本任务数据更新的冻结编码器，与在本数据上拟合 PCA，是两件不同的事。</p>
+<h3>练习三：读懂一次“涨分但不提交”</h3>
+<p>第三轮比第二轮高了 0.8773 个百分点，为什么仍不提交？试着只看第 1 节和第 5 节写出三条理由。</p>
+<p>答案：绝对 BA 与最低折表现不足；配对区间跨 0；只有 3/5 折改善且配对点增益低于要求。更完整的条件已在运行前固定，不能事后挑选其中一项来宣布通过。</p>
+<h2 id="section-10">10. 证据入口与以后怎样更新</h2>
+<p>以下文件都在本地项目内，提供比学习笔记更细的事实、参数与哈希：</p>
+<ul><li><a href="name-that-llm/reports/WINDOWS_ROUND2_20261024.md">第二轮真实结果</a></li><li><a href="name-that-llm/reports/MODERNBERT_ROUND2_DIAGNOSIS_20261024.md">第二轮原因诊断</a></li><li><a href="name-that-llm/docs/WINDOWS_ROUND3_PLAN_20261024.md">第三轮运行前固定的计划</a></li><li><a href="name-that-llm/reports/WINDOWS_ROUND3_20261024.md">第三轮实际结果</a></li><li><a href="name-that-llm/reports/WINDOWS_ROUND_20261024.md">保留的第一轮失败记录</a></li><li><a href="name-that-llm/HANDOFF.md">当前交接与后续边界</a></li><li><a href="EXPERIMENTS.md">队友仓库实验记录</a></li><li><a href="https://scikit-learn.org/stable/modules/lda_qda.html#shrinkage-and-covariance-estimator">官方参考：判别分析与协方差收缩</a></li></ul>
+<p>这里引用的队友代码已与 GitHub <code>main</code> 的 <code>692ac87</code> 核对。历史榜单数值、当前本地 CV、推测原因和教学示例分别标注，不互相替代。</p>
+<p>以后每轮同步做两件事：一是更新实验问题、预算、实际动作、结果、停止原因和证据入口；二是根据本轮工作新增或完善一两个学习主题。保留旧轮失败，不把“代码修好了”改写成“旧实验成功了”。</p>
+<p><code>PROJECT_LEARNING.md</code> 是可编辑的文字源；<code>PROJECT_LEARNING.html</code> 是由它生成的离线阅读版，包含目录、图示和 BA 计算器。无需网络服务、账号或额外 JavaScript 库即可打开。更新文字后，在项目根目录执行：</p>
+<pre><code>.\name-that-llm\.venv-gpu\Scripts\python.exe .\scripts\render_project_learning.py</code></pre>
+<p>这个命令只重新生成学习页面，不训练模型、不读取旧留出、不提交 Kaggle。后续实际实验仍必须各自登记预算，按真实结果更新本笔记。</p><a class="page-top" href="#top">回到顶部 ↑</a></main></div>
+<footer>由 PROJECT_LEARNING.md 生成 · 无外部资源依赖<br>文字源 SHA256：371a3ea440802140c6a8b0eec237ebe217db49180e7861eca22a0fec34bf9e73</footer><script>
+const keys=['a','b','c'], totals=[100,10,10];
+function update(){const values=keys.map(k=>Number(document.getElementById('correct-'+k).value));
+keys.forEach((k,i)=>document.getElementById('value-'+k).textContent=values[i]+' / '+totals[i]);
+const sum=values.reduce((a,b)=>a+b,0), recalls=values.map((n,i)=>100*n/totals[i]);
+document.getElementById('accuracy').textContent=(100*sum/120).toFixed(1)+'%';
+document.getElementById('balanced').textContent=(recalls.reduce((a,b)=>a+b,0)/3).toFixed(1)+'%';
+document.getElementById('calc-formula').textContent='accuracy = '+sum+' / 120；BA = ('+recalls.map(n=>n.toFixed(0)+'%').join(' + ')+') / 3';}
+keys.forEach(k=>document.getElementById('correct-'+k).addEventListener('input',update));
+document.getElementById('reset-example').addEventListener('click',()=>{[90,4,2].forEach((n,i)=>document.getElementById('correct-'+keys[i]).value=n);update()});
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id))}})},{rootMargin:'-5% 0px -75% 0px'});document.querySelectorAll('main h2').forEach(h=>observer.observe(h))}update();
+</script></body></html>
