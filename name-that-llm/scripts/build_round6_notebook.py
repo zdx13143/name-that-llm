@@ -35,7 +35,7 @@ with payloads[0].open('rb') as f:
         h.update(block)
 if h.hexdigest() != 'PAYLOAD_HASH':
     raise RuntimeError('Frozen payload SHA256 mismatch')
-destination = work/'ntl_r6_runtime'
+destination = pathlib.Path('/tmp/ntl_r6_runtime')
 if destination.exists() or (work/'submission.parquet').exists():
     raise FileExistsError('Preserve prior execution; do not rerun in this working directory')
 destination.mkdir()
@@ -77,8 +77,8 @@ One frozen candidate: 80% four-view text SVC + 20% frozen ModernBERT/Gaussian he
 
 Use **CPU**, **Internet Off**, the official **Name That LLM** competition input and private **NTL R6 Assets 20261025** dataset. Output is `submission.parquet` with one `id,model` row per test ID, limited to 4096 test rows and 9 hours. CPU Float32 deployment passed four synthetic forward checks against Windows CUDA BF16; this does not establish identical predictions for every possible input.
 '''
-    cells=[{'cell_type':'markdown','metadata':{},'source':markdown.splitlines(True)},
-           {'cell_type':'code','metadata':{},'execution_count':None,'outputs':[],'source':source.splitlines(True)}]
+    cells=[{'cell_type':'markdown','id':'r6-introduction','metadata':{},'source':markdown.splitlines(True)},
+           {'cell_type':'code','id':'r6-inference','metadata':{},'execution_count':None,'outputs':[],'source':source.splitlines(True)}]
     notebook={'cells':cells,'metadata':{'kernelspec':{'display_name':'Python 3','language':'python','name':'python3'},
                                       'language_info':{'name':'python','version':'3.11.17'}},'nbformat':4,'nbformat_minor':5}
     target=MODULE/'notebooks/calibrated_round6_offline.ipynb'

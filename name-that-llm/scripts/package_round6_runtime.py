@@ -1,4 +1,4 @@
-"""Linux-only deterministic allowlist packaging; no encoder or fitting."""
+"""Linux-only allowlisted packaging; no encoder or fitting."""
 from pathlib import Path
 import hashlib
 import importlib.metadata
