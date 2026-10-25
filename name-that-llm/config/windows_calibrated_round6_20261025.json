@@ -1,0 +1,30 @@
+{
+  "experiment_id":"windows-calibrated-fusion-dev-20261025-r6",
+  "scope":"One nested temperature-calibrated 80/20 fusion; original120 prompts/2159 rows only.",
+  "baseline_output":"outputs/windows_prompt_gaussian_20261024_r3",
+  "baseline_contract_sha256":"e8fc011170cca61e50696ed6e91413544010e2a07388e096e59ed1f61af035f1",
+  "baseline_oof_sha256":"d0d8d3c413676c376eca0f74acfa03d4ee7a9959ddc1b57789b882948344e30f",
+  "fold_reference_output":"outputs/windows_modernbert_dev_20261024_r2",
+  "fold_reference_contract_sha256":"973ca22331cd509d3117c7fc39b2f90da2c1949f1fa5e972ffa0335acd98396a",
+  "features_sha256":"f600b58712a6539ff84efe1630550de558dd76f1aedb41c84c13d768bdfcc7a0",
+  "style_output":"outputs/windows_stylegram_20261025_r5",
+  "style_contract_sha256":"1fdf35b252d8654182b6369afe997255edba971db4c08977c12c20859d1fdd06",
+  "style_oof_sha256":"a3c9010f9e040c844a1367b41975c885ca5af12ad12fa8bd96f0b26e9b7136f3",
+  "style_config_sha256":"c83166e0cf7cdbeb72732dfc1d34a158902b45e54a8c804b2696437fb5f93888",
+  "gaussian_config_sha256":"be521933587ae0fd99086a2d1a52cb0dc67bea396ad81bdedfc9f9caa12f7091",
+  "preserved_claims":{
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023.json":"fc06fd719de08f08bc283136104753e020bb6cb4b2abcb73387aea8f6a120507",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023-startup-recovery-1.json":"86d89fc70b66e22fed20e8275d5b7af85309e731ab5e8c6ab2a1c36c0b8cc2c3",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261024-r2.json":"f66dc2185520703bfe5456b5a279e4ae5e67242a9ff4378c75cf01b3a3a67c30",
+    "outputs/continuation_claims/windows-prompt-gaussian-dev-20261024-r3.json":"8708ede039c4ee84f81f7fc5d809b360fef63bbc70d840708b1254b8fb371b9e",
+    "outputs/continuation_claims/windows-modernbert-finetune-dev-20261025-r4.json":"9403d878f2cd37ac1ba1cf18ec76e115ba077effd5e9ad35a8d998dfe938d8ef",
+    "outputs/continuation_claims/windows-stylegram-fusion-dev-20261025-r5.json":"3017053468df73edcba12c27b9c89baf69d4735c78a24036d422283896c546ec"
+  },
+  "calibration":{"inner_folds":3,"inverse_temperature_bounds":[0.05,50.0],"max_objective_evaluations":100,"xatol":1e-8,"objective":"mean multiclass negative log likelihood","selection":"one positive scalar per family learned only from inner OOF; no outer-score selection"},
+  "style_weight":0.8,
+  "evaluation":{"folds":5,"bootstrap_resamples":2000,"bootstrap_seed":20261025},
+  "candidate_gate":{"min_pooled_balanced_accuracy":0.36,"min_each_fold_balanced_accuracy":0.30,"min_paired_gain_over_round3":0.02,"paired_prompt_95ci_lower_exceeds":0.0,"min_improved_folds_over_round3":4,"min_paired_gain_over_style_control":0.0},
+  "budget":{"max_classifier_fit_attempts":30,"max_temperature_fit_attempts":10,"max_total_fit_attempts":40,"development_timeout_seconds":1800,"max_host_rss_gib":12,"threads":2,"new_encoder_forward_calls":0,"automatic_failed_run_retries":0,"old_holdout_evaluations":0,"full_data_final_fits":0},
+  "conditional_deployment_budget":{"max_classifier_fit_attempts":8,"max_temperature_fit_attempts":2,"max_total_fit_attempts":10,"final_training_rows":2159,"final_training_groups":120,"inner_folds":3,"development_timeout_seconds":1800,"max_host_rss_gib":12,"threads":2,"max_synthetic_encoder_forward_calls":4,"new_development_encoder_forward_calls":0,"max_kaggle_saved_runs":1,"max_kaggle_formal_submissions":1,"max_test_rows":4096,"max_kaggle_runtime_hours":9,"old_holdout_evaluations":0,"failed_gate_action":"Stop without final fit, upload, submission, fallback or additional parameter search."},
+  "runtime":{"numpy":"2.2.6","scipy":"1.16.3","scikit-learn":"1.7.2","threadpoolctl":"3.6.0","psutil":"7.0.0","joblib":"1.5.2"}
+}
