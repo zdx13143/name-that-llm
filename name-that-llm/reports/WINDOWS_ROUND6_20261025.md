@@ -1,6 +1,6 @@
 # 第六轮：嵌套温度校准融合
 
-2026-10-25。固定80%四视角SVC、20%ModernBERT/Gaussian融合，新增训练折内部温度校准。原120个prompt / 2159行开发集，不是新独立验证集。**开发BA 0.370895580454404，预登记开发门槛全部通过；条件最终训练、四次跨平台人工检查和Linux运行时迁移核验已完成。私有资产已上传，Kaggle Version 1保存运行成功；一次正式提交已接收，隐藏测试评分进行中。**
+2026-10-25。固定80%四视角SVC、20%ModernBERT/Gaussian融合，新增训练折内部温度校准。原120个prompt / 2159行开发集，不是新独立验证集。**开发BA 0.370895580454404，预登记开发门槛全部通过；条件最终训练、四次跨平台人工检查和Linux运行时迁移核验已完成。私有资产已上传，Kaggle Version 1保存运行成功；一次正式提交已成功，Kaggle Public Score 为0.365。**
 
 ## 候选与验证隔离
 
@@ -67,7 +67,9 @@ Kaggle新资产上传=1、新保存运行=1、新正式提交=1。私有资产[N
 
 [私有Notebook Version 1 / 362038537](https://www.kaggle.com/code/zephyrpong/ntl-calibrated-r6-20261025?scriptVersionId=362038537)命名为`R6 calibrated frozen offline v1`，2026-10-25 06:34:23 UTC保存运行，页面显示**Successfully ran in 96.5s**。实际宿主为Python3.13.15，隔离推理Python3.11.17及固定依赖成功加载；对公开占位test的3行完成1次前向，模型fit=0、温度fit=0、旧留出评分=0。生成813-byte `submission.parquet`，SHA256为`dfbd16bb00885281f680204ab9508fbf9f10401487ff1896f388562ff732bb18`。这只证明保存运行与输出契约通过，不能把3行当作隐藏测试数量或正式评分证据。
 
-2026-10-25约06:39:45 UTC从该唯一版本正式提交一次，[Submissions](https://www.kaggle.com/competitions/name-that-llm/submissions)显示本轮`Notebook Running`，隐藏测试评分进行中。保存运行和正式提交各一次的预算均已使用，不得重复点击或通过新版本重试。历史本账号0.351、队友0.601仍为历史成绩；当前尚无本轮public score。
+2026-10-25 06:39:47 UTC从该唯一版本正式提交一次；07:08 UTC在[Submissions](https://www.kaggle.com/competitions/name-that-llm/submissions)及该条Submission Details核实**Succeeded、Public Score 0.365**，Notebook版本仍为362038537。06:39:47来自详情页提交时间，07:08是本地观察成功的时间；没有平台精确完成时间、隐藏行数或逐batch日志，不把约29分钟等待或96.5秒保存运行写成隐藏评测耗时。保存运行和正式提交各一次的预算均已使用，没有重复提交或事后调参。
+
+本账号历史提交Version360768689显示0.351，本次0.365，按显示精度增加0.014（1.4个百分点）。这是完整方案在同一比赛public部分的历史比较，候选配方不同，不能单独归因于校准。队友Version360258830的历史0.601仍高于本轮，本轮没有刷新队伍最佳。正式public 0.365、本地开发CV 0.370895580454404、3行公开占位test保存运行与尚未知的private最终成绩分别记录。没有访问隐藏标签或把公榜当作新的调参集。
 
 此前的上传失败记录保留：两次文件选择器等待超时，随后明确返回Chrome ChatGPT扩展未启用“Allow access to file URLs”；编辑器也曾持续“Loading Editor”，页面提示reCAPTCHA服务连接异常。用户在06:29:22 UTC确认已开启扩展文件权限，重新连接后实际上传及编辑器导入均成功。没有自动解决CAPTCHA或绕过正常页面；未改变模型、重训或重跑四次人工检查。
 
@@ -88,3 +90,5 @@ Kaggle新资产上传=1、新保存运行=1、新正式提交=1。私有资产[N
 | calibrated_round6_offline.ipynb | 74a2fb8762117ea9a4e184c457d180087829d171d34dfde41c30e8b1b964ecf1 |
 
 原始证据在`outputs/windows_calibrated_20261025_r6/`、`outputs/windows_calibrated_final_20261025_r6/`、`outputs/kaggle_r6_preflight/`，部署资产在`outputs/kaggle_r6_assets/`，最终包及迁移收据在`outputs/kaggle_r6_package/`。浏览器证据位于`outputs/windows_4060/`：`round6_kaggle_private_assets_created_20261025.png`、`round6_kaggle_version1_output_20261025.png`、`round6_kaggle_version1_visible_logs_20261025.txt`；此前`round6_kaggle_editor_loading_20261025.png`和`round6_kaggle_upload_pending_20261025.png`保留为已解决的失败历史。这些本地二进制产物不进入Git；源码、预登记、测试、空输出Notebook源码与聚合报告随本人分支发布。只读复核可运行`python scripts/verify_round6_results.py`；已结束的训练入口、人工前向和exclusive打包/迁移入口不得重跑。
+
+正式成功证据另存为`round6_kaggle_public_score_20261025.jpg`与`round6_kaggle_submission_visible_state_20261025.txt`，待评分历史截图`round6_kaggle_formal_running_20261025.png`保留。原`round6_deliverable_integrity_20261025.json`记录提交后待评分时的文档哈希，保持不变；出分后文档与证据使用新的`round6_scored_closeout_20261025.json`收据。此次一次性实验与正式评分已完成，后续不重跑既有入口。

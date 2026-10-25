@@ -365,7 +365,7 @@ Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 2026102
 
 **条件最终fit=0、新Kaggle上传/保存运行/正式提交=0、旧30prompt评分=0。** 风格对照没有被事后改选为提交候选；其BA也低于.36，不能四舍五入判通过。条件部署入口/Notebook未构建，因开发门槛已失败，不需要启动该阶段。根学习Markdown/HTML同步新增TF-IDF、n-gram、LinearSVC、softmax、校准和“权重比例不等于决策影响比例”的解释。后续若另开一轮，需重新登记候选和预算；本轮不自动延伸搜索，不修改已冻结源文件或claim。
 
-## 2026-10-25 第六轮：开发与部署通过，Kaggle正式评分进行中（当前）
+## 2026-10-25 第六轮：开发与部署通过，Kaggle正式成功0.365（当前）
 
 用户要求继续推进，有成果上传Kaggle查看分数。登记一个新候选：两个模型来源分别在外层训练集内做三折OOF温度校准，再固定80/20融合。开发预登记`ef18f9d`，条件最终入口`1a85d36`，部署四次人工检查合约`06253ba`均在相应真实执行前推送。不得重跑已结束开发/最终claim。
 
@@ -379,6 +379,8 @@ Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 2026102
 
 Kaggle新私有资产[NTL R6 Assets 20261025](https://www.kaggle.com/datasets/zephyrpong/ntl-r6-assets-20261025) Version 1已创建，同一冻结Notebook已导入并挂载官方比赛输入，确认CPU/None、Internet Off、Private、No persistence。[Notebook Version 1 / 362038537](https://www.kaggle.com/code/zephyrpong/ntl-calibrated-r6-20261025?scriptVersionId=362038537)命名`R6 calibrated frozen offline v1`，06:34:23 UTC保存运行，实际成功96.5秒。宿主Python3.13.15、隔离推理Python3.11.17；公开占位test3行、1次前向、模型/温度fit0、旧留出评分0，合法813-byte parquet SHA `dfbd16bb00885281f680204ab9508fbf9f10401487ff1896f388562ff732bb18`。这不是隐藏test评分证据。
 
-约06:39:45 UTC从上述版本正式提交一次，[Submissions](https://www.kaggle.com/competitions/name-that-llm/submissions)显示`Notebook Running`，隐藏测试评分进行中。新保存运行=1、新正式提交=1，预算均已消耗，禁止重复提交或创建新版本重试；只跟踪这一条记录到实际分数/失败。≤4096测试行/9小时限制、最终选用checkbox和历史Notebook保持不变。历史0.351或队友0.601不是本轮成绩。完整指标、18类召回和证据路径见[第六轮报告](reports/WINDOWS_ROUND6_20261025.md)。
+06:39:47 UTC从上述版本正式提交一次，07:08 UTC在[Submissions](https://www.kaggle.com/competitions/name-that-llm/submissions)核实同一版本状态**Succeeded、Public Score 0.365**。提交时间由详情页确认，07:08是观察时间，不是平台提供的完成时间；未获取隐藏运行逐batch日志、确切行数或耗时。本账号历史0.351到本次0.365，显示分数增加0.014；不同配方不能据此单独归因于温度校准。队友0.601仍为更高的历史成绩，private分数未知。新保存运行=1、新正式提交=1，预算均已消耗；不重复提交、不据公榜调参。≤4096测试行/9小时限制、最终选用checkbox和历史Notebook保持不变。
+
+正式结果的本地证据为`outputs/windows_4060/round6_kaggle_public_score_20261025.jpg`与`round6_kaggle_submission_visible_state_20261025.txt`，与保存运行日志分开保留。此次用户授权的开发、部署、一次正式评分链已完成；后台评分跟踪在收尾后关闭。后续新实验需要另行登记问题、预算与停止条件，不能重开既有claim。完整指标、18类开发召回和证据路径见[第六轮报告](reports/WINDOWS_ROUND6_20261025.md)。
 
 此前文件选择器两次超时，后续明确要求Chrome扩展启用“Allow access to file URLs”；编辑器曾持续加载并显示reCAPTCHA连接提示。用户06:29:22 UTC确认权限已开启，重新连接后实际上传、导入与执行成功。这些失败记录保留，但不再是当前阻塞。未自动解决CAPTCHA，未改变模型或追加人工前向。

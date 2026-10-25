@@ -1,6 +1,6 @@
 # Name That LLM
 
-> **2026-10-25 最新结果：** 第六轮嵌套温度校准固定80/20融合**BA 0.370896，开发门槛全部通过**。比第五轮风格对照高1.1570个百分点、五折均改善。开发30次模型fit+10次温度fit，条件最终8次模型fit+2次温度fit完成；四次跨平台人工检查和Linux迁移核验通过。私有Kaggle资产已上传，Version 1保存运行成功（96.5秒）；一次正式提交已接收，隐藏测试评分进行中。旧留出未重开。详见[第六轮报告](reports/WINDOWS_ROUND6_20261025.md)、[当前入口](WORKSPACE.md)及根[学习Markdown](../PROJECT_LEARNING.md)/[离线HTML](../PROJECT_LEARNING.html)。第五轮0.323681、第四轮0.264858及以下日期更早的状态均保留为历史记录。
+> **2026-10-25 最新结果：** 第六轮嵌套温度校准固定80/20融合**BA 0.370896，开发门槛全部通过**。比第五轮风格对照高1.1570个百分点、五折均改善。开发30次模型fit+10次温度fit，条件最终8次模型fit+2次温度fit完成；四次跨平台人工检查和Linux迁移核验通过。私有Kaggle资产已上传，Version 1保存运行成功（96.5秒）；一次正式提交已成功，Kaggle Public Score 为0.365。旧留出未重开。详见[第六轮报告](reports/WINDOWS_ROUND6_20261025.md)、[当前入口](WORKSPACE.md)及根[学习Markdown](../PROJECT_LEARNING.md)/[离线HTML](../PROJECT_LEARNING.html)。第五轮0.323681、第四轮0.264858及以下日期更早的状态均保留为历史记录。
 
 > **2026-10-21 接续结果：** 已在 `exp/dev-comparison-20261021` 分支审查队友方案、修复两处bug，并完成统一开发GroupKFold比较。原模型0.340336，最佳固定融合0.347281，增益区间跨0，未达到采用标准；原冻结交付保持不变。见[本轮报告与逐类召回](reports/TEAM_DEV_COMPARISON.md)及[队友审查](docs/TEAM_WORK_REVIEW.md)。这是新开发探索，不是新的最终留出或榜单成绩。新环境为仓库根 `.venv/`，使用 `requirements-team-cpu.txt`。
 

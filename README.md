@@ -16,7 +16,7 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 ## 当前进展与学习入口（2026-10-25）
 
-自己的Windows分支为`exp/windows-4060-20261023`。第六轮训练折内部温度校准完成：**固定80/20融合BA 0.370896，开发门槛全部通过**；比第五轮风格对照0.359325高1.1570个百分点，配对95%区间[+0.4163,+1.8981]个百分点，五折均改善。开发30次模型fit+10次温度fit，条件最终8次模型fit+2次温度fit均完成；四次跨平台人工检查和Linux运行时迁移核验已通过。私有Kaggle资产已上传，[Notebook Version 1](https://www.kaggle.com/code/zephyrpong/ntl-calibrated-r6-20261025?scriptVersionId=362038537)保存运行成功（96.5秒）；一次正式提交已接收，隐藏测试评分进行中。第五轮融合失败0.323681、第四轮失败0.264858、旧30-prompt留出及全部历史证据保留。
+自己的Windows分支为`exp/windows-4060-20261023`。第六轮训练折内部温度校准完成：**固定80/20融合BA 0.370896，开发门槛全部通过**；比第五轮风格对照0.359325高1.1570个百分点，配对95%区间[+0.4163,+1.8981]个百分点，五折均改善。开发30次模型fit+10次温度fit，条件最终8次模型fit+2次温度fit均完成；四次跨平台人工检查和Linux运行时迁移核验已通过。私有Kaggle资产已上传，[Notebook Version 1](https://www.kaggle.com/code/zephyrpong/ntl-calibrated-r6-20261025?scriptVersionId=362038537)保存运行成功（96.5秒）；一次正式提交已成功，Kaggle Public Score 为0.365。第五轮融合失败0.323681、第四轮失败0.264858、旧30-prompt留出及全部历史证据保留。
 
 - **先读学习版：[项目进展与AI知识 Markdown](PROJECT_LEARNING.md) · [可离线打开的HTML](PROJECT_LEARNING.html)**。包含流程、术语、真实实验解释、BA互动计算器与练习；后续每轮同步维护。
 - 证据：[第六轮预登记](name-that-llm/docs/WINDOWS_ROUND6_PLAN_20261025.md)、[第六轮结果与部署状态](name-that-llm/reports/WINDOWS_ROUND6_20261025.md)、[第五轮结果与融合诊断](name-that-llm/reports/WINDOWS_ROUND5_20261025.md)、[第四轮结果与逐类召回](name-that-llm/reports/WINDOWS_ROUND4_20261025.md)。
