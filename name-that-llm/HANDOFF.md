@@ -365,7 +365,7 @@ Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 2026102
 
 **条件最终fit=0、新Kaggle上传/保存运行/正式提交=0、旧30prompt评分=0。** 风格对照没有被事后改选为提交候选；其BA也低于.36，不能四舍五入判通过。条件部署入口/Notebook未构建，因开发门槛已失败，不需要启动该阶段。根学习Markdown/HTML同步新增TF-IDF、n-gram、LinearSVC、softmax、校准和“权重比例不等于决策影响比例”的解释。后续若另开一轮，需重新登记候选和预算；本轮不自动延伸搜索，不修改已冻结源文件或claim。
 
-## 2026-10-25 第六轮：开发门槛通过，条件最终模型已导出（当前）
+## 2026-10-25 第六轮：开发与部署通过，Kaggle正式评分进行中（当前）
 
 用户要求继续推进，有成果上传Kaggle查看分数。登记一个新候选：两个模型来源分别在外层训练集内做三折OOF温度校准，再固定80/20融合。开发预登记`ef18f9d`，条件最终入口`1a85d36`，部署四次人工检查合约`06253ba`均在相应真实执行前推送。不得重跑已结束开发/最终claim。
 
@@ -373,6 +373,12 @@ Kaggle账号zephyrpong、队伍zhouruijie已核实。[本账号NTL Blend 2026102
 
 条件最终仅2159行/120prompt：三折内部6模型fit+2温度fit，再2个最终模型fit，合计8模型+2温度。70.490101秒、RSS0.788GiB，导出回读误差0。最终温度style=0.1369934354093213、Gaussian=1.8974942665741952。全2699行fit=0、旧30prompt评分=0。最终summary SHA `f009f8a592accd6933383cbd1fa46edb2fc5c8bc950a805ae6982cc4b2ae017c`。
 
-部署正在进行：`inference_round6.py`只加载冻结模型，准备隔离Linux CPython3.11 + Torch2.8 CPU/Transformers4.56.2。固定4次人工文本前向检查，禁止追加或失败重试；CPU Float32对开发CUDA BF16的概率差必须≤0.005且argmax一致，Linux倒序差≤1e-8。前两项已完成，Win CPU差0.0047747640，标签一致；Linux验证待完成。部署代码与输出契约经独立审计，3项合成契约测试通过。当前Kaggle新保存运行=0、新正式提交=0，不能把历史0.351或队友0.601写成本轮分数。
+部署本地核验已完成：`inference_round6.py`只加载冻结模型；隔离Linux CPython3.11.17 + Torch2.8.0+cpu/Transformers4.56.2。恰好4次人工文本前向全部通过，无追加/重试；Win CPU对CUDA最大概率差0.0047747640、Linux CPU差0.0047748918，均≤0.005且argmax一致，Linux倒序差0，跨平台SVC差0。部署代码与输出契约经独立审计，3项合成契约测试通过。最终955MB包在Linux临时目录完整解压，固定依赖导入通过，复用已保存人工特征的分类头预测差0，无新增编码器前向/训练。
 
-剩余授权内动作：完成Linux人工检查并打包，只创建新的私有Kaggle资产/Notebook，CPU/Internet Off，最多1次保存运行、1次正式提交、≤4096测试行/9小时，核验实际结果后同步本节、报告与根学习Markdown/HTML。原始数据、OOF及凭据不得打包。若真实登录/CAPTCHA或规则确认需要人工处理，保留可审阅交付并明确阻塞；不绕过页面限制。完整指标、18类召回和证据路径见[第六轮报告](reports/WINDOWS_ROUND6_20261025.md)。
+冻结交付：`notebooks/calibrated_round6_offline.ipynb` SHA `74a2fb8762117ea9a4e184c457d180087829d171d34dfde41c30e8b1b964ecf1`；本地`outputs/kaggle_r6_package/ntl_r6_payload.tgz.bin` 954,912,317 bytes，SHA `6d3798ba4b82ae69d049f131f373ff6629002b758d4e348a73d18e9d2cbde153`。Notebook与迁移脚本已推送`ff39b2d`，包受Git忽略；包不含原始数据、开发OOF或凭据。所有真实训练、四次前向、打包与迁移入口均已结束，不重跑。
+
+Kaggle新私有资产[NTL R6 Assets 20261025](https://www.kaggle.com/datasets/zephyrpong/ntl-r6-assets-20261025) Version 1已创建，同一冻结Notebook已导入并挂载官方比赛输入，确认CPU/None、Internet Off、Private、No persistence。[Notebook Version 1 / 362038537](https://www.kaggle.com/code/zephyrpong/ntl-calibrated-r6-20261025?scriptVersionId=362038537)命名`R6 calibrated frozen offline v1`，06:34:23 UTC保存运行，实际成功96.5秒。宿主Python3.13.15、隔离推理Python3.11.17；公开占位test3行、1次前向、模型/温度fit0、旧留出评分0，合法813-byte parquet SHA `dfbd16bb00885281f680204ab9508fbf9f10401487ff1896f388562ff732bb18`。这不是隐藏test评分证据。
+
+约06:39:45 UTC从上述版本正式提交一次，[Submissions](https://www.kaggle.com/competitions/name-that-llm/submissions)显示`Notebook Running`，隐藏测试评分进行中。新保存运行=1、新正式提交=1，预算均已消耗，禁止重复提交或创建新版本重试；只跟踪这一条记录到实际分数/失败。≤4096测试行/9小时限制、最终选用checkbox和历史Notebook保持不变。历史0.351或队友0.601不是本轮成绩。完整指标、18类召回和证据路径见[第六轮报告](reports/WINDOWS_ROUND6_20261025.md)。
+
+此前文件选择器两次超时，后续明确要求Chrome扩展启用“Allow access to file URLs”；编辑器曾持续加载并显示reCAPTCHA连接提示。用户06:29:22 UTC确认权限已开启，重新连接后实际上传、导入与执行成功。这些失败记录保留，但不再是当前阻塞。未自动解决CAPTCHA，未改变模型或追加人工前向。

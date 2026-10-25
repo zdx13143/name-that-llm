@@ -1,6 +1,6 @@
 # 第六轮：嵌套温度校准融合
 
-2026-10-25。固定80%四视角SVC、20%ModernBERT/Gaussian融合，新增训练折内部温度校准。原120个prompt / 2159行开发集，不是新独立验证集。**开发BA 0.370895580454404，预登记开发门槛全部通过，条件最终训练已完成。离线部署验证正在进行，尚无本轮Kaggle分数。**
+2026-10-25。固定80%四视角SVC、20%ModernBERT/Gaussian融合，新增训练折内部温度校准。原120个prompt / 2159行开发集，不是新独立验证集。**开发BA 0.370895580454404，预登记开发门槛全部通过；条件最终训练、四次跨平台人工检查和Linux运行时迁移核验已完成。私有资产已上传，Kaggle Version 1保存运行成功；一次正式提交已接收，隐藏测试评分进行中。**
 
 ## 候选与验证隔离
 
@@ -55,11 +55,21 @@
 
 推理入口`inference_round6.py`只加载冻结模型，不训练。固定CPython3.11、NumPy2.2.6、SciPy1.16.3、sklearn1.7.2、Torch2.8、Transformers4.56.2。Linux CPU专用Torch从PyTorch官方索引下载，其余依赖来自PyPI；与Kaggle宿主Python隔离。编码器仍为原固定ModernBERT revision，最后四层attention-mask mean拼接3072维、max_length256、SDPA、关闭reference_compile。
 
-部署使用CPU Float32，开发特征来自CUDA BF16。另有运行前固定的4次人工文本检查：Windows CUDA、Windows CPU、Linux CPU、Linux倒序；每次一批4条人工文本，最多一次前向，无失败重试。要求argmax与CUDA一致，融合概率最大差≤0.005，跨平台SVC分数差≤1e-10，Linux倒序差≤1e-8。已完成前两项，Windows CPU最大概率差`0.0047747640368526745`，四个argmax均相同。Linux检查待完成；不能据人工检查宣称所有真实文本预测完全相同。
+部署使用CPU Float32，开发特征来自CUDA BF16。另有运行前固定的4次人工文本检查：Windows CUDA、Windows CPU、Linux CPU、Linux倒序；每次一批4条人工文本，最多一次前向，无失败重试。要求argmax与CUDA一致，融合概率最大差≤0.005，跨平台SVC分数差≤1e-10，Linux倒序差≤1e-8。四项全部完成且通过，恰好4次编码器前向。Windows CPU最大概率差`0.0047747640368526745`，Linux CPU为`0.004774891755220556`，均小于事先固定的0.005；四个argmax均与CUDA相同，跨平台SVC分数差0、Linux倒序恢复概率差0。不能据人工检查宣称所有真实文本预测完全相同。
 
 上传资产只允许冻结权重、分类头、温度、标签映射、源码、依赖运行时与校验清单；不含比赛原始数据、开发特征、OOF标签或凭据。只创建新的私有Kaggle资产与Notebook，最多一次保存运行和一次正式提交。test≤4096行、≤9小时、CPU、Internet Off，生成`submission.parquet`，恰好保留每个test ID和18类合法标签。
 
-当前Kaggle新保存运行=0、新正式提交=0。历史本账号0.351、队友0.601不能当作本轮分数。浏览器已确认当前账号登录且规则此前已接受；页面的reCAPTCHA服务连接提示尚未阻止规则读取，未尝试自动解决挑战。
+实际离线包为`outputs/kaggle_r6_package/ntl_r6_payload.tgz.bin`，954,912,317 bytes（约955MB），含27,835个归档成员。已在Linux临时目录解压原包，用其中自带的CPython3.11.17验证固定依赖导入、资产哈希和冻结分类头；对保存的人工特征重算概率最大差0，新增编码器前向0、训练fit0。该核验不读取真实test或旧留出。Notebook结构、空输出和代码AST通过；冻结Notebook/打包与迁移脚本提交为`ff39b2d`。
+
+开发和最终训练的`summary.json`是各阶段结束时冻结的记录，其中`deployment_validation_complete=false`、`linux_offline_validation_complete=false`保留原值及原SHA，未用后续进展覆盖。后来的人工兼容性与迁移结论分别以`kaggle_r6_preflight/verification.json`和`kaggle_r6_package/relocation_verification.json`为证据；它们覆盖上述限定范围，不等于Kaggle正式执行成功。
+
+Kaggle新资产上传=1、新保存运行=1、新正式提交=1。私有资产[NTL R6 Assets 20261025](https://www.kaggle.com/datasets/zephyrpong/ntl-r6-assets-20261025)为Version 1，包含同一954,912,317-byte冻结包。已导入冻结Notebook，挂载官方比赛输入与该资产，确认Private、CPU/None、Internet Off、No persistence。浏览器确认当前账号ZephyrPong登录且规则此前已接受。
+
+[私有Notebook Version 1 / 362038537](https://www.kaggle.com/code/zephyrpong/ntl-calibrated-r6-20261025?scriptVersionId=362038537)命名为`R6 calibrated frozen offline v1`，2026-10-25 06:34:23 UTC保存运行，页面显示**Successfully ran in 96.5s**。实际宿主为Python3.13.15，隔离推理Python3.11.17及固定依赖成功加载；对公开占位test的3行完成1次前向，模型fit=0、温度fit=0、旧留出评分=0。生成813-byte `submission.parquet`，SHA256为`dfbd16bb00885281f680204ab9508fbf9f10401487ff1896f388562ff732bb18`。这只证明保存运行与输出契约通过，不能把3行当作隐藏测试数量或正式评分证据。
+
+2026-10-25约06:39:45 UTC从该唯一版本正式提交一次，[Submissions](https://www.kaggle.com/competitions/name-that-llm/submissions)显示本轮`Notebook Running`，隐藏测试评分进行中。保存运行和正式提交各一次的预算均已使用，不得重复点击或通过新版本重试。历史本账号0.351、队友0.601仍为历史成绩；当前尚无本轮public score。
+
+此前的上传失败记录保留：两次文件选择器等待超时，随后明确返回Chrome ChatGPT扩展未启用“Allow access to file URLs”；编辑器也曾持续“Loading Editor”，页面提示reCAPTCHA服务连接异常。用户在06:29:22 UTC确认已开启扩展文件权限，重新连接后实际上传及编辑器导入均成功。没有自动解决CAPTCHA或绕过正常页面；未改变模型、重训或重跑四次人工检查。
 
 ## 核验与证据
 
@@ -73,5 +83,8 @@
 | 最终style.joblib | 1e0cfdc294e3daf0205bb2f9ee04affd4301edfdda0f14adbfdef8955e026998 |
 | 最终gaussian.npz | cbb896c30cf45327a1a94c6b94c110d341d60544ed092f6efdee48f36be2fd3c |
 | 最终calibration.json | b0d6129a012cff03836e1ac9f33db6cf1c5dd6c06124bdff55f4ba8bba1fdcbb |
+| 四次人工检查verification.json | f7440b4e7471a9bbbc1f7d10f7211d0c824016de252fb10add47f29e55f87701 |
+| ntl_r6_payload.tgz.bin | 6d3798ba4b82ae69d049f131f373ff6629002b758d4e348a73d18e9d2cbde153 |
+| calibrated_round6_offline.ipynb | 74a2fb8762117ea9a4e184c457d180087829d171d34dfde41c30e8b1b964ecf1 |
 
-原始证据在`outputs/windows_calibrated_20261025_r6/`、`outputs/windows_calibrated_final_20261025_r6/`、`outputs/kaggle_r6_preflight/`，部署资产在`outputs/kaggle_r6_assets/`。这些本地二进制产物不进入Git；源码、预登记、测试与聚合报告随本人分支发布。只读复核可运行`python scripts/verify_round6_results.py`；已结束的训练入口不得重跑。
+原始证据在`outputs/windows_calibrated_20261025_r6/`、`outputs/windows_calibrated_final_20261025_r6/`、`outputs/kaggle_r6_preflight/`，部署资产在`outputs/kaggle_r6_assets/`，最终包及迁移收据在`outputs/kaggle_r6_package/`。浏览器证据位于`outputs/windows_4060/`：`round6_kaggle_private_assets_created_20261025.png`、`round6_kaggle_version1_output_20261025.png`、`round6_kaggle_version1_visible_logs_20261025.txt`；此前`round6_kaggle_editor_loading_20261025.png`和`round6_kaggle_upload_pending_20261025.png`保留为已解决的失败历史。这些本地二进制产物不进入Git；源码、预登记、测试、空输出Notebook源码与聚合报告随本人分支发布。只读复核可运行`python scripts/verify_round6_results.py`；已结束的训练入口、人工前向和exclusive打包/迁移入口不得重跑。
