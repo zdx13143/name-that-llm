@@ -16,11 +16,11 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 ## 当前进展与学习入口（2026-10-25）
 
-自己的Windows分支为`exp/windows-4060-20261023`。第五轮四视角风格模型五折完成：**风格对照BA 0.359325，固定80/20融合候选BA 0.323681**。风格对照比第三轮0.298677高6.0648个百分点、五折均改善；融合虽比第三轮高2.5004个百分点，却弱于风格对照，且低于0.36，提交门槛失败。真实5次fit耗时89.95秒、无新编码器前向；没有最终训练或新Kaggle上传/运行/提交。第四轮失败0.264858、旧30-prompt留出及全部历史证据保留。
+自己的Windows分支为`exp/windows-4060-20261023`。第六轮训练折内部温度校准完成：**固定80/20融合BA 0.370896，开发门槛全部通过**；比第五轮风格对照0.359325高1.1570个百分点，配对95%区间[+0.4163,+1.8981]个百分点，五折均改善。开发30次模型fit+10次温度fit，条件最终8次模型fit+2次温度fit均完成；正在做离线部署检查，尚无本轮Kaggle分数。第五轮融合失败0.323681、第四轮失败0.264858、旧30-prompt留出及全部历史证据保留。
 
 - **先读学习版：[项目进展与AI知识 Markdown](PROJECT_LEARNING.md) · [可离线打开的HTML](PROJECT_LEARNING.html)**。包含流程、术语、真实实验解释、BA互动计算器与练习；后续每轮同步维护。
-- 证据：[第五轮预登记](name-that-llm/docs/WINDOWS_ROUND5_PLAN_20261025.md)、[第五轮结果与融合诊断](name-that-llm/reports/WINDOWS_ROUND5_20261025.md)、[第四轮结果与逐类召回](name-that-llm/reports/WINDOWS_ROUND4_20261025.md)、[第三轮实际结果](name-that-llm/reports/WINDOWS_ROUND3_20261024.md)。
-- 下方旧迁移/未提交描述保留历史时间点；此前正式public 0.351、队友0.601均为历史成绩，不能当作第五轮分数。当前状态以[WORKSPACE](name-that-llm/WORKSPACE.md)与HANDOFF末节为准。
+- 证据：[第六轮预登记](name-that-llm/docs/WINDOWS_ROUND6_PLAN_20261025.md)、[第六轮结果与部署状态](name-that-llm/reports/WINDOWS_ROUND6_20261025.md)、[第五轮结果与融合诊断](name-that-llm/reports/WINDOWS_ROUND5_20261025.md)、[第四轮结果与逐类召回](name-that-llm/reports/WINDOWS_ROUND4_20261025.md)。
+- 下方旧迁移/未提交描述保留历史时间点；此前正式public 0.351、队友0.601均为历史成绩，不能当作第六轮分数。当前状态以[WORKSPACE](name-that-llm/WORKSPACE.md)与HANDOFF末节为准。
 
 ## 赛题一句话
 
