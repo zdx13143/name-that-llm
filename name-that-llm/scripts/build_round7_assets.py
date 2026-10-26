@@ -28,8 +28,9 @@ def main():
         key = "model_sha256" if name.endswith("joblib") else "synthetic_scores_sha256"
         if digest(FINAL / name) != summary[key]:
             raise ValueError("Frozen export bytes changed")
+    source_hashes = {name.replace("\\", "/"): value for name, value in contract["sources"].items()}
     for name in ("stylegram_round5.py", "weighted_style_round7.py"):
-        if digest(MODULE / "scripts" / name) != contract["sources"]["scripts/" + name]:
+        if digest(MODULE / "scripts" / name) != source_hashes["scripts/" + name]:
             raise ValueError("Training preprocessing source changed")
     ASSETS.mkdir(parents=True, exist_ok=False)
     for name in ("weighted_svc.joblib", "synthetic_scores.npz"):
