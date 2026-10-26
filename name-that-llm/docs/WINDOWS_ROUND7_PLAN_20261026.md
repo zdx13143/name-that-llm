@@ -39,3 +39,11 @@
 通过后最多：在原2159行/120prompt+训练侧外部池上拟合4个vectorizer和1个加权SVC；独立final claim，1800秒/12GiB/2线程。导出新的独立资产与离线Notebook，验证跨平台预测、输入输出契约；Kaggle最多1次保存运行、1次正式提交、test≤4096行、≤9小时、断网。旧30prompt不训练不评分；不修改旧Notebook或队友分支。
 
 失败则关闭本轮，不改选权重1对照提交，不事后降低门槛或追加搜索。无论成败，同步根PROJECT_LEARNING.md/HTML、结果报告、README、WORKSPACE和HANDOFF；原始数据、模型和本地输出不进入Git。
+
+## 启动故障及唯一修正登记（任何真实fit之前）
+
+原计划已在 `c0a027c` 提交并推送。首次启动在worker进入任何vectorizer/模型fit之前失败，所有fit/forward计数均为0，监督耗时2.485秒；原claim永久保持failed，SHA256 `00a3029371b1ab3f65c7fb52c15fd446fb46b697db71ba662e27cc42469534ef`，原源码快照与stderr保留。
+
+最小无数据复现确认：当前受限Windows环境中`psutil.Process.exe()`返回路径缺少盘符，而原监护检查要求完整解释器路径；带或不带`-u`均失败。`QueryFullProcessImageNameW`返回正确完整路径。因此只增加R7专用原生路径查询，保持直接父进程/唯一venv redirector、PID、创建时间、未使用claim的严格约束。真实子进程回归测试确认正确链通过，错误PID、错误创建时间、已消费fit的claim均拒绝；不涉及任何数据或训练。
+
+原ID不恢复。本次在任何模型结果产生之前，另登记唯一启动修正 `windows-external-weighting-dev-20261026-r7-startup-1`，独立配置`config/windows_external_round7_startup_20261026.json`、入口`scripts/windows_external_round7_startup.py`与输出`outputs/windows_external_weighting_20261026_r7_startup1`。它固定原失败claim哈希并要求全部fit计数为0，机器校验模型、数据、折、权重、门槛与原计划逐项相同；仍最多30次总fit，剩余监督预算3597秒，两次合计不超过原3600秒。这是对原“不重试”规则的一次明确启动修正，不是自动重试、失败覆盖或增加模型搜索。修正代码与说明再次提交推送后才执行；任何后续失败均关闭，不再登记启动修正。

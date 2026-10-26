@@ -32,6 +32,8 @@ CONFIG_SHA256 = "b7b32e3f1a47aae941844b8797a868ecc322a7943a77f31d0784c72ccffaf98
 BASE = MODULE / "config/windows_modernbert_20261023.json"
 OUTPUT = MODULE / "outputs/windows_external_weighting_20261026_r7"
 CLAIM = MODULE / "outputs/continuation_claims/windows-external-weighting-dev-20261026-r7.json"
+ENTRYPOINT = Path(__file__).resolve()
+SUPERVISOR_CHECK = dev.require_live_supervisor
 SOURCES = tuple(dict.fromkeys((*guards.SOURCES, Path(__file__), CONFIG,
     Path(__file__).with_name("external_pool_round7.py"), Path(__file__).with_name("weighted_style_round7.py"),
     MODULE / "config/round7_external_sources_20261026.json")))
@@ -41,7 +43,7 @@ def configuration():
     if digest(CONFIG) != CONFIG_SHA256:
         raise ValueError("Round7 config identity changed")
     config = json.loads(CONFIG.read_bytes())
-    if config["experiment_id"] != "windows-external-weighting-dev-20261026-r7" or tuple(config["method"]["punctuation_marks"]) != MARKS:
+    if config["experiment_id"] != CLAIM.stem or tuple(config["method"]["punctuation_marks"]) != MARKS:
         raise ValueError("Unexpected Round7 recipe")
     if config["method"]["external_weight"] != 1.0:
         raise ValueError("External sample weight must remain one")
@@ -147,7 +149,7 @@ def consume(claim, kind, config):
 
 def execute(config, base):
     claim = json.loads(CLAIM.read_bytes())
-    dev.require_live_supervisor(claim)
+    SUPERVISOR_CHECK(claim)
     guards.start_worker_guard(claim, config["budget"])
     data, pool, round6, folds, fold_id = load_inputs(config, base)
     value = contract(config, base, data, pool, folds, fold_id)
@@ -256,7 +258,7 @@ def supervise(config, value):
                 handle.write(source.read_bytes())
         env = {**os.environ, **{k: str(config["budget"]["threads"]) for k in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS")}}
         with (OUTPUT / "stdout.log").open("xb") as stdout, (OUTPUT / "stderr.log").open("xb") as stderr:
-            process = subprocess.Popen([sys.executable, "-u", str(Path(__file__).resolve()), "--execute"], env=env, stdout=stdout, stderr=stderr)
+            process = subprocess.Popen([sys.executable, "-u", str(ENTRYPOINT), "--execute"], env=env, stdout=stdout, stderr=stderr)
             phase, monitored = "worker", psutil.Process(process.pid)
             while process.poll() is None:
                 if time.perf_counter()-started > config["budget"]["development_timeout_seconds"]:
