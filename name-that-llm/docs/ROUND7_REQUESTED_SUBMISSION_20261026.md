@@ -31,4 +31,4 @@ Kaggle当前账号Zephyr Pong，Name That LLM已接受规则；提交对话框�
 
 ## 已完成与当前平台状态
 
-Linux迁移核验已完成，四条人工文本/六次预测最大误差0，0fit、0编码器、0旧留出评分。210,522,119字节固定payload已一次上传创建私有资产。冻结Notebook已推送`51e6bb6`，但同一Kaggle草稿一直`Editor Loading`，导入不可用；新保存运行和正式提交均0，暂无分数。刷新和重新打开仍未恢复，已请求用户确认页面/网络状态。恢复后复用现有模型、包、私有资源和草稿，不重跑已完成步骤。当前证据、哈希与继续顺序见[执行报告](../reports/ROUND7_REQUESTED_SUBMISSION_20261026.md)。
+Linux迁移核验已完成，四条人工文本/六次预测最大误差0，0fit、0编码器、0旧留出评分。210,522,119字节固定payload已一次上传创建私有资产。冻结Notebook推送`51e6bb6`后，编辑器曾持续Loading；用户确认恢复后复用同一草稿，成功导入并执行唯一保存运行。Version 1（362398792）CPU/Internet Off运行39.0秒，3行公开占位test生成合法808-byte Parquet。随后一次正式提交在2026-10-26 07:37 UTC核实Succeeded，Public Score **0.414**；隐藏规模/耗时未知，不与保存运行混用。保存运行与正式提交预算各1/1，原开发gate仍false，不重跑或据公榜追加调参。证据与哈希见[执行报告](../reports/ROUND7_REQUESTED_SUBMISSION_20261026.md)。

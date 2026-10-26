@@ -403,7 +403,7 @@ Kaggle新私有资产[NTL R6 Assets 20261025](https://www.kaggle.com/datasets/ze
 
 本轮新Kaggle资产上传/保存运行/正式提交均0；仍只有第六轮历史正式public 0.365，队友0.601是另一完整方案的公榜，不与本轮CV直接比较。后续若继续，应针对公平可验证的强基线另登记新问题与预算；本轮不追加实验。完整18类召回与命令见[第七轮报告](reports/WINDOWS_ROUND7_20261026.md)，根PROJECT_LEARNING.md/HTML已同步外部数据、权重及验证局限的教学解释。
 
-## 2026-10-26 用户明确要求提交一次：本地及私有资源完成，编辑器等待恢复（当前）
+## 2026-10-26 用户明确要求提交一次：正式Succeeded，Public Score 0.414（当前）
 
 06:44:49 UTC用户明确要求“请你提交一次到kaggle我看看分数成果”。该请求仅覆盖同一权重4候选的必要最终拟合与一次正式评分，原gate=false、开发结果及全部旧claim保留。授权与预算在fit前推送`b5d3516`，不改选对照、不加新参数搜索，原条件最终入口仍拒绝。
 
@@ -411,6 +411,6 @@ Kaggle新私有资产[NTL R6 Assets 20261025](https://www.kaggle.com/datasets/ze
 
 Linux确切payload迁移验证四条人工文本、六次预测调用误差0，0训练/编码器/真实数据评分。包210,522,119字节，SHA `19e424acf23278c366014bdc4cdaf4bede928b13e6c68e2ebd383a67edf6fadc`；Notebook SHA `01b7a9756ade69b607b4bfb5672f275e756fb6bdfc46e9c630084271cc13260a`，已推送`51e6bb6`。19项R7测试通过，独立收据核验通过；canonical contract对象hash与文件字节hash分开记录，不混用。原summary/打包receipt的旧阶段状态不回写，后续收据另存。
 
-私有[NTL R7 Assets 20261026](https://www.kaggle.com/datasets/zephyrpong/ntl-r7-assets-20261026)已创建成功。独立[Notebook草稿](https://www.kaggle.com/code/zephyrpong/ntl-weighted-svc-r7-20261026/edit)已命名、设置CPU/None与Internet Off，但编辑器一直Loading，导入不可用。官方输入挂载未成功确认；没有启动session、保存运行或正式提交，当前暂无R7分数。刷新和重新打开同一草稿仍未恢复，已请求用户确认手动打开状态/恢复所需网络。不要把reCAPTCHA连接提示直接断定为原因，也不要自动解CAPTCHA。
+私有[NTL R7 Assets 20261026](https://www.kaggle.com/datasets/zephyrpong/ntl-r7-assets-20261026)已创建成功，版本21251756。编辑器曾持续Loading，用户确认手动恢复后复用同一草稿，成功导入冻结Notebook并挂载官方比赛/私有资产。[Notebook Version 1（362398792）](https://www.kaggle.com/code/zephyrpong/ntl-weighted-svc-r7-20261026?scriptVersionId=362398792)名为`R7 frozen weighted SVC offline v1`，Private、CPU/None、Internet Off；唯一保存运行39.0秒成功。3行公开占位test输出808-byte Parquet，SHA `aeb717f50c7b150da2f8d5c3fbe423fbf504cd94e6bd084004740d596fb3371e`；模型fit/编码器/旧留出评分均0。此前Loading及reCAPTCHA连接提示保留为历史失败，不再阻塞；未自动解CAPTCHA，原因未证实。
 
-恢复时复用同一草稿和私有资源，导入已冻结Notebook、挂官方比赛与私有资源，重新核对Private/CPU/Internet Off后最多一次Save & Run，成功后最多一次正式Submit并等分数。预算尚未消耗；状态不明先查历史。最终fit、打包与人工验证已完成，不重跑、不重复上传。队友独立运行保持不动。详细证据和恢复顺序见[本次提交报告](reports/ROUND7_REQUESTED_SUBMISSION_20261026.md)，本机ledger与截图在`outputs/kaggle_r7_submission_20261026/`。根学习Markdown/HTML继续同步该请求与原开发结论的区别。
+约07:34 UTC从该版本正式提交一次，07:37:16 UTC观察到**Succeeded，Public Score 0.414**。观察时间不等于平台完成时间；隐藏测试行数/耗时未取得，不由3行/39秒推测。相比R6的0.365提高0.049（4.9个百分点），仍低于队友完整0.601；权重1对照没有正式提交，不把公榜提升归因于权重4。最终选用checkbox未调整，队友`ntl-e642`独立运行未操作。保存运行与正式提交预算各1/1已耗尽，不重复提交或据公榜调参。证据见[本次提交报告](reports/ROUND7_REQUESTED_SUBMISSION_20261026.md)和`outputs/kaggle_r7_submission_20261026/`中的ledger、`public_score_0414.jpg`、`public_score_visible_state.txt`与保存运行日志。根学习Markdown/HTML已同步；本次明确请求已完成，原开发gate=false和全部历史claim保持。

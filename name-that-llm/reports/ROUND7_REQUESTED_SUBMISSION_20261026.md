@@ -1,6 +1,6 @@
-# 第七轮一次提交：本地完成，等待Kaggle编辑器恢复
+# 第七轮一次提交：Kaggle正式成功，Public Score 0.414
 
-2026-10-26。用户在06:44:49 UTC明确要求“请你提交一次到kaggle我看看分数成果”。固定权重4候选已完成最终拟合、Linux迁移核验和私有资产上传。独立Notebook草稿目前持续停在`Editor Loading`，导入不可用；**新Kaggle保存运行0次、正式提交0次，尚无R7公榜分数**。刷新和重新打开同一草稿仍未恢复。
+2026-10-26。用户在06:44:49 UTC明确要求“请你提交一次到kaggle我看看分数成果”。固定权重4候选已完成最终拟合、Linux迁移核验、私有资产上传、一次保存运行和一次正式提交。07:37 UTC核实同一版本状态为**Succeeded，Public Score 0.414**。相比第六轮显示分数0.365增加0.049（4.9个百分点），仍低于队友另一完整方案0.601。原开发增量gate继续为false。
 
 ## 授权与科学结论
 
@@ -19,21 +19,21 @@
 
 原summary的`deployment_validation_complete=false`和打包时receipt的`packaged_not_yet_validated`保留生成时状态；后续验证以独立`relocation_verification.json`与`deployment_ready.json`为准，不回写历史产物。
 
-## Kaggle当前状态与恢复入口
+## Kaggle正式结果与运行证据
 
 一次上传已成功创建私有[NTL R7 Assets 20261026](https://www.kaggle.com/datasets/zephyrpong/ntl-r7-assets-20261026)，页面确认Private。仅含`ntl_r7_payload.tgz.bin`与`README.txt`；没有原始语料、旧留出、OOF或凭据。
 
-独立草稿：[NTL Weighted SVC R7 20261026](https://www.kaggle.com/code/zephyrpong/ntl-weighted-svc-r7-20261026/edit)。已核对Accelerator=None、No persistence，并设置Internet Off；但编辑器持续Loading，导入菜单禁用。添加官方输入未得到成功确认，不能假定输入已挂载。尚未导入冻结Notebook、启动session、Save & Run或正式Submit。
+[私有Notebook Version 1（362398792）](https://www.kaggle.com/code/zephyrpong/ntl-weighted-svc-r7-20261026?scriptVersionId=362398792)，版本名`R7 frozen weighted SVC offline v1`，仅一次Save & Run All。页面确认Private、CPU/None、Internet Off，挂载官方比赛170484及私有资产版本21251756。保存运行成功39.0秒；宿主Python3.13.15，隔离推理Python3.11.17。公开占位test为3行，预测调用1次，模型fit、编码器前向、旧留出评分均0；输出808-byte `submission.parquet`，SHA `aeb717f50c7b150da2f8d5c3fbe423fbf504cd94e6bd084004740d596fb3371e`。
 
-资源页曾出现reCAPTCHA服务连接提示，但上传实际成功；未自动处理CAPTCHA，也没有证据证明该提示导致编辑器失败。刷新及重新打开同一草稿未恢复，已请求用户确认手动打开状态或恢复页面所需网络连接。
+约07:34 UTC正式提交上述确切版本及`submission.parquet`一次，页面先显示`Notebook Running`，07:37:16 UTC核实**Succeeded / 0.414**。该时间是观察时间，不是平台提供的完成时间。正式分数来自隐藏测试的public部分；未取得隐藏运行逐batch日志、确切行数或耗时，不用保存运行的3行/39秒代替。最终选用checkbox未调整。
 
-恢复后只继续同一草稿：导入[冻结Notebook](../notebooks/weighted_round7_offline.ipynb)，挂载官方比赛与已建私有资源，重新核对Private/CPU/Internet Off，最多一次Save Version & Run；确认成功版本和合法`submission.parquet`后，最多一次正式提交并等待分数。状态不明先查版本/提交记录，不重复点击。最终拟合、打包及Linux人工验证已完成，不重跑。
+此前编辑器持续`Editor Loading`、导入禁用，刷新及重新打开未恢复。用户随后确认手动打开已能正常显示，继续同一草稿后成功导入[冻结Notebook](../notebooks/weighted_round7_offline.ipynb)并完成后续流程。资源页曾有reCAPTCHA服务连接提示，但上传实际成功；未自动处理CAPTCHA，也没有证据证明该提示是编辑器故障原因。旧失败截图保留，已不是当前阻塞。
 
-开始前页面显示剩余4次提交。R6正式0.365是既有结果，队友0.601来自另一个完整方案；队友`ntl-e642` Version2当时独立运行，未操作。不能以这些历史分数或0.445938开发CV代替本次公榜。
+本请求的保存运行1/1、正式提交1/1均已消耗；没有重复fit、上传、运行或提交，也没有据公榜追加调参。0.414高于R6的0.365，但配方同时改变了外部数据、特征与融合方式，不能把全部提升归因于权重4。权重1对照没有正式提交，本次公榜也不能替代本轮配对开发比较。队友`ntl-e642` Version2在最终观察时仍独立运行，未操作；不能把其名称中的0.642写成已得分。
 
 ## 证据身份
 
-本地证据目录为`outputs/windows_external_requested_final_20261026_r7/`、`outputs/kaggle_r7_package/`、`outputs/kaggle_r7_submission_20261026/`；最后一处保存ledger、`private_asset_created.jpg`和`editor_loading.jpg`。原始输出受Git忽略。
+本地证据目录为`outputs/windows_external_requested_final_20261026_r7/`、`outputs/kaggle_r7_package/`、`outputs/kaggle_r7_submission_20261026/`。最后一处保存ledger、正式`public_score_0414.jpg`/`public_score_visible_state.txt`、保存运行日志/截图、接收提交时截图及历史编辑器失败截图。原始输出受Git忽略。
 
 | 产物 | SHA256 |
 | --- | --- |
@@ -46,5 +46,7 @@
 | ntl_r7_payload.tgz.bin | `19e424acf23278c366014bdc4cdaf4bede928b13e6c68e2ebd383a67edf6fadc` |
 | relocation_verification.json | `8f1b436c80f9277b88466d9ef481b88052653f601e889277b393e22664afcb44` |
 | weighted_round7_offline.ipynb | `01b7a9756ade69b607b4bfb5672f275e756fb6bdfc46e9c630084271cc13260a` |
+| 正式public分数截图 | `334cbb9a58be6911c7e7c72bfc554a4210a2520feee6e1881b159429be7e68fb` |
+| 正式public页面可见状态 | `0c4b0a62c3b7734c335d5d2cd82693fb020366c41c946d4151d5e04e1556494f` |
 
 最终claim为`outputs/continuation_claims/windows-external-weighting-requested-final-20261026-r7.json`。开发claim为另一个`windows-external-weighting-dev-20261026-r7-startup-1.json`，SHA为`d397abf349eafd17eb01e5a8c4b85bfbb8f754a683bfc2ee87c7648e2d4970c8`；两者不能混用。规范对象hash与JSON原始字节hash也分别记录。

@@ -1,8 +1,8 @@
 # Name That LLM
 
-> **2026-10-26 一次提交请求的最新状态：** 用户明确要求观察分数后，已对原权重4候选完成最终拟合与Linux四人工文本核验，私有资源上传成功。Kaggle草稿停在`Editor Loading`，尚未导入/保存运行/正式提交，暂无R7公榜分数。原开发gate仍为false，旧30prompt未训练或评分。见[提交记录与恢复入口](reports/ROUND7_REQUESTED_SUBMISSION_20261026.md)。下段为此请求前的开发阶段结论。
+> **2026-10-26 正式结果：R7 Public Score 0.414，Succeeded。** 原权重4候选完成最终拟合、Linux核验与私有部署；编辑器恢复后，Version 1（362398792）CPU离线保存运行成功39秒，一次正式提交已返回分数。相比R6的0.365高4.9个百分点，仍低于队友完整方案0.601。原开发增量gate仍false，旧30prompt未训练或评分；保存运行/正式提交各1/1已用完。见[正式提交记录](reports/ROUND7_REQUESTED_SUBMISSION_20261026.md)。下段为该请求前的开发阶段结论。
 
-> **2026-10-26 最新结果：** 第七轮外部语料四视角SVC，权重1对照BA **0.445483**、权重4候选 **0.445938**。候选相对R6开发集提高7.5043个百分点，但对本轮对照仅+0.0455个百分点、95%区间跨0、3/5折改善，增量gate失败关闭。10次分类器+20次词表fit完成；最终训练、旧留出评分、新Kaggle上传/运行/提交均为0。完整0.601仅作为源码参考，不能把组件CV当成强集成或公榜提升。见[第七轮报告](reports/WINDOWS_ROUND7_20261026.md)、[预登记](docs/WINDOWS_ROUND7_PLAN_20261026.md)、[学习Markdown](../PROJECT_LEARNING.md)/[HTML](../PROJECT_LEARNING.html)。
+> **2026-10-26 开发阶段关闭时：** 第七轮外部语料四视角SVC，权重1对照BA **0.445483**、权重4候选 **0.445938**。候选相对R6开发集提高7.5043个百分点，但对本轮对照仅+0.0455个百分点、95%区间跨0、3/5折改善，增量gate失败关闭。10次分类器+20次词表fit完成；当时最终训练、旧留出评分、新Kaggle上传/运行/提交均为0。完整0.601仅作为源码参考，不能把组件CV当成强集成或公榜提升。见[第七轮报告](reports/WINDOWS_ROUND7_20261026.md)、[预登记](docs/WINDOWS_ROUND7_PLAN_20261026.md)、[学习Markdown](../PROJECT_LEARNING.md)/[HTML](../PROJECT_LEARNING.html)。
 
 > **2026-10-25 历史结果：** 第六轮嵌套温度校准固定80/20融合**BA 0.370896，开发门槛全部通过**。比第五轮风格对照高1.1570个百分点、五折均改善。开发30次模型fit+10次温度fit，条件最终8次模型fit+2次温度fit完成；四次跨平台人工检查和Linux迁移核验通过。私有Kaggle资产已上传，Version 1保存运行成功（96.5秒）；一次正式提交已成功，Kaggle Public Score 为0.365。旧留出未重开。详见[第六轮报告](reports/WINDOWS_ROUND6_20261025.md)、[当前入口](WORKSPACE.md)及根[学习Markdown](../PROJECT_LEARNING.md)/[离线HTML](../PROJECT_LEARNING.html)。第五轮0.323681、第四轮0.264858及以下日期更早的状态均保留为历史记录。
 
