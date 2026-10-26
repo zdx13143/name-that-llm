@@ -20,3 +20,11 @@ Kaggle当前账号Zephyr Pong，Name That LLM已接受规则；提交对话框�
 现有Linux CPython 3.11.17与固定依赖可复用，R7仅SVC不需要ModernBERT、Torch或大语言模型。最终推理严格读取`id,text`，输出`id,model`的`submission.parquet`，保持test ID顺序与18标签映射。Kaggle保存运行及正式评分分别记录，不把3行占位test通过写成正式分数。
 
 新入口`scripts/windows_requested_final_round7.py`核对本次请求配置SHA、已完成R7 claim/summary/verification SHA，并把`development_gate_passed=false`写入新契约。原条件入口仍按原gate拒绝。配置与代码先提交推送，再做真实fit；后续部署和评分证据追加记录，不覆盖原第七轮关闭结论。
+
+## 部署核验固定步骤
+
+最终拟合已按`b5d3516`完成：4/4词表、1/1分类器，241.078303秒，抽样进程树RSS峰值4,690,862,080字节，监督退出0。新模型仍只训练2159官方开发行和38,724条筛选外部行。原开发门槛保持false。
+
+推理包使用原训练时的已拟合float32 TF-IDF对象及两个原预处理函数，固定margin argmax。现有Linux CPython3.11.17仅打包numpy2.2.6、scipy1.16.3、scikit-learn1.7.2、joblib1.5.2、threadpoolctl3.6.0、pyarrow21.0.0及其发行版文件/许可，保留Python标准库，不携带Torch/Transformers/ModernBERT。打包和推理源码另行提交后再做迁移验证。
+
+唯一Linux迁移验证从确切payload解包到临时目录，仅对四条保存的人工文本执行六次调用：整批一次、反序一次、单条四次；与Windows参考margin比较，最大绝对误差≤1e-7、argmax一致，并检验id/model Parquet回读。最多900秒，0fit、0编码器、0真实开发/留出/test评估。保存独立claim、stdout/stderr与验证收据；不覆盖失败。随后Notebook只加载同一SHA固定的payload，官方test按128行分批推理，输出顺序不变。
