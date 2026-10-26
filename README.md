@@ -4,7 +4,7 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 **目标：银牌以上**（Featured 竞赛银牌 ≈ 队伍排名前 5%）。
 
-> **队友2026-10-20实验记录：公开榜0.601，第86 / 2,084队。** 2026-10-24已核实对应历史正式提交Succeeded、public 0.601；上述排名仅为历史记录，不代表当前排名，也没有完成远端完整Notebook字节核对。此前0.554为历史版本。完整记录见 [EXPERIMENTS.md](EXPERIMENTS.md)，来源与边界见[最新交接](name-that-llm/HANDOFF.md)。
+> **队友2026-10-20实验记录：公开榜0.601，第86 / 2,084队。** 2026-10-26已核对[固定Notebook版本360258830](https://www.kaggle.com/code/zdx13143/ntl-ensemble-600?scriptVersionId=360258830)及下载源码SHA；页面显示Public Score 0.601。上述排名仅为历史记录，不代表当前排名。此前0.554为历史版本。完整记录及源码更正见 [EXPERIMENTS.md](EXPERIMENTS.md)，来源与边界见[最新交接](name-that-llm/HANDOFF.md)。
 >
 > **成绩构成说明**：记录中的0.554和0.601来自**复现社区公开方案**。
 > 上游作者：Lucas Boesen（`lora-x-adaptive-centering`）、
@@ -14,12 +14,14 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 ---
 
-## 当前进展与学习入口（2026-10-25）
+## 当前进展与学习入口（2026-10-26）
+
+**第七轮已完成并关闭：** 参考队友实际0.601的外部语料SVC分支，重建固定40,261条公开回答池，完成同一120prompt/2159行的五折对照。权重1对照BA **0.445483**，官方样本权重4候选 **0.445938**；候选比第六轮开发BA高7.5043个百分点，但对本轮对照只高0.0455个百分点，配对区间[-0.6040,+0.6944]个百分点跨0、仅3/5折改善，增量gate失败。10次分类器+20次词表fit，892.04秒、RSS峰值4.353GiB；最终训练与新Kaggle操作均为0。结果限于组件开发CV，不是完整0.601复现或公榜提升；来源筛选与无标签去重边界见报告。
 
 自己的Windows分支为`exp/windows-4060-20261023`。第六轮训练折内部温度校准完成：**固定80/20融合BA 0.370896，开发门槛全部通过**；比第五轮风格对照0.359325高1.1570个百分点，配对95%区间[+0.4163,+1.8981]个百分点，五折均改善。开发30次模型fit+10次温度fit，条件最终8次模型fit+2次温度fit均完成；四次跨平台人工检查和Linux运行时迁移核验已通过。私有Kaggle资产已上传，[Notebook Version 1](https://www.kaggle.com/code/zephyrpong/ntl-calibrated-r6-20261025?scriptVersionId=362038537)保存运行成功（96.5秒）；一次正式提交已成功，Kaggle Public Score 为0.365。第五轮融合失败0.323681、第四轮失败0.264858、旧30-prompt留出及全部历史证据保留。
 
 - **先读学习版：[项目进展与AI知识 Markdown](PROJECT_LEARNING.md) · [可离线打开的HTML](PROJECT_LEARNING.html)**。包含流程、术语、真实实验解释、BA互动计算器与练习；后续每轮同步维护。
-- 证据：[第六轮预登记](name-that-llm/docs/WINDOWS_ROUND6_PLAN_20261025.md)、[第六轮结果与部署状态](name-that-llm/reports/WINDOWS_ROUND6_20261025.md)、[第五轮结果与融合诊断](name-that-llm/reports/WINDOWS_ROUND5_20261025.md)、[第四轮结果与逐类召回](name-that-llm/reports/WINDOWS_ROUND4_20261025.md)。
+- 最新证据：[第七轮预登记与零fit启动修正](name-that-llm/docs/WINDOWS_ROUND7_PLAN_20261026.md)、[第七轮结果、18类召回与gate](name-that-llm/reports/WINDOWS_ROUND7_20261026.md)。历史：[第六轮结果与部署状态](name-that-llm/reports/WINDOWS_ROUND6_20261025.md)、[第五轮融合诊断](name-that-llm/reports/WINDOWS_ROUND5_20261025.md)。
 - 下方旧迁移/未提交描述保留历史时间点；此前正式public 0.351、队友0.601均为历史成绩，不能当作第六轮分数。当前状态以[WORKSPACE](name-that-llm/WORKSPACE.md)与HANDOFF末节为准。
 
 ## 赛题一句话

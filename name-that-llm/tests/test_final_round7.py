@@ -13,10 +13,12 @@ class FinalAdmissionTests(unittest.TestCase):
         with patch.object(final, "CLAIM", Mock(exists=lambda: False)), \
              patch.object(final, "OUTPUT", Mock(exists=lambda: False)), \
              patch.object(final, "check", return_value={"state": "verified", "development_gate_passed": False}), \
+             patch.object(final, "configure") as configure, \
              patch.object(final.run, "load_inputs") as inputs:
             with self.assertRaisesRegex(ValueError, "gate did not pass"):
                 final.admission()
             inputs.assert_not_called()
+            configure.assert_not_called()
 
     def test_existing_claim_stops_before_verification(self):
         with patch.object(final, "CLAIM", Mock(exists=lambda: True)), patch.object(final, "check") as verify:

@@ -21,12 +21,11 @@ from verify_round7_results import check
 from supervisor_round7 import require_live_supervisor
 from weighted_style_round7 import vectorizer, sample_weights, classifier, decision
 
-startup.configure()
 run = startup.experiment
 MODULE = run.MODULE
 CLAIM = MODULE / "outputs/continuation_claims/windows-external-weighting-final-20261026-r7.json"
 OUTPUT = MODULE / "outputs/windows_external_final_20261026_r7"
-SOURCES = tuple(dict.fromkeys((*run.SOURCES, Path(__file__).resolve(), Path(__file__).with_name("verify_round7_results.py"))))
+SOURCES = ()
 SYNTHETIC = [
     "A small brass key lay beside the window. Mira turned it over, wondering which door it would open.",
     "The instructions were simple: measure twice, mark the wood, and keep your hands clear of the blade.",
@@ -35,12 +34,21 @@ SYNTHETIC = [
 ]
 
 
+def configure():
+    global SOURCES
+    if SOURCES:
+        return
+    startup.configure()
+    SOURCES = tuple(dict.fromkeys((*run.SOURCES, Path(__file__).resolve(), Path(__file__).with_name("verify_round7_results.py"))))
+
+
 def admission():
     if CLAIM.exists() or OUTPUT.exists():
         raise ValueError("Final claim/output exists; no retry/resume")
     verified = check()
     if verified["state"] != "verified" or verified["development_gate_passed"] is not True:
         raise ValueError("Round7 development gate did not pass")
+    configure()
     config, base = run.configuration()
     for name, expected in config["runtime"].items():
         if importlib.metadata.version(name) != expected:
@@ -66,6 +74,7 @@ def consume(claim, kind, budget):
 
 
 def execute():
+    configure()
     claim = json.loads(CLAIM.read_bytes())
     require_live_supervisor(claim)
     config, base = run.configuration()

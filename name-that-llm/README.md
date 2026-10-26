@@ -1,6 +1,8 @@
 # Name That LLM
 
-> **2026-10-25 最新结果：** 第六轮嵌套温度校准固定80/20融合**BA 0.370896，开发门槛全部通过**。比第五轮风格对照高1.1570个百分点、五折均改善。开发30次模型fit+10次温度fit，条件最终8次模型fit+2次温度fit完成；四次跨平台人工检查和Linux迁移核验通过。私有Kaggle资产已上传，Version 1保存运行成功（96.5秒）；一次正式提交已成功，Kaggle Public Score 为0.365。旧留出未重开。详见[第六轮报告](reports/WINDOWS_ROUND6_20261025.md)、[当前入口](WORKSPACE.md)及根[学习Markdown](../PROJECT_LEARNING.md)/[离线HTML](../PROJECT_LEARNING.html)。第五轮0.323681、第四轮0.264858及以下日期更早的状态均保留为历史记录。
+> **2026-10-26 最新结果：** 第七轮外部语料四视角SVC，权重1对照BA **0.445483**、权重4候选 **0.445938**。候选相对R6开发集提高7.5043个百分点，但对本轮对照仅+0.0455个百分点、95%区间跨0、3/5折改善，增量gate失败关闭。10次分类器+20次词表fit完成；最终训练、旧留出评分、新Kaggle上传/运行/提交均为0。完整0.601仅作为源码参考，不能把组件CV当成强集成或公榜提升。见[第七轮报告](reports/WINDOWS_ROUND7_20261026.md)、[预登记](docs/WINDOWS_ROUND7_PLAN_20261026.md)、[学习Markdown](../PROJECT_LEARNING.md)/[HTML](../PROJECT_LEARNING.html)。
+
+> **2026-10-25 历史结果：** 第六轮嵌套温度校准固定80/20融合**BA 0.370896，开发门槛全部通过**。比第五轮风格对照高1.1570个百分点、五折均改善。开发30次模型fit+10次温度fit，条件最终8次模型fit+2次温度fit完成；四次跨平台人工检查和Linux迁移核验通过。私有Kaggle资产已上传，Version 1保存运行成功（96.5秒）；一次正式提交已成功，Kaggle Public Score 为0.365。旧留出未重开。详见[第六轮报告](reports/WINDOWS_ROUND6_20261025.md)、[当前入口](WORKSPACE.md)及根[学习Markdown](../PROJECT_LEARNING.md)/[离线HTML](../PROJECT_LEARNING.html)。第五轮0.323681、第四轮0.264858及以下日期更早的状态均保留为历史记录。
 
 > **2026-10-21 接续结果：** 已在 `exp/dev-comparison-20261021` 分支审查队友方案、修复两处bug，并完成统一开发GroupKFold比较。原模型0.340336，最佳固定融合0.347281，增益区间跨0，未达到采用标准；原冻结交付保持不变。见[本轮报告与逐类召回](reports/TEAM_DEV_COMPARISON.md)及[队友审查](docs/TEAM_WORK_REVIEW.md)。这是新开发探索，不是新的最终留出或榜单成绩。新环境为仓库根 `.venv/`，使用 `requirements-team-cpu.txt`。
 
@@ -9,7 +11,9 @@
 
 从短文本判断生成它的语言模型，共 18 类；评价指标为 balanced accuracy，即各类召回率的平均值。
 
-## 当前状态
+## 2026-10-18 历史 CPU 状态
+
+以下审计、环境与原推进顺序保留为历史快照；当前实验分支、Kaggle结果与已关闭入口以顶部更新及WORKSPACE为准。
 
 截至 2026-10-18，用户手动下载的官方文件已全量审计：2,699 条训练、150 个 prompt、18 类、3 条公开测试，所列完整性检查未发现问题。见 [真实数据审计](reports/INITIAL_DATA_AUDIT.md)。本模块记录独立 CPU 实验；三轮 CPU 搜索已完成，开发 BA 为 **0.346818**，冻结后一次最终留出 BA 为 **0.383333**（按 prompt bootstrap 95% 区间 **[0.338889, 0.429630]**）。这些都是本地结果，没有 Kaggle 运行或比赛提交。当前入口见 [HANDOFF.md](HANDOFF.md)。
 
@@ -23,7 +27,7 @@
 | 比赛标识 | `name-that-llm` |
 | 本项目目录 | `name-that-llm/` |
 | 协作仓库 | [zdx13143/name-that-llm](https://github.com/zdx13143/name-that-llm)（私有，需仓库访问权限） |
-| 独立开发分支 | 当前 `exp/dev-comparison-20261021`；原上传 `exp/cpu-stylegram-handoff-20261021`（源于 `main@692ac87`） |
+| 独立开发分支 | 当前 `exp/windows-4060-20261023`；CPU历史 `exp/dev-comparison-20261021`，原上传 `exp/cpu-stylegram-handoff-20261021`（源于 `main@692ac87`） |
 | 数据说明 | [data/README.md](data/README.md) |
 | 下一阶段方案 | [docs/PLAN.md](docs/PLAN.md)、[整轮 CPU 优化及停止标准](docs/OPTIMIZATION_PLAN.md) |
 | 交接与待核对项 | [HANDOFF.md](HANDOFF.md) |
