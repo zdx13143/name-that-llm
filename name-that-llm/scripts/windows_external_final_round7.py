@@ -26,6 +26,8 @@ MODULE = run.MODULE
 CLAIM = MODULE / "outputs/continuation_claims/windows-external-weighting-final-20261026-r7.json"
 OUTPUT = MODULE / "outputs/windows_external_final_20261026_r7"
 SOURCES = ()
+EXTRA_SOURCES = ()
+ENTRYPOINT = Path(__file__).resolve()
 SYNTHETIC = [
     "A small brass key lay beside the window. Mira turned it over, wondering which door it would open.",
     "The instructions were simple: measure twice, mark the wood, and keep your hands clear of the blade.",
@@ -39,15 +41,20 @@ def configure():
     if SOURCES:
         return
     startup.configure()
-    SOURCES = tuple(dict.fromkeys((*run.SOURCES, Path(__file__).resolve(), Path(__file__).with_name("verify_round7_results.py"))))
+    SOURCES = tuple(dict.fromkeys((*run.SOURCES, Path(__file__).resolve(), Path(__file__).with_name("verify_round7_results.py"), *EXTRA_SOURCES)))
+
+
+def authorize(verified):
+    if verified["state"] != "verified" or verified["development_gate_passed"] is not True:
+        raise ValueError("Round7 development gate did not pass")
+    return {"mode": "passed_development_gate", "development_gate_passed": True}
 
 
 def admission():
     if CLAIM.exists() or OUTPUT.exists():
         raise ValueError("Final claim/output exists; no retry/resume")
     verified = check()
-    if verified["state"] != "verified" or verified["development_gate_passed"] is not True:
-        raise ValueError("Round7 development gate did not pass")
+    authorization = authorize(verified)
     configure()
     config, base = run.configuration()
     for name, expected in config["runtime"].items():
@@ -57,7 +64,7 @@ def admission():
     if len(data["truth"]) != 2159 or len(set(data["groups"])) != 120:
         raise ValueError("Final development scope changed")
     selected, present = run.fold_pool(pool, data["texts"], data["truth"])
-    value = {"config": config, "development_verification": verified,
+    value = {"config": config, "development_verification": verified, "authorization": authorization,
              "development_claim_sha256": run.digest(run.CLAIM),
              "row_identity_sha256": run.dev.object_hash({k: data[k].tolist() for k in ("row_index", "ids", "groups", "truth", "labels")}),
              "external_rows": len(selected), "external_ids_sha256": run.dev.object_hash(pool["ids"][selected].tolist()),
@@ -82,7 +89,7 @@ def execute():
     run.guards.start_worker_guard(claim, budget)
     verified = check()
     value = json.loads((OUTPUT / "contract.json").read_bytes())
-    if (verified["development_gate_passed"] is not True or verified != value["development_verification"]
+    if (authorize(verified) != value["authorization"] or verified != value["development_verification"]
             or run.digest(run.CLAIM) != value["development_claim_sha256"]
             or any(run.digest(MODULE / p) != sha for p, sha in value["sources"].items())
             or run.dev.object_hash(value) != claim["contract_sha256"]):
@@ -129,6 +136,7 @@ def execute():
             np.savez_compressed(handle, scores=scores, labels=data["labels"], texts=np.asarray(SYNTHETIC),
                                 contract_sha256=claim["contract_sha256"])
     summary = {"state": "model_exported", "contract_sha256": claim["contract_sha256"],
+               "authorization": value["authorization"], "development_gate_passed": verified["development_gate_passed"],
                "official_training_rows": 2159, "official_training_groups": 120, "external_training_rows": len(selected),
                "classifier_fits": 1, "vectorizer_fits": 4, "new_encoder_forward_calls": 0,
                "old_holdout_evaluations": 0, "full_2699_row_fits": 0, "new_kaggle_submissions": 0,
@@ -146,6 +154,7 @@ def execute():
 def supervise(config, value):
     budget = config["conditional_final_budget"]
     claim = {"state": "started", "experiment_id": CLAIM.stem, "supervisor_pid": os.getpid(),
+             "authorization": value["authorization"],
              "supervisor_create_time": psutil.Process().create_time(), "started_unix_seconds": time.time(),
              "contract_sha256": run.dev.object_hash(value), **{key: 0 for key in (
                  "attempted_fits", "completed_fits", "attempted_vectorizer_fits", "completed_vectorizer_fits",
@@ -163,7 +172,7 @@ def supervise(config, value):
                 handle.write(source.read_bytes())
         env = {**os.environ, **{key: str(budget["threads"]) for key in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS")}}
         with (OUTPUT / "stdout.log").open("xb") as stdout, (OUTPUT / "stderr.log").open("xb") as stderr:
-            process = subprocess.Popen([sys.executable, "-u", str(Path(__file__).resolve()), "--execute"], env=env, stdout=stdout, stderr=stderr)
+            process = subprocess.Popen([sys.executable, "-u", str(ENTRYPOINT), "--execute"], env=env, stdout=stdout, stderr=stderr)
             monitored, phase = psutil.Process(process.pid), "worker"
             while process.poll() is None:
                 if time.perf_counter() - started > budget["development_timeout_seconds"]:

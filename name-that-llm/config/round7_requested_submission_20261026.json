@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "action_id": "windows-external-weighting-requested-final-20261026-r7",
+  "user_request": {
+    "text": "请你提交一次到kaggle我看看分数成果",
+    "received_utc": "2026-10-26T06:44:49Z",
+    "scope": "One frozen Round7 candidate final fit and one formal Kaggle submission to observe its public score"
+  },
+  "admission_mode": "explicit_user_request_after_failed_development_gate",
+  "development_gate_passed": false,
+  "development_claim_sha256": "d397abf349eafd17eb01e5a8c4b85bfbb8f754a683bfc2ee87c7648e2d4970c8",
+  "development_summary_sha256": "577fd5c9bdbdc1c3a314f37eb7cf56c45353b119a74369f1797aa7fe7cc4ff2f",
+  "development_verification_sha256": "6e4895e31b7cca80570f953c4f94ee533861b7101128616cc4ce6356eade65f3",
+  "candidate": {
+    "official_sample_weight": 4,
+    "external_sample_weight": 1,
+    "official_rows": 2159,
+    "official_prompt_groups": 120,
+    "prepared_pool_sha256": "516f1d9b73d02eb52414e68e2e52d7b7b03c7b7c31413056539f42aba93d3e6e",
+    "model": "frozen four-view LinearSVC; margin argmax; no fusion or test-time fitting"
+  },
+  "final_budget": {
+    "max_classifier_fit_attempts": 1,
+    "max_vectorizer_fit_attempts": 4,
+    "max_total_fit_attempts": 5,
+    "development_timeout_seconds": 1800,
+    "max_host_rss_gib": 12,
+    "threads": 2
+  },
+  "submission_budget": {
+    "kaggle_saved_runs": 1,
+    "kaggle_formal_submissions": 1,
+    "test_max_rows": 4096,
+    "timeout_seconds": 32400,
+    "internet": false,
+    "accelerator": "none"
+  },
+  "protected_scope": {
+    "old_holdout_training_rows": 0,
+    "old_holdout_evaluations": 0,
+    "new_development_fits": 0,
+    "full_2699_row_fits": 0
+  },
+  "stop_rule": "No hyperparameter changes, candidate reselection, claim reset, or automatic failed-fit retry. Preserve failed CV gate and prior evidence."
+}
