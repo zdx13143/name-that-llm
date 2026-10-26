@@ -1,0 +1,210 @@
+[
+  {
+    "name": "README.md",
+    "bytes": 7249,
+    "source": "seyitkaangunes/ntl-extra-api-passages",
+    "version": 2,
+    "local_path": "raw\\seyitkaangunes__ntl-extra-api-passages\\README.md",
+    "sha256": "b83824c09eb78ff807764cf876e2b52a90d67b0aefebc5e338f85557aa76eb45"
+  },
+  {
+    "name": "ntl_extra_passages_claude.csv",
+    "bytes": 4387162,
+    "source": "seyitkaangunes/ntl-extra-api-passages",
+    "version": 2,
+    "local_path": "raw\\seyitkaangunes__ntl-extra-api-passages\\ntl_extra_passages_claude.csv",
+    "sha256": "710dbe484fda23f0dee9b67c20e5bef9376bf754af05584ad142bc17845cd4b9"
+  },
+  {
+    "name": "README.md",
+    "bytes": 7602,
+    "source": "willrice/name-that-llm-openrouter-harvest",
+    "version": 5,
+    "local_path": "raw\\willrice__name-that-llm-openrouter-harvest\\README.md",
+    "sha256": "40458cf11272441f636727b5f7ad75693df6da7b03502ddae8d5ac0b98e2bae3"
+  },
+  {
+    "name": "passages.csv",
+    "bytes": 12151000,
+    "source": "willrice/name-that-llm-openrouter-harvest",
+    "version": 5,
+    "local_path": "raw\\willrice__name-that-llm-openrouter-harvest\\passages.csv",
+    "sha256": "3ce4b1b8f981215cd326973f2de4a06f0daba2e1d5a10ed50710b94a2e964486"
+  },
+  {
+    "name": "README.md",
+    "bytes": 4886,
+    "source": "lxdlxdlxd/ntl-synth-generations-v1",
+    "version": 1,
+    "local_path": "raw\\lxdlxdlxd__ntl-synth-generations-v1\\README.md",
+    "sha256": "f2507612c834501168fb87004e8efdbdfb5aea3abb4504ea213ca580e9442bfc"
+  },
+  {
+    "name": "generations.csv",
+    "bytes": 5742374,
+    "source": "lxdlxdlxd/ntl-synth-generations-v1",
+    "version": 1,
+    "local_path": "raw\\lxdlxdlxd__ntl-synth-generations-v1\\generations.csv",
+    "sha256": "8339081afee1d4aed0b806a686d91978f0d7815bc67fb8f620860477e0895675"
+  },
+  {
+    "name": "README.md",
+    "bytes": 33109,
+    "source": "prvsiyan/prvsiyans-extended-name-that-llm-dataset",
+    "version": 6,
+    "local_path": "raw\\prvsiyan__prvsiyans-extended-name-that-llm-dataset\\README.md",
+    "sha256": "4ccfb84c9ec871afec5e99dbc6d03d9b183e4ed12c2032a813bfd1017551ccbd"
+  },
+  {
+    "name": "passages.csv",
+    "bytes": 14171601,
+    "source": "prvsiyan/prvsiyans-extended-name-that-llm-dataset",
+    "version": 6,
+    "local_path": "raw\\prvsiyan__prvsiyans-extended-name-that-llm-dataset\\passages.csv",
+    "sha256": "2490c3b12f1f063a53abcbc79e741e0a0f62bbe4dc34df0871677ffe8d75b67e"
+  },
+  {
+    "name": "README.md",
+    "bytes": 8030,
+    "source": "prvsiyan/ntl-own-prompt-generations-v1",
+    "version": 1,
+    "local_path": "raw\\prvsiyan__ntl-own-prompt-generations-v1\\README.md",
+    "sha256": "0aa35d6779904879276b498252e38b971d264808bee765a1ea4085c61ca7d0fd"
+  },
+  {
+    "name": "generated_v1.csv",
+    "bytes": 611637,
+    "source": "prvsiyan/ntl-own-prompt-generations-v1",
+    "version": 1,
+    "local_path": "raw\\prvsiyan__ntl-own-prompt-generations-v1\\generated_v1.csv",
+    "sha256": "a6f1a954b06783d9234fa5de5ba4358c9c7360a98db4b775006e914637603d5f"
+  },
+  {
+    "name": "README.md",
+    "bytes": 3816,
+    "source": "alperen5252525/ntl-vertex-gemini-proxy-gpt-generations",
+    "version": 2,
+    "local_path": "raw\\alperen5252525__ntl-vertex-gemini-proxy-gpt-generations\\README.md",
+    "sha256": "50d3944465a6fd8e86878b112f45aa4ab514d440aa550609cb06cfca120135ee"
+  },
+  {
+    "name": "ntl_alp_generations.csv",
+    "bytes": 4459227,
+    "source": "alperen5252525/ntl-vertex-gemini-proxy-gpt-generations",
+    "version": 2,
+    "local_path": "raw\\alperen5252525__ntl-vertex-gemini-proxy-gpt-generations\\ntl_alp_generations.csv",
+    "sha256": "3b4a5868310495f74cd76890ddcd6cac3f4eb392bb1791aafb62362d332742a5"
+  },
+  {
+    "name": "passages.csv",
+    "bytes": 979273,
+    "source": "haileycheng/name-that-llm-same-prompt-passages",
+    "version": 2,
+    "local_path": "raw\\haileycheng__name-that-llm-same-prompt-passages\\passages.csv",
+    "sha256": "1ca59b6e46eb2f912cee598869a8f4732bb4278f108ba09dd1bf964b281d6f7c"
+  },
+  {
+    "name": "README.md",
+    "bytes": 2114,
+    "source": "kaplinskiy/ntl-gpt-proxy-passages",
+    "version": 1,
+    "local_path": "raw\\kaplinskiy__ntl-gpt-proxy-passages\\README.md",
+    "sha256": "58aca8b28fc6c2b3255e5d58afe8bac6d4b5ce4d890324552fec7fbfed072f9e"
+  },
+  {
+    "name": "ntl_gpt_proxy_passages.csv",
+    "bytes": 760289,
+    "source": "kaplinskiy/ntl-gpt-proxy-passages",
+    "version": 1,
+    "local_path": "raw\\kaplinskiy__ntl-gpt-proxy-passages\\ntl_gpt_proxy_passages.csv",
+    "sha256": "1cc3f5829d5bda52e46b44541526d8dde5b7b22fe306a239373a23922dbc4d8a"
+  },
+  {
+    "name": "README.md",
+    "bytes": 4719,
+    "source": "lucasboesen/ntl-free-proxy-generations",
+    "version": 8,
+    "local_path": "raw\\lucasboesen__ntl-free-proxy-generations\\README.md",
+    "sha256": "069165fe0d6ede4826cadf2664d014b7cfb26a5b1ed364c9d6ceb0e2c262f7e3"
+  },
+  {
+    "name": "gen_passages.csv",
+    "bytes": 5105806,
+    "source": "lucasboesen/ntl-free-proxy-generations",
+    "version": 8,
+    "local_path": "raw\\lucasboesen__ntl-free-proxy-generations\\gen_passages.csv",
+    "sha256": "322d4cf73734993c4070379f3fc8ce7aae8527bdae336a4e03221bde9f150694"
+  },
+  {
+    "name": "README.md",
+    "bytes": 2011,
+    "source": "abdullah1afify/ntl-generations",
+    "version": 2,
+    "local_path": "raw\\abdullah1afify__ntl-generations\\README.md",
+    "sha256": "14697a7a068fcaa260aa96ea5418624b2c4a19a6bcae89a7e8e21630960344b8"
+  },
+  {
+    "name": "ntl_generations.csv",
+    "bytes": 870886,
+    "source": "abdullah1afify/ntl-generations",
+    "version": 2,
+    "local_path": "raw\\abdullah1afify__ntl-generations\\ntl_generations.csv",
+    "sha256": "83003454e3cc0368cae8b05bca243daf036b64a42a792c3f7bfd5fd91b3db378"
+  },
+  {
+    "name": "README.md",
+    "bytes": 2556,
+    "source": "dophuchung/ntl-proxy-generations",
+    "version": 1,
+    "local_path": "raw\\dophuchung__ntl-proxy-generations\\README.md",
+    "sha256": "592c2d035f7a9fcfad1b127fed01550b9f9fe7f4ab14024d6663bd8fe398fcf7"
+  },
+  {
+    "name": "ntl_proxy_generations.csv",
+    "bytes": 889391,
+    "source": "dophuchung/ntl-proxy-generations",
+    "version": 1,
+    "local_path": "raw\\dophuchung__ntl-proxy-generations\\ntl_proxy_generations.csv",
+    "sha256": "593708f7fd55636bd270824c0e129447b2a5808b1e224bb3dbf43bf2383fdf9c"
+  },
+  {
+    "name": "README.md",
+    "bytes": 1359,
+    "source": "ziyuzhou1207/ntl-zz-proxy-generations",
+    "version": 1,
+    "local_path": "raw\\ziyuzhou1207__ntl-zz-proxy-generations\\README.md",
+    "sha256": "8108524dbf5b22e169e5f76d7473c1349264ddb682db135d1cafe1315d635516"
+  },
+  {
+    "name": "passages.csv",
+    "bytes": 882249,
+    "source": "ziyuzhou1207/ntl-zz-proxy-generations",
+    "version": 1,
+    "local_path": "raw\\ziyuzhou1207__ntl-zz-proxy-generations\\passages.csv",
+    "sha256": "21f65609af33f6970127281af879ace9ce805fdef6950a0a9e8df92090fee0cf"
+  },
+  {
+    "name": "README.md",
+    "bytes": 3352,
+    "source": "keshavatearth/ntl-gpt-new-prompts-v1",
+    "version": 1,
+    "local_path": "raw\\keshavatearth__ntl-gpt-new-prompts-v1\\README.md",
+    "sha256": "3d464115dcfd6afdd9f14752cf42f65bc21f0463908af757d2e93b7c8fdeb21a"
+  },
+  {
+    "name": "all_generated.csv",
+    "bytes": 417456,
+    "source": "keshavatearth/ntl-gpt-new-prompts-v1",
+    "version": 1,
+    "local_path": "raw\\keshavatearth__ntl-gpt-new-prompts-v1\\all_generated.csv",
+    "sha256": "39c5e4579ecc7152f300f2d2bf51d75fbc273d21aaf0308717361cb159ca4008"
+  },
+  {
+    "name": "ntl_own_extra_v1.csv",
+    "bytes": 3911494,
+    "source": "michaelsemenoff/ntl-own-extra-v1",
+    "version": 1,
+    "local_path": "raw\\michaelsemenoff__ntl-own-extra-v1\\ntl_own_extra_v1.csv",
+    "sha256": "edf907240a3900f6e04bc395f8d9bb67cb5c78db259e1f1e63353d9998e2aac9"
+  }
+]
