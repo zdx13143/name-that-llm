@@ -1,0 +1,86 @@
+{
+  "experiment_id": "windows-frozen-svc-sinkhorn-dev-20261026-r8-startup-1",
+  "scope": "One fixed, label-free batch-balancing candidate on the original R7 weighted-SVC outer-fold probabilities; no model fitting or new encoder work.",
+  "reference_url": "https://www.kaggle.com/code/zdx13143/ntl-e642?scriptVersionId=362382146",
+  "reference_public_score_observed": "0.642",
+  "reference_notebook_sha256": "2f1f717a5cf8384fffc958831c78d45fda85858c8f1a3e5079e8939781545cd8",
+  "baseline_output": "outputs/windows_external_weighting_20261026_r7_startup1",
+  "baseline_contract_sha256": "e54fbce77d3011dfa0c7347032ebc45a7e3552e83f66564102036e6789d01c0d",
+  "reference_output": "outputs/windows_modernbert_dev_20261024_r2",
+  "reference_contract_sha256": "973ca22331cd509d3117c7fc39b2f90da2c1949f1fa5e972ffa0335acd98396a",
+  "input_sha256": {
+    "outputs/windows_external_weighting_20261026_r7_startup1/candidate_oof.npz": "4d9b7b2dff1a2f203238cca28b3295490a2986afc0c4b6f8d6c404e21fdecf3c",
+    "outputs/windows_external_weighting_20261026_r7_startup1/contract.json": "47a170be48afec0d5d76299791eb0c0601e3c46584bf1bebdc944e32100e9d0a",
+    "outputs/windows_external_weighting_20261026_r7_startup1/summary.json": "577fd5c9bdbdc1c3a314f37eb7cf56c45353b119a74369f1797aa7fe7cc4ff2f",
+    "outputs/windows_external_weighting_20261026_r7_startup1/supervisor.json": "b23cfe0904bef760d203514d601b05ea03c08176c37e1c2e407a411c414b860e",
+    "outputs/windows_modernbert_dev_20261024_r2/oof.npz": "105ce885457e15f5e70844e9941e519edd4c85f07deab17803f3d9833496a17b",
+    "outputs/windows_modernbert_dev_20261024_r2/contract.json": "febabac14c76aa252a5c15da8b29fe2e630dfafdf1181a1526084dad99898551",
+    "config/labels.json": "d8c9dcad5979236fb0e5f5504dd2e53c676123bf75cbf06faa13bc1e86524b9d"
+  },
+  "preserved_claims": {
+    "outputs/continuation_claims/windows-calibrated-fusion-dev-20261025-r6.json": "a6bb12e4c39a3d5cb8dbc576487e64c1adf7d3bc9bfc3245c7ed3b73f9275bfe",
+    "outputs/continuation_claims/windows-calibrated-fusion-final-20261025-r6.json": "befbcb9915b65ac98cd6bf1a9750ba087d122bec0bab64926f15061d4c94d538",
+    "outputs/continuation_claims/windows-external-weighting-dev-20261026-r7-startup-1.json": "d397abf349eafd17eb01e5a8c4b85bfbb8f754a683bfc2ee87c7648e2d4970c8",
+    "outputs/continuation_claims/windows-external-weighting-dev-20261026-r7.json": "00a3029371b1ab3f65c7fb52c15fd446fb46b697db71ba662e27cc42469534ef",
+    "outputs/continuation_claims/windows-external-weighting-requested-final-20261026-r7.json": "3972a43cf20e282e53c99f4e8bc4d5e4036edb4eb434d1ed4c5bf2cbb4534917",
+    "outputs/continuation_claims/windows-modernbert-finetune-dev-20261025-r4.json": "9403d878f2cd37ac1ba1cf18ec76e115ba077effd5e9ad35a8d998dfe938d8ef",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023-startup-recovery-1.json": "86d89fc70b66e22fed20e8275d5b7af85309e731ab5e8c6ab2a1c36c0b8cc2c3",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023.json": "fc06fd719de08f08bc283136104753e020bb6cb4b2abcb73387aea8f6a120507",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261024-r2.json": "f66dc2185520703bfe5456b5a279e4ae5e67242a9ff4378c75cf01b3a3a67c30",
+    "outputs/continuation_claims/windows-modernbert-synthetic-20261023.json": "462370fd68e5eddd06fa7a62dedb09f1157bea35db6d2fe82aea20d4f7958d2c",
+    "outputs/continuation_claims/windows-prompt-gaussian-dev-20261024-r3.json": "8708ede039c4ee84f81f7fc5d809b360fef63bbc70d840708b1254b8fb371b9e",
+    "outputs/continuation_claims/windows-stylegram-fusion-dev-20261025-r5.json": "3017053468df73edcba12c27b9c89baf69d4735c78a24036d422283896c546ec",
+    "outputs/continuation_claims/windows-frozen-svc-sinkhorn-dev-20261026-r8.json": "5337905da538d3b8ce6dfaad2d9416fca79462a6b71b96229e13d8e794aacaad",
+    "outputs/windows_sinkhorn_20261026_r8/stderr.log": "d91fac1939124a9a4b160e620d33b0c0a6d93dfe1b559efbd9a8c2ec38fda8c4",
+    "outputs/windows_sinkhorn_20261026_r8/contract.json": "3b7948b5b6fa72f171b2ceb8c48936b239135b905594c6dbd56c5d752e2495bc"
+  },
+  "method": {
+    "classes": 18,
+    "iterations": 300,
+    "bypass_below_rows": 50,
+    "probability_floor": 1e-300,
+    "target_class_mass": "batch_rows / 18",
+    "temperature": 1.0,
+    "batch_scope": "Each held-out outer fold independently; never combine folds or use labels/groups to balance."
+  },
+  "evaluation": {
+    "rows": 2159,
+    "groups": 120,
+    "folds": 5,
+    "baseline_balanced_accuracy": 0.44593837535014,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 2026102608,
+    "bootstrap_scope": "Descriptive paired prompt bootstrap conditional on fixed transductive predictions; it does not re-estimate batch balancing or constitute an independent holdout."
+  },
+  "candidate_gate": {
+    "min_pooled_balanced_accuracy": 0.42,
+    "min_each_fold_balanced_accuracy": 0.35,
+    "min_gain_over_r7": 0.01,
+    "paired_prompt_95ci_lower_exceeds": 0.0,
+    "min_improved_folds": 4
+  },
+  "budget": {
+    "max_transform_attempts": 10,
+    "primary_folds": 5,
+    "permutation_checks": 5,
+    "model_fit_calls": 0,
+    "model_prediction_calls": 0,
+    "new_encoder_forward_calls": 0,
+    "old_holdout_evaluations": 0,
+    "max_wall_seconds": 119,
+    "max_host_rss_gib": 2,
+    "threads": 2,
+    "automatic_retries": 0
+  },
+  "stop_rule": "One fixed candidate only. Failed gate or execution stops the round with evidence retained; no strength/temperature/iteration search, fallback submission, old-claim reuse or holdout reopening. Any deployment must retain this exact candidate and pass this new gate; R7's explicit one-submission exception is already consumed.",
+  "runtime": {
+    "numpy": "2.2.6",
+    "psutil": "7.0.0"
+  },
+  "startup_correction": {
+    "original_config_sha256": "6d6b54b5fbf557150424ba2a5ac3473e1e448adb5233a1214d176d49f17e5389",
+    "failed_claim_sha256": "5337905da538d3b8ce6dfaad2d9416fca79462a6b71b96229e13d8e794aacaad",
+    "failed_contract_sha256": "fc6e406e9f57ed61ebcdff07bdb124bc2ca541369ecf436520bb8b53650f9711",
+    "reason": "Verified Windows venv redirector ancestry; no real-data transform or evaluation was attempted."
+  }
+}

@@ -25,6 +25,17 @@ SOURCES = (CONFIG, Path(__file__), Path(__file__).with_name("sinkhorn_round8.py"
            Path(__file__).with_name("probe_modernbert.py"),
            MODULE / "docs/WINDOWS_ROUND8_PLAN_20261026.md")
 IDENTITY_KEYS = ("row_index", "ids", "groups", "truth", "labels", "fold_id")
+ENTRYPOINT = Path(__file__).resolve()
+
+
+def require_supervisor(claim):
+    parent = psutil.Process(os.getppid())
+    if (claim["state"] != "started" or parent.pid != claim["supervisor_pid"]
+            or abs(parent.create_time() - claim["supervisor_create_time"]) > .01):
+        raise RuntimeError("R8 execution requires its live supervisor")
+
+
+SUPERVISOR_CHECK = require_supervisor
 
 
 def object_hash(value):
@@ -114,10 +125,7 @@ def readiness():
 def execute():
     config = configuration()
     claim = json.loads(CLAIM.read_bytes())
-    parent = psutil.Process(os.getppid())
-    if (claim["state"] != "started" or parent.pid != claim["supervisor_pid"]
-            or abs(parent.create_time() - claim["supervisor_create_time"]) > .01):
-        raise RuntimeError("R8 execution requires its live supervisor")
+    SUPERVISOR_CHECK(claim)
     data = load_inputs(config)
     value = contract(config, data)
     if claim["contract_sha256"] != object_hash(value):
@@ -195,7 +203,7 @@ def supervise(config, value):
         env = {**os.environ, "PYTHONDONTWRITEBYTECODE": "1",
                **{name: str(config["budget"]["threads"]) for name in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS")}}
         with (OUTPUT / "stdout.log").open("xb") as stdout, (OUTPUT / "stderr.log").open("xb") as stderr:
-            process = subprocess.Popen([sys.executable, "-u", str(Path(__file__).resolve()), "--execute"],
+            process = subprocess.Popen([sys.executable, "-u", str(ENTRYPOINT), "--execute"],
                                        stdout=stdout, stderr=stderr, env=env)
             monitored = psutil.Process(process.pid)
             while process.poll() is None:
