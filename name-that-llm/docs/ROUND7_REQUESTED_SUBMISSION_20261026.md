@@ -28,3 +28,7 @@ Kaggle当前账号Zephyr Pong，Name That LLM已接受规则；提交对话框�
 推理包使用原训练时的已拟合float32 TF-IDF对象及两个原预处理函数，固定margin argmax。现有Linux CPython3.11.17仅打包numpy2.2.6、scipy1.16.3、scikit-learn1.7.2、joblib1.5.2、threadpoolctl3.6.0、pyarrow21.0.0及其发行版文件/许可，保留Python标准库，不携带Torch/Transformers/ModernBERT。打包和推理源码另行提交后再做迁移验证。
 
 唯一Linux迁移验证从确切payload解包到临时目录，仅对四条保存的人工文本执行六次调用：整批一次、反序一次、单条四次；与Windows参考margin比较，最大绝对误差≤1e-7、argmax一致，并检验id/model Parquet回读。最多900秒，0fit、0编码器、0真实开发/留出/test评估。保存独立claim、stdout/stderr与验证收据；不覆盖失败。随后Notebook只加载同一SHA固定的payload，官方test按128行分批推理，输出顺序不变。
+
+## 已完成与当前平台状态
+
+Linux迁移核验已完成，四条人工文本/六次预测最大误差0，0fit、0编码器、0旧留出评分。210,522,119字节固定payload已一次上传创建私有资产。冻结Notebook已推送`51e6bb6`，但同一Kaggle草稿一直`Editor Loading`，导入不可用；新保存运行和正式提交均0，暂无分数。刷新和重新打开仍未恢复，已请求用户确认页面/网络状态。恢复后复用现有模型、包、私有资源和草稿，不重跑已完成步骤。当前证据、哈希与继续顺序见[执行报告](../reports/ROUND7_REQUESTED_SUBMISSION_20261026.md)。

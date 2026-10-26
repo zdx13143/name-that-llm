@@ -1,6 +1,6 @@
 # Name That LLM 交接
 
-更新：2026-10-25（Asia/Singapore）。本模块保存 Name That LLM 独立实验；下文保留历史运行记录，最新 Windows 接续与材料/提交边界见文末。
+更新：2026-10-26（Asia/Singapore）。本模块保存 Name That LLM 独立实验；下文保留历史运行记录，最新 Windows 接续与材料/提交边界见文末。
 
 ## 已完成与证据范围
 
@@ -385,7 +385,7 @@ Kaggle新私有资产[NTL R6 Assets 20261025](https://www.kaggle.com/datasets/ze
 
 此前文件选择器两次超时，后续明确要求Chrome扩展启用“Allow access to file URLs”；编辑器曾持续加载并显示reCAPTCHA连接提示。用户06:29:22 UTC确认权限已开启，重新连接后实际上传、导入与执行成功。这些失败记录保留，但不再是当前阻塞。未自动解决CAPTCHA，未改变模型或追加人工前向。
 
-## 2026-10-26 第七轮：借鉴0.601外部数据分支，权重4增量gate失败（当前）
+## 2026-10-26 第七轮：借鉴0.601外部数据分支，权重4增量gate失败（开发阶段）
 
 用户要求“参考队友0.601分的版本继续做提升”。本人分支仍为`exp/windows-4060-20261023`；没有合并或写main、没有修改队友Notebook。实际参考已下载锁定为`zdx13143/ntl-ensemble-600`版本360258830，页面Public Score 0.601、T4×2、3小时25分35秒。Notebook SHA `d9f0ccd827ef224784b0375c2e6721e2ed711962531a27854225c6df8db01fc1`、代码SHA `7ab8127fe82378dd6aad9d08c440b3bc491e1dc8eec9367bfed67a47748dcd56`，与本地社区参考代码一致。其“尚无分数”Markdown是旧描述；实际版本没有旧笔记所写的破折号硬禁用与Hungarian，根EXPERIMENTS已补注更正。
 
@@ -402,3 +402,15 @@ Kaggle新私有资产[NTL R6 Assets 20261025](https://www.kaggle.com/datasets/ze
 独立只读数组重算已确认BA、折身份、配对bootstrap、正确963/962条、31纠正/30改错及9个历史claim哈希；独立文档核对未发现R7数字或边界冲突，模块README的旧“当前状态”已改为历史快照，当前分支名已更正。
 
 本轮新Kaggle资产上传/保存运行/正式提交均0；仍只有第六轮历史正式public 0.365，队友0.601是另一完整方案的公榜，不与本轮CV直接比较。后续若继续，应针对公平可验证的强基线另登记新问题与预算；本轮不追加实验。完整18类召回与命令见[第七轮报告](reports/WINDOWS_ROUND7_20261026.md)，根PROJECT_LEARNING.md/HTML已同步外部数据、权重及验证局限的教学解释。
+
+## 2026-10-26 用户明确要求提交一次：本地及私有资源完成，编辑器等待恢复（当前）
+
+06:44:49 UTC用户明确要求“请你提交一次到kaggle我看看分数成果”。该请求仅覆盖同一权重4候选的必要最终拟合与一次正式评分，原gate=false、开发结果及全部旧claim保留。授权与预算在fit前推送`b5d3516`，不改选对照、不加新参数搜索，原条件最终入口仍拒绝。
+
+新的`windows-external-weighting-requested-final-20261026-r7`完成4/4词表fit+1/1SVC fit，2159官方开发行/120prompt加38,724外部行，241.078303秒、RSS峰值4,690,862,080字节。旧30prompt训练/评分、全2699行fit及编码器前向均0。模型SHA `5667dcdc58cb51bf71fdd5b96aa8dba35c0dc43771388a44521220562c398a8c`，最终claim SHA `3972a43cf20e282e53c99f4e8bc4d5e4036edb4eb434d1ed4c5bf2cbb4534917`。
+
+Linux确切payload迁移验证四条人工文本、六次预测调用误差0，0训练/编码器/真实数据评分。包210,522,119字节，SHA `19e424acf23278c366014bdc4cdaf4bede928b13e6c68e2ebd383a67edf6fadc`；Notebook SHA `01b7a9756ade69b607b4bfb5672f275e756fb6bdfc46e9c630084271cc13260a`，已推送`51e6bb6`。19项R7测试通过，独立收据核验通过；canonical contract对象hash与文件字节hash分开记录，不混用。原summary/打包receipt的旧阶段状态不回写，后续收据另存。
+
+私有[NTL R7 Assets 20261026](https://www.kaggle.com/datasets/zephyrpong/ntl-r7-assets-20261026)已创建成功。独立[Notebook草稿](https://www.kaggle.com/code/zephyrpong/ntl-weighted-svc-r7-20261026/edit)已命名、设置CPU/None与Internet Off，但编辑器一直Loading，导入不可用。官方输入挂载未成功确认；没有启动session、保存运行或正式提交，当前暂无R7分数。刷新和重新打开同一草稿仍未恢复，已请求用户确认手动打开状态/恢复所需网络。不要把reCAPTCHA连接提示直接断定为原因，也不要自动解CAPTCHA。
+
+恢复时复用同一草稿和私有资源，导入已冻结Notebook、挂官方比赛与私有资源，重新核对Private/CPU/Internet Off后最多一次Save & Run，成功后最多一次正式Submit并等分数。预算尚未消耗；状态不明先查历史。最终fit、打包与人工验证已完成，不重跑、不重复上传。队友独立运行保持不动。详细证据和恢复顺序见[本次提交报告](reports/ROUND7_REQUESTED_SUBMISSION_20261026.md)，本机ledger与截图在`outputs/kaggle_r7_submission_20261026/`。根学习Markdown/HTML继续同步该请求与原开发结论的区别。
