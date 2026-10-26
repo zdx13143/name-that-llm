@@ -12,3 +12,13 @@ PROJECT_LEARNING.md text eol=lf
 PROJECT_LEARNING.html text eol=lf
 scripts/render_project_learning.py text eol=lf
 name-that-llm/config/windows_modernbert_finetune_round4_20261025.json text eol=lf
+
+# R8 source and configuration identities are frozen as exact LF bytes.
+name-that-llm/config/windows_sinkhorn_round8_20261026.json text eol=lf
+name-that-llm/config/windows_sinkhorn_round8_startup_20261026.json text eol=lf
+name-that-llm/scripts/sinkhorn_round8.py text eol=lf
+name-that-llm/scripts/windows_sinkhorn_round8.py text eol=lf
+name-that-llm/scripts/windows_sinkhorn_round8_startup.py text eol=lf
+name-that-llm/scripts/verify_round8_results.py text eol=lf
+name-that-llm/docs/WINDOWS_ROUND8_PLAN_20261026.md text eol=lf
+name-that-llm/docs/WINDOWS_ROUND8_STARTUP_20261026.md text eol=lf

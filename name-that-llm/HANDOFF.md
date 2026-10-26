@@ -11,7 +11,7 @@
 | 已实测 | 真实训练集 2,699 条、150 个 prompt、18 类；公开 test/sample 各 3 行。字段见 [data/README.md](data/README.md)。 |
 | 已完成 | 三个真实文件全量读取、SHA-256、schema、空值、重复及标签分布审计，退出码 0；详见 [审计报告](reports/INITIAL_DATA_AUDIT.md)。 |
 | 历史 CPU 阶段 | 三轮CPU搜索、护栏修复、一次最终留出、全量模型及离线Notebook本地复现已完成；该阶段记录不代表后续GPU或Kaggle状态。 |
-| 最新 Windows 阶段 | 第五轮CPU五折完成，风格对照BA 0.359325、固定融合候选0.323681，提交门槛失败，无本轮新增Kaggle提交；既有正式提交与最新证据见文末。 |
+| 最新 Windows 阶段 | R8固定Sinkhorn开发BA 0.447312，增量gate失败关闭；本账号正式0.414，队友已核实0.642。无R8新Kaggle提交，完整证据见文末。 |
 | 已授权 | [CPU 方案](docs/PLAN.md)及[整轮停止标准](docs/OPTIMIZATION_PLAN.md)；不逐次询问常规调参。 |
 
 ## 待核对
@@ -403,7 +403,7 @@ Kaggle新私有资产[NTL R6 Assets 20261025](https://www.kaggle.com/datasets/ze
 
 本轮新Kaggle资产上传/保存运行/正式提交均0；仍只有第六轮历史正式public 0.365，队友0.601是另一完整方案的公榜，不与本轮CV直接比较。后续若继续，应针对公平可验证的强基线另登记新问题与预算；本轮不追加实验。完整18类召回与命令见[第七轮报告](reports/WINDOWS_ROUND7_20261026.md)，根PROJECT_LEARNING.md/HTML已同步外部数据、权重及验证局限的教学解释。
 
-## 2026-10-26 用户明确要求提交一次：正式Succeeded，Public Score 0.414（当前）
+## 2026-10-26 用户明确要求提交一次：正式Succeeded，Public Score 0.414
 
 06:44:49 UTC用户明确要求“请你提交一次到kaggle我看看分数成果”。该请求仅覆盖同一权重4候选的必要最终拟合与一次正式评分，原gate=false、开发结果及全部旧claim保留。授权与预算在fit前推送`b5d3516`，不改选对照、不加新参数搜索，原条件最终入口仍拒绝。
 
@@ -414,3 +414,17 @@ Linux确切payload迁移验证四条人工文本、六次预测调用误差0，0
 私有[NTL R7 Assets 20261026](https://www.kaggle.com/datasets/zephyrpong/ntl-r7-assets-20261026)已创建成功，版本21251756。编辑器曾持续Loading，用户确认手动恢复后复用同一草稿，成功导入冻结Notebook并挂载官方比赛/私有资产。[Notebook Version 1（362398792）](https://www.kaggle.com/code/zephyrpong/ntl-weighted-svc-r7-20261026?scriptVersionId=362398792)名为`R7 frozen weighted SVC offline v1`，Private、CPU/None、Internet Off；唯一保存运行39.0秒成功。3行公开占位test输出808-byte Parquet，SHA `aeb717f50c7b150da2f8d5c3fbe423fbf504cd94e6bd084004740d596fb3371e`；模型fit/编码器/旧留出评分均0。此前Loading及reCAPTCHA连接提示保留为历史失败，不再阻塞；未自动解CAPTCHA，原因未证实。
 
 约07:34 UTC从该版本正式提交一次，07:37:16 UTC观察到**Succeeded，Public Score 0.414**。观察时间不等于平台完成时间；隐藏测试行数/耗时未取得，不由3行/39秒推测。相比R6的0.365提高0.049（4.9个百分点），仍低于队友完整0.601；权重1对照没有正式提交，不把公榜提升归因于权重4。最终选用checkbox未调整，队友`ntl-e642`独立运行未操作。保存运行与正式提交预算各1/1已耗尽，不重复提交或据公榜调参。证据见[本次提交报告](reports/ROUND7_REQUESTED_SUBMISSION_20261026.md)和`outputs/kaggle_r7_submission_20261026/`中的ledger、`public_score_0414.jpg`、`public_score_visible_state.txt`与保存运行日志。根学习Markdown/HTML已同步；本次明确请求已完成，原开发gate=false和全部历史claim保持。
+
+## 2026-10-26 第八轮：分析队友0.642，固定概率平衡未确认增益（当前）
+
+用户要求分析队友最新高分并继续推进。已从实际Kaggle页面确认`ntl-e642` V2/362382146 Succeeded、public **0.642**；收尾时`ntl-e643` V1/362503121仍Notebook Running，未把其描述0.643当已评分。下载源码SHA与Notebook版本绑定；三个源码探子分别核对分组/readout、spectral/ATLAS、Qwen/调度，主线程亲读说明并点验关键逻辑，另一个探子定位本地可复用OOF。Git main仍692ac87，不修改队友Notebook或分支。
+
+0.642是多专家/去题/非线性读出/选择性ATLAS/全量query双GPU27B及最终Sinkhorn的完整方案；full-fit银行与adapter使用全部2699官方行，不能充当本地开发OOF。公开3条exact preview的23.8秒不代表隐藏推理，源码RuntimeBudget未真正实施超时。实际逻辑、引用行号和资源边界见[第八轮报告](reports/WINDOWS_ROUND8_20261026.md)。
+
+预登记`0eb0600`只检验固定Sinkhorn：原R7权重4 SVC OOF、2159行/120prompt、每外层折独立300次列/行归一化，50行阈值、温度1，无标签或真题组输入。首启动直接父PID检查遗漏venv redirector，0变换/0评分即失败；原claim永久failed且SHA锁定。`52d42b1`另登记唯一无数据启动修正并推送，复用已测原生父链检查、PID/创建时间/未用计数，算法和门槛不变，剩余119秒。
+
+成功ID`windows-frozen-svc-sinkhorn-dev-20261026-r8-startup-1`：10/10变换、1.312秒、RSS94,420,992 bytes、exit0；失败0.75秒也计入原120秒总预算。BA **0.44593837535014→0.4473117024587613**，净多正确3条；346条变更、93纠正/90改错。配对增益0.0013733271、固定转导预测下描述性95%区间[-0.0106481481,+0.0129815398]，2/5折改善、一折持平。绝对条件通过，增益、区间下界、改善折数三项失败，gate=false。
+
+7项合成/真实venv进程测试通过，主线程独立保存数组重算、完整性和原12个claim/input哈希核验通过；没有追加真实变换/模型fit/encoder/旧留出。summary SHA `93ef68efc07db703c4e349e8e1394d617171a5abf97fbd88a34f0bb5edca0158`，verification SHA `dae58317d911900a72ee99cbba371d7bbc99f027adbd1f9889c806ff97ee144c`。输出`outputs/windows_sinkhorn_20261026_r8_startup1/`和原失败目录均保留，新clone缺少它们也不能重开。
+
+R8关闭，0最终fit、0新Kaggle上传/运行/提交，本账号正式仍0.414。下一优先项是先诊断文本题组覆盖率，再另登记训练折内残差/非线性readout；旧中心化几乎全单例的问题不能跳过。完整强基线需要同协议fold资产或明确新的重建资源，不能用full-fit权重冒充OOF。不根据`ntl-e643`待定名称调融合权重。根PROJECT_LEARNING.md/HTML同步解释Sinkhorn、转导批次、概率质量与硬类别计数的区别。
