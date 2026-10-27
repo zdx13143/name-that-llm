@@ -4,14 +4,20 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 **目标：银牌以上**（Featured 竞赛银牌 ≈ 队伍排名前 5%）。
 
-> **当前成绩：公开榜 0.554，第 ~188 / 1,495 队（前 13%）。**
-> 铜/银线同为 0.556，差 0.002。完整实验记录见 [EXPERIMENTS.md](EXPERIMENTS.md)。
+> **当前成绩：公开榜 0.651，第 147 / 3,542 队（前 4.15%）—— 银牌区。**
+> 完整实验记录见 [EXPERIMENTS.md](EXPERIMENTS.md)。
 >
-> ⚠️ **成绩构成说明**：0.554 来自**复现社区公开方案**，不是原创模型。
-> 上游作者：Lucas Boesen（`lora-x-adaptive-centering`）、
-> Vladislav Lavrentev（`lightningv08`）、Zbigniew Kirchner、kirilltym、
+> ⚠️ **成绩构成说明**：0.651 来自**复现社区公开方案**，不是原创模型。
+> 上游作者：Dhruv Tibarewal（`nlm-v27`，0.651 的原始配方的作者）、
+> avazaku（`verified reproduction`，在免费 T4×2 上验证可复现）、
+> 以及更早的 Vladislav Lavrentev（`lightningv08`）、Lucas Boesen、
+> Zbigniew Kirchner、kirilltym、nishantdahal、josephadamski91、
 > pjmathematician（UltraBERT 权重）、seyitkaangunes（prompt 库）。
-> 我们自己做的是：打通默认镜像依赖、修正路径、判断方向、以及下面 v1/v2 的原创探索。
+>
+> 我们自己做的是：**修好 Kaggle 挂载路径变更**（否则这批 0.64+ 笔记本全部跑不起来）、
+> 打通默认镜像依赖、在多次失败后判断方向，以及 v1/v2 的原创探索（均被证伪）。
+>
+> **成绩曲线**：0.381 → 0.339 → 0.547 → 0.554 → 0.601 → 0.642 → 0.643 → **0.651**
 
 ---
 
