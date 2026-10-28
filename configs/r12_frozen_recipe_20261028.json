@@ -1,0 +1,153 @@
+{
+  "source_version": 363071115,
+  "source_raw_sha256": "49ff9e5feb235a632d03646007d61bf37d8e7971f655c846aae63a6f64024874",
+  "source_code_sha256": [
+    "221bd0793a59d264bc7cdeb018efb2351751485b571e3744b86d6fd9f08ede25",
+    "4fc27dca93a92adfb2759ca65260e5285898d73fc8ccd1acd401982e5f98ed37",
+    "b53e305fd7a755d138f931c55ac5f3762ed3978d73a65594b5ce2523fdf165ff",
+    "3216840a23bafb6d79f90cf2a9fb63be715210247ddbaa1dd88814eceece8bbb",
+    "f1bb8c65e926f0fde39e384cd500aa98162527492251dd63651e3f78b29232bf",
+    "4dfd75235f678516647e31a4cfd39e5f035e37510ba2076c04f22a2f2c0853d6",
+    "70b7a5f07e292d7e0fe8fcb496e04fabc02123a3951637e41ed24c8de14f5af7"
+  ],
+  "candidate_sha256": "f17e8bc03c2cf1e6a93448c0481b4953c6dd43391b376f7c96468019620e6c51",
+  "candidate_code_sha256": [
+    "6f4bf0d5594291c0ebed87bd2dee186883f9fbdb6eece470f5564c2af00253f1",
+    "221bd0793a59d264bc7cdeb018efb2351751485b571e3744b86d6fd9f08ede25",
+    "4fc27dca93a92adfb2759ca65260e5285898d73fc8ccd1acd401982e5f98ed37",
+    "b53e305fd7a755d138f931c55ac5f3762ed3978d73a65594b5ce2523fdf165ff",
+    "5fe655c1e3775b312bdbd3894aac1cde102116da67abd396ff85400c8cf8dacd",
+    "f1bb8c65e926f0fde39e384cd500aa98162527492251dd63651e3f78b29232bf",
+    "80d18cb20228855d67487be8c41eb497646289aab271f2367acaf6c7ae1bc982",
+    "70b7a5f07e292d7e0fe8fcb496e04fabc02123a3951637e41ed24c8de14f5af7"
+  ],
+  "pinned_inputs": [
+    {
+      "sourceType": "competition",
+      "sourceId": 170484
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21062729
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20819121
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21342047
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20847146
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20831302
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21145399
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20858502
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21011978
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21287075
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20934027
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21119693
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21203279
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21097171
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20736096
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358683059
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358745836
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358758062
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358770408
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358911769
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358928013
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358948428
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 359652568
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 362275911
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363135
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363140
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363149
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363139
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363153
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166254
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166265
+    }
+  ],
+  "container_image": 31481,
+  "saved_runs_budget": 1,
+  "formal_submissions_budget": 1
+}
