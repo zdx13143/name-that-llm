@@ -1,6 +1,6 @@
 # Name That LLM 交接
 
-更新：2026-10-26（Asia/Singapore）。本模块保存 Name That LLM 独立实验；下文保留历史运行记录，最新 Windows 接续与材料/提交边界见文末。
+更新：2026-10-28（Asia/Singapore）。本模块保存 Name That LLM 独立实验；下文保留历史运行记录，最新 Windows 接续与材料/提交边界见文末。
 
 ## 已完成与证据范围
 
@@ -11,7 +11,7 @@
 | 已实测 | 真实训练集 2,699 条、150 个 prompt、18 类；公开 test/sample 各 3 行。字段见 [data/README.md](data/README.md)。 |
 | 已完成 | 三个真实文件全量读取、SHA-256、schema、空值、重复及标签分布审计，退出码 0；详见 [审计报告](reports/INITIAL_DATA_AUDIT.md)。 |
 | 历史 CPU 阶段 | 三轮CPU搜索、护栏修复、一次最终留出、全量模型及离线Notebook本地复现已完成；该阶段记录不代表后续GPU或Kaggle状态。 |
-| 最新 Windows 阶段 | R8固定Sinkhorn开发BA 0.447312，增量gate失败关闭；本账号正式0.414，队友已核实0.642。无R8新Kaggle提交，完整证据见文末。 |
+| 最新 Windows 阶段 | R9词视角半中心化BA 0.454279，对R7+0.8341个百分点、五折改善，但未达到1个百分点采用门槛；本账号正式0.414，队友已核实0.651。无R9新Kaggle提交，完整证据见文末。 |
 | 已授权 | [CPU 方案](docs/PLAN.md)及[整轮停止标准](docs/OPTIMIZATION_PLAN.md)；不逐次询问常规调参。 |
 
 ## 待核对
@@ -428,3 +428,17 @@ Linux确切payload迁移验证四条人工文本、六次预测调用误差0，0
 7项合成/真实venv进程测试通过，主线程独立保存数组重算、完整性和原12个claim/input哈希核验通过；没有追加真实变换/模型fit/encoder/旧留出。summary SHA `93ef68efc07db703c4e349e8e1394d617171a5abf97fbd88a34f0bb5edca0158`，verification SHA `dae58317d911900a72ee99cbba371d7bbc99f027adbd1f9889c806ff97ee144c`。输出`outputs/windows_sinkhorn_20261026_r8_startup1/`和原失败目录均保留，新clone缺少它们也不能重开。
 
 R8关闭，0最终fit、0新Kaggle上传/运行/提交，本账号正式仍0.414。下一优先项是先诊断文本题组覆盖率，再另登记训练折内残差/非线性readout；旧中心化几乎全单例的问题不能跳过。完整强基线需要同协议fold资产或明确新的重建资源，不能用full-fit权重冒充OOF。不根据`ntl-e643`待定名称调融合权重。根PROJECT_LEARNING.md/HTML同步解释Sinkhorn、转导批次、概率质量与硬类别计数的区别。
+
+## 2026-10-28 第九轮：词视角半中心化五折改善，幅度门槛未过（当前）
+
+用户要求继续推进一轮。远端只读核对main已到`dc62708e7116af472257d8f9159424fec2078f01`，提取e651 Notebook，SHA `d87c8394b7ad8b3cff1d7aa20687699a29d08ebb92eab684dfe5b1e61c4dc835`。Kaggle页面实际确认e651 V1/362577633 Succeeded **0.651**，e651b V1/362920738为0.649，e643 V1/362503121已0.643；本账号R7仍0.414。Git源码SHA与线上版本分数分别存证，没有假称逐字节绑定。v5 fold adapters缺少与本地120prompt折映射，不能据目录名直接用于本地OOF。
+
+新ID`windows-topic-word-dev-20261028-r9`，预登记和代码`536f59f`、字节属性`303fce3`在真实运行前推送。复用R7每折词表及固定池/选择，仅word减0.5倍2..18行组均值，训练用已知训练题组、验证只用文本TF-IDF+cap18/相似度0.15聚类，另外三视角和SVC4/1权重保持。原120prompt/2159行和GroupKFold不变，旧30prompt不训练不评分。正常批次、反序、两半合计20次分组；单例为固定压力检查，不事后改选。
+
+实际完成**5/5次SVC fit、20/20分组，800.376434秒、进程树RSS峰值5,057,384,448 bytes（4.710056GiB）、exit0**。主BA **0.4542794895736073**，对R7 **+0.0083411142234673**、描述性95%区间[+0.0009336096,+0.0153014106]、**5/5折改善**。正确981/2159，对照963；120条变化，35纠正/17改错。半批BA0.4510348584、单例0.4431489262。8项数值条件中7项通过，唯一失败是增益≥0.01；不能因区间下界为正或只差0.001659就降低门槛。
+
+分组共332簇、90条单例、2069条可中心化；12,902个推断同组文本对全部真同题，pair precision1.0、recall0.7033745843。各折ARI约.764–.860。当前主要是同题碎裂，未观察跨题误合并；这只是开发批次诊断，不保证隐藏测试。训练外部池约一半行因组>18或单例保持原样，且单条推理收益消失，后续可据此另登记残差信息利用/批次稳健性问题，不在本轮追加搜索。
+
+9项新合成测试+1项真实Windows venv父链测试通过。两个静态探子核对数学和runner；主线程`verify_round9_results.py`不读文本、不加载模型、不重新分组，从已有数组复核全部指标、scores→OOF、group diagnostics、预算、源快照、14个旧claim及22个输入哈希。默认readiness已实际blocked。输出`outputs/windows_topic_word_20261028_r9/`及claim不得重跑；缺输出的新clone不能重新开启。
+
+summary SHA **`cb220a45fdd32b01c3a593159bdbdad362a2ac96b92fdfd95b32b6ed8d2b1cef`**，verification SHA **`dc103feda0d1af769e7c8d84a2ae2ad6da526a3e4ae26068173e00d1e5e636c2`**。**0新监督词表fit、0encoder、0旧留出评估、0最终fit、0Kaggle上传/运行/提交**；仅本地开发增益，没有新公榜分数。完整18类召回、逐折/批次诊断、来源与命令见[第九轮报告](reports/WINDOWS_ROUND9_20261028.md)，根学习MD/HTML同步讲解词残差、precision/recall和批次依赖。
