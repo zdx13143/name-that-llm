@@ -1,0 +1,144 @@
+{
+  "source_version": 363188587,
+  "source_notebook_sha256": "f17e8bc03c2cf1e6a93448c0481b4953c6dd43391b376f7c96468019620e6c51",
+  "observer_sha256": "f8591c072372e7378316d237ea1689a199695ba7657dd5d09617f7a976b18c22",
+  "prediction_scripts_unchanged": {
+    "gauss.py": "908b57113f1a7b8ebdbf204c6be87cbc385f765ba50ac07b4e270c64b7cf1000",
+    "infer.py": "5f2b2bae2ea125d9d3475dce67412de89d3f22549b6091c6748ebd92ce3e3ee2",
+    "comp_stack.py": "91f107b4fd3477da75720d8c3cedbb2e739fcd014ba19014f00cc2ab238ef06b"
+  },
+  "pinned_inputs": [
+    {
+      "sourceType": "competition",
+      "sourceId": 170484
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21062729
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20819121
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21342047
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20847146
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20831302
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21145399
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20858502
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21011978
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21287075
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20934027
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21119693
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21203279
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21097171
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20736096
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358683059
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358745836
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358758062
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358770408
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358911769
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358928013
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358948428
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 359652568
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 362275911
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363135
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363140
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363149
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363139
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363153
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166254
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166265
+    }
+  ],
+  "local_training_fits": 0,
+  "encoder_forwards": 0,
+  "official_label_evaluations": 0,
+  "protected_holdout_accesses": 0,
+  "kaggle_saves": 0,
+  "formal_submissions": 0,
+  "accuracy_or_speed_improvement_claimed": false,
+  "candidate_sha256": "6cf99b422a78625cd4cc87714abdfd79b24a7179eb6a86c50410e9d54eaef046"
+}

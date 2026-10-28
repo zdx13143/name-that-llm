@@ -1,3 +1,5 @@
 # Keep frozen notebook file hashes stable on Windows checkouts.
 notebooks/reference_public654_v4.ipynb text eol=lf
 notebooks/team_e651_r12_public654.ipynb text eol=lf
+notebooks/team_e651_r13_observed.ipynb text eol=lf
+experiments/r13_runtime.py text eol=lf
