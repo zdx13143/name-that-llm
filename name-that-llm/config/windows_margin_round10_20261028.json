@@ -1,0 +1,182 @@
+{
+  "experiment_id": "windows-margin-center-dev-20261028-r10",
+  "final_id": "windows-topic-word-final-20261028-r10",
+  "authorization": "2026-10-28 explicit user request to improve then submit once for score",
+  "baseline_output": "outputs/windows_topic_word_20261028_r9",
+  "r7_output": "outputs/windows_external_weighting_20261026_r7_startup1",
+  "r7_final_output": "outputs/windows_external_requested_final_20261026_r7",
+  "input_sha256": {
+    "config/windows_external_round7_20261026.json": "b7b32e3f1a47aae941844b8797a868ecc322a7943a77f31d0784c72ccffaf98c",
+    "outputs/windows_external_weighting_20261026_r7_startup1/contract.json": "47a170be48afec0d5d76299791eb0c0601e3c46584bf1bebdc944e32100e9d0a",
+    "outputs/windows_external_weighting_20261026_r7_startup1/candidate_oof.npz": "4d9b7b2dff1a2f203238cca28b3295490a2986afc0c4b6f8d6c404e21fdecf3c",
+    "outputs/windows_external_weighting_20261026_r7_startup1/summary.json": "577fd5c9bdbdc1c3a314f37eb7cf56c45353b119a74369f1797aa7fe7cc4ff2f",
+    "outputs/windows_external_weighting_20261026_r7_startup1/supervisor.json": "b23cfe0904bef760d203514d601b05ea03c08176c37e1c2e407a411c414b860e",
+    "outputs/round7_reference_20261026/prepared_pool.csv": "516f1d9b73d02eb52414e68e2e52d7b7b03c7b7c31413056539f42aba93d3e6e",
+    "outputs/round7_reference_20261026/prepared_pool_receipt.json": "05ca0f704c9538b4ceaf9e6f0e79f589bbd4335a1a5826a0d12f536829365bdc",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold0/views.joblib": "e75d91679f67006327cafcfebec5cee348b9ed4cfada42ead85a0070d75f3316",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold0/receipt.json": "3a367d850c1c1dd8f7b0c20d2d48d8c1cadc30736cb06f3b22abbbb4fdbafcca",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold0/candidate_scores.npz": "0c3b58f3b4244038f363261f54a590f728fba25ac4db147042d3cdc18c79d4f8",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold1/views.joblib": "0f50c3789bca447a24aec23a69aff30fc09f83d29c00d2d408d8ff9bc206e117",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold1/receipt.json": "e1fb334d69d58caf388ba3fda7c62080b2f6948803b8cccf49aa3bc6a33e8773",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold1/candidate_scores.npz": "b80d0faae287617a1cdb990d8797a24c4f5d56824b94eb86b60730151792a7c8",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold2/views.joblib": "052dd60d466769faa5e481f5f62d3d6e19b0999d11d4a344592e43ade64726bb",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold2/receipt.json": "35ffe920745c3a0a61465fe48d6792c68a8be9e451083fc09d0f9f031506d710",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold2/candidate_scores.npz": "11b8133e69582937d0cc4c99ecb596149d309b6df6e7d6d1fcb0dc3341ccdc14",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold3/views.joblib": "eb6473822d8003f6555d9833c4c1415c79c9bd205bb74ca9f6a7d66a6cbf0ece",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold3/receipt.json": "dfc6b0012a810de01595da61d32132f10b292aed1f32400f398711baa0a733da",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold3/candidate_scores.npz": "1713b981b9b2c65ee928acc5202c7497cd4bfb94d6ed8ea9cc6cca1825a8a7b2",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold4/views.joblib": "105aa36b04eace07f543415481af531767be4b8d80d74c5c3c2e2c6c3be4b44c",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold4/receipt.json": "9c1dfc5c6ebfaf7c200fbc782acdcdfb921f423929f2db2cfce4262863c70290",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold4/candidate_scores.npz": "f8852492fa5826014ae5b7f1a452706db4f076f0510fb038e4b0876249ede257",
+    "config/windows_topic_word_round9_20261028.json": "001fadd21809bb7ac4fbba133b4714210db310066feecd63689b84a3ee53d700",
+    "outputs/windows_external_requested_final_20261026_r7/weighted_svc.joblib": "5667dcdc58cb51bf71fdd5b96aa8dba35c0dc43771388a44521220562c398a8c",
+    "outputs/windows_external_requested_final_20261026_r7/contract.json": "3f01ee10fe2da4b5ffc80fdc27390a2766e9f829f5361e53c0d083058ae8a2b4",
+    "outputs/windows_external_requested_final_20261026_r7/summary.json": "31d2f072d12d088a15ca75b2989a94ab23db76ade7bea5e381402bc617ca3a46",
+    "outputs/windows_external_requested_final_20261026_r7/supervisor.json": "fc03b08ec10a1d9a92afd43b403e6a955bcabb98a50a10c3969fe825f59a44e3",
+    "outputs/windows_topic_word_20261028_r9/contract.json": "9a939b6d74955ac1809bad4b7b846e69b8c05eaa8e1602282d98f03764023a45",
+    "outputs/windows_topic_word_20261028_r9/summary.json": "cb220a45fdd32b01c3a593159bdbdad362a2ac96b92fdfd95b32b6ed8d2b1cef",
+    "outputs/windows_topic_word_20261028_r9/supervisor.json": "15fa04c7252bcdfaabea6e768702aea828aa152414321dfcaf28886cb30a7ae7",
+    "outputs/windows_topic_word_20261028_r9/verification.json": "dc103feda0d1af769e7c8d84a2ae2ad6da526a3e4ae26068173e00d1e5e636c2",
+    "outputs/windows_topic_word_20261028_r9/candidate_oof.npz": "8da20dcc3f5d26df3040ccdaf63cddaa3410f17add436e8d80a4cd56e329e734",
+    "outputs/windows_topic_word_20261028_r9/half_oof.npz": "19f029c2dd6d563e43a68091602b983d0f98c314d42fa040dd99bc83b57963fb",
+    "outputs/windows_topic_word_20261028_r9/singleton_oof.npz": "0317c7d2d9bc4d31a3fc26baccc55319a2ff296316bd4feaf190817cc0192e39",
+    "outputs/windows_topic_word_20261028_r9/fold0/scores.npz": "37d1c4a270698ae31a1341c18fbb72b7b2d0e7123b8245ae8613dd7f52e36fc8",
+    "outputs/windows_topic_word_20261028_r9/fold0/receipt.json": "21d6756c011c806c16d5ade0976fca21d9476a39a224e9d920c8345f3cd788eb",
+    "outputs/windows_topic_word_20261028_r9/fold1/scores.npz": "b735bdd6a5510e0f48965aebdb1870dfecfb547a73505983c65b8cb94a2540f5",
+    "outputs/windows_topic_word_20261028_r9/fold1/receipt.json": "696f481d68384ea5768323d0b5167b1757bff1e25e3cbf0fcd2a2c655cc1b840",
+    "outputs/windows_topic_word_20261028_r9/fold2/scores.npz": "7c41b87257628b586c19991ef918c6564d968705394ff99af038384016a055db",
+    "outputs/windows_topic_word_20261028_r9/fold2/receipt.json": "0bed52531e628c1a7dc4394b86ac4815807623059afba5ece77d22cd84332c9d",
+    "outputs/windows_topic_word_20261028_r9/fold3/scores.npz": "cc1f68c8a2e2fd56227b149f6c7885ca93bce0074dbb4993012283e341df8912",
+    "outputs/windows_topic_word_20261028_r9/fold3/receipt.json": "b7b1c1c90b9e6f4da5eefbea1f836c1619fd0fcb52737ab9ddb99772bde64d62",
+    "outputs/windows_topic_word_20261028_r9/fold4/scores.npz": "16a354af7ec473739475a736a8ffd50876af1ee2dc5cfe7a1bee161cee93ee17",
+    "outputs/windows_topic_word_20261028_r9/fold4/receipt.json": "48f294488c3dfa893b0cf795e23600c28c5d53411bede36962766384b52500e3"
+  },
+  "preserved_claims": {
+    "outputs/continuation_claims/windows-calibrated-fusion-dev-20261025-r6.json": "a6bb12e4c39a3d5cb8dbc576487e64c1adf7d3bc9bfc3245c7ed3b73f9275bfe",
+    "outputs/continuation_claims/windows-calibrated-fusion-final-20261025-r6.json": "befbcb9915b65ac98cd6bf1a9750ba087d122bec0bab64926f15061d4c94d538",
+    "outputs/continuation_claims/windows-external-weighting-dev-20261026-r7-startup-1.json": "d397abf349eafd17eb01e5a8c4b85bfbb8f754a683bfc2ee87c7648e2d4970c8",
+    "outputs/continuation_claims/windows-external-weighting-dev-20261026-r7.json": "00a3029371b1ab3f65c7fb52c15fd446fb46b697db71ba662e27cc42469534ef",
+    "outputs/continuation_claims/windows-external-weighting-requested-final-20261026-r7.json": "3972a43cf20e282e53c99f4e8bc4d5e4036edb4eb434d1ed4c5bf2cbb4534917",
+    "outputs/continuation_claims/windows-frozen-svc-sinkhorn-dev-20261026-r8-startup-1.json": "cf8647670781eb63dc40b3d9600e0c94cff8ed5acab79696e0aa7adde2cd487b",
+    "outputs/continuation_claims/windows-frozen-svc-sinkhorn-dev-20261026-r8.json": "5337905da538d3b8ce6dfaad2d9416fca79462a6b71b96229e13d8e794aacaad",
+    "outputs/continuation_claims/windows-modernbert-finetune-dev-20261025-r4.json": "9403d878f2cd37ac1ba1cf18ec76e115ba077effd5e9ad35a8d998dfe938d8ef",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023-startup-recovery-1.json": "86d89fc70b66e22fed20e8275d5b7af85309e731ab5e8c6ab2a1c36c0b8cc2c3",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023.json": "fc06fd719de08f08bc283136104753e020bb6cb4b2abcb73387aea8f6a120507",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261024-r2.json": "f66dc2185520703bfe5456b5a279e4ae5e67242a9ff4378c75cf01b3a3a67c30",
+    "outputs/continuation_claims/windows-modernbert-synthetic-20261023.json": "462370fd68e5eddd06fa7a62dedb09f1157bea35db6d2fe82aea20d4f7958d2c",
+    "outputs/continuation_claims/windows-prompt-gaussian-dev-20261024-r3.json": "8708ede039c4ee84f81f7fc5d809b360fef63bbc70d840708b1254b8fb371b9e",
+    "outputs/continuation_claims/windows-stylegram-fusion-dev-20261025-r5.json": "3017053468df73edcba12c27b9c89baf69d4735c78a24036d422283896c546ec",
+    "outputs/continuation_claims/windows-topic-word-dev-20261028-r9.json": "bd95f43674cdbdc4eb1aaf3f89d0e733a58585ef78e951aed91a5f6840439fc7"
+  },
+  "method": {
+    "centered_view": "word",
+    "alpha": 0.5,
+    "group_size_min": 2,
+    "group_size_max": 18,
+    "renormalize_after_centering": false,
+    "official_weight": 4.0,
+    "external_weight": 1.0,
+    "training_groups": "known official training prompts and canonical external groups, separately namespaced; groups outside 2..18 unchanged",
+    "validation_groups": "text-only, independently in each validation fold; stable id sort before clustering",
+    "grouping": {
+      "min_df": 2,
+      "max_df": 0.05,
+      "cap": 18,
+      "threshold": 0.15
+    },
+    "classifier": {
+      "C": 0.5,
+      "random_state": 42,
+      "max_iter": 5000,
+      "class_weight": "balanced",
+      "dual": "auto",
+      "tol": 0.0001
+    },
+    "views": [
+      {
+        "name": "char",
+        "ngram_range": [
+          3,
+          5
+        ],
+        "max_features": 250000,
+        "weight": 1.0
+      },
+      {
+        "name": "word",
+        "ngram_range": [
+          1,
+          3
+        ],
+        "max_features": 180000,
+        "weight": 0.7
+      },
+      {
+        "name": "shape",
+        "ngram_range": [
+          2,
+          6
+        ],
+        "max_features": 60000,
+        "weight": 0.5
+      },
+      {
+        "name": "function",
+        "ngram_range": [
+          1,
+          3
+        ],
+        "max_features": 50000,
+        "weight": 0.5
+      }
+    ],
+    "margin_alpha": 0.5
+  },
+  "evaluation": {
+    "folds": 5,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 20261028
+  },
+  "candidate_gate": {
+    "min_pooled_balanced_accuracy": 0.45,
+    "min_each_fold_balanced_accuracy": 0.35,
+    "min_gain_over_r9": 0.005,
+    "min_gain_over_r7": 0.01,
+    "min_improved_folds": 4,
+    "min_half_gain_over_r9_half": -0.01,
+    "min_singleton_gain_over_r9_singleton": -0.02
+  },
+  "selection_rule": "R10 only if all gates pass, otherwise original R9 if execution/integrity complete; no extra experiments",
+  "development_budget": {
+    "attempted_transforms": 20,
+    "attempted_fits": 0,
+    "development_timeout_seconds": 120,
+    "max_host_rss_gib": 2,
+    "threads": 2
+  },
+  "final_budget": {
+    "attempted_transforms": 0,
+    "attempted_fits": 1,
+    "development_timeout_seconds": 1800,
+    "max_host_rss_gib": 12,
+    "threads": 2
+  },
+  "deployment_budget": {
+    "saved_runs": 1,
+    "formal_submissions": 1,
+    "test_row_limit": 4096,
+    "max_wall_seconds": 32400,
+    "grouping_stress_attempts": 1,
+    "synthetic_rows": 80,
+    "internet": false,
+    "private": true
+  },
+  "runtime": {
+    "numpy": "2.2.6",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "threadpoolctl": "3.6.0",
+    "psutil": "7.0.0",
+    "joblib": "1.5.2"
+  }
+}

@@ -30,3 +30,9 @@ name-that-llm/scripts/windows_topic_word_round9.py text eol=lf
 name-that-llm/scripts/verify_round9_results.py text eol=lf
 name-that-llm/tests/test_topic_word_round9.py text eol=lf
 name-that-llm/docs/WINDOWS_ROUND9_PLAN_20261028.md text eol=lf
+
+# R10 frozen source/configuration identities.
+name-that-llm/config/windows_margin_round10_20261028.json text eol=lf
+name-that-llm/scripts/*round10.py text eol=lf
+name-that-llm/tests/test_margin_center_round10.py text eol=lf
+name-that-llm/docs/WINDOWS_ROUND10_PLAN_20261028.md text eol=lf
