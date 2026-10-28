@@ -1,9 +1,9 @@
 {
-  "status": "formal_submission_running",
-  "observed_at_utc": "2026-10-28T14:06:30Z",
+  "status": "formal_submission_succeeded",
+  "observed_at_utc": "2026-10-28T19:47:36.239Z",
   "own_notebook": "zephyrpong/ntl-full-ensemble-r12-20261028",
   "own_script_version": 363188587,
-  "own_public_score": null,
+  "own_public_score": "0.654",
   "external_reference_script_version": 363071115,
   "external_reference_public_score": "0.654",
   "teammate_baseline_script_version": 362577633,
@@ -18,10 +18,33 @@
   "saved_version_status": "Succeeded",
   "saved_version_runtime_seconds": 495.4,
   "saved_version_gpu": "T4 x2",
-  "formal_submission_observed_status": "Notebook Running",
+  "formal_submission_observed_status": "Succeeded",
   "formal_submission_started_at_utc_approx": "2026-10-28T14:04:00Z",
+  "formal_submission_submitted_at_utc": "2026-10-28T14:04:19Z",
   "formal_submission_file": "submission.parquet",
-  "formal_submission_final_score": null,
+  "formal_submission_final_score": "0.654",
+  "formal_submission_score_kind": "Public Score; private/final leaderboard score unavailable",
+  "formal_submission_score_observed_at_utc": "2026-10-28T19:47:36.239Z",
+  "formal_submission_scored_at_utc": null,
+  "formal_submission_time_note": "The normal Chrome submission page changed from Submission Running to Succeeded during the 19:46:55 UTC heartbeat. The detail panel exposes submission time but no exact server scoring timestamp. Observation time is not claimed as exact scoring time or GPU runtime.",
+  "formal_submission_detail_url": "https://www.kaggle.com/code/zephyrpong/ntl-full-ensemble-r12-20261028?scriptVersionId=363188587",
+  "comparison": {
+    "own_minus_teammate_displayed_score": "0.003",
+    "own_minus_external_displayed_score": "0.000",
+    "scope": "Single fixed public evaluation, displayed three-decimal scores only; no complete-stack CV, causal attribution or private-set claim"
+  },
+  "terminal_evidence": {
+    "screenshot": "outputs/r12/formal_submission_succeeded_0654.png",
+    "screenshot_sha256": "18751e29bbc3a260d218d1cd9ffc26d5c81385c0f96327c9d1b5cda7422ed41f",
+    "visible_state": "outputs/r12/formal_submission_succeeded_0654.txt",
+    "visible_state_sha256": "4f8e7dd03dd3d96afe4e4992ab4a05dec8f385c94d7dd898023b482112299853",
+    "storage": "Local ignored evidence; only documentation and this receipt are committed"
+  },
+  "previous_formal_submission_checkpoint": {
+    "observed_at_utc": "2026-10-28T14:06:30Z",
+    "status": "Notebook Running",
+    "public_score": null
+  },
   "synthetic_tests_passed": 6,
   "synthetic_tests_total": 6,
   "initial_test_failure_preserved": true,
@@ -43,7 +66,7 @@
     "formal_submissions": 0,
     "reason": "Editor Loading and empty version history; delayed Version 1 appeared at 13:51 UTC without another Save action"
   },
-  "counter_scope": "Training/forward/official-label counters below cover local development checks only. Hidden production fitting/inference is running and its counts are not observable.",
+  "counter_scope": "Training/forward/official-label counters below cover local development checks only. Hidden production fitting/inference completed; its operation counts are not observable. The official hidden evaluation yielded one Public Score.",
   "counters": {
     "training_fits": 0,
     "encoder_forwards": 0,
@@ -52,14 +75,14 @@
     "save_actions_attempted": 1,
     "saved_versions_observed": 1,
     "formal_submissions": 1,
-    "new_scores": 0
+    "new_scores": 1
   },
   "monitor": {
     "automation_id": "ntl-r12",
-    "status": "ACTIVE",
+    "status": "PAUSED",
     "interval_minutes": 15,
     "target_script_version": 363188587,
     "terminal_action": "Record actual score or failure, update only this independent branch, notify user and pause monitor"
   },
-  "resume_action": "Monitor existing formal submission; do not save or submit again"
+  "resume_action": "Terminal result recorded; monitor paused. Do not save, submit again or tune parameters under this completed evaluation authorization"
 }
