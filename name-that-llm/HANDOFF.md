@@ -11,7 +11,7 @@
 | 已实测 | 真实训练集 2,699 条、150 个 prompt、18 类；公开 test/sample 各 3 行。字段见 [data/README.md](data/README.md)。 |
 | 已完成 | 三个真实文件全量读取、SHA-256、schema、空值、重复及标签分布审计，退出码 0；详见 [审计报告](reports/INITIAL_DATA_AUDIT.md)。 |
 | 历史 CPU 阶段 | 三轮CPU搜索、护栏修复、一次最终留出、全量模型及离线Notebook本地复现已完成；该阶段记录不代表后续GPU或Kaggle状态。 |
-| 最新 Windows 阶段 | R9词视角半中心化BA 0.454279，对R7+0.8341个百分点、五折改善，但未达到1个百分点采用门槛；本账号正式0.414，队友已核实0.651。无R9新Kaggle提交，完整证据见文末。 |
+| 最新 Windows 阶段 | R10组内margin修正开发BA 0.477404，对R9+2.3125个百分点、五折改善、gate通过；一次正式提交Succeeded，Public Score 0.416，比R7仅高0.2个百分点，队友已核实0.651。保存运行/正式提交各1/1已用完，完整证据见文末。 |
 | 已授权 | [CPU 方案](docs/PLAN.md)及[整轮停止标准](docs/OPTIMIZATION_PLAN.md)；不逐次询问常规调参。 |
 
 ## 待核对
@@ -429,7 +429,7 @@ Linux确切payload迁移验证四条人工文本、六次预测调用误差0，0
 
 R8关闭，0最终fit、0新Kaggle上传/运行/提交，本账号正式仍0.414。下一优先项是先诊断文本题组覆盖率，再另登记训练折内残差/非线性readout；旧中心化几乎全单例的问题不能跳过。完整强基线需要同协议fold资产或明确新的重建资源，不能用full-fit权重冒充OOF。不根据`ntl-e643`待定名称调融合权重。根PROJECT_LEARNING.md/HTML同步解释Sinkhorn、转导批次、概率质量与硬类别计数的区别。
 
-## 2026-10-28 第九轮：词视角半中心化五折改善，幅度门槛未过（当前）
+## 2026-10-28 第九轮：词视角半中心化五折改善，幅度门槛未过（历史）
 
 用户要求继续推进一轮。远端只读核对main已到`dc62708e7116af472257d8f9159424fec2078f01`，提取e651 Notebook，SHA `d87c8394b7ad8b3cff1d7aa20687699a29d08ebb92eab684dfe5b1e61c4dc835`。Kaggle页面实际确认e651 V1/362577633 Succeeded **0.651**，e651b V1/362920738为0.649，e643 V1/362503121已0.643；本账号R7仍0.414。Git源码SHA与线上版本分数分别存证，没有假称逐字节绑定。v5 fold adapters缺少与本地120prompt折映射，不能据目录名直接用于本地OOF。
 
@@ -442,3 +442,15 @@ R8关闭，0最终fit、0新Kaggle上传/运行/提交，本账号正式仍0.414
 9项新合成测试+1项真实Windows venv父链测试通过。两个静态探子核对数学和runner；主线程`verify_round9_results.py`不读文本、不加载模型、不重新分组，从已有数组复核全部指标、scores→OOF、group diagnostics、预算、源快照、14个旧claim及22个输入哈希。默认readiness已实际blocked。输出`outputs/windows_topic_word_20261028_r9/`及claim不得重跑；缺输出的新clone不能重新开启。
 
 summary SHA **`cb220a45fdd32b01c3a593159bdbdad362a2ac96b92fdfd95b32b6ed8d2b1cef`**，verification SHA **`dc103feda0d1af769e7c8d84a2ae2ad6da526a3e4ae26068173e00d1e5e636c2`**。**0新监督词表fit、0encoder、0旧留出评估、0最终fit、0Kaggle上传/运行/提交**；仅本地开发增益，没有新公榜分数。完整18类召回、逐折/批次诊断、来源与命令见[第九轮报告](reports/WINDOWS_ROUND9_20261028.md)，根学习MD/HTML同步讲解词残差、precision/recall和批次依赖。
+
+## 2026-10-28 第十轮：开发BA0.477404，正式Public Score0.416（当前）
+
+用户明确要求继续提升并于本轮结束提交一次。预登记/实现/4项合成测试`a15821e`在真实计算前推送；复用R9五折margin和无标签组，仅对2..18条组逐类别减0.5倍平均margin。20/20变换、4.360秒，0开发fit/新分组/encoder/旧留出；BA **0.47740429505135384**，对R9 **+0.0231248054777467**、描述性95%区间[+0.0101124058,+0.0375097934]、5/5折改善，纠正120/改错70、净多50，全部预登记门槛通过。半批0.4681528167、单例0.4431489262，仍依赖批次伙伴；R9历史幅度gate失败保持。
+
+最终独立claim仅1次SVC fit、0新监督词表fit，复用R7最终四词表且核对同一2159官方行/120prompt和38,724外部行；191.328秒、峰值5,117,530,112 bytes，旧30prompt/540行不训练不评分。80人工文本导出/Windows/Linux/反序最大误差0，4096人工文本分组175.822秒/524,451,840 bytes通过。确切包211,255,835 bytes、SHA `b91faaec404360805899bcebd65e31c8f960237a2e9615d57ab5399b38a9cd6d`，Notebook SHA `70f3d5b9ea52e2c001ce09fa27bb55b95d151b469c5dd9a006cef90ee329ebc9`。代码/验证/候选已推送`669fb20`。所有历史claims和失败保持。
+
+新私有资产`zephyrpong/ntl-r10-assets-20261028` datasetVersion **21345327**；新私有Notebook `zephyrpong/ntl-topic-margin-r10-20261028` Version 1/**363085022**，名为`R10 frozen topic-margin offline v1`。页面保存版两cell源码与冻结本地候选逐字一致，metadata确认官方competition170484、上述私有资产、CPU/Internet Off。唯一Save & Run **47.1秒成功**；3行公开占位test全部单例，1次预测、0fit/encoder/旧留出，输出808bytes，SHA `aeb717f50c7b150da2f8d5c3fbe423fbf504cd94e6bd084004740d596fb3371e`。占位结果与R7相同不意味着隐藏预测相同。
+
+从该版本正式Submit一次，**07:35:15 UTC存证时已Succeeded，Public Score 0.416**；该时间是观察时间，隐藏行数/实际耗时未取得。相比R7的0.414仅+0.002（0.2个百分点），仍低于队友完整0.651。开发相对R7+3.1466个百分点没有等幅迁移；隐藏批次/分布、分组质量及反复开发均是待检验原因，不作归因。R9无公榜对照，不能把0.002单独归因于margin修正。未调整最终选择、未操作队友版本；各1/1保存运行/正式提交预算已耗尽，不按公榜追加调参。
+
+开发/final outputs分别为`outputs/windows_margin_20261028_r10/`、`outputs/windows_topic_word_final_20261028_r10/`，两新continuation claims已完成，不重跑。平台ledger、源码、日志、0.416截图与可见状态在`outputs/kaggle_r10_submission_20261028/`，不入Git。详见[第十轮开发结果](reports/WINDOWS_ROUND10_20261028.md)、[正式提交证据与哈希](reports/ROUND10_REQUESTED_SUBMISSION_20261028.md)、根学习MD/HTML。本次请求已完成，后续需另登记新实验，不恢复已用预算。

@@ -16,6 +16,8 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 ## 当前进展与学习入口（2026-10-28）
 
+**第十轮已完成，正式Public Score 0.416。** 固定组内margin减半去偏使开发BA从R9的0.454279提高到**0.477404**，+2.3125个百分点、五折改善、预登记门槛全部通过；最终仅新增1次SVC fit。私有CPU离线Notebook Version 1（363085022）保存运行47.1秒成功，唯一正式提交Succeeded。公榜比R7的0.414仅高**0.2个百分点**，仍低于队友完整0.651；开发收益没有等幅迁移，原因尚未证实。旧30prompt未训练/评分，本轮各1/1预算已用完，不追加调参或提交。见[第十轮开发报告](name-that-llm/reports/WINDOWS_ROUND10_20261028.md)与[正式提交证据](name-that-llm/reports/ROUND10_REQUESTED_SUBMISSION_20261028.md)。下文保留历史状态。
+
 **第九轮完成：本地BA提高到0.454279，五折均改善，但未达预登记增益幅度。** 复用R7每折词表，仅word特征减0.5倍同组均值；验证题组由文本推断。相对R7的0.445938提高0.8341个百分点，描述性配对95%区间[+0.0934,+1.5301]个百分点；采用要求至少1个百分点，因此本轮关闭，0最终fit/新Kaggle提交。2069/2159行进入可用簇，pair precision=100%、pair recall=70.34%；这是当前开发数据诊断，不能外推为隐藏测试保证。半批BA0.451035、单例0.443149。5次SVC/20次分组、800.38秒/4.710GiB，保存结果独立重算通过。队友实际最佳已核实为[ntl-e651 V1的0.651](https://www.kaggle.com/code/zdx13143/ntl-e651?scriptVersionId=362577633)，本账号正式仍0.414。见[第九轮完整报告](name-that-llm/reports/WINDOWS_ROUND9_20261028.md)与[预登记](name-that-llm/docs/WINDOWS_ROUND9_PLAN_20261028.md)；下文保留各轮当时状态。
 
 **第八轮已完成：队友实际高分0.642已核实，固定Sinkhorn组件增量未过门槛。** 锁定`ntl-e642` V2/362382146源码；`ntl-e643`收尾时仍运行，不能把名称当作分数。在原2159行/120prompt的R7折外概率上，每折独立固定300轮平衡，BA **0.445938→0.447312**，仅+0.1373个百分点，区间[-1.0648,+1.2982]个百分点、2/5折改善。0新fit/encoder/旧留出，0新Kaggle提交；本账号正式成绩仍0.414。下一优先项是可靠的文本题组推断与残差/非线性读出，不继续本轮后处理参数搜索。见[完整源码分析、结果与18类召回](name-that-llm/reports/WINDOWS_ROUND8_20261026.md)、[预登记](name-that-llm/docs/WINDOWS_ROUND8_PLAN_20261026.md)、[零变换启动修正](name-that-llm/docs/WINDOWS_ROUND8_STARTUP_20261026.md)。下文保留此前各轮历史结论。
@@ -27,7 +29,7 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 自己的Windows分支为`exp/windows-4060-20261023`。第六轮训练折内部温度校准完成：**固定80/20融合BA 0.370896，开发门槛全部通过**；比第五轮风格对照0.359325高1.1570个百分点，配对95%区间[+0.4163,+1.8981]个百分点，五折均改善。开发30次模型fit+10次温度fit，条件最终8次模型fit+2次温度fit均完成；四次跨平台人工检查和Linux运行时迁移核验已通过。私有Kaggle资产已上传，[Notebook Version 1](https://www.kaggle.com/code/zephyrpong/ntl-calibrated-r6-20261025?scriptVersionId=362038537)保存运行成功（96.5秒）；一次正式提交已成功，Kaggle Public Score 为0.365。第五轮融合失败0.323681、第四轮失败0.264858、旧30-prompt留出及全部历史证据保留。
 
 - **先读学习版：[项目进展与AI知识 Markdown](PROJECT_LEARNING.md) · [可离线打开的HTML](PROJECT_LEARNING.html)**。包含流程、术语、真实实验解释、BA互动计算器与练习；后续每轮同步维护。
-- 最新证据：[第九轮预登记](name-that-llm/docs/WINDOWS_ROUND9_PLAN_20261028.md)、[第九轮结果、分组诊断与18类召回](name-that-llm/reports/WINDOWS_ROUND9_20261028.md)。历史：[第八轮结果](name-that-llm/reports/WINDOWS_ROUND8_20261026.md)、[第七轮结果与gate](name-that-llm/reports/WINDOWS_ROUND7_20261026.md)、[第六轮结果与部署状态](name-that-llm/reports/WINDOWS_ROUND6_20261025.md)。
+- 最新证据：[第十轮预登记](name-that-llm/docs/WINDOWS_ROUND10_PLAN_20261028.md)、[第十轮开发结果与18类召回](name-that-llm/reports/WINDOWS_ROUND10_20261028.md)、[正式0.416证据](name-that-llm/reports/ROUND10_REQUESTED_SUBMISSION_20261028.md)。历史：[第九轮结果与分组诊断](name-that-llm/reports/WINDOWS_ROUND9_20261028.md)、[第八轮结果](name-that-llm/reports/WINDOWS_ROUND8_20261026.md)、[第七轮结果与gate](name-that-llm/reports/WINDOWS_ROUND7_20261026.md)、[第六轮结果与部署状态](name-that-llm/reports/WINDOWS_ROUND6_20261025.md)。
 - 下方旧迁移/未提交描述保留历史时间点；此前正式public 0.351、队友0.601均为历史成绩，不能当作第六轮分数。当前状态以[WORKSPACE](name-that-llm/WORKSPACE.md)与HANDOFF末节为准。
 
 ## 赛题一句话
