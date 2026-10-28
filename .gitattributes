@@ -36,3 +36,4 @@ name-that-llm/config/windows_margin_round10_20261028.json text eol=lf
 name-that-llm/scripts/*round10.py text eol=lf
 name-that-llm/tests/test_margin_center_round10.py text eol=lf
 name-that-llm/docs/WINDOWS_ROUND10_PLAN_20261028.md text eol=lf
+name-that-llm/notebooks/topic_margin_round10_offline.ipynb text eol=lf
