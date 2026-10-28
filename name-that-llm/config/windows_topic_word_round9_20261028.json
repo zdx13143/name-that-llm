@@ -1,0 +1,148 @@
+{
+  "experiment_id": "windows-topic-word-dev-20261028-r9",
+  "scope": "One fixed partial word-centering candidate on original 120 development prompts; R7 frozen weight4 baseline. No complete ensemble claim.",
+  "baseline_output": "outputs/windows_external_weighting_20261026_r7_startup1",
+  "baseline_contract_sha256": "e54fbce77d3011dfa0c7347032ebc45a7e3552e83f66564102036e6789d01c0d",
+  "input_sha256": {
+    "config/windows_external_round7_20261026.json": "b7b32e3f1a47aae941844b8797a868ecc322a7943a77f31d0784c72ccffaf98c",
+    "outputs/windows_external_weighting_20261026_r7_startup1/contract.json": "47a170be48afec0d5d76299791eb0c0601e3c46584bf1bebdc944e32100e9d0a",
+    "outputs/windows_external_weighting_20261026_r7_startup1/candidate_oof.npz": "4d9b7b2dff1a2f203238cca28b3295490a2986afc0c4b6f8d6c404e21fdecf3c",
+    "outputs/windows_external_weighting_20261026_r7_startup1/summary.json": "577fd5c9bdbdc1c3a314f37eb7cf56c45353b119a74369f1797aa7fe7cc4ff2f",
+    "outputs/windows_external_weighting_20261026_r7_startup1/supervisor.json": "b23cfe0904bef760d203514d601b05ea03c08176c37e1c2e407a411c414b860e",
+    "outputs/round7_reference_20261026/prepared_pool.csv": "516f1d9b73d02eb52414e68e2e52d7b7b03c7b7c31413056539f42aba93d3e6e",
+    "outputs/round7_reference_20261026/prepared_pool_receipt.json": "05ca0f704c9538b4ceaf9e6f0e79f589bbd4335a1a5826a0d12f536829365bdc",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold0/views.joblib": "e75d91679f67006327cafcfebec5cee348b9ed4cfada42ead85a0070d75f3316",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold0/receipt.json": "3a367d850c1c1dd8f7b0c20d2d48d8c1cadc30736cb06f3b22abbbb4fdbafcca",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold0/candidate_scores.npz": "0c3b58f3b4244038f363261f54a590f728fba25ac4db147042d3cdc18c79d4f8",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold1/views.joblib": "0f50c3789bca447a24aec23a69aff30fc09f83d29c00d2d408d8ff9bc206e117",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold1/receipt.json": "e1fb334d69d58caf388ba3fda7c62080b2f6948803b8cccf49aa3bc6a33e8773",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold1/candidate_scores.npz": "b80d0faae287617a1cdb990d8797a24c4f5d56824b94eb86b60730151792a7c8",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold2/views.joblib": "052dd60d466769faa5e481f5f62d3d6e19b0999d11d4a344592e43ade64726bb",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold2/receipt.json": "35ffe920745c3a0a61465fe48d6792c68a8be9e451083fc09d0f9f031506d710",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold2/candidate_scores.npz": "11b8133e69582937d0cc4c99ecb596149d309b6df6e7d6d1fcb0dc3341ccdc14",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold3/views.joblib": "eb6473822d8003f6555d9833c4c1415c79c9bd205bb74ca9f6a7d66a6cbf0ece",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold3/receipt.json": "dfc6b0012a810de01595da61d32132f10b292aed1f32400f398711baa0a733da",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold3/candidate_scores.npz": "1713b981b9b2c65ee928acc5202c7497cd4bfb94d6ed8ea9cc6cca1825a8a7b2",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold4/views.joblib": "105aa36b04eace07f543415481af531767be4b8d80d74c5c3c2e2c6c3be4b44c",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold4/receipt.json": "9c1dfc5c6ebfaf7c200fbc782acdcdfb921f423929f2db2cfce4262863c70290",
+    "outputs/windows_external_weighting_20261026_r7_startup1/fold4/candidate_scores.npz": "f8852492fa5826014ae5b7f1a452706db4f076f0510fb038e4b0876249ede257"
+  },
+  "preserved_claims": {
+    "outputs/continuation_claims/windows-calibrated-fusion-dev-20261025-r6.json": "a6bb12e4c39a3d5cb8dbc576487e64c1adf7d3bc9bfc3245c7ed3b73f9275bfe",
+    "outputs/continuation_claims/windows-calibrated-fusion-final-20261025-r6.json": "befbcb9915b65ac98cd6bf1a9750ba087d122bec0bab64926f15061d4c94d538",
+    "outputs/continuation_claims/windows-external-weighting-dev-20261026-r7-startup-1.json": "d397abf349eafd17eb01e5a8c4b85bfbb8f754a683bfc2ee87c7648e2d4970c8",
+    "outputs/continuation_claims/windows-external-weighting-dev-20261026-r7.json": "00a3029371b1ab3f65c7fb52c15fd446fb46b697db71ba662e27cc42469534ef",
+    "outputs/continuation_claims/windows-external-weighting-requested-final-20261026-r7.json": "3972a43cf20e282e53c99f4e8bc4d5e4036edb4eb434d1ed4c5bf2cbb4534917",
+    "outputs/continuation_claims/windows-frozen-svc-sinkhorn-dev-20261026-r8-startup-1.json": "cf8647670781eb63dc40b3d9600e0c94cff8ed5acab79696e0aa7adde2cd487b",
+    "outputs/continuation_claims/windows-frozen-svc-sinkhorn-dev-20261026-r8.json": "5337905da538d3b8ce6dfaad2d9416fca79462a6b71b96229e13d8e794aacaad",
+    "outputs/continuation_claims/windows-modernbert-finetune-dev-20261025-r4.json": "9403d878f2cd37ac1ba1cf18ec76e115ba077effd5e9ad35a8d998dfe938d8ef",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023-startup-recovery-1.json": "86d89fc70b66e22fed20e8275d5b7af85309e731ab5e8c6ab2a1c36c0b8cc2c3",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261023.json": "fc06fd719de08f08bc283136104753e020bb6cb4b2abcb73387aea8f6a120507",
+    "outputs/continuation_claims/windows-modernbert-frozen-dev-20261024-r2.json": "f66dc2185520703bfe5456b5a279e4ae5e67242a9ff4378c75cf01b3a3a67c30",
+    "outputs/continuation_claims/windows-modernbert-synthetic-20261023.json": "462370fd68e5eddd06fa7a62dedb09f1157bea35db6d2fe82aea20d4f7958d2c",
+    "outputs/continuation_claims/windows-prompt-gaussian-dev-20261024-r3.json": "8708ede039c4ee84f81f7fc5d809b360fef63bbc70d840708b1254b8fb371b9e",
+    "outputs/continuation_claims/windows-stylegram-fusion-dev-20261025-r5.json": "3017053468df73edcba12c27b9c89baf69d4735c78a24036d422283896c546ec"
+  },
+  "method": {
+    "centered_view": "word",
+    "alpha": 0.5,
+    "group_size_min": 2,
+    "group_size_max": 18,
+    "renormalize_after_centering": false,
+    "official_weight": 4.0,
+    "external_weight": 1.0,
+    "training_groups": "known official training prompts and canonical external groups, separately namespaced; groups outside 2..18 unchanged",
+    "validation_groups": "text-only, independently in each validation fold; stable id sort before clustering",
+    "grouping": {
+      "min_df": 2,
+      "max_df": 0.05,
+      "cap": 18,
+      "threshold": 0.15
+    },
+    "classifier": {
+      "C": 0.5,
+      "random_state": 42,
+      "max_iter": 5000,
+      "class_weight": "balanced",
+      "dual": "auto",
+      "tol": 0.0001
+    },
+    "views": [
+      {
+        "name": "char",
+        "ngram_range": [
+          3,
+          5
+        ],
+        "max_features": 250000,
+        "weight": 1.0
+      },
+      {
+        "name": "word",
+        "ngram_range": [
+          1,
+          3
+        ],
+        "max_features": 180000,
+        "weight": 0.7
+      },
+      {
+        "name": "shape",
+        "ngram_range": [
+          2,
+          6
+        ],
+        "max_features": 60000,
+        "weight": 0.5
+      },
+      {
+        "name": "function",
+        "ngram_range": [
+          1,
+          3
+        ],
+        "max_features": 50000,
+        "weight": 0.5
+      }
+    ]
+  },
+  "evaluation": {
+    "folds": 5,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 20261028
+  },
+  "candidate_gate": {
+    "min_pooled_balanced_accuracy": 0.45,
+    "min_each_fold_balanced_accuracy": 0.35,
+    "min_gain": 0.01,
+    "min_improved_folds": 4,
+    "min_half_batch_gain": -0.01,
+    "min_singleton_gain": -0.02
+  },
+  "budget": {
+    "max_classifier_fit_attempts": 5,
+    "max_grouping_attempts": 20,
+    "max_vectorizer_fit_attempts": 0,
+    "development_timeout_seconds": 3600,
+    "max_host_rss_gib": 12,
+    "threads": 2,
+    "new_encoder_forward_calls": 0,
+    "automatic_failed_run_retries": 0,
+    "old_holdout_evaluations": 0,
+    "full_data_final_fits": 0,
+    "new_kaggle_submissions": 0
+  },
+  "runtime": {
+    "numpy": "2.2.6",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "threadpoolctl": "3.6.0",
+    "psutil": "7.0.0",
+    "joblib": "1.5.2"
+  },
+  "teammate_reference": {
+    "git_commit": "dc62708e7116af472257d8f9159424fec2078f01",
+    "notebook_sha256": "d87c8394b7ad8b3cff1d7aa20687699a29d08ebb92eab684dfe5b1e61c4dc835",
+    "note": "Adapted capped average linkage from e651 infer.py; not its full training or inference recipe."
+  }
+}
