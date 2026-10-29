@@ -1,0 +1,44 @@
+{
+  "schema": "ntl-approved-extraction-review-v1",
+  "reviewer": "independent-agent-p0d_export_identity_review",
+  "conclusion": "approved_extraction_identity_verified",
+  "policy_sha256": "5fc8dabc2354c3ac8166044b23355b6c98ea415ff87ef0d7892a2258ab767f54",
+  "extraction_receipt_sha256": "6fcdb1c0fd709ffec66f3762aca7421c814eeb06bdc5978b30d9e754e5e7b388",
+  "development_sha256": "1c9446efa6c8c477bd68448f1de212aadcc8dc90224b76728ec2f70e2ec2334f",
+  "observed_checks": {
+    "bytes": 1714928,
+    "rows": 2159,
+    "prompts": 120,
+    "row_identity_matches": true,
+    "text_hash_matches": true,
+    "fold_hash_matches": true,
+    "row_order_unique": true,
+    "prompt_disjoint_folds": true,
+    "validation_rows": [
+      432,
+      432,
+      432,
+      432,
+      431
+    ],
+    "validation_prompts": [
+      24,
+      24,
+      24,
+      24,
+      24
+    ]
+  },
+  "historical_access_evidence": "Exporter code and bound runtime/receipt, not a repeat raw read. Exactly one source-read invocation and two in-memory protected-record parse passes were recorded.",
+  "independent_review_raw_source_reads": 0,
+  "independent_review_process_cpu_seconds": 0.03125,
+  "code_review": {
+    "reviewer": "independent-agent-p0d_admission_code_review",
+    "finding": "Policy raw reread and source directory fields were not explicitly gated; entry itself had no raw source read path.",
+    "resolution": "Root added integer-zero reread and exact directory guards; final 9/9 artificial tests passed.",
+    "post_review_code_change": "Only these guards and associated artificial tests; final verification by root."
+  },
+  "original_preisolated_intake_unchanged": true,
+  "training_enabled": false,
+  "real_scoring_enabled": false
+}

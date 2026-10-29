@@ -1,5 +1,9 @@
 # P0: historical label compatibility and the remaining input decision
 
+> Subsequent explicit user approval permitted one isolated extraction and data
+> admission. That operation is now complete; see [the admission record](R15_P0_DATA_ADMISSION_20261029.md).
+> The pending/zero-access statements below describe the earlier preparation turn.
+
 2026-10-29, continuing from `8707ff9e6e5fd1e8887d4e16aa6de8f065b79131`.
 The previous goal turn made progress by acquiring source/config evidence. This
 turn checks the remaining logged-in private-asset inventory, fixes a real

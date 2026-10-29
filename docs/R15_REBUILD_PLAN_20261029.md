@@ -1,17 +1,18 @@
 # R15 minimum complete-ensemble rebuild proposal
 
-> Latest scope amendment: the user subsequently authorized Priority 0 local
-> preparation within 4 CPU-hours, with zero GPU and the protected holdout still
-> closed. [P0 results](R15_P0_REPORT_20261029.md) now include four acquired
-> trainer sources, safe-export intake and a nested calibration design. Required
-> dependencies remain missing, so no GPU pilot or real evaluation is released.
+> Latest scope amendment: the cumulative P0 preparation ceiling remains 4
+> CPU-hours. The user later permitted low-load local GPU work subject to resource
+> and provenance conditions, and explicitly approved one full-CSV extraction
+> plus admission of the original 2159 development rows. [Data admission](R15_P0_DATA_ADMISSION_20261029.md)
+> is complete; no further raw reads are allowed. Required trainer/external-data
+> dependencies remain missing, so no GPU pilot or real evaluation has started.
 > The 155 final-target count below excludes inner calibration reconstruction;
 > it is not a validated cost estimate for the new nested design.
 
-Status: proposal only, not an executed experiment or authorization to start
-GPU training. The current request authorizes a fixed replay if suitable
-existing assets are found, and a rebuild plan otherwise. No eligible bundle
-was found; the original R15 protocol stays frozen and disabled.
+Status: full-rebuild proposal only; the historical resource envelope below is
+not an executed experiment or a measured local-GPU budget. Preparation and data
+admission have progressed, but no eligible complete bundle was found. The
+original R15 protocol stays frozen and disabled.
 
 ## Priority 0: resolve provenance and recipe feasibility before compute
 
@@ -177,6 +178,6 @@ no fold loss >0.01 and no class-recall loss >0.05. Failed gate stops the fixed
 
 Priority 0 is not satisfied: complete OOF is missing, training/exclusion
 provenance is incomplete, some trainer sources are unavailable, and the
-learned-coefficient scope needs resolution. No GPU pilot, data extraction,
-new training or real replay is launched. This proposal makes the dependency
-and budget explicit; it is not a completed reconstruction.
+learned-coefficient scope needs resolution. The separately approved one-time
+development extraction and admission are complete. No GPU pilot, new training
+or real replay has launched; this is not a completed reconstruction.

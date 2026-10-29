@@ -1,7 +1,7 @@
 {
   "schema": "ntl-one-time-raw-export-proposal-v1",
-  "approval": "pending_user_boundary_amendment",
-  "approval_reference": null,
+  "approval": "granted",
+  "approval_reference": "user-approved-20261029-one-isolated-export-and-development-admission",
   "source": "D:/kaggle/name_that_llm/name-that-llm/data/raw/train.csv",
   "source_sha256": "40a22ce8d88c5f46feb4637a099db815bef5f713ffe53e89dbe1b7b21de77707",
   "scope": "one_local_export_without_training_or_scoring",

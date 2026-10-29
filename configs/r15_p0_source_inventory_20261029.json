@@ -1,5 +1,12 @@
 {
   "schema": "ntl-source-preparation-inventory-v1",
+  "development_data": {
+    "status": "original_2159_rows_admitted",
+    "directory": "outputs/r15_dev_export",
+    "policy": "configs/r15_approved_export_policy_20261029.json",
+    "review": "configs/r15_approved_export_review_20261029.json",
+    "training_enabled": false
+  },
   "source_index": "reference_sources/r15_p0/source_index.json",
   "entries": [
     {
@@ -38,7 +45,6 @@
       "status": "source_acquired_not_training_admitted",
       "source": "s7_v1.py.txt",
       "missing": [
-        "safe data export",
         "explicit nested-envelope adapter",
         "base/checkpoint provenance"
       ]
@@ -50,7 +56,6 @@
       "status": "source_acquired_exclusion_defect_confirmed",
       "source": "instyle_v2.py.txt",
       "missing": [
-        "safe data export",
         "external lineage and allowlists",
         "explicit nested-envelope adapter"
       ]

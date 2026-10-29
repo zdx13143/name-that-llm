@@ -1,0 +1,15 @@
+{
+  "schema": "ntl-approved-extraction-admission-policy-v1",
+  "approval": "granted",
+  "approval_reference": "user-approved-20261029-one-isolated-export-and-development-admission",
+  "producer": "root-local-one-time-exporter",
+  "scope": "admit original development data after independent identity and source review; no model execution",
+  "protocol_sha256": "da3538f8566672a7e3bb6a34a5436a7e21118459e7bdd91e507f4d56b39f5c6c",
+  "extraction_receipt_sha256": "6fcdb1c0fd709ffec66f3762aca7421c814eeb06bdc5978b30d9e754e5e7b388",
+  "development_sha256": "1c9446efa6c8c477bd68448f1de212aadcc8dc90224b76728ec2f70e2ec2334f",
+  "training_enabled": false,
+  "real_scoring_enabled": false,
+  "raw_source_rereads_allowed": 0,
+  "prior_policy_amendment": "This exact approved extraction is accepted in addition to the unchanged preexisting-only intake. Historical protected-row access remains recorded.",
+  "single_source_directory": "outputs/r15_raw_export_quarantine"
+}

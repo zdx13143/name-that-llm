@@ -1,0 +1,160 @@
+{
+  "schema": "ntl-r15-p0-approved-data-admission-v1",
+  "recorded_at_utc": "2026-10-29T07:24:25.187454+00:00",
+  "base_commit": "c262ba684b0f5b8eb52685586e668f53b7055333",
+  "branch": "exp/team-e654-r15-20261029",
+  "commit_lookup": "git log -1 --format=%H -- configs/r15_p0d_receipt_20261029.json",
+  "status": "development_data_admitted_training_dependencies_still_incomplete",
+  "authorization": {
+    "approval_reference": "user-approved-20261029-one-isolated-export-and-development-admission",
+    "exact_user_reply": "允许一次隔离导出及开发数据准入",
+    "approved_operation_completed": true,
+    "additional_raw_reads_permitted": false,
+    "remote_mutations_authorized": false
+  },
+  "data": {
+    "admitted_directory": "outputs/r15_dev_export",
+    "rows": 2159,
+    "prompts": 120,
+    "bytes": 1714928,
+    "development_sha256": "1c9446efa6c8c477bd68448f1de212aadcc8dc90224b76728ec2f70e2ec2334f",
+    "frozen_identity_verified": true,
+    "outer_folds": 5,
+    "inner_folds": 25,
+    "outer_validation_rows": [
+      432,
+      432,
+      432,
+      432,
+      431
+    ],
+    "outer_validation_prompts": [
+      24,
+      24,
+      24,
+      24,
+      24
+    ],
+    "original_label_order_preserved": true,
+    "data_in_git": false
+  },
+  "protected_data_accounting": {
+    "raw_source_read_invocations": 1,
+    "csv_memory_parse_passes": 2,
+    "protected_unique_rows_parsed": 540,
+    "protected_prompts": 30,
+    "protected_record_parse_events": 1080,
+    "protected_rows_persisted": 0,
+    "protected_rows_trained": 0,
+    "protected_rows_scored": 0,
+    "raw_source_reads_after_export": 0,
+    "historical_access_evidence": "bound exporter source and successful invocation/runtime/receipt; independent review did not reread raw source"
+  },
+  "tests": [
+    {
+      "tests_run": 8,
+      "failures": 0,
+      "errors": 0,
+      "process_cpu_seconds": 5.09375,
+      "wall_seconds": 5.452999999979511,
+      "scope": "artificial data only"
+    },
+    {
+      "tests_run": 9,
+      "failures": 0,
+      "errors": 0,
+      "process_cpu_seconds": 5.171875,
+      "wall_seconds": 5.484000000171363,
+      "scope": "artificial data only",
+      "reason": "explicit policy scope enforcement added after independent review"
+    }
+  ],
+  "independent_reviews": {
+    "output_identity": "p0d_export_identity_review; no material identity/fold issue",
+    "admission_code": "p0d_admission_code_review; explicit policy field enforcement suggested",
+    "correction": "enforce integer-zero raw rereads and exact quarantine directory; final 9/9 synthetic tests passed",
+    "final_verification_by": "root",
+    "real_data_scoring": false
+  },
+  "resources": {
+    "cumulative_cpu_seconds_cap": 14400,
+    "prior_measured_p0_python_cpu_seconds": 30.625,
+    "one_time_export_cpu_seconds": 5.046875,
+    "new_synthetic_tests_cpu_seconds": 10.265625,
+    "independent_output_check_cpu_seconds": 0.03125,
+    "admission_cpu_seconds": 5.265625,
+    "render_and_final_data_check_cpu_seconds": 0.03125,
+    "new_measured_python_cpu_seconds": 20.640625,
+    "known_measured_p0_python_cpu_seconds_total": 51.265625,
+    "total_host_cpu_measured": false,
+    "unmetered_scope": "browser/scout code reading/tool/Git and small policy/receipt/link work; no long-running compute",
+    "gpu_jobs": 0,
+    "downloaded_bytes": 0
+  },
+  "counters": {
+    "real_data_admissions": 1,
+    "real_training_admissions": 0,
+    "real_model_fits": 0,
+    "encoder_forwards": 0,
+    "official_label_accuracy_evaluations": 0,
+    "real_replays": 0,
+    "git_pushes": 0,
+    "kaggle_imports": 0,
+    "kaggle_saves": 0,
+    "formal_submissions": 0,
+    "remote_automations": 0,
+    "new_public_scores": 0
+  },
+  "historical_receipts_and_counters_preserved": true,
+  "results": {
+    "balanced_accuracy": null,
+    "public_score": null,
+    "private_score": null
+  },
+  "remaining_dependencies": [
+    "remaining exact member trainers/configs and initialization/stage memberships",
+    "external source row lineage and prompt-exclusion receipts",
+    "nested blend/Gaussian fit-selection specification and new producer budget"
+  ],
+  "unchanged_artifacts_sha256": {
+    "configs/r15_protocol_20261029.json": "31c5fd947dce8ad2a3e0994c4567d9ad95bc8b918da7ca336078299e2c6d3973",
+    "experiments/r15_typography_replay.py": "b370b5a67d0e4977bb0255fb2688b80b51400224ac4d3d48637cec0e73cd4b81",
+    "scripts/r15_prepare_raw_dev_export.py": "567f1222b0bed6fd0db318414a064fd28edb73eac592f5d018243c9ed9be1903",
+    "scripts/r15_validate_dev_export.py": "0c27ed918c83d0066efa8ad065a68911e9b5e2a874979173f74c893540ee5636",
+    "notebooks/team_e654_r14_public660.ipynb": "5fd8bf520af59a1841fb19a035e922df123934bb1d1d05625b6853f6351b9dae"
+  },
+  "artifacts_sha256": {
+    "README.md": "f8431a15ed69a27d91907ad52d1ccad0e4eb98301bcdacb10fc6efe52a473834",
+    "PROJECT_LEARNING.md": "a7c07ad74cc7d9342d3f8b32dd15dcff59273af27cc2e01d09993490e2449e21",
+    "PROJECT_LEARNING.html": "bcfebccf2dd1c5f1c7de44c10b3094016a85dafdb3737d1ae4969e0d3e5ab160",
+    "docs/R15_P0_DATA_ADMISSION_20261029.md": "572465c85dbf071d8196c59a764fd7b38b79fccba9f6b72f42fba8f2bdc9a571",
+    "docs/R15_P0_INPUT_COMPATIBILITY_20261029.md": "57dfca3a32edb57a83dd6c0e898fc4f485e6a5ef5d4ed8f0d9e2288f53fee2d7",
+    "docs/R15_REBUILD_PLAN_20261029.md": "61be38d5dfb664d97669b181b9ed386bc48808c5531cda826bfc92730b4e0c90",
+    "scripts/r15_admit_approved_export.py": "116fa6c13e7f5cc78d859fb444f54382db699a9ad7ad4a5eb8db594ae491e650",
+    "tests/test_r15_approved_export.py": "35660f20c66d4b9d854de151c89e68b737e789574e06115372bf1d2523c923b1",
+    "configs/r15_raw_export_proposal_20261029.json": "eb41cf9ff7c3626bf11753f8fbfab5b6732f21ac44a772ef296c90a5ce649dcd",
+    "configs/r15_approved_export_policy_20261029.json": "1915d4e0a7a64e07f1e155ae77e6b224cbb91f3668c8b70f329726bf669edd05",
+    "configs/r15_approved_export_review_20261029.json": "b474f9dfd7a42a66042c0f4fcf4a2f614f5f89257cb5862e6b538bd78cedbc31",
+    "configs/r15_p0_preparation_20261029.json": "6d4dd6358bdf836340fa76e9c76d4cc58cf8c68a203fd1edacee8ee0b14ca27d",
+    "configs/r15_p0_source_inventory_20261029.json": "c9b1f6aeab457284d5e24cce8d3515bb97c782c91e09fbd1aa1b95633f6d4853"
+  },
+  "local_evidence_sha256": {
+    "outputs/r15_p0d/admission_result.json": "96a7bff6af404396dc75ddf73d4ccf59018df395ceec587cdd4f5769a80c02f2",
+    "outputs/r15_p0d/admission_runtime.json": "9e898d84ed89c19a0c56dd78a2a2f8e1b7b1a424214fce9486bd483ea7cefa72",
+    "outputs/r15_p0d/admission_tests.json": "77578cda9b6fe06ed05e45e40646d09d1f439bb9c0c9c8bdd5d5043352f18d7c",
+    "outputs/r15_p0d/admission_tests.log": "21bb90352144d2cec951b0846e0444e1be1938af2db97459811b3195c7edafde",
+    "outputs/r15_p0d/admission_tests_final.json": "2e5876daaba7d2b96c8e399d0aef03fdd11e40649dac70fd8c360065580d2e45",
+    "outputs/r15_p0d/admission_tests_final.log": "5aa0623bfa6c50d13af723f4f2d66779bb15fcf267553ff1fdb5158423700831",
+    "outputs/r15_p0d/final_data_verification.json": "20ade0dae35f56f7416cedb340e2733d0801fec303efd87166edc07b36aa03c0",
+    "outputs/r15_p0d/one_time_export_result.json": "aa8ba3b72307c0bfe7593684d40b3917da8c8f48d05d8df95008d6a4d07ba7d8",
+    "outputs/r15_p0d/one_time_export_runtime.json": "406f572cd093f6566811737551aec10908cc991d49cc4da0add655a8c17ee85f",
+    "outputs/r15_raw_export_attempt.json": "a93c3fceaa10d4a15708bc82eb4d7bf4823675c5a369550b77945fda690aade0",
+    "outputs/r15_raw_export_quarantine/extraction_receipt.json": "80c8c9d897cf1a4da94fc956e765844afd7ef5b85c72932a54f32276c8ff5219",
+    "outputs/r15_dev_export/extraction_receipt.json": "80c8c9d897cf1a4da94fc956e765844afd7ef5b85c72932a54f32276c8ff5219",
+    "outputs/r15_dev_export/admission_policy.json": "ae2d2d29e14d6f54f440c7b17a811eb9d00e4077e024021576c4b92c325c3815",
+    "outputs/r15_dev_export/admission_review.json": "b474f9dfd7a42a66042c0f4fcf4a2f614f5f89257cb5862e6b538bd78cedbc31",
+    "outputs/r15_dev_export/nested_plan.json": "cb06f4fecf92b02838eaf201132b61e2933203bf4af50c13d00ae339e4440a96",
+    "outputs/r15_dev_export/admission_receipt.json": "ead29c39c97c1a3a9718b35dd1e2ba074823115853932570890c08845c018cfd"
+  },
+  "protected_worktree_status": "original Windows, R12, R13 and R14 all clean in final read-only status check"
+}
