@@ -1,3 +1,5 @@
 # Keep frozen notebook file hashes stable on Windows checkouts.
 notebooks/reference_public654_v4.ipynb text eol=lf
 notebooks/team_e651_r12_public654.ipynb text eol=lf
+notebooks/reference_public660_v32.ipynb text eol=lf
+notebooks/team_e654_r14_public660.ipynb text eol=lf
