@@ -1,0 +1,38 @@
+{
+  "experiment_id": "r15-full-ensemble-typography-half-20261029",
+  "scope": "local_implementation_and_synthetic_validation",
+  "real_evaluation_enabled": false,
+  "r14_base_commit": "07cee7ebbae7b7d08bfa536f5370659ae27a5a54",
+  "r14_candidate_sha256": "5fd8bf520af59a1841fb19a035e922df123934bb1d1d05625b6853f6351b9dae",
+  "source_version": 363222852,
+  "source_infer_cell_sha256": "7e42fda861d0dcf132d2b514ca6e33ad6dc52c4e78cd398f1f037623ba2d5c42",
+  "baseline_strength": 1.0,
+  "candidate_strength": 0.5,
+  "development_rows": 2159,
+  "development_prompts": 120,
+  "folds": 5,
+  "row_identity_sha256": "eb94b93d3557fde2fbbfa4cd897d1ef25c2e1fe73ee01cf526a65d5c433dcd20",
+  "fold_sha256": "96040086312dca7ce1d3d14bb3ee59640870ef35edba42c746c7f84ae7b827da",
+  "text_sha256": "ad192430092d19e4a44aa1ae263d051a987685dd1883fcdacab3f40a82cae5b9",
+  "historical_split_sha256": "c8c24921f617ad483b9e14cb23d0d64a0fbbde44c0214868445e8d0e30d6e1db",
+  "replay_stage": "_v38_before_hard_original_scale",
+  "expected_bundle": "outputs/r15_inputs/full_ensemble_oof_manifest.json",
+  "bootstrap_seed": 20261029,
+  "bootstrap_resamples": 2000,
+  "gate": {
+    "min_gain": 0.005,
+    "min_improved_folds": 4,
+    "max_fold_loss": 0.01,
+    "max_class_recall_loss": 0.05,
+    "positive_ci_lower": true
+  },
+  "current_budget": {
+    "synthetic_cpu_seconds": 600,
+    "real_training_fits": 0,
+    "encoder_forwards": 0,
+    "official_label_scoring": 0,
+    "protected_holdout_accesses": 0,
+    "kaggle_saves": 0,
+    "formal_submissions": 0
+  }
+}
