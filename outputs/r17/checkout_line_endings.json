@@ -1,0 +1,8 @@
+{
+  "new_checkout_sha256": "38204e9f00cb7da783932a917929d5d7af8c146f02f5e487bb033d5fb8b48f37",
+  "new_checkout_crlf_pairs": 2191,
+  "new_checkout_lf_normalized_sha256": "8b04a036a5aa43c41907fd6404849179cd6bee1d4588b6c866484487f6bd6075",
+  "verified_original_worktree_sha256": "8b04a036a5aa43c41907fd6404849179cd6bee1d4588b6c866484487f6bd6075",
+  "git_blob_sha256": "8b04a036a5aa43c41907fd6404849179cd6bee1d4588b6c866484487f6bd6075",
+  "only_outer_crlf_difference": true
+}

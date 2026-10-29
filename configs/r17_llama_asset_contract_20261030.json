@@ -1,0 +1,124 @@
+{
+  "schema": "ntl-r17-llama-asset-contract-v1",
+  "kaggle_ref": "metaresearch/llama-3.1/Transformers/8b/1",
+  "model_instance_version_id": null,
+  "release_ready": false,
+  "expected_mount": "/kaggle/input/llama-3.1/transformers/8b/1",
+  "files": {
+    "LICENSE": {
+      "size": 7627,
+      "algorithm": "git-blob-sha1",
+      "digest": "a7c3ca16cee30425ed6ad841a809590f2bcbf290"
+    },
+    "USE_POLICY.md": {
+      "size": 4691,
+      "algorithm": "git-blob-sha1",
+      "digest": "81ebb55902285e8dd5804ccf423d17ffb2a622ee"
+    },
+    "config.json": {
+      "size": 826,
+      "algorithm": "git-blob-sha1",
+      "digest": "cccf055d6f8f210387a248c91dc40e0c7a4bafab"
+    },
+    "generation_config.json": {
+      "size": 185,
+      "algorithm": "git-blob-sha1",
+      "digest": "fc9506438b7b55383dc04c0816561442324846c3"
+    },
+    "model.safetensors.index.json": {
+      "size": 23950,
+      "algorithm": "git-blob-sha1",
+      "digest": "0fd8120f1c6acddc268ebc2583058efaf699a771"
+    },
+    "special_tokens_map.json": {
+      "size": 73,
+      "algorithm": "git-blob-sha1",
+      "digest": "d8cd5076496dbe4be2320312abc10adc43097b81"
+    },
+    "tokenizer.json": {
+      "size": 9085658,
+      "algorithm": "git-blob-sha1",
+      "digest": "f916e71031fa08f3c6ef1680a590c15b52d3cdd9"
+    },
+    "tokenizer_config.json": {
+      "size": 50500,
+      "algorithm": "git-blob-sha1",
+      "digest": "cb9ec25536e44d86778b10509d3e5bdca459a5cf"
+    },
+    "model-00001-of-00004.safetensors": {
+      "size": 4976698672,
+      "algorithm": "sha256",
+      "digest": "f8b9704ab09cdeb097aa4a0a24bca96f906eec36bad63ab495bc21475058601b"
+    },
+    "model-00002-of-00004.safetensors": {
+      "size": 4999802720,
+      "algorithm": "sha256",
+      "digest": "c28b25e7541751056ee126627e007f8d4288319733285e9f7b17b9ff6eb313f0"
+    },
+    "model-00003-of-00004.safetensors": {
+      "size": 4915916176,
+      "algorithm": "sha256",
+      "digest": "d8e9504dd4e4a146d484c52a97584ec14dac92237c46b064934af67a85e7d383"
+    },
+    "model-00004-of-00004.safetensors": {
+      "size": 1168138808,
+      "algorithm": "sha256",
+      "digest": "e4486f35c040f683f7d790354f66c169c109eb9fa0954a4a35d7c458a108405d"
+    }
+  },
+  "adapters": [
+    "ll8v5_f0",
+    "ll8v5_f1",
+    "ll8v5_f2",
+    "ll8v5_f3",
+    "ll8v5_f4",
+    "ll8v5"
+  ],
+  "source_receipt": "configs/r16_followup_asset_metadata_20261029.json",
+  "adapter_dataset_ref": "dhruvtibarewal/nlm-l24-adapters-v5",
+  "adapter_dataset_version": 1,
+  "adapter_dataset_directory": "nlm-l24-adapters-v5",
+  "adapter_file_sizes": {
+    "ll8v5_f0": {
+      "adapter_config.json": 1278,
+      "adapter_model.safetensors": 125871992,
+      "heads.pt": 4986739
+    },
+    "ll8v5_f1": {
+      "adapter_config.json": 1278,
+      "adapter_model.safetensors": 125871992,
+      "heads.pt": 4986739
+    },
+    "ll8v5_f2": {
+      "adapter_config.json": 1278,
+      "adapter_model.safetensors": 125871992,
+      "heads.pt": 4986739
+    },
+    "ll8v5_f3": {
+      "adapter_config.json": 1278,
+      "adapter_model.safetensors": 125871992,
+      "heads.pt": 4986739
+    },
+    "ll8v5_f4": {
+      "adapter_config.json": 1278,
+      "adapter_model.safetensors": 125871992,
+      "heads.pt": 4986739
+    },
+    "ll8v5": {
+      "adapter_config.json": 1278,
+      "adapter_model.safetensors": 125871992,
+      "heads.pt": 4986739
+    }
+  },
+  "adapter_expected_content_hashes_available": false,
+  "adapter_identity_basis": "retained immutable Kaggle dataset version, unique dataset mount, exact names/sizes; actual file hashes recorded at preflight, not compared to unpublished expected weight digests",
+  "adapter_allowed_base_refs": [
+    "meta-llama/Llama-3.1-8B",
+    "NousResearch/Meta-Llama-3.1-8B",
+    "/kaggle/input/llama-3.1/transformers/8b/1"
+  ],
+  "adapter_metadata_evidence": {
+    "outputs/r17/adapter_metadata/files.json": "039411b8ea4bf68701264e04c23e0a70995fbe3c8647be56f771c8458e5b7971",
+    "outputs/r17/adapter_metadata/view.json": "579442b1f6184a4d2589e7b293d8f13d4a2a2a78fdc5db6ba609d54f20333a7b"
+  }
+}

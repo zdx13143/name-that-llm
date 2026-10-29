@@ -1,0 +1,17 @@
+test_absent_base_and_expired_budget_fail_closed (test_r17_restore_llama.R17Restore.test_absent_base_and_expired_budget_fail_closed) ... ok
+test_actual_generated_initialization_with_synthetic_assets (test_r17_restore_llama.R17Restore.test_actual_generated_initialization_with_synthetic_assets) ... ok
+test_comp_allows_only_known_missing_checkpoint (test_r17_restore_llama.R17Restore.test_comp_allows_only_known_missing_checkpoint) ... ok
+test_equal_size_corruption_is_rejected (test_r17_restore_llama.R17Restore.test_equal_size_corruption_is_rejected) ... ok
+test_exact_bytes_and_all_six_adapters (test_r17_restore_llama.R17Restore.test_exact_bytes_and_all_six_adapters) ... ok
+test_missing_or_duplicate_adapter_is_rejected (test_r17_restore_llama.R17Restore.test_missing_or_duplicate_adapter_is_rejected) ... ok
+test_only_checkout_line_endings_can_differ (test_r17_restore_llama.R17Restore.test_only_checkout_line_endings_can_differ) ... ok
+test_prediction_parity_and_pending_release (test_r17_restore_llama.R17Restore.test_prediction_parity_and_pending_release) ... ok
+test_runtime_rejects_error_fallback_and_empty_atlas (test_r17_restore_llama.R17Restore.test_runtime_rejects_error_fallback_and_empty_atlas) ... ok
+test_runtime_requires_all_18_v5_adapters (test_r17_restore_llama.R17Restore.test_runtime_requires_all_18_v5_adapters) ... ok
+test_subprocess_failure_and_timeout_are_not_swallowed (test_r17_restore_llama.R17Restore.test_subprocess_failure_and_timeout_are_not_swallowed) ... ok
+test_wrong_declared_adapter_base_is_rejected (test_r17_restore_llama.R17Restore.test_wrong_declared_adapter_base_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.694s
+
+OK

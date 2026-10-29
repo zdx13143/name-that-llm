@@ -1,0 +1,141 @@
+{
+  "candidate": "notebooks/team_e659_r17_restore_llama_pending_access.ipynb",
+  "candidate_sha256": "4f18a588f534bad5e2f5245a82a7fa617b3fc14bf52a66bf751bb152f28a7681",
+  "base_sha256": "8b04a036a5aa43c41907fd6404849179cd6bee1d4588b6c866484487f6bd6075",
+  "code_sha256": [
+    "e3b8ac0c2899f1b4ce69186d07cb987d9287da489ed9340d8026a901a5fcf466",
+    "cb6304fc350b44b350ad9b25f0d33fdcbcdd86851e1666aa11462c43a72b3e0f",
+    "64563ff919beba81bea91f1db344859a7a22413c40d136d3168afb0bccf32252",
+    "b53e305fd7a755d138f931c55ac5f3762ed3978d73a65594b5ce2523fdf165ff",
+    "c87edb5edd80ae2de6752561c437283a00f966efd638243092542da05b6e120e",
+    "e3aa49d5a11e4ce2b504b826a7f8dddb13077e4b512e92d55a0a2807ca82cc18",
+    "efa39308031fbc0e7fdda500ed8ea0439864750e914113b22825b1bd3ced1dd9",
+    "0f902331bd97cd570edbf5d0056bf3f165ebc98682080b148513a86eec45dc66"
+  ],
+  "retained_inputs": [
+    {
+      "sourceType": "competition",
+      "sourceId": 170484
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20736096
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20819121
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20831302
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20847146
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20858502
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20934027
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21008519
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21011978
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21062729
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21097171
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21116786
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21119693
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21145399
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21203279
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358683059
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358745836
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358758062
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358770408
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358911769
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358928013
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358948428
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 359652568
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166254
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166265
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363135
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363139
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363140
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363149
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363153
+    }
+  ],
+  "required_additional_model": "metaresearch/llama-3.1/Transformers/8b/1",
+  "release_ready": false,
+  "formal_submissions": 0,
+  "saves": 0
+}

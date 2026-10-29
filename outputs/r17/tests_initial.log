@@ -1,0 +1,37 @@
+test_absent_base_and_expired_budget_fail_closed (test_r17_restore_llama.R17Restore.test_absent_base_and_expired_budget_fail_closed) ... ok
+test_actual_generated_initialization_with_synthetic_assets (test_r17_restore_llama.R17Restore.test_actual_generated_initialization_with_synthetic_assets) ... ERROR
+test_comp_allows_only_known_missing_checkpoint (test_r17_restore_llama.R17Restore.test_comp_allows_only_known_missing_checkpoint) ... ok
+test_equal_size_corruption_is_rejected (test_r17_restore_llama.R17Restore.test_equal_size_corruption_is_rejected) ... ok
+test_exact_bytes_and_all_six_adapters (test_r17_restore_llama.R17Restore.test_exact_bytes_and_all_six_adapters) ... ok
+test_missing_or_duplicate_adapter_is_rejected (test_r17_restore_llama.R17Restore.test_missing_or_duplicate_adapter_is_rejected) ... ok
+test_prediction_parity_and_pending_release (test_r17_restore_llama.R17Restore.test_prediction_parity_and_pending_release) ... ERROR
+test_runtime_rejects_error_fallback_and_empty_atlas (test_r17_restore_llama.R17Restore.test_runtime_rejects_error_fallback_and_empty_atlas) ... ok
+test_runtime_requires_all_18_v5_adapters (test_r17_restore_llama.R17Restore.test_runtime_requires_all_18_v5_adapters) ... ok
+test_subprocess_failure_and_timeout_are_not_swallowed (test_r17_restore_llama.R17Restore.test_subprocess_failure_and_timeout_are_not_swallowed) ... ok
+
+======================================================================
+ERROR: test_actual_generated_initialization_with_synthetic_assets (test_r17_restore_llama.R17Restore.test_actual_generated_initialization_with_synthetic_assets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\kaggle\name_that_llm\outputs\worktrees\team-e659-r17-20261030\tests\test_r17_restore_llama.py", line 156, in test_actual_generated_initialization_with_synthetic_assets
+    candidate = build.build()
+                ^^^^^^^^^^^^^
+  File "D:\kaggle\name_that_llm\outputs\worktrees\team-e659-r17-20261030\scripts\build_r17_candidate.py", line 26, in build
+    raise ValueError('R17 frozen scored R16 candidate changed')
+ValueError: R17 frozen scored R16 candidate changed
+
+======================================================================
+ERROR: test_prediction_parity_and_pending_release (test_r17_restore_llama.R17Restore.test_prediction_parity_and_pending_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\kaggle\name_that_llm\outputs\worktrees\team-e659-r17-20261030\tests\test_r17_restore_llama.py", line 122, in test_prediction_parity_and_pending_release
+    candidate = build.build()
+                ^^^^^^^^^^^^^
+  File "D:\kaggle\name_that_llm\outputs\worktrees\team-e659-r17-20261030\scripts\build_r17_candidate.py", line 26, in build
+    raise ValueError('R17 frozen scored R16 candidate changed')
+ValueError: R17 frozen scored R16 candidate changed
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.881s
+
+FAILED (errors=2)

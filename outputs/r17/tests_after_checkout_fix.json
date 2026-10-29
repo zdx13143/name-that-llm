@@ -1,0 +1,9 @@
+{
+  "observed_utc": "2026-10-29T20:15:45.527635+00:00",
+  "tests": 11,
+  "failures": 0,
+  "errors": 0,
+  "wall_seconds": 1.7114047000650316,
+  "process_cpu_seconds": 1.15625,
+  "synthetic_only": true
+}

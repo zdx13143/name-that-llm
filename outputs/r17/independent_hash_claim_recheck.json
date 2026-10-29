@@ -1,0 +1,13 @@
+{
+  "team_e654_r16_typography_half_runnable.ipynb": {
+    "raw_sha256": "38204e9f00cb7da783932a917929d5d7af8c146f02f5e487bb033d5fb8b48f37",
+    "crlf_pairs": 2191,
+    "lf_canonical_sha256": "8b04a036a5aa43c41907fd6404849179cd6bee1d4588b6c866484487f6bd6075"
+  },
+  "team_e654_r16_typography_half.ipynb": {
+    "raw_sha256": "203aa67014e2f08271b586c719a595fabbbf5cf76f0f981cd7602141450e92ab",
+    "crlf_pairs": 2194,
+    "lf_canonical_sha256": "f5d1f8f3622183863a74f03be7b7b1cea5156edd88bc0dd284e00c2356cbab77"
+  },
+  "builder_reproduces_pending_sha": "cb05cb0fed8153190f515d819b3d39fa4fb4b4ed6c0d545047f613cf6bf038e6"
+}

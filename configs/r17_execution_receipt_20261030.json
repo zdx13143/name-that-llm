@@ -1,0 +1,135 @@
+{
+  "round": "R17",
+  "updated_utc": "2026-10-29T20:26:18.776535+00:00",
+  "status": "local_candidate_validated_pending_official_model_access",
+  "branch": "exp/team-e659-r17-20261030",
+  "base_commit": "73c0f65d4902f0b6317ca8333f1097815b8d7dfb",
+  "candidate": "notebooks/team_e659_r17_restore_llama_pending_access.ipynb",
+  "candidate_sha256": "4f18a588f534bad5e2f5245a82a7fa617b3fc14bf52a66bf751bb152f28a7681",
+  "release_ready": false,
+  "scored_baseline": {
+    "round": "R16",
+    "notebook": "zephyrpong/ntl-r16-typography-half-20261029",
+    "version": 2,
+    "scriptVersionId": 363487968,
+    "status": "Succeeded",
+    "public_score": 0.659,
+    "result_commit": "73c0f65",
+    "evidence_observed_utc_approx": "2026-10-29T20:02:00Z"
+  },
+  "change": {
+    "restored_member": "main.ll8v5",
+    "weight": 1.0,
+    "twin": 0.35,
+    "v5_adapter_count": 6,
+    "typography_strength": 0.5,
+    "other_prediction_scripts_byte_identical": true,
+    "remaining_omitted_member": "comp.lora24_public"
+  },
+  "local_verification": {
+    "test_runs": [
+      {
+        "observed_utc": "2026-10-29T20:14:48.212348+00:00",
+        "tests": 10,
+        "failures": 0,
+        "errors": 2,
+        "wall_seconds": 1.313776999944821,
+        "process_cpu_seconds": 0.625,
+        "synthetic_only": true
+      },
+      {
+        "observed_utc": "2026-10-29T20:15:45.527635+00:00",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "wall_seconds": 1.7114047000650316,
+        "process_cpu_seconds": 1.15625,
+        "synthetic_only": true
+      },
+      {
+        "observed_utc": "2026-10-29T20:21:27.732758+00:00",
+        "tests": 12,
+        "failures": 0,
+        "errors": 0,
+        "wall_seconds": 2.0219413999002427,
+        "process_cpu_seconds": 1.375,
+        "synthetic_only": true
+      }
+    ],
+    "test_invocations": 3,
+    "measured_test_process_cpu_seconds_total": 3.15625,
+    "other_tooling_compute_fully_metered": false,
+    "all_eight_code_cells_compile": true,
+    "complete_ensemble_cv": "not_evaluated",
+    "model_accuracy": "not_evaluated"
+  },
+  "counts": {
+    "local_candidates": 1,
+    "model_fits": 0,
+    "encoder_forwards": 0,
+    "official_accuracy_comparisons": 0,
+    "raw_csv_accesses": 0,
+    "protected_holdout_accesses": 0,
+    "bulk_model_downloads": 0,
+    "kaggle_drafts": 0,
+    "imports": 0,
+    "saves": 0,
+    "saved_versions": 0,
+    "formal_submissions": 0,
+    "git_pushes": 0
+  },
+  "remote": {
+    "notebook": null,
+    "scriptVersionId": null,
+    "public_score": null,
+    "private_result": null
+  },
+  "release_gate": {
+    "required_model": "metaresearch/llama-3.1/Transformers/8b/1",
+    "required_model_instance_version_id": null,
+    "account_access": "unverified; logged-in page displays Meta authorization and Kaggle verification requirement",
+    "input_refs_current": 30,
+    "input_refs_required_after_binding": 31,
+    "asset_contract": "configs/r17_llama_asset_contract_20261030.json",
+    "adapter_identity_basis": "retained immutable Kaggle dataset version, unique dataset mount, exact names/sizes; actual file hashes recorded at preflight, not compared to unpublished expected weight digests",
+    "user_action": "Obtain official Meta model access and complete Kaggle verification; report completion so normal access can be checked. Do not ask again for already-authorized eligible submission.",
+    "terms_accepted_by_agent": false,
+    "forms_submitted_by_agent": false
+  },
+  "ceilings": {
+    "local_python_cpu_hours": 4,
+    "remote_total_execution_hours": 8.3,
+    "saves": 2,
+    "formal_submissions": 1,
+    "gpu": "free T4 x2",
+    "internet": false
+  },
+  "tracking": {
+    "automation_id": "name-that-llm",
+    "status": "ACTIVE",
+    "interval_hours": 1,
+    "resume_round": "R17 only; no new round, duplicate Save or duplicate submission",
+    "unchanged_access_blocker_notification": "notify once; remain quiet afterward"
+  },
+  "local_evidence_sha256": {
+    "outputs/r17/access/official_access_required.png": "16dda78bfa1835b98ce80ca2da66c99e4f1e226064bc6752a23c66359644b40c",
+    "outputs/r17/access/official_access_required.txt": "5cec8c832ca410c6e120dfe4a4e65636b446fdbd16748dced192ffb29d246a19",
+    "outputs/r17/adapter_metadata/files.json": "039411b8ea4bf68701264e04c23e0a70995fbe3c8647be56f771c8458e5b7971",
+    "outputs/r17/adapter_metadata/view.json": "579442b1f6184a4d2589e7b293d8f13d4a2a2a78fdc5db6ba609d54f20333a7b",
+    "outputs/r17/checkout_line_endings.json": "acfc498bdb3ffa8d2860f639408d947c94f66465180e414594ac5f46e898be0a",
+    "outputs/r17/independent_hash_claim_recheck.json": "86eaa6769d113d499d0e0c7e584185df3d6388daf437ae3fc4de39e6145502b2",
+    "outputs/r17/tests_after_checkout_fix.json": "eaa64994af4efe122d46bc99eda9341c655ae46f48bf7280033781a69a60eb7a",
+    "outputs/r17/tests_after_checkout_fix.log": "381589a64ec11c5d17968f3c29640cc7e1d745f647095487477eba461be83119",
+    "outputs/r17/tests_final.json": "5dc73661b9867a883c25f39239d0c6975cf949b52be5b799e1162296158ee212",
+    "outputs/r17/tests_final.log": "0d64867549252f3eb0a07af98b8616df00314c875166af13ba8c5f0dce5924ce",
+    "outputs/r17/tests_initial.json": "d8489c3a78fc72a436ebeb9286a55b4cae77bb74bb33442862f7a4423f6ebdc1",
+    "outputs/r17/tests_initial.log": "b38652a0616bcdf62ff91bb262c55f91a08e0d00c4f9f7eb76a69ad1ef74ae93"
+  },
+  "artifact_sha256": {
+    "scripts/build_r17_candidate.py": "047f7153353d8e03a5c2f360676273f2914a770baa7aea4c963418da697df4fa",
+    "scripts/r17_runtime_contract.py": "725be061d8225c989c197bf5e79d583d4e79cca68182ea5bf204ab6b26d0b1a2",
+    "tests/test_r17_restore_llama.py": "c604778d69b2e2868c379da8484733f2dcc73b509ff441a6467366c85c80fb22",
+    "configs/r17_llama_asset_contract_20261030.json": "eacff31894d890330d4c9f270c413aa32301735192d6e9849ca480e45223fb7a",
+    "configs/r17_pending_recipe_20261030.json": "4f09f5065a71697a9f754511b6321f4af4abd0fc86ba7fc9a5da19032d3ede61"
+  }
+}
