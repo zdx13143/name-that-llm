@@ -1,0 +1,25 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Name That LLM · R15 学习记录</title><style>
+body{max-width:860px;margin:48px auto;padding:0 24px;font:17px/1.85 system-ui,sans-serif;color:#243047;background:#f7f8fa}
+h1{font-size:30px;line-height:1.4}h2{margin-top:36px;font-size:23px}a{color:#1757a6}code{background:#e9edf3;padding:2px 5px;border-radius:4px;font-size:.88em}footer{margin-top:40px;font-size:12px;color:#626e82;overflow-wrap:anywhere}
+</style><main><h1>Name That LLM：完整集成之后，怎样验证小改动</h1>
+<p>更新：2026-10-29。我们的正式最佳仍为 R12 V1 / 363188587 的 Public Score 0.654。队友 e651 为 0.651。外部 Roman V32 为 0.660，R14 已冻结该配方，但没有保存版本或正式分数。R15 仅完成本地算法入口和合成验证，还没有真实精度结果。</p>
+<h2>为什么这一轮固定完整集成</h2>
+<p>一个 SVC 分支提高，不代表加入几十种预测信号的完整方案也会提高。其它成员可能已经提供相同的信息，新的信号也可能改变原有正确答案。因此 R15 要固定同一份完整上游输出，只改变最后一个系数。旧 R6–R10 训练与搜索已经结束，本轮没有重复执行。</p>
+<p>此前 Windows 阶段的详细学习记录保留在独立分支中：<a href="https://github.com/zdx13143/name-that-llm/blob/38fcd59c3c2d15d5b568bdec2c8c0493b8a8bb4c/PROJECT_LEARNING.md">历史学习笔记</a>。本分支不改写那些历史结果。</p>
+<h2>R15 想回答什么</h2>
+<p>R14 在完整融合后，用 37 个标点和排版特征微调类别分数。比如单双换行、成对引号和括号会一起出现；上游模型也可能已经利用这些信息。重复强化可能帮助识别，也可能把不确定但原本正确的答案推错，目前没有因果证据。</p>
+<p>因此只登记一个候选：把末端排版改变量乘以 0.5。对照保持原强度 1.0，其它参数、成员和 ATLAS 覆盖保持一致。不在看到结果后再挑 0.25、0.75 或别的系数。</p>
+<h2>为什么现在还不能报提分</h2>
+<p>缺少完整集成的五折预测，以及每个训练依赖没有见过对应验证题目的证据。full-fit 模型已经用过这些题目，不能因为把预测数组命名为 OOF 就当成未见数据的预测。现有 ModernBERT/独立 SVC OOF 也不能代替完整集成。</p>
+<p>旧 30-prompt 留出已经使用且受保护，继续封存。既定 120-prompt 开发范围可以按历史算法恢复；行序、标签顺序和 GroupKFold 折号都有冻结哈希，无需重新抽样。</p>
+<h2>两种“验证通过”有什么不同</h2>
+<p>本地工程验证：15 项合成测试通过，确认原强度公式与冻结上游一致、减半只改指定项、错误折绑定和错误尺度被拒绝。这些数据都是人工构造的。</p>
+<p>本地预测验证：必须用真实、完整且隔离正确的五折预测计算 BA、18 类召回率和按 prompt 配对区间。本轮尚未开始，真实训练、编码器前向、官方标签评分和旧留出访问均为 0。</p>
+<p>Kaggle 保存、正式提交、Public Score 和 private 结果又各是独立阶段。本轮这些新增计数全部为 0。R12 已完成的 0.654 不再称作等待出分。</p>
+<h2>一个容易忽略的尺度问题</h2>
+<p>上游 <code>--save_lp</code> 会把分数再除以总权重。虽然每行最大类别可能不变，分数之间的间隔会改变，排版算法的置信度门控也会改变。因此消融必须保存 <code>_v38_before_hard</code> 的原始尺度。R15 另外核对独立生成的原强度结果，防止输入虽合法却不代表同一基线。</p>
+<h2>当前交付与下一依赖</h2>
+<p>实际代码：<a href="experiments/r15_typography_replay.py">CPU 重放</a>。方案：<a href="docs/R15_PLAN_20261029.md">预登记</a>。缺失资产与最小补齐方式：<a href="docs/R15_BUNDLE_CONTRACT_20261029.md">完整集成 bundle 契约</a>。实际结果：<a href="docs/R15_REPORT_20261029.md">R15 报告</a>。</p>
+<p>最省计算的下一步是取得已有、可核验的完整五折 logits 和训练排除记录。若它们不存在，就需要单独预算重建完整集成的折训练；不能把本轮几秒钟的 CPU 合成测试描述为这项工作已经完成。</p></main><footer>Markdown SHA256: 2f15ca8b80b5a5adb75ad740371ccf7890164058a234477945417e9d44009e70</footer></html>

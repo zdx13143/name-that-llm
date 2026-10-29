@@ -1,0 +1,236 @@
+{
+  "schema": "ntl-r15-local-execution-v1",
+  "observed_at_utc": "2026-10-29T04:44:26.943569+00:00",
+  "status": "synthetic_validated_predictive_blocked_missing_full_ensemble_oof",
+  "branch": "exp/team-e654-r15-20261029",
+  "worktree": "D:\\kaggle\\name_that_llm\\outputs\\worktrees\\team-e654-r15-20261029",
+  "preregistration_commit": "62bbc4633de1e4ae9c3a24f64209d243867fd257",
+  "implementation_commit_lookup": "git log -1 --format=%H -- configs/r15_execution_receipt_20261029.json",
+  "protocol_sha256": "31c5fd947dce8ad2a3e0994c4567d9ad95bc8b918da7ca336078299e2c6d3973",
+  "python_version": "3.11.6",
+  "remote_read_only_verification": {
+    "date": "2026-10-29",
+    "github_main": "dc62708e7116af472257d8f9159424fec2078f01",
+    "github_comparison": "identical; ahead_by=0; total_commits=0; files=[]",
+    "github_method": "GitHub connector read-only comparison and branch inspection",
+    "kaggle_method": "normal read-only browser UI; no version save or code execution",
+    "r12": {
+      "script_version": 363188587,
+      "status": "Succeeded",
+      "public_score": 0.654
+    },
+    "e651": {
+      "script_version": 362577633,
+      "public_score": 0.651
+    },
+    "external_roman_v32": {
+      "script_version": 363222852,
+      "public_score": 0.66,
+      "our_result": false
+    },
+    "r14_draft": {
+      "upstream_code_visible": true,
+      "version_history": "Starting Fresh",
+      "session": "off",
+      "recaptcha_connection_message_present": true,
+      "candidate_imported": false,
+      "saved_versions": 0
+    }
+  },
+  "protected_worktrees": {
+    "windows": {
+      "path": "D:\\kaggle\\name_that_llm",
+      "commit": "38fcd59c3c2d15d5b568bdec2c8c0493b8a8bb4c",
+      "tracked_and_untracked_status": "clean"
+    },
+    "r12": {
+      "path": "D:\\kaggle\\name_that_llm\\outputs\\worktrees\\team-e651-r12-20261028",
+      "commit": "769f40ac69f1fbf88eb330bd48d2bf294479d038",
+      "tracked_and_untracked_status": "clean"
+    },
+    "r13": {
+      "path": "D:\\kaggle\\name_that_llm\\outputs\\worktrees\\team-e651-r13-20261029",
+      "commit": "d14584f031aeec8c8f9f692b873806b853e89cd1",
+      "tracked_and_untracked_status": "clean"
+    },
+    "r14": {
+      "path": "D:\\kaggle\\name_that_llm\\outputs\\worktrees\\team-e654-r14-20261029",
+      "commit": "07cee7ebbae7b7d08bfa536f5370659ae27a5a54",
+      "tracked_and_untracked_status": "clean"
+    }
+  },
+  "inherited_r14_file_checks": {
+    "notebooks/team_e654_r14_public660.ipynb": {
+      "r15_raw_sha256": "5fd8bf520af59a1841fb19a035e922df123934bb1d1d05625b6853f6351b9dae",
+      "r14_raw_sha256": "5fd8bf520af59a1841fb19a035e922df123934bb1d1d05625b6853f6351b9dae",
+      "bytes_identical": true,
+      "lf_normalized_identical": true,
+      "r15_crlf_count": 0,
+      "r14_crlf_count": 0
+    },
+    "notebooks/reference_public660_v32.ipynb": {
+      "r15_raw_sha256": "2163a9ec2491aa0afa879766b2e157c31ea0890739821ade82a977545c65b0e9",
+      "r14_raw_sha256": "2163a9ec2491aa0afa879766b2e157c31ea0890739821ade82a977545c65b0e9",
+      "bytes_identical": true,
+      "lf_normalized_identical": true,
+      "r15_crlf_count": 0,
+      "r14_crlf_count": 0
+    },
+    "configs/r14_frozen_recipe_20261029.json": {
+      "r15_raw_sha256": "b94d21136c3a355f57b99eb0a868e566a23c1dab78c3514ed940db64db00d33a",
+      "r14_raw_sha256": "81df6f06f3f8db5a091f6232c02d412b7722e1ecf7523d72659fe5ecc21d87b6",
+      "bytes_identical": false,
+      "lf_normalized_identical": true,
+      "r15_crlf_count": 156,
+      "r14_crlf_count": 0
+    },
+    "configs/r14_execution_receipt_20261029.json": {
+      "r15_raw_sha256": "a6f0210e925574718a409d189e997249063590656363f35fa6ee4025740e6820",
+      "r14_raw_sha256": "0ffce99169e98f6d5ce38ecde12cb246b788948a65b94d8987efbc4648e18024",
+      "bytes_identical": false,
+      "lf_normalized_identical": true,
+      "r15_crlf_count": 64,
+      "r14_crlf_count": 0
+    },
+    "scripts/build_r14_reproduction.py": {
+      "r15_raw_sha256": "2bb6a701e4039bff06dd94c9cfb9fd280e1665c58f150b752d4435622c626342",
+      "r14_raw_sha256": "f6786c33c2c6fb211d3e6035121660c822052a0ac0770c5127a174eab1dcf0dd",
+      "bytes_identical": false,
+      "lf_normalized_identical": true,
+      "r15_crlf_count": 181,
+      "r14_crlf_count": 0
+    },
+    "tests/test_r14_reproduction.py": {
+      "r15_raw_sha256": "a931f0315feb3d85be3c22f9119be8221ec1f77d306440716430b6cad8df417e",
+      "r14_raw_sha256": "7655e23a1a65d0aa84786b2eb349588efbd5477516b4ef185b8228a3e238ab98",
+      "bytes_identical": false,
+      "lf_normalized_identical": true,
+      "r15_crlf_count": 237,
+      "r14_crlf_count": 0
+    }
+  },
+  "initial_integrity_check": "raw byte comparison stopped at frozen recipe; investigated and confirmed checkout-only CRLF/LF differences in four inherited text files; notebooks byte-identical",
+  "artifacts_sha256": {
+    "README.md": "755d2514d23d6d50fb011b75c1924086b55905317a51027dc612a5c80f969ca7",
+    "PROJECT_LEARNING.md": "2f15ca8b80b5a5adb75ad740371ccf7890164058a234477945417e9d44009e70",
+    "PROJECT_LEARNING.html": "56019435018edbdaa8f9f2d4e256cb405aaa3ab2be02094e56a94d7e5724953d",
+    "docs/R15_PLAN_20261029.md": "0ab200823c62862c494f13aedd939ba9a8626b4d91d61d4f1a227eb93bf2607d",
+    "docs/R15_REPORT_20261029.md": "9880ab0be1300627a37d5330145852e73258b53350950323ad69bb9ebdcdf1b7",
+    "docs/R15_BUNDLE_CONTRACT_20261029.md": "264ef08e8a3a9b0b26409af94173324fce6b5a2c77dbb9672b13b078b6f97e32",
+    "configs/r15_protocol_20261029.json": "31c5fd947dce8ad2a3e0994c4567d9ad95bc8b918da7ca336078299e2c6d3973",
+    "experiments/r15_typography_replay.py": "25180c6be151543c3b46af4da352605bdb9fa989fb20d1f6ee03069ee4ba7a73",
+    "tests/test_r15_typography_replay.py": "e040fbcb052e33392196e02b5f7e5b8d8e459c8e57901d322b1c0dedd22a73ec",
+    "scripts/render_r15_learning.py": "a2069999ab5d1d1e2578736c1be68da6b315e611551e448ed2dc3a5484004fe0"
+  },
+  "local_evidence_sha256": {
+    "outputs/r15/e651_live.txt": "9c3b09ca8a744521300a71183345275fe174981099011a40ad146083671ac944",
+    "outputs/r15/r12_live.png": "1247a851390087f7a9ca64ab2a6de12e7b2bfd3793cd083ecd4a50717bedbed3",
+    "outputs/r15/r12_live.txt": "7c64366686f2443e967277b42fc2c08e852d6b0a3fb85505d8465fff29a50912",
+    "outputs/r15/r14_draft_live.png": "43683b1f9992318e9d90e48295bea06a9310860d9c4390b4cc183c71a2bbe2f1",
+    "outputs/r15/r14_draft_live_redacted.txt": "ce6347f19cad1d6cb60f1da8fc9ab67b8de6d8412a4fffb98ac9fc7dd412b156",
+    "outputs/r15/r14_draft_status.txt": "79d674af0a8cfc4be2b7b9e851ce4c3abb0542205062534b9f0e36d6a98f9dde",
+    "outputs/r15/readiness_final.json": "9193e25732f7668993c94d38b76c4adc9e6c65285e08f4dca1e870ff8f1bf8e0",
+    "outputs/r15/readiness_initial.json": "c53136a82039eea21d013636f4a0978e1043b4b16690d90e5421e34bf1f45f13",
+    "outputs/r15/reference_v32_live.png": "7634e61e312fb0551cd1cc3c8e7ed7a81f0f5c5697fdedd2f9bb460d0e44a795",
+    "outputs/r15/reference_v32_live.txt": "3686bc3fac9ea7f2bccc9448048f250db1f31e21d30094e22b0e55ba04e838dd",
+    "outputs/r15/tests_after_fixture_fix.log": "60ada08a9dda18d767dbe9ec2bb56599736b2d94b060aa06e478103ff7de13ff",
+    "outputs/r15/tests_final.log": "c54cf87686a87ee37aade188048dd4e2bb2608fcd9bb13216ba8c80bad067d26",
+    "outputs/r15/tests_initial.log": "f582552891920552b962ec4d62b747bfe6d5f9b061da648fa81404e1081f5b05",
+    "outputs/r15/tests_loader.log": "b3098bfcea5113745bd6db9d1efa4bc52675dbcf0bd8ece0d974b1c4cdb39308"
+  },
+  "tests": {
+    "command": "python -m unittest discover -s tests -p test_r15_typography_replay.py -v",
+    "invocations": [
+      {
+        "log": "outputs/r15/tests_initial.log",
+        "tests_run": 0,
+        "reported_elapsed_seconds": 0.032,
+        "result": "fixture_setup_failed"
+      },
+      {
+        "log": "outputs/r15/tests_after_fixture_fix.log",
+        "tests_run": 12,
+        "reported_elapsed_seconds": 2.137,
+        "result": "passed"
+      },
+      {
+        "log": "outputs/r15/tests_loader.log",
+        "tests_run": 14,
+        "reported_elapsed_seconds": 1.676,
+        "result": "passed"
+      },
+      {
+        "log": "outputs/r15/tests_final.log",
+        "tests_run": 15,
+        "reported_elapsed_seconds": 1.543,
+        "result": "passed"
+      }
+    ],
+    "total_reported_elapsed_seconds": 5.388,
+    "final_passed": 15,
+    "final_failed": 0,
+    "data_scope": "artificial fixtures only; not official accuracy or full model execution"
+  },
+  "readiness": {
+    "invocations": 2,
+    "final_exit_code": 2,
+    "state": "blocked",
+    "file": "outputs/r15/readiness_final.json",
+    "official_data_loaded": false,
+    "bundle_file_hashes_verified": false
+  },
+  "review": {
+    "independent_static_reviews": 2,
+    "scope": [
+      "math and prompt bootstrap",
+      "identity and complete-ensemble provenance contract"
+    ],
+    "findings_addressed_before_final_tests": [
+      "strict integer zero holdout count",
+      "metadata readiness explicitly says hashes unchecked",
+      "standalone metric validation",
+      "NPY header shape and dtype guard before allocation"
+    ]
+  },
+  "this_round_counters": {
+    "registered_candidate_settings": 1,
+    "real_candidate_comparisons": 0,
+    "real_model_fits": 0,
+    "real_typography_statistic_fits": 0,
+    "encoder_forwards": 0,
+    "official_label_accuracy_evaluations": 0,
+    "protected_holdout_accesses": 0,
+    "model_downloads": 0,
+    "gpu_jobs": 0,
+    "new_kaggle_drafts": 0,
+    "kaggle_imports": 0,
+    "kaggle_saves": 0,
+    "formal_submissions": 0,
+    "new_public_scores": 0,
+    "git_pushes": 0,
+    "new_remote_automations": 0
+  },
+  "resource_notes": {
+    "synthetic_budget_seconds": 600,
+    "aggregate_cpu_time_measured": false,
+    "peak_rss_measured": false,
+    "future_execution_wrapper_implemented": false,
+    "future_budget_seconds": 120,
+    "future_memory_gib": 2
+  },
+  "predictive_result": {
+    "balanced_accuracy": null,
+    "per_class_recall": null,
+    "gain": null,
+    "gate_passed": null,
+    "public_score": null,
+    "private_score": null
+  },
+  "remaining_dependencies": [
+    "reviewed complete five-fold raw and independent R14 baseline logits",
+    "original development-only identities/text/folds matching frozen hashes",
+    "verified training exclusions and complete dependency/coverage evidence",
+    "single-use bounded execution claim and supervisor bound to the admitted bundle"
+  ],
+  "historical_counters_reset": false
+}
