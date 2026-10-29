@@ -1,0 +1,142 @@
+{
+  "schema": "ntl-r15-p0-input-compatibility-v1",
+  "recorded_at_utc": "2026-10-29T06:44:49.089536+00:00",
+  "base_commit": "8707ff9e6e5fd1e8887d4e16aa6de8f065b79131",
+  "branch": "exp/team-e654-r15-20261029",
+  "commit_lookup": "git log -1 --format=%H -- configs/r15_p0c_receipt_20261029.json",
+  "status": "historical_label_interface_fixed_raw_export_prepared_pending_permission",
+  "previous_goal_turn_classification": "progress: new configuration/source evidence",
+  "this_goal_turn_progress": [
+    "logged-in private dataset inventory exhausted for known account",
+    "fixed deterministic historical-label versus prediction-column incompatibility",
+    "prepared disabled one-time raw export fallback with synthetic boundary tests"
+  ],
+  "protocol_sha256": "31c5fd947dce8ad2a3e0994c4567d9ad95bc8b918da7ca336078299e2c6d3973",
+  "registered_candidate_settings_unchanged": 1,
+  "label_fix": {
+    "development_labels_match_original_r2_snapshot": true,
+    "historical_row_identity_preserved": true,
+    "prediction_columns_remain_r14_order": true,
+    "index_mapping": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      5,
+      6,
+      7,
+      8,
+      0,
+      1,
+      2,
+      3,
+      4,
+      17,
+      9,
+      10,
+      16
+    ],
+    "input_mutated": false
+  },
+  "raw_export_proposal": {
+    "approval": "pending_user_boundary_amendment",
+    "approval_reference": null,
+    "real_source_opened": false,
+    "real_source_hashed": false,
+    "real_claim_created": false,
+    "real_quarantine_created": false,
+    "prospective_protected_record_parse_events_if_approved": 1080,
+    "prospective_protected_rows_persisted": 0,
+    "existing_preisolated_intake_relaxed": false,
+    "training_admitted": false
+  },
+  "tests": [
+    {
+      "tests_run": 28,
+      "failures": 0,
+      "errors": 0,
+      "process_cpu_seconds": 5.875,
+      "scope": "artificial fixtures only",
+      "reason": "historical development label order conflicts with R14 prediction order; changed validation/replay interface"
+    },
+    {
+      "tests_run": 8,
+      "failures": 0,
+      "errors": 0,
+      "process_cpu_seconds": 5.09375,
+      "scope": "generated artificial CSV bytes only; production approval gate remains pending"
+    }
+  ],
+  "independent_reviews": {
+    "historical_identity_audit": "confirmed order conflict from source and snapshot",
+    "label_fix_material_findings": 0,
+    "raw_export_scope_material_findings": 0
+  },
+  "resources": {
+    "cumulative_cpu_seconds_cap": 14400,
+    "prior_measured_p0_python_cpu_seconds": 19.625,
+    "new_test_cpu_seconds": 10.96875,
+    "render_and_delivery_cpu_seconds_before_receipt": 0.03125,
+    "total_host_cpu_measured": false,
+    "unmetered_scope": "browser/scout/tool/Git and small receipt work; no long-running compute",
+    "gpu_jobs": 0,
+    "downloaded_payload_bytes": 0,
+    "known_measured_p0_python_cpu_seconds_total": 30.625
+  },
+  "counters": {
+    "real_model_fits": 0,
+    "encoder_forwards": 0,
+    "official_label_evaluations": 0,
+    "protected_content_reads": 0,
+    "real_data_admissions": 0,
+    "real_training_admissions": 0,
+    "kaggle_imports": 0,
+    "kaggle_saves": 0,
+    "formal_submissions": 0,
+    "git_pushes": 0,
+    "remote_automations": 0,
+    "new_public_scores": 0
+  },
+  "historical_counters_preserved": true,
+  "results": {
+    "balanced_accuracy": null,
+    "public_score": null,
+    "private_score": null
+  },
+  "artifacts_sha256": {
+    "README.md": "95a34139c89dba73186f162a68caf750450237ade1f8c65aa19d67b50fcdb732",
+    "PROJECT_LEARNING.md": "6b20c91be005c6b2df265ceace1eb1558837bf585960971d14f825c29cf6bbc4",
+    "PROJECT_LEARNING.html": "343cb55276453327fac5a8c48bc427869214fc1f48bb83d11990de49455991f0",
+    "experiments/r15_typography_replay.py": "b370b5a67d0e4977bb0255fb2688b80b51400224ac4d3d48637cec0e73cd4b81",
+    "tests/test_r15_typography_replay.py": "0e19a4ae241ccac2d281e8bc5c816b694e2bf0c671f9fe90e08285fefdd580a9",
+    "tests/test_r15_dev_export.py": "5de553077f4f372f95c2a0931769db1f6a264d3da8ed92eefb56cdfca1b17283",
+    "tests/test_r15_raw_export_proposal.py": "69fd423276bd61e47de026f83676f177337d18de3f834cc916424958d4ea326f",
+    "scripts/r15_prepare_raw_dev_export.py": "567f1222b0bed6fd0db318414a064fd28edb73eac592f5d018243c9ed9be1903",
+    "configs/r15_raw_export_proposal_20261029.json": "946e7f94487f5631d155942707c5bd33cf7d5199fdfbc031748b9a57d1e9716d",
+    "docs/R15_BUNDLE_CONTRACT_20261029.md": "928317be5a5f46ad039c2a8ac3caf2d1b198921ce1e3f9e5045818d546eb5e9d",
+    "docs/R15_P0_INPUT_COMPATIBILITY_20261029.md": "016c98d6d12ae8e2f3f3d31e36089c36e9c59295282343491d6c7b961f9d3b3b"
+  },
+  "local_evidence_sha256": {
+    "outputs/r15_p0c/label_compatibility_tests.json": "d6cbae406cc3259ac2253564a340724ce0c2a5a91726e5c8c65b63aceab60bac",
+    "outputs/r15_p0c/label_compatibility_tests.log": "c925b20ba8e4832b8f0df95b622b73079c2d6e0657855216d569b56cb409b2c8",
+    "outputs/r15_p0c/private_asset_inventory.json": "00b2d7ebd8e48cd4457aa61e7a8ab1460c6889eb50fba4ab1da841a0d4d674ce",
+    "outputs/r15_p0c/raw_export_proposal_tests.json": "9c7ac7a07c64ad82c1c8b2ac2c49328a75233b9d9b07719887acffeb6021f3bb",
+    "outputs/r15_p0c/raw_export_proposal_tests.log": "08d28de6d3fdebed59c3e8f2438bd71f07796b2b235bc1c884f8419ca97da608"
+  },
+  "source_reference_sha256": {
+    "D:/kaggle/name_that_llm/name-that-llm/outputs/windows_modernbert_dev_20261024_r2/source_snapshot/config/labels.json": "d8c9dcad5979236fb0e5f5504dd2e53c676123bf75cbf06faa13bc1e86524b9d",
+    "D:/kaggle/name_that_llm/name-that-llm/scripts/build_round7_assets.py": "15bcc58610e73d30e1c8c9c08e5794e9f344aae41a08453d5c51aa7ff7e3e6d0",
+    "D:/kaggle/name_that_llm/name-that-llm/scripts/package_round7_runtime.py": "dee3fb10aaee503dd1826396a39536529e52129d6bd562cc119ae0321733b35d",
+    "D:/kaggle/name_that_llm/name-that-llm/scripts/build_round10_assets.py": "c8942d6a0abad2fc56f1c795fdf5c0707b21545e81986715c95f15d4a3b7ca90",
+    "D:/kaggle/name_that_llm/name-that-llm/scripts/package_round10_runtime.py": "a891a8d2d70589288b69e8641ae9a6c9ba26de8f2c461fa480943f4fcd1ba4ff",
+    "D:/kaggle/name_that_llm/name-that-llm/scripts/restore_team_split.py": "6194364481ed72a822be82a3f5d40d09a4a93fb029b42ce73ab29f34edadc84c"
+  },
+  "delivery_validation": {
+    "changed_document_links_verified": 36,
+    "learning_html_source_hash": "matches",
+    "historical_label_source_verified": true,
+    "frozen_protocol_unchanged": true,
+    "real_export_claim_and_output_absent": true
+  }
+}

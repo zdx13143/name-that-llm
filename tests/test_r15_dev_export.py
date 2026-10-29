@@ -14,12 +14,12 @@ spec = importlib.util.spec_from_file_location('r15_dev_export', ROOT / 'scripts/
 mod = importlib.util.module_from_spec(spec)
 sys.modules[spec.name] = mod
 spec.loader.exec_module(mod)
-from r15_typography_replay import LABELS, canonical_hash
+from r15_typography_replay import DEVELOPMENT_LABELS, canonical_hash
 
 
 def fixture():
     data = {k: [] for k in mod.FIELDS}
-    data['labels'] = list(LABELS)
+    data['labels'] = list(DEVELOPMENT_LABELS)
     for g in range(120):
         for c in range(18):
             if g == 0 and c == 0:

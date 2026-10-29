@@ -58,8 +58,9 @@ def fixture():
                         (3 + i % 19)) + ('### ``` > ' if y % 4 == 0 else 'Overall, done.')
                         for i, y in enumerate(truth)])
     n = len(truth)
+    stored_truth = [r.DEVELOPMENT_LABELS.index(r.LABELS[y]) for y in truth]
     data = {'row_index': list(range(n)), 'ids': [f'synthetic-row-{i}' for i in range(n)],
-            'groups': groups.tolist(), 'truth': truth.tolist(), 'labels': list(r.LABELS),
+            'groups': groups.tolist(), 'truth': stored_truth, 'labels': list(r.DEVELOPMENT_LABELS),
             'texts': texts.tolist(), 'fold_id': folds.tolist()}
     protocol = json.loads(r.PROTOCOL.read_text(encoding='utf-8'))
     protocol['row_identity_sha256'] = r.canonical_hash({k: data[k] for k in ('row_index', 'ids', 'groups', 'truth', 'labels')})
@@ -109,7 +110,8 @@ class R15Tests(unittest.TestCase):
         self.assertIsNone(report['public_score'])
         self.assertIsNone(report['private_score'])
         self.assertAlmostEqual(report['baseline']['balanced_accuracy'],
-                               balanced_accuracy_score(data['truth'], reference.argmax(1)), places=14)
+                               balanced_accuracy_score([r.LABELS.index(data['labels'][y]) for y in data['truth']],
+                                                       reference.argmax(1)), places=14)
         self.assertEqual(len(report['baseline']['per_class_recall']), 18)
 
     def test_markers_gates_bounds_and_no_input_mutation(self):
@@ -200,12 +202,38 @@ class R15Tests(unittest.TestCase):
             f = len(seen)
             tr = np.asarray(data['fold_id']) != f
             np.testing.assert_array_equal(texts, np.asarray(data['texts'])[tr])
-            np.testing.assert_array_equal(truth, np.asarray(data['truth'])[tr])
+            expected = np.asarray([r.LABELS.index(data['labels'][y]) for y in data['truth']])
+            np.testing.assert_array_equal(truth, expected[tr])
             seen.append(f)
             return actual(texts, truth)
         with mock.patch.object(r, 'fit_typography', side_effect=checked_fit):
             r.replay(data, raw, reference, manifest, protocol)
         self.assertEqual(seen, list(range(5)))
+
+    def test_historical_truth_maps_by_name_without_changing_identity(self):
+        data, _, _, _, protocol = self.bundle
+        before = copy.deepcopy(data)
+        historical, folds, groups = r.validate_development(data, protocol)
+        mapped = r.truth_in_prediction_order(historical, data['labels'])
+        expected_map = np.asarray([11, 12, 13, 14, 15, 5, 6, 7, 8, 0, 1, 2, 3, 4, 17, 9, 10, 16])
+        np.testing.assert_array_equal(mapped, expected_map[historical])
+        result = r.compare_predictions(mapped, mapped, mapped, groups, folds, protocol)
+        self.assertEqual(result['baseline']['balanced_accuracy'], 1.0)
+        self.assertEqual(result['baseline']['per_class_recall']['gpt-5.5'], 1.0)
+        self.assertEqual(data, before)
+
+    def test_reordered_development_export_rejected_before_fitting(self):
+        data, raw, reference, manifest, protocol = self.bundle
+        changed = copy.deepcopy(data)
+        changed['truth'] = [r.LABELS.index(data['labels'][y]) for y in data['truth']]
+        changed['labels'] = list(r.LABELS)
+        with mock.patch.object(r, 'fit_typography', side_effect=AssertionError('No fit')):
+            with self.assertRaisesRegex(ValueError, 'identity changed'):
+                r.replay(changed, raw, reference, manifest, protocol)
+        wrong_manifest = copy.deepcopy(manifest)
+        wrong_manifest['labels'] = list(r.DEVELOPMENT_LABELS)
+        with self.assertRaisesRegex(ValueError, 'Class order mismatch'):
+            r.validate_manifest(wrong_manifest, protocol)
 
     def test_prompt_bootstrap_matches_independent_group_draws(self):
         truth = np.tile(np.arange(18), 120)

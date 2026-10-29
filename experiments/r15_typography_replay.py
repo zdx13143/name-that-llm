@@ -28,6 +28,14 @@ LABELS = ('claude-fable-5', 'claude-opus-4-6', 'claude-opus-4-8', 'claude-opus-5
           'gemini-3.7-flash', 'gemini-3.8-flash', 'glm-5.3', 'glm-5.3-flash',
           'gpt-5.5', 'gpt-5.6-luna', 'gpt-5.6-sol', 'gpt-5.6-terra',
           'gpt-6-astra', 'kimi-k3', 'qwen3.8-max')
+# R2's frozen row hash includes this order and truth indices in this order.
+# Prediction arrays retain R14's LABELS order above; never rewrite the export.
+DEVELOPMENT_LABELS = ('gpt-5.5', 'gpt-5.6-luna', 'gpt-5.6-sol', 'gpt-5.6-terra',
+                      'gpt-6-astra', 'gemini-3.1-pro-preview', 'gemini-3.6-flash',
+                      'gemini-3.7-flash', 'gemini-3.8-flash', 'claude-fable-5',
+                      'claude-opus-4-6', 'claude-opus-4-8', 'claude-opus-5',
+                      'claude-sonnet-5', 'qwen3.8-max', 'glm-5.3',
+                      'glm-5.3-flash', 'kimi-k3')
 
 # These are dependency roles, not a claimed count of trained models/adapters.
 # A role receipt must enumerate ALL underlying checkpoints/heads and preprocessing.
@@ -173,7 +181,7 @@ def validate_development(data, protocol):
     require(all(len(data[k]) == n for k in ('row_index', 'ids', 'groups', 'truth', 'texts', 'fold_id')),
             'Development row counts differ')
     require(len(set(data['ids'])) == n and len(set(data['row_index'])) == n, 'Duplicate rows')
-    require(data['labels'] == list(LABELS), 'Labels differ')
+    require(data['labels'] == list(DEVELOPMENT_LABELS), 'Historical development label order differs')
     require(len(set(data['groups'])) == protocol['development_prompts'], 'Expected exactly 120 development prompts')
     truth, folds, groups = (np.asarray(data[k]) for k in ('truth', 'fold_id', 'groups'))
     require(truth.dtype.kind in 'iu' and set(truth) == set(range(18)), 'Invalid truth labels')
@@ -184,6 +192,17 @@ def validate_development(data, protocol):
         require(set(truth[va]) == set(range(18)) and set(truth[tr]) == set(range(18)),
                 'Every fold must contain all classes')
     return truth, folds, groups
+
+
+def truth_in_prediction_order(truth, development_labels):
+    """Translate indices by class name without changing frozen development data."""
+    require(list(development_labels) == list(DEVELOPMENT_LABELS),
+            'Historical development label order differs')
+    truth = np.asarray(truth)
+    require(truth.ndim == 1 and truth.dtype.kind in 'iu'
+            and np.isin(truth, np.arange(18)).all(), 'Invalid development truth')
+    mapping = np.asarray([LABELS.index(label) for label in development_labels], dtype=np.int64)
+    return mapping[truth]
 
 
 def validate_fold_binding(manifest, data, folds, groups):
@@ -303,6 +322,7 @@ def replay(data, raw_logits, upstream_r14_logits, manifest, protocol):
     validate_manifest(manifest, protocol)
     truth, folds, groups = validate_development(data, protocol)
     validate_fold_binding(manifest, data, folds, groups)
+    truth = truth_in_prediction_order(truth, data['labels'])
     raw, reference = np.asarray(raw_logits), np.asarray(upstream_r14_logits)
     require(raw.shape == reference.shape == (len(truth), 18)
             and raw.dtype.kind == reference.dtype.kind == 'f'

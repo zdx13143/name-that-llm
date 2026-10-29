@@ -56,6 +56,14 @@ keys, no spaces, `ensure_ascii=False`, `allow_nan=False`. Row identity hashes
 the object containing exactly `row_index, ids, groups, truth, labels`; text
 and folds hash their ordered lists. This matches the historical R2 code.
 
+The development file preserves R2's original class order (`gpt-5.5` first),
+with `truth` indexing that list. Prediction columns and manifest `labels`
+preserve R14's alphabetic order (`claude-fable-5` first). They intentionally
+differ. After checking the original development hashes, replay translates truth
+indices by class name before fitting typography or computing metrics; it does
+not reorder the export or overwrite its hash. The historical-to-prediction
+index mapping is `[11,12,13,14,15,5,6,7,8,0,1,2,3,4,17,9,10,16]`.
+
 Manifest top-level values:
 
 - `schema`: `ntl-full-ensemble-oof-v1`.
