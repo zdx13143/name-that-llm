@@ -1,0 +1,18 @@
+{
+  "development_rows": 2159,
+  "development_prompts": 120,
+  "folds": 5,
+  "row_identity_sha256": "eb94b93d3557fde2fbbfa4cd897d1ef25c2e1fe73ee01cf526a65d5c433dcd20",
+  "text_sha256": "ad192430092d19e4a44aa1ae263d051a987685dd1883fcdacab3f40a82cae5b9",
+  "fold_sha256": "96040086312dca7ce1d3d14bb3ee59640870ef35edba42c746c7f84ae7b827da",
+  "historical_split_sha256": "c8c24921f617ad483b9e14cb23d0d64a0fbbde44c0214868445e8d0e30d6e1db",
+  "schema": "ntl-development-only-export-v1",
+  "producer": null,
+  "source_kind": "preexisting_development_only_artifact",
+  "all_input_sources_development_only": false,
+  "raw_official_csv_opened": null,
+  "protected_content_reads": null,
+  "historical_train_sha256": "40a22ce8d88c5f46feb4637a099db815bef5f713ffe53e89dbe1b7b21de77707",
+  "development_file_sha256": null,
+  "source_evidence_sha256": null
+}

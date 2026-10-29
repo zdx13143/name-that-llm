@@ -1,0 +1,218 @@
+{
+  "schema": "ntl-r15-priority-zero-receipt-v1",
+  "recorded_at_utc": "2026-10-29T05:48:49.867462+00:00",
+  "base_commit": "fcd465477f69eb95a5a639d2e33ceaf583d0c6bf",
+  "branch": "exp/team-e654-r15-20261029",
+  "commit_lookup": "git log -1 --format=%H -- configs/r15_p0_receipt_20261029.json",
+  "status": "preparation_delivered_dependencies_blocked_no_training_admission",
+  "authorization": "Priority 0 local source/config/data-isolation/fusion preparation <=4 CPU-hours; no GPU/push/Save/submission/protected30 reads",
+  "sources_acquired": [
+    {
+      "source_file": "s7_v1.py.txt",
+      "source_version": 358911769,
+      "source_sha256": "d0c792e1262683e7661ec6b195a73e98facd3713c609a3e849ac85d0513c2f45",
+      "source_url": "https://www.kaggle.com/code/lucasboesen/name-that-llm-train-lora24-s7?scriptVersionId=358911769",
+      "download_bytes": 22546
+    },
+    {
+      "source_file": "instyle_v2.py.txt",
+      "source_version": 359652568,
+      "source_sha256": "bacc544956c4f30b5fd01e19429a5fe37a3e63c46de6b3733100b5370874011b",
+      "source_url": "https://www.kaggle.com/code/vnton37nguyn/ntl-train-lora-qwen25-instyle?scriptVersionId=359652568",
+      "download_bytes": 14788
+    },
+    {
+      "source_file": "tokattn_v1.py.txt",
+      "source_version": 358928013,
+      "source_sha256": "29d3db981da5c1937524c90fd758ebf3562a64fdabf6ef5533447c7995d1d0a6",
+      "source_url": "https://www.kaggle.com/code/lucasboesen/name-that-llm-train-tokattn?scriptVersionId=358928013",
+      "download_bytes": 20630
+    },
+    {
+      "source_file": "tokattn2_v1.py.txt",
+      "source_version": 358948428,
+      "source_sha256": "a437392ec54d741d7b07ffe37f23e675f2772ab1903c6d2fde9951b0481808fa",
+      "source_url": "https://www.kaggle.com/code/lucasboesen/name-that-llm-train-tokattn2?scriptVersionId=358948428",
+      "download_bytes": 28490
+    }
+  ],
+  "source_index_sha256": "748e34423372cf53769613941bd8bf4b108d1213cc72037520eb16a58c50b884",
+  "static_checks": {
+    "source_modules_ast_valid": 4,
+    "embedded_workers_ast_valid": 2,
+    "source_execution": false,
+    "required_roles_covered": 33,
+    "required_pipeline_ready": false
+  },
+  "safe_data_supply": {
+    "real_export_found": false,
+    "raw_official_csv_opened": false,
+    "historical_r2_cache_opened": false,
+    "real_development_payload_opened": false,
+    "new_real_producer_review_created": false,
+    "readiness_exit_code": 2,
+    "reason": "Missing development_export_receipt.json; no raw-data fallback exists",
+    "protocol_canonical_sha256": "da3538f8566672a7e3bb6a34a5436a7e21118459e7bdd91e507f4d56b39f5c6c"
+  },
+  "nested_producer": {
+    "id": "r15p1-nested-dev120-draft",
+    "exact_r14": false,
+    "training_enabled": false,
+    "inner_folds_total": 25,
+    "real_inner_folds_generated": false,
+    "calibration_objective_source_still_missing": true,
+    "original_replay_protocol_unchanged": true
+  },
+  "tests": {
+    "command": "python -m unittest discover -s tests -p test_r15_dev_export.py -v",
+    "initial": {
+      "tests_run": 9,
+      "failures": 0,
+      "errors": 0,
+      "process_cpu_seconds": 8.984375,
+      "scope": "artificial fixtures only"
+    },
+    "final": {
+      "tests_run": 11,
+      "failures": 0,
+      "errors": 0,
+      "process_cpu_seconds": 8.21875,
+      "scope": "artificial fixtures only",
+      "reason_for_rerun": "metadata type check and semantic protocol pin added after independent review"
+    },
+    "final_log": "outputs/r15_p0/tests_final.log",
+    "prior_replay_tests_rerun": false
+  },
+  "independent_reviews": {
+    "source_inventory_and_report": {
+      "material_findings": 0
+    },
+    "intake_validator": {
+      "findings_addressed": [
+        "non-object sidecars rejected before field access; recursion errors produce blocked status",
+        "canonical full-protocol hash pinned at CLI before export reads"
+      ],
+      "targeted_final_tests": 11
+    }
+  },
+  "resources": {
+    "cpu_seconds_cap": 14400,
+    "source_download_bytes_cap": 104857600,
+    "known_download_file_bytes": 97812,
+    "source_metadata_download_scope": "4 source downloads plus Apache license; webpage traffic excluded",
+    "one_small_metadata_download_timed_out": true,
+    "measured_python_cpu_seconds": 18.359375,
+    "measured_cpu_scope": "source extraction/archive, both synthetic test runs, readiness and render; excludes unmetered UI/tool/git and small manifest-generation overhead",
+    "total_host_cpu_measured": false,
+    "aggregate_gpu_hours": 0,
+    "new_paid_resources": 0,
+    "long_running_compute_jobs": 0,
+    "thread_limits": {
+      "OMP_NUM_THREADS": 1,
+      "OPENBLAS_NUM_THREADS": 1,
+      "MKL_NUM_THREADS": 1
+    },
+    "environment": {
+      "python": "3.11.6",
+      "numpy": "2.4.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.0"
+    }
+  },
+  "counters": {
+    "new_training_source_archives": 4,
+    "new_synthetic_test_invocations": 2,
+    "new_readiness_invocations": 2,
+    "real_model_fits": 0,
+    "real_encoder_forwards": 0,
+    "official_label_evaluations": 0,
+    "real_typography_fits": 0,
+    "real_replays": 0,
+    "protected_content_reads": 0,
+    "real_training_membership_admissions": 0,
+    "weight_downloads": 0,
+    "prediction_downloads": 0,
+    "kaggle_imports": 0,
+    "kaggle_saves": 0,
+    "formal_submissions": 0,
+    "new_drafts": 0,
+    "git_pushes": 0,
+    "new_remote_automations": 0
+  },
+  "historical_counters_preserved": true,
+  "unchanged_files_sha256": {
+    "experiments/r15_typography_replay.py": "25180c6be151543c3b46af4da352605bdb9fa989fb20d1f6ee03069ee4ba7a73",
+    "tests/test_r15_typography_replay.py": "e040fbcb052e33392196e02b5f7e5b8d8e459c8e57901d322b1c0dedd22a73ec",
+    "configs/r15_protocol_20261029.json": "31c5fd947dce8ad2a3e0994c4567d9ad95bc8b918da7ca336078299e2c6d3973",
+    "scripts/render_r15_learning.py": "a2069999ab5d1d1e2578736c1be68da6b315e611551e448ed2dc3a5484004fe0"
+  },
+  "r14_candidate_sha256": "5fd8bf520af59a1841fb19a035e922df123934bb1d1d05625b6853f6351b9dae",
+  "protected_worktrees": {
+    "windows": {
+      "commit": "38fcd59c3c2d15d5b568bdec2c8c0493b8a8bb4c",
+      "clean": true
+    },
+    "r12": {
+      "commit": "769f40ac69f1fbf88eb330bd48d2bf294479d038",
+      "clean": true
+    },
+    "r13": {
+      "commit": "d14584f031aeec8c8f9f692b873806b853e89cd1",
+      "clean": true
+    },
+    "r14": {
+      "commit": "07cee7ebbae7b7d08bfa536f5370659ae27a5a54",
+      "clean": true
+    }
+  },
+  "remaining_blockers": [
+    "preexisting reviewed development-only 2159-row text export",
+    "main v5 and Nishant/DeBERTa trainer configurations",
+    "COMP public/Claude, UltraBERT and ATLAS trainer/config provenance",
+    "reviewed external row lineage and per-stage exclusion records",
+    "exact nested calibration objective/selection source and preregistration",
+    "separate future producer/DAG/budget admission before GPU"
+  ],
+  "artifacts_sha256": {
+    "README.md": "99a46ff770bc1d113998ff982c05071cdecdc34d0fe87cad87022fb658258c0e",
+    "PROJECT_LEARNING.md": "773d94924dbca338663385a6b84b81c961b429fefcb5f776234156c6ab8fe23b",
+    "PROJECT_LEARNING.html": "68dd7ec31b47ef3886714d3cdff5e6ed4d9fb9e90fead165392c8013df6f1292",
+    "docs/R15_REBUILD_PLAN_20261029.md": "1fd86ccf440903806c0bda38b6da1d878d2f7183556919b8c5877a3e7ca300ce",
+    "docs/R15_P0_REPORT_20261029.md": "2c202a4f64ddcf1e57ab2cb8ae7dc260d2efb59c33a491666aac19694b4e8b79",
+    "configs/r15_p0_preparation_20261029.json": "cc2f0e04f148037bd70cc2305c161115c698aca26527c8c9af7aa9df1af9987d",
+    "configs/r15_p0_source_inventory_20261029.json": "8b5c2ad61f30c72a246e0a4bd27418de4da1ff04b20b7df2059ff9252c06a587",
+    "scripts/r15_validate_dev_export.py": "0c27ed918c83d0066efa8ad065a68911e9b5e2a874979173f74c893540ee5636",
+    "tests/test_r15_dev_export.py": "2c0f6489c45fbb72622e782ba8ef67fff6ae119e61262cbc21b10aea20f731a4",
+    "reference_sources/r15_p0/.gitattributes": "f5d6d9cb03b1a213d01607e85ab7c4058225939f7007c8c6be6bc7eca85df3ed",
+    "reference_sources/r15_p0/instyle_v2.py.txt": "bacc544956c4f30b5fd01e19429a5fe37a3e63c46de6b3733100b5370874011b",
+    "reference_sources/r15_p0/LICENSE-2.0.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "reference_sources/r15_p0/README.md": "25a12b94589a2eba1642df979f88fd7448114e3bd53c0c21f8542711346d4cf9",
+    "reference_sources/r15_p0/s7_v1.py.txt": "d0c792e1262683e7661ec6b195a73e98facd3713c609a3e849ac85d0513c2f45",
+    "reference_sources/r15_p0/source_index.json": "748e34423372cf53769613941bd8bf4b108d1213cc72037520eb16a58c50b884",
+    "reference_sources/r15_p0/tokattn2_v1.py.txt": "a437392ec54d741d7b07ffe37f23e675f2772ab1903c6d2fde9951b0481808fa",
+    "reference_sources/r15_p0/tokattn_v1.py.txt": "29d3db981da5c1937524c90fd758ebf3562a64fdabf6ef5533447c7995d1d0a6",
+    "configs/r15_p0_templates/development_export_receipt.json": "77b497e3d545029fa94b34ce0885d22c153ee6db3fa1a39a33dc2fa520a60006",
+    "configs/r15_p0_templates/development_export_review.json": "37283a3c8ee2af97d48414dafb7b5895831159eac762b7f7f96953c6395f28d4"
+  },
+  "local_evidence_sha256": {
+    "outputs/r15_p0/preparation_runtime.json": "388a5ba7899e5add0244bd05b4d17f8d88d4d2f3171ac79e1b9de81d154899fa",
+    "outputs/r15_p0/readiness_final.json": "c6935630f43741e11dd092852079a8f02b65649028e6cb973f9c1169c4ff8d9d",
+    "outputs/r15_p0/readiness_final_runtime.json": "4b69c2141bd5c5f77b0e64fc3b1985895fafe70de3784de3fe537a590e2c8542",
+    "outputs/r15_p0/readiness_initial.json": "dbf2a26e231c3e0a48e2803978d3a8b9b7c454b9c9f869eb3d4ead83b29f0d72",
+    "outputs/r15_p0/tests_final.log": "f0b7205150e3cc44c8664048a26287bfb6250687b67afb11687aafaf88f3f0e9",
+    "outputs/r15_p0/tests_final_receipt.json": "1d7b20991fc822394f1125284a65bf805c590c53ee47a27c6d4ccc0c71de2ef4",
+    "outputs/r15_p0/tests_initial.log": "67de1b1da61f6ddf13588dabc0c469f30642a6b8b1843bd1c87f588eb19712d0",
+    "outputs/r15_p0/tests_initial_receipt.json": "8382294bb9b4019a5b25cadd06c4f9229ab0b718ad964fc71972f7d0650a2a3b"
+  },
+  "results": {
+    "local_predictive_metrics": null,
+    "public_score": null,
+    "private_result": null
+  },
+  "final_delivery_validation": {
+    "bound_file_hashes_verified": 27,
+    "local_markdown_links_verified": 41,
+    "learning_html_source_hash": "matches",
+    "git_diff_check": "passed; informational autocrlf warnings only"
+  }
+}

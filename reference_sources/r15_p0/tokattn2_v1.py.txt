@@ -1,0 +1,154 @@
+# Training kernel (no submission), round 2: the same learned token-attention head on other backbones (DeBERTa-v3-large
+# L23, Qwen3-8B-Base L22). Round 1 header follows.
+# Training kernel (no submission): learned token-attention head on frozen Qwen3.5-9B layer-18 token states (recipe of
+# public notebook kirilltym/0-525-learned-token-attention: +0.017 CV in their frozen ensemble, LB 0.521 -> 0.525).
+# Token states (first token and padding masked) are standardized with the mean-pooled train statistics and clipped to
+# +-8. Head: dropout .2 -> Linear(4096, 64) -> tanh per token; attention = masked softmax of Linear(64, 1); features =
+# [mean of the 64-d states, attention-weighted sum] -> dropout .2 -> Linear(128, 18). CE with label smoothing .05,
+# AdamW lr 5e-4 wd .1, 20 epochs, batch 16, clip 1.0. Jobs: our 5 prompt folds (scripts/common.py folds(seed 0)) for
+# OOF + a final fit on all rows (weights + scaler saved for inference). Outputs: tokattn_oof.npz, tokattn_final.pt.
+LAYER, KEEP, MAX_LEN, SEED, FOLD_SEED = 18, 19, 512, 42, 0
+EPOCHS, BS, LR, WD, LS = 20, 16, 5e-4, 0.1, 0.05
+
+import glob
+import json
+import os
+import pathlib
+import time
+
+import numpy as np
+import pandas as pd
+import torch
+from torch import nn
+from transformers import AutoConfig, AutoModel, AutoTokenizer
+
+T0 = time.time()
+DATA_DIR = next(p for p in [pathlib.Path('/kaggle/input/competitions/name-that-llm'),
+                            pathlib.Path('/kaggle/input/name-that-llm'), pathlib.Path('data')]
+                if (p / 'train.csv').exists())
+train = pd.read_csv(DATA_DIR / 'train.csv')
+LABELS = sorted(train.model.unique())
+y = train.model.map({l: i for i, l in enumerate(LABELS)}).values
+prompts = np.array(sorted(train.prompt_id.unique()))
+rng0 = np.random.RandomState(FOLD_SEED)
+rng0.shuffle(prompts)
+fold = train.prompt_id.map({p: i % 5 for i, p in enumerate(prompts)}).values   # == scripts/common.py folds()
+BACKBONES = [  # (tag, config predicate, layer, keep layers, decoder?)
+    ('debl23', lambda j: j.get('model_type') == 'deberta-v2' and j.get('hidden_size') == 1024, 23, None, False),
+    ('q8l22', lambda j: j.get('model_type') == 'qwen3' and j.get('hidden_size') == 4096 and j.get('num_hidden_layers') == 36,
+     22, 23, True),
+]
+for TAG, pred, LAYER, KEEP, DECODER in BACKBONES:
+    path = None
+    for c in sorted(glob.glob('/kaggle/input/**/config.json', recursive=True)):
+        try:
+            if pred(json.load(open(c))):
+                path = os.path.dirname(c)
+                break
+        except Exception:
+            continue
+    assert path, TAG
+    cfg = AutoConfig.from_pretrained(path)
+    if KEEP:
+        cfg.num_hidden_layers = KEEP
+        if getattr(cfg, 'layer_types', None):
+            cfg.layer_types = cfg.layer_types[:KEEP]
+    lm = AutoModel.from_pretrained(path, config=cfg, dtype=torch.float16 if DECODER else torch.float32,
+                                   **({'device_map': 'auto'} if DECODER else {})).eval()
+    if not DECODER:
+        lm = lm.cuda()
+    tok = AutoTokenizer.from_pretrained(path)
+    tok.padding_side = 'right'
+    if tok.pad_token is None:
+        tok.pad_token = tok.eos_token
+    ids = tok(train.text.tolist(), add_special_tokens=not DECODER, truncation=True, max_length=MAX_LEN)['input_ids']
+    dev0 = lm.get_input_embeddings().weight.device
+    H = cfg.hidden_size
+    STATES = [None] * len(train)
+    order = np.argsort([len(t) for t in ids])
+    with torch.no_grad():
+        for b0 in range(0, len(order), 8):
+            idx = order[b0:b0 + 8]
+            batch = tok.pad({'input_ids': [ids[i] for i in idx]}, return_tensors='pt').to(dev0)
+            hs = lm(input_ids=batch['input_ids'], attention_mask=batch['attention_mask'], output_hidden_states=True).hidden_states[LAYER]
+            for r, i in enumerate(idx):
+                n = int(batch['attention_mask'][r].sum())
+                STATES[i] = torch.nan_to_num(hs[r, 1:n].float()).to(torch.float16).cpu()   # first token dropped
+    del lm
+    torch.cuda.empty_cache()
+    print(TAG, 'token states', sum(s.shape[0] for s in STATES), 'tokens', f'{time.time() - T0:.0f}s', flush=True)
+    MEAN = torch.stack([s.float().mean(0) for s in STATES]).numpy()
+    dev = torch.device('cuda:0')
+
+
+    class TokAttn(nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.drop = nn.Dropout(0.2)
+            self.proj = nn.Linear(H, 64)
+            self.score = nn.Linear(64, 1)
+            self.out = nn.Linear(128, len(LABELS))
+
+        def forward(self, x, m):   # x (B, T, 4096) standardized, m (B, T) bool
+            h = torch.tanh(self.proj(self.drop(x)))
+            s = self.score(h).squeeze(-1).masked_fill(~m, -1e4)
+            a = torch.softmax(s, -1).unsqueeze(-1)
+            mf = m.unsqueeze(-1).float()
+            mean = (h * mf).sum(1) / mf.sum(1).clamp(min=1)
+            return self.out(self.drop(torch.cat([mean, (a * h).sum(1)], -1)))
+
+
+    def batch_of(rows, mu, sd):
+        T = max(STATES[i].shape[0] for i in rows)
+        x = torch.zeros(len(rows), T, H)
+        m = torch.zeros(len(rows), T, dtype=torch.bool)
+        for r, i in enumerate(rows):
+            n = STATES[i].shape[0]
+            x[r, :n] = ((STATES[i].float() - mu) / sd).clamp(-8, 8)
+            m[r, :n] = True
+        return x.to(dev), m.to(dev)
+
+
+    def fit_predict(fit, pred):
+        torch.manual_seed(SEED)
+        rng = np.random.RandomState(SEED)
+        mu = torch.tensor(MEAN[fit].mean(0))
+        sd = torch.tensor(MEAN[fit].std(0) + 1e-6)
+        net = TokAttn().to(dev)
+        opt = torch.optim.AdamW(net.parameters(), lr=LR, weight_decay=WD)
+        lossf = nn.CrossEntropyLoss(label_smoothing=LS)
+        for ep in range(EPOCHS):
+            net.train()
+            perm = rng.permutation(fit)
+            for b0 in range(0, len(perm), BS):
+                rows = perm[b0:b0 + BS]
+                x, m = batch_of(rows, mu, sd)
+                loss = lossf(net(x, m), torch.as_tensor(y[rows], device=dev))
+                opt.zero_grad()
+                loss.backward()
+                torch.nn.utils.clip_grad_norm_(net.parameters(), 1.0)
+                opt.step()
+        net.eval()
+        P = np.zeros((len(pred), len(LABELS)), np.float32)
+        with torch.no_grad():
+            for b0 in range(0, len(pred), 32):
+                rows = pred[b0:b0 + 32]
+                x, m = batch_of(rows, mu, sd)
+                P[b0:b0 + len(rows)] = torch.softmax(net(x, m), -1).cpu().numpy()
+        return P, net, mu, sd
+
+
+    OOF = np.zeros((len(train), len(LABELS)), np.float32)
+    for k in range(5):
+        fit, val = np.where(fold != k)[0], np.where(fold == k)[0]
+        OOF[val], *_ = fit_predict(fit, val)
+        acc = np.mean([(OOF[val].argmax(1) == c)[y[val] == c].mean() for c in range(len(LABELS))])
+        print(f'fold {k} bacc {acc:.4f} ({time.time() - T0:.0f}s)', flush=True)
+    bacc = np.mean([(OOF.argmax(1) == c)[y == c].mean() for c in range(len(LABELS))])
+    print(f'{TAG} OOF bacc {bacc:.4f}', flush=True)
+    np.savez(f'tokattn_{TAG}_oof.npz', ids=train.id.values, probs=OOF, classes=np.array(LABELS), fold=fold)
+    _, net, mu, sd = fit_predict(np.arange(len(train)), np.arange(3))
+    torch.save({'state_dict': net.state_dict(), 'mu': mu, 'sd': sd, 'layer': LAYER, 'keep': KEEP, 'max_len': MAX_LEN,
+                'classes': LABELS, 'hidden': H, 'decoder': DECODER}, f'tokattn_{TAG}_final.pt')
+    print('saved', f'{time.time() - T0:.0f}s', flush=True)
+pd.DataFrame({'id': [], 'model': []}).to_parquet('submission.parquet')   # placeholder

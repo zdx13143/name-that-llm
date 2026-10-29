@@ -1,0 +1,164 @@
+{
+  "schema": "ntl-source-preparation-inventory-v1",
+  "source_index": "reference_sources/r15_p0/source_index.json",
+  "entries": [
+    {
+      "roles": [
+        "main.q14v5",
+        "main.q8v5",
+        "main.ll8v5"
+      ],
+      "status": "blocked",
+      "have": "inference topology and public checkpoint inventory",
+      "missing": [
+        "stage-one and stage-two trainers",
+        "effective optimizer/config and initialization lineage",
+        "120k-pool generation and per-row exclusion records"
+      ]
+    },
+    {
+      "roles": [
+        "main.n14b",
+        "main.q25_14",
+        "main.deb"
+      ],
+      "status": "blocked",
+      "have": "inference source, partial checkpoint meta.json viewed",
+      "missing": [
+        "training programs and complete configs",
+        "stage-one external membership",
+        "fold exclusion receipts"
+      ]
+    },
+    {
+      "roles": [
+        "comp.lora24_seed7"
+      ],
+      "status": "source_acquired_not_training_admitted",
+      "source": "s7_v1.py.txt",
+      "missing": [
+        "safe data export",
+        "explicit nested-envelope adapter",
+        "base/checkpoint provenance"
+      ]
+    },
+    {
+      "roles": [
+        "comp.lora20_q25_instyle"
+      ],
+      "status": "source_acquired_exclusion_defect_confirmed",
+      "source": "instyle_v2.py.txt",
+      "missing": [
+        "safe data export",
+        "external lineage and allowlists",
+        "explicit nested-envelope adapter"
+      ]
+    },
+    {
+      "roles": [
+        "comp.lora24_public",
+        "comp.lora24_claude"
+      ],
+      "status": "blocked",
+      "have": "inference paths and source attribution",
+      "missing": [
+        "exact original trainer and complete config",
+        "external and official membership receipts"
+      ]
+    },
+    {
+      "roles": [
+        "comp.ultrabert"
+      ],
+      "status": "blocked",
+      "have": "five checkpoint inventory and prompt-GroupKFold statement",
+      "missing": [
+        "trainer/effective fine-tune config",
+        "R15 prompt exclusion receipts"
+      ]
+    },
+    {
+      "roles": [
+        "atlas"
+      ],
+      "status": "blocked",
+      "have": "inference package and reported training source/config hashes; full-data fitting statement",
+      "missing": [
+        "actual train.py and exact training config",
+        "rebuild with R15 envelope"
+      ]
+    },
+    {
+      "roles": [
+        "comp.tokattn_q35"
+      ],
+      "status": "optional_source_acquired_not_training_admitted",
+      "source": "tokattn_v1.py.txt",
+      "missing": [
+        "reviewed runtime inclusion/absence",
+        "base provenance",
+        "safe envelope adaptation"
+      ]
+    },
+    {
+      "roles": [
+        "comp.tokattn_deb"
+      ],
+      "status": "optional_source_acquired_not_training_admitted",
+      "source": "tokattn2_v1.py.txt",
+      "missing": [
+        "reviewed runtime inclusion/absence",
+        "base provenance",
+        "safe envelope adaptation"
+      ],
+      "out_of_recipe_source_member": "q8l22"
+    },
+    {
+      "roles": [
+        "main.gauss_q14v5",
+        "main.gauss_q8v5",
+        "main.tfidf",
+        "main.distortion",
+        "main.svc",
+        "main.grouping",
+        "comp.stylegram",
+        "comp.stylometry_lgb",
+        "comp.debv3l",
+        "comp.electl",
+        "comp.desk",
+        "comp.gauss_q3_8b_L22",
+        "comp.gauss_glm9b_L8",
+        "comp.gauss_q3_4b_L4",
+        "comp.gauss_debv3l_L24",
+        "comp.family_gates",
+        "comp.grouping",
+        "sinkhorn_prior"
+      ],
+      "status": "implementation_in_frozen_notebook_scope_adaptation_pending",
+      "have": "source and inference constants",
+      "missing": [
+        "nested training envelope implementation",
+        "feature/base/source provenance",
+        "learned parameter fit-selection procedure"
+      ]
+    },
+    {
+      "roles": [
+        "external_data_selection"
+      ],
+      "status": "blocked",
+      "have": "actual cleaning/dedup and unfiltered-append source locations",
+      "missing": [
+        "version-pinned external source hashes",
+        "reviewed row lineage and per-stage membership"
+      ]
+    }
+  ],
+  "required_full_pipeline_ready": false,
+  "source_hashes": {
+    "s7_v1.py.txt": "d0c792e1262683e7661ec6b195a73e98facd3713c609a3e849ac85d0513c2f45",
+    "instyle_v2.py.txt": "bacc544956c4f30b5fd01e19429a5fe37a3e63c46de6b3733100b5370874011b",
+    "tokattn_v1.py.txt": "29d3db981da5c1937524c90fd758ebf3562a64fdabf6ef5533447c7995d1d0a6",
+    "tokattn2_v1.py.txt": "a437392ec54d741d7b07ffe37f23e675f2772ab1903c6d2fde9951b0481808fa"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "ntl-priority-zero-preparation-v1",
+  "base_commit": "fcd465477f69eb95a5a639d2e33ceaf583d0c6bf",
+  "status": "preparation_only_dependency_blocked",
+  "budget": {"cpu_seconds_max": 14400, "source_download_bytes_max": 104857600, "gpu_jobs": 0},
+  "training_enabled": false,
+  "real_scoring_enabled": false,
+  "original_r15_protocol_unchanged": true,
+  "proposed_producer_id": "r15p1-nested-dev120-draft",
+  "proposed_producer_is_exact_r14": false,
+  "data_policy": "only independently reviewed preexisting development-only artifact; no raw CSV reads or reconstruction",
+  "outer_split": "existing 5 GroupKFold folds bound by R15 hash",
+  "inner_split": "5 GroupKFold(shuffle=False) within each outer train, original development row order",
+  "inner_folds_total": 25,
+  "task_trained_dependencies": "all stages, including stage-one external data, must exclude outer valid and protected prompts; inner fits also exclude inner valid",
+  "learned_parameter_policy": "fit and select only using inner OOF inside outer train; freeze before outer inference",
+  "historical_public_coefficients_admissible_for_strict_oof": false,
+  "pending_calibration_specification": [
+    "original COMP blend objective, constraints, optimizer and stopping rule",
+    "Gaussian candidate set and selection method",
+    "provenance or preregistered replacement for all selected weights, temperatures and thresholds"
+  ],
+  "external_data_policy": "no glob-based discovery; explicit version/file hashes and reviewed per-row prompt lineage; unknown or unproved rows rejected; do not silently omit required sources",
+  "final_comparison": {"baseline_strength": 1.0, "candidate_strength": 0.5, "other_changes": 0},
+  "completion_gates": [
+    "all required trainers/configs available and reviewed",
+    "all external input lineage and exclusion receipts verified",
+    "standalone development text export admitted",
+    "nested calibration objective and source/config frozen",
+    "new producer schema, budget and execution admission separately recorded"
+  ]
+}

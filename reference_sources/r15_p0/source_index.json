@@ -1,0 +1,317 @@
+{
+  "schema": "ntl-r15-source-only-archive-v1",
+  "sources": [
+    {
+      "id": "s7_v1",
+      "author": "Lucas Boesen",
+      "source_file": "s7_v1.py.txt",
+      "source_sha256": "d0c792e1262683e7661ec6b195a73e98facd3713c609a3e849ac85d0513c2f45",
+      "source_bytes": 10612,
+      "source_url": "https://www.kaggle.com/code/lucasboesen/name-that-llm-train-lora24-s7?scriptVersionId=358911769",
+      "source_version": 358911769,
+      "download_sha256": "ad4c1cb5a38bb4dd767625bd583b6202a4b56d9216fc91d505ebcbee667d6945",
+      "download_bytes": 22546,
+      "license": "Apache-2.0 (Kaggle source page)",
+      "extraction": "code-cell source only; original comments retained; no execution or notebook outputs",
+      "literal_top_level_constants": {
+        "SEED": {
+          "value": 7,
+          "source_line": 11
+        },
+        "FOLD_SEED": {
+          "value": 0,
+          "source_line": 11
+        },
+        "JOBS": {
+          "value": {
+            "0": [
+              "0",
+              "2",
+              "4"
+            ],
+            "1": [
+              "1",
+              "3",
+              "final"
+            ]
+          },
+          "source_line": 12
+        },
+        "LAYERS": {
+          "value": [
+            2,
+            4,
+            6,
+            8,
+            12,
+            16,
+            20,
+            24
+          ],
+          "source_line": 13
+        },
+        "KEEP": {
+          "value": 24,
+          "source_line": 14
+        },
+        "MAX_LEN": {
+          "value": 447,
+          "source_line": 14
+        },
+        "EPOCHS": {
+          "value": 3,
+          "source_line": 14
+        },
+        "ACCUM": {
+          "value": 6,
+          "source_line": 14
+        },
+        "LR_ADAPTER": {
+          "value": 0.0001,
+          "source_line": 15
+        },
+        "LR_HEAD": {
+          "value": 0.001,
+          "source_line": 15
+        },
+        "WD": {
+          "value": 0.01,
+          "source_line": 15
+        },
+        "WARMUP": {
+          "value": 0.1,
+          "source_line": 15
+        },
+        "R": {
+          "value": 16,
+          "source_line": 16
+        },
+        "ALPHA": {
+          "value": 32,
+          "source_line": 16
+        },
+        "LDROP": {
+          "value": 0.05,
+          "source_line": 16
+        }
+      },
+      "embedded_workers_syntax_checked": 1,
+      "training_admitted": false
+    },
+    {
+      "id": "instyle_v2",
+      "author": "Travis Nguyen; adapted from Lucas Boesen",
+      "source_file": "instyle_v2.py.txt",
+      "source_sha256": "bacc544956c4f30b5fd01e19429a5fe37a3e63c46de6b3733100b5370874011b",
+      "source_bytes": 14788,
+      "source_url": "https://www.kaggle.com/code/vnton37nguyn/ntl-train-lora-qwen25-instyle?scriptVersionId=359652568",
+      "source_version": 359652568,
+      "download_sha256": "bacc544956c4f30b5fd01e19429a5fe37a3e63c46de6b3733100b5370874011b",
+      "download_bytes": 14788,
+      "license": "Apache-2.0 (Kaggle source page)",
+      "extraction": "code-cell source only; original comments retained; no execution or notebook outputs",
+      "literal_top_level_constants": {
+        "SEED": {
+          "value": 11,
+          "source_line": 16
+        },
+        "FOLD_SEED": {
+          "value": 0,
+          "source_line": 16
+        },
+        "JOBS": {
+          "value": {
+            "0": [
+              "0",
+              "final"
+            ],
+            "1": [
+              "1",
+              "2"
+            ]
+          },
+          "source_line": 17
+        },
+        "LAYERS": {
+          "value": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            16,
+            20
+          ],
+          "source_line": 18
+        },
+        "KEEP": {
+          "value": 20,
+          "source_line": 19
+        },
+        "MAX_LEN": {
+          "value": 447,
+          "source_line": 19
+        },
+        "EPOCHS": {
+          "value": 3,
+          "source_line": 19
+        },
+        "ACCUM": {
+          "value": 6,
+          "source_line": 19
+        },
+        "LR_ADAPTER": {
+          "value": 0.0001,
+          "source_line": 20
+        },
+        "LR_HEAD": {
+          "value": 0.001,
+          "source_line": 20
+        },
+        "WD": {
+          "value": 0.01,
+          "source_line": 20
+        },
+        "WARMUP": {
+          "value": 0.1,
+          "source_line": 20
+        },
+        "R": {
+          "value": 16,
+          "source_line": 21
+        },
+        "ALPHA": {
+          "value": 32,
+          "source_line": 21
+        },
+        "LDROP": {
+          "value": 0.05,
+          "source_line": 21
+        }
+      },
+      "embedded_workers_syntax_checked": 1,
+      "training_admitted": false
+    },
+    {
+      "id": "name-that-llm-train-tokattn",
+      "author": "Lucas Boesen; recipe attribution kirilltym",
+      "source_file": "tokattn_v1.py.txt",
+      "source_sha256": "29d3db981da5c1937524c90fd758ebf3562a64fdabf6ef5533447c7995d1d0a6",
+      "source_bytes": 6703,
+      "source_url": "https://www.kaggle.com/code/lucasboesen/name-that-llm-train-tokattn?scriptVersionId=358928013",
+      "source_version": 358928013,
+      "download_sha256": "c1d75502e6eac0325b4d24a64ce9f713784f8753f80ed048b0083a71ace6e4eb",
+      "download_bytes": 20630,
+      "license": "Apache-2.0 (Kaggle source page)",
+      "extraction": "code-cell source only; original comments retained; no execution or notebook outputs",
+      "literal_top_level_constants": {
+        "LAYER": {
+          "value": 18,
+          "source_line": 8
+        },
+        "KEEP": {
+          "value": 19,
+          "source_line": 8
+        },
+        "MAX_LEN": {
+          "value": 512,
+          "source_line": 8
+        },
+        "SEED": {
+          "value": 42,
+          "source_line": 8
+        },
+        "FOLD_SEED": {
+          "value": 0,
+          "source_line": 8
+        },
+        "EPOCHS": {
+          "value": 20,
+          "source_line": 9
+        },
+        "BS": {
+          "value": 16,
+          "source_line": 9
+        },
+        "LR": {
+          "value": 0.0005,
+          "source_line": 9
+        },
+        "WD": {
+          "value": 0.1,
+          "source_line": 9
+        },
+        "LS": {
+          "value": 0.05,
+          "source_line": 9
+        }
+      },
+      "embedded_workers_syntax_checked": 0,
+      "training_admitted": false
+    },
+    {
+      "id": "name-that-llm-train-tokattn2",
+      "author": "Lucas Boesen; recipe attribution kirilltym",
+      "source_file": "tokattn2_v1.py.txt",
+      "source_sha256": "a437392ec54d741d7b07ffe37f23e675f2772ab1903c6d2fde9951b0481808fa",
+      "source_bytes": 7538,
+      "source_url": "https://www.kaggle.com/code/lucasboesen/name-that-llm-train-tokattn2?scriptVersionId=358948428",
+      "source_version": 358948428,
+      "download_sha256": "ba1a21a27ac46f6f3e2309908308c52bd961ea5173b613e723a182f7afd69c4e",
+      "download_bytes": 28490,
+      "license": "Apache-2.0 (Kaggle source page)",
+      "extraction": "code-cell source only; original comments retained; no execution or notebook outputs",
+      "literal_top_level_constants": {
+        "LAYER": {
+          "value": 18,
+          "source_line": 10
+        },
+        "KEEP": {
+          "value": 19,
+          "source_line": 10
+        },
+        "MAX_LEN": {
+          "value": 512,
+          "source_line": 10
+        },
+        "SEED": {
+          "value": 42,
+          "source_line": 10
+        },
+        "FOLD_SEED": {
+          "value": 0,
+          "source_line": 10
+        },
+        "EPOCHS": {
+          "value": 20,
+          "source_line": 11
+        },
+        "BS": {
+          "value": 16,
+          "source_line": 11
+        },
+        "LR": {
+          "value": 0.0005,
+          "source_line": 11
+        },
+        "WD": {
+          "value": 0.1,
+          "source_line": 11
+        },
+        "LS": {
+          "value": 0.05,
+          "source_line": 11
+        }
+      },
+      "embedded_workers_syntax_checked": 0,
+      "training_admitted": false
+    }
+  ],
+  "license_url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+  "license_bytes": 11358,
+  "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "total_new_download_bytes": 97812,
+  "archived_sources_executed": false,
+  "process_cpu_seconds": 0.078125
+}

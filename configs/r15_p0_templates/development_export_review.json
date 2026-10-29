@@ -1,0 +1,7 @@
+{
+  "schema": "ntl-development-export-review-v1",
+  "reviewer": null,
+  "receipt_sha256": null,
+  "source_evidence_sha256": null,
+  "conclusion": "pending_actual_review"
+}

@@ -1,5 +1,13 @@
 # R15 minimum complete-ensemble rebuild proposal
 
+> Latest scope amendment: the user subsequently authorized Priority 0 local
+> preparation within 4 CPU-hours, with zero GPU and the protected holdout still
+> closed. [P0 results](R15_P0_REPORT_20261029.md) now include four acquired
+> trainer sources, safe-export intake and a nested calibration design. Required
+> dependencies remain missing, so no GPU pilot or real evaluation is released.
+> The 155 final-target count below excludes inner calibration reconstruction;
+> it is not a validated cost estimate for the new nested design.
+
 Status: proposal only, not an executed experiment or authorization to start
 GPU training. The current request authorizes a fixed replay if suitable
 existing assets are found, and a rebuild plan otherwise. No eligible bundle
