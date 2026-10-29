@@ -36,4 +36,8 @@ Kaggle 保存、正式提交、Public Score 和 private 结果又各是独立阶
 
 实际代码：[CPU 重放](experiments/r15_typography_replay.py)。方案：[预登记](docs/R15_PLAN_20261029.md)。缺失资产与最小补齐方式：[完整集成 bundle 契约](docs/R15_BUNDLE_CONTRACT_20261029.md)。实际结果：[R15 报告](docs/R15_REPORT_20261029.md)。
 
-最省计算的下一步是取得已有、可核验的完整五折 logits 和训练排除记录。若它们不存在，就需要单独预算重建完整集成的折训练；不能把本轮几秒钟的 CPU 合成测试描述为这项工作已经完成。
+后续只读查找已完成：公开的单次 LoRA24 OOF、182 文件的 nested validation cache 和 UltraBERT 五折 checkpoint 确实存在，但都未满足本轮完整 R14、原 120-prompt 划分和旧 30-prompt 排除条件。ATLAS 还明确记录使用全部 2699 条官方数据训练。没有把这些组件资产拼接后冒充完整 OOF，也没有启动评分。
+
+源码另显示，部分融合系数和 Gaussian 温度来自上游 OOF/135-prompt 拟合。严格完整流程 OOF 还需要解决这些参数的训练范围；只重训基础模型不够。按当前成员拓扑，五个外折至少有 155 个神经 checkpoint/bundle 目标，可选 token-attention 最多另加 10 个；这是输出目标数量，实际训练任务还取决于可安全共享的阶段和内层验证。
+
+具体证据见[资产查找报告](docs/R15_ASSET_SEARCH_20261029.md)。[最小重建预案](docs/R15_REBUILD_PLAN_20261029.md)先要求补齐源码、训练范围与 development-only 文本，再用最多 8 GPU-hours 试跑定标；完整重建提出 250 GPU-hours 总硬上限，必须由实测支持才可登记执行。当前没有启动这些任务，原 R15 单变量配置和停止门槛保持不变。

@@ -1,0 +1,300 @@
+{
+  "schema": "ntl-r15-asset-search-v1",
+  "recorded_at_utc": "2026-10-29T05:16:30.467867+00:00",
+  "base_commit": "81c64c797ef4a1cce2d40bb5abc43ce2365f1904",
+  "branch": "exp/team-e654-r15-20261029",
+  "commit_lookup": "git log -1 --format=%H -- configs/r15_asset_search_receipt_20261029.json",
+  "status": "no_admissible_complete_bundle_in_inspected_sources",
+  "global_nonexistence_claim": false,
+  "authorization": "read-only search; admit and execute original fixed replay only if valid assets found; otherwise provide rebuild proposal; no remote mutations or old protected holdout",
+  "admission": {
+    "eligible_bundles": 0,
+    "admitted_bundles": 0,
+    "real_evaluation_enabled": false,
+    "provenance_review_file_created": false,
+    "reason_codes": [
+      "missing_complete_r14_output_and_coverage",
+      "atlas_full_official_training",
+      "component_population_and_fold_mismatch",
+      "unverified_learned_coefficient_training_scope",
+      "development_only_text_export_missing"
+    ]
+  },
+  "sources": [
+    {
+      "id": "team_github",
+      "url": "https://github.com/zdx13143/name-that-llm",
+      "kind": "connector_read_only_scout",
+      "identity": "main dc62708e7116af472257d8f9159424fec2078f01; R11 c733c0d; R12 769f40a",
+      "coverage": "branch listing; main/R11/R12 trees; code search; open/closed issues and PRs; releases",
+      "decision": "no_complete_bundle_in_inspected_surfaces"
+    },
+    {
+      "id": "roman_v32",
+      "url": "https://www.kaggle.com/code/romantamrazov/name-that-llm-who-am-i/output?scriptVersionId=363222852",
+      "kind": "direct_browser",
+      "identity": "V32 / 363222852",
+      "observed": {
+        "output_files": 14,
+        "comp_logit_bytes": 344,
+        "diagnostic_trained_rows": 2699,
+        "diagnostic_tested_rows": 3,
+        "marker_count": 37,
+        "diagnostic_scope": "full official train; final inference; not OOF"
+      },
+      "decision": "not_development_oof"
+    },
+    {
+      "id": "v5_adapters",
+      "url": "https://www.kaggle.com/datasets/dhruvtibarewal/nlm-l24-adapters-v5",
+      "kind": "direct_browser",
+      "identity": "V1",
+      "observed": {
+        "size_display": "2.59 GB",
+        "files": 54,
+        "adapter_directories": 18,
+        "safetensors": 18,
+        "pt": 18,
+        "json": 18,
+        "description_available": false,
+        "provenance_sources_and_methodology": "empty"
+      },
+      "decision": "no_fold_membership_or_complete_oof"
+    },
+    {
+      "id": "atlas",
+      "url": "https://www.kaggle.com/datasets/josephadamski91/ntl-atlas-qwen3-8b-v1",
+      "kind": "direct_browser",
+      "identity": "V3",
+      "observed": {
+        "files": 15,
+        "size_display": "462.8 MB",
+        "trained_rows": 2699,
+        "epochs": 5,
+        "source_adapters": 18,
+        "training_manifest_train_csv_sha256": "40a22ce8d88c5f46feb4637a099db815bef5f713ffe53e89dbe1b7b21de77707",
+        "training_manifest_train_py_sha256": "80440fa2589236b0cf6f1d3f9388f049941a4474050c55fe6729ee677a28ef87",
+        "reported_hashes_locally_download_verified": false,
+        "ntl_atlas_directory": [
+          "__init__.py",
+          "inference.py",
+          "model.py"
+        ]
+      },
+      "decision": "full_official_training_exclusion_failure"
+    },
+    {
+      "id": "ultrabert",
+      "url": "https://www.kaggle.com/datasets/pjmathematician/ultrabert-380m-ntl",
+      "kind": "direct_browser_and_web_scout",
+      "observed": {
+        "fold_checkpoints": 5,
+        "files": 56,
+        "size_display": "3.82 GB",
+        "reported_component_oof_ba": 0.408,
+        "r15_exclusion_provenance_found": false
+      },
+      "decision": "component_not_complete_bundle"
+    },
+    {
+      "id": "single_lora_oof",
+      "url": "https://www.kaggle.com/datasets/dariushafshar/ntl-oof-logits-one-public-lora24-run",
+      "kind": "direct_browser_data_card",
+      "observed": {
+        "declared_logits_shape": [
+          2699,
+          18
+        ],
+        "declared_fold_shape": [
+          2699
+        ],
+        "split": "sorted prompt IDs shuffled seed 0; position modulo 5",
+        "scope": "host-only plain readout; not two-stage head; no group heads",
+        "payload_downloaded": false
+      },
+      "decision": "different_population_folds_and_component_only"
+    },
+    {
+      "id": "s7_training",
+      "url": "https://www.kaggle.com/code/lucasboesen/name-that-llm-train-lora24-s7/output",
+      "kind": "direct_browser_inventory",
+      "identity": "V1 / 358911769",
+      "observed": {
+        "output_files": 29,
+        "jobs": [
+          "job_0",
+          "job_1",
+          "job_2",
+          "job_3",
+          "job_4",
+          "job_final"
+        ],
+        "runtime_display": "2h 54m 45s; T4 x2",
+        "array_payloads_opened": false,
+        "worker_py_download_result": "timed out; no worker*.py found in Downloads; not claimed acquired"
+      },
+      "decision": "component_training_reference_only"
+    },
+    {
+      "id": "lightning_collection",
+      "url": "https://www.kaggle.com/datasets/lightningv08/ntl-olmo2-native24-final-inference-assets",
+      "kind": "direct_browser_inventory_and_source_metadata",
+      "identity": "V17; not substituted for R14 pinned input",
+      "observed": {
+        "size_display": "99.82 GB",
+        "files": 884,
+        "original_validation_cache_files": 182,
+        "original_q35_head_cache_files": 28,
+        "validation_metadata_path": "name-that-llm-artifacts/_source_metadata/ntl-oof-validation-cache.json",
+        "declared_gap": "public full-fit LoRA and UltraBERT have no verified matching OOF here",
+        "nested_array_filenames_visible": true,
+        "array_or_fold_id_payloads_opened": false
+      },
+      "decision": "partial_nested_validation_not_complete_r14_oof"
+    },
+    {
+      "id": "pierre_oof",
+      "url": "https://www.kaggle.com/datasets/pierrevanvolsem/name-that-llm-final-models",
+      "kind": "direct_browser_data_card_and_schema",
+      "observed": {
+        "components": [
+          "Qwen3.5-0.8B",
+          "Qwen3.5-4B",
+          "linear_ext_regen"
+        ],
+        "files": 12,
+        "size_display": "1.75 GB",
+        "schema_unique_ids": 2699,
+        "row_level_data_used": false,
+        "payload_downloaded": false
+      },
+      "decision": "different_ensemble_and_population"
+    },
+    {
+      "id": "prism",
+      "url": "https://www.kaggle.com/datasets/verracodeguacas/name-that-llm-prism-feature-atlas",
+      "kind": "direct_browser_data_card",
+      "observed": {
+        "scope": "official-training feature cache and exploratory fixed-head diagnostics on reused prompts",
+        "complete_hidden_test_pipeline_claimed": false
+      },
+      "decision": "feature_components_not_complete_r14_oof"
+    },
+    {
+      "id": "unavailable_fivefold_trainer",
+      "url": "https://www.kaggle.com/code/lightningv08/ntl-lora24-fivefold-training",
+      "kind": "direct_browser",
+      "observed": "page not found",
+      "decision": "trainer_source_dependency_unresolved"
+    },
+    {
+      "id": "site_search",
+      "url": "https://www.kaggle.com/datasets?search=name+that+llm+oof",
+      "kind": "direct_browser",
+      "observed": {
+        "results": 16,
+        "query": "name that llm oof",
+        "scope": "titles screened; relevant candidate cards inspected; no query grid"
+      },
+      "decision": "no_eligible_bundle_found; no claim about private/unpublished artifacts"
+    }
+  ],
+  "local_development_metadata": {
+    "features_cache_path": "D:/kaggle/name_that_llm/name-that-llm/outputs/windows_modernbert_dev_20261024_r2/features.npz",
+    "features_cache_bytes": 23676168,
+    "payload_opened": false,
+    "code_schema_includes_texts": false,
+    "contract_path": "D:/kaggle/name_that_llm/name-that-llm/outputs/windows_modernbert_dev_20261024_r2/contract.json",
+    "frozen_development_rows": 2159,
+    "frozen_development_prompts": 120
+  },
+  "live_resource_snapshot": {
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "vram_total_mib": 8188,
+    "vram_free_mib": 3829,
+    "host_ram_total_gib": 31.73033905029297,
+    "host_ram_available_gib": 10.432502746582031,
+    "D_free_gib": 87.59709930419922
+  },
+  "rebuild_proposal_not_executed": {
+    "checkpoint_targets_required": 155,
+    "optional_token_attention_targets_max": 10,
+    "target_count_is_training_run_count": false,
+    "source_preparation_cpu_hours_cap": 4,
+    "source_metadata_download_mib_cap": 100,
+    "pilot_aggregate_gpu_hours_cap": 8,
+    "full_aggregate_gpu_hours_cap_including_pilot": 250,
+    "full_cpu_hours_cap": 48,
+    "capacity_reserve": {
+      "gpus": 2,
+      "vram_gib_each_min": 48,
+      "host_ram_gib": 128,
+      "free_ssd_gib": 500,
+      "cpu_cores": 16
+    },
+    "resource_ceiling_is_measured_duration_estimate": false,
+    "pilot_required_before_full_budget_admission": true,
+    "gpu_training_authorized_or_launched_by_this_receipt": false
+  },
+  "continuation_counters": {
+    "real_model_fits": 0,
+    "encoder_forwards": 0,
+    "real_typography_fits": 0,
+    "official_label_accuracy_evaluations": 0,
+    "protected_holdout_accesses": 0,
+    "new_synthetic_test_runs": 0,
+    "real_replays": 0,
+    "prediction_payload_downloads": 0,
+    "weight_downloads": 0,
+    "kaggle_imports": 0,
+    "kaggle_saves": 0,
+    "formal_submissions": 0,
+    "new_drafts": 0,
+    "git_pushes": 0,
+    "new_remote_automations": 0
+  },
+  "prior_execution_counters_preserved": true,
+  "prior_engineering_test_result": "15/15; historical; not rerun",
+  "unchanged_code_and_protocol_sha256": {
+    "experiments/r15_typography_replay.py": "25180c6be151543c3b46af4da352605bdb9fa989fb20d1f6ee03069ee4ba7a73",
+    "tests/test_r15_typography_replay.py": "e040fbcb052e33392196e02b5f7e5b8d8e459c8e57901d322b1c0dedd22a73ec",
+    "configs/r15_protocol_20261029.json": "31c5fd947dce8ad2a3e0994c4567d9ad95bc8b918da7ca336078299e2c6d3973",
+    "scripts/render_r15_learning.py": "a2069999ab5d1d1e2578736c1be68da6b315e611551e448ed2dc3a5484004fe0"
+  },
+  "r14_candidate_sha256": "5fd8bf520af59a1841fb19a035e922df123934bb1d1d05625b6853f6351b9dae",
+  "protected_worktrees": {
+    "windows": {
+      "commit": "38fcd59c3c2d15d5b568bdec2c8c0493b8a8bb4c",
+      "clean": true
+    },
+    "r12": {
+      "commit": "769f40ac69f1fbf88eb330bd48d2bf294479d038",
+      "clean": true
+    },
+    "r13": {
+      "commit": "d14584f031aeec8c8f9f692b873806b853e89cd1",
+      "clean": true
+    },
+    "r14": {
+      "commit": "07cee7ebbae7b7d08bfa536f5370659ae27a5a54",
+      "clean": true
+    }
+  },
+  "artifacts_sha256": {
+    "README.md": "7505024c1aaf9cd1349fef9f7fb965e1e8add6a389d5101e030b454507ac4c9b",
+    "PROJECT_LEARNING.md": "89f5f78b8911eb4bfd03f6c9405957e4a43c88c5a2fa07238654d4a2da8bda6c",
+    "PROJECT_LEARNING.html": "bd9738c359309a57708541e0ea78217ec524c6c92656f698cdf2f949a3cfc99b",
+    "docs/R15_ASSET_SEARCH_20261029.md": "549cd980245340885fdd6dbcfc4c243998683c26e0cf265ff4a05c97f4b5e330",
+    "docs/R15_REBUILD_PLAN_20261029.md": "d6324d411bf413fa23124945c8ce79ead37d1f47b3fbd0330bf44caf7d94cccb"
+  },
+  "document_review": {
+    "independent_read_only_review": 1,
+    "blocking_inconsistencies_reported": 0,
+    "minor_notebook_link_fixed": true
+  },
+  "results": {
+    "local_predictive_metrics": null,
+    "public_score": null,
+    "private_result": null
+  }
+}

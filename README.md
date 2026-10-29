@@ -4,6 +4,8 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 > **本实验分支 R15：已实现完整 R14 集成后的单变量排版消融（强度 1.0 → 0.5）、按既定 120 prompts / 5 folds 重放的库和资产校验；15/15 合成测试通过。缺少完整集成 OOF 与逐成员训练排除证据，真实预测评估未开始，没有提分结论。** 见 [R15 报告](docs/R15_REPORT_20261029.md)、[预登记](docs/R15_PLAN_20261029.md)、[资产契约](docs/R15_BUNDLE_CONTRACT_20261029.md)和[执行回执](configs/r15_execution_receipt_20261029.json)。本轮只做本地工作与只读远端核验，0 push、0 导入、0 Save、0 正式提交；R14 冻结候选保留不变。
 
+> **R15 后续查找（2026-10-29）：已查到公开组件 OOF 和 nested validation cache，但没有可准入的完整 bundle。ATLAS 明确为全部 2699 行训练；部分融合参数也需补训练范围证明。** 详见[查找与准入结论](docs/R15_ASSET_SEARCH_20261029.md)、[最小重建方案及资源上限](docs/R15_REBUILD_PLAN_20261029.md)和[本轮查找回执](configs/r15_asset_search_receipt_20261029.json)。固定消融未运行，重建仅是预案。先前执行回执的文件哈希对应其所在提交 `81c64c7`；本次文档更新由新回执单独绑定。
+
 > **R14 历史成果：冻结公开实得 0.660 的 V32 / 363222852 完整配方，本地 14/14 合成测试通过，尚无正式分数。** 2026-10-29 本轮只读复核时，已有私有草稿可以显示上游代码，版本历史仍为 `Starting Fresh`，Session off，底部仍有 reCAPTCHA 连接提示；候选未导入，0 个 saved version。页面 T4 ×2 / Internet off 只是设置。我们的已确认最佳仍为 R12 V1 / 363188587 的 **Public Score 0.654**；外部 0.660 不是我们的成绩，也不是本地 CV。旧 30-prompt 留出保持关闭，本轮未新建草稿或自动跟踪。R14 原记录见 [报告](docs/R14_REPORT_20261029.md)、[回执](configs/r14_execution_receipt_20261029.json)与[方案及范围修订](docs/R14_PLAN_20261029.md)。
 
 > R12 于 2026-10-28 19:47:36 UTC 确认正式评测 Succeeded / 0.654，相比队友 0.651 高 0.003，与外部 V4 在页面显示精度上一致。R12 共一次保存、一次正式提交；详见 [R12 报告](docs/R12_REPORT_20261028.md) 与 [回执](configs/r12_execution_receipt_20261028.json)。精确服务器评分时间未公开，所记为确认时间；尚无新的完整集成本地 CV 或 private 成绩。
