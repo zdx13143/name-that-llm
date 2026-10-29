@@ -1,0 +1,88 @@
+{
+  "schema": "ntl-r16-kaggle-trial-v1",
+  "updated_utc": "2026-10-29T12:23:36.514590+00:00",
+  "user_missing_input_handling": "delegated_best_handling",
+  "status": "formal_submission_running",
+  "version": 2,
+  "scriptVersionId": 363487968,
+  "url": "https://www.kaggle.com/code/zephyrpong/ntl-r16-typography-half-20261029?scriptVersionId=363487968",
+  "candidate_sha256": "8b04a036a5aa43c41907fd6404849179cd6bee1d4588b6c866484487f6bd6075",
+  "saved_source_sha256": "d00d08ab1e0d891f416a6c9767c58fb20127ffdbbb4982bbca0b482bf6c5925b",
+  "code_and_30_input_refs_match": true,
+  "omitted_kernel_version": 362275911,
+  "omitted_member": "lora24_public",
+  "full_frozen_ensemble": false,
+  "typography_strength": 0.5,
+  "counters": {
+    "new_drafts": 0,
+    "imports_total": 3,
+    "saves": 2,
+    "formal_submissions": 1,
+    "local_model_fits": 0,
+    "local_encoder_forwards": 0,
+    "local_official_accuracy_comparisons": 0,
+    "raw_csv_reads": 0,
+    "protected_holdout_accesses": 0,
+    "git_pushes": 0,
+    "automations": 0,
+    "saved_versions": 2,
+    "asset_test_invocations": 2
+  },
+  "public_score": null,
+  "private_result": null,
+  "local_complete_ensemble_cv": "not_evaluated",
+  "local_evidence_sha256": {
+    "outputs/r16/save_attempt.json": "b920399afed77d642100ff090acb493e3d7457f03c0bd526a0b8621383f23bb5",
+    "outputs/r16/remote_draft_code.json": "881e8ff8ef21723160ff9b941fdd29a54a402dbf6fa705646500da6e00b25075",
+    "outputs/r16/draft_code_verification.json": "b9a6b2c4c32b9b6c433ca77ffca52a622653bda738e56b5a417387892bb33e5d",
+    "outputs/r16/saved_v1_source.ipynb": "f047343de7b925f1ce161ec87ec31b434fe236e36ead9e2335263fa1e20bc48f",
+    "outputs/r16/saved_v1_verification.json": "3cba2db8d20c381771617eaa0e7476dcbe900e64e544f30cb329200ecfe54aa1",
+    "outputs/r16/v1_failure_logs.txt": "79e86fe18e0f5f32eebcb9b1729553331cd553c1f64c4ffa81a6867710d5dfd6",
+    "outputs/r16/v2_draft_code.json": "f70ac0ee17c7e1977dba36c7529f2cd9c2d88f36077a2937970dc2b6e241bf17",
+    "outputs/r16/v2_draft_verification.json": "ba225d6e9cc409c880e12cbf84ed5f53da26983b9d815ae1a6f73da0df058557",
+    "outputs/r16/saved_v2_source.ipynb": "d00d08ab1e0d891f416a6c9767c58fb20127ffdbbb4982bbca0b482bf6c5925b",
+    "outputs/r16/saved_v2_verification.json": "daa8a4bcaf7657590ca2a8478715b796582dde9c10c9b080815d8313d6d37fc4",
+    "outputs/r16/tests_asset_initial.log": "65e49feb6b3b35e3cc365246606087e6a26049507be00631576442de9a8deedf",
+    "outputs/r16/tests_asset_final.log": "1e4549ca3a5ef4f0df491c4cd8a97a3c97173f060b863779e643fa4e428a28b0",
+    "outputs/r16/v2_save_success_logs.txt": "0663e1e2f10b5d3182b798ffba1f46cc4b7d604d0a3152a81219332575320770",
+    "outputs/r16/submission_accepted.txt": "05fa3ebbbf834d489f194c87fb8992fb43aeb12471437cd53a1b3cb0ffef1183",
+    "outputs/r16/submission_accepted.png": "56fd702b9ee7dc4dae35ac9cb5bdc5db1d25a018e5671e57321d7dd7b66e17b6"
+  },
+  "omitted_members": [
+    "comp.lora24_public",
+    "main.ll8v5"
+  ],
+  "save_history": [
+    {
+      "version": 1,
+      "scriptVersionId": 363482651,
+      "status": "failed",
+      "error_seconds": 224.4,
+      "total_seconds": 231.0,
+      "error": "AssertionError missing Llama-3.1-8B base",
+      "model_inference_started": false
+    },
+    {
+      "version": 2,
+      "scriptVersionId": 363487968,
+      "status": "succeeded",
+      "total_seconds": 101.7,
+      "rerun": false,
+      "visible_test_rows": 3,
+      "model_inference_started": false
+    }
+  ],
+  "engineering_retry_reason": "V1 initialization failure; explicitly omit unavailable Llama member and remove legacy unused discovery",
+  "formal_submission": {
+    "scriptVersionId": 363487968,
+    "version": 2,
+    "file": "submission.parquet",
+    "accepted": true,
+    "observed_status": "Notebook Running",
+    "submitted_utc_approx": "2026-10-29T12:22:00Z",
+    "public_score": null,
+    "notebook_url": "https://www.kaggle.com/code/zephyrpong/ntl-r16-typography-half-20261029?scriptVersionId=363487968",
+    "status_url": "https://www.kaggle.com/competitions/name-that-llm/submissions",
+    "formal_attempt_number": 1
+  }
+}
