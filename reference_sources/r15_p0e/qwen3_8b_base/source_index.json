@@ -1,0 +1,29 @@
+{
+  "schema": "ntl-generic-base-metadata-v1",
+  "repository": "Qwen/Qwen3-8B-Base",
+  "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+  "purpose": "pin a generic base candidate for the distinct R15 nested reconstruction; not proof of original Kaggle base revision",
+  "weights_downloaded": false,
+  "tokenizer_payload_downloaded": false,
+  "files": [
+    {
+      "file": "model_metadata.json",
+      "url": "https://huggingface.co/api/models/Qwen/Qwen3-8B-Base",
+      "bytes": 6674,
+      "sha256": "5929621e503f93ccb1ccae004d4c88247fcb0928dd50114ff1723a703f708eb5"
+    },
+    {
+      "file": "config.json",
+      "url": "https://huggingface.co/Qwen/Qwen3-8B-Base/resolve/49e3418fbbbca6ecbdf9608b4d22e5a407081db4/config.json",
+      "bytes": 729,
+      "sha256": "3bd01d7ad7a2e203ecbbe84e24087a51c6d2a108ee4bcc42d0016bf49564983a"
+    },
+    {
+      "file": "MODEL_CARD.md",
+      "url": "https://huggingface.co/Qwen/Qwen3-8B-Base/resolve/49e3418fbbbca6ecbdf9608b4d22e5a407081db4/README.md",
+      "bytes": 2938,
+      "sha256": "0eb9f991baa4f92c9ef708d1e9c7a01ae5b19d05516d38f8833549aa8b06a07e"
+    }
+  ],
+  "process_cpu_seconds": 0.140625
+}

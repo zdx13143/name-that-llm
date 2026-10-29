@@ -42,11 +42,17 @@
       "roles": [
         "comp.lora24_seed7"
       ],
-      "status": "source_acquired_not_training_admitted",
+      "status": "nested_source_candidate_prepared_execution_not_released",
       "source": "s7_v1.py.txt",
+      "adaptation": "scripts/build_r15_s7_adapter.py",
+      "adaptation_evidence": "outputs/r15_s7_adapter/preparation.json",
+      "base_metadata": "reference_sources/r15_p0e/qwen3_8b_base/source_index.json",
+      "original_base_revision_proven": false,
+      "local_fp16_weight_floor_gib": 9.7841796875,
       "missing": [
-        "explicit nested-envelope adapter",
-        "base/checkpoint provenance"
+        "reviewed base/tokenizer files and execution release",
+        "resource supervisor and measured budget on adequate hardware",
+        "full nested producer integration"
       ]
     },
     {

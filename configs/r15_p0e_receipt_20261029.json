@@ -1,0 +1,166 @@
+{
+  "schema": "ntl-r15-p0-s7-source-adaptation-v1",
+  "recorded_at_utc": "2026-10-29T07:47:32.391937+00:00",
+  "base_commit": "b2bbc7b9d6c146b6fc41599c7c7137ad00c89262",
+  "branch": "exp/team-e654-r15-20261029",
+  "commit_lookup": "git log -1 --format=%H -- configs/r15_p0e_receipt_20261029.json",
+  "previous_goal_turn_classification": "progress: original development data admitted",
+  "status": "s7_nested_source_candidate_prepared_local_fp16_capacity_rejected_no_training_release",
+  "member": "comp.lora24_seed7",
+  "scope": "source/data/sampler preparation only; complete ensemble objective unchanged",
+  "source": {
+    "version": 358911769,
+    "sha256": "d0c792e1262683e7661ec6b195a73e98facd3713c609a3e849ac85d0513c2f45",
+    "training_core_and_sampler_preserved": true,
+    "numeric_recipe_changed": false,
+    "fold_population_and_routing_changed": true,
+    "fitting_is_final_style_per_envelope": true,
+    "archived_notebook_imported": false,
+    "original_numpy_sampler_function_executed": true,
+    "generated_worker_executed": false
+  },
+  "preparation": {
+    "job_envelopes": 30,
+    "outer_final_envelopes": 5,
+    "inner_envelopes": 25,
+    "numpy_sampler_plan_calls": 90,
+    "optimizer_updates_planned": 7200,
+    "optimizer_updates_executed": 0,
+    "development_sha256": "1c9446efa6c8c477bd68448f1de212aadcc8dc90224b76728ec2f70e2ec2334f",
+    "nested_plan_sha256": "f4598325850bf2e1a24157b4b8e9b0032ae22afacce88ad86a65b9841ced13dc",
+    "prediction_rows_include_labels": false,
+    "training_runtime_complete": false,
+    "execution_enabled": false,
+    "resource_supervisor_implemented": false,
+    "prepared_output_directory": "outputs/r15_s7_adapter"
+  },
+  "base_candidate": {
+    "repository": "Qwen/Qwen3-8B-Base",
+    "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+    "metadata_bytes_downloaded": 10341,
+    "weights_downloaded": false,
+    "tokenizer_payload_downloaded": false,
+    "original_kaggle_base_revision_proven": false,
+    "local_inventory": "no visible Qwen3 base/tokenizer/adapter in bounded project model/cache and HF hub cache; archives not unpacked"
+  },
+  "capacity": {
+    "static_fp16_weight_lower_bound": {
+      "matrix_parameters": 5252841472,
+      "fp16_bytes": 10505682944,
+      "fp16_gib": 9.7841796875,
+      "excludes": [
+        "norms",
+        "LoRA parameters",
+        "readouts",
+        "gradients",
+        "optimizer",
+        "activations",
+        "allocator"
+      ]
+    },
+    "gpu_snapshot": {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "total_mib": 8188,
+      "used_mib": 3804,
+      "free_mib": 4153,
+      "utilization_percent": 9,
+      "observation": "read-only nvidia-smi during this turn before preparation; point-in-time, not a reservation"
+    },
+    "original_full_gpu_resident_recipe_fits_total_device_memory": false,
+    "actual_oom_probe": false,
+    "alternative_quantization_or_offload_substituted": false
+  },
+  "tests": {
+    "tests_run": 7,
+    "failures": 0,
+    "errors": 0,
+    "process_cpu_seconds": 5.25,
+    "wall_seconds": 5.547000000020489,
+    "scope": "artificial envelope and frozen source only; no official payload/model/GPU"
+  },
+  "independent_reviews": {
+    "consumer_contract": "p0e_s7_consumer_contract",
+    "local_base_inventory": "p0e_qwen_base_inventory",
+    "source_adaptation": "p0e_s7_adaptation_review; no material findings; confirmed source-only limitation"
+  },
+  "resources": {
+    "cumulative_cpu_seconds_cap": 14400,
+    "prior_measured_p0_python_cpu_seconds": 51.265625,
+    "metadata_fetch_cpu_seconds": 0.140625,
+    "synthetic_tests_cpu_seconds": 5.25,
+    "real_development_source_preparation_cpu_seconds": 5.625,
+    "render_and_final_check_cpu_seconds": 0.046875,
+    "new_measured_python_cpu_seconds": 11.0625,
+    "known_measured_p0_python_cpu_seconds_total": 62.328125,
+    "total_host_cpu_measured": false,
+    "unmetered_scope": "browser/scout/tool/Git and small receipt/link work",
+    "source_metadata_download_cap_bytes": 104857600,
+    "this_turn_downloaded_bytes": 10341,
+    "gpu_jobs": 0
+  },
+  "this_turn_counters": {
+    "raw_source_reads": 0,
+    "protected_content_accesses": 0,
+    "real_model_fits": 0,
+    "encoder_forwards": 0,
+    "official_label_accuracy_evaluations": 0,
+    "real_replays": 0,
+    "model_weight_downloads": 0,
+    "git_pushes": 0,
+    "kaggle_imports": 0,
+    "kaggle_saves": 0,
+    "formal_submissions": 0,
+    "remote_automations": 0,
+    "new_public_scores": 0
+  },
+  "prior_protected_access_and_data_admission_counters_preserved_in": "configs/r15_p0d_receipt_20261029.json",
+  "results": {
+    "balanced_accuracy": null,
+    "public_score": null,
+    "private_score": null
+  },
+  "remaining_dependencies": [
+    "remaining member trainer/config and stage membership sources",
+    "external data prompt lineage and exclusion receipts",
+    "nested blend/Gaussian fitting specification",
+    "adequate compute plus verified base files, runtime supervisor and execution release"
+  ],
+  "unchanged_artifacts_sha256": {
+    "configs/r15_protocol_20261029.json": "31c5fd947dce8ad2a3e0994c4567d9ad95bc8b918da7ca336078299e2c6d3973",
+    "experiments/r15_typography_replay.py": "b370b5a67d0e4977bb0255fb2688b80b51400224ac4d3d48637cec0e73cd4b81",
+    "scripts/r15_prepare_raw_dev_export.py": "567f1222b0bed6fd0db318414a064fd28edb73eac592f5d018243c9ed9be1903",
+    "scripts/r15_validate_dev_export.py": "0c27ed918c83d0066efa8ad065a68911e9b5e2a874979173f74c893540ee5636",
+    "notebooks/team_e654_r14_public660.ipynb": "5fd8bf520af59a1841fb19a035e922df123934bb1d1d05625b6853f6351b9dae"
+  },
+  "artifacts_sha256": {
+    "README.md": "d247fd10452487581aa0a43d99f4dcaec8bb6dd328f1777c80b48f8fb40c807c",
+    "PROJECT_LEARNING.md": "a44bbbed816c7840de885dce6daa62e850edd8bf5063039e2c7134b2a00c3ff6",
+    "PROJECT_LEARNING.html": "d304aab905ac7ef8f8f1c5a237b194a45692431e1250ec87016950b506f238d6",
+    "configs/r15_p0_source_inventory_20261029.json": "f14fc0dfa3efd4324b9cd683b14c8ed26892ce42e91003ce51d8210ba828bada",
+    "docs/R15_P0_S7_ADAPTATION_20261029.md": "70b58ca396948ebe800e85e61b71a816d21238f59b70adc0490e18c440a8e4a7",
+    "scripts/build_r15_s7_adapter.py": "989aadf74fac39d54e136b6bd1275558307a94eb3fc26b91feebee80f49c4793",
+    "tests/test_r15_s7_adapter.py": "8eca269ce9dfe8e2a39571b1872d1b7920db84776fb1b04cf213c7d092220129",
+    "reference_sources/r15_p0e/README.md": "6f4afbdc1e18bcf66f73ebb609dc8836331b9970b5fb598c79741e0bfdeaab70",
+    "reference_sources/r15_p0e/qwen3_8b_base/config.json": "3bd01d7ad7a2e203ecbbe84e24087a51c6d2a108ee4bcc42d0016bf49564983a",
+    "reference_sources/r15_p0e/qwen3_8b_base/MODEL_CARD.md": "0eb9f991baa4f92c9ef708d1e9c7a01ae5b19d05516d38f8833549aa8b06a07e",
+    "reference_sources/r15_p0e/qwen3_8b_base/model_metadata.json": "5929621e503f93ccb1ccae004d4c88247fcb0928dd50114ff1723a703f708eb5",
+    "reference_sources/r15_p0e/qwen3_8b_base/source_index.json": "9ca4cf1dbecddecafbd9cbfceca50dbcfba61497764013f201841a3f22ce4e7d"
+  },
+  "local_evidence_sha256": {
+    "outputs/r15_p0e/final_verification.json": "43abb0fe41e656e04e4eaa6136cbfcb8ed8bf1842d19b0f162490620c207748d",
+    "outputs/r15_p0e/s7_adapter_tests.json": "84325aa04459b420a1d69d3685cfdac7167fd60a1a2a58d15a0c6f1ae142fe80",
+    "outputs/r15_p0e/s7_adapter_tests.log": "533a899613cfbefdc12b145ff9d8591dc9471b5f84b5ab73a68611e84907d7fd",
+    "outputs/r15_p0e/s7_preparation_result.json": "231011a536def7746d77211f9dcced9f456f6fe6b123521ded8f04a23402c07c",
+    "outputs/r15_p0e/s7_preparation_runtime.json": "a753e4e46b325c0a8d2199d443f5462943f90b31502a2ec9940a91a1aa39d237",
+    "outputs/r15_s7_adapter/worker.py": "c28cad0fd3ad5ba310bf6227a6058419817ba59db4a2b094a8915f157fcd4ebd",
+    "outputs/r15_s7_adapter/preparation.json": "51648599da2daa4ecae59cd2ccb807283fb4adb3f533748354e0541e53c3f893"
+  },
+  "delivery_validation": {
+    "bound_hashes_verified": 24,
+    "local_document_links_verified": 43,
+    "learning_html_synchronized": true,
+    "authored_files_git_diff_check": "PASS",
+    "upstream_model_card_original_trailing_whitespace_lines": 5,
+    "upstream_bytes_preserved_for_source_hash": true
+  }
+}
