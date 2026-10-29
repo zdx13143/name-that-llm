@@ -1,0 +1,83 @@
+from safetensors.torch import load_file
+from transformers import AutoConfig, AutoModel, AutoTokenizer
+
+
+def find_base(spec):
+    for cfg in sorted(glob.glob(f"{INPUT_DIR}/**/config.json", recursive=True)):
+        try:
+            c = json.load(open(cfg))
+        except Exception:
+            continue
+        if all(c.get(k) == v for k, v in spec.items()):
+            return os.path.dirname(cfg)
+    raise FileNotFoundError(f"attach the base model {spec}")
+
+
+def load_trunk(base_dir, keep, dtype):
+    """First `keep` decoder layers, split over both T4s when it does not fit on one."""
+    mc = AutoConfig.from_pretrained(base_dir)
+    mc.num_hidden_layers, mc.use_cache = keep, False
+    if getattr(mc, "layer_types", None) is not None:
+        mc.layer_types = mc.layer_types[:keep]
+    hd = getattr(mc, "head_dim", mc.hidden_size // mc.num_attention_heads)
+    gib = 2 * (mc.vocab_size * mc.hidden_size + keep * (2 * mc.hidden_size * mc.num_attention_heads * hd
+               + 2 * mc.hidden_size * mc.num_key_value_heads * hd + 3 * mc.hidden_size * mc.intermediate_size)) / 2 ** 30
+    if gib > 13 and torch.cuda.device_count() > 1:
+        mem = {i: "13GiB" for i in range(torch.cuda.device_count())}
+        model = AutoModel.from_pretrained(base_dir, config=mc, dtype=dtype, device_map="auto", max_memory=mem).eval()
+    else:
+        model = AutoModel.from_pretrained(base_dir, config=mc, dtype=dtype).to("cuda:0").eval()
+    model.norm = nn.Identity()
+    return model
+
+
+@torch.no_grad()
+def merge_lora(model, adapter_dir):
+    acfg = json.load(open(os.path.join(adapter_dir, "adapter_config.json")))
+    scale = acfg["lora_alpha"] / acfg["r"]
+    sd = load_file(os.path.join(adapter_dir, "adapter_model.safetensors"))
+    modules = dict(model.named_modules())
+    for k, A in sd.items():
+        if ".lora_A." in k:
+            name = k.split(".lora_A.")[0]
+            lin = modules[name[name.index("layers."):]]
+            Bm = sd[k.replace(".lora_A.", ".lora_B.")]
+            lin.weight.add_(((Bm.float().to(lin.weight.device) @ A.float().to(lin.weight.device)) * scale).to(lin.weight.dtype))
+
+
+@torch.no_grad()
+def lora_features(ckpt_dir, base_dir, texts, bs):
+    """Pooled features Z (n, 8 * hidden) and the checkpoint's heads."""
+    meta = json.load(open(os.path.join(ckpt_dir, "meta.json")))
+    assert meta["labels"] == LABELS, "label order differs from the checkpoint's heads"
+    cfg = meta["cfg"]
+    dtype = torch.bfloat16 if torch.cuda.get_device_capability(0)[0] >= 8 else torch.float16
+    tok = AutoTokenizer.from_pretrained(base_dir)
+    tok.padding_side = "right"
+    if tok.pad_token is None:
+        tok.pad_token = tok.eos_token
+    model = load_trunk(base_dir, cfg["keep"], dtype)
+    merge_lora(model, os.path.join(ckpt_dir, "adapter"))
+    heads = load_file(os.path.join(ckpt_dir, "heads.safetensors"))
+    layers, H = cfg["layers"], model.config.hidden_size
+    norms = nn.ModuleList([nn.LayerNorm(H) for _ in layers]).to("cuda:0").float()
+    norms.load_state_dict({k[len("norms."):]: v for k, v in heads.items() if k.startswith("norms.")})
+    ids = tok(list(texts), add_special_tokens=False, truncation=True, max_length=cfg["max_len"])["input_ids"]
+    ids = [x + [tok.eos_token_id] for x in ids]
+    order = np.argsort([len(x) for x in ids], kind="stable")   # similar lengths together = less padding
+    Z = np.zeros((len(ids), H * len(layers)), np.float32)
+    for s in range(0, len(order), bs):
+        idx = order[s:s + bs]
+        enc = tok.pad({"input_ids": [ids[i] for i in idx]}, return_tensors="pt").to(model.embed_tokens.weight.device)
+        hs = model(**enc, output_hidden_states=True, use_cache=False).hidden_states
+        if not all(torch.isfinite(hs[l]).all() for l in layers):   # fp16 overflow: redo this batch in bf16
+            model.to(torch.bfloat16)
+            hs = model(**enc, output_hidden_states=True, use_cache=False).hidden_states
+            model.to(dtype)
+        m = enc["attention_mask"].unsqueeze(-1).float().to("cuda:0")
+        m[:, 0] = 0   # the first token is an attention sink; leave it out of the mean
+        den = m.sum(1).clamp(min=1)
+        Z[idx] = torch.cat([nm((hs[l].to("cuda:0").float() * m).sum(1) / den) for l, nm in zip(layers, norms)], -1).cpu().numpy()
+    del model
+    torch.cuda.empty_cache()
+    return Z, {k: v.float().numpy() for k, v in heads.items() if not k.startswith("norms.")}

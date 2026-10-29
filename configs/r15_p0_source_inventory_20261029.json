@@ -23,7 +23,8 @@
         "main.deb"
       ],
       "status": "blocked",
-      "have": "inference source, partial checkpoint meta.json viewed",
+      "have": "inference source plus five hash-bound original part-two meta/adapter JSON files from nishantdahal/ntl-handwriting-blend V1; main.deb is fully fine-tuned and distinct from comp.debv3l",
+      "additional_evidence": "reference_sources/r15_p0b/source_index.json",
       "missing": [
         "training programs and complete configs",
         "stage-one external membership",
@@ -60,7 +61,7 @@
         "comp.lora24_claude"
       ],
       "status": "blocked",
-      "have": "inference paths and source attribution",
+      "have": "inference paths and source attribution; Claude dataset card links ntl-lora24-claude-aux, currently page-not-found",
       "missing": [
         "exact original trainer and complete config",
         "external and official membership receipts"
@@ -82,9 +83,11 @@
         "atlas"
       ],
       "status": "blocked",
-      "have": "inference package and reported training source/config hashes; full-data fitting statement",
+      "have": "hash-bound V3 checkpoint configuration, training-source manifest and bundle metadata; exact base revision and full-data fitting statement",
+      "additional_evidence": "reference_sources/r15_p0b/source_index.json",
       "missing": [
-        "actual train.py and exact training config",
+        "actual NTL train.py and exact standalone config matching manifest hashes",
+        "explain training-manifest versus distributed-bundle model.py hash difference",
         "rebuild with R15 envelope"
       ]
     },
@@ -147,7 +150,7 @@
         "external_data_selection"
       ],
       "status": "blocked",
-      "have": "actual cleaning/dedup and unfiltered-append source locations",
+      "have": "actual cleaning/dedup and unfiltered-append source locations; part-two card names 25 pool sources plus an additional Qwen3 stage-one source, without row-level exclusion receipts",
       "missing": [
         "version-pinned external source hashes",
         "reviewed row lineage and per-stage membership"

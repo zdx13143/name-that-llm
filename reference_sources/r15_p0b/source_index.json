@@ -1,0 +1,117 @@
+{
+  "schema": "ntl-r15-p0b-source-evidence-v1",
+  "acquired_on": "2026-10-29",
+  "source_executed": false,
+  "data_or_weight_downloaded": false,
+  "training_admitted": false,
+  "dataset_versions_observed": {
+    "atlas": 3,
+    "nishant_part_two": 1,
+    "claude_lora": 1,
+    "nishant_pool_v1": 1
+  },
+  "files": [
+    {
+      "file": "atlas/training-source-manifest.json",
+      "sha256": "9814b711e0c91583d348d9df66285f26c1fc86905f3cd5003b9760ce34162a81",
+      "bytes": 886,
+      "url": "https://www.kaggle.com/api/v1/datasets/download/josephadamski91/ntl-atlas-qwen3-8b-v1?filename=atlas_adapter%2Fatlas_adapter%2Ftraining-source-manifest.json",
+      "kind": "configuration_or_manifest_only"
+    },
+    {
+      "file": "atlas/checkpoint.json",
+      "sha256": "b2e226b926fe660b6bcee42b0437c8dcd01f5bfbb9fd6f5290338faef45c6c36",
+      "bytes": 1928,
+      "url": "https://www.kaggle.com/api/v1/datasets/download/josephadamski91/ntl-atlas-qwen3-8b-v1?filename=atlas_adapter%2Fatlas_adapter%2Fcheckpoint.json",
+      "kind": "configuration_or_manifest_only"
+    },
+    {
+      "file": "atlas/atlas_bundle.json",
+      "sha256": "48f8d7e82bf0b12f9414a314f695216e31b5f4854b5091248d1015b98d9743de",
+      "bytes": 3011,
+      "url": "https://www.kaggle.com/api/v1/datasets/download/josephadamski91/ntl-atlas-qwen3-8b-v1?filename=atlas_adapter%2Fatlas_adapter%2Fatlas_bundle.json",
+      "kind": "configuration_or_manifest_only"
+    },
+    {
+      "file": "nishant_part_two/deberta_v3_large/meta.json",
+      "sha256": "deb3c891d6172018ec06b7b3de33f9a13ac6c44d6bf8a9725b53ce8c7c93a546",
+      "bytes": 529,
+      "url": "https://www.kaggle.com/api/v1/datasets/download/nishantdahal/ntl-handwriting-blend?filename=deberta_v3_large%2Fmeta.json",
+      "kind": "configuration_or_manifest_only"
+    },
+    {
+      "file": "nishant_part_two/lora_qwen3_14b/meta.json",
+      "sha256": "293119872ff3f170ec85e8be02c80916e39048213de31cb45f8b84a2cf74d775",
+      "bytes": 1015,
+      "url": "https://www.kaggle.com/api/v1/datasets/download/nishantdahal/ntl-handwriting-blend?filename=lora_qwen3_14b%2Fmeta.json",
+      "kind": "configuration_or_manifest_only"
+    },
+    {
+      "file": "nishant_part_two/lora_qwen25_14b/meta.json",
+      "sha256": "1d04028b7fe22beda04f7125d09dd5bc9bee9c8524f721c0aa7bc61379fad6fc",
+      "bytes": 1000,
+      "url": "https://www.kaggle.com/api/v1/datasets/download/nishantdahal/ntl-handwriting-blend?filename=lora_qwen25_14b%2Fmeta.json",
+      "kind": "configuration_or_manifest_only"
+    },
+    {
+      "file": "nishant_part_two/lora_qwen3_14b/adapter/adapter_config.json",
+      "sha256": "185ac62fa6bb0ba6b14801d663ee70b3ec3ab2133a57857ff4cae1774dc60047",
+      "bytes": 1380,
+      "url": "https://www.kaggle.com/api/v1/datasets/download/nishantdahal/ntl-handwriting-blend?filename=lora_qwen3_14b%2Fadapter%2Fadapter_config.json",
+      "kind": "configuration_or_manifest_only"
+    },
+    {
+      "file": "nishant_part_two/lora_qwen25_14b/adapter/adapter_config.json",
+      "sha256": "2519871702d5d5668a2a86084188754e4b07893b9aaf9c6c0b1f114ae7e82925",
+      "bytes": 1322,
+      "url": "https://www.kaggle.com/api/v1/datasets/download/nishantdahal/ntl-handwriting-blend?filename=lora_qwen25_14b%2Fadapter%2Fadapter_config.json",
+      "kind": "configuration_or_manifest_only"
+    },
+    {
+      "file": "nishant_359887828/cell_01.py.txt",
+      "sha256": "b5f6d83ff87b8f101a45ccbd2e4bb7bbf86ce17fdfbab9418cf163ee1b619eb7",
+      "bytes": 1780,
+      "source_version": 359887828,
+      "url": "https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool?scriptVersionId=359887828",
+      "kind": "source_text_not_executed"
+    },
+    {
+      "file": "nishant_359887828/cell_03.py.txt",
+      "sha256": "4ea821771e1f18cc964ce20edab6ed7d49d0dfa4ce99146b7d898b2b1890e586",
+      "bytes": 2338,
+      "source_version": 359887828,
+      "url": "https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool?scriptVersionId=359887828",
+      "kind": "source_text_not_executed"
+    },
+    {
+      "file": "nishant_359887828/cell_05.py.txt",
+      "sha256": "01b71867a95405d37671450ab9e87af6b33e2b95017716d8c9c644d904305f7a",
+      "bytes": 4396,
+      "source_version": 359887828,
+      "url": "https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool?scriptVersionId=359887828",
+      "kind": "source_text_not_executed"
+    },
+    {
+      "file": "nishant_359887828/cell_07.py.txt",
+      "sha256": "3bfd6f684e67c280b55896db0f615bdc6f07f3580cb6e005a37c8051ed3d1545",
+      "bytes": 1383,
+      "source_version": 359887828,
+      "url": "https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool?scriptVersionId=359887828",
+      "kind": "source_text_not_executed"
+    },
+    {
+      "file": "nishant_359887828/cell_09.py.txt",
+      "sha256": "4548306b723d202a49c4acda0fe2813ed038f2758024f238d6d78f64e2c69514",
+      "bytes": 436,
+      "source_version": 359887828,
+      "url": "https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool?scriptVersionId=359887828",
+      "kind": "source_text_not_executed"
+    },
+    {
+      "file": "data_cards.json",
+      "sha256": "fd0a0ce396bbc93590a35de3fd0b983f6ba7c72ac5399d38544509adff513409",
+      "bytes": 8936,
+      "kind": "selected_public_metadata_fields_no_rows"
+    }
+  ]
+}

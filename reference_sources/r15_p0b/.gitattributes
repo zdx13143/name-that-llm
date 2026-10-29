@@ -1,0 +1,3 @@
+*.json -text
+*.txt -text
+nishant_part_two/** whitespace=trailing-space,space-before-tab,cr-at-eol

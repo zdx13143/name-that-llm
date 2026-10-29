@@ -8,6 +8,8 @@ Kaggle Featured 竞赛 **Name That LLM** 的队伍工作仓库。
 
 > **R15 优先级 0 准备：已保存四份固定版本训练源码及配置证据，新增 development-only 导出准入与内层五折规划，11/11 人工测试通过。** 旧 loader 会解析完整 CSV，未用于恢复文本；Instyle 外部语料没有按验证 prompt 排除。严格融合方案采用每外折内的五折校准，但完整训练源码、外部谱系、原 2159 行安全导出及精确校准过程仍阻塞。见 [P0 报告及下一步](docs/R15_P0_REPORT_20261029.md)、[源码归档](reference_sources/r15_p0/README.md)、[P0 回执](configs/r15_p0_receipt_20261029.json)。0 GPU、0 官方评分、0 旧留出读取、0 push/Save/提交；原 R15 协议未启用。
 
+> **P0 继续查找：已补取 Nishant part-two 原始配置、ATLAS 配置及源码清单，归档 14 份来源材料；扩展本地、Drive 和公开 Kaggle 元数据检索仍未找到原 2159 行独立导出。** 新下载的 Nishant V2 是 SVC 训练加 LoRA 推理，不是神经训练源码；Claude trainer 的准确链接目前不可访问。已明确 main.deb 与 COMP 冻结 DeBERTa 的区别，并记录 ATLAS 两份 model.py 哈希不一致。最新授权允许后续低负载本机 GPU，但本次未启动，未新增评分。见[继续查找报告](docs/R15_P0_CONTINUATION_20261029.md)、[新增来源](reference_sources/r15_p0b/README.md)和[回执](configs/r15_p0b_receipt_20261029.json)。没有重跑已完成测试。
+
 > **R14 历史成果：冻结公开实得 0.660 的 V32 / 363222852 完整配方，本地 14/14 合成测试通过，尚无正式分数。** 2026-10-29 本轮只读复核时，已有私有草稿可以显示上游代码，版本历史仍为 `Starting Fresh`，Session off，底部仍有 reCAPTCHA 连接提示；候选未导入，0 个 saved version。页面 T4 ×2 / Internet off 只是设置。我们的已确认最佳仍为 R12 V1 / 363188587 的 **Public Score 0.654**；外部 0.660 不是我们的成绩，也不是本地 CV。旧 30-prompt 留出保持关闭，本轮未新建草稿或自动跟踪。R14 原记录见 [报告](docs/R14_REPORT_20261029.md)、[回执](configs/r14_execution_receipt_20261029.json)与[方案及范围修订](docs/R14_PLAN_20261029.md)。
 
 > R12 于 2026-10-28 19:47:36 UTC 确认正式评测 Succeeded / 0.654，相比队友 0.651 高 0.003，与外部 V4 在页面显示精度上一致。R12 共一次保存、一次正式提交；详见 [R12 报告](docs/R12_REPORT_20261028.md) 与 [回执](configs/r12_execution_receipt_20261028.json)。精确服务器评分时间未公开，所记为确认时间；尚无新的完整集成本地 CV 或 private 成绩。

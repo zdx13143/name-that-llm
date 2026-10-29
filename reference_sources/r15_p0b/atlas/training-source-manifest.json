@@ -1,0 +1,13 @@
+{
+  "archive_sha256": "fa6bb105b92caa78061ea1588851e4712ec4d1bc1c939f9838bcbe3490562498",
+  "files": {
+    "ntl_atlas/__init__.py": "b2bff8348b93ca7375c523e83965e24b6af5df06fe3dc2a0940f73332ce1ad87",
+    "ntl_atlas/model.py": "19d2a047699cf42768520785c92239549bfe0cbb366479f52f9c72f9e8ea94c4",
+    "ntl_atlas/train.py": "80440fa2589236b0cf6f1d3f9388f049941a4474050c55fe6729ee677a28ef87",
+    "ntl_atlas/inference.py": "8f57242c27e13572a8c5a2fbb8136dce462fb7cd175a52092a5a8c86797e91c7",
+    "ntl_rlcd/__init__.py": "b53b2efa3d0e4884c17dbbfc51514d8f5b37205ae6d58e354f02e1fbbe78c4bc",
+    "ntl_rlcd/data.py": "871778752ddde445efc33d310fb96961f87507c3b59a18aff3ea472f3d86972a",
+    "configs/atlas-qwen3-8b-v1.json": "bd0d037376f5b63f36953f84c92bcbbe29495a4a9e0c2a01c0708ac839847252",
+    "data/competition/train.csv": "40a22ce8d88c5f46feb4637a099db815bef5f713ffe53e89dbe1b7b21de77707"
+  }
+}

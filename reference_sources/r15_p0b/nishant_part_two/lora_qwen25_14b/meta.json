@@ -1,0 +1,57 @@
+{
+ "cfg": {
+  "model_dir": "Qwen/Qwen2.5-14B",
+  "keep": 32,
+  "layers": [
+   3,
+   5,
+   8,
+   11,
+   16,
+   21,
+   27,
+   32
+  ],
+  "max_len": 447,
+  "r": 16,
+  "alpha": 32,
+  "ldrop": 0.05,
+  "head_drop": 0.1,
+  "lr_adapter": 5e-05,
+  "lr_head": 0.0005,
+  "wd": 0.01,
+  "warmup": 0.1,
+  "epochs": 2.0,
+  "triplets_per_step": 6,
+  "eval_bs": 32,
+  "seed": 42,
+  "grad_ckpt": true,
+  "eos_id": 151643,
+  "eos_note": "eos_id is the end token appended in training (<|endoftext|>)"
+ },
+ "labels": [
+  "gpt-5.5",
+  "gpt-5.6-luna",
+  "gpt-5.6-sol",
+  "gpt-5.6-terra",
+  "gpt-6-astra",
+  "gemini-3.1-pro-preview",
+  "gemini-3.6-flash",
+  "gemini-3.7-flash",
+  "gemini-3.8-flash",
+  "claude-opus-4-6",
+  "claude-opus-4-8",
+  "claude-opus-5",
+  "claude-sonnet-5",
+  "claude-fable-5",
+  "qwen3.8-max",
+  "glm-5.3",
+  "glm-5.3-flash",
+  "kimi-k3"
+ ],
+ "train_info": {
+  "steps": 300,
+  "secs": 444.54579758644104,
+  "final_loss": 1.5931715172529222
+ }
+}
