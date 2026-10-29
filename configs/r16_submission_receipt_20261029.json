@@ -1,8 +1,8 @@
 {
   "schema": "ntl-r16-kaggle-trial-v1",
-  "updated_utc": "2026-10-29T15:26:06.639255+00:00",
+  "updated_utc": "2026-10-29T20:04:34.318702+00:00",
   "user_missing_input_handling": "delegated_best_handling",
-  "status": "formal_submission_running",
+  "status": "formal_submission_succeeded",
   "version": 2,
   "scriptVersionId": 363487968,
   "url": "https://www.kaggle.com/code/zephyrpong/ntl-r16-typography-half-20261029?scriptVersionId=363487968",
@@ -28,7 +28,7 @@
     "saved_versions": 2,
     "asset_test_invocations": 2
   },
-  "public_score": null,
+  "public_score": 0.659,
   "private_result": null,
   "local_complete_ensemble_cv": "not_evaluated",
   "local_evidence_sha256": {
@@ -52,7 +52,9 @@
     "outputs/r16_followup/llama_cache_362275911_unavailable.txt": "0b5d5c2569ba3d894b3ef08792b83c17a073c9cb99ed426fe97ec1f5b84650b9",
     "outputs/r16_followup/r16_running_20261029T1523Z.txt": "63965e96c76b5ff5bd93a6f7d1ce8c9ccf50c4c7ac0ac9f659ec118b32ceaae2",
     "outputs/r16_followup/avazaku_verified_v4/description.md": "e5a16f8afe450d97db63fa3935ac6a49bb4494c4ed01822bd57132ebdea5ce80",
-    "outputs/r16_followup/avazaku_verified_v4/source_manifest.json": "e353ab8324f968f888e5fff699b3fd6dfede81b5196f1d4ce0cbbf12ec69a4ae"
+    "outputs/r16_followup/avazaku_verified_v4/source_manifest.json": "e353ab8324f968f888e5fff699b3fd6dfede81b5196f1d4ce0cbbf12ec69a4ae",
+    "outputs/r16_result/succeeded_0659_dom.txt": "c340c22915f6f0729a6abe297d726a409f4b055c773becad83bf0f30d130369b",
+    "outputs/r16_result/succeeded_0659.png": "02ac4efb7d06c1d33ab2551320e5ed0f6203df232c54783c3e82e4159e300b9b"
   },
   "omitted_members": [
     "comp.lora24_public",
@@ -84,13 +86,15 @@
     "version": 2,
     "file": "submission.parquet",
     "accepted": true,
-    "observed_status": "Notebook Running",
+    "observed_status": "Succeeded",
     "submitted_utc_approx": "2026-10-29T12:22:00Z",
-    "public_score": null,
+    "public_score": 0.659,
     "notebook_url": "https://www.kaggle.com/code/zephyrpong/ntl-r16-typography-half-20261029?scriptVersionId=363487968",
     "status_url": "https://www.kaggle.com/competitions/name-that-llm/submissions",
     "formal_attempt_number": 1,
-    "last_observed_utc_approx": "2026-10-29T15:23:00Z"
+    "last_observed_utc_approx": "2026-10-29T20:02:00Z",
+    "terminal_observed_utc": "2026-10-29T20:04:34.318702+00:00",
+    "server_completion_time_exposed": false
   },
   "input_identity_correction": {
     "kernel_version": 362275911,
@@ -110,5 +114,14 @@
     "next_rounds_authorized": 1,
     "next_round_started": false,
     "goal_document": "docs/POST_R16_GOAL_20261029.md"
+  },
+  "result_comparison": {
+    "r12_version": 363188587,
+    "r12_public_score": 0.654,
+    "r16_public_score": 0.659,
+    "public_score_difference": 0.005,
+    "causal_attribution": false,
+    "complete_ensemble_cv": "not_evaluated",
+    "private_result": null
   }
 }
