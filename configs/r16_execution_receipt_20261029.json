@@ -1,0 +1,51 @@
+{
+  "schema": "ntl-r16-submission-preflight-v1",
+  "as_of_utc": "2026-10-29T08:33:38Z",
+  "base_commit": "31928d051cc4ddce588cddc5e3f3bb4af20872a4",
+  "branch": "exp/team-e654-r16-20261029",
+  "status": "awaiting_missing_member_decision_before_save",
+  "draft_url": "https://www.kaggle.com/code/zephyrpong/ntl-r16-typography-half-20261029/edit",
+  "missing_kernel_version": 362275911,
+  "missing_member": "lora24_public",
+  "missing_member_comp_weight": 0.177,
+  "candidate_code_verified_locally": true,
+  "uploaded_code_and_input_ids_readback_verified": false,
+  "local_complete_ensemble_cv": "not_evaluated",
+  "public_score": null,
+  "private_result": null,
+  "tests": {
+    "passed": 17,
+    "failed": 0,
+    "invocations": 1,
+    "unittest_seconds": 1.046,
+    "subprocess_wall_seconds": 6.429476799909025
+  },
+  "counters": {
+    "new_drafts": 0,
+    "imports": 1,
+    "renames": 1,
+    "saves": 0,
+    "saved_versions": 0,
+    "formal_submissions": 0,
+    "local_model_fits": 0,
+    "local_encoder_forwards": 0,
+    "local_official_accuracy_comparisons": 0,
+    "raw_csv_reads": 0,
+    "protected_holdout_accesses": 0,
+    "git_pushes": 0,
+    "automations": 0
+  },
+  "artifacts_sha256": {
+    "scripts/build_r16_candidate.py": "ca5623d31d6cce5a26a5cdd81f562563ba130e12d26e00d8e6a37f07fb8954aa",
+    "docs/R16_PLAN_20261029.md": "49aea2144ecd019e4e9e8bc72a74f794eaa64b182b259f7e9a2a2739c443e0e9",
+    "docs/R16_REPORT_20261029.md": "53959f299362e5e2140f6cee4c0c2425885be7a97aa5aa75e5e33bf6cd2691cd",
+    "notebooks/team_e654_r16_typography_half.ipynb": "f5d1f8f3622183863a74f03be7b7b1cea5156edd88bc0dd284e00c2356cbab77",
+    "configs/r16_frozen_recipe_20261029.json": "73c1d0b2278c91253ebe6fe3b532c06450a0e28435cfff187c54fa9faf56858b"
+  },
+  "local_evidence_sha256": {
+    "outputs/r16/tests_typography.log": "a1bc6916640a3ff6b7643bb82c01ab00e7a96218e0ec632621ab54d7f40d759f",
+    "outputs/r16/draft_imported.png": "81c0f16e9a631c775c847c9f952d50ce2d63180841daffefa96e5b61fc819e98",
+    "outputs/r16/draft_status.txt": "6b6ab7f3df23800841b5515dde03bf30f19e2e9feda0a66672cf0d6e886b1bb5",
+    "outputs/r16/missing_kernel.png": "3b3efbba75f03da5e6c3663883164a874091f60a26dc7dbd73addc38c62425a6"
+  }
+}

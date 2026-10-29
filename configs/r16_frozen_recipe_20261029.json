@@ -1,0 +1,143 @@
+{
+  "base_candidate_sha256": "5fd8bf520af59a1841fb19a035e922df123934bb1d1d05625b6853f6351b9dae",
+  "candidate_sha256": "f5d1f8f3622183863a74f03be7b7b1cea5156edd88bc0dd284e00c2356cbab77",
+  "candidate_code_sha256": [
+    "17976e4720f62edc35af2145514dddc21d9bd8fa28e2730b90fc40764b743f68",
+    "4fc27dca93a92adfb2759ca65260e5285898d73fc8ccd1acd401982e5f98ed37",
+    "b53e305fd7a755d138f931c55ac5f3762ed3978d73a65594b5ce2523fdf165ff",
+    "c87edb5edd80ae2de6752561c437283a00f966efd638243092542da05b6e120e",
+    "e3aa49d5a11e4ce2b504b826a7f8dddb13077e4b512e92d55a0a2807ca82cc18",
+    "1f5b0a4bf645ed2a2ff617ce8e1187b27e2ef5b7825ac91943a9bc641a623bb5",
+    "d6a78d2c41c0a386c5de16034c4e62df277e02ef99bb0e8c9de7949c6be3df64"
+  ],
+  "pinned_inputs": [
+    {
+      "sourceType": "competition",
+      "sourceId": 170484
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20736096
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20819121
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20831302
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20847146
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20858502
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20934027
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21008519
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21011978
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21062729
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21097171
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21116786
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21119693
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21145399
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21203279
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358683059
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358745836
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358758062
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358770408
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358911769
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358928013
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358948428
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 359652568
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 362275911
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166254
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166265
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363135
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363139
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363140
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363149
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363153
+    }
+  ],
+  "typography_strength": 0.5,
+  "saved_runs_budget": 1,
+  "formal_submissions_budget": 1,
+  "local_complete_ensemble_cv": "not_evaluated"
+}
