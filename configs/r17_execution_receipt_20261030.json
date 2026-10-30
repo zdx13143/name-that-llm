@@ -1,7 +1,7 @@
 {
   "round": "R17",
-  "updated_utc": "2026-10-29T20:26:18.776535+00:00",
-  "status": "local_candidate_validated_pending_official_model_access",
+  "updated_utc": "2026-10-30T08:29:36.607381+00:00",
+  "status": "local_candidate_validated_official_access_gate_confirmed",
   "branch": "exp/team-e659-r17-20261030",
   "base_commit": "73c0f65d4902f0b6317ca8333f1097815b8d7dfb",
   "candidate": "notebooks/team_e659_r17_restore_llama_pending_access.ipynb",
@@ -87,7 +87,7 @@
   "release_gate": {
     "required_model": "metaresearch/llama-3.1/Transformers/8b/1",
     "required_model_instance_version_id": null,
-    "account_access": "unverified; logged-in page displays Meta authorization and Kaggle verification requirement",
+    "account_access": "normal Download action opens an access-verification dialog; prior Meta approval and email-sharing consent required; neither affirmed nor submitted",
     "input_refs_current": 30,
     "input_refs_required_after_binding": 31,
     "asset_contract": "configs/r17_llama_asset_contract_20261030.json",
@@ -123,7 +123,9 @@
     "outputs/r17/tests_final.json": "5dc73661b9867a883c25f39239d0c6975cf949b52be5b799e1162296158ee212",
     "outputs/r17/tests_final.log": "0d64867549252f3eb0a07af98b8616df00314c875166af13ba8c5f0dce5924ce",
     "outputs/r17/tests_initial.json": "d8489c3a78fc72a436ebeb9286a55b4cae77bb74bb33442862f7a4423f6ebdc1",
-    "outputs/r17/tests_initial.log": "b38652a0616bcdf62ff91bb262c55f91a08e0d00c4f9f7eb76a69ad1ef74ae93"
+    "outputs/r17/tests_initial.log": "b38652a0616bcdf62ff91bb262c55f91a08e0d00c4f9f7eb76a69ad1ef74ae93",
+    "outputs/r17_resume_20261030/official_download_access_dialog.txt": "dd0f4d1b2a102d62c2b39c9af9b7022674f158e93578b41d007efc46e11de323",
+    "outputs/r17_resume_20261030/official_download_access_dialog.png": "fa690c170c4c4f46b24a0d8178c42e524f120317224433525df4ebb0d293836e"
   },
   "artifact_sha256": {
     "scripts/build_r17_candidate.py": "047f7153353d8e03a5c2f360676273f2914a770baa7aea4c963418da697df4fa",
@@ -131,5 +133,6 @@
     "tests/test_r17_restore_llama.py": "c604778d69b2e2868c379da8484733f2dcc73b509ff441a6467366c85c80fb22",
     "configs/r17_llama_asset_contract_20261030.json": "eacff31894d890330d4c9f270c413aa32301735192d6e9849ca480e45223fb7a",
     "configs/r17_pending_recipe_20261030.json": "4f09f5065a71697a9f754511b6321f4af4abd0fc86ba7fc9a5da19032d3ede61"
-  }
+  },
+  "latest_resume_audit": "configs/r17_resume_gate_20261030.json"
 }
