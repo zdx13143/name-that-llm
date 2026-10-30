@@ -1,7 +1,7 @@
 {
   "round": "R17",
-  "updated_utc": "2026-10-30T08:29:36.607381+00:00",
-  "status": "local_candidate_validated_official_access_gate_confirmed",
+  "updated_utc": "2026-10-30T08:44:35Z",
+  "status": "local_candidate_validated_official_access_request_under_review",
   "branch": "exp/team-e659-r17-20261030",
   "base_commit": "73c0f65d4902f0b6317ca8333f1097815b8d7dfb",
   "candidate": "notebooks/team_e659_r17_restore_llama_pending_access.ipynb",
@@ -87,12 +87,12 @@
   "release_gate": {
     "required_model": "metaresearch/llama-3.1/Transformers/8b/1",
     "required_model_instance_version_id": null,
-    "account_access": "normal Download action opens an access-verification dialog; prior Meta approval and email-sharing consent required; neither affirmed nor submitted",
+    "account_access": "User reported completing access verification; refreshed official page confirms request successfully submitted and pending author review. Download, Code and New Notebook disabled. Approval and usable access not yet established.",
     "input_refs_current": 30,
     "input_refs_required_after_binding": 31,
     "asset_contract": "configs/r17_llama_asset_contract_20261030.json",
     "adapter_identity_basis": "retained immutable Kaggle dataset version, unique dataset mount, exact names/sizes; actual file hashes recorded at preflight, not compared to unpublished expected weight digests",
-    "user_action": "Obtain official Meta model access and complete Kaggle verification; report completion so normal access can be checked. Do not ask again for already-authorized eligible submission.",
+    "user_action": "No further model-access action currently established; wait for author review. Existing hourly automation was not found during update; user asked whether to recreate it. Do not repeat the access-form request or submission-authorization question.",
     "terms_accepted_by_agent": false,
     "forms_submitted_by_agent": false
   },
@@ -106,10 +106,12 @@
   },
   "tracking": {
     "automation_id": "name-that-llm",
-    "status": "ACTIVE",
+    "status": "UNAVAILABLE_IN_APP",
     "interval_hours": 1,
     "resume_round": "R17 only; no new round, duplicate Save or duplicate submission",
-    "unchanged_access_blocker_notification": "notify once; remain quiet afterward"
+    "unchanged_access_blocker_notification": "notify once; remain quiet afterward",
+    "latest_update_result": "Automation does not exist in the app and could not be updated. It may have been deleted manually by the user.",
+    "recreation_question_pending": true
   },
   "local_evidence_sha256": {
     "outputs/r17/access/official_access_required.png": "16dda78bfa1835b98ce80ca2da66c99e4f1e226064bc6752a23c66359644b40c",
@@ -125,7 +127,8 @@
     "outputs/r17/tests_initial.json": "d8489c3a78fc72a436ebeb9286a55b4cae77bb74bb33442862f7a4423f6ebdc1",
     "outputs/r17/tests_initial.log": "b38652a0616bcdf62ff91bb262c55f91a08e0d00c4f9f7eb76a69ad1ef74ae93",
     "outputs/r17_resume_20261030/official_download_access_dialog.txt": "dd0f4d1b2a102d62c2b39c9af9b7022674f158e93578b41d007efc46e11de323",
-    "outputs/r17_resume_20261030/official_download_access_dialog.png": "fa690c170c4c4f46b24a0d8178c42e524f120317224433525df4ebb0d293836e"
+    "outputs/r17_resume_20261030/official_download_access_dialog.png": "fa690c170c4c4f46b24a0d8178c42e524f120317224433525df4ebb0d293836e",
+    "outputs/r17_resume_20261030/official_access_under_review.png": "fd724d7c079cc474832c5c195259972ee8fce4c3f9b95eaa291c295c80a02d34"
   },
   "artifact_sha256": {
     "scripts/build_r17_candidate.py": "047f7153353d8e03a5c2f360676273f2914a770baa7aea4c963418da697df4fa",
@@ -134,5 +137,5 @@
     "configs/r17_llama_asset_contract_20261030.json": "eacff31894d890330d4c9f270c413aa32301735192d6e9849ca480e45223fb7a",
     "configs/r17_pending_recipe_20261030.json": "4f09f5065a71697a9f754511b6321f4af4abd0fc86ba7fc9a5da19032d3ede61"
   },
-  "latest_resume_audit": "configs/r17_resume_gate_20261030.json"
+  "latest_resume_audit": "configs/r17_access_review_20261030.json"
 }
