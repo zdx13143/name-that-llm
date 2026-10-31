@@ -1,6 +1,6 @@
 {
   "round": "R17",
-  "updated_utc": "2026-10-30T12:47:12Z",
+  "updated_utc": "2026-10-31T07:33:52Z",
   "status": "local_candidate_validated_official_access_request_under_review",
   "branch": "exp/team-e659-r17-20261030",
   "base_commit": "73c0f65d4902f0b6317ca8333f1097815b8d7dfb",
@@ -139,5 +139,5 @@
     "configs/r17_llama_asset_contract_20261030.json": "eacff31894d890330d4c9f270c413aa32301735192d6e9849ca480e45223fb7a",
     "configs/r17_pending_recipe_20261030.json": "4f09f5065a71697a9f754511b6321f4af4abd0fc86ba7fc9a5da19032d3ede61"
   },
-  "latest_resume_audit": "configs/r17_recheck_20261030_1247.json"
+  "latest_resume_audit": "configs/r17_recheck_20261031_0733.json"
 }
