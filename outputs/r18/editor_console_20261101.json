@@ -1,0 +1,62 @@
+[
+  {
+    "level": "warn",
+    "message": "Could not retrieve current context P",
+    "timestamp": "2026-10-31T17:21:25.629Z",
+    "url": "https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/lab/extensions/@jupyter-lsp/jupyterlab-lsp/static/661.bd239b6ff6d2fd9fcb36.js?v=bd239b6ff6d2fd9fcb36"
+  },
+  {
+    "level": "warn",
+    "message": "Could not get context",
+    "timestamp": "2026-10-31T17:21:25.630Z",
+    "url": "https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/lab/extensions/@jupyter-lsp/jupyterlab-lsp/static/661.bd239b6ff6d2fd9fcb36.js?v=bd239b6ff6d2fd9fcb36"
+  },
+  {
+    "level": "warn",
+    "message": "Could not retrieve current context P",
+    "timestamp": "2026-10-31T17:21:25.666Z",
+    "url": "https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/lab/extensions/@jupyter-lsp/jupyterlab-lsp/static/661.bd239b6ff6d2fd9fcb36.js?v=bd239b6ff6d2fd9fcb36"
+  },
+  {
+    "level": "warn",
+    "message": "Could not retrieve current context P",
+    "timestamp": "2026-10-31T17:21:25.672Z",
+    "url": "https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/lab/extensions/@jupyter-lsp/jupyterlab-lsp/static/661.bd239b6ff6d2fd9fcb36.js?v=bd239b6ff6d2fd9fcb36"
+  },
+  {
+    "level": "warn",
+    "message": "Could not get context",
+    "timestamp": "2026-10-31T17:21:25.672Z",
+    "url": "https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/lab/extensions/@jupyter-lsp/jupyterlab-lsp/static/661.bd239b6ff6d2fd9fcb36.js?v=bd239b6ff6d2fd9fcb36"
+  },
+  {
+    "level": "warn",
+    "message": "Could not retrieve current context P",
+    "timestamp": "2026-10-31T17:21:25.675Z",
+    "url": "https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/lab/extensions/@jupyter-lsp/jupyterlab-lsp/static/661.bd239b6ff6d2fd9fcb36.js?v=bd239b6ff6d2fd9fcb36"
+  },
+  {
+    "level": "warn",
+    "message": "Could not get context",
+    "timestamp": "2026-10-31T17:21:25.675Z",
+    "url": "https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/lab/extensions/@jupyter-lsp/jupyterlab-lsp/static/661.bd239b6ff6d2fd9fcb36.js?v=bd239b6ff6d2fd9fcb36"
+  },
+  {
+    "level": "warn",
+    "message": "Could not retrieve current context P",
+    "timestamp": "2026-10-31T17:21:25.675Z",
+    "url": "https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/lab/extensions/@jupyter-lsp/jupyterlab-lsp/static/661.bd239b6ff6d2fd9fcb36.js?v=bd239b6ff6d2fd9fcb36"
+  },
+  {
+    "level": "warn",
+    "message": "Could not get context",
+    "timestamp": "2026-10-31T17:21:25.675Z",
+    "url": "https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/lab/extensions/@jupyter-lsp/jupyterlab-lsp/static/661.bd239b6ff6d2fd9fcb36.js?v=bd239b6ff6d2fd9fcb36"
+  },
+  {
+    "level": "error",
+    "message": "TypeError: Cannot read properties of undefined (reading 'type')\n    at be (https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/notebook/374.bundle.js:1:120715)\n    at https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/notebook/374.bundle.js:1:119134\n    at Array.forEach (<anonymous>)\n    at l (https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/notebook/374.bundle.js:1:119093)\n    at c (https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/notebook/374.bundle.js:1:120191)\n    at a (https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/notebook/409.bundle.js:1:2625)\n    at e.emit (https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/notebook/409.bundle.js:1:2354)\n    at o.emit (https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/notebook/409.bundle.js:1:334)\n    at Ce._onCellInViewportChanged (https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/notebook/374.bundle.js:1:74310)\n    at a (https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/notebook/409.bundle.js:1:2625)",
+    "timestamp": "2026-10-31T17:21:26.357Z",
+    "url": "https://kkb-production.jupyter-proxy.kaggle.net/static/dist/jupyterlab/v-dd191da75eaf47ebd98e8d4b4aa37398/notebook/374.bundle.js"
+  }
+]

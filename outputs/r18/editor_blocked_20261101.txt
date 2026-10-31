@@ -1,0 +1,109 @@
+Browser tab: 1127719983, Title: "NTL R18 Adapter Isolation 20261101 | Kaggle", URL: "https://www.kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit".
+1 AXWebArea NTL R18 Adapter Isolation 20261101 | Kaggle, URL: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit
+	2 container
+		99 container root
+			100 container Main Kaggle page navigation
+				101 button Navigation menu
+				102 link Description: Skip to content, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit#site-content
+				103 pop up button (collapsed) Description: Create on Kaggle, Secondary Actions: Expand
+					104 text Create
+				105 container
+					106 container
+						107 content list
+							108 container Home List Item
+								109 link Description: Home, Value: kaggle.com/
+							110 container Competitions List Item
+								111 link Description: Competitions, Value: kaggle.com/competitions
+							112 container Benchmarks List Item
+								113 link Description: Benchmarks, Value: kaggle.com/benchmarks
+							114 container Arenas List Item
+								115 link Description: Arenas, Value: kaggle.com/arenas
+							116 container Game Arena List Item
+								117 link Description: Game Arena, Value: kaggle.com/game-arena
+						118 content list
+							119 container Data Hub List Item
+								120 link (collapsed) Description: Data Hub, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit#, Secondary Actions: Expand
+						121 content list
+							122 container More on Kaggle List Item
+								123 link (collapsed) Description: More on Kaggle, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit#, Secondary Actions: Expand
+					124 button (collapsed) Open Active Events dialog View Active Events, Secondary Actions: Expand
+						125 container Open Active Events dialog
+							126 text auto_awesome_motion
+						127 text View Active Events
+			128 container site-content
+				129 container
+					130 heading NTL R18 Adapter Isolation 20261101, Value: 1
+						131 container
+							132 text field (settable) Description: Title: NTL R18 Adapter Isolation 20261101, Value: NTL R18 Adapter Isolation 20261101, ID: notebook-title-input
+					133 button File
+					161 button Edit
+					134 button View
+					135 button Run
+					136 button Settings
+					137 button Add-ons
+					138 button Help
+					139 button Share
+					140 button Save Version
+					141 button Description: Show Versions, ID: show-versions-button-trigger
+					162 button (disabled) Add cell
+					163 button Add cell options
+					164 button (disabled) Cut cell
+					165 button (disabled) Copy cell
+					166 button (disabled) Paste cell
+					167 button (disabled) Run current cell
+					142 button (disabled) Run All
+						143 text fast_forward
+						144 text Run All
+					168 button Show options
+					145 button Loading Editor Loading …
+						146 container Loading
+							147 text circle
+						148 text Editor
+						149 text Loading
+						150 text …
+					151 button (disabled) Start session
+					152 button (disabled) Factory reset
+					153 button (disabled) More settings
+					154 container
+						155 button Description: Open console, ID: frame-container-next-focus-element
+						156 button (disabled) Open command palette
+					157 button Expand Sidebar
+						158 container Expand Sidebar
+							159 text arrow_left
+		160 text Could not connect to the reCAPTCHA service. Please check your internet connection and reload to get a reCAPTCHA challenge.
+		169 container New Notebook Import Notebook Download Notebook Link to Colab Open in Colab Link to GitHub Set as Utility Script Set as Benchmark Task Add input Upload input Editor Type Share Save Version Version history Rename Notebook Delete Notebook
+			170 container
+				171 New Notebook
+					172 text New Notebook
+				173 (disabled) Import Notebook
+					174 text Import Notebook
+				175 Download Notebook
+					176 text Download Notebook
+				177 Link to Colab
+					178 text Link to Colab
+				179 (disabled) Open in Colab
+					180 text Open in Colab
+				181 Link to GitHub
+					182 text Link to GitHub
+				183 Set as Utility Script
+					184 text Set as Utility Script
+				185 Set as Benchmark Task
+					186 text Set as Benchmark Task
+				187 (disabled) Add input
+					188 text Add input
+				189 Upload input
+					190 text Upload input
+				191 Editor Type
+					192 text Editor Type
+				193 Share
+					194 text Share
+				195 (disabled) Save Version
+					196 text Save Version
+				197 Version history
+					198 text Version history
+				199 Rename Notebook
+					200 text Rename Notebook
+				201 Delete Notebook
+					202 text Delete Notebook
+
+The focused UI element is 171 New Notebook
