@@ -1,0 +1,47 @@
+test_01_fp16_noninvertibility (__main__.R18Tests.test_01_fp16_noninvertibility) ... ok
+test_02_actual_baseline_drift_and_candidate_freshness (__main__.R18Tests.test_02_actual_baseline_drift_and_candidate_freshness) ... ok
+test_03_matches_independent_fresh_reference_and_features (__main__.R18Tests.test_03_matches_independent_fresh_reference_and_features) ... ok
+test_04_single_adapter_exact_parity (__main__.R18Tests.test_04_single_adapter_exact_parity) ... ok
+test_05_bf16_retry_isolated_between_adapters (__main__.R18Tests.test_05_bf16_retry_isolated_between_adapters) ... ok
+test_06_fingerprint_and_lifecycle_receipt (__main__.R18Tests.test_06_fingerprint_and_lifecycle_receipt) ... ok
+test_07_frozen_non_lifecycle_source_and_inputs (__main__.R18Tests.test_07_frozen_non_lifecycle_source_and_inputs) ... ok
+test_08_runtime_missing_members_and_fallback_rejected (__main__.R18Tests.test_08_runtime_missing_members_and_fallback_rejected) ... ok
+test_09_live_model_guard (__main__.R18Tests.test_09_live_model_guard) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.966s
+
+OK
+{
+  "real_encoder_forwards": 0,
+  "training_fits": 0,
+  "official_rows_opened": 0,
+  "protected_holdout_accesses": 0,
+  "fixture_forwards": 138,
+  "fixture_base_loads": 31,
+  "numeric_example": {
+    "base": 1.0,
+    "delta": 0.0004000663757324219,
+    "after_add_subtract": 0.99951171875
+  },
+  "baseline_adapter_start_max_abs_drift": [
+    0.0,
+    0.00048828125,
+    0.0009765625,
+    0.0009765625,
+    0.00048828125,
+    0.0
+  ],
+  "candidate_adapter_start_max_abs_drift": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "tests_run": 9,
+  "failures": 0,
+  "errors": 0,
+  "passed": true
+}

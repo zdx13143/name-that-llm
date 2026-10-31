@@ -1,0 +1,33 @@
+{
+  "real_encoder_forwards": 0,
+  "training_fits": 0,
+  "official_rows_opened": 0,
+  "protected_holdout_accesses": 0,
+  "fixture_forwards": 138,
+  "fixture_base_loads": 31,
+  "numeric_example": {
+    "base": 1.0,
+    "delta": 0.0004000663757324219,
+    "after_add_subtract": 0.99951171875
+  },
+  "baseline_adapter_start_max_abs_drift": [
+    0.0,
+    0.00048828125,
+    0.0009765625,
+    0.0009765625,
+    0.00048828125,
+    0.0
+  ],
+  "candidate_adapter_start_max_abs_drift": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "tests_run": 10,
+  "failures": 0,
+  "errors": 0,
+  "passed": true
+}

@@ -1,0 +1,141 @@
+{
+  "candidate": "notebooks/team_e659_r18_adapter_isolation.ipynb",
+  "candidate_sha256": "4c3eb9436f36af07aad55b92acaa9e1491aff3d352ee9fc78209c109851a735b",
+  "base_sha256": "8b04a036a5aa43c41907fd6404849179cd6bee1d4588b6c866484487f6bd6075",
+  "code_sha256": [
+    "f8730cb30eeffa06db34905a7ce4ba10bc50a4e658346b9c6e3259ef78cb20f0",
+    "658399852eff757b58e3539ff180ba247538443cc4dcff737c11b63f958e2faa",
+    "10c38517dada81b1dbaea8a73161ed80bf551b50bbb5d5c1acd31a1e6ba556f4",
+    "4e33aa939f6843e45fceb91d90cc551c25a054348c9891e5f06ed301ab162851",
+    "b53e305fd7a755d138f931c55ac5f3762ed3978d73a65594b5ce2523fdf165ff",
+    "ed78f60a190485db7a1d1c27624956e8c500df9bffae334dcba01a835674d382",
+    "e3aa49d5a11e4ce2b504b826a7f8dddb13077e4b512e92d55a0a2807ca82cc18",
+    "034655a6f35e9f79a2d3f3ad9befaf7c222afe4694f9607f45c98c7f74500a54",
+    "50d2eef84cb386f78d4778162a62465863c5719b5a6a4921eabd38229fee7c98"
+  ],
+  "inputs": [
+    {
+      "sourceType": "competition",
+      "sourceId": 170484
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20736096
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20819121
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20831302
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20847146
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20858502
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20934027
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21008519
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21011978
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21062729
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21097171
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21116786
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21119693
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21145399
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21203279
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358683059
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358745836
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358758062
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358770408
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358911769
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358928013
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358948428
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 359652568
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166254
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166265
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363135
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363139
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363140
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363149
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363153
+    }
+  ],
+  "release_gate": "local_checks_then_real_asset_save_preflight",
+  "formal_submissions": 0,
+  "saves": 0
+}
