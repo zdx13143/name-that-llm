@@ -1,0 +1,277 @@
+R18_LIFECYCLE {"adapter": "q14v5_f0", "allocated": [0, 0], "event": "before_load", "family": "q14v5"}
+Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]Loading weights:   0%|          | 1/299 [00:08<41:37,  8.38s/it]Loading weights:  23%|██▎       | 69/299 [00:08<00:20, 11.26it/s]Loading weights:  29%|██▉       | 87/299 [00:09<00:18, 11.71it/s]Loading weights:  32%|███▏      | 97/299 [00:10<00:17, 11.39it/s]Loading weights:  35%|███▍      | 104/299 [00:11<00:18, 10.55it/s]Loading weights:  38%|███▊      | 113/299 [00:12<00:17, 10.59it/s]Loading weights:  41%|████▏     | 124/299 [00:13<00:16, 10.81it/s]Loading weights:  42%|████▏     | 127/299 [00:13<00:14, 11.50it/s]Loading weights:  45%|████▌     | 135/299 [00:14<00:14, 11.45it/s]Loading weights:  46%|████▌     | 138/299 [00:14<00:14, 11.38it/s]Loading weights:  49%|████▉     | 146/299 [00:15<00:13, 11.10it/s]Loading weights:  49%|████▉     | 148/299 [00:15<00:13, 10.95it/s]Loading weights:  53%|█████▎    | 157/299 [00:16<00:13, 10.90it/s]Loading weights:  53%|█████▎    | 159/299 [00:16<00:12, 11.44it/s]Loading weights:  56%|█████▌    | 168/299 [00:17<00:10, 12.02it/s]Loading weights:  57%|█████▋    | 170/299 [00:17<00:10, 12.02it/s]Loading weights:  60%|█████▉    | 179/299 [00:18<00:10, 11.59it/s]Loading weights:  61%|██████    | 181/299 [00:18<00:09, 12.10it/s]Loading weights:  64%|██████▎   | 190/299 [00:19<00:09, 11.60it/s]Loading weights:  64%|██████▍   | 192/299 [00:19<00:09, 11.60it/s]Loading weights:  67%|██████▋   | 201/299 [00:20<00:09, 10.43it/s]Loading weights:  71%|███████   | 212/299 [00:21<00:07, 10.98it/s]Loading weights:  72%|███████▏  | 214/299 [00:21<00:07, 10.80it/s]Loading weights:  75%|███████▍  | 223/299 [00:22<00:07, 10.35it/s]Loading weights:  75%|███████▌  | 225/299 [00:22<00:06, 10.81it/s]Loading weights:  78%|███████▊  | 234/299 [00:23<00:05, 11.35it/s]Loading weights:  79%|███████▉  | 236/299 [00:23<00:05, 11.64it/s]Loading weights:  82%|████████▏ | 245/299 [00:24<00:05, 10.18it/s]Loading weights:  83%|████████▎ | 247/299 [00:24<00:04, 10.64it/s]Loading weights:  86%|████████▌ | 256/299 [00:25<00:03, 11.17it/s]Loading weights:  86%|████████▋ | 258/299 [00:25<00:03, 10.91it/s]Loading weights:  89%|████████▉ | 267/299 [00:26<00:02, 10.82it/s]Loading weights:  90%|████████▉ | 269/299 [00:26<00:02, 11.46it/s]Loading weights:  93%|█████████▎| 278/299 [00:27<00:01, 11.06it/s]Loading weights:  97%|█████████▋| 289/299 [00:28<00:00, 11.50it/s]Loading weights:  97%|█████████▋| 291/299 [00:28<00:00, 11.90it/s]Loading weights: 100%|██████████| 299/299 [00:28<00:00, 10.51it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q14v5_f0", "allocated": [9483317248, 9909377536], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 31.08846433399998}
+R18_LIFECYCLE {"adapter": "q14v5_f0", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 34.740600115999996}
+  l24 q14v5: adapter q14v5_f0 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q14v5_f1", "allocated": [8519680, 8519680], "event": "before_load", "family": "q14v5"}
+Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]Loading weights:   0%|          | 1/299 [00:02<11:57,  2.41s/it]Loading weights:  14%|█▍        | 42/299 [00:02<00:11, 22.42it/s]Loading weights:  19%|█▊        | 56/299 [00:02<00:09, 25.67it/s]Loading weights:  22%|██▏       | 66/299 [00:03<00:09, 24.81it/s]Loading weights:  24%|██▍       | 73/299 [00:03<00:09, 23.01it/s]Loading weights:  27%|██▋       | 80/299 [00:04<00:09, 23.01it/s]Loading weights:  30%|███       | 91/299 [00:04<00:08, 23.81it/s]Loading weights:  32%|███▏      | 95/299 [00:04<00:08, 24.87it/s]Loading weights:  34%|███▍      | 102/299 [00:04<00:07, 27.44it/s]Loading weights:  35%|███▌      | 106/299 [00:04<00:06, 27.90it/s]Loading weights:  38%|███▊      | 113/299 [00:05<00:07, 24.75it/s]Loading weights:  41%|████▏     | 124/299 [00:05<00:06, 26.57it/s]Loading weights:  42%|████▏     | 127/299 [00:05<00:06, 26.52it/s]Loading weights:  45%|████▌     | 135/299 [00:06<00:05, 28.35it/s]Loading weights:  48%|████▊     | 143/299 [00:06<00:04, 35.71it/s]Loading weights:  49%|████▉     | 148/299 [00:06<00:06, 21.64it/s]Loading weights:  53%|█████▎    | 158/299 [00:06<00:04, 28.97it/s]Loading weights:  55%|█████▍    | 163/299 [00:07<00:04, 28.74it/s]Loading weights:  56%|█████▌    | 168/299 [00:07<00:05, 24.28it/s]Loading weights:  60%|█████▉    | 179/299 [00:07<00:04, 29.38it/s]Loading weights:  64%|██████▎   | 190/299 [00:07<00:03, 29.38it/s]Loading weights:  65%|██████▍   | 194/299 [00:08<00:03, 30.68it/s]Loading weights:  67%|██████▋   | 201/299 [00:08<00:03, 27.99it/s]Loading weights:  69%|██████▊   | 205/299 [00:08<00:03, 27.37it/s]Loading weights:  71%|███████   | 212/299 [00:08<00:03, 28.76it/s]Loading weights:  75%|███████▍  | 223/299 [00:09<00:03, 25.28it/s]Loading weights:  78%|███████▊  | 234/299 [00:09<00:02, 28.88it/s]Loading weights:  82%|████████▏ | 245/299 [00:09<00:01, 29.47it/s]Loading weights:  83%|████████▎ | 249/299 [00:10<00:01, 27.33it/s]Loading weights:  86%|████████▌ | 256/299 [00:10<00:01, 32.39it/s]Loading weights:  87%|████████▋ | 260/299 [00:10<00:01, 28.48it/s]Loading weights:  89%|████████▉ | 267/299 [00:10<00:01, 29.89it/s]Loading weights:  91%|█████████ | 271/299 [00:10<00:01, 26.67it/s]Loading weights:  93%|█████████▎| 278/299 [00:11<00:00, 30.78it/s]Loading weights:  94%|█████████▍| 282/299 [00:11<00:00, 26.41it/s]Loading weights:  97%|█████████▋| 289/299 [00:11<00:00, 28.79it/s]Loading weights:  98%|█████████▊| 293/299 [00:11<00:00, 30.43it/s]Loading weights: 100%|██████████| 299/299 [00:11<00:00, 25.80it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q14v5_f1", "allocated": [9491836928, 9918749184], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 12.510509809000041}
+R18_LIFECYCLE {"adapter": "q14v5_f1", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 15.208578285000044}
+  l24 q14v5: adapter q14v5_f1 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q14v5_f2", "allocated": [8519680, 8519680], "event": "before_load", "family": "q14v5"}
+Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]Loading weights:   0%|          | 1/299 [00:02<12:28,  2.51s/it]Loading weights:  15%|█▍        | 44/299 [00:02<00:11, 22.37it/s]Loading weights:  19%|█▉        | 57/299 [00:02<00:09, 26.60it/s]Loading weights:  22%|██▏       | 67/299 [00:03<00:09, 24.88it/s]Loading weights:  25%|██▍       | 74/299 [00:03<00:08, 25.19it/s]Loading weights:  27%|██▋       | 80/299 [00:04<00:09, 21.96it/s]Loading weights:  28%|██▊       | 84/299 [00:04<00:09, 22.91it/s]Loading weights:  31%|███       | 92/299 [00:04<00:07, 27.47it/s]Loading weights:  34%|███▍      | 102/299 [00:04<00:07, 27.60it/s]Loading weights:  35%|███▌      | 106/299 [00:05<00:07, 25.70it/s]Loading weights:  38%|███▊      | 113/299 [00:05<00:06, 30.02it/s]Loading weights:  40%|████      | 121/299 [00:05<00:04, 37.59it/s]Loading weights:  42%|████▏     | 126/299 [00:05<00:07, 23.41it/s]Loading weights:  45%|████▌     | 136/299 [00:05<00:05, 28.64it/s]Loading weights:  49%|████▉     | 146/299 [00:06<00:05, 27.67it/s]Loading weights:  50%|█████     | 150/299 [00:06<00:05, 29.06it/s]Loading weights:  53%|█████▎    | 157/299 [00:06<00:05, 25.73it/s]Loading weights:  56%|█████▌    | 168/299 [00:07<00:05, 25.85it/s]Loading weights:  57%|█████▋    | 171/299 [00:07<00:04, 26.26it/s]Loading weights:  60%|█████▉    | 179/299 [00:07<00:04, 26.55it/s]Loading weights:  61%|██████    | 182/299 [00:07<00:04, 26.67it/s]Loading weights:  64%|██████▎   | 190/299 [00:08<00:04, 26.82it/s]Loading weights:  67%|██████▋   | 201/299 [00:08<00:03, 27.32it/s]Loading weights:  68%|██████▊   | 204/299 [00:08<00:03, 25.63it/s]Loading weights:  71%|███████   | 212/299 [00:08<00:03, 25.85it/s]Loading weights:  75%|███████▍  | 223/299 [00:09<00:03, 23.87it/s]Loading weights:  78%|███████▊  | 234/299 [00:09<00:02, 31.84it/s]Loading weights:  80%|███████▉  | 238/299 [00:09<00:02, 28.84it/s]Loading weights:  82%|████████▏ | 245/299 [00:09<00:01, 31.12it/s]Loading weights:  83%|████████▎ | 249/299 [00:10<00:01, 30.46it/s]Loading weights:  86%|████████▌ | 256/299 [00:10<00:01, 28.96it/s]Loading weights:  87%|████████▋ | 260/299 [00:10<00:01, 30.36it/s]Loading weights:  89%|████████▉ | 267/299 [00:10<00:01, 23.63it/s]Loading weights:  93%|█████████▎| 278/299 [00:11<00:00, 33.33it/s]Loading weights:  95%|█████████▍| 283/299 [00:11<00:00, 31.93it/s]Loading weights:  97%|█████████▋| 289/299 [00:11<00:00, 28.42it/s]Loading weights: 100%|██████████| 299/299 [00:11<00:00, 25.85it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q14v5_f2", "allocated": [9491836928, 9918749184], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 12.228342960999953}
+R18_LIFECYCLE {"adapter": "q14v5_f2", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 14.921208784999976}
+  l24 q14v5: adapter q14v5_f2 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q14v5_f3", "allocated": [8519680, 8519680], "event": "before_load", "family": "q14v5"}
+Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]Loading weights:   0%|          | 1/299 [00:02<12:31,  2.52s/it]Loading weights:  14%|█▍        | 42/299 [00:02<00:12, 21.11it/s]Loading weights:  18%|█▊        | 54/299 [00:03<00:10, 24.39it/s]Loading weights:  21%|██        | 63/299 [00:03<00:09, 23.93it/s]Loading weights:  23%|██▎       | 69/299 [00:03<00:10, 22.96it/s]Loading weights:  27%|██▋       | 80/299 [00:04<00:08, 25.70it/s]Loading weights:  28%|██▊       | 85/299 [00:04<00:09, 23.37it/s]Loading weights:  31%|███       | 92/299 [00:04<00:07, 27.94it/s]Loading weights:  32%|███▏      | 97/299 [00:04<00:06, 30.21it/s]Loading weights:  34%|███▍      | 102/299 [00:04<00:07, 26.96it/s]Loading weights:  35%|███▌      | 106/299 [00:04<00:07, 27.14it/s]Loading weights:  38%|███▊      | 113/299 [00:05<00:06, 27.17it/s]Loading weights:  39%|███▉      | 117/299 [00:05<00:06, 29.09it/s]Loading weights:  41%|████▏     | 124/299 [00:05<00:06, 26.14it/s]Loading weights:  43%|████▎     | 128/299 [00:05<00:06, 27.41it/s]Loading weights:  45%|████▌     | 135/299 [00:06<00:06, 27.30it/s]Loading weights:  49%|████▉     | 146/299 [00:06<00:05, 27.04it/s]Loading weights:  53%|█████▎    | 157/299 [00:06<00:04, 32.03it/s]Loading weights:  54%|█████▍    | 161/299 [00:06<00:04, 30.23it/s]Loading weights:  56%|█████▌    | 168/299 [00:07<00:04, 27.92it/s]Loading weights:  57%|█████▋    | 171/299 [00:07<00:04, 27.91it/s]Loading weights:  60%|█████▉    | 179/299 [00:07<00:04, 29.09it/s]Loading weights:  61%|██████    | 182/299 [00:07<00:04, 28.68it/s]Loading weights:  64%|██████▎   | 190/299 [00:07<00:03, 28.93it/s]Loading weights:  65%|██████▍   | 193/299 [00:08<00:04, 26.45it/s]Loading weights:  67%|██████▋   | 201/299 [00:08<00:03, 31.38it/s]Loading weights:  69%|██████▊   | 205/299 [00:08<00:03, 25.48it/s]Loading weights:  71%|███████   | 212/299 [00:08<00:02, 30.59it/s]Loading weights:  72%|███████▏  | 216/299 [00:08<00:02, 30.36it/s]Loading weights:  75%|███████▍  | 223/299 [00:09<00:02, 28.66it/s]Loading weights:  76%|███████▌  | 227/299 [00:09<00:02, 26.66it/s]Loading weights:  78%|███████▊  | 234/299 [00:09<00:02, 30.76it/s]Loading weights:  80%|███████▉  | 238/299 [00:09<00:02, 25.22it/s]Loading weights:  82%|████████▏ | 245/299 [00:09<00:01, 29.36it/s]Loading weights:  83%|████████▎ | 249/299 [00:09<00:01, 30.87it/s]Loading weights:  86%|████████▌ | 256/299 [00:10<00:01, 25.67it/s]Loading weights:  89%|████████▉ | 267/299 [00:10<00:01, 26.85it/s]Loading weights:  91%|█████████ | 271/299 [00:10<00:00, 28.59it/s]Loading weights:  93%|█████████▎| 278/299 [00:11<00:00, 26.87it/s]Loading weights:  94%|█████████▍| 281/299 [00:11<00:00, 26.25it/s]Loading weights:  97%|█████████▋| 289/299 [00:11<00:00, 27.60it/s]Loading weights:  98%|█████████▊| 292/299 [00:11<00:00, 27.53it/s]Loading weights: 100%|██████████| 299/299 [00:11<00:00, 25.79it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q14v5_f3", "allocated": [9491836928, 9918749184], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 12.243724033000035}
+R18_LIFECYCLE {"adapter": "q14v5_f3", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 15.02389137900002}
+  l24 q14v5: adapter q14v5_f3 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q14v5_f4", "allocated": [8519680, 8519680], "event": "before_load", "family": "q14v5"}
+Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]Loading weights:   0%|          | 1/299 [00:02<12:37,  2.54s/it]Loading weights:  14%|█▍        | 42/299 [00:02<00:12, 20.99it/s]Loading weights:  18%|█▊        | 54/299 [00:03<00:09, 24.63it/s]Loading weights:  21%|██        | 63/299 [00:03<00:10, 23.12it/s]Loading weights:  23%|██▎       | 69/299 [00:03<00:10, 22.56it/s]Loading weights:  25%|██▍       | 74/299 [00:03<00:09, 24.18it/s]Loading weights:  27%|██▋       | 80/299 [00:04<00:09, 23.19it/s]Loading weights:  30%|███       | 91/299 [00:04<00:08, 24.99it/s]Loading weights:  32%|███▏      | 95/299 [00:04<00:08, 24.86it/s]Loading weights:  34%|███▍      | 102/299 [00:05<00:07, 26.27it/s]Loading weights:  37%|███▋      | 110/299 [00:05<00:05, 33.48it/s]Loading weights:  38%|███▊      | 115/299 [00:05<00:07, 23.14it/s]Loading weights:  41%|████▏     | 124/299 [00:05<00:05, 29.54it/s]Loading weights:  43%|████▎     | 129/299 [00:06<00:06, 24.59it/s]Loading weights:  45%|████▌     | 136/299 [00:06<00:05, 27.34it/s]Loading weights:  49%|████▉     | 146/299 [00:06<00:05, 26.88it/s]Loading weights:  50%|█████     | 150/299 [00:06<00:05, 27.98it/s]Loading weights:  53%|█████▎    | 157/299 [00:07<00:05, 26.07it/s]Loading weights:  54%|█████▎    | 160/299 [00:07<00:05, 24.37it/s]Loading weights:  56%|█████▌    | 168/299 [00:07<00:04, 29.85it/s]Loading weights:  58%|█████▊    | 172/299 [00:07<00:05, 24.54it/s]Loading weights:  60%|█████▉    | 179/299 [00:07<00:04, 28.10it/s]Loading weights:  64%|██████▎   | 190/299 [00:08<00:03, 28.07it/s]Loading weights:  65%|██████▍   | 193/299 [00:08<00:03, 28.04it/s]Loading weights:  67%|██████▋   | 201/299 [00:08<00:03, 27.72it/s]Loading weights:  71%|███████   | 212/299 [00:08<00:03, 28.11it/s]Loading weights:  74%|███████▍  | 221/299 [00:09<00:02, 36.20it/s]Loading weights:  76%|███████▌  | 226/299 [00:09<00:02, 25.41it/s]Loading weights:  78%|███████▊  | 234/299 [00:09<00:02, 25.98it/s]Loading weights:  80%|███████▉  | 238/299 [00:09<00:02, 25.63it/s]Loading weights:  82%|████████▏ | 245/299 [00:10<00:02, 25.25it/s]Loading weights:  86%|████████▌ | 256/299 [00:10<00:01, 21.54it/s]Loading weights:  90%|████████▉ | 268/299 [00:11<00:00, 31.06it/s]Loading weights:  91%|█████████▏| 273/299 [00:11<00:00, 29.77it/s]Loading weights:  93%|█████████▎| 278/299 [00:11<00:00, 24.02it/s]Loading weights:  97%|█████████▋| 289/299 [00:11<00:00, 28.75it/s]Loading weights: 100%|██████████| 299/299 [00:11<00:00, 25.26it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q14v5_f4", "allocated": [9491836928, 9918749184], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 12.438357444000019}
+R18_LIFECYCLE {"adapter": "q14v5_f4", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 15.171192795000024}
+  l24 q14v5: adapter q14v5_f4 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q14v5", "allocated": [8519680, 8519680], "event": "before_load", "family": "q14v5"}
+Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]Loading weights:   0%|          | 1/299 [00:02<12:50,  2.59s/it]Loading weights:  15%|█▍        | 44/299 [00:02<00:11, 22.45it/s]Loading weights:  21%|██        | 63/299 [00:03<00:10, 22.68it/s]Loading weights:  25%|██▌       | 75/299 [00:03<00:08, 25.86it/s]Loading weights:  28%|██▊       | 84/299 [00:04<00:09, 22.95it/s]Loading weights:  31%|███       | 92/299 [00:04<00:07, 26.42it/s]Loading weights:  33%|███▎      | 98/299 [00:04<00:07, 27.46it/s]Loading weights:  35%|███▍      | 104/299 [00:04<00:07, 26.18it/s]Loading weights:  38%|███▊      | 113/299 [00:05<00:07, 24.97it/s]Loading weights:  39%|███▉      | 117/299 [00:05<00:06, 26.62it/s]Loading weights:  41%|████▏     | 124/299 [00:05<00:05, 31.74it/s]Loading weights:  43%|████▎     | 129/299 [00:05<00:06, 25.50it/s]Loading weights:  45%|████▌     | 136/299 [00:06<00:05, 29.27it/s]Loading weights:  49%|████▉     | 146/299 [00:06<00:05, 28.90it/s]Loading weights:  50%|█████     | 150/299 [00:06<00:05, 25.55it/s]Loading weights:  53%|█████▎    | 157/299 [00:06<00:04, 29.67it/s]Loading weights:  56%|█████▌    | 168/299 [00:07<00:04, 28.10it/s]Loading weights:  60%|█████▉    | 179/299 [00:07<00:04, 28.50it/s]Loading weights:  61%|██████    | 183/299 [00:07<00:03, 29.78it/s]Loading weights:  64%|██████▎   | 190/299 [00:07<00:03, 28.17it/s]Loading weights:  65%|██████▍   | 194/299 [00:08<00:03, 26.52it/s]Loading weights:  67%|██████▋   | 201/299 [00:08<00:03, 29.56it/s]Loading weights:  70%|██████▉   | 209/299 [00:08<00:02, 37.36it/s]Loading weights:  72%|███████▏  | 214/299 [00:08<00:03, 24.96it/s]Loading weights:  75%|███████▍  | 223/299 [00:09<00:02, 29.06it/s]Loading weights:  76%|███████▌  | 227/299 [00:09<00:02, 25.96it/s]Loading weights:  79%|███████▊  | 235/299 [00:09<00:02, 26.08it/s]Loading weights:  80%|███████▉  | 238/299 [00:09<00:02, 23.83it/s]Loading weights:  82%|████████▏ | 246/299 [00:09<00:01, 32.33it/s]Loading weights:  84%|████████▍ | 251/299 [00:10<00:01, 34.74it/s]Loading weights:  86%|████████▌ | 256/299 [00:10<00:01, 24.32it/s]Loading weights:  87%|████████▋ | 260/299 [00:10<00:01, 26.34it/s]Loading weights:  89%|████████▉ | 267/299 [00:10<00:01, 29.50it/s]Loading weights:  91%|█████████ | 271/299 [00:10<00:00, 31.20it/s]Loading weights:  93%|█████████▎| 278/299 [00:11<00:00, 24.69it/s]Loading weights:  97%|█████████▋| 289/299 [00:11<00:00, 27.22it/s]Loading weights:  98%|█████████▊| 293/299 [00:11<00:00, 28.39it/s]Loading weights: 100%|██████████| 299/299 [00:11<00:00, 25.63it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q14v5", "allocated": [9491836928, 9918749184], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 12.325191150000023}
+R18_LIFECYCLE {"adapter": "q14v5", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 15.069973509000022}
+  l24 q14v5: adapter q14v5 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q8v5_f0", "allocated": [8519680, 8519680], "event": "before_load", "family": "q8v5"}
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights:   0%|          | 1/266 [00:06<30:45,  6.97s/it]Loading weights:  36%|███▋      | 97/266 [00:07<00:08, 18.92it/s]Loading weights:  46%|████▌     | 122/266 [00:08<00:07, 19.87it/s]Loading weights:  52%|█████▏    | 137/266 [00:09<00:07, 17.90it/s]Loading weights:  55%|█████▌    | 147/266 [00:10<00:06, 17.83it/s]Loading weights:  59%|█████▉    | 157/266 [00:10<00:06, 18.10it/s]Loading weights:  63%|██████▎   | 168/266 [00:11<00:05, 18.12it/s]Loading weights:  67%|██████▋   | 179/266 [00:11<00:04, 17.87it/s]Loading weights:  71%|███████▏  | 190/266 [00:12<00:04, 18.56it/s]Loading weights:  76%|███████▌  | 201/266 [00:12<00:03, 18.60it/s]Loading weights:  80%|███████▉  | 212/266 [00:13<00:02, 18.67it/s]Loading weights:  84%|████████▍ | 223/266 [00:14<00:02, 18.90it/s]Loading weights:  88%|████████▊ | 234/266 [00:14<00:01, 18.81it/s]Loading weights:  92%|█████████▏| 245/266 [00:15<00:01, 18.67it/s]Loading weights:  96%|█████████▌| 256/266 [00:15<00:00, 19.25it/s]Loading weights: 100%|██████████| 266/266 [00:15<00:00, 16.76it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/8b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{24...35}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.input_layernorm.weight          | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q8v5_f0", "allocated": [5112113152, 5411036672], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 1, "layers.11": 1, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q8v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "c7dce379a6b5144c54d0cee704815190e0c8922346f078c52b22a5971c2f5858", "seconds": 16.28802153700002}
+R18_LIFECYCLE {"adapter": "q8v5_f0", "allocated": [8519680, 8519680], "event": "released", "family": "q8v5", "seconds": 18.136034805999998}
+  l24 q8v5: adapter q8v5_f0 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q8v5_f1", "allocated": [8519680, 8519680], "event": "before_load", "family": "q8v5"}
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights:   0%|          | 1/266 [00:07<31:13,  7.07s/it]Loading weights:  36%|███▋      | 97/266 [00:07<00:09, 18.71it/s]Loading weights:  46%|████▌     | 123/266 [00:08<00:07, 19.81it/s]Loading weights:  52%|█████▏    | 139/266 [00:09<00:07, 17.91it/s]Loading weights:  56%|█████▌    | 149/266 [00:10<00:06, 17.64it/s]Loading weights:  59%|█████▉    | 157/266 [00:10<00:05, 18.67it/s]Loading weights:  63%|██████▎   | 168/266 [00:10<00:04, 20.44it/s]Loading weights:  67%|██████▋   | 179/266 [00:11<00:04, 19.89it/s]Loading weights:  71%|███████▏  | 190/266 [00:12<00:03, 19.74it/s]Loading weights:  76%|███████▌  | 201/266 [00:12<00:03, 19.35it/s]Loading weights:  80%|███████▉  | 212/266 [00:13<00:02, 19.67it/s]Loading weights:  84%|████████▍ | 223/266 [00:13<00:02, 18.04it/s]Loading weights:  88%|████████▊ | 234/266 [00:14<00:01, 18.97it/s]Loading weights:  92%|█████████▏| 245/266 [00:15<00:01, 18.49it/s]Loading weights:  96%|█████████▌| 256/266 [00:15<00:00, 19.68it/s]Loading weights: 100%|██████████| 266/266 [00:15<00:00, 17.02it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/8b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{24...35}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.input_layernorm.weight          | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q8v5_f1", "allocated": [5112113152, 5411036672], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 1, "layers.11": 1, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q8v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "c7dce379a6b5144c54d0cee704815190e0c8922346f078c52b22a5971c2f5858", "seconds": 16.055755066000017}
+R18_LIFECYCLE {"adapter": "q8v5_f1", "allocated": [8519680, 8519680], "event": "released", "family": "q8v5", "seconds": 17.90797747800002}
+  l24 q8v5: adapter q8v5_f1 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q8v5_f2", "allocated": [8519680, 8519680], "event": "before_load", "family": "q8v5"}
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights:   0%|          | 1/266 [00:02<09:34,  2.17s/it]Loading weights:  25%|██▍       | 66/266 [00:02<00:05, 39.88it/s]Loading weights:  36%|███▌      | 96/266 [00:02<00:04, 41.42it/s]Loading weights:  43%|████▎     | 115/266 [00:03<00:03, 42.40it/s]Loading weights:  48%|████▊     | 128/266 [00:03<00:03, 44.85it/s]Loading weights:  52%|█████▏    | 139/266 [00:03<00:02, 44.02it/s]Loading weights:  56%|█████▌    | 148/266 [00:04<00:02, 43.02it/s]Loading weights:  59%|█████▉    | 157/266 [00:04<00:02, 47.03it/s]Loading weights:  63%|██████▎   | 168/266 [00:04<00:02, 47.13it/s]Loading weights:  67%|██████▋   | 179/266 [00:04<00:01, 45.68it/s]Loading weights:  71%|███████▏  | 190/266 [00:04<00:01, 45.40it/s]Loading weights:  76%|███████▌  | 201/266 [00:05<00:01, 53.99it/s]Loading weights:  78%|███████▊  | 208/266 [00:05<00:01, 56.40it/s]Loading weights:  81%|████████  | 215/266 [00:05<00:01, 47.35it/s]Loading weights:  84%|████████▍ | 223/266 [00:05<00:00, 51.19it/s]Loading weights:  87%|████████▋ | 231/266 [00:05<00:00, 52.74it/s]Loading weights:  89%|████████▉ | 237/266 [00:05<00:00, 47.69it/s]Loading weights:  92%|█████████▏| 245/266 [00:06<00:00, 40.72it/s]Loading weights:  97%|█████████▋| 257/266 [00:06<00:00, 52.22it/s]Loading weights: 100%|██████████| 266/266 [00:06<00:00, 42.26it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/8b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{24...35}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.input_layernorm.weight          | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q8v5_f2", "allocated": [5112113152, 5411036672], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 1, "layers.11": 1, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q8v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "c7dce379a6b5144c54d0cee704815190e0c8922346f078c52b22a5971c2f5858", "seconds": 6.876355442999966}
+R18_LIFECYCLE {"adapter": "q8v5_f2", "allocated": [8519680, 8519680], "event": "released", "family": "q8v5", "seconds": 8.753943639999989}
+  l24 q8v5: adapter q8v5_f2 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q8v5_f3", "allocated": [8519680, 8519680], "event": "before_load", "family": "q8v5"}
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights:   0%|          | 1/266 [00:02<09:17,  2.11s/it]Loading weights:  23%|██▎       | 60/266 [00:02<00:05, 35.36it/s]Loading weights:  29%|██▉       | 77/266 [00:02<00:04, 44.47it/s]Loading weights:  35%|███▍      | 92/266 [00:02<00:04, 39.88it/s]Loading weights:  38%|███▊      | 102/266 [00:03<00:03, 42.74it/s]Loading weights:  42%|████▏     | 111/266 [00:03<00:03, 47.63it/s]Loading weights:  45%|████▌     | 120/266 [00:03<00:03, 47.20it/s]Loading weights:  48%|████▊     | 128/266 [00:03<00:03, 44.41it/s]Loading weights:  51%|█████     | 135/266 [00:03<00:02, 47.55it/s]Loading weights:  53%|█████▎    | 142/266 [00:03<00:02, 50.96it/s]Loading weights:  56%|█████▌    | 149/266 [00:04<00:02, 45.31it/s]Loading weights:  59%|█████▉    | 157/266 [00:04<00:02, 44.93it/s]Loading weights:  63%|██████▎   | 168/266 [00:04<00:02, 44.64it/s]Loading weights:  67%|██████▋   | 179/266 [00:04<00:01, 45.88it/s]Loading weights:  71%|███████▏  | 190/266 [00:04<00:01, 49.89it/s]Loading weights:  74%|███████▎  | 196/266 [00:05<00:01, 49.87it/s]Loading weights:  76%|███████▌  | 202/266 [00:05<00:01, 45.52it/s]Loading weights:  80%|███████▉  | 212/266 [00:05<00:01, 46.29it/s]Loading weights:  84%|████████▍ | 223/266 [00:05<00:00, 43.55it/s]Loading weights:  88%|████████▊ | 234/266 [00:05<00:00, 50.82it/s]Loading weights:  90%|█████████ | 240/266 [00:05<00:00, 49.40it/s]Loading weights:  92%|█████████▏| 246/266 [00:06<00:00, 49.50it/s]Loading weights:  96%|█████████▌| 256/266 [00:06<00:00, 43.01it/s]Loading weights: 100%|██████████| 266/266 [00:06<00:00, 41.82it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/8b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{24...35}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.input_layernorm.weight          | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q8v5_f3", "allocated": [5112113152, 5411036672], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 1, "layers.11": 1, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q8v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "c7dce379a6b5144c54d0cee704815190e0c8922346f078c52b22a5971c2f5858", "seconds": 6.7290717669999935}
+R18_LIFECYCLE {"adapter": "q8v5_f3", "allocated": [8519680, 8519680], "event": "released", "family": "q8v5", "seconds": 8.563280858999974}
+  l24 q8v5: adapter q8v5_f3 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q8v5_f4", "allocated": [8519680, 8519680], "event": "before_load", "family": "q8v5"}
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights:   0%|          | 1/266 [00:01<08:28,  1.92s/it]Loading weights:  20%|█▉        | 53/266 [00:02<00:06, 35.27it/s]Loading weights:  28%|██▊       | 74/266 [00:02<00:05, 36.66it/s]Loading weights:  33%|███▎      | 87/266 [00:02<00:04, 43.21it/s]Loading weights:  37%|███▋      | 99/266 [00:02<00:03, 43.95it/s]Loading weights:  41%|████      | 109/266 [00:03<00:03, 40.57it/s]Loading weights:  44%|████▍     | 117/266 [00:03<00:03, 42.05it/s]Loading weights:  47%|████▋     | 124/266 [00:03<00:03, 43.85it/s]Loading weights:  51%|█████     | 135/266 [00:03<00:02, 44.37it/s]Loading weights:  55%|█████▍    | 146/266 [00:04<00:02, 44.16it/s]Loading weights:  59%|█████▉    | 157/266 [00:04<00:02, 44.32it/s]Loading weights:  63%|██████▎   | 168/266 [00:04<00:02, 46.34it/s]Loading weights:  67%|██████▋   | 179/266 [00:04<00:01, 48.34it/s]Loading weights:  70%|██████▉   | 185/266 [00:04<00:01, 47.35it/s]Loading weights:  72%|███████▏  | 191/266 [00:05<00:01, 47.38it/s]Loading weights:  76%|███████▌  | 201/266 [00:05<00:01, 46.59it/s]Loading weights:  80%|███████▉  | 212/266 [00:05<00:01, 50.65it/s]Loading weights:  82%|████████▏ | 218/266 [00:05<00:00, 48.34it/s]Loading weights:  84%|████████▍ | 224/266 [00:05<00:00, 48.16it/s]Loading weights:  88%|████████▊ | 234/266 [00:05<00:00, 48.39it/s]Loading weights:  92%|█████████▏| 245/266 [00:06<00:00, 46.86it/s]Loading weights:  96%|█████████▌| 256/266 [00:06<00:00, 44.75it/s]Loading weights: 100%|██████████| 266/266 [00:06<00:00, 41.18it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/8b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{24...35}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.input_layernorm.weight          | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q8v5_f4", "allocated": [5112113152, 5411036672], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 1, "layers.11": 1, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q8v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "c7dce379a6b5144c54d0cee704815190e0c8922346f078c52b22a5971c2f5858", "seconds": 6.94053642099999}
+R18_LIFECYCLE {"adapter": "q8v5_f4", "allocated": [8519680, 8519680], "event": "released", "family": "q8v5", "seconds": 8.777278105999983}
+  l24 q8v5: adapter q8v5_f4 done (bf16 redo batches 0)
+R18_LIFECYCLE {"adapter": "q8v5", "allocated": [8519680, 8519680], "event": "before_load", "family": "q8v5"}
+Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]Loading weights:   0%|          | 1/266 [00:02<08:55,  2.02s/it]Loading weights:  21%|██        | 55/266 [00:02<00:05, 35.44it/s]Loading weights:  30%|███       | 80/266 [00:02<00:05, 37.14it/s]Loading weights:  36%|███▌      | 96/266 [00:03<00:04, 40.00it/s]Loading weights:  41%|████      | 108/266 [00:03<00:03, 43.77it/s]Loading weights:  44%|████▍     | 118/266 [00:03<00:03, 44.68it/s]Loading weights:  47%|████▋     | 126/266 [00:03<00:03, 42.02it/s]Loading weights:  51%|█████     | 135/266 [00:03<00:02, 44.06it/s]Loading weights:  55%|█████▍    | 146/266 [00:04<00:03, 37.99it/s]Loading weights:  59%|█████▉    | 158/266 [00:04<00:02, 46.07it/s]Loading weights:  63%|██████▎   | 168/266 [00:04<00:02, 45.44it/s]Loading weights:  67%|██████▋   | 179/266 [00:04<00:01, 44.77it/s]Loading weights:  71%|███████▏  | 190/266 [00:05<00:01, 49.05it/s]Loading weights:  74%|███████▎  | 196/266 [00:05<00:01, 48.03it/s]Loading weights:  76%|███████▌  | 202/266 [00:05<00:01, 48.86it/s]Loading weights:  80%|███████▉  | 212/266 [00:05<00:01, 45.41it/s]Loading weights:  84%|████████▍ | 223/266 [00:05<00:00, 49.07it/s]Loading weights:  86%|████████▌ | 229/266 [00:05<00:00, 50.61it/s]Loading weights:  88%|████████▊ | 235/266 [00:05<00:00, 50.25it/s]Loading weights:  92%|█████████▏| 245/266 [00:06<00:00, 48.11it/s]Loading weights:  96%|█████████▌| 256/266 [00:06<00:00, 51.09it/s]Loading weights: 100%|██████████| 266/266 [00:06<00:00, 40.96it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/8b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{24...35}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{24...35}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+model.layers.{24...35}.input_layernorm.weight          | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+R18_LIFECYCLE {"adapter": "q8v5", "allocated": [5112113152, 5411036672], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 1, "layers.11": 1, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q8v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "c7dce379a6b5144c54d0cee704815190e0c8922346f078c52b22a5971c2f5858", "seconds": 6.85773677200001}
+R18_LIFECYCLE {"adapter": "q8v5", "allocated": [8519680, 8519680], "event": "released", "family": "q8v5", "seconds": 8.76714726399996}
+  l24 q8v5: adapter q8v5 done (bf16 redo batches 0)
+R18_PREFLIGHT_PASS {"passed": true, "artificial_passages": 2, "families": [{"family": "q14v5", "shape": [2, 18], "finite": true, "adapters": ["q14v5_f0", "q14v5_f1", "q14v5_f2", "q14v5_f3", "q14v5_f4", "q14v5"]}, {"family": "q8v5", "shape": [2, 18], "finite": true, "adapters": ["q8v5_f0", "q8v5_f1", "q8v5_f2", "q8v5_f3", "q8v5_f4", "q8v5"]}], "lifecycle_events": 36, "gpu_names": ["Tesla T4", "Tesla T4"], "seconds": 182.754358523, "accuracy_evaluated": false, "sample_fingerprint_is_full_asset_hash": false}

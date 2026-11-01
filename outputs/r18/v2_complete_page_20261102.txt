@@ -1,0 +1,4063 @@
+Browser tab: 1127720282, Title: "NTL R18 Adapter Isolation 20261101", URL: "https://www.kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/log".
+1 AXWebArea NTL R18 Adapter Isolation 20261101, URL: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/log
+	2 container root
+		3 container Main Kaggle page navigation
+			4 button Navigation menu
+			5 link Description: Skip to content, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/log#site-content
+			6 link Description: Return to Kaggle home page, Value: kaggle.com/
+			7 pop up button (collapsed) Description: Create on Kaggle, Secondary Actions: Expand
+				8 text Create
+			9 container
+				10 container
+					11 content list
+						12 container Home List Item
+							13 link Description: Home, Value: kaggle.com/
+						14 container Competitions List Item
+							15 link Description: Competitions, Value: kaggle.com/competitions
+						16 container Benchmarks List Item
+							17 link Description: Benchmarks, Value: kaggle.com/benchmarks
+						18 container Arenas List Item
+							19 link Description: Arenas, Value: kaggle.com/arenas
+						20 container Game Arena List Item
+							21 link Description: Game Arena, Value: kaggle.com/game-arena
+					22 content list
+						23 container Data Hub List Item
+							24 container
+								25 link (collapsed) Description: Data Hub, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/log#, Secondary Actions: Expand
+								26 button Expand
+					27 content list
+						28 container More on Kaggle List Item
+							29 container
+								30 link (collapsed) Description: More on Kaggle, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/log#, Secondary Actions: Expand
+								31 button Expand
+				32 content list
+					33 container Your Work List Item
+						34 container
+							35 link Description: Your Work, Value: kaggle.com/work
+							36 button (expanded) Description: Collapse Your Work, Help: Collapse
+					37 container Collapse Viewed List Item
+						38 container
+							39 link (expanded) Description: Collapse Viewed, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/log#, Secondary Actions: Collapse
+							40 button Collapse Viewed
+					41 content list
+						42 container Name That LLM List Item
+							43 link Description: Name That LLM, Value: kaggle.com/competitions/name-that-llm
+						44 container NTL R18 Adapter Isolation 20261101 List Item
+							45 link Description: NTL R18 Adapter Isolation 20261101, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101
+						46 container NTL train LoRA qwen25 instyle List Item
+							47 link Description: NTL train LoRA qwen25 instyle, Value: kaggle.com/code/vnton37nguyn/ntl-train-lora-qwen25-instyle
+						48 container name-that-llm-train-tokattn2 List Item
+							49 link Description: name-that-llm-train-tokattn2, Value: kaggle.com/code/lucasboesen/name-that-llm-train-tokattn2
+						50 container name-that-llm-train-tokattn List Item
+							51 link Description: name-that-llm-train-tokattn, Value: kaggle.com/code/lucasboesen/name-that-llm-train-tokattn
+					52 container Collapse Edited List Item
+						53 container
+							54 link (expanded) Description: Collapse Edited, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/log#, Secondary Actions: Collapse
+							55 button Collapse Edited
+					56 content list
+						57 container NTL R18 Adapter Isolation 20261101 List Item
+							58 link Description: NTL R18 Adapter Isolation 20261101, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101
+						59 container NTL R16 Typography Half 20261029 List Item
+							60 link Description: NTL R16 Typography Half 20261029, Value: kaggle.com/code/zephyrpong/ntl-r16-typography-half-20261029
+						61 container NTL Full Ensemble R12 20261028 List Item
+							62 link Description: NTL Full Ensemble R12 20261028, Value: kaggle.com/code/zephyrpong/ntl-full-ensemble-r12-20261028
+						63 container NTL Topic Margin R10 20261028 List Item
+							64 link Description: NTL Topic Margin R10 20261028, Value: kaggle.com/code/zephyrpong/ntl-topic-margin-r10-20261028
+						65 container NTL Weighted SVC R7 20261026 List Item
+							66 link Description: NTL Weighted SVC R7 20261026, Value: kaggle.com/code/zephyrpong/ntl-weighted-svc-r7-20261026
+				105 button (collapsed) Open Active Events dialog View Active Events, Secondary Actions: Expand
+					106 container Open Active Events dialog
+						107 text auto_awesome_motion
+					108 text View Active Events
+		67 container Main menu, search and your account
+			68 container
+				69 text field (settable) :r6:
+				70 button Zephyr Pong
+					71 image
+		72 container site-content
+			73 link Description: Zephyr Pong's profile, Value: kaggle.com/zephyrpong
+			74 text Zephyr Pong · 
+			75 container Description: 13 minutes ago, Help: Mon Nov 02 2026 01:07:05 GMT+0800 (Singapore Standard Time)
+				76 text 13m ago
+			77 text  ·  7 views  ·  Private
+			78 container
+				79 button Upvote
+				80 button 0 votes
+			81 button Share
+			82 link Description: Edit, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit/run/364615652
+			83 pop up button (collapsed) Download, Secondary Actions: Expand
+			84 button More options for this notebook
+			85 heading NTL R18 Adapter Isolation 20261101, Value: 1
+				86 text NTL R18 Adapter Isolation 20261101
+			87 button Edit title
+			88 link Description: [object Object] opens in new window, Value: kaggle.com/code/zephyrpong/ntl-r16-typography-half-20261029
+			89 tab group
+				90 tab (selectable, settable, boolean) Description: Notebook, 1 of 6, Value: 0
+				91 tab (selectable, settable, boolean) Description: Input, 2 of 6, Value: 0
+				92 tab (selectable, settable, boolean) Description: Output, 3 of 6, Value: 0
+				93 tab (selected, settable, boolean) Description: Logs, 4 of 6, Value: 1
+				94 tab (selectable, settable, boolean) Description: Comments (0), 5 of 6, Value: 0
+				95 tab (selectable, settable, boolean) Description: Settings, 6 of 6, Value: 0
+			96 heading Logs, Value: 2
+				97 text Logs
+			109 link Download logs
+				110 button Download logs
+			98 container
+				99 heading Successfully ran in 252.5s, Value: 5
+					100 text Successfully ran in 252.5s
+				101 text Accelerator GPU T4 x2 Environment
+				102 link Description: Latest Container Image opens in new window, Value: gcr.io/kaggle-gpu-images/python@sha256:2757e0c7d1e0a9cb43da657b97e223c321a98f5014bdf64f44f2f6b083ad2b2f
+				103 button
+				104 text Output 876.69 MB
+			111 table (showing 0-500 of 672 items)
+				112 row
+					113 cell
+						114 text Time
+					115 cell
+						116 text #
+					117 cell
+						118 text Log Message
+				119 row
+					120 cell
+						121 text 6.8s
+					122 cell
+						123 text 1
+					124 cell
+						125 text /usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+
+				126 row
+					127 cell
+						128 text 6.8s
+					129 cell
+						130 text 2
+					131 cell
+						132 text   _validate(nbdict, ref, version, version_minor, relax_add_props)
+
+				133 row
+					134 cell
+						135 text 7.8s
+					136 cell
+						137 text 3
+					138 cell
+						139 text 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+
+				140 row
+					141 cell
+						142 text 7.8s
+					143 cell
+						144 text 4
+					145 cell
+						146 text 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+
+				147 row
+					148 cell
+						149 text 7.8s
+					150 cell
+						151 text 5
+					152 cell
+						153 text 0.00s - to python to disable frozen modules.
+
+				154 row
+					155 cell
+						156 text 7.8s
+					157 cell
+						158 text 6
+					159 cell
+						160 text 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+
+				161 row
+					162 cell
+						163 text 8.4s
+					164 cell
+						165 text 7
+					166 cell
+						167 text 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+
+				168 row
+					169 cell
+						170 text 8.4s
+					171 cell
+						172 text 8
+					173 cell
+						174 text 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+
+				175 row
+					176 cell
+						177 text 8.4s
+					178 cell
+						179 text 9
+					180 cell
+						181 text 0.00s - to python to disable frozen modules.
+
+				182 row
+					183 cell
+						184 text 8.4s
+					185 cell
+						186 text 10
+					187 cell
+						188 text 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+
+				189 row
+					190 cell
+						191 text 10.5s
+					192 cell
+						193 text 11
+					194 cell
+						195 text R14 competition rerun: False ; test rows: 3
+
+				196 row
+					197 cell
+						198 text 10.5s
+					199 cell
+						200 text 12
+					201 cell
+						202 text Writing r18_preflight.py
+
+				203 row
+					204 cell
+						205 text 10.5s
+					206 cell
+						207 text 13
+					208 cell
+						209 text Writing r18_contract.py
+
+				210 row
+					211 cell
+						212 text 14.6s
+					213 cell
+						214 text 14
+					215 cell
+						216 text 0
+
+				217 row
+					218 cell
+						219 text 15.0s
+					220 cell
+						221 text 15
+					222 cell
+						223 text atlas /kaggle/input/datasets/josephadamski91/ntl-atlas-qwen3-8b-v1/atlas_adapter/atlas_adapter
+
+				224 row
+					225 cell
+						226 text 23.4s
+					227 cell
+						228 text 16
+					229 cell
+						230 text part two /kaggle/input/datasets/nishantdahal/ntl-handwriting-blend/lora_qwen3_14b 27 [2, 4, 6, 9, 13, 17, 22, 27] 151643 /kaggle/input/datasets/nishantdahal/ntl-handwriting-blend/lora_qwen25_14b 32 [3, 5, 8, 11, 16, 21, 27, 32] /kaggle/working/deberta_v3_large
+
+				231 row
+					232 cell
+						233 text 24.0s
+					234 cell
+						235 text 17
+					236 cell
+						237 text q8v5 ['/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f0', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f1', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f2', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f3', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f4', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5']
+
+				238 row
+					239 cell
+						240 text 24.4s
+					241 cell
+						242 text 18
+					243 cell
+						244 text Writing gauss.py
+
+				245 row
+					246 cell
+						247 text 24.4s
+					248 cell
+						249 text 19
+					250 cell
+						251 text Writing infer.py
+
+				252 row
+					253 cell
+						254 text 24.5s
+					255 cell
+						256 text 20
+					257 cell
+						258 text Writing comp_stack.py
+
+				259 row
+					260 cell
+						261 text 24.5s
+					262 cell
+						263 text 21
+					264 cell
+						265 text R18 starting r18_preflight.py ; remaining seconds 885
+
+				266 row
+					267 cell
+						268 text 242.3s
+					269 cell
+						270 text 22
+					271 cell
+						272 text R18_LIFECYCLE {"adapter": "q14v5_f0", "allocated": [0, 0], "event": "before_load", "family": "q14v5"}
+
+				273 row
+					274 cell
+						275 text 242.3s
+					276 cell
+						277 text 23
+				278 row
+					279 cell
+						280 text 242.3s
+					281 cell
+						282 text 24
+					283 cell
+						284 text Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]
+
+				285 row
+					286 cell
+						287 text 242.3s
+					288 cell
+						289 text 25
+					290 cell
+						291 text Loading weights:   0%|          | 1/299 [00:08<41:37,  8.38s/it]
+
+				292 row
+					293 cell
+						294 text 242.3s
+					295 cell
+						296 text 26
+					297 cell
+						298 text Loading weights:  23%|██▎       | 69/299 [00:08<00:20, 11.26it/s]
+
+				299 row
+					300 cell
+						301 text 242.3s
+					302 cell
+						303 text 27
+					304 cell
+						305 text Loading weights:  29%|██▉       | 87/299 [00:09<00:18, 11.71it/s]
+
+				306 row
+					307 cell
+						308 text 242.3s
+					309 cell
+						310 text 28
+					311 cell
+						312 text Loading weights:  32%|███▏      | 97/299 [00:10<00:17, 11.39it/s]
+
+				313 row
+					314 cell
+						315 text 242.3s
+					316 cell
+						317 text 29
+					318 cell
+						319 text Loading weights:  35%|███▍      | 104/299 [00:11<00:18, 10.55it/s]
+
+				320 row
+					321 cell
+						322 text 242.3s
+					323 cell
+						324 text 30
+					325 cell
+						326 text Loading weights:  38%|███▊      | 113/299 [00:12<00:17, 10.59it/s]
+
+				327 row
+					328 cell
+						329 text 242.3s
+					330 cell
+						331 text 31
+					332 cell
+						333 text Loading weights:  41%|████▏     | 124/299 [00:13<00:16, 10.81it/s]
+
+				334 row
+					335 cell
+						336 text 242.3s
+					337 cell
+						338 text 32
+					339 cell
+						340 text Loading weights:  42%|████▏     | 127/299 [00:13<00:14, 11.50it/s]
+
+				341 row
+					342 cell
+						343 text 242.3s
+					344 cell
+						345 text 33
+					346 cell
+						347 text Loading weights:  45%|████▌     | 135/299 [00:14<00:14, 11.45it/s]
+
+				348 row
+					349 cell
+						350 text 242.3s
+					351 cell
+						352 text 34
+					353 cell
+						354 text Loading weights:  46%|████▌     | 138/299 [00:14<00:14, 11.38it/s]
+
+				355 row
+					356 cell
+						357 text 242.3s
+					358 cell
+						359 text 35
+					360 cell
+						361 text Loading weights:  49%|████▉     | 146/299 [00:15<00:13, 11.10it/s]
+
+				362 row
+					363 cell
+						364 text 242.3s
+					365 cell
+						366 text 36
+					367 cell
+						368 text Loading weights:  49%|████▉     | 148/299 [00:15<00:13, 10.95it/s]
+
+				369 row
+					370 cell
+						371 text 242.3s
+					372 cell
+						373 text 37
+					374 cell
+						375 text Loading weights:  53%|█████▎    | 157/299 [00:16<00:13, 10.90it/s]
+
+				376 row
+					377 cell
+						378 text 242.3s
+					379 cell
+						380 text 38
+					381 cell
+						382 text Loading weights:  53%|█████▎    | 159/299 [00:16<00:12, 11.44it/s]
+
+				383 row
+					384 cell
+						385 text 242.3s
+					386 cell
+						387 text 39
+					388 cell
+						389 text Loading weights:  56%|█████▌    | 168/299 [00:17<00:10, 12.02it/s]
+
+				390 row
+					391 cell
+						392 text 242.3s
+					393 cell
+						394 text 40
+					395 cell
+						396 text Loading weights:  57%|█████▋    | 170/299 [00:17<00:10, 12.02it/s]
+
+				397 row
+					398 cell
+						399 text 242.3s
+					400 cell
+						401 text 41
+					402 cell
+						403 text Loading weights:  60%|█████▉    | 179/299 [00:18<00:10, 11.59it/s]
+
+				404 row
+					405 cell
+						406 text 242.3s
+					407 cell
+						408 text 42
+					409 cell
+						410 text Loading weights:  61%|██████    | 181/299 [00:18<00:09, 12.10it/s]
+
+				411 row
+					412 cell
+						413 text 242.3s
+					414 cell
+						415 text 43
+					416 cell
+						417 text Loading weights:  64%|██████▎   | 190/299 [00:19<00:09, 11.60it/s]
+
+				418 row
+					419 cell
+						420 text 242.3s
+					421 cell
+						422 text 44
+					423 cell
+						424 text Loading weights:  64%|██████▍   | 192/299 [00:19<00:09, 11.60it/s]
+
+				425 row
+					426 cell
+						427 text 242.3s
+					428 cell
+						429 text 45
+					430 cell
+						431 text Loading weights:  67%|██████▋   | 201/299 [00:20<00:09, 10.43it/s]
+
+				432 row
+					433 cell
+						434 text 242.3s
+					435 cell
+						436 text 46
+					437 cell
+						438 text Loading weights:  71%|███████   | 212/299 [00:21<00:07, 10.98it/s]
+
+				439 row
+					440 cell
+						441 text 242.3s
+					442 cell
+						443 text 47
+					444 cell
+						445 text Loading weights:  72%|███████▏  | 214/299 [00:21<00:07, 10.80it/s]
+
+				446 row
+					447 cell
+						448 text 242.3s
+					449 cell
+						450 text 48
+					451 cell
+						452 text Loading weights:  75%|███████▍  | 223/299 [00:22<00:07, 10.35it/s]
+
+				453 row
+					454 cell
+						455 text 242.3s
+					456 cell
+						457 text 49
+					458 cell
+						459 text Loading weights:  75%|███████▌  | 225/299 [00:22<00:06, 10.81it/s]
+
+				460 row
+					461 cell
+						462 text 242.3s
+					463 cell
+						464 text 50
+					465 cell
+						466 text Loading weights:  78%|███████▊  | 234/299 [00:23<00:05, 11.35it/s]
+
+				467 row
+					468 cell
+						469 text 242.3s
+					470 cell
+						471 text 51
+					472 cell
+						473 text Loading weights:  79%|███████▉  | 236/299 [00:23<00:05, 11.64it/s]
+
+				474 row
+					475 cell
+						476 text 242.3s
+					477 cell
+						478 text 52
+					479 cell
+						480 text Loading weights:  82%|████████▏ | 245/299 [00:24<00:05, 10.18it/s]
+
+				481 row
+					482 cell
+						483 text 242.3s
+					484 cell
+						485 text 53
+					486 cell
+						487 text Loading weights:  83%|████████▎ | 247/299 [00:24<00:04, 10.64it/s]
+
+				488 row
+					489 cell
+						490 text 242.3s
+					491 cell
+						492 text 54
+					493 cell
+						494 text Loading weights:  86%|████████▌ | 256/299 [00:25<00:03, 11.17it/s]
+
+				495 row
+					496 cell
+						497 text 242.3s
+					498 cell
+						499 text 55
+					500 cell
+						501 text Loading weights:  86%|████████▋ | 258/299 [00:25<00:03, 10.91it/s]
+
+				502 row
+					503 cell
+						504 text 242.3s
+					505 cell
+						506 text 56
+					507 cell
+						508 text Loading weights:  89%|████████▉ | 267/299 [00:26<00:02, 10.82it/s]
+
+				509 row
+					510 cell
+						511 text 242.3s
+					512 cell
+						513 text 57
+					514 cell
+						515 text Loading weights:  90%|████████▉ | 269/299 [00:26<00:02, 11.46it/s]
+
+				516 row
+					517 cell
+						518 text 242.3s
+					519 cell
+						520 text 58
+					521 cell
+						522 text Loading weights:  93%|█████████▎| 278/299 [00:27<00:01, 11.06it/s]
+
+				523 row
+					524 cell
+						525 text 242.3s
+					526 cell
+						527 text 59
+					528 cell
+						529 text Loading weights:  97%|█████████▋| 289/299 [00:28<00:00, 11.50it/s]
+
+				530 row
+					531 cell
+						532 text 242.3s
+					533 cell
+						534 text 60
+					535 cell
+						536 text Loading weights:  97%|█████████▋| 291/299 [00:28<00:00, 11.90it/s]
+
+				537 row
+					538 cell
+						539 text 242.3s
+					540 cell
+						541 text 61
+					542 cell
+						543 text Loading weights: 100%|██████████| 299/299 [00:28<00:00, 10.51it/s]
+
+				544 row
+					545 cell
+						546 text 242.3s
+					547 cell
+						548 text 62
+					549 cell
+						550 text [transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+
+				551 row
+					552 cell
+						553 text 242.3s
+					554 cell
+						555 text 63
+					556 cell
+						557 text Key                                                    | Status     |  | 
+
+				558 row
+					559 cell
+						560 text 242.3s
+					561 cell
+						562 text 64
+					563 cell
+						564 text -------------------------------------------------------+------------+--+-
+
+				565 row
+					566 cell
+						567 text 242.3s
+					568 cell
+						569 text 65
+					570 cell
+						571 text model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+
+				572 row
+					573 cell
+						574 text 242.3s
+					575 cell
+						576 text 66
+					577 cell
+						578 text model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+
+				579 row
+					580 cell
+						581 text 242.3s
+					582 cell
+						583 text 67
+					584 cell
+						585 text model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+
+				586 row
+					587 cell
+						588 text 242.3s
+					589 cell
+						590 text 68
+					591 cell
+						592 text model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+
+				593 row
+					594 cell
+						595 text 242.3s
+					596 cell
+						597 text 69
+					598 cell
+						599 text model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+
+				600 row
+					601 cell
+						602 text 242.3s
+					603 cell
+						604 text 70
+					605 cell
+						606 text model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+
+				607 row
+					608 cell
+						609 text 242.3s
+					610 cell
+						611 text 71
+					612 cell
+						613 text model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+
+				614 row
+					615 cell
+						616 text 242.3s
+					617 cell
+						618 text 72
+					619 cell
+						620 text model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+
+				621 row
+					622 cell
+						623 text 242.3s
+					624 cell
+						625 text 73
+					626 cell
+						627 text model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+
+				628 row
+					629 cell
+						630 text 242.3s
+					631 cell
+						632 text 74
+					633 cell
+						634 text model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+
+				635 row
+					636 cell
+						637 text 242.3s
+					638 cell
+						639 text 75
+					640 cell
+						641 text model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+
+				642 row
+					643 cell
+						644 text 242.3s
+					645 cell
+						646 text 76
+					647 cell
+						648 text lm_head.weight                                         | UNEXPECTED |  | 
+
+				649 row
+					650 cell
+						651 text 242.3s
+					652 cell
+						653 text 77
+				654 row
+					655 cell
+						656 text 242.3s
+					657 cell
+						658 text 78
+					659 cell
+						660 text Notes:
+
+				661 row
+					662 cell
+						663 text 242.3s
+					664 cell
+						665 text 79
+					666 cell
+						667 text - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+				668 row
+					669 cell
+						670 text 242.3s
+					671 cell
+						672 text 80
+					673 cell
+						674 text R18_LIFECYCLE {"adapter": "q14v5_f0", "allocated": [9483317248, 9909377536], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 31.08846433399998}
+
+				675 row
+					676 cell
+						677 text 242.3s
+					678 cell
+						679 text 81
+					680 cell
+						681 text R18_LIFECYCLE {"adapter": "q14v5_f0", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 34.740600115999996}
+
+				682 row
+					683 cell
+						684 text 242.3s
+					685 cell
+						686 text 82
+					687 cell
+						688 text   l24 q14v5: adapter q14v5_f0 done (bf16 redo batches 0)
+
+				689 row
+					690 cell
+						691 text 242.3s
+					692 cell
+						693 text 83
+					694 cell
+						695 text R18_LIFECYCLE {"adapter": "q14v5_f1", "allocated": [8519680, 8519680], "event": "before_load", "family": "q14v5"}
+
+				696 row
+					697 cell
+						698 text 242.3s
+					699 cell
+						700 text 84
+				701 row
+					702 cell
+						703 text 242.3s
+					704 cell
+						705 text 85
+					706 cell
+						707 text Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]
+
+				708 row
+					709 cell
+						710 text 242.3s
+					711 cell
+						712 text 86
+					713 cell
+						714 text Loading weights:   0%|          | 1/299 [00:02<11:57,  2.41s/it]
+
+				715 row
+					716 cell
+						717 text 242.3s
+					718 cell
+						719 text 87
+					720 cell
+						721 text Loading weights:  14%|█▍        | 42/299 [00:02<00:11, 22.42it/s]
+
+				722 row
+					723 cell
+						724 text 242.3s
+					725 cell
+						726 text 88
+					727 cell
+						728 text Loading weights:  19%|█▊        | 56/299 [00:02<00:09, 25.67it/s]
+
+				729 row
+					730 cell
+						731 text 242.3s
+					732 cell
+						733 text 89
+					734 cell
+						735 text Loading weights:  22%|██▏       | 66/299 [00:03<00:09, 24.81it/s]
+
+				736 row
+					737 cell
+						738 text 242.3s
+					739 cell
+						740 text 90
+					741 cell
+						742 text Loading weights:  24%|██▍       | 73/299 [00:03<00:09, 23.01it/s]
+
+				743 row
+					744 cell
+						745 text 242.3s
+					746 cell
+						747 text 91
+					748 cell
+						749 text Loading weights:  27%|██▋       | 80/299 [00:04<00:09, 23.01it/s]
+
+				750 row
+					751 cell
+						752 text 242.3s
+					753 cell
+						754 text 92
+					755 cell
+						756 text Loading weights:  30%|███       | 91/299 [00:04<00:08, 23.81it/s]
+
+				757 row
+					758 cell
+						759 text 242.3s
+					760 cell
+						761 text 93
+					762 cell
+						763 text Loading weights:  32%|███▏      | 95/299 [00:04<00:08, 24.87it/s]
+
+				764 row
+					765 cell
+						766 text 242.3s
+					767 cell
+						768 text 94
+					769 cell
+						770 text Loading weights:  34%|███▍      | 102/299 [00:04<00:07, 27.44it/s]
+
+				771 row
+					772 cell
+						773 text 242.3s
+					774 cell
+						775 text 95
+					776 cell
+						777 text Loading weights:  35%|███▌      | 106/299 [00:04<00:06, 27.90it/s]
+
+				778 row
+					779 cell
+						780 text 242.3s
+					781 cell
+						782 text 96
+					783 cell
+						784 text Loading weights:  38%|███▊      | 113/299 [00:05<00:07, 24.75it/s]
+
+				785 row
+					786 cell
+						787 text 242.3s
+					788 cell
+						789 text 97
+					790 cell
+						791 text Loading weights:  41%|████▏     | 124/299 [00:05<00:06, 26.57it/s]
+
+				792 row
+					793 cell
+						794 text 242.3s
+					795 cell
+						796 text 98
+					797 cell
+						798 text Loading weights:  42%|████▏     | 127/299 [00:05<00:06, 26.52it/s]
+
+				799 row
+					800 cell
+						801 text 242.3s
+					802 cell
+						803 text 99
+					804 cell
+						805 text Loading weights:  45%|████▌     | 135/299 [00:06<00:05, 28.35it/s]
+
+				806 row
+					807 cell
+						808 text 242.3s
+					809 cell
+						810 text 100
+					811 cell
+						812 text Loading weights:  48%|████▊     | 143/299 [00:06<00:04, 35.71it/s]
+
+				813 row
+					814 cell
+						815 text 242.3s
+					816 cell
+						817 text 101
+					818 cell
+						819 text Loading weights:  49%|████▉     | 148/299 [00:06<00:06, 21.64it/s]
+
+				820 row
+					821 cell
+						822 text 242.3s
+					823 cell
+						824 text 102
+					825 cell
+						826 text Loading weights:  53%|█████▎    | 158/299 [00:06<00:04, 28.97it/s]
+
+				827 row
+					828 cell
+						829 text 242.3s
+					830 cell
+						831 text 103
+					832 cell
+						833 text Loading weights:  55%|█████▍    | 163/299 [00:07<00:04, 28.74it/s]
+
+				834 row
+					835 cell
+						836 text 242.3s
+					837 cell
+						838 text 104
+					839 cell
+						840 text Loading weights:  56%|█████▌    | 168/299 [00:07<00:05, 24.28it/s]
+
+				841 row
+					842 cell
+						843 text 242.3s
+					844 cell
+						845 text 105
+					846 cell
+						847 text Loading weights:  60%|█████▉    | 179/299 [00:07<00:04, 29.38it/s]
+
+				848 row
+					849 cell
+						850 text 242.3s
+					851 cell
+						852 text 106
+					853 cell
+						854 text Loading weights:  64%|██████▎   | 190/299 [00:07<00:03, 29.38it/s]
+
+				855 row
+					856 cell
+						857 text 242.3s
+					858 cell
+						859 text 107
+					860 cell
+						861 text Loading weights:  65%|██████▍   | 194/299 [00:08<00:03, 30.68it/s]
+
+				862 row
+					863 cell
+						864 text 242.3s
+					865 cell
+						866 text 108
+					867 cell
+						868 text Loading weights:  67%|██████▋   | 201/299 [00:08<00:03, 27.99it/s]
+
+				869 row
+					870 cell
+						871 text 242.3s
+					872 cell
+						873 text 109
+					874 cell
+						875 text Loading weights:  69%|██████▊   | 205/299 [00:08<00:03, 27.37it/s]
+
+				876 row
+					877 cell
+						878 text 242.3s
+					879 cell
+						880 text 110
+					881 cell
+						882 text Loading weights:  71%|███████   | 212/299 [00:08<00:03, 28.76it/s]
+
+				883 row
+					884 cell
+						885 text 242.3s
+					886 cell
+						887 text 111
+					888 cell
+						889 text Loading weights:  75%|███████▍  | 223/299 [00:09<00:03, 25.28it/s]
+
+				890 row
+					891 cell
+						892 text 242.3s
+					893 cell
+						894 text 112
+					895 cell
+						896 text Loading weights:  78%|███████▊  | 234/299 [00:09<00:02, 28.88it/s]
+
+				897 row
+					898 cell
+						899 text 242.3s
+					900 cell
+						901 text 113
+					902 cell
+						903 text Loading weights:  82%|████████▏ | 245/299 [00:09<00:01, 29.47it/s]
+
+				904 row
+					905 cell
+						906 text 242.3s
+					907 cell
+						908 text 114
+					909 cell
+						910 text Loading weights:  83%|████████▎ | 249/299 [00:10<00:01, 27.33it/s]
+
+				911 row
+					912 cell
+						913 text 242.3s
+					914 cell
+						915 text 115
+					916 cell
+						917 text Loading weights:  86%|████████▌ | 256/299 [00:10<00:01, 32.39it/s]
+
+				918 row
+					919 cell
+						920 text 242.3s
+					921 cell
+						922 text 116
+					923 cell
+						924 text Loading weights:  87%|████████▋ | 260/299 [00:10<00:01, 28.48it/s]
+
+				925 row
+					926 cell
+						927 text 242.3s
+					928 cell
+						929 text 117
+					930 cell
+						931 text Loading weights:  89%|████████▉ | 267/299 [00:10<00:01, 29.89it/s]
+
+				932 row
+					933 cell
+						934 text 242.3s
+					935 cell
+						936 text 118
+					937 cell
+						938 text Loading weights:  91%|█████████ | 271/299 [00:10<00:01, 26.67it/s]
+
+				939 row
+					940 cell
+						941 text 242.3s
+					942 cell
+						943 text 119
+					944 cell
+						945 text Loading weights:  93%|█████████▎| 278/299 [00:11<00:00, 30.78it/s]
+
+				946 row
+					947 cell
+						948 text 242.3s
+					949 cell
+						950 text 120
+					951 cell
+						952 text Loading weights:  94%|█████████▍| 282/299 [00:11<00:00, 26.41it/s]
+
+				953 row
+					954 cell
+						955 text 242.3s
+					956 cell
+						957 text 121
+					958 cell
+						959 text Loading weights:  97%|█████████▋| 289/299 [00:11<00:00, 28.79it/s]
+
+				960 row
+					961 cell
+						962 text 242.3s
+					963 cell
+						964 text 122
+					965 cell
+						966 text Loading weights:  98%|█████████▊| 293/299 [00:11<00:00, 30.43it/s]
+
+				967 row
+					968 cell
+						969 text 242.3s
+					970 cell
+						971 text 123
+					972 cell
+						973 text Loading weights: 100%|██████████| 299/299 [00:11<00:00, 25.80it/s]
+
+				974 row
+					975 cell
+						976 text 242.3s
+					977 cell
+						978 text 124
+					979 cell
+						980 text [transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+
+				981 row
+					982 cell
+						983 text 242.3s
+					984 cell
+						985 text 125
+					986 cell
+						987 text Key                                                    | Status     |  | 
+
+				988 row
+					989 cell
+						990 text 242.3s
+					991 cell
+						992 text 126
+					993 cell
+						994 text -------------------------------------------------------+------------+--+-
+
+				995 row
+					996 cell
+						997 text 242.3s
+					998 cell
+						999 text 127
+					1000 cell
+						1001 text model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+
+				1002 row
+					1003 cell
+						1004 text 242.3s
+					1005 cell
+						1006 text 128
+					1007 cell
+						1008 text model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+
+				1009 row
+					1010 cell
+						1011 text 242.3s
+					1012 cell
+						1013 text 129
+					1014 cell
+						1015 text model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+
+				1016 row
+					1017 cell
+						1018 text 242.3s
+					1019 cell
+						1020 text 130
+					1021 cell
+						1022 text model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+
+				1023 row
+					1024 cell
+						1025 text 242.3s
+					1026 cell
+						1027 text 131
+					1028 cell
+						1029 text model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+
+				1030 row
+					1031 cell
+						1032 text 242.3s
+					1033 cell
+						1034 text 132
+					1035 cell
+						1036 text model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+
+				1037 row
+					1038 cell
+						1039 text 242.3s
+					1040 cell
+						1041 text 133
+					1042 cell
+						1043 text model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+
+				1044 row
+					1045 cell
+						1046 text 242.3s
+					1047 cell
+						1048 text 134
+					1049 cell
+						1050 text model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+
+				1051 row
+					1052 cell
+						1053 text 242.3s
+					1054 cell
+						1055 text 135
+					1056 cell
+						1057 text model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+
+				1058 row
+					1059 cell
+						1060 text 242.3s
+					1061 cell
+						1062 text 136
+					1063 cell
+						1064 text model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+
+				1065 row
+					1066 cell
+						1067 text 242.3s
+					1068 cell
+						1069 text 137
+					1070 cell
+						1071 text model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+
+				1072 row
+					1073 cell
+						1074 text 242.3s
+					1075 cell
+						1076 text 138
+					1077 cell
+						1078 text lm_head.weight                                         | UNEXPECTED |  | 
+
+				1079 row
+					1080 cell
+						1081 text 242.3s
+					1082 cell
+						1083 text 139
+				1084 row
+					1085 cell
+						1086 text 242.3s
+					1087 cell
+						1088 text 140
+					1089 cell
+						1090 text Notes:
+
+				1091 row
+					1092 cell
+						1093 text 242.3s
+					1094 cell
+						1095 text 141
+					1096 cell
+						1097 text - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+				1098 row
+					1099 cell
+						1100 text 242.3s
+					1101 cell
+						1102 text 142
+					1103 cell
+						1104 text R18_LIFECYCLE {"adapter": "q14v5_f1", "allocated": [9491836928, 9918749184], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 12.510509809000041}
+
+				1105 row
+					1106 cell
+						1107 text 242.3s
+					1108 cell
+						1109 text 143
+					1110 cell
+						1111 text R18_LIFECYCLE {"adapter": "q14v5_f1", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 15.208578285000044}
+
+				1112 row
+					1113 cell
+						1114 text 242.3s
+					1115 cell
+						1116 text 144
+					1117 cell
+						1118 text   l24 q14v5: adapter q14v5_f1 done (bf16 redo batches 0)
+
+				1119 row
+					1120 cell
+						1121 text 242.3s
+					1122 cell
+						1123 text 145
+					1124 cell
+						1125 text R18_LIFECYCLE {"adapter": "q14v5_f2", "allocated": [8519680, 8519680], "event": "before_load", "family": "q14v5"}
+
+				1126 row
+					1127 cell
+						1128 text 242.3s
+					1129 cell
+						1130 text 146
+				1131 row
+					1132 cell
+						1133 text 242.3s
+					1134 cell
+						1135 text 147
+					1136 cell
+						1137 text Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]
+
+				1138 row
+					1139 cell
+						1140 text 242.3s
+					1141 cell
+						1142 text 148
+					1143 cell
+						1144 text Loading weights:   0%|          | 1/299 [00:02<12:28,  2.51s/it]
+
+				1145 row
+					1146 cell
+						1147 text 242.3s
+					1148 cell
+						1149 text 149
+					1150 cell
+						1151 text Loading weights:  15%|█▍        | 44/299 [00:02<00:11, 22.37it/s]
+
+				1152 row
+					1153 cell
+						1154 text 242.3s
+					1155 cell
+						1156 text 150
+					1157 cell
+						1158 text Loading weights:  19%|█▉        | 57/299 [00:02<00:09, 26.60it/s]
+
+				1159 row
+					1160 cell
+						1161 text 242.3s
+					1162 cell
+						1163 text 151
+					1164 cell
+						1165 text Loading weights:  22%|██▏       | 67/299 [00:03<00:09, 24.88it/s]
+
+				1166 row
+					1167 cell
+						1168 text 242.3s
+					1169 cell
+						1170 text 152
+					1171 cell
+						1172 text Loading weights:  25%|██▍       | 74/299 [00:03<00:08, 25.19it/s]
+
+				1173 row
+					1174 cell
+						1175 text 242.3s
+					1176 cell
+						1177 text 153
+					1178 cell
+						1179 text Loading weights:  27%|██▋       | 80/299 [00:04<00:09, 21.96it/s]
+
+				1180 row
+					1181 cell
+						1182 text 242.3s
+					1183 cell
+						1184 text 154
+					1185 cell
+						1186 text Loading weights:  28%|██▊       | 84/299 [00:04<00:09, 22.91it/s]
+
+				1187 row
+					1188 cell
+						1189 text 242.3s
+					1190 cell
+						1191 text 155
+					1192 cell
+						1193 text Loading weights:  31%|███       | 92/299 [00:04<00:07, 27.47it/s]
+
+				1194 row
+					1195 cell
+						1196 text 242.3s
+					1197 cell
+						1198 text 156
+					1199 cell
+						1200 text Loading weights:  34%|███▍      | 102/299 [00:04<00:07, 27.60it/s]
+
+				1201 row
+					1202 cell
+						1203 text 242.3s
+					1204 cell
+						1205 text 157
+					1206 cell
+						1207 text Loading weights:  35%|███▌      | 106/299 [00:05<00:07, 25.70it/s]
+
+				1208 row
+					1209 cell
+						1210 text 242.3s
+					1211 cell
+						1212 text 158
+					1213 cell
+						1214 text Loading weights:  38%|███▊      | 113/299 [00:05<00:06, 30.02it/s]
+
+				1215 row
+					1216 cell
+						1217 text 242.3s
+					1218 cell
+						1219 text 159
+					1220 cell
+						1221 text Loading weights:  40%|████      | 121/299 [00:05<00:04, 37.59it/s]
+
+				1222 row
+					1223 cell
+						1224 text 242.3s
+					1225 cell
+						1226 text 160
+					1227 cell
+						1228 text Loading weights:  42%|████▏     | 126/299 [00:05<00:07, 23.41it/s]
+
+				1229 row
+					1230 cell
+						1231 text 242.3s
+					1232 cell
+						1233 text 161
+					1234 cell
+						1235 text Loading weights:  45%|████▌     | 136/299 [00:05<00:05, 28.64it/s]
+
+				1236 row
+					1237 cell
+						1238 text 242.3s
+					1239 cell
+						1240 text 162
+					1241 cell
+						1242 text Loading weights:  49%|████▉     | 146/299 [00:06<00:05, 27.67it/s]
+
+				1243 row
+					1244 cell
+						1245 text 242.3s
+					1246 cell
+						1247 text 163
+					1248 cell
+						1249 text Loading weights:  50%|█████     | 150/299 [00:06<00:05, 29.06it/s]
+
+				1250 row
+					1251 cell
+						1252 text 242.3s
+					1253 cell
+						1254 text 164
+					1255 cell
+						1256 text Loading weights:  53%|█████▎    | 157/299 [00:06<00:05, 25.73it/s]
+
+				1257 row
+					1258 cell
+						1259 text 242.3s
+					1260 cell
+						1261 text 165
+					1262 cell
+						1263 text Loading weights:  56%|█████▌    | 168/299 [00:07<00:05, 25.85it/s]
+
+				1264 row
+					1265 cell
+						1266 text 242.3s
+					1267 cell
+						1268 text 166
+					1269 cell
+						1270 text Loading weights:  57%|█████▋    | 171/299 [00:07<00:04, 26.26it/s]
+
+				1271 row
+					1272 cell
+						1273 text 242.3s
+					1274 cell
+						1275 text 167
+					1276 cell
+						1277 text Loading weights:  60%|█████▉    | 179/299 [00:07<00:04, 26.55it/s]
+
+				1278 row
+					1279 cell
+						1280 text 242.3s
+					1281 cell
+						1282 text 168
+					1283 cell
+						1284 text Loading weights:  61%|██████    | 182/299 [00:07<00:04, 26.67it/s]
+
+				1285 row
+					1286 cell
+						1287 text 242.3s
+					1288 cell
+						1289 text 169
+					1290 cell
+						1291 text Loading weights:  64%|██████▎   | 190/299 [00:08<00:04, 26.82it/s]
+
+				1292 row
+					1293 cell
+						1294 text 242.3s
+					1295 cell
+						1296 text 170
+					1297 cell
+						1298 text Loading weights:  67%|██████▋   | 201/299 [00:08<00:03, 27.32it/s]
+
+				1299 row
+					1300 cell
+						1301 text 242.3s
+					1302 cell
+						1303 text 171
+					1304 cell
+						1305 text Loading weights:  68%|██████▊   | 204/299 [00:08<00:03, 25.63it/s]
+
+				1306 row
+					1307 cell
+						1308 text 242.3s
+					1309 cell
+						1310 text 172
+					1311 cell
+						1312 text Loading weights:  71%|███████   | 212/299 [00:08<00:03, 25.85it/s]
+
+				1313 row
+					1314 cell
+						1315 text 242.3s
+					1316 cell
+						1317 text 173
+					1318 cell
+						1319 text Loading weights:  75%|███████▍  | 223/299 [00:09<00:03, 23.87it/s]
+
+				1320 row
+					1321 cell
+						1322 text 242.3s
+					1323 cell
+						1324 text 174
+					1325 cell
+						1326 text Loading weights:  78%|███████▊  | 234/299 [00:09<00:02, 31.84it/s]
+
+				1327 row
+					1328 cell
+						1329 text 242.3s
+					1330 cell
+						1331 text 175
+					1332 cell
+						1333 text Loading weights:  80%|███████▉  | 238/299 [00:09<00:02, 28.84it/s]
+
+				1334 row
+					1335 cell
+						1336 text 242.3s
+					1337 cell
+						1338 text 176
+					1339 cell
+						1340 text Loading weights:  82%|████████▏ | 245/299 [00:09<00:01, 31.12it/s]
+
+				1341 row
+					1342 cell
+						1343 text 242.3s
+					1344 cell
+						1345 text 177
+					1346 cell
+						1347 text Loading weights:  83%|████████▎ | 249/299 [00:10<00:01, 30.46it/s]
+
+				1348 row
+					1349 cell
+						1350 text 242.3s
+					1351 cell
+						1352 text 178
+					1353 cell
+						1354 text Loading weights:  86%|████████▌ | 256/299 [00:10<00:01, 28.96it/s]
+
+				1355 row
+					1356 cell
+						1357 text 242.3s
+					1358 cell
+						1359 text 179
+					1360 cell
+						1361 text Loading weights:  87%|████████▋ | 260/299 [00:10<00:01, 30.36it/s]
+
+				1362 row
+					1363 cell
+						1364 text 242.3s
+					1365 cell
+						1366 text 180
+					1367 cell
+						1368 text Loading weights:  89%|████████▉ | 267/299 [00:10<00:01, 23.63it/s]
+
+				1369 row
+					1370 cell
+						1371 text 242.3s
+					1372 cell
+						1373 text 181
+					1374 cell
+						1375 text Loading weights:  93%|█████████▎| 278/299 [00:11<00:00, 33.33it/s]
+
+				1376 row
+					1377 cell
+						1378 text 242.3s
+					1379 cell
+						1380 text 182
+					1381 cell
+						1382 text Loading weights:  95%|█████████▍| 283/299 [00:11<00:00, 31.93it/s]
+
+				1383 row
+					1384 cell
+						1385 text 242.3s
+					1386 cell
+						1387 text 183
+					1388 cell
+						1389 text Loading weights:  97%|█████████▋| 289/299 [00:11<00:00, 28.42it/s]
+
+				1390 row
+					1391 cell
+						1392 text 242.3s
+					1393 cell
+						1394 text 184
+					1395 cell
+						1396 text Loading weights: 100%|██████████| 299/299 [00:11<00:00, 25.85it/s]
+
+				1397 row
+					1398 cell
+						1399 text 242.3s
+					1400 cell
+						1401 text 185
+					1402 cell
+						1403 text [transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+
+				1404 row
+					1405 cell
+						1406 text 242.3s
+					1407 cell
+						1408 text 186
+					1409 cell
+						1410 text Key                                                    | Status     |  | 
+
+				1411 row
+					1412 cell
+						1413 text 242.3s
+					1414 cell
+						1415 text 187
+					1416 cell
+						1417 text -------------------------------------------------------+------------+--+-
+
+				1418 row
+					1419 cell
+						1420 text 242.3s
+					1421 cell
+						1422 text 188
+					1423 cell
+						1424 text model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+
+				1425 row
+					1426 cell
+						1427 text 242.3s
+					1428 cell
+						1429 text 189
+					1430 cell
+						1431 text model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+
+				1432 row
+					1433 cell
+						1434 text 242.3s
+					1435 cell
+						1436 text 190
+					1437 cell
+						1438 text model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+
+				1439 row
+					1440 cell
+						1441 text 242.3s
+					1442 cell
+						1443 text 191
+					1444 cell
+						1445 text model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+
+				1446 row
+					1447 cell
+						1448 text 242.3s
+					1449 cell
+						1450 text 192
+					1451 cell
+						1452 text model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+
+				1453 row
+					1454 cell
+						1455 text 242.3s
+					1456 cell
+						1457 text 193
+					1458 cell
+						1459 text model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+
+				1460 row
+					1461 cell
+						1462 text 242.3s
+					1463 cell
+						1464 text 194
+					1465 cell
+						1466 text model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+
+				1467 row
+					1468 cell
+						1469 text 242.3s
+					1470 cell
+						1471 text 195
+					1472 cell
+						1473 text model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+
+				1474 row
+					1475 cell
+						1476 text 242.3s
+					1477 cell
+						1478 text 196
+					1479 cell
+						1480 text model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+
+				1481 row
+					1482 cell
+						1483 text 242.3s
+					1484 cell
+						1485 text 197
+					1486 cell
+						1487 text model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+
+				1488 row
+					1489 cell
+						1490 text 242.3s
+					1491 cell
+						1492 text 198
+					1493 cell
+						1494 text model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+
+				1495 row
+					1496 cell
+						1497 text 242.3s
+					1498 cell
+						1499 text 199
+					1500 cell
+						1501 text lm_head.weight                                         | UNEXPECTED |  | 
+
+				1502 row
+					1503 cell
+						1504 text 242.3s
+					1505 cell
+						1506 text 200
+				1507 row
+					1508 cell
+						1509 text 242.3s
+					1510 cell
+						1511 text 201
+					1512 cell
+						1513 text Notes:
+
+				1514 row
+					1515 cell
+						1516 text 242.3s
+					1517 cell
+						1518 text 202
+					1519 cell
+						1520 text - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+				1521 row
+					1522 cell
+						1523 text 242.3s
+					1524 cell
+						1525 text 203
+					1526 cell
+						1527 text R18_LIFECYCLE {"adapter": "q14v5_f2", "allocated": [9491836928, 9918749184], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 12.228342960999953}
+
+				1528 row
+					1529 cell
+						1530 text 242.3s
+					1531 cell
+						1532 text 204
+					1533 cell
+						1534 text R18_LIFECYCLE {"adapter": "q14v5_f2", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 14.921208784999976}
+
+				1535 row
+					1536 cell
+						1537 text 242.3s
+					1538 cell
+						1539 text 205
+					1540 cell
+						1541 text   l24 q14v5: adapter q14v5_f2 done (bf16 redo batches 0)
+
+				1542 row
+					1543 cell
+						1544 text 242.3s
+					1545 cell
+						1546 text 206
+					1547 cell
+						1548 text R18_LIFECYCLE {"adapter": "q14v5_f3", "allocated": [8519680, 8519680], "event": "before_load", "family": "q14v5"}
+
+				1549 row
+					1550 cell
+						1551 text 242.3s
+					1552 cell
+						1553 text 207
+				1554 row
+					1555 cell
+						1556 text 242.3s
+					1557 cell
+						1558 text 208
+					1559 cell
+						1560 text Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]
+
+				1561 row
+					1562 cell
+						1563 text 242.3s
+					1564 cell
+						1565 text 209
+					1566 cell
+						1567 text Loading weights:   0%|          | 1/299 [00:02<12:31,  2.52s/it]
+
+				1568 row
+					1569 cell
+						1570 text 242.3s
+					1571 cell
+						1572 text 210
+					1573 cell
+						1574 text Loading weights:  14%|█▍        | 42/299 [00:02<00:12, 21.11it/s]
+
+				1575 row
+					1576 cell
+						1577 text 242.3s
+					1578 cell
+						1579 text 211
+					1580 cell
+						1581 text Loading weights:  18%|█▊        | 54/299 [00:03<00:10, 24.39it/s]
+
+				1582 row
+					1583 cell
+						1584 text 242.3s
+					1585 cell
+						1586 text 212
+					1587 cell
+						1588 text Loading weights:  21%|██        | 63/299 [00:03<00:09, 23.93it/s]
+
+				1589 row
+					1590 cell
+						1591 text 242.3s
+					1592 cell
+						1593 text 213
+					1594 cell
+						1595 text Loading weights:  23%|██▎       | 69/299 [00:03<00:10, 22.96it/s]
+
+				1596 row
+					1597 cell
+						1598 text 242.3s
+					1599 cell
+						1600 text 214
+					1601 cell
+						1602 text Loading weights:  27%|██▋       | 80/299 [00:04<00:08, 25.70it/s]
+
+				1603 row
+					1604 cell
+						1605 text 242.3s
+					1606 cell
+						1607 text 215
+					1608 cell
+						1609 text Loading weights:  28%|██▊       | 85/299 [00:04<00:09, 23.37it/s]
+
+				1610 row
+					1611 cell
+						1612 text 242.3s
+					1613 cell
+						1614 text 216
+					1615 cell
+						1616 text Loading weights:  31%|███       | 92/299 [00:04<00:07, 27.94it/s]
+
+				1617 row
+					1618 cell
+						1619 text 242.3s
+					1620 cell
+						1621 text 217
+					1622 cell
+						1623 text Loading weights:  32%|███▏      | 97/299 [00:04<00:06, 30.21it/s]
+
+				1624 row
+					1625 cell
+						1626 text 242.3s
+					1627 cell
+						1628 text 218
+					1629 cell
+						1630 text Loading weights:  34%|███▍      | 102/299 [00:04<00:07, 26.96it/s]
+
+				1631 row
+					1632 cell
+						1633 text 242.3s
+					1634 cell
+						1635 text 219
+					1636 cell
+						1637 text Loading weights:  35%|███▌      | 106/299 [00:04<00:07, 27.14it/s]
+
+				1638 row
+					1639 cell
+						1640 text 242.3s
+					1641 cell
+						1642 text 220
+					1643 cell
+						1644 text Loading weights:  38%|███▊      | 113/299 [00:05<00:06, 27.17it/s]
+
+				1645 row
+					1646 cell
+						1647 text 242.3s
+					1648 cell
+						1649 text 221
+					1650 cell
+						1651 text Loading weights:  39%|███▉      | 117/299 [00:05<00:06, 29.09it/s]
+
+				1652 row
+					1653 cell
+						1654 text 242.3s
+					1655 cell
+						1656 text 222
+					1657 cell
+						1658 text Loading weights:  41%|████▏     | 124/299 [00:05<00:06, 26.14it/s]
+
+				1659 row
+					1660 cell
+						1661 text 242.3s
+					1662 cell
+						1663 text 223
+					1664 cell
+						1665 text Loading weights:  43%|████▎     | 128/299 [00:05<00:06, 27.41it/s]
+
+				1666 row
+					1667 cell
+						1668 text 242.3s
+					1669 cell
+						1670 text 224
+					1671 cell
+						1672 text Loading weights:  45%|████▌     | 135/299 [00:06<00:06, 27.30it/s]
+
+				1673 row
+					1674 cell
+						1675 text 242.3s
+					1676 cell
+						1677 text 225
+					1678 cell
+						1679 text Loading weights:  49%|████▉     | 146/299 [00:06<00:05, 27.04it/s]
+
+				1680 row
+					1681 cell
+						1682 text 242.3s
+					1683 cell
+						1684 text 226
+					1685 cell
+						1686 text Loading weights:  53%|█████▎    | 157/299 [00:06<00:04, 32.03it/s]
+
+				1687 row
+					1688 cell
+						1689 text 242.3s
+					1690 cell
+						1691 text 227
+					1692 cell
+						1693 text Loading weights:  54%|█████▍    | 161/299 [00:06<00:04, 30.23it/s]
+
+				1694 row
+					1695 cell
+						1696 text 242.3s
+					1697 cell
+						1698 text 228
+					1699 cell
+						1700 text Loading weights:  56%|█████▌    | 168/299 [00:07<00:04, 27.92it/s]
+
+				1701 row
+					1702 cell
+						1703 text 242.3s
+					1704 cell
+						1705 text 229
+					1706 cell
+						1707 text Loading weights:  57%|█████▋    | 171/299 [00:07<00:04, 27.91it/s]
+
+				1708 row
+					1709 cell
+						1710 text 242.3s
+					1711 cell
+						1712 text 230
+					1713 cell
+						1714 text Loading weights:  60%|█████▉    | 179/299 [00:07<00:04, 29.09it/s]
+
+				1715 row
+					1716 cell
+						1717 text 242.3s
+					1718 cell
+						1719 text 231
+					1720 cell
+						1721 text Loading weights:  61%|██████    | 182/299 [00:07<00:04, 28.68it/s]
+
+				1722 row
+					1723 cell
+						1724 text 242.3s
+					1725 cell
+						1726 text 232
+					1727 cell
+						1728 text Loading weights:  64%|██████▎   | 190/299 [00:07<00:03, 28.93it/s]
+
+				1729 row
+					1730 cell
+						1731 text 242.3s
+					1732 cell
+						1733 text 233
+					1734 cell
+						1735 text Loading weights:  65%|██████▍   | 193/299 [00:08<00:04, 26.45it/s]
+
+				1736 row
+					1737 cell
+						1738 text 242.3s
+					1739 cell
+						1740 text 234
+					1741 cell
+						1742 text Loading weights:  67%|██████▋   | 201/299 [00:08<00:03, 31.38it/s]
+
+				1743 row
+					1744 cell
+						1745 text 242.3s
+					1746 cell
+						1747 text 235
+					1748 cell
+						1749 text Loading weights:  69%|██████▊   | 205/299 [00:08<00:03, 25.48it/s]
+
+				1750 row
+					1751 cell
+						1752 text 242.3s
+					1753 cell
+						1754 text 236
+					1755 cell
+						1756 text Loading weights:  71%|███████   | 212/299 [00:08<00:02, 30.59it/s]
+
+				1757 row
+					1758 cell
+						1759 text 242.3s
+					1760 cell
+						1761 text 237
+					1762 cell
+						1763 text Loading weights:  72%|███████▏  | 216/299 [00:08<00:02, 30.36it/s]
+
+				1764 row
+					1765 cell
+						1766 text 242.3s
+					1767 cell
+						1768 text 238
+					1769 cell
+						1770 text Loading weights:  75%|███████▍  | 223/299 [00:09<00:02, 28.66it/s]
+
+				1771 row
+					1772 cell
+						1773 text 242.3s
+					1774 cell
+						1775 text 239
+					1776 cell
+						1777 text Loading weights:  76%|███████▌  | 227/299 [00:09<00:02, 26.66it/s]
+
+				1778 row
+					1779 cell
+						1780 text 242.3s
+					1781 cell
+						1782 text 240
+					1783 cell
+						1784 text Loading weights:  78%|███████▊  | 234/299 [00:09<00:02, 30.76it/s]
+
+				1785 row
+					1786 cell
+						1787 text 242.3s
+					1788 cell
+						1789 text 241
+					1790 cell
+						1791 text Loading weights:  80%|███████▉  | 238/299 [00:09<00:02, 25.22it/s]
+
+				1792 row
+					1793 cell
+						1794 text 242.3s
+					1795 cell
+						1796 text 242
+					1797 cell
+						1798 text Loading weights:  82%|████████▏ | 245/299 [00:09<00:01, 29.36it/s]
+
+				1799 row
+					1800 cell
+						1801 text 242.3s
+					1802 cell
+						1803 text 243
+					1804 cell
+						1805 text Loading weights:  83%|████████▎ | 249/299 [00:09<00:01, 30.87it/s]
+
+				1806 row
+					1807 cell
+						1808 text 242.3s
+					1809 cell
+						1810 text 244
+					1811 cell
+						1812 text Loading weights:  86%|████████▌ | 256/299 [00:10<00:01, 25.67it/s]
+
+				1813 row
+					1814 cell
+						1815 text 242.3s
+					1816 cell
+						1817 text 245
+					1818 cell
+						1819 text Loading weights:  89%|████████▉ | 267/299 [00:10<00:01, 26.85it/s]
+
+				1820 row
+					1821 cell
+						1822 text 242.3s
+					1823 cell
+						1824 text 246
+					1825 cell
+						1826 text Loading weights:  91%|█████████ | 271/299 [00:10<00:00, 28.59it/s]
+
+				1827 row
+					1828 cell
+						1829 text 242.3s
+					1830 cell
+						1831 text 247
+					1832 cell
+						1833 text Loading weights:  93%|█████████▎| 278/299 [00:11<00:00, 26.87it/s]
+
+				1834 row
+					1835 cell
+						1836 text 242.3s
+					1837 cell
+						1838 text 248
+					1839 cell
+						1840 text Loading weights:  94%|█████████▍| 281/299 [00:11<00:00, 26.25it/s]
+
+				1841 row
+					1842 cell
+						1843 text 242.3s
+					1844 cell
+						1845 text 249
+					1846 cell
+						1847 text Loading weights:  97%|█████████▋| 289/299 [00:11<00:00, 27.60it/s]
+
+				1848 row
+					1849 cell
+						1850 text 242.3s
+					1851 cell
+						1852 text 250
+					1853 cell
+						1854 text Loading weights:  98%|█████████▊| 292/299 [00:11<00:00, 27.53it/s]
+
+				1855 row
+					1856 cell
+						1857 text 242.3s
+					1858 cell
+						1859 text 251
+					1860 cell
+						1861 text Loading weights: 100%|██████████| 299/299 [00:11<00:00, 25.79it/s]
+
+				1862 row
+					1863 cell
+						1864 text 242.3s
+					1865 cell
+						1866 text 252
+					1867 cell
+						1868 text [transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+
+				1869 row
+					1870 cell
+						1871 text 242.3s
+					1872 cell
+						1873 text 253
+					1874 cell
+						1875 text Key                                                    | Status     |  | 
+
+				1876 row
+					1877 cell
+						1878 text 242.3s
+					1879 cell
+						1880 text 254
+					1881 cell
+						1882 text -------------------------------------------------------+------------+--+-
+
+				1883 row
+					1884 cell
+						1885 text 242.3s
+					1886 cell
+						1887 text 255
+					1888 cell
+						1889 text model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+
+				1890 row
+					1891 cell
+						1892 text 242.3s
+					1893 cell
+						1894 text 256
+					1895 cell
+						1896 text model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+
+				1897 row
+					1898 cell
+						1899 text 242.3s
+					1900 cell
+						1901 text 257
+					1902 cell
+						1903 text model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+
+				1904 row
+					1905 cell
+						1906 text 242.3s
+					1907 cell
+						1908 text 258
+					1909 cell
+						1910 text model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+
+				1911 row
+					1912 cell
+						1913 text 242.3s
+					1914 cell
+						1915 text 259
+					1916 cell
+						1917 text model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+
+				1918 row
+					1919 cell
+						1920 text 242.3s
+					1921 cell
+						1922 text 260
+					1923 cell
+						1924 text model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+
+				1925 row
+					1926 cell
+						1927 text 242.3s
+					1928 cell
+						1929 text 261
+					1930 cell
+						1931 text model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+
+				1932 row
+					1933 cell
+						1934 text 242.3s
+					1935 cell
+						1936 text 262
+					1937 cell
+						1938 text model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+
+				1939 row
+					1940 cell
+						1941 text 242.3s
+					1942 cell
+						1943 text 263
+					1944 cell
+						1945 text model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+
+				1946 row
+					1947 cell
+						1948 text 242.3s
+					1949 cell
+						1950 text 264
+					1951 cell
+						1952 text model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+
+				1953 row
+					1954 cell
+						1955 text 242.3s
+					1956 cell
+						1957 text 265
+					1958 cell
+						1959 text model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+
+				1960 row
+					1961 cell
+						1962 text 242.3s
+					1963 cell
+						1964 text 266
+					1965 cell
+						1966 text lm_head.weight                                         | UNEXPECTED |  | 
+
+				1967 row
+					1968 cell
+						1969 text 242.3s
+					1970 cell
+						1971 text 267
+				1972 row
+					1973 cell
+						1974 text 242.3s
+					1975 cell
+						1976 text 268
+					1977 cell
+						1978 text Notes:
+
+				1979 row
+					1980 cell
+						1981 text 242.3s
+					1982 cell
+						1983 text 269
+					1984 cell
+						1985 text - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+				1986 row
+					1987 cell
+						1988 text 242.3s
+					1989 cell
+						1990 text 270
+					1991 cell
+						1992 text R18_LIFECYCLE {"adapter": "q14v5_f3", "allocated": [9491836928, 9918749184], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 12.243724033000035}
+
+				1993 row
+					1994 cell
+						1995 text 242.3s
+					1996 cell
+						1997 text 271
+					1998 cell
+						1999 text R18_LIFECYCLE {"adapter": "q14v5_f3", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 15.02389137900002}
+
+				2000 row
+					2001 cell
+						2002 text 242.3s
+					2003 cell
+						2004 text 272
+					2005 cell
+						2006 text   l24 q14v5: adapter q14v5_f3 done (bf16 redo batches 0)
+
+				2007 row
+					2008 cell
+						2009 text 242.3s
+					2010 cell
+						2011 text 273
+					2012 cell
+						2013 text R18_LIFECYCLE {"adapter": "q14v5_f4", "allocated": [8519680, 8519680], "event": "before_load", "family": "q14v5"}
+
+				2014 row
+					2015 cell
+						2016 text 242.3s
+					2017 cell
+						2018 text 274
+				2019 row
+					2020 cell
+						2021 text 242.3s
+					2022 cell
+						2023 text 275
+					2024 cell
+						2025 text Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]
+
+				2026 row
+					2027 cell
+						2028 text 242.3s
+					2029 cell
+						2030 text 276
+					2031 cell
+						2032 text Loading weights:   0%|          | 1/299 [00:02<12:37,  2.54s/it]
+
+				2033 row
+					2034 cell
+						2035 text 242.3s
+					2036 cell
+						2037 text 277
+					2038 cell
+						2039 text Loading weights:  14%|█▍        | 42/299 [00:02<00:12, 20.99it/s]
+
+				2040 row
+					2041 cell
+						2042 text 242.3s
+					2043 cell
+						2044 text 278
+					2045 cell
+						2046 text Loading weights:  18%|█▊        | 54/299 [00:03<00:09, 24.63it/s]
+
+				2047 row
+					2048 cell
+						2049 text 242.3s
+					2050 cell
+						2051 text 279
+					2052 cell
+						2053 text Loading weights:  21%|██        | 63/299 [00:03<00:10, 23.12it/s]
+
+				2054 row
+					2055 cell
+						2056 text 242.3s
+					2057 cell
+						2058 text 280
+					2059 cell
+						2060 text Loading weights:  23%|██▎       | 69/299 [00:03<00:10, 22.56it/s]
+
+				2061 row
+					2062 cell
+						2063 text 242.3s
+					2064 cell
+						2065 text 281
+					2066 cell
+						2067 text Loading weights:  25%|██▍       | 74/299 [00:03<00:09, 24.18it/s]
+
+				2068 row
+					2069 cell
+						2070 text 242.3s
+					2071 cell
+						2072 text 282
+					2073 cell
+						2074 text Loading weights:  27%|██▋       | 80/299 [00:04<00:09, 23.19it/s]
+
+				2075 row
+					2076 cell
+						2077 text 242.3s
+					2078 cell
+						2079 text 283
+					2080 cell
+						2081 text Loading weights:  30%|███       | 91/299 [00:04<00:08, 24.99it/s]
+
+				2082 row
+					2083 cell
+						2084 text 242.3s
+					2085 cell
+						2086 text 284
+					2087 cell
+						2088 text Loading weights:  32%|███▏      | 95/299 [00:04<00:08, 24.86it/s]
+
+				2089 row
+					2090 cell
+						2091 text 242.3s
+					2092 cell
+						2093 text 285
+					2094 cell
+						2095 text Loading weights:  34%|███▍      | 102/299 [00:05<00:07, 26.27it/s]
+
+				2096 row
+					2097 cell
+						2098 text 242.3s
+					2099 cell
+						2100 text 286
+					2101 cell
+						2102 text Loading weights:  37%|███▋      | 110/299 [00:05<00:05, 33.48it/s]
+
+				2103 row
+					2104 cell
+						2105 text 242.3s
+					2106 cell
+						2107 text 287
+					2108 cell
+						2109 text Loading weights:  38%|███▊      | 115/299 [00:05<00:07, 23.14it/s]
+
+				2110 row
+					2111 cell
+						2112 text 242.3s
+					2113 cell
+						2114 text 288
+					2115 cell
+						2116 text Loading weights:  41%|████▏     | 124/299 [00:05<00:05, 29.54it/s]
+
+				2117 row
+					2118 cell
+						2119 text 242.3s
+					2120 cell
+						2121 text 289
+					2122 cell
+						2123 text Loading weights:  43%|████▎     | 129/299 [00:06<00:06, 24.59it/s]
+
+				2124 row
+					2125 cell
+						2126 text 242.3s
+					2127 cell
+						2128 text 290
+					2129 cell
+						2130 text Loading weights:  45%|████▌     | 136/299 [00:06<00:05, 27.34it/s]
+
+				2131 row
+					2132 cell
+						2133 text 242.3s
+					2134 cell
+						2135 text 291
+					2136 cell
+						2137 text Loading weights:  49%|████▉     | 146/299 [00:06<00:05, 26.88it/s]
+
+				2138 row
+					2139 cell
+						2140 text 242.3s
+					2141 cell
+						2142 text 292
+					2143 cell
+						2144 text Loading weights:  50%|█████     | 150/299 [00:06<00:05, 27.98it/s]
+
+				2145 row
+					2146 cell
+						2147 text 242.3s
+					2148 cell
+						2149 text 293
+					2150 cell
+						2151 text Loading weights:  53%|█████▎    | 157/299 [00:07<00:05, 26.07it/s]
+
+				2152 row
+					2153 cell
+						2154 text 242.3s
+					2155 cell
+						2156 text 294
+					2157 cell
+						2158 text Loading weights:  54%|█████▎    | 160/299 [00:07<00:05, 24.37it/s]
+
+				2159 row
+					2160 cell
+						2161 text 242.3s
+					2162 cell
+						2163 text 295
+					2164 cell
+						2165 text Loading weights:  56%|█████▌    | 168/299 [00:07<00:04, 29.85it/s]
+
+				2166 row
+					2167 cell
+						2168 text 242.3s
+					2169 cell
+						2170 text 296
+					2171 cell
+						2172 text Loading weights:  58%|█████▊    | 172/299 [00:07<00:05, 24.54it/s]
+
+				2173 row
+					2174 cell
+						2175 text 242.3s
+					2176 cell
+						2177 text 297
+					2178 cell
+						2179 text Loading weights:  60%|█████▉    | 179/299 [00:07<00:04, 28.10it/s]
+
+				2180 row
+					2181 cell
+						2182 text 242.3s
+					2183 cell
+						2184 text 298
+					2185 cell
+						2186 text Loading weights:  64%|██████▎   | 190/299 [00:08<00:03, 28.07it/s]
+
+				2187 row
+					2188 cell
+						2189 text 242.3s
+					2190 cell
+						2191 text 299
+					2192 cell
+						2193 text Loading weights:  65%|██████▍   | 193/299 [00:08<00:03, 28.04it/s]
+
+				2194 row
+					2195 cell
+						2196 text 242.3s
+					2197 cell
+						2198 text 300
+					2199 cell
+						2200 text Loading weights:  67%|██████▋   | 201/299 [00:08<00:03, 27.72it/s]
+
+				2201 row
+					2202 cell
+						2203 text 242.3s
+					2204 cell
+						2205 text 301
+					2206 cell
+						2207 text Loading weights:  71%|███████   | 212/299 [00:08<00:03, 28.11it/s]
+
+				2208 row
+					2209 cell
+						2210 text 242.3s
+					2211 cell
+						2212 text 302
+					2213 cell
+						2214 text Loading weights:  74%|███████▍  | 221/299 [00:09<00:02, 36.20it/s]
+
+				2215 row
+					2216 cell
+						2217 text 242.3s
+					2218 cell
+						2219 text 303
+					2220 cell
+						2221 text Loading weights:  76%|███████▌  | 226/299 [00:09<00:02, 25.41it/s]
+
+				2222 row
+					2223 cell
+						2224 text 242.3s
+					2225 cell
+						2226 text 304
+					2227 cell
+						2228 text Loading weights:  78%|███████▊  | 234/299 [00:09<00:02, 25.98it/s]
+
+				2229 row
+					2230 cell
+						2231 text 242.3s
+					2232 cell
+						2233 text 305
+					2234 cell
+						2235 text Loading weights:  80%|███████▉  | 238/299 [00:09<00:02, 25.63it/s]
+
+				2236 row
+					2237 cell
+						2238 text 242.3s
+					2239 cell
+						2240 text 306
+					2241 cell
+						2242 text Loading weights:  82%|████████▏ | 245/299 [00:10<00:02, 25.25it/s]
+
+				2243 row
+					2244 cell
+						2245 text 242.3s
+					2246 cell
+						2247 text 307
+					2248 cell
+						2249 text Loading weights:  86%|████████▌ | 256/299 [00:10<00:01, 21.54it/s]
+
+				2250 row
+					2251 cell
+						2252 text 242.3s
+					2253 cell
+						2254 text 308
+					2255 cell
+						2256 text Loading weights:  90%|████████▉ | 268/299 [00:11<00:00, 31.06it/s]
+
+				2257 row
+					2258 cell
+						2259 text 242.3s
+					2260 cell
+						2261 text 309
+					2262 cell
+						2263 text Loading weights:  91%|█████████▏| 273/299 [00:11<00:00, 29.77it/s]
+
+				2264 row
+					2265 cell
+						2266 text 242.3s
+					2267 cell
+						2268 text 310
+					2269 cell
+						2270 text Loading weights:  93%|█████████▎| 278/299 [00:11<00:00, 24.02it/s]
+
+				2271 row
+					2272 cell
+						2273 text 242.3s
+					2274 cell
+						2275 text 311
+					2276 cell
+						2277 text Loading weights:  97%|█████████▋| 289/299 [00:11<00:00, 28.75it/s]
+
+				2278 row
+					2279 cell
+						2280 text 242.3s
+					2281 cell
+						2282 text 312
+					2283 cell
+						2284 text Loading weights: 100%|██████████| 299/299 [00:11<00:00, 25.26it/s]
+
+				2285 row
+					2286 cell
+						2287 text 242.3s
+					2288 cell
+						2289 text 313
+					2290 cell
+						2291 text [transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+
+				2292 row
+					2293 cell
+						2294 text 242.3s
+					2295 cell
+						2296 text 314
+					2297 cell
+						2298 text Key                                                    | Status     |  | 
+
+				2299 row
+					2300 cell
+						2301 text 242.3s
+					2302 cell
+						2303 text 315
+					2304 cell
+						2305 text -------------------------------------------------------+------------+--+-
+
+				2306 row
+					2307 cell
+						2308 text 242.3s
+					2309 cell
+						2310 text 316
+					2311 cell
+						2312 text model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+
+				2313 row
+					2314 cell
+						2315 text 242.3s
+					2316 cell
+						2317 text 317
+					2318 cell
+						2319 text model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+
+				2320 row
+					2321 cell
+						2322 text 242.3s
+					2323 cell
+						2324 text 318
+					2325 cell
+						2326 text model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+
+				2327 row
+					2328 cell
+						2329 text 242.3s
+					2330 cell
+						2331 text 319
+					2332 cell
+						2333 text model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+
+				2334 row
+					2335 cell
+						2336 text 242.3s
+					2337 cell
+						2338 text 320
+					2339 cell
+						2340 text model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+
+				2341 row
+					2342 cell
+						2343 text 242.3s
+					2344 cell
+						2345 text 321
+					2346 cell
+						2347 text model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+
+				2348 row
+					2349 cell
+						2350 text 242.3s
+					2351 cell
+						2352 text 322
+					2353 cell
+						2354 text model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+
+				2355 row
+					2356 cell
+						2357 text 242.3s
+					2358 cell
+						2359 text 323
+					2360 cell
+						2361 text model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+
+				2362 row
+					2363 cell
+						2364 text 242.3s
+					2365 cell
+						2366 text 324
+					2367 cell
+						2368 text model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+
+				2369 row
+					2370 cell
+						2371 text 242.3s
+					2372 cell
+						2373 text 325
+					2374 cell
+						2375 text model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+
+				2376 row
+					2377 cell
+						2378 text 242.3s
+					2379 cell
+						2380 text 326
+					2381 cell
+						2382 text model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+
+				2383 row
+					2384 cell
+						2385 text 242.3s
+					2386 cell
+						2387 text 327
+					2388 cell
+						2389 text lm_head.weight                                         | UNEXPECTED |  | 
+
+				2390 row
+					2391 cell
+						2392 text 242.3s
+					2393 cell
+						2394 text 328
+				2395 row
+					2396 cell
+						2397 text 242.3s
+					2398 cell
+						2399 text 329
+					2400 cell
+						2401 text Notes:
+
+				2402 row
+					2403 cell
+						2404 text 242.3s
+					2405 cell
+						2406 text 330
+					2407 cell
+						2408 text - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+				2409 row
+					2410 cell
+						2411 text 242.3s
+					2412 cell
+						2413 text 331
+					2414 cell
+						2415 text R18_LIFECYCLE {"adapter": "q14v5_f4", "allocated": [9491836928, 9918749184], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 12.438357444000019}
+
+				2416 row
+					2417 cell
+						2418 text 242.3s
+					2419 cell
+						2420 text 332
+					2421 cell
+						2422 text R18_LIFECYCLE {"adapter": "q14v5_f4", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 15.171192795000024}
+
+				2423 row
+					2424 cell
+						2425 text 242.3s
+					2426 cell
+						2427 text 333
+					2428 cell
+						2429 text   l24 q14v5: adapter q14v5_f4 done (bf16 redo batches 0)
+
+				2430 row
+					2431 cell
+						2432 text 242.3s
+					2433 cell
+						2434 text 334
+					2435 cell
+						2436 text R18_LIFECYCLE {"adapter": "q14v5", "allocated": [8519680, 8519680], "event": "before_load", "family": "q14v5"}
+
+				2437 row
+					2438 cell
+						2439 text 242.3s
+					2440 cell
+						2441 text 335
+				2442 row
+					2443 cell
+						2444 text 242.3s
+					2445 cell
+						2446 text 336
+					2447 cell
+						2448 text Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]
+
+				2449 row
+					2450 cell
+						2451 text 242.3s
+					2452 cell
+						2453 text 337
+					2454 cell
+						2455 text Loading weights:   0%|          | 1/299 [00:02<12:50,  2.59s/it]
+
+				2456 row
+					2457 cell
+						2458 text 242.3s
+					2459 cell
+						2460 text 338
+					2461 cell
+						2462 text Loading weights:  15%|█▍        | 44/299 [00:02<00:11, 22.45it/s]
+
+				2463 row
+					2464 cell
+						2465 text 242.3s
+					2466 cell
+						2467 text 339
+					2468 cell
+						2469 text Loading weights:  21%|██        | 63/299 [00:03<00:10, 22.68it/s]
+
+				2470 row
+					2471 cell
+						2472 text 242.3s
+					2473 cell
+						2474 text 340
+					2475 cell
+						2476 text Loading weights:  25%|██▌       | 75/299 [00:03<00:08, 25.86it/s]
+
+				2477 row
+					2478 cell
+						2479 text 242.3s
+					2480 cell
+						2481 text 341
+					2482 cell
+						2483 text Loading weights:  28%|██▊       | 84/299 [00:04<00:09, 22.95it/s]
+
+				2484 row
+					2485 cell
+						2486 text 242.3s
+					2487 cell
+						2488 text 342
+					2489 cell
+						2490 text Loading weights:  31%|███       | 92/299 [00:04<00:07, 26.42it/s]
+
+				2491 row
+					2492 cell
+						2493 text 242.3s
+					2494 cell
+						2495 text 343
+					2496 cell
+						2497 text Loading weights:  33%|███▎      | 98/299 [00:04<00:07, 27.46it/s]
+
+				2498 row
+					2499 cell
+						2500 text 242.3s
+					2501 cell
+						2502 text 344
+					2503 cell
+						2504 text Loading weights:  35%|███▍      | 104/299 [00:04<00:07, 26.18it/s]
+
+				2505 row
+					2506 cell
+						2507 text 242.3s
+					2508 cell
+						2509 text 345
+					2510 cell
+						2511 text Loading weights:  38%|███▊      | 113/299 [00:05<00:07, 24.97it/s]
+
+				2512 row
+					2513 cell
+						2514 text 242.3s
+					2515 cell
+						2516 text 346
+					2517 cell
+						2518 text Loading weights:  39%|███▉      | 117/299 [00:05<00:06, 26.62it/s]
+
+				2519 row
+					2520 cell
+						2521 text 242.3s
+					2522 cell
+						2523 text 347
+					2524 cell
+						2525 text Loading weights:  41%|████▏     | 124/299 [00:05<00:05, 31.74it/s]
+
+				2526 row
+					2527 cell
+						2528 text 242.3s
+					2529 cell
+						2530 text 348
+					2531 cell
+						2532 text Loading weights:  43%|████▎     | 129/299 [00:05<00:06, 25.50it/s]
+
+				2533 row
+					2534 cell
+						2535 text 242.3s
+					2536 cell
+						2537 text 349
+					2538 cell
+						2539 text Loading weights:  45%|████▌     | 136/299 [00:06<00:05, 29.27it/s]
+
+				2540 row
+					2541 cell
+						2542 text 242.3s
+					2543 cell
+						2544 text 350
+					2545 cell
+						2546 text Loading weights:  49%|████▉     | 146/299 [00:06<00:05, 28.90it/s]
+
+				2547 row
+					2548 cell
+						2549 text 242.3s
+					2550 cell
+						2551 text 351
+					2552 cell
+						2553 text Loading weights:  50%|█████     | 150/299 [00:06<00:05, 25.55it/s]
+
+				2554 row
+					2555 cell
+						2556 text 242.3s
+					2557 cell
+						2558 text 352
+					2559 cell
+						2560 text Loading weights:  53%|█████▎    | 157/299 [00:06<00:04, 29.67it/s]
+
+				2561 row
+					2562 cell
+						2563 text 242.3s
+					2564 cell
+						2565 text 353
+					2566 cell
+						2567 text Loading weights:  56%|█████▌    | 168/299 [00:07<00:04, 28.10it/s]
+
+				2568 row
+					2569 cell
+						2570 text 242.3s
+					2571 cell
+						2572 text 354
+					2573 cell
+						2574 text Loading weights:  60%|█████▉    | 179/299 [00:07<00:04, 28.50it/s]
+
+				2575 row
+					2576 cell
+						2577 text 242.3s
+					2578 cell
+						2579 text 355
+					2580 cell
+						2581 text Loading weights:  61%|██████    | 183/299 [00:07<00:03, 29.78it/s]
+
+				2582 row
+					2583 cell
+						2584 text 242.3s
+					2585 cell
+						2586 text 356
+					2587 cell
+						2588 text Loading weights:  64%|██████▎   | 190/299 [00:07<00:03, 28.17it/s]
+
+				2589 row
+					2590 cell
+						2591 text 242.3s
+					2592 cell
+						2593 text 357
+					2594 cell
+						2595 text Loading weights:  65%|██████▍   | 194/299 [00:08<00:03, 26.52it/s]
+
+				2596 row
+					2597 cell
+						2598 text 242.3s
+					2599 cell
+						2600 text 358
+					2601 cell
+						2602 text Loading weights:  67%|██████▋   | 201/299 [00:08<00:03, 29.56it/s]
+
+				2603 row
+					2604 cell
+						2605 text 242.3s
+					2606 cell
+						2607 text 359
+					2608 cell
+						2609 text Loading weights:  70%|██████▉   | 209/299 [00:08<00:02, 37.36it/s]
+
+				2610 row
+					2611 cell
+						2612 text 242.3s
+					2613 cell
+						2614 text 360
+					2615 cell
+						2616 text Loading weights:  72%|███████▏  | 214/299 [00:08<00:03, 24.96it/s]
+
+				2617 row
+					2618 cell
+						2619 text 242.3s
+					2620 cell
+						2621 text 361
+					2622 cell
+						2623 text Loading weights:  75%|███████▍  | 223/299 [00:09<00:02, 29.06it/s]
+
+				2624 row
+					2625 cell
+						2626 text 242.3s
+					2627 cell
+						2628 text 362
+					2629 cell
+						2630 text Loading weights:  76%|███████▌  | 227/299 [00:09<00:02, 25.96it/s]
+
+				2631 row
+					2632 cell
+						2633 text 242.3s
+					2634 cell
+						2635 text 363
+					2636 cell
+						2637 text Loading weights:  79%|███████▊  | 235/299 [00:09<00:02, 26.08it/s]
+
+				2638 row
+					2639 cell
+						2640 text 242.3s
+					2641 cell
+						2642 text 364
+					2643 cell
+						2644 text Loading weights:  80%|███████▉  | 238/299 [00:09<00:02, 23.83it/s]
+
+				2645 row
+					2646 cell
+						2647 text 242.3s
+					2648 cell
+						2649 text 365
+					2650 cell
+						2651 text Loading weights:  82%|████████▏ | 246/299 [00:09<00:01, 32.33it/s]
+
+				2652 row
+					2653 cell
+						2654 text 242.3s
+					2655 cell
+						2656 text 366
+					2657 cell
+						2658 text Loading weights:  84%|████████▍ | 251/299 [00:10<00:01, 34.74it/s]
+
+				2659 row
+					2660 cell
+						2661 text 242.3s
+					2662 cell
+						2663 text 367
+					2664 cell
+						2665 text Loading weights:  86%|████████▌ | 256/299 [00:10<00:01, 24.32it/s]
+
+				2666 row
+					2667 cell
+						2668 text 242.3s
+					2669 cell
+						2670 text 368
+					2671 cell
+						2672 text Loading weights:  87%|████████▋ | 260/299 [00:10<00:01, 26.34it/s]
+
+				2673 row
+					2674 cell
+						2675 text 242.3s
+					2676 cell
+						2677 text 369
+					2678 cell
+						2679 text Loading weights:  89%|████████▉ | 267/299 [00:10<00:01, 29.50it/s]
+
+				2680 row
+					2681 cell
+						2682 text 242.3s
+					2683 cell
+						2684 text 370
+					2685 cell
+						2686 text Loading weights:  91%|█████████ | 271/299 [00:10<00:00, 31.20it/s]
+
+				2687 row
+					2688 cell
+						2689 text 242.3s
+					2690 cell
+						2691 text 371
+					2692 cell
+						2693 text Loading weights:  93%|█████████▎| 278/299 [00:11<00:00, 24.69it/s]
+
+				2694 row
+					2695 cell
+						2696 text 242.3s
+					2697 cell
+						2698 text 372
+					2699 cell
+						2700 text Loading weights:  97%|█████████▋| 289/299 [00:11<00:00, 27.22it/s]
+
+				2701 row
+					2702 cell
+						2703 text 242.3s
+					2704 cell
+						2705 text 373
+					2706 cell
+						2707 text Loading weights:  98%|█████████▊| 293/299 [00:11<00:00, 28.39it/s]
+
+				2708 row
+					2709 cell
+						2710 text 242.3s
+					2711 cell
+						2712 text 374
+					2713 cell
+						2714 text Loading weights: 100%|██████████| 299/299 [00:11<00:00, 25.63it/s]
+
+				2715 row
+					2716 cell
+						2717 text 242.3s
+					2718 cell
+						2719 text 375
+					2720 cell
+						2721 text [transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+
+				2722 row
+					2723 cell
+						2724 text 242.3s
+					2725 cell
+						2726 text 376
+					2727 cell
+						2728 text Key                                                    | Status     |  | 
+
+				2729 row
+					2730 cell
+						2731 text 242.3s
+					2732 cell
+						2733 text 377
+					2734 cell
+						2735 text -------------------------------------------------------+------------+--+-
+
+				2736 row
+					2737 cell
+						2738 text 242.3s
+					2739 cell
+						2740 text 378
+					2741 cell
+						2742 text model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+
+				2743 row
+					2744 cell
+						2745 text 242.3s
+					2746 cell
+						2747 text 379
+					2748 cell
+						2749 text model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+
+				2750 row
+					2751 cell
+						2752 text 242.3s
+					2753 cell
+						2754 text 380
+					2755 cell
+						2756 text model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+
+				2757 row
+					2758 cell
+						2759 text 242.3s
+					2760 cell
+						2761 text 381
+					2762 cell
+						2763 text model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+
+				2764 row
+					2765 cell
+						2766 text 242.3s
+					2767 cell
+						2768 text 382
+					2769 cell
+						2770 text model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+
+				2771 row
+					2772 cell
+						2773 text 242.3s
+					2774 cell
+						2775 text 383
+					2776 cell
+						2777 text model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+
+				2778 row
+					2779 cell
+						2780 text 242.3s
+					2781 cell
+						2782 text 384
+					2783 cell
+						2784 text model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+
+				2785 row
+					2786 cell
+						2787 text 242.3s
+					2788 cell
+						2789 text 385
+					2790 cell
+						2791 text model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+
+				2792 row
+					2793 cell
+						2794 text 242.3s
+					2795 cell
+						2796 text 386
+					2797 cell
+						2798 text model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+
+				2799 row
+					2800 cell
+						2801 text 242.3s
+					2802 cell
+						2803 text 387
+					2804 cell
+						2805 text model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+
+				2806 row
+					2807 cell
+						2808 text 242.3s
+					2809 cell
+						2810 text 388
+					2811 cell
+						2812 text model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+
+				2813 row
+					2814 cell
+						2815 text 242.3s
+					2816 cell
+						2817 text 389
+					2818 cell
+						2819 text lm_head.weight                                         | UNEXPECTED |  | 
+
+				2820 row
+					2821 cell
+						2822 text 242.3s
+					2823 cell
+						2824 text 390
+				2825 row
+					2826 cell
+						2827 text 242.3s
+					2828 cell
+						2829 text 391
+					2830 cell
+						2831 text Notes:
+
+				2832 row
+					2833 cell
+						2834 text 242.3s
+					2835 cell
+						2836 text 392
+					2837 cell
+						2838 text - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+				2839 row
+					2840 cell
+						2841 text 242.3s
+					2842 cell
+						2843 text 393
+					2844 cell
+						2845 text R18_LIFECYCLE {"adapter": "q14v5", "allocated": [9491836928, 9918749184], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 0, "layers.11": 0, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.24": 1, "layers.25": 1, "layers.26": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q14v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8", "seconds": 12.325191150000023}
+
+				2846 row
+					2847 cell
+						2848 text 242.3s
+					2849 cell
+						2850 text 394
+					2851 cell
+						2852 text R18_LIFECYCLE {"adapter": "q14v5", "allocated": [8519680, 8519680], "event": "released", "family": "q14v5", "seconds": 15.069973509000022}
+
+				2853 row
+					2854 cell
+						2855 text 242.3s
+					2856 cell
+						2857 text 395
+					2858 cell
+						2859 text   l24 q14v5: adapter q14v5 done (bf16 redo batches 0)
+
+				2860 row
+					2861 cell
+						2862 text 242.3s
+					2863 cell
+						2864 text 396
+					2865 cell
+						2866 text R18_LIFECYCLE {"adapter": "q8v5_f0", "allocated": [8519680, 8519680], "event": "before_load", "family": "q8v5"}
+
+				2867 row
+					2868 cell
+						2869 text 242.3s
+					2870 cell
+						2871 text 397
+				2872 row
+					2873 cell
+						2874 text 242.3s
+					2875 cell
+						2876 text 398
+					2877 cell
+						2878 text Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]
+
+				2879 row
+					2880 cell
+						2881 text 242.3s
+					2882 cell
+						2883 text 399
+					2884 cell
+						2885 text Loading weights:   0%|          | 1/266 [00:06<30:45,  6.97s/it]
+
+				2886 row
+					2887 cell
+						2888 text 242.3s
+					2889 cell
+						2890 text 400
+					2891 cell
+						2892 text Loading weights:  36%|███▋      | 97/266 [00:07<00:08, 18.92it/s]
+
+				2893 row
+					2894 cell
+						2895 text 242.3s
+					2896 cell
+						2897 text 401
+					2898 cell
+						2899 text Loading weights:  46%|████▌     | 122/266 [00:08<00:07, 19.87it/s]
+
+				2900 row
+					2901 cell
+						2902 text 242.3s
+					2903 cell
+						2904 text 402
+					2905 cell
+						2906 text Loading weights:  52%|█████▏    | 137/266 [00:09<00:07, 17.90it/s]
+
+				2907 row
+					2908 cell
+						2909 text 242.3s
+					2910 cell
+						2911 text 403
+					2912 cell
+						2913 text Loading weights:  55%|█████▌    | 147/266 [00:10<00:06, 17.83it/s]
+
+				2914 row
+					2915 cell
+						2916 text 242.3s
+					2917 cell
+						2918 text 404
+					2919 cell
+						2920 text Loading weights:  59%|█████▉    | 157/266 [00:10<00:06, 18.10it/s]
+
+				2921 row
+					2922 cell
+						2923 text 242.3s
+					2924 cell
+						2925 text 405
+					2926 cell
+						2927 text Loading weights:  63%|██████▎   | 168/266 [00:11<00:05, 18.12it/s]
+
+				2928 row
+					2929 cell
+						2930 text 242.3s
+					2931 cell
+						2932 text 406
+					2933 cell
+						2934 text Loading weights:  67%|██████▋   | 179/266 [00:11<00:04, 17.87it/s]
+
+				2935 row
+					2936 cell
+						2937 text 242.3s
+					2938 cell
+						2939 text 407
+					2940 cell
+						2941 text Loading weights:  71%|███████▏  | 190/266 [00:12<00:04, 18.56it/s]
+
+				2942 row
+					2943 cell
+						2944 text 242.3s
+					2945 cell
+						2946 text 408
+					2947 cell
+						2948 text Loading weights:  76%|███████▌  | 201/266 [00:12<00:03, 18.60it/s]
+
+				2949 row
+					2950 cell
+						2951 text 242.3s
+					2952 cell
+						2953 text 409
+					2954 cell
+						2955 text Loading weights:  80%|███████▉  | 212/266 [00:13<00:02, 18.67it/s]
+
+				2956 row
+					2957 cell
+						2958 text 242.3s
+					2959 cell
+						2960 text 410
+					2961 cell
+						2962 text Loading weights:  84%|████████▍ | 223/266 [00:14<00:02, 18.90it/s]
+
+				2963 row
+					2964 cell
+						2965 text 242.3s
+					2966 cell
+						2967 text 411
+					2968 cell
+						2969 text Loading weights:  88%|████████▊ | 234/266 [00:14<00:01, 18.81it/s]
+
+				2970 row
+					2971 cell
+						2972 text 242.3s
+					2973 cell
+						2974 text 412
+					2975 cell
+						2976 text Loading weights:  92%|█████████▏| 245/266 [00:15<00:01, 18.67it/s]
+
+				2977 row
+					2978 cell
+						2979 text 242.3s
+					2980 cell
+						2981 text 413
+					2982 cell
+						2983 text Loading weights:  96%|█████████▌| 256/266 [00:15<00:00, 19.25it/s]
+
+				2984 row
+					2985 cell
+						2986 text 242.3s
+					2987 cell
+						2988 text 414
+					2989 cell
+						2990 text Loading weights: 100%|██████████| 266/266 [00:15<00:00, 16.76it/s]
+
+				2991 row
+					2992 cell
+						2993 text 242.3s
+					2994 cell
+						2995 text 415
+					2996 cell
+						2997 text [transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/8b-base/1
+
+				2998 row
+					2999 cell
+						3000 text 242.3s
+					3001 cell
+						3002 text 416
+					3003 cell
+						3004 text Key                                                    | Status     |  | 
+
+				3005 row
+					3006 cell
+						3007 text 242.3s
+					3008 cell
+						3009 text 417
+					3010 cell
+						3011 text -------------------------------------------------------+------------+--+-
+
+				3012 row
+					3013 cell
+						3014 text 242.3s
+					3015 cell
+						3016 text 418
+					3017 cell
+						3018 text model.layers.{24...35}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+
+				3019 row
+					3020 cell
+						3021 text 242.3s
+					3022 cell
+						3023 text 419
+					3024 cell
+						3025 text model.layers.{24...35}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+
+				3026 row
+					3027 cell
+						3028 text 242.3s
+					3029 cell
+						3030 text 420
+					3031 cell
+						3032 text model.layers.{24...35}.mlp.up_proj.weight              | UNEXPECTED |  | 
+
+				3033 row
+					3034 cell
+						3035 text 242.3s
+					3036 cell
+						3037 text 421
+					3038 cell
+						3039 text model.layers.{24...35}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+
+				3040 row
+					3041 cell
+						3042 text 242.3s
+					3043 cell
+						3044 text 422
+					3045 cell
+						3046 text model.layers.{24...35}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+
+				3047 row
+					3048 cell
+						3049 text 242.3s
+					3050 cell
+						3051 text 423
+					3052 cell
+						3053 text model.layers.{24...35}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+
+				3054 row
+					3055 cell
+						3056 text 242.3s
+					3057 cell
+						3058 text 424
+					3059 cell
+						3060 text model.layers.{24...35}.post_attention_layernorm.weight | UNEXPECTED |  | 
+
+				3061 row
+					3062 cell
+						3063 text 242.3s
+					3064 cell
+						3065 text 425
+					3066 cell
+						3067 text model.layers.{24...35}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+
+				3068 row
+					3069 cell
+						3070 text 242.3s
+					3071 cell
+						3072 text 426
+					3073 cell
+						3074 text model.layers.{24...35}.mlp.down_proj.weight            | UNEXPECTED |  | 
+
+				3075 row
+					3076 cell
+						3077 text 242.3s
+					3078 cell
+						3079 text 427
+					3080 cell
+						3081 text model.layers.{24...35}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+
+				3082 row
+					3083 cell
+						3084 text 242.3s
+					3085 cell
+						3086 text 428
+					3087 cell
+						3088 text model.layers.{24...35}.input_layernorm.weight          | UNEXPECTED |  | 
+
+				3089 row
+					3090 cell
+						3091 text 242.3s
+					3092 cell
+						3093 text 429
+					3094 cell
+						3095 text lm_head.weight                                         | UNEXPECTED |  | 
+
+				3096 row
+					3097 cell
+						3098 text 242.3s
+					3099 cell
+						3100 text 430
+				3101 row
+					3102 cell
+						3103 text 242.3s
+					3104 cell
+						3105 text 431
+					3106 cell
+						3107 text Notes:
+
+				3108 row
+					3109 cell
+						3110 text 242.3s
+					3111 cell
+						3112 text 432
+					3113 cell
+						3114 text - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+				3115 row
+					3116 cell
+						3117 text 242.3s
+					3118 cell
+						3119 text 433
+					3120 cell
+						3121 text R18_LIFECYCLE {"adapter": "q8v5_f0", "allocated": [5112113152, 5411036672], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 1, "layers.11": 1, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q8v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "c7dce379a6b5144c54d0cee704815190e0c8922346f078c52b22a5971c2f5858", "seconds": 16.28802153700002}
+
+				3122 row
+					3123 cell
+						3124 text 242.3s
+					3125 cell
+						3126 text 434
+					3127 cell
+						3128 text R18_LIFECYCLE {"adapter": "q8v5_f0", "allocated": [8519680, 8519680], "event": "released", "family": "q8v5", "seconds": 18.136034805999998}
+
+				3129 row
+					3130 cell
+						3131 text 242.3s
+					3132 cell
+						3133 text 435
+					3134 cell
+						3135 text   l24 q8v5: adapter q8v5_f0 done (bf16 redo batches 0)
+
+				3136 row
+					3137 cell
+						3138 text 242.3s
+					3139 cell
+						3140 text 436
+					3141 cell
+						3142 text R18_LIFECYCLE {"adapter": "q8v5_f1", "allocated": [8519680, 8519680], "event": "before_load", "family": "q8v5"}
+
+				3143 row
+					3144 cell
+						3145 text 242.3s
+					3146 cell
+						3147 text 437
+				3148 row
+					3149 cell
+						3150 text 242.3s
+					3151 cell
+						3152 text 438
+					3153 cell
+						3154 text Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]
+
+				3155 row
+					3156 cell
+						3157 text 242.3s
+					3158 cell
+						3159 text 439
+					3160 cell
+						3161 text Loading weights:   0%|          | 1/266 [00:07<31:13,  7.07s/it]
+
+				3162 row
+					3163 cell
+						3164 text 242.3s
+					3165 cell
+						3166 text 440
+					3167 cell
+						3168 text Loading weights:  36%|███▋      | 97/266 [00:07<00:09, 18.71it/s]
+
+				3169 row
+					3170 cell
+						3171 text 242.3s
+					3172 cell
+						3173 text 441
+					3174 cell
+						3175 text Loading weights:  46%|████▌     | 123/266 [00:08<00:07, 19.81it/s]
+
+				3176 row
+					3177 cell
+						3178 text 242.3s
+					3179 cell
+						3180 text 442
+					3181 cell
+						3182 text Loading weights:  52%|█████▏    | 139/266 [00:09<00:07, 17.91it/s]
+
+				3183 row
+					3184 cell
+						3185 text 242.3s
+					3186 cell
+						3187 text 443
+					3188 cell
+						3189 text Loading weights:  56%|█████▌    | 149/266 [00:10<00:06, 17.64it/s]
+
+				3190 row
+					3191 cell
+						3192 text 242.3s
+					3193 cell
+						3194 text 444
+					3195 cell
+						3196 text Loading weights:  59%|█████▉    | 157/266 [00:10<00:05, 18.67it/s]
+
+				3197 row
+					3198 cell
+						3199 text 242.3s
+					3200 cell
+						3201 text 445
+					3202 cell
+						3203 text Loading weights:  63%|██████▎   | 168/266 [00:10<00:04, 20.44it/s]
+
+				3204 row
+					3205 cell
+						3206 text 242.3s
+					3207 cell
+						3208 text 446
+					3209 cell
+						3210 text Loading weights:  67%|██████▋   | 179/266 [00:11<00:04, 19.89it/s]
+
+				3211 row
+					3212 cell
+						3213 text 242.3s
+					3214 cell
+						3215 text 447
+					3216 cell
+						3217 text Loading weights:  71%|███████▏  | 190/266 [00:12<00:03, 19.74it/s]
+
+				3218 row
+					3219 cell
+						3220 text 242.3s
+					3221 cell
+						3222 text 448
+					3223 cell
+						3224 text Loading weights:  76%|███████▌  | 201/266 [00:12<00:03, 19.35it/s]
+
+				3225 row
+					3226 cell
+						3227 text 242.3s
+					3228 cell
+						3229 text 449
+					3230 cell
+						3231 text Loading weights:  80%|███████▉  | 212/266 [00:13<00:02, 19.67it/s]
+
+				3232 row
+					3233 cell
+						3234 text 242.3s
+					3235 cell
+						3236 text 450
+					3237 cell
+						3238 text Loading weights:  84%|████████▍ | 223/266 [00:13<00:02, 18.04it/s]
+
+				3239 row
+					3240 cell
+						3241 text 242.3s
+					3242 cell
+						3243 text 451
+					3244 cell
+						3245 text Loading weights:  88%|████████▊ | 234/266 [00:14<00:01, 18.97it/s]
+
+				3246 row
+					3247 cell
+						3248 text 242.3s
+					3249 cell
+						3250 text 452
+					3251 cell
+						3252 text Loading weights:  92%|█████████▏| 245/266 [00:15<00:01, 18.49it/s]
+
+				3253 row
+					3254 cell
+						3255 text 242.3s
+					3256 cell
+						3257 text 453
+					3258 cell
+						3259 text Loading weights:  96%|█████████▌| 256/266 [00:15<00:00, 19.68it/s]
+
+				3260 row
+					3261 cell
+						3262 text 242.3s
+					3263 cell
+						3264 text 454
+					3265 cell
+						3266 text Loading weights: 100%|██████████| 266/266 [00:15<00:00, 17.02it/s]
+
+				3267 row
+					3268 cell
+						3269 text 242.3s
+					3270 cell
+						3271 text 455
+					3272 cell
+						3273 text [transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/8b-base/1
+
+				3274 row
+					3275 cell
+						3276 text 242.3s
+					3277 cell
+						3278 text 456
+					3279 cell
+						3280 text Key                                                    | Status     |  | 
+
+				3281 row
+					3282 cell
+						3283 text 242.3s
+					3284 cell
+						3285 text 457
+					3286 cell
+						3287 text -------------------------------------------------------+------------+--+-
+
+				3288 row
+					3289 cell
+						3290 text 242.3s
+					3291 cell
+						3292 text 458
+					3293 cell
+						3294 text model.layers.{24...35}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+
+				3295 row
+					3296 cell
+						3297 text 242.3s
+					3298 cell
+						3299 text 459
+					3300 cell
+						3301 text model.layers.{24...35}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+
+				3302 row
+					3303 cell
+						3304 text 242.3s
+					3305 cell
+						3306 text 460
+					3307 cell
+						3308 text model.layers.{24...35}.mlp.up_proj.weight              | UNEXPECTED |  | 
+
+				3309 row
+					3310 cell
+						3311 text 242.3s
+					3312 cell
+						3313 text 461
+					3314 cell
+						3315 text model.layers.{24...35}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+
+				3316 row
+					3317 cell
+						3318 text 242.3s
+					3319 cell
+						3320 text 462
+					3321 cell
+						3322 text model.layers.{24...35}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+
+				3323 row
+					3324 cell
+						3325 text 242.3s
+					3326 cell
+						3327 text 463
+					3328 cell
+						3329 text model.layers.{24...35}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+
+				3330 row
+					3331 cell
+						3332 text 242.3s
+					3333 cell
+						3334 text 464
+					3335 cell
+						3336 text model.layers.{24...35}.post_attention_layernorm.weight | UNEXPECTED |  | 
+
+				3337 row
+					3338 cell
+						3339 text 242.3s
+					3340 cell
+						3341 text 465
+					3342 cell
+						3343 text model.layers.{24...35}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+
+				3344 row
+					3345 cell
+						3346 text 242.3s
+					3347 cell
+						3348 text 466
+					3349 cell
+						3350 text model.layers.{24...35}.mlp.down_proj.weight            | UNEXPECTED |  | 
+
+				3351 row
+					3352 cell
+						3353 text 242.3s
+					3354 cell
+						3355 text 467
+					3356 cell
+						3357 text model.layers.{24...35}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+
+				3358 row
+					3359 cell
+						3360 text 242.3s
+					3361 cell
+						3362 text 468
+					3363 cell
+						3364 text model.layers.{24...35}.input_layernorm.weight          | UNEXPECTED |  | 
+
+				3365 row
+					3366 cell
+						3367 text 242.3s
+					3368 cell
+						3369 text 469
+					3370 cell
+						3371 text lm_head.weight                                         | UNEXPECTED |  | 
+
+				3372 row
+					3373 cell
+						3374 text 242.3s
+					3375 cell
+						3376 text 470
+				3377 row
+					3378 cell
+						3379 text 242.3s
+					3380 cell
+						3381 text 471
+					3382 cell
+						3383 text Notes:
+
+				3384 row
+					3385 cell
+						3386 text 242.3s
+					3387 cell
+						3388 text 472
+					3389 cell
+						3390 text - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+				3391 row
+					3392 cell
+						3393 text 242.3s
+					3394 cell
+						3395 text 473
+					3396 cell
+						3397 text R18_LIFECYCLE {"adapter": "q8v5_f1", "allocated": [5112113152, 5411036672], "device_map": {"embed_tokens": 0, "layers.0": 0, "layers.1": 0, "layers.10": 1, "layers.11": 1, "layers.12": 1, "layers.13": 1, "layers.14": 1, "layers.15": 1, "layers.16": 1, "layers.17": 1, "layers.18": 1, "layers.19": 1, "layers.2": 0, "layers.20": 1, "layers.21": 1, "layers.22": 1, "layers.23": 1, "layers.3": 0, "layers.4": 0, "layers.5": 0, "layers.6": 0, "layers.7": 0, "layers.8": 0, "layers.9": 0, "norm": 1, "rotary_emb": 1}, "event": "loaded", "family": "q8v5", "parameter_devices": ["cuda:0", "cuda:1"], "sample_sha256": "c7dce379a6b5144c54d0cee704815190e0c8922346f078c52b22a5971c2f5858", "seconds": 16.055755066000017}
+
+				3398 row
+					3399 cell
+						3400 text 242.3s
+					3401 cell
+						3402 text 474
+					3403 cell
+						3404 text R18_LIFECYCLE {"adapter": "q8v5_f1", "allocated": [8519680, 8519680], "event": "released", "family": "q8v5", "seconds": 17.90797747800002}
+
+				3405 row
+					3406 cell
+						3407 text 242.3s
+					3408 cell
+						3409 text 475
+					3410 cell
+						3411 text   l24 q8v5: adapter q8v5_f1 done (bf16 redo batches 0)
+
+				3412 row
+					3413 cell
+						3414 text 242.3s
+					3415 cell
+						3416 text 476
+					3417 cell
+						3418 text R18_LIFECYCLE {"adapter": "q8v5_f2", "allocated": [8519680, 8519680], "event": "before_load", "family": "q8v5"}
+
+				3419 row
+					3420 cell
+						3421 text 242.3s
+					3422 cell
+						3423 text 477
+				3424 row
+					3425 cell
+						3426 text 242.3s
+					3427 cell
+						3428 text 478
+					3429 cell
+						3430 text Loading weights:   0%|          | 0/266 [00:00<?, ?it/s]
+
+				3431 row
+					3432 cell
+						3433 text 242.3s
+					3434 cell
+						3435 text 479
+					3436 cell
+						3437 text Loading weights:   0%|          | 1/266 [00:02<09:34,  2.17s/it]
+
+				3438 row
+					3439 cell
+						3440 text 242.3s
+					3441 cell
+						3442 text 480
+					3443 cell
+						3444 text Loading weights:  25%|██▍       | 66/266 [00:02<00:05, 39.88it/s]
+
+				3445 row
+					3446 cell
+						3447 text 242.3s
+					3448 cell
+						3449 text 481
+					3450 cell
+						3451 text Loading weights:  36%|███▌      | 96/266 [00:02<00:04, 41.42it/s]
+
+				3452 row
+					3453 cell
+						3454 text 242.3s
+					3455 cell
+						3456 text 482
+					3457 cell
+						3458 text Loading weights:  43%|████▎     | 115/266 [00:03<00:03, 42.40it/s]
+
+				3459 row
+					3460 cell
+						3461 text 242.3s
+					3462 cell
+						3463 text 483
+					3464 cell
+						3465 text Loading weights:  48%|████▊     | 128/266 [00:03<00:03, 44.85it/s]
+
+				3466 row
+					3467 cell
+						3468 text 242.3s
+					3469 cell
+						3470 text 484
+					3471 cell
+						3472 text Loading weights:  52%|█████▏    | 139/266 [00:03<00:02, 44.02it/s]
+
+				3473 row
+					3474 cell
+						3475 text 242.3s
+					3476 cell
+						3477 text 485
+					3478 cell
+						3479 text Loading weights:  56%|█████▌    | 148/266 [00:04<00:02, 43.02it/s]
+
+				3480 row
+					3481 cell
+						3482 text 242.3s
+					3483 cell
+						3484 text 486
+					3485 cell
+						3486 text Loading weights:  59%|█████▉    | 157/266 [00:04<00:02, 47.03it/s]
+
+				3487 row
+					3488 cell
+						3489 text 242.3s
+					3490 cell
+						3491 text 487
+					3492 cell
+						3493 text Loading weights:  63%|██████▎   | 168/266 [00:04<00:02, 47.13it/s]
+
+				3494 row
+					3495 cell
+						3496 text 242.3s
+					3497 cell
+						3498 text 488
+					3499 cell
+						3500 text Loading weights:  67%|██████▋   | 179/266 [00:04<00:01, 45.68it/s]
+
+				3501 row
+					3502 cell
+						3503 text 242.3s
+					3504 cell
+						3505 text 489
+					3506 cell
+						3507 text Loading weights:  71%|███████▏  | 190/266 [00:04<00:01, 45.40it/s]
+
+				3508 row
+					3509 cell
+						3510 text 242.3s
+					3511 cell
+						3512 text 490
+					3513 cell
+						3514 text Loading weights:  76%|███████▌  | 201/266 [00:05<00:01, 53.99it/s]
+
+				3515 row
+					3516 cell
+						3517 text 242.3s
+					3518 cell
+						3519 text 491
+					3520 cell
+						3521 text Loading weights:  78%|███████▊  | 208/266 [00:05<00:01, 56.40it/s]
+
+				3522 row
+					3523 cell
+						3524 text 242.3s
+					3525 cell
+						3526 text 492
+					3527 cell
+						3528 text Loading weights:  81%|████████  | 215/266 [00:05<00:01, 47.35it/s]
+
+				3529 row
+					3530 cell
+						3531 text 242.3s
+					3532 cell
+						3533 text 493
+					3534 cell
+						3535 text Loading weights:  84%|████████▍ | 223/266 [00:05<00:00, 51.19it/s]
+
+				3536 row
+					3537 cell
+						3538 text 242.3s
+					3539 cell
+						3540 text 494
+					3541 cell
+						3542 text Loading weights:  87%|████████▋ | 231/266 [00:05<00:00, 52.74it/s]
+
+				3543 row
+					3544 cell
+						3545 text 242.3s
+					3546 cell
+						3547 text 495
+					3548 cell
+						3549 text Loading weights:  89%|████████▉ | 237/266 [00:05<00:00, 47.69it/s]
+
+				3550 row
+					3551 cell
+						3552 text 242.3s
+					3553 cell
+						3554 text 496
+					3555 cell
+						3556 text Loading weights:  92%|█████████▏| 245/266 [00:06<00:00, 40.72it/s]
+
+				3557 row
+					3558 cell
+						3559 text 242.3s
+					3560 cell
+						3561 text 497
+					3562 cell
+						3563 text Loading weights:  97%|█████████▋| 257/266 [00:06<00:00, 52.22it/s]
+
+				3564 row
+					3565 cell
+						3566 text 242.3s
+					3567 cell
+						3568 text 498
+					3569 cell
+						3570 text Loading weights: 100%|██████████| 266/266 [00:06<00:00, 42.26it/s]
+
+				3571 row
+					3572 cell
+						3573 text 242.3s
+					3574 cell
+						3575 text 499
+					3576 cell
+						3577 text [transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/8b-base/1
+
+	3578 text Could not connect to the reCAPTCHA service. Please check your internet connection and reload to get a reCAPTCHA challenge.
+
+The focused UI element is 1 AXWebArea NTL R18 Adapter Isolation 20261101, URL: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/log

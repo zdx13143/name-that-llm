@@ -1,0 +1,81 @@
+{
+  "candidate_sha256": "4c3eb9436f36af07aad55b92acaa9e1491aff3d352ee9fc78209c109851a735b",
+  "baseline_code_parity": true,
+  "cli_source_readback": "outputs\\r18\\r16_cli_readback_20261102",
+  "baseline_script_version_id": 363487968,
+  "dataset_versions_observed_in_exact_baseline_ui": [
+    "dhruvtibarewal/nlm-l24-adapters/7",
+    "seyitkaangunes/ntl-extra-api-passages/2",
+    "abdullah1afify/ntl-generations/4",
+    "dophuchung/ntl-proxy-generations/1",
+    "zbigniewkirchner/ntl-qwen3-8b-lora-claude-head/1",
+    "dhruvtibarewal/nlm-matched-clean/3",
+    "dhruvtibarewal/nlm-offline-wheels/2",
+    "josephadamski91/ntl-atlas-qwen3-8b-v1/3",
+    "lucasboesen/ntl-free-proxy-generations/11",
+    "nishantdahal/ntl-two-stage-lora/1",
+    "nishantdahal/ntl-handwriting-blend/1",
+    "dhruvtibarewal/nlm-l24-adapters-v5/1",
+    "prvsiyan/prvsiyans-extended-name-that-llm-dataset/7",
+    "pjmathematician/ultrabert-380m-ntl/1"
+  ],
+  "kernel_versions_and_ids": [
+    {
+      "ref": "lucasboesen/name-that-llm-glm4-9b-trunc25",
+      "id": 358683059,
+      "version": 1
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-extract-encoders2",
+      "id": 358745836,
+      "version": 1
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-electra-large-weights",
+      "id": 358758062,
+      "version": 1
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-desklib-weights",
+      "id": 358770408,
+      "version": 1
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-train-lora24-s7",
+      "id": 358911769,
+      "version": 1
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-train-tokattn",
+      "id": 358928013,
+      "version": 1
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-train-tokattn2",
+      "id": 358948428,
+      "version": 1
+    },
+    {
+      "ref": "vnton37nguyn/ntl-train-lora-qwen25-instyle",
+      "id": 359652568,
+      "version": 2
+    }
+  ],
+  "model_sources": [
+    "qwen-lm/qwen-3/Transformers/4b-base/1",
+    "qwen-lm/qwen-3/Transformers/14b-base/1",
+    "qwen-lm/qwen-3/Transformers/8b/1",
+    "qwen-lm/qwen-3/Transformers/8b-base/1",
+    "qwen-lm/qwen-3/Transformers/14b/1",
+    "qwen-lm/qwen2.5/Transformers/7b/1",
+    "qwen-lm/qwen2.5/Transformers/14b/1"
+  ],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:2757e0c7d1e0a9cb43da657b97e223c321a98f5014bdf64f44f2f6b083ad2b2f",
+  "machine_shape": "NvidiaTeslaT4",
+  "internet": false,
+  "private": true,
+  "actual_t4x2_required_by_preflight": true,
+  "prediction_source_changes": 0,
+  "cli_pull_version_suffix_attempt": "403; no content; unversioned source subsequently verified against frozen R16 code",
+  "authentication": "existing official OAuth credentials refreshed normally; no secrets copied to project"
+}

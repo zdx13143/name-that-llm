@@ -1,0 +1,148 @@
+Browser tab: 1127720300, Title: "NTL R18 Adapter Isolation 20261101 | Kaggle", URL: "https://www.kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit/run/364615652".
+0 AXWebArea NTL R18 Adapter Isolation 20261101 | Kaggle, URL: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit/run/364615652
+	1 container
+		2 container root
+			3 container Main Kaggle page navigation
+				4 button Navigation menu
+				5 link Description: Skip to content, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit/run/364615652#site-content
+				6 pop up button (collapsed) Description: Create on Kaggle, Secondary Actions: Expand
+					7 text Create
+				8 container
+					9 container
+						10 content list
+							11 container Home List Item
+								12 link Description: Home, Value: kaggle.com/
+							13 container Competitions List Item
+								14 link Description: Competitions, Value: kaggle.com/competitions
+							15 container Benchmarks List Item
+								16 link Description: Benchmarks, Value: kaggle.com/benchmarks
+							17 container Arenas List Item
+								18 link Description: Arenas, Value: kaggle.com/arenas
+							19 container Game Arena List Item
+								20 link Description: Game Arena, Value: kaggle.com/game-arena
+						21 content list
+							22 container Data Hub List Item
+								23 link (collapsed) Description: Data Hub, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit/run/364615652#, Secondary Actions: Expand
+						24 content list
+							25 container More on Kaggle List Item
+								26 link (collapsed) Description: More on Kaggle, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit/run/364615652#, Secondary Actions: Expand
+					27 button (collapsed) Open Active Events dialog View Active Events, Secondary Actions: Expand
+						28 container Open Active Events dialog
+							29 text auto_awesome_motion
+						30 text View Active Events
+			31 container site-content
+				32 container
+					33 heading NTL R18 Adapter Isolation 20261101, Value: 1
+						34 container
+							35 text field (settable) Description: Title: NTL R18 Adapter Isolation 20261101, Value: NTL R18 Adapter Isolation 20261101, ID: notebook-title-input
+					36 text Draft saved
+					37 button File
+					38 button Edit
+					39 button View
+					40 button Run
+					41 button Settings
+					42 button Add-ons
+					43 button Help
+					44 button Share
+					45 button Save Version
+					46 button Description: Show Versions, ID: show-versions-button-trigger
+					47 button (disabled) Add cell
+					48 button Add cell options
+					49 button (disabled) Cut cell
+					50 button (disabled) Copy cell
+					51 button (disabled) Paste cell
+					52 button (disabled) Run current cell
+					53 button (disabled) Run All
+						54 text fast_forward
+						55 text Run All
+					56 button Show options
+					57 button Loading Editor Loading …
+						58 container Loading
+							59 text circle
+						60 text Editor
+						61 text Loading
+						62 text …
+					63 button (disabled) Start session
+					64 button (disabled) Factory reset
+					65 button (disabled) More settings
+					66 container
+						67 button Description: Open console, ID: frame-container-next-focus-element
+						68 button (disabled) Open command palette
+					69 container
+						70 container editor-sidebar-scroll-container
+							71 heading Notebook, Value: 2
+								72 text Notebook
+							73 container
+								74 heading Input, Value: 3
+									75 text Input
+								76 button (expanded) Description: Collapse Input, Secondary Actions: Collapse
+							77 button Add Input
+							78 button Upload
+							79 container
+								80 heading Output, Value: 3
+									81 text Output
+								82 button (expanded) Description: Collapse Output, Secondary Actions: Collapse
+							83 content list
+								84 container
+									85 button (collapsed) arrow_right, Help: Expand /kaggle/working, Secondary Actions: Expand
+									86 text /kaggle/working
+									87 button Description: Copy directory path (/kaggle/working), Help: Copy
+									88 button Refresh directory contents (/kaggle/working)
+							89 container
+								90 heading Table of contents, Value: 3
+									91 text Table of contents
+								92 button (expanded) Description: Collapse Table of contents, Secondary Actions: Collapse
+							93 heading No sections detected, Value: 6
+								94 text No sections detected
+							95 text Add markdown headers to add a section
+							96 container
+								97 heading Submit to competition, Value: 3
+									98 text Submit to competition
+								99 button (collapsed) Description: Expand Submit to competition, Secondary Actions: Expand
+							100 container
+								101 heading Session options, Value: 3
+									102 text Session options
+								103 button (collapsed) Description: Expand Session options, Secondary Actions: Expand
+							104 container
+								105 heading Schedule a notebook to run, Value: 3
+									106 text Schedule a notebook to run
+								107 button (collapsed) Description: Expand Schedule a notebook to run, Secondary Actions: Expand
+					108 button Collapse Sidebar
+						109 container Collapse Sidebar
+							110 text arrow_right
+		111 container New Notebook Import Notebook Download Notebook Link to Colab Open in Colab Link to GitHub Set as Utility Script Set as Benchmark Task Add input Upload input Editor Type Share Save Version Version history Rename Notebook Delete Notebook
+			112 container
+				113 New Notebook
+					114 text New Notebook
+				115 (disabled) Import Notebook
+					116 text Import Notebook
+				117 Download Notebook
+					118 text Download Notebook
+				119 Link to Colab
+					120 text Link to Colab
+				121 (disabled) Open in Colab
+					122 text Open in Colab
+				123 Link to GitHub
+					124 text Link to GitHub
+				125 Set as Utility Script
+					126 text Set as Utility Script
+				127 Set as Benchmark Task
+					128 text Set as Benchmark Task
+				129 (disabled) Add input
+					130 text Add input
+				131 Upload input
+					132 text Upload input
+				133 Editor Type
+					134 text Editor Type
+				135 Share
+					136 text Share
+				137 (disabled) Save Version
+					138 text Save Version
+				139 Version history
+					140 text Version history
+				141 Rename Notebook
+					142 text Rename Notebook
+				143 Delete Notebook
+					144 text Delete Notebook
+
+The focused UI element is 37 button File

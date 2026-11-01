@@ -1,0 +1,220 @@
+{
+  "release_gate_passed": false,
+  "version": 2,
+  "scriptVersionId": 364615652,
+  "candidate_sha256": "867515c41bd5a7ceef51efb306ddc2235b3c4952ec915d26b41953f2cc20dc83",
+  "actual_datasets_inspected": 14,
+  "actual_dataset_versions_matching": 12,
+  "dataset_version_mismatches": [
+    {
+      "expected": "abdullah1afify/ntl-generations/4",
+      "actual": "abdullah1afify/ntl-generations/9"
+    },
+    {
+      "expected": "lucasboesen/ntl-free-proxy-generations/11",
+      "actual": "lucasboesen/ntl-free-proxy-generations/12"
+    }
+  ],
+  "actual_models_verified": 7,
+  "actual_competitions_verified": 1,
+  "actual_kernel_version_mapping": [
+    {
+      "ref": "lucasboesen/name-that-llm-glm4-9b-trunc25",
+      "version": 1,
+      "scriptVersionId": 358683059,
+      "actual_mount_updated_at": "Thu Oct 15 2026 21:01:42 GMT+0800 (Singapore Standard Time)",
+      "method": "versioned CLI request + returned slug + exact saved-input timestamp matched to fixed published version"
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-extract-encoders2",
+      "version": 1,
+      "scriptVersionId": 358745836,
+      "actual_mount_updated_at": "Fri Oct 16 2026 00:42:38 GMT+0800 (Singapore Standard Time)",
+      "method": "versioned CLI request + returned slug + exact saved-input timestamp matched to fixed published version"
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-electra-large-weights",
+      "version": 1,
+      "scriptVersionId": 358758062,
+      "actual_mount_updated_at": "Fri Oct 16 2026 01:31:15 GMT+0800 (Singapore Standard Time)",
+      "method": "versioned CLI request + returned slug + exact saved-input timestamp matched to fixed published version"
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-desklib-weights",
+      "version": 1,
+      "scriptVersionId": 358770408,
+      "actual_mount_updated_at": "Fri Oct 16 2026 02:22:04 GMT+0800 (Singapore Standard Time)",
+      "method": "versioned CLI request + returned slug + exact saved-input timestamp matched to fixed published version"
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-train-lora24-s7",
+      "version": 1,
+      "scriptVersionId": 358911769,
+      "actual_mount_updated_at": "Fri Oct 16 2026 14:24:47 GMT+0800 (Singapore Standard Time)",
+      "method": "versioned CLI request + returned slug + exact saved-input timestamp matched to fixed published version"
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-train-tokattn",
+      "version": 1,
+      "scriptVersionId": 358928013,
+      "actual_mount_updated_at": "Fri Oct 16 2026 15:29:39 GMT+0800 (Singapore Standard Time)",
+      "method": "versioned CLI request + returned slug + exact saved-input timestamp matched to fixed published version"
+    },
+    {
+      "ref": "lucasboesen/name-that-llm-train-tokattn2",
+      "version": 1,
+      "scriptVersionId": 358948428,
+      "actual_mount_updated_at": "Fri Oct 16 2026 16:49:42 GMT+0800 (Singapore Standard Time)",
+      "method": "versioned CLI request + returned slug + exact saved-input timestamp matched to fixed published version"
+    },
+    {
+      "ref": "vnton37nguyn/ntl-train-lora-qwen25-instyle",
+      "version": 2,
+      "scriptVersionId": 359652568,
+      "actual_mount_updated_at": "Sun Oct 18 2026 17:44:27 GMT+0800 (Singapore Standard Time)",
+      "method": "versioned CLI request + returned slug + exact saved-input timestamp matched to fixed published version"
+    }
+  ],
+  "kernel_mapping_limit": "Official SDK and input page do not expose attached kernel version IDs directly; timestamp mapping and exact versioned upload request are recorded explicitly.",
+  "preflight": {
+    "passed": true,
+    "artificial_passages": 2,
+    "families": [
+      {
+        "family": "q14v5",
+        "shape": [
+          2,
+          18
+        ],
+        "finite": true,
+        "adapters": [
+          "q14v5_f0",
+          "q14v5_f1",
+          "q14v5_f2",
+          "q14v5_f3",
+          "q14v5_f4",
+          "q14v5"
+        ]
+      },
+      {
+        "family": "q8v5",
+        "shape": [
+          2,
+          18
+        ],
+        "finite": true,
+        "adapters": [
+          "q8v5_f0",
+          "q8v5_f1",
+          "q8v5_f2",
+          "q8v5_f3",
+          "q8v5_f4",
+          "q8v5"
+        ]
+      }
+    ],
+    "lifecycle_events": 36,
+    "gpu_names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "seconds": 182.754358523,
+    "accuracy_evaluated": false,
+    "sample_fingerprint_is_full_asset_hash": false
+  },
+  "family_lifecycle": [
+    {
+      "family": "q14v5",
+      "adapters_completed": 6,
+      "fingerprint": "191755e43e251f54cef3d5affe032b781c8d491703612e475a0527ea216eeac8",
+      "load_seconds": [
+        31.08846433399998,
+        12.510509809000041,
+        12.228342960999953,
+        12.243724033000035,
+        12.438357444000019,
+        12.325191150000023
+      ],
+      "release_allocated_bytes": [
+        [
+          8519680,
+          8519680
+        ],
+        [
+          8519680,
+          8519680
+        ],
+        [
+          8519680,
+          8519680
+        ],
+        [
+          8519680,
+          8519680
+        ],
+        [
+          8519680,
+          8519680
+        ],
+        [
+          8519680,
+          8519680
+        ]
+      ]
+    },
+    {
+      "family": "q8v5",
+      "adapters_completed": 6,
+      "fingerprint": "c7dce379a6b5144c54d0cee704815190e0c8922346f078c52b22a5971c2f5858",
+      "load_seconds": [
+        16.28802153700002,
+        16.055755066000017,
+        6.876355442999966,
+        6.7290717669999935,
+        6.94053642099999,
+        6.85773677200001
+      ],
+      "release_allocated_bytes": [
+        [
+          8519680,
+          8519680
+        ],
+        [
+          8519680,
+          8519680
+        ],
+        [
+          8519680,
+          8519680
+        ],
+        [
+          8519680,
+          8519680
+        ],
+        [
+          8519680,
+          8519680
+        ],
+        [
+          8519680,
+          8519680
+        ]
+      ]
+    }
+  ],
+  "save_run_seconds_ui": 252.5,
+  "download_provenance": "V2 is latest and only successful saved version; no V3; run log PASS receipt equals downloaded receipt, and saved source readback matches V2 exactly",
+  "placeholder_rows": 3,
+  "placeholder_is_accuracy_evidence": false,
+  "evidence_sha256": {
+    "ntl-r18-adapter-isolation-20261101.log": "9842ed9162d3c982fcc5810d28f5f6918de186e36de7c972ec1ea785ae310dfd",
+    "r18_lifecycle.jsonl": "80bce4ff2770a0a8e283907525c38593ca04b2e30c4433221d70c1b0eea0dc1c",
+    "r18_preflight.log": "685601229697504697991e0a2e9c9266fd1a527e4efe3b4da05bf306c8def729",
+    "r18_preflight_receipt.json": "7882dd120a1c91122971adc90c32aa2f1639f1d4af2f22f40567735efb652b3c",
+    "submission.parquet": "cc49ddf4d7c542d06e410ed96af807fcdd06e10771a720da07435da3c901a5a9"
+  },
+  "formal_submissions_before_release": 0,
+  "formal_submission_limit": 1,
+  "new_automations": 0,
+  "accuracy_or_score_claim": null
+}

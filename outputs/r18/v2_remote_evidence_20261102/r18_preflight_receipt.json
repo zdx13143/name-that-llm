@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "artificial_passages": 2,
+  "families": [
+    {
+      "family": "q14v5",
+      "shape": [
+        2,
+        18
+      ],
+      "finite": true,
+      "adapters": [
+        "q14v5_f0",
+        "q14v5_f1",
+        "q14v5_f2",
+        "q14v5_f3",
+        "q14v5_f4",
+        "q14v5"
+      ]
+    },
+    {
+      "family": "q8v5",
+      "shape": [
+        2,
+        18
+      ],
+      "finite": true,
+      "adapters": [
+        "q8v5_f0",
+        "q8v5_f1",
+        "q8v5_f2",
+        "q8v5_f3",
+        "q8v5_f4",
+        "q8v5"
+      ]
+    }
+  ],
+  "lifecycle_events": 36,
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "seconds": 182.754358523,
+  "accuracy_evaluated": false,
+  "sample_fingerprint_is_full_asset_hash": false
+}

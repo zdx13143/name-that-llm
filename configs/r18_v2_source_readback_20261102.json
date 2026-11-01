@@ -1,0 +1,27 @@
+{
+  "version_number": 2,
+  "scriptVersionId": 364615652,
+  "kernel_id": 141979156,
+  "saved_code_cells_equal_frozen_candidate": true,
+  "code_cell_count": 9,
+  "code_sha256": [
+    "f8730cb30eeffa06db34905a7ce4ba10bc50a4e658346b9c6e3259ef78cb20f0",
+    "658399852eff757b58e3539ff180ba247538443cc4dcff737c11b63f958e2faa",
+    "1c71eeb6e1360c90a189b6818ad312155cb2eb503423513f8c072a30752a4d07",
+    "4e33aa939f6843e45fceb91d90cc551c25a054348c9891e5f06ed301ab162851",
+    "b53e305fd7a755d138f931c55ac5f3762ed3978d73a65594b5ce2523fdf165ff",
+    "ed78f60a190485db7a1d1c27624956e8c500df9bffae334dcba01a835674d382",
+    "e3aa49d5a11e4ce2b504b826a7f8dddb13077e4b512e92d55a0a2807ca82cc18",
+    "034655a6f35e9f79a2d3f3ad9befaf7c222afe4694f9607f45c98c7f74500a54",
+    "50d2eef84cb386f78d4778162a62465863c5719b5a6a4921eabd38229fee7c98"
+  ],
+  "readback_file_sha256": "b341b7a66beea6838bcfe657378aff3fe369b0f30861957f74135f9d6faa876d",
+  "docker_image_exact_match": true,
+  "private": true,
+  "internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "source_slug_sets_equal": true,
+  "version_suffixes_not_returned_by_cli_metadata": true,
+  "actual_input_version_ui_check": "required separately",
+  "formal_submissions": 0
+}

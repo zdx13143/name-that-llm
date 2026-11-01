@@ -1,0 +1,756 @@
+- navigation "Main Kaggle page navigation":
+  - button "Navigation menu": menu
+  - link "Skip to content":
+    - /url: "#site-content"
+    - text: Skip to
+    - text: content
+  - link "Return to Kaggle home page":
+    - /url: /
+  - button "Create on Kaggle":
+    - paragraph: Create
+  - list:
+    - listitem "Home List Item":
+      - link "Home":
+        - /url: /
+        - paragraph: Home
+    - listitem "Competitions List Item":
+      - link "Competitions":
+        - /url: /competitions
+        - paragraph: Competitions
+    - listitem "Benchmarks List Item":
+      - link "Benchmarks":
+        - /url: /benchmarks
+        - paragraph: Benchmarks
+    - listitem "Arenas List Item":
+      - link "Arenas":
+        - /url: /arenas
+        - paragraph: Arenas
+    - listitem "Game Arena List Item":
+      - link "Game Arena":
+        - /url: /game-arena
+        - paragraph: Game Arena
+  - list:
+    - listitem "Data Hub List Item":
+      - link "Data Hub":
+        - /url: "#"
+        - paragraph: Data Hub
+      - button "Expand"
+  - list:
+    - listitem "More on Kaggle List Item":
+      - link "More on Kaggle":
+        - /url: "#"
+        - paragraph: More
+      - button "Expand"
+  - separator
+  - list:
+    - listitem "Your Work List Item":
+      - link "Your Work":
+        - /url: /work
+        - paragraph: Your Work
+      - button "Collapse Your Work" [expanded]
+    - listitem "Collapse Viewed List Item":
+      - link "Collapse Viewed" [expanded]:
+        - /url: "#"
+        - paragraph: Viewed
+      - button "Collapse Viewed"
+    - list:
+      - listitem "Name That LLM List Item":
+        - link "Name That LLM":
+          - /url: /competitions/name-that-llm
+          - paragraph: Name That LLM
+      - listitem "NTL R18 Adapter Isolation 20261101 List Item":
+        - link "NTL R18 Adapter Isolation 20261101":
+          - /url: /code/zephyrpong/ntl-r18-adapter-isolation-20261101
+          - paragraph: NTL R18 Adapter Isolation 20261101
+      - listitem "NTL train LoRA qwen25 instyle List Item":
+        - link "NTL train LoRA qwen25 instyle":
+          - /url: /code/vnton37nguyn/ntl-train-lora-qwen25-instyle
+          - paragraph: NTL train LoRA qwen25 instyle
+      - listitem "name-that-llm-train-tokattn2 List Item":
+        - link "name-that-llm-train-tokattn2":
+          - /url: /code/lucasboesen/name-that-llm-train-tokattn2
+          - paragraph: name-that-llm-train-tokattn2
+      - listitem "name-that-llm-train-tokattn List Item":
+        - link "name-that-llm-train-tokattn":
+          - /url: /code/lucasboesen/name-that-llm-train-tokattn
+          - paragraph: name-that-llm-train-tokattn
+    - listitem "Collapse Edited List Item":
+      - link "Collapse Edited" [expanded]:
+        - /url: "#"
+        - paragraph: Edited
+      - button "Collapse Edited"
+    - list:
+      - listitem "NTL R18 Adapter Isolation 20261101 List Item":
+        - link "NTL R18 Adapter Isolation 20261101":
+          - /url: /code/zephyrpong/ntl-r18-adapter-isolation-20261101
+          - paragraph: NTL R18 Adapter Isolation 20261101
+      - listitem "NTL R16 Typography Half 20261029 List Item":
+        - link "NTL R16 Typography Half 20261029":
+          - /url: /code/zephyrpong/ntl-r16-typography-half-20261029
+          - paragraph: NTL R16 Typography Half 20261029
+      - listitem "NTL Full Ensemble R12 20261028 List Item":
+        - link "NTL Full Ensemble R12 20261028":
+          - /url: /code/zephyrpong/ntl-full-ensemble-r12-20261028
+          - paragraph: NTL Full Ensemble R12 20261028
+      - listitem "NTL Topic Margin R10 20261028 List Item":
+        - link "NTL Topic Margin R10 20261028":
+          - /url: /code/zephyrpong/ntl-topic-margin-r10-20261028
+          - paragraph: NTL Topic Margin R10 20261028
+      - listitem "NTL Weighted SVC R7 20261026 List Item":
+        - link "NTL Weighted SVC R7 20261026":
+          - /url: /code/zephyrpong/ntl-weighted-svc-r7-20261026
+          - paragraph: NTL Weighted SVC R7 20261026
+  - button "Open Active Events dialog View Active Events":
+    - generic "Open Active Events dialog": auto_awesome_motion
+    - paragraph: View Active Events
+- navigation "Main menu, search and your account":
+  - textbox "Search"
+  - button "Zephyr Pong":
+    - generic "Zephyr Pong"
+- main:
+  - link "Zephyr Pong's profile":
+    - /url: /zephyrpong
+    - generic "Zephyr Pong"
+  - generic: Zephyr Pong
+  - generic: · 10m ago · 3 views · Private
+  - button "Upvote":
+    - generic: arrow_drop_up
+  - button "0 votes": "0"
+  - button "Share":
+    - generic: lock
+    - generic: Share
+  - link "Edit":
+    - /url: /code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit/run/364611063
+    - button "Edit":
+      - generic: edit
+      - generic: Edit
+  - button "Download":
+    - generic: file_download
+    - generic: Download
+  - button "More options for this notebook": more_vert
+  - heading "NTL R18 Adapter Isolation 20261101" [level=1]
+  - button "Edit title": edit
+  - link "[object Object] opens in new window":
+    - /url: /code/zephyrpong/ntl-r16-typography-half-20261029
+    - paragraph:
+      - text: Copied from Zephyr Pong (
+      - generic: "+243"
+      - text: ","
+      - generic: "-39"
+      - text: )
+  - tablist:
+    - tab "Notebook, 1 of 6":
+      - generic: Notebook
+    - tab "Input, 2 of 6":
+      - generic: Input
+    - tab "Output, 3 of 6":
+      - generic: Output
+    - tab "Logs, 4 of 6" [active] [selected]:
+      - generic: Logs
+    - tab "Comments (0), 5 of 6":
+      - generic: Comments (0)
+    - tab "Settings, 6 of 6":
+      - generic: Settings
+  - separator
+  - heading "Logs" [level=2]
+  - link "Download logs":
+    - /url: data:text/plain;charset=utf-8,10.2s%201%20%2Fusr%2Flocal%2Flib%2Fpython3.13%2Fdist-packages%2Fnbformat%2Fvalidator.py%3A434%3A%20MissingIDFieldWarning%3A%20Cell%20is%20missing%20an%20id%20field%2C%20this%20will%20become%20a%20hard%20error%20in%20future%20nbformat%20versions.%20You%20may%20want%20to%20use%20%60normalize()%60%20on%20your%20notebooks%20before%20validations%20(available%20since%20nbformat%205.1.4).%20Previous%20versions%20of%20nbformat%20are%20fixing%20this%20issue%20transparently%2C%20and%20will%20stop%20doing%20so%20in%20the%20future.%0A10.2s%202%20_validate(nbdict%2C%20ref%2C%20version%2C%20version_minor%2C%20relax_add_props)%0A11.7s%203%200.00s%20-%20Debugger%20warning%3A%20It%20seems%20that%20frozen%20modules%20are%20being%20used%2C%20which%20may%0A11.7s%204%200.00s%20-%20make%20the%20debugger%20miss%20breakpoints.%20Please%20pass%20-Xfrozen_modules%3Doff%0A11.7s%205%200.00s%20-%20to%20python%20to%20disable%20frozen%20modules.%0A11.7s%206%200.00s%20-%20Note%3A%20Debugging%20will%20proceed.%20Set%20PYDEVD_DISABLE_FILE_VALIDATION%3D1%20to%20disable%20this%20validation.%0A12.5s%207%200.00s%20-%20Debugger%20warning%3A%20It%20seems%20that%20frozen%20modules%20are%20being%20used%2C%20which%20may%0A12.5s%208%200.00s%20-%20make%20the%20debugger%20miss%20breakpoints.%20Please%20pass%20-Xfrozen_modules%3Doff%0A12.5s%209%200.00s%20-%20to%20python%20to%20disable%20frozen%20modules.%0A12.5s%2010%200.00s%20-%20Note%3A%20Debugging%20will%20proceed.%20Set%20PYDEVD_DISABLE_FILE_VALIDATION%3D1%20to%20disable%20this%20validation.%0A15.5s%2011%20R14%20competition%20rerun%3A%20False%20%3B%20test%20rows%3A%203%0A15.5s%2012%20Writing%20r18_preflight.py%0A15.5s%2013%20Writing%20r18_contract.py%0A30.0s%2014%200%0A65.7s%2015%20atlas%20%2Fkaggle%2Finput%2Fdatasets%2Fjosephadamski91%2Fntl-atlas-qwen3-8b-v1%2Fatlas_adapter%2Fatlas_adapter%0A98.4s%2016%20part%20two%20%2Fkaggle%2Finput%2Fdatasets%2Fnishantdahal%2Fntl-handwriting-blend%2Flora_qwen3_14b%2027%20%5B2%2C%204%2C%206%2C%209%2C%2013%2C%2017%2C%2022%2C%2027%5D%20151643%20%2Fkaggle%2Finput%2Fdatasets%2Fnishantdahal%2Fntl-handwriting-blend%2Flora_qwen25_14b%2032%20%5B3%2C%205%2C%208%2C%2011%2C%2016%2C%2021%2C%2027%2C%2032%5D%20%2Fkaggle%2Fworking%2Fdeberta_v3_large%0A137.4s%2017%20q8v5%20%5B'%2Fkaggle%2Finput%2Fdatasets%2Fdhruvtibarewal%2Fnlm-l24-adapters-v5%2Fq8v5_f0'%2C%20'%2Fkaggle%2Finput%2Fdatasets%2Fdhruvtibarewal%2Fnlm-l24-adapters-v5%2Fq8v5_f1'%2C%20'%2Fkaggle%2Finput%2Fdatasets%2Fdhruvtibarewal%2Fnlm-l24-adapters-v5%2Fq8v5_f2'%2C%20'%2Fkaggle%2Finput%2Fdatasets%2Fdhruvtibarewal%2Fnlm-l24-adapters-v5%2Fq8v5_f3'%2C%20'%2Fkaggle%2Finput%2Fdatasets%2Fdhruvtibarewal%2Fnlm-l24-adapters-v5%2Fq8v5_f4'%2C%20'%2Fkaggle%2Finput%2Fdatasets%2Fdhruvtibarewal%2Fnlm-l24-adapters-v5%2Fq8v5'%5D%0A171.9s%2018%20Writing%20gauss.py%0A171.9s%2019%20Writing%20infer.py%0A172.0s%2020%20Writing%20comp_stack.py%0A172.0s%2021%20R18%20starting%20r18_preflight.py%20%3B%20remaining%20seconds%20742%0A274.4s%2022%20R18_LIFECYCLE%20%7B%22adapter%22%3A%20%22q14v5_f0%22%2C%20%22allocated%22%3A%20%5B0%2C%200%5D%2C%20%22event%22%3A%20%22before_load%22%2C%20%22family%22%3A%20%22q14v5%22%7D%0A274.4s%2023%20%0A274.4s%2024%20Loading%20weights%3A%20%20%200%25%7C%20%20%20%20%20%20%20%20%20%20%7C%200%2F299%20%5B00%3A00%3C%3F%2C%20%3Fit%2Fs%5D%0A274.4s%2025%20Loading%20weights%3A%20%20%200%25%7C%20%20%20%20%20%20%20%20%20%20%7C%201%2F299%20%5B00%3A11%3C58%3A17%2C%2011.74s%2Fit%5D%0A274.4s%2026%20Loading%20weights%3A%20%2023%25%7C%E2%96%88%E2%96%88%E2%96%8E%20%20%20%20%20%20%20%7C%2069%2F299%20%5B00%3A12%3C00%3A28%2C%20%207.99it%2Fs%5D%0A274.4s%2027%20Loading%20weights%3A%20%2029%25%7C%E2%96%88%E2%96%88%E2%96%89%20%20%20%20%20%20%20%7C%2087%2F299%20%5B00%3A13%3C00%3A24%2C%20%208.53it%2Fs%5D%0A274.4s%2028%20Loading%20weights%3A%20%2032%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%8F%20%20%20%20%20%20%7C%2095%2F299%20%5B00%3A15%3C00%3A25%2C%20%208.03it%2Fs%5D%0A274.4s%2029%20Loading%20weights%3A%20%2034%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%8D%20%20%20%20%20%20%7C%20102%2F299%20%5B00%3A16%3C00%3A24%2C%20%208.09it%2Fs%5D%0A274.4s%2030%20Loading%20weights%3A%20%2035%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%8C%20%20%20%20%20%20%7C%20106%2F299%20%5B00%3A16%3C00%3A23%2C%20%208.28it%2Fs%5D%0A274.4s%2031%20Loading%20weights%3A%20%2038%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%8A%20%20%20%20%20%20%7C%20113%2F299%20%5B00%3A17%3C00%3A24%2C%20%207.61it%2Fs%5D%0A274.4s%2032%20Loading%20weights%3A%20%2041%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8F%20%20%20%20%20%7C%20124%2F299%20%5B00%3A18%3C00%3A21%2C%20%208.01it%2Fs%5D%0A274.4s%2033%20Loading%20weights%3A%20%2042%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8F%20%20%20%20%20%7C%20126%2F299%20%5B00%3A18%3C00%3A20%2C%20%208.25it%2Fs%5D%0A274.4s%2034%20Loading%20weights%3A%20%2045%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8C%20%20%20%20%20%7C%20135%2F299%20%5B00%3A19%3C00%3A19%2C%20%208.55it%2Fs%5D%0A274.4s%2035%20Loading%20weights%3A%20%2046%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8C%20%20%20%20%20%7C%20137%2F299%20%5B00%3A20%3C00%3A19%2C%20%208.17it%2Fs%5D%0A274.4s%2036%20Loading%20weights%3A%20%2049%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%89%20%20%20%20%20%7C%20146%2F299%20%5B00%3A21%3C00%3A18%2C%20%208.26it%2Fs%5D%0A274.4s%2037%20Loading%20weights%3A%20%2049%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%89%20%20%20%20%20%7C%20148%2F299%20%5B00%3A21%3C00%3A17%2C%20%208.53it%2Fs%5D%0A274.4s%2038%20Loading%20weights%3A%20%2053%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8E%20%20%20%20%7C%20157%2F299%20%5B00%3A22%3C00%3A18%2C%20%207.70it%2Fs%5D%0A274.4s%2039%20Loading%20weights%3A%20%2056%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8C%20%20%20%20%7C%20168%2F299%20%5B00%3A23%3C00%3A14%2C%20%208.95it%2Fs%5D%0A274.4s%2040%20Loading%20weights%3A%20%2057%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8B%20%20%20%20%7C%20169%2F299%20%5B00%3A24%3C00%3A15%2C%20%208.55it%2Fs%5D%0A274.4s%2041%20Loading%20weights%3A%20%2060%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%89%20%20%20%20%7C%20179%2F299%20%5B00%3A25%3C00%3A14%2C%20%208.36it%2Fs%5D%0A274.4s%2042%20Loading%20weights%3A%20%2061%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%20%20%20%20%7C%20181%2F299%20%5B00%3A25%3C00%3A13%2C%20%208.64it%2Fs%5D%0A274.4s%2043%20Loading%20weights%3A%20%2064%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8E%20%20%20%7C%20190%2F299%20%5B00%3A26%3C00%3A12%2C%20%208.62it%2Fs%5D%0A274.4s%2044%20Loading%20weights%3A%20%2064%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8D%20%20%20%7C%20191%2F299%20%5B00%3A26%3C00%3A12%2C%20%208.40it%2Fs%5D%0A274.4s%2045%20Loading%20weights%3A%20%2064%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8D%20%20%20%7C%20192%2F299%20%5B00%3A26%3C00%3A12%2C%20%208.25it%2Fs%5D%0A274.4s%2046%20Loading%20weights%3A%20%2067%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8B%20%20%20%7C%20201%2F299%20%5B00%3A27%3C00%3A11%2C%20%208.30it%2Fs%5D%0A274.4s%2047%20Loading%20weights%3A%20%2068%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8A%20%20%20%7C%20203%2F299%20%5B00%3A28%3C00%3A11%2C%20%208.61it%2Fs%5D%0A274.4s%2048%20Loading%20weights%3A%20%2071%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%20%20%20%7C%20212%2F299%20%5B00%3A29%3C00%3A10%2C%20%207.95it%2Fs%5D%0A274.4s%2049%20Loading%20weights%3A%20%2075%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8D%20%20%7C%20223%2F299%20%5B00%3A30%3C00%3A08%2C%20%208.45it%2Fs%5D%0A274.4s%2050%20Loading%20weights%3A%20%2075%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8D%20%20%7C%20224%2F299%20%5B00%3A30%3C00%3A09%2C%20%208.01it%2Fs%5D%0A274.4s%2051%20Loading%20weights%3A%20%2078%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8A%20%20%7C%20234%2F299%20%5B00%3A31%3C00%3A07%2C%20%208.87it%2Fs%5D%0A274.4s%2052%20Loading%20weights%3A%20%2079%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%89%20%20%7C%20236%2F299%20%5B00%3A32%3C00%3A07%2C%20%208.36it%2Fs%5D%0A274.4s%2053%20Loading%20weights%3A%20%2082%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8F%20%7C%20245%2F299%20%5B00%3A33%3C00%3A06%2C%20%208.38it%2Fs%5D%0A274.4s%2054%20Loading%20weights%3A%20%2086%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8C%20%7C%20256%2F299%20%5B00%3A34%3C00%3A05%2C%20%208.41it%2Fs%5D%0A274.4s%2055%20Loading%20weights%3A%20%2086%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8B%20%7C%20258%2F299%20%5B00%3A34%3C00%3A04%2C%20%208.79it%2Fs%5D%0A274.4s%2056%20Loading%20weights%3A%20%2089%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%89%20%7C%20267%2F299%20%5B00%3A35%3C00%3A03%2C%20%208.52it%2Fs%5D%0A274.4s%2057%20Loading%20weights%3A%20%2090%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%89%20%7C%20268%2F299%20%5B00%3A35%3C00%3A03%2C%20%208.16it%2Fs%5D%0A274.4s%2058%20Loading%20weights%3A%20%2090%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%89%20%7C%20269%2F299%20%5B00%3A35%3C00%3A03%2C%20%208.18it%2Fs%5D%0A274.4s%2059%20Loading%20weights%3A%20%2093%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8E%7C%20278%2F299%20%5B00%3A36%3C00%3A02%2C%20%208.64it%2Fs%5D%0A274.4s%2060%20Loading%20weights%3A%20%2094%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8E%7C%20280%2F299%20%5B00%3A37%3C00%3A02%2C%20%208.46it%2Fs%5D%0A274.4s%2061%20Loading%20weights%3A%20%2097%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%8B%7C%20289%2F299%20%5B00%3A38%3C00%3A01%2C%20%208.31it%2Fs%5D%0A274.4s%2062%20Loading%20weights%3A%20100%25%7C%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%7C%20299%2F299%20%5B00%3A38%3C00%3A00%2C%20%207.78it%2Fs%5D%0A274.4s%2063%20%5Btransformers%5D%20%1B%5B1mQwen3Model%20LOAD%20REPORT%1B%5B0m%20from%3A%20%2Fkaggle%2Finput%2Fmodels%2Fqwen-lm%2Fqwen-3%2Ftransformers%2F14b-base%2F1%0A274.4s%2064%20Key%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7C%20Status%20%20%20%20%20%7C%20%20%7C%0A274.4s%2065%20-------------------------------------------------------%2B------------%2B--%2B-%0A274.4s%2066%20model.layers.%7B27...39%7D.input_layernorm.weight%20%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2067%20model.layers.%7B27...39%7D.mlp.gate_proj.weight%20%20%20%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2068%20model.layers.%7B27...39%7D.self_attn.k_proj.weight%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2069%20model.layers.%7B27...39%7D.self_attn.q_proj.weight%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2070%20model.layers.%7B27...39%7D.mlp.up_proj.weight%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2071%20model.layers.%7B27...39%7D.mlp.down_proj.weight%20%20%20%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2072%20model.layers.%7B27...39%7D.post_attention_layernorm.weight%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2073%20model.layers.%7B27...39%7D.self_attn.q_norm.weight%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2074%20model.layers.%7B27...39%7D.self_attn.k_norm.weight%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2075%20model.layers.%7B27...39%7D.self_attn.v_proj.weight%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2076%20model.layers.%7B27...39%7D.self_attn.o_proj.weight%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2077%20lm_head.weight%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7C%20UNEXPECTED%20%7C%20%20%7C%0A274.4s%2078%20%0A274.4s%2079%20Notes%3A%0A274.4s%2080%20-%20UNEXPECTED%3A%09can%20be%20ignored%20when%20loading%20from%20different%20task%2Farchitecture%3B%20not%20ok%20if%20you%20expect%20identical%20arch.%0A274.4s%2081%20%2Fpytorch%2Faten%2Fsrc%2FATen%2Fnative%2Fcuda%2FIndexKernel.cu%3A111%3A%20operator()%3A%20block%3A%20%5B0%2C0%2C0%5D%2C%20thread%3A%20%5B63%2C0%2C0%5D%20Assertion%20%60-sizes%5Bi%5D%20%3C%3D%20index%20%26%26%20index%20%3C%20sizes%5Bi%5D%20%26%26%20%22index%20out%20of%20bounds%22%60%20failed.%0A274.4s%2082%20Traceback%20(most%20recent%20call%20last)%3A%0A274.4s%2083%20File%20%22%2Fkaggle%2Fworking%2Fr18_preflight.py%22%2C%20line%2042%2C%20in%20%3Cmodule%3E%0A274.4s%2084%20p%2C%20c%2C%20features%20%3D%20l24_predict(spec%2C%20texts%2C%20groups%3Dnp.array(%5B0%2C%200%5D)%2C%20train_texts%3Dtexts)%0A274.4s%2085%20~~~~~~~~~~~%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%0A274.4s%2086%20File%20%22%2Fusr%2Flocal%2Flib%2Fpython3.13%2Fdist-packages%2Ftorch%2Futils%2F_contextlib.py%22%2C%20line%20124%2C%20in%20decorate_context%0A274.4s%2087%20return%20func(*args%2C%20**kwargs)%0A274.4s%2088%20File%20%22%3Cactual-r18-l24%3E%22%2C%20line%20365%2C%20in%20l24_predict%0A274.4s%2089%20File%20%22%2Fkaggle%2Fworking%2Fr18_contract.py%22%2C%20line%2074%2C%20in%20loaded%0A274.4s%2090%20digest.update(flat%5Bindexes%5D.float().cpu().numpy().tobytes())%0A274.4s%2091%20~~~~~~~~~~~~~~~~~~~~~~~~~%5E%5E%0A274.4s%2092%20torch.AcceleratorError%3A%20CUDA%20error%3A%20device-side%20assert%20triggered%0A274.4s%2093%20Search%20for%20%60cudaErrorAssert'%20in%20https%3A%2F%2Fdocs.nvidia.com%2Fcuda%2Fcuda-runtime-api%2Fgroup__CUDART__TYPES.html%20for%20more%20information.%0A274.4s%2094%20CUDA%20kernel%20errors%20might%20be%20asynchronously%20reported%20at%20some%20other%20API%20call%2C%20so%20the%20stacktrace%20below%20might%20be%20incorrect.%0A274.4s%2095%20For%20debugging%20consider%20passing%20CUDA_LAUNCH_BLOCKING%3D1%0A274.4s%2096%20Compile%20with%20%60TORCH_USE_CUDA_DSA%60%20to%20enable%20device-side%20assertions.%0A274.4s%2097%20%0A274.4s%2098%20%0A274.8s%2099%20Traceback%20(most%20recent%20call%20last)%3A%0A274.8s%20100%20File%20%22%3Cstring%3E%22%2C%20line%201%2C%20in%20%3Cmodule%3E%0A274.8s%20101%20import%20sys%3Bimport%20papermill%20as%20pm%3Bpm.execute_notebook(%22__notebook__.ipynb%22%2C%22__notebook__.ipynb%22%2Cprogress_bar%3DFalse%2Clog_output%3DTrue%2Cstdout_file%3Dsys.stdout%2Cstderr_file%3Dsys.stderr%2Callow_errors%3DFalse%2Ctimeout%3D43200)%0A274.8s%20102%20~~~~~~~~~~~~~~~~~~~%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%0A274.8s%20103%20File%20%22%2Fusr%2Flocal%2Flib%2Fpython3.13%2Fdist-packages%2Fpapermill%2Fexecute.py%22%2C%20line%20131%2C%20in%20execute_notebook%0A274.8s%20104%20raise_for_execution_errors(nb%2C%20output_path)%0A274.8s%20105%20~~~~~~~~~~~~~~~~~~~~~~~~~~%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%5E%0A274.8s%20106%20File%20%22%2Fusr%2Flocal%2Flib%2Fpython3.13%2Fdist-packages%2Fpapermill%2Fexecute.py%22%2C%20line%20251%2C%20in%20raise_for_execution_errors%0A274.8s%20107%20raise%20error%0A274.8s%20108%20papermill.exceptions.PapermillExecutionError%3A%0A274.8s%20109%20---------------------------------------------------------------------------%0A274.8s%20110%20Exception%20encountered%20at%20%22In%20%5B9%5D%22%3A%0A274.8s%20111%20---------------------------------------------------------------------------%0A274.8s%20112%20CalledProcessError%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Traceback%20(most%20recent%20call%20last)%0A274.8s%20113%20%2Ftmp%2Fipykernel_22%2F2641644225.py%20in%20%3Ccell%20line%3A%200%3E()%0A274.8s%20114%2033%20%20%20%20%20with%20open('%2Fkaggle%2Fworking%2Fr18_preflight_specs.json'%2C%20'w')%20as%20_f%3A%0A274.8s%20115%2034%20%20%20%20%20%20%20%20%20json.dump(%7B'specs'%3A%20MODELS%5B%3A2%5D%2C%20'labels'%3A%20_R14_LABELS%7D%2C%20_f)%0A274.8s%20116%20---%3E%2035%20%20%20%20%20run_logged(%5Bsys.executable%2C%20'r18_preflight.py'%5D%2C%20'%2Fkaggle%2Fworking%2Fr18_preflight.log'%2C%20remaining_seconds(R18_START%2C%20900))%0A274.8s%20117%2036%20%20%20%20%20_r14placeholder%20%3D%20_r14pd.DataFrame(%7B'id'%3A%20_R14_TEST%5B'id'%5D%2C%20'model'%3A%20_R14_LABELS%5B0%5D%7D)%0A274.8s%20118%2037%20%20%20%20%20_r14_validate_submission(_r14placeholder%2C%20_R14_TEST%5B'id'%5D.astype(str).tolist())%0A274.8s%20119%20%0A274.8s%20120%20%2Fkaggle%2Fworking%2Fr18_contract.py%20in%20run_logged(command%2C%20log_path%2C%20timeout)%0A274.8s%20121%2024%20%20%20%20%20try%3A%0A274.8s%20122%2025%20%20%20%20%20%20%20%20%20with%20path.open('w'%2C%20encoding%3D'utf-8')%20as%20handle%3A%0A274.8s%20123%20---%3E%2026%20%20%20%20%20%20%20%20%20%20%20%20%20subprocess.run(command%2C%20check%3DTrue%2C%20stdout%3Dhandle%2C%20stderr%3Dsubprocess.STDOUT%2C%20timeout%3Dtimeout%2C%20text%3DTrue)%0A274.8s%20124%2027%20%20%20%20%20finally%3A%0A274.8s%20125%2028%20%20%20%20%20%20%20%20%20if%20path.exists()%3A%0A274.8s%20126%20%0A274.8s%20127%20%2Fusr%2Flib%2Fpython3.13%2Fsubprocess.py%20in%20run(input%2C%20capture_output%2C%20timeout%2C%20check%2C%20*popenargs%2C%20**kwargs)%0A274.8s%20128%20575%20%20%20%20%20%20%20%20%20retcode%20%3D%20process.poll()%0A274.8s%20129%20576%20%20%20%20%20%20%20%20%20if%20check%20and%20retcode%3A%0A274.8s%20130%20--%3E%20577%20%20%20%20%20%20%20%20%20%20%20%20%20raise%20CalledProcessError(retcode%2C%20process.args%2C%0A274.8s%20131%20578%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20output%3Dstdout%2C%20stderr%3Dstderr)%0A274.8s%20132%20579%20%20%20%20%20return%20CompletedProcess(process.args%2C%20retcode%2C%20stdout%2C%20stderr)%0A274.8s%20133%20%0A274.8s%20134%20CalledProcessError%3A%20Command%20'%5B'%2Fusr%2Fbin%2Fpython3'%2C%20'r18_preflight.py'%5D'%20returned%20non-zero%20exit%20status%201.%0A274.8s%20135%20%0A277.0s%20136%20%2Fusr%2Flocal%2Flib%2Fpython3.13%2Fdist-packages%2Fmistune.py%3A435%3A%20SyntaxWarning%3A%20invalid%20escape%20sequence%20'%5C%7C'%0A277.0s%20137%20cells%5Bi%5D%5Bc%5D%20%3D%20re.sub('%5C%5C%5C%5C%5C%7C'%2C%20'%7C'%2C%20cell)%0A277.2s%20138%20%2Fusr%2Flocal%2Flib%2Fpython3.13%2Fdist-packages%2Fnbconvert%2Ffilters%2Ffilter_links.py%3A36%3A%20SyntaxWarning%3A%20invalid%20escape%20sequence%20'%5C_'%0A277.2s%20139%20text%20%3D%20re.sub(r'_'%2C%20'%5C_'%2C%20text)%20%23%20Escape%20underscores%20in%20display%20text%0A278.1s%20140%20%5BNbConvertApp%5D%20Converting%20notebook%20__notebook__.ipynb%20to%20notebook%0A278.2s%20141%20%5BNbConvertApp%5D%20Writing%20174932%20bytes%20to%20__notebook__.ipynb%0A280.8s%20142%20%5BNbConvertApp%5D%20Converting%20notebook%20__notebook__.ipynb%20to%20html%0A281.9s%20143%20%5BNbConvertApp%5D%20Writing%201094118%20bytes%20to%20__results__.html
+    - button "Download logs":
+      - generic: file_download
+      - generic: Download Logs
+  - generic: error
+  - heading "Version 1 failed to run after 282.5s" [level=5]
+  - generic: Accelerator
+  - paragraph: GPU T4 x2
+  - generic: Environment
+  - paragraph:
+    - link "Latest Container Image opens in new window":
+      - /url: https://gcr.io/kaggle-gpu-images/python@sha256:2757e0c7d1e0a9cb43da657b97e223c321a98f5014bdf64f44f2f6b083ad2b2f
+      - text: Latest Container Image
+    - button
+  - generic: Output
+  - paragraph: 876.62 MB
+  - separator
+  - table:
+    - rowgroup:
+      - 'row "Time # Log Message"':
+        - columnheader "Time":
+          - generic: Time
+        - columnheader "#":
+          - generic: "#"
+        - columnheader "Log Message":
+          - generic: Log Message
+    - rowgroup:
+      - 'row "10.2s 1 /usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future."':
+        - cell "10.2s"
+        - cell "1"
+        - 'cell "/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future."'
+      - row "10.2s 2 _validate(nbdict, ref, version, version_minor, relax_add_props)":
+        - cell "10.2s"
+        - cell "2"
+        - cell "_validate(nbdict, ref, version, version_minor, relax_add_props)"
+      - 'row "11.7s 3 0.00s - Debugger warning: It seems that frozen modules are being used, which may"':
+        - cell "11.7s"
+        - cell "3"
+        - 'cell "0.00s - Debugger warning: It seems that frozen modules are being used, which may"'
+      - row "11.7s 4 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off":
+        - cell "11.7s"
+        - cell "4"
+        - cell "0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off"
+      - row "11.7s 5 0.00s - to python to disable frozen modules.":
+        - cell "11.7s"
+        - cell "5"
+        - cell "0.00s - to python to disable frozen modules."
+      - 'row "11.7s 6 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation."':
+        - cell "11.7s"
+        - cell "6"
+        - 'cell "0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation."'
+      - 'row "12.5s 7 0.00s - Debugger warning: It seems that frozen modules are being used, which may"':
+        - cell "12.5s"
+        - cell "7"
+        - 'cell "0.00s - Debugger warning: It seems that frozen modules are being used, which may"'
+      - row "12.5s 8 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off":
+        - cell "12.5s"
+        - cell "8"
+        - cell "0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off"
+      - row "12.5s 9 0.00s - to python to disable frozen modules.":
+        - cell "12.5s"
+        - cell "9"
+        - cell "0.00s - to python to disable frozen modules."
+      - 'row "12.5s 10 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation."':
+        - cell "12.5s"
+        - cell "10"
+        - 'cell "0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation."'
+      - 'row "15.5s 11 R14 competition rerun: False ; test rows: 3"':
+        - cell "15.5s"
+        - cell "11"
+        - 'cell "R14 competition rerun: False ; test rows: 3"'
+      - row "15.5s 12 Writing r18_preflight.py":
+        - cell "15.5s"
+        - cell "12"
+        - cell "Writing r18_preflight.py"
+      - row "15.5s 13 Writing r18_contract.py":
+        - cell "15.5s"
+        - cell "13"
+        - cell "Writing r18_contract.py"
+      - row "30.0s 14 0":
+        - cell "30.0s"
+        - cell "14"
+        - cell "0"
+      - row "65.7s 15 atlas /kaggle/input/datasets/josephadamski91/ntl-atlas-qwen3-8b-v1/atlas_adapter/atlas_adapter":
+        - cell "65.7s"
+        - cell "15"
+        - cell "atlas /kaggle/input/datasets/josephadamski91/ntl-atlas-qwen3-8b-v1/atlas_adapter/atlas_adapter"
+      - row "98.4s 16 part two /kaggle/input/datasets/nishantdahal/ntl-handwriting-blend/lora_qwen3_14b 27 [2, 4, 6, 9, 13, 17, 22, 27] 151643 /kaggle/input/datasets/nishantdahal/ntl-handwriting-blend/lora_qwen25_14b 32 [3, 5, 8, 11, 16, 21, 27, 32] /kaggle/working/deberta_v3_large":
+        - cell "98.4s"
+        - cell "16"
+        - cell "part two /kaggle/input/datasets/nishantdahal/ntl-handwriting-blend/lora_qwen3_14b 27 [2, 4, 6, 9, 13, 17, 22, 27] 151643 /kaggle/input/datasets/nishantdahal/ntl-handwriting-blend/lora_qwen25_14b 32 [3, 5, 8, 11, 16, 21, 27, 32] /kaggle/working/deberta_v3_large"
+      - row "137.4s 17 q8v5 ['/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f0', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f1', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f2', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f3', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f4', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5']":
+        - cell "137.4s"
+        - cell "17"
+        - cell "q8v5 ['/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f0', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f1', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f2', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f3', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f4', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5']"
+      - row "171.9s 18 Writing gauss.py":
+        - cell "171.9s"
+        - cell "18"
+        - cell "Writing gauss.py"
+      - row "171.9s 19 Writing infer.py":
+        - cell "171.9s"
+        - cell "19"
+        - cell "Writing infer.py"
+      - row "172.0s 20 Writing comp_stack.py":
+        - cell "172.0s"
+        - cell "20"
+        - cell "Writing comp_stack.py"
+      - row "172.0s 21 R18 starting r18_preflight.py ; remaining seconds 742":
+        - cell "172.0s"
+        - cell "21"
+        - cell "R18 starting r18_preflight.py ; remaining seconds 742"
+      - 'row "274.4s 22 R18_LIFECYCLE {\"adapter\": \"q14v5_f0\", \"allocated\": [0, 0], \"event\": \"before_load\", \"family\": \"q14v5\"}"':
+        - cell "274.4s"
+        - cell "22"
+        - 'cell "R18_LIFECYCLE {\"adapter\": \"q14v5_f0\", \"allocated\": [0, 0], \"event\": \"before_load\", \"family\": \"q14v5\"}"'
+      - row "274.4s 23":
+        - cell "274.4s"
+        - cell "23"
+        - cell
+      - 'row "274.4s 24 Loading weights: 0%| | 0/299 [00:00<?, ?it/s]"':
+        - cell "274.4s"
+        - cell "24"
+        - 'cell "Loading weights: 0%| | 0/299 [00:00<?, ?it/s]"'
+      - 'row "274.4s 25 Loading weights: 0%| | 1/299 [00:11<58:17, 11.74s/it]"':
+        - cell "274.4s"
+        - cell "25"
+        - 'cell "Loading weights: 0%| | 1/299 [00:11<58:17, 11.74s/it]"'
+      - 'row "274.4s 26 Loading weights: 23%|██▎ | 69/299 [00:12<00:28, 7.99it/s]"':
+        - cell "274.4s"
+        - cell "26"
+        - 'cell "Loading weights: 23%|██▎ | 69/299 [00:12<00:28, 7.99it/s]"'
+      - 'row "274.4s 27 Loading weights: 29%|██▉ | 87/299 [00:13<00:24, 8.53it/s]"':
+        - cell "274.4s"
+        - cell "27"
+        - 'cell "Loading weights: 29%|██▉ | 87/299 [00:13<00:24, 8.53it/s]"'
+      - 'row "274.4s 28 Loading weights: 32%|███▏ | 95/299 [00:15<00:25, 8.03it/s]"':
+        - cell "274.4s"
+        - cell "28"
+        - 'cell "Loading weights: 32%|███▏ | 95/299 [00:15<00:25, 8.03it/s]"'
+      - 'row "274.4s 29 Loading weights: 34%|███▍ | 102/299 [00:16<00:24, 8.09it/s]"':
+        - cell "274.4s"
+        - cell "29"
+        - 'cell "Loading weights: 34%|███▍ | 102/299 [00:16<00:24, 8.09it/s]"'
+      - 'row "274.4s 30 Loading weights: 35%|███▌ | 106/299 [00:16<00:23, 8.28it/s]"':
+        - cell "274.4s"
+        - cell "30"
+        - 'cell "Loading weights: 35%|███▌ | 106/299 [00:16<00:23, 8.28it/s]"'
+      - 'row "274.4s 31 Loading weights: 38%|███▊ | 113/299 [00:17<00:24, 7.61it/s]"':
+        - cell "274.4s"
+        - cell "31"
+        - 'cell "Loading weights: 38%|███▊ | 113/299 [00:17<00:24, 7.61it/s]"'
+      - 'row "274.4s 32 Loading weights: 41%|████▏ | 124/299 [00:18<00:21, 8.01it/s]"':
+        - cell "274.4s"
+        - cell "32"
+        - 'cell "Loading weights: 41%|████▏ | 124/299 [00:18<00:21, 8.01it/s]"'
+      - 'row "274.4s 33 Loading weights: 42%|████▏ | 126/299 [00:18<00:20, 8.25it/s]"':
+        - cell "274.4s"
+        - cell "33"
+        - 'cell "Loading weights: 42%|████▏ | 126/299 [00:18<00:20, 8.25it/s]"'
+      - 'row "274.4s 34 Loading weights: 45%|████▌ | 135/299 [00:19<00:19, 8.55it/s]"':
+        - cell "274.4s"
+        - cell "34"
+        - 'cell "Loading weights: 45%|████▌ | 135/299 [00:19<00:19, 8.55it/s]"'
+      - 'row "274.4s 35 Loading weights: 46%|████▌ | 137/299 [00:20<00:19, 8.17it/s]"':
+        - cell "274.4s"
+        - cell "35"
+        - 'cell "Loading weights: 46%|████▌ | 137/299 [00:20<00:19, 8.17it/s]"'
+      - 'row "274.4s 36 Loading weights: 49%|████▉ | 146/299 [00:21<00:18, 8.26it/s]"':
+        - cell "274.4s"
+        - cell "36"
+        - 'cell "Loading weights: 49%|████▉ | 146/299 [00:21<00:18, 8.26it/s]"'
+      - 'row "274.4s 37 Loading weights: 49%|████▉ | 148/299 [00:21<00:17, 8.53it/s]"':
+        - cell "274.4s"
+        - cell "37"
+        - 'cell "Loading weights: 49%|████▉ | 148/299 [00:21<00:17, 8.53it/s]"'
+      - 'row "274.4s 38 Loading weights: 53%|█████▎ | 157/299 [00:22<00:18, 7.70it/s]"':
+        - cell "274.4s"
+        - cell "38"
+        - 'cell "Loading weights: 53%|█████▎ | 157/299 [00:22<00:18, 7.70it/s]"'
+      - 'row "274.4s 39 Loading weights: 56%|█████▌ | 168/299 [00:23<00:14, 8.95it/s]"':
+        - cell "274.4s"
+        - cell "39"
+        - 'cell "Loading weights: 56%|█████▌ | 168/299 [00:23<00:14, 8.95it/s]"'
+      - 'row "274.4s 40 Loading weights: 57%|█████▋ | 169/299 [00:24<00:15, 8.55it/s]"':
+        - cell "274.4s"
+        - cell "40"
+        - 'cell "Loading weights: 57%|█████▋ | 169/299 [00:24<00:15, 8.55it/s]"'
+      - 'row "274.4s 41 Loading weights: 60%|█████▉ | 179/299 [00:25<00:14, 8.36it/s]"':
+        - cell "274.4s"
+        - cell "41"
+        - 'cell "Loading weights: 60%|█████▉ | 179/299 [00:25<00:14, 8.36it/s]"'
+      - 'row "274.4s 42 Loading weights: 61%|██████ | 181/299 [00:25<00:13, 8.64it/s]"':
+        - cell "274.4s"
+        - cell "42"
+        - 'cell "Loading weights: 61%|██████ | 181/299 [00:25<00:13, 8.64it/s]"'
+      - 'row "274.4s 43 Loading weights: 64%|██████▎ | 190/299 [00:26<00:12, 8.62it/s]"':
+        - cell "274.4s"
+        - cell "43"
+        - 'cell "Loading weights: 64%|██████▎ | 190/299 [00:26<00:12, 8.62it/s]"'
+      - 'row "274.4s 44 Loading weights: 64%|██████▍ | 191/299 [00:26<00:12, 8.40it/s]"':
+        - cell "274.4s"
+        - cell "44"
+        - 'cell "Loading weights: 64%|██████▍ | 191/299 [00:26<00:12, 8.40it/s]"'
+      - 'row "274.4s 45 Loading weights: 64%|██████▍ | 192/299 [00:26<00:12, 8.25it/s]"':
+        - cell "274.4s"
+        - cell "45"
+        - 'cell "Loading weights: 64%|██████▍ | 192/299 [00:26<00:12, 8.25it/s]"'
+      - 'row "274.4s 46 Loading weights: 67%|██████▋ | 201/299 [00:27<00:11, 8.30it/s]"':
+        - cell "274.4s"
+        - cell "46"
+        - 'cell "Loading weights: 67%|██████▋ | 201/299 [00:27<00:11, 8.30it/s]"'
+      - 'row "274.4s 47 Loading weights: 68%|██████▊ | 203/299 [00:28<00:11, 8.61it/s]"':
+        - cell "274.4s"
+        - cell "47"
+        - 'cell "Loading weights: 68%|██████▊ | 203/299 [00:28<00:11, 8.61it/s]"'
+      - 'row "274.4s 48 Loading weights: 71%|███████ | 212/299 [00:29<00:10, 7.95it/s]"':
+        - cell "274.4s"
+        - cell "48"
+        - 'cell "Loading weights: 71%|███████ | 212/299 [00:29<00:10, 7.95it/s]"'
+      - 'row "274.4s 49 Loading weights: 75%|███████▍ | 223/299 [00:30<00:08, 8.45it/s]"':
+        - cell "274.4s"
+        - cell "49"
+        - 'cell "Loading weights: 75%|███████▍ | 223/299 [00:30<00:08, 8.45it/s]"'
+      - 'row "274.4s 50 Loading weights: 75%|███████▍ | 224/299 [00:30<00:09, 8.01it/s]"':
+        - cell "274.4s"
+        - cell "50"
+        - 'cell "Loading weights: 75%|███████▍ | 224/299 [00:30<00:09, 8.01it/s]"'
+      - 'row "274.4s 51 Loading weights: 78%|███████▊ | 234/299 [00:31<00:07, 8.87it/s]"':
+        - cell "274.4s"
+        - cell "51"
+        - 'cell "Loading weights: 78%|███████▊ | 234/299 [00:31<00:07, 8.87it/s]"'
+      - 'row "274.4s 52 Loading weights: 79%|███████▉ | 236/299 [00:32<00:07, 8.36it/s]"':
+        - cell "274.4s"
+        - cell "52"
+        - 'cell "Loading weights: 79%|███████▉ | 236/299 [00:32<00:07, 8.36it/s]"'
+      - 'row "274.4s 53 Loading weights: 82%|████████▏ | 245/299 [00:33<00:06, 8.38it/s]"':
+        - cell "274.4s"
+        - cell "53"
+        - 'cell "Loading weights: 82%|████████▏ | 245/299 [00:33<00:06, 8.38it/s]"'
+      - 'row "274.4s 54 Loading weights: 86%|████████▌ | 256/299 [00:34<00:05, 8.41it/s]"':
+        - cell "274.4s"
+        - cell "54"
+        - 'cell "Loading weights: 86%|████████▌ | 256/299 [00:34<00:05, 8.41it/s]"'
+      - 'row "274.4s 55 Loading weights: 86%|████████▋ | 258/299 [00:34<00:04, 8.79it/s]"':
+        - cell "274.4s"
+        - cell "55"
+        - 'cell "Loading weights: 86%|████████▋ | 258/299 [00:34<00:04, 8.79it/s]"'
+      - 'row "274.4s 56 Loading weights: 89%|████████▉ | 267/299 [00:35<00:03, 8.52it/s]"':
+        - cell "274.4s"
+        - cell "56"
+        - 'cell "Loading weights: 89%|████████▉ | 267/299 [00:35<00:03, 8.52it/s]"'
+      - 'row "274.4s 57 Loading weights: 90%|████████▉ | 268/299 [00:35<00:03, 8.16it/s]"':
+        - cell "274.4s"
+        - cell "57"
+        - 'cell "Loading weights: 90%|████████▉ | 268/299 [00:35<00:03, 8.16it/s]"'
+      - 'row "274.4s 58 Loading weights: 90%|████████▉ | 269/299 [00:35<00:03, 8.18it/s]"':
+        - cell "274.4s"
+        - cell "58"
+        - 'cell "Loading weights: 90%|████████▉ | 269/299 [00:35<00:03, 8.18it/s]"'
+      - 'row "274.4s 59 Loading weights: 93%|█████████▎| 278/299 [00:36<00:02, 8.64it/s]"':
+        - cell "274.4s"
+        - cell "59"
+        - 'cell "Loading weights: 93%|█████████▎| 278/299 [00:36<00:02, 8.64it/s]"'
+      - 'row "274.4s 60 Loading weights: 94%|█████████▎| 280/299 [00:37<00:02, 8.46it/s]"':
+        - cell "274.4s"
+        - cell "60"
+        - 'cell "Loading weights: 94%|█████████▎| 280/299 [00:37<00:02, 8.46it/s]"'
+      - 'row "274.4s 61 Loading weights: 97%|█████████▋| 289/299 [00:38<00:01, 8.31it/s]"':
+        - cell "274.4s"
+        - cell "61"
+        - 'cell "Loading weights: 97%|█████████▋| 289/299 [00:38<00:01, 8.31it/s]"'
+      - 'row "274.4s 62 Loading weights: 100%|██████████| 299/299 [00:38<00:00, 7.78it/s]"':
+        - cell "274.4s"
+        - cell "62"
+        - 'cell "Loading weights: 100%|██████████| 299/299 [00:38<00:00, 7.78it/s]"'
+      - 'row "274.4s 63 [transformers] \u001b[1mQwen3Model LOAD REPORT\u001b[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1"':
+        - cell "274.4s"
+        - cell "63"
+        - 'cell "[transformers] \u001b[1mQwen3Model LOAD REPORT\u001b[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1"'
+      - row "274.4s 64 Key | Status | |":
+        - cell "274.4s"
+        - cell "64"
+        - cell "Key | Status | |"
+      - row "274.4s 65 -------------------------------------------------------+------------+--+-":
+        - cell "274.4s"
+        - cell "65"
+        - cell "-------------------------------------------------------+------------+--+-"
+      - 'row "274.4s 66 model.layers.{27...39}.input_layernorm.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "66"
+        - 'cell "model.layers.{27...39}.input_layernorm.weight | UNEXPECTED | |"'
+      - 'row "274.4s 67 model.layers.{27...39}.mlp.gate_proj.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "67"
+        - 'cell "model.layers.{27...39}.mlp.gate_proj.weight | UNEXPECTED | |"'
+      - 'row "274.4s 68 model.layers.{27...39}.self_attn.k_proj.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "68"
+        - 'cell "model.layers.{27...39}.self_attn.k_proj.weight | UNEXPECTED | |"'
+      - 'row "274.4s 69 model.layers.{27...39}.self_attn.q_proj.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "69"
+        - 'cell "model.layers.{27...39}.self_attn.q_proj.weight | UNEXPECTED | |"'
+      - 'row "274.4s 70 model.layers.{27...39}.mlp.up_proj.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "70"
+        - 'cell "model.layers.{27...39}.mlp.up_proj.weight | UNEXPECTED | |"'
+      - 'row "274.4s 71 model.layers.{27...39}.mlp.down_proj.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "71"
+        - 'cell "model.layers.{27...39}.mlp.down_proj.weight | UNEXPECTED | |"'
+      - 'row "274.4s 72 model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "72"
+        - 'cell "model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED | |"'
+      - 'row "274.4s 73 model.layers.{27...39}.self_attn.q_norm.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "73"
+        - 'cell "model.layers.{27...39}.self_attn.q_norm.weight | UNEXPECTED | |"'
+      - 'row "274.4s 74 model.layers.{27...39}.self_attn.k_norm.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "74"
+        - 'cell "model.layers.{27...39}.self_attn.k_norm.weight | UNEXPECTED | |"'
+      - 'row "274.4s 75 model.layers.{27...39}.self_attn.v_proj.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "75"
+        - 'cell "model.layers.{27...39}.self_attn.v_proj.weight | UNEXPECTED | |"'
+      - 'row "274.4s 76 model.layers.{27...39}.self_attn.o_proj.weight | UNEXPECTED | |"':
+        - cell "274.4s"
+        - cell "76"
+        - 'cell "model.layers.{27...39}.self_attn.o_proj.weight | UNEXPECTED | |"'
+      - row "274.4s 77 lm_head.weight | UNEXPECTED | |":
+        - cell "274.4s"
+        - cell "77"
+        - cell "lm_head.weight | UNEXPECTED | |"
+      - row "274.4s 78":
+        - cell "274.4s"
+        - cell "78"
+        - cell
+      - row "274.4s 79 Notes:":
+        - cell "274.4s"
+        - cell "79"
+        - cell "Notes:"
+      - 'row "274.4s 80 - UNEXPECTED: can be ignored when loading from different task/architecture; not ok if you expect identical arch."':
+        - cell "274.4s"
+        - cell "80"
+        - 'cell "- UNEXPECTED: can be ignored when loading from different task/architecture; not ok if you expect identical arch."'
+      - 'row "274.4s 81 /pytorch/aten/src/ATen/native/cuda/IndexKernel.cu:111: operator(): block: [0,0,0], thread: [63,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && \"index out of bounds\"` failed."':
+        - cell "274.4s"
+        - cell "81"
+        - 'cell "/pytorch/aten/src/ATen/native/cuda/IndexKernel.cu:111: operator(): block: [0,0,0], thread: [63,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && \"index out of bounds\"` failed."'
+      - row "274.4s 82 Traceback (most recent call last):":
+        - cell "274.4s"
+        - cell "82"
+        - cell "Traceback (most recent call last):"
+      - row "274.4s 83 File \"/kaggle/working/r18_preflight.py\", line 42, in <module>":
+        - cell "274.4s"
+        - cell "83"
+        - cell "File \"/kaggle/working/r18_preflight.py\", line 42, in <module>"
+      - row "274.4s 84 p, c, features = l24_predict(spec, texts, groups=np.array([0, 0]), train_texts=texts)":
+        - cell "274.4s"
+        - cell "84"
+        - cell "p, c, features = l24_predict(spec, texts, groups=np.array([0, 0]), train_texts=texts)"
+      - row "274.4s 85 ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^":
+        - cell "274.4s"
+        - cell "85"
+        - cell "~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+      - row "274.4s 86 File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context":
+        - cell "274.4s"
+        - cell "86"
+        - cell "File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context"
+      - row "274.4s 87 return func(*args, **kwargs)":
+        - cell "274.4s"
+        - cell "87"
+        - cell "return func(*args, **kwargs)"
+      - row "274.4s 88 File \"<actual-r18-l24>\", line 365, in l24_predict":
+        - cell "274.4s"
+        - cell "88"
+        - cell "File \"<actual-r18-l24>\", line 365, in l24_predict"
+      - row "274.4s 89 File \"/kaggle/working/r18_contract.py\", line 74, in loaded":
+        - cell "274.4s"
+        - cell "89"
+        - cell "File \"/kaggle/working/r18_contract.py\", line 74, in loaded"
+      - row "274.4s 90 digest.update(flat[indexes].float().cpu().numpy().tobytes())":
+        - cell "274.4s"
+        - cell "90"
+        - cell "digest.update(flat[indexes].float().cpu().numpy().tobytes())"
+      - row "274.4s 91 ~~~~~~~~~~~~~~~~~~~~~~~~~^^":
+        - cell "274.4s"
+        - cell "91"
+        - cell "~~~~~~~~~~~~~~~~~~~~~~~~~^^"
+      - 'row "274.4s 92 torch.AcceleratorError: CUDA error: device-side assert triggered"':
+        - cell "274.4s"
+        - cell "92"
+        - 'cell "torch.AcceleratorError: CUDA error: device-side assert triggered"'
+      - 'row "274.4s 93 Search for `cudaErrorAssert'' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information."':
+        - cell "274.4s"
+        - cell "93"
+        - 'cell "Search for `cudaErrorAssert'' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information."'
+      - row "274.4s 94 CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.":
+        - cell "274.4s"
+        - cell "94"
+        - cell "CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect."
+      - row "274.4s 95 For debugging consider passing CUDA_LAUNCH_BLOCKING=1":
+        - cell "274.4s"
+        - cell "95"
+        - cell "For debugging consider passing CUDA_LAUNCH_BLOCKING=1"
+      - 'row "274.4s 96 Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions."':
+        - cell "274.4s"
+        - cell "96"
+        - 'cell "Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions."'
+      - row "274.4s 97":
+        - cell "274.4s"
+        - cell "97"
+        - cell
+      - row "274.4s 98":
+        - cell "274.4s"
+        - cell "98"
+        - cell
+      - row "274.8s 99 Traceback (most recent call last):":
+        - cell "274.8s"
+        - cell "99"
+        - cell "Traceback (most recent call last):"
+      - row "274.8s 100 File \"<string>\", line 1, in <module>":
+        - cell "274.8s"
+        - cell "100"
+        - cell "File \"<string>\", line 1, in <module>"
+      - row "274.8s 101 import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)":
+        - cell "274.8s"
+        - cell "101"
+        - cell "import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)"
+      - row "274.8s 102 ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^":
+        - cell "274.8s"
+        - cell "102"
+        - cell "~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+      - row "274.8s 103 File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook":
+        - cell "274.8s"
+        - cell "103"
+        - cell "File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook"
+      - row "274.8s 104 raise_for_execution_errors(nb, output_path)":
+        - cell "274.8s"
+        - cell "104"
+        - cell "raise_for_execution_errors(nb, output_path)"
+      - row "274.8s 105 ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^":
+        - cell "274.8s"
+        - cell "105"
+        - cell "~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^"
+      - row "274.8s 106 File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors":
+        - cell "274.8s"
+        - cell "106"
+        - cell "File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors"
+      - row "274.8s 107 raise error":
+        - cell "274.8s"
+        - cell "107"
+        - cell "raise error"
+      - row "274.8s 108 papermill.exceptions.PapermillExecutionError:":
+        - cell "274.8s"
+        - cell "108"
+        - cell "papermill.exceptions.PapermillExecutionError:"
+      - row "274.8s 109 ---------------------------------------------------------------------------":
+        - cell "274.8s"
+        - cell "109"
+        - cell "---------------------------------------------------------------------------"
+      - row "274.8s 110 Exception encountered at \"In [9]\":":
+        - cell "274.8s"
+        - cell "110"
+        - cell "Exception encountered at \"In [9]\":"
+      - row "274.8s 111 ---------------------------------------------------------------------------":
+        - cell "274.8s"
+        - cell "111"
+        - cell "---------------------------------------------------------------------------"
+      - row "274.8s 112 CalledProcessError Traceback (most recent call last)":
+        - cell "274.8s"
+        - cell "112"
+        - cell "CalledProcessError Traceback (most recent call last)"
+      - 'row "274.8s 113 /tmp/ipykernel_22/2641644225.py in <cell line: 0>()"':
+        - cell "274.8s"
+        - cell "113"
+        - 'cell "/tmp/ipykernel_22/2641644225.py in <cell line: 0>()"'
+      - row "274.8s 114 33 with open('/kaggle/working/r18_preflight_specs.json', 'w') as _f:":
+        - cell "274.8s"
+        - cell "114"
+        - cell "33 with open('/kaggle/working/r18_preflight_specs.json', 'w') as _f:"
+      - 'row "274.8s 115 34 json.dump({''specs'': MODELS[:2], ''labels'': _R14_LABELS}, _f)"':
+        - cell "274.8s"
+        - cell "115"
+        - 'cell "34 json.dump({''specs'': MODELS[:2], ''labels'': _R14_LABELS}, _f)"'
+      - row "274.8s 116 ---> 35 run_logged([sys.executable, 'r18_preflight.py'], '/kaggle/working/r18_preflight.log', remaining_seconds(R18_START, 900))":
+        - cell "274.8s"
+        - cell "116"
+        - cell "---> 35 run_logged([sys.executable, 'r18_preflight.py'], '/kaggle/working/r18_preflight.log', remaining_seconds(R18_START, 900))"
+      - 'row "274.8s 117 36 _r14placeholder = _r14pd.DataFrame({''id'': _R14_TEST[''id''], ''model'': _R14_LABELS[0]})"':
+        - cell "274.8s"
+        - cell "117"
+        - 'cell "36 _r14placeholder = _r14pd.DataFrame({''id'': _R14_TEST[''id''], ''model'': _R14_LABELS[0]})"'
+      - row "274.8s 118 37 _r14_validate_submission(_r14placeholder, _R14_TEST['id'].astype(str).tolist())":
+        - cell "274.8s"
+        - cell "118"
+        - cell "37 _r14_validate_submission(_r14placeholder, _R14_TEST['id'].astype(str).tolist())"
+      - row "274.8s 119":
+        - cell "274.8s"
+        - cell "119"
+        - cell
+      - row "274.8s 120 /kaggle/working/r18_contract.py in run_logged(command, log_path, timeout)":
+        - cell "274.8s"
+        - cell "120"
+        - cell "/kaggle/working/r18_contract.py in run_logged(command, log_path, timeout)"
+      - row "274.8s 121 24 try:":
+        - cell "274.8s"
+        - cell "121"
+        - cell "24 try:"
+      - row "274.8s 122 25 with path.open('w', encoding='utf-8') as handle:":
+        - cell "274.8s"
+        - cell "122"
+        - cell "25 with path.open('w', encoding='utf-8') as handle:"
+      - row "274.8s 123 ---> 26 subprocess.run(command, check=True, stdout=handle, stderr=subprocess.STDOUT, timeout=timeout, text=True)":
+        - cell "274.8s"
+        - cell "123"
+        - cell "---> 26 subprocess.run(command, check=True, stdout=handle, stderr=subprocess.STDOUT, timeout=timeout, text=True)"
+      - row "274.8s 124 27 finally:":
+        - cell "274.8s"
+        - cell "124"
+        - cell "27 finally:"
+      - row "274.8s 125 28 if path.exists():":
+        - cell "274.8s"
+        - cell "125"
+        - cell "28 if path.exists():"
+      - row "274.8s 126":
+        - cell "274.8s"
+        - cell "126"
+        - cell
+      - row "274.8s 127 /usr/lib/python3.13/subprocess.py in run(input, capture_output, timeout, check, *popenargs, **kwargs)":
+        - cell "274.8s"
+        - cell "127"
+        - cell "/usr/lib/python3.13/subprocess.py in run(input, capture_output, timeout, check, *popenargs, **kwargs)"
+      - row "274.8s 128 575 retcode = process.poll()":
+        - cell "274.8s"
+        - cell "128"
+        - cell "575 retcode = process.poll()"
+      - row "274.8s 129 576 if check and retcode:":
+        - cell "274.8s"
+        - cell "129"
+        - cell "576 if check and retcode:"
+      - row "274.8s 130 --> 577 raise CalledProcessError(retcode, process.args,":
+        - cell "274.8s"
+        - cell "130"
+        - cell "--> 577 raise CalledProcessError(retcode, process.args,"
+      - row "274.8s 131 578 output=stdout, stderr=stderr)":
+        - cell "274.8s"
+        - cell "131"
+        - cell "578 output=stdout, stderr=stderr)"
+      - row "274.8s 132 579 return CompletedProcess(process.args, retcode, stdout, stderr)":
+        - cell "274.8s"
+        - cell "132"
+        - cell "579 return CompletedProcess(process.args, retcode, stdout, stderr)"
+      - row "274.8s 133":
+        - cell "274.8s"
+        - cell "133"
+        - cell
+      - 'row "274.8s 134 CalledProcessError: Command ''[''/usr/bin/python3'', ''r18_preflight.py'']'' returned non-zero exit status 1."':
+        - cell "274.8s"
+        - cell "134"
+        - 'cell "CalledProcessError: Command ''[''/usr/bin/python3'', ''r18_preflight.py'']'' returned non-zero exit status 1."'
+      - row "274.8s 135":
+        - cell "274.8s"
+        - cell "135"
+        - cell
+      - 'row "277.0s 136 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence ''\\|''"':
+        - cell "277.0s"
+        - cell "136"
+        - 'cell "/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence ''\\|''"'
+      - row "277.0s 137 cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)":
+        - cell "277.0s"
+        - cell "137"
+        - cell "cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)"
+      - 'row "277.2s 138 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence ''\\_''"':
+        - cell "277.2s"
+        - cell "138"
+        - 'cell "/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence ''\\_''"'
+      - 'row "277.2s 139 text = re.sub(r''_'', ''\\_'', text) # Escape underscores in display text"':
+        - cell "277.2s"
+        - cell "139"
+        - 'cell "text = re.sub(r''_'', ''\\_'', text) # Escape underscores in display text"'
+      - row "278.1s 140 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook":
+        - cell "278.1s"
+        - cell "140"
+        - cell "[NbConvertApp] Converting notebook __notebook__.ipynb to notebook"
+      - row "278.2s 141 [NbConvertApp] Writing 174932 bytes to __notebook__.ipynb":
+        - cell "278.2s"
+        - cell "141"
+        - cell "[NbConvertApp] Writing 174932 bytes to __notebook__.ipynb"
+      - row "280.8s 142 [NbConvertApp] Converting notebook __notebook__.ipynb to html":
+        - cell "280.8s"
+        - cell "142"
+        - cell "[NbConvertApp] Converting notebook __notebook__.ipynb to html"
+      - row "281.9s 143 [NbConvertApp] Writing 1094118 bytes to __results__.html":
+        - cell "281.9s"
+        - cell "143"
+        - cell "[NbConvertApp] Writing 1094118 bytes to __results__.html"
+- alert

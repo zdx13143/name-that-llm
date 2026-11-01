@@ -1,0 +1,21 @@
+{
+  "release_gate_passed": false,
+  "version": 2,
+  "scriptVersionId": 364615652,
+  "dataset_version_mismatches": [
+    {
+      "expected": "abdullah1afify/ntl-generations/4",
+      "actual": "abdullah1afify/ntl-generations/9"
+    },
+    {
+      "expected": "lucasboesen/ntl-free-proxy-generations/11",
+      "actual": "lucasboesen/ntl-free-proxy-generations/12"
+    }
+  ],
+  "inputs": 30,
+  "adapters_completed": 12,
+  "lifecycle_events": 36,
+  "preflight_seconds": 182.754358523,
+  "placeholder_rows": 3,
+  "formal_submissions": 0
+}
