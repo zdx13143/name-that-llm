@@ -1,0 +1,109 @@
+Browser tab: 1127719983, Title: "NTL R18 Adapter Isolation 20261101 | Kaggle", URL: "https://www.kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit".
+0 AXWebArea NTL R18 Adapter Isolation 20261101 | Kaggle, URL: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit
+	1 container
+		2 container root
+			3 container Main Kaggle page navigation
+				4 button Navigation menu
+				5 link Description: Skip to content, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit#site-content
+				6 pop up button (collapsed) Description: Create on Kaggle, Secondary Actions: Expand
+					7 text Create
+				8 container
+					9 container
+						10 content list
+							11 container Home List Item
+								12 link Description: Home, Value: kaggle.com/
+							13 container Competitions List Item
+								14 link Description: Competitions, Value: kaggle.com/competitions
+							15 container Benchmarks List Item
+								16 link Description: Benchmarks, Value: kaggle.com/benchmarks
+							17 container Arenas List Item
+								18 link Description: Arenas, Value: kaggle.com/arenas
+							19 container Game Arena List Item
+								20 link Description: Game Arena, Value: kaggle.com/game-arena
+						21 content list
+							22 container Data Hub List Item
+								23 link (collapsed) Description: Data Hub, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit#, Secondary Actions: Expand
+						24 content list
+							25 container More on Kaggle List Item
+								26 link (collapsed) Description: More on Kaggle, Value: kaggle.com/code/zephyrpong/ntl-r18-adapter-isolation-20261101/edit#, Secondary Actions: Expand
+					27 button (collapsed) Open Active Events dialog View Active Events, Secondary Actions: Expand
+						28 container Open Active Events dialog
+							29 text auto_awesome_motion
+						30 text View Active Events
+			31 container site-content
+				32 container
+					33 heading NTL R18 Adapter Isolation 20261101, Value: 1
+						34 container
+							35 text field (settable) Description: Title: NTL R18 Adapter Isolation 20261101, Value: NTL R18 Adapter Isolation 20261101, ID: notebook-title-input
+					36 text Draft saved
+					37 button File
+					38 button Edit
+					39 button View
+					40 button Run
+					41 button Settings
+					42 button Add-ons
+					43 button Help
+					44 button Share
+					45 button Save Version
+					46 button Description: Show Versions, ID: show-versions-button-trigger
+					47 button (disabled) Add cell
+					48 button Add cell options
+					49 button (disabled) Cut cell
+					50 button (disabled) Copy cell
+					51 button (disabled) Paste cell
+					52 button (disabled) Run current cell
+					53 button (disabled) Run All
+						54 text fast_forward
+						55 text Run All
+					56 button Show options
+					57 button Loading Editor Loading …
+						58 container Loading
+							59 text circle
+						60 text Editor
+						61 text Loading
+						62 text …
+					63 button (disabled) Start session
+					64 button (disabled) Factory reset
+					65 button (disabled) More settings
+					66 container
+						67 button Description: Open console, ID: frame-container-next-focus-element
+						68 button (disabled) Open command palette
+					69 button Expand Sidebar
+						70 container Expand Sidebar
+							71 text arrow_left
+		72 container New Notebook Import Notebook Download Notebook Link to Colab Open in Colab Link to GitHub Set as Utility Script Set as Benchmark Task Add input Upload input Editor Type Share Save Version Version history Rename Notebook Delete Notebook
+			73 container
+				74 New Notebook
+					75 text New Notebook
+				76 (disabled) Import Notebook
+					77 text Import Notebook
+				78 Download Notebook
+					79 text Download Notebook
+				80 Link to Colab
+					81 text Link to Colab
+				82 (disabled) Open in Colab
+					83 text Open in Colab
+				84 Link to GitHub
+					85 text Link to GitHub
+				86 Set as Utility Script
+					87 text Set as Utility Script
+				88 Set as Benchmark Task
+					89 text Set as Benchmark Task
+				90 (disabled) Add input
+					91 text Add input
+				92 Upload input
+					93 text Upload input
+				94 Editor Type
+					95 text Editor Type
+				96 Share
+					97 text Share
+				98 (disabled) Save Version
+					99 text Save Version
+				100 Version history
+					101 text Version history
+				102 Rename Notebook
+					103 text Rename Notebook
+				104 Delete Notebook
+					105 text Delete Notebook
+
+The focused UI element is 37 button File
