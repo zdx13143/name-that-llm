@@ -1,0 +1,15 @@
+--- a/scripts/r18_runtime_contract.py
++++ b/scripts/r18_runtime_contract.py
+@@ -70,7 +70,11 @@
+                 digest.update(name.encode())
+                 flat = param.detach().reshape(-1)
+                 count = min(64, flat.numel())
+-                indexes = self.torch.linspace(0, flat.numel() - 1, count, device=flat.device).long()
++                if count == 0:
++                    continue
++                indexes = self.torch.tensor(
++                    [i * (flat.numel() - 1) // max(count - 1, 1) for i in range(count)],
++                    dtype=self.torch.long, device=flat.device)
+                 digest.update(flat[indexes].float().cpu().numpy().tobytes())
+             sample = digest.hexdigest()
+             if self.fingerprint is not None and sample != self.fingerprint:

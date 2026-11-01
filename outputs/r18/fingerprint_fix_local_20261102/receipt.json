@@ -1,0 +1,65 @@
+{
+  "status": "original_failed_fixed_9_cases_passed_local_only",
+  "torch_version": "2.8.0+cu128",
+  "device": "cpu",
+  "default_dtype": "float32",
+  "original_error": "index 26214400 is out of bounds for dimension 0 with size 26214400",
+  "cases": [
+    {
+      "numel": 0,
+      "backing_bytes": 4,
+      "fingerprint_repeat_equal": true
+    },
+    {
+      "numel": 1,
+      "backing_bytes": 4,
+      "fingerprint_repeat_equal": true
+    },
+    {
+      "numel": 2,
+      "backing_bytes": 4,
+      "fingerprint_repeat_equal": true
+    },
+    {
+      "numel": 63,
+      "backing_bytes": 4,
+      "fingerprint_repeat_equal": true
+    },
+    {
+      "numel": 64,
+      "backing_bytes": 4,
+      "fingerprint_repeat_equal": true
+    },
+    {
+      "numel": 65,
+      "backing_bytes": 4,
+      "fingerprint_repeat_equal": true
+    },
+    {
+      "numel": 16777217,
+      "backing_bytes": 4,
+      "fingerprint_repeat_equal": true
+    },
+    {
+      "numel": 26214400,
+      "backing_bytes": 4,
+      "fingerprint_repeat_equal": true
+    },
+    {
+      "numel": 777912320,
+      "backing_bytes": 4,
+      "fingerprint_repeat_equal": true
+    }
+  ],
+  "source_sha256": "1e42dd18580a3229fa8081c895ec90a617253707997b437461bb167294987210",
+  "fixed_source_text_sha256": "fb5dbdf729d849f4187c1960df4a23dd7f542178de5d125fed3beebe4e0dea84",
+  "wall_seconds": 0.030999999959021807,
+  "real_models_loaded": 0,
+  "model_forwards": 0,
+  "gpu_operations": 0,
+  "official_data_accesses": 0,
+  "remote_retry": false,
+  "fix_applied_to_frozen_runtime": false,
+  "notebook_regenerated": false,
+  "limit": "CPU index reproduction only; corrected real GPU preflight remains untested"
+}

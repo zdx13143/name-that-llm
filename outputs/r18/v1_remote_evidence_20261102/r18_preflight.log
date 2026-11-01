@@ -1,0 +1,37 @@
+R18_LIFECYCLE {"adapter": "q14v5_f0", "allocated": [0, 0], "event": "before_load", "family": "q14v5"}
+Loading weights:   0%|          | 0/299 [00:00<?, ?it/s]Loading weights:   0%|          | 1/299 [00:11<58:17, 11.74s/it]Loading weights:  23%|██▎       | 69/299 [00:12<00:28,  7.99it/s]Loading weights:  29%|██▉       | 87/299 [00:13<00:24,  8.53it/s]Loading weights:  32%|███▏      | 95/299 [00:15<00:25,  8.03it/s]Loading weights:  34%|███▍      | 102/299 [00:16<00:24,  8.09it/s]Loading weights:  35%|███▌      | 106/299 [00:16<00:23,  8.28it/s]Loading weights:  38%|███▊      | 113/299 [00:17<00:24,  7.61it/s]Loading weights:  41%|████▏     | 124/299 [00:18<00:21,  8.01it/s]Loading weights:  42%|████▏     | 126/299 [00:18<00:20,  8.25it/s]Loading weights:  45%|████▌     | 135/299 [00:19<00:19,  8.55it/s]Loading weights:  46%|████▌     | 137/299 [00:20<00:19,  8.17it/s]Loading weights:  49%|████▉     | 146/299 [00:21<00:18,  8.26it/s]Loading weights:  49%|████▉     | 148/299 [00:21<00:17,  8.53it/s]Loading weights:  53%|█████▎    | 157/299 [00:22<00:18,  7.70it/s]Loading weights:  56%|█████▌    | 168/299 [00:23<00:14,  8.95it/s]Loading weights:  57%|█████▋    | 169/299 [00:24<00:15,  8.55it/s]Loading weights:  60%|█████▉    | 179/299 [00:25<00:14,  8.36it/s]Loading weights:  61%|██████    | 181/299 [00:25<00:13,  8.64it/s]Loading weights:  64%|██████▎   | 190/299 [00:26<00:12,  8.62it/s]Loading weights:  64%|██████▍   | 191/299 [00:26<00:12,  8.40it/s]Loading weights:  64%|██████▍   | 192/299 [00:26<00:12,  8.25it/s]Loading weights:  67%|██████▋   | 201/299 [00:27<00:11,  8.30it/s]Loading weights:  68%|██████▊   | 203/299 [00:28<00:11,  8.61it/s]Loading weights:  71%|███████   | 212/299 [00:29<00:10,  7.95it/s]Loading weights:  75%|███████▍  | 223/299 [00:30<00:08,  8.45it/s]Loading weights:  75%|███████▍  | 224/299 [00:30<00:09,  8.01it/s]Loading weights:  78%|███████▊  | 234/299 [00:31<00:07,  8.87it/s]Loading weights:  79%|███████▉  | 236/299 [00:32<00:07,  8.36it/s]Loading weights:  82%|████████▏ | 245/299 [00:33<00:06,  8.38it/s]Loading weights:  86%|████████▌ | 256/299 [00:34<00:05,  8.41it/s]Loading weights:  86%|████████▋ | 258/299 [00:34<00:04,  8.79it/s]Loading weights:  89%|████████▉ | 267/299 [00:35<00:03,  8.52it/s]Loading weights:  90%|████████▉ | 268/299 [00:35<00:03,  8.16it/s]Loading weights:  90%|████████▉ | 269/299 [00:35<00:03,  8.18it/s]Loading weights:  93%|█████████▎| 278/299 [00:36<00:02,  8.64it/s]Loading weights:  94%|█████████▎| 280/299 [00:37<00:02,  8.46it/s]Loading weights:  97%|█████████▋| 289/299 [00:38<00:01,  8.31it/s]Loading weights: 100%|██████████| 299/299 [00:38<00:00,  7.78it/s]
+[transformers] [1mQwen3Model LOAD REPORT[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1
+Key                                                    | Status     |  | 
+-------------------------------------------------------+------------+--+-
+model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | 
+model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | 
+model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | 
+model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | 
+lm_head.weight                                         | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/pytorch/aten/src/ATen/native/cuda/IndexKernel.cu:111: operator(): block: [0,0,0], thread: [63,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+Traceback (most recent call last):
+  File "/kaggle/working/r18_preflight.py", line 42, in <module>
+    p, c, features = l24_predict(spec, texts, groups=np.array([0, 0]), train_texts=texts)
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "<actual-r18-l24>", line 365, in l24_predict
+  File "/kaggle/working/r18_contract.py", line 74, in loaded
+    digest.update(flat[indexes].float().cpu().numpy().tobytes())
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+torch.AcceleratorError: CUDA error: device-side assert triggered
+Search for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

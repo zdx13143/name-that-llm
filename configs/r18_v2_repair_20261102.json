@@ -1,0 +1,20 @@
+{
+  "version_intended": 2,
+  "candidate": "notebooks/team_e659_r18_adapter_isolation_v2.ipynb",
+  "candidate_sha256": "867515c41bd5a7ceef51efb306ddc2235b3c4952ec915d26b41953f2cc20dc83",
+  "v1_candidate_preserved_sha256": "4c3eb9436f36af07aad55b92acaa9e1491aff3d352ee9fc78209c109851a735b",
+  "changed_cell_index": 4,
+  "change": "integer-safe sampled fingerprint indices; skip empty parameters",
+  "all_other_cells_exact": true,
+  "all_notebook_metadata_exact": true,
+  "external_metadata_changes": [
+    "code_file"
+  ],
+  "prediction_code_changes": 0,
+  "input_versions_changed": 0,
+  "preflight_budget_seconds": 900,
+  "save_attempts_max": 2,
+  "no_third_save": true,
+  "formal_submissions_max": 1,
+  "diagnostic_receipt": "outputs/r18/fingerprint_fix_local_20261102/receipt.json"
+}

@@ -1,0 +1,27 @@
+{"adapter": "artificial_parameter", "allocated": [], "event": "before_load", "family": "artificial"}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "0844df8fee9eeadaa344bc7e1a7ae769602eba35e773c2093c8fb9c3e5ead14e", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "0844df8fee9eeadaa344bc7e1a7ae769602eba35e773c2093c8fb9c3e5ead14e", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "event": "before_load", "family": "artificial"}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "b216fea82dac88536176384f2d15d100f9fa459c73c0ac9f8980e896a629687c", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "b216fea82dac88536176384f2d15d100f9fa459c73c0ac9f8980e896a629687c", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "event": "before_load", "family": "artificial"}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "3688caeed5ef2f3fff187085125374447bf1d45cd4c661645517e562c3783f97", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "3688caeed5ef2f3fff187085125374447bf1d45cd4c661645517e562c3783f97", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "event": "before_load", "family": "artificial"}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "229f8907266ad2c6721873cac2e602b3e9bc41ffb3cdba767e80371a2f07264e", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "229f8907266ad2c6721873cac2e602b3e9bc41ffb3cdba767e80371a2f07264e", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "event": "before_load", "family": "artificial"}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "607196f552bc99698f3e6c48be04d08a77c5af1aceecdb658e5f29fcff047340", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "607196f552bc99698f3e6c48be04d08a77c5af1aceecdb658e5f29fcff047340", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "event": "before_load", "family": "artificial"}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "607196f552bc99698f3e6c48be04d08a77c5af1aceecdb658e5f29fcff047340", "seconds": 0.015999999828636646}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "607196f552bc99698f3e6c48be04d08a77c5af1aceecdb658e5f29fcff047340", "seconds": 0.015999999828636646}
+{"adapter": "artificial_parameter", "allocated": [], "event": "before_load", "family": "artificial"}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "607196f552bc99698f3e6c48be04d08a77c5af1aceecdb658e5f29fcff047340", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "607196f552bc99698f3e6c48be04d08a77c5af1aceecdb658e5f29fcff047340", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "event": "before_load", "family": "artificial"}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "607196f552bc99698f3e6c48be04d08a77c5af1aceecdb658e5f29fcff047340", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "607196f552bc99698f3e6c48be04d08a77c5af1aceecdb658e5f29fcff047340", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "event": "before_load", "family": "artificial"}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "607196f552bc99698f3e6c48be04d08a77c5af1aceecdb658e5f29fcff047340", "seconds": 0.0}
+{"adapter": "artificial_parameter", "allocated": [], "device_map": null, "event": "loaded", "family": "artificial", "parameter_devices": ["cpu"], "sample_sha256": "607196f552bc99698f3e6c48be04d08a77c5af1aceecdb658e5f29fcff047340", "seconds": 0.0}

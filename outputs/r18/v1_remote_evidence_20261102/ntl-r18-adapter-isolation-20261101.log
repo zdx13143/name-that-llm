@@ -1,0 +1,144 @@
+[{"stream_name":"stderr","time":10.195248363,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":10.195295551,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":11.719621566,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.719661566,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.719665724,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.719668416,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.511340502,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.511373629,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.5113794,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.511384152,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":15.497443613,"data":"R14 competition rerun: False ; test rows: 3\n"}
+,{"stream_name":"stdout","time":15.514575755,"data":"Writing r18_preflight.py\n"}
+,{"stream_name":"stdout","time":15.530967529,"data":"Writing r18_contract.py\n"}
+,{"stream_name":"stdout","time":30.0124028,"data":"0\n"}
+,{"stream_name":"stdout","time":65.73031369,"data":"atlas /kaggle/input/datasets/josephadamski91/ntl-atlas-qwen3-8b-v1/atlas_adapter/atlas_adapter\n"}
+,{"stream_name":"stdout","time":98.447140592,"data":"part two /kaggle/input/datasets/nishantdahal/ntl-handwriting-blend/lora_qwen3_14b 27 [2, 4, 6, 9, 13, 17, 22, 27] 151643 /kaggle/input/datasets/nishantdahal/ntl-handwriting-blend/lora_qwen25_14b 32 [3, 5, 8, 11, 16, 21, 27, 32] /kaggle/working/deberta_v3_large\n"}
+,{"stream_name":"stdout","time":137.370297942,"data":"q8v5 ['/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f0', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f1', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f2', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f3', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5_f4', '/kaggle/input/datasets/dhruvtibarewal/nlm-l24-adapters-v5/q8v5']\n"}
+,{"stream_name":"stdout","time":171.876547481,"data":"Writing gauss.py\n"}
+,{"stream_name":"stdout","time":171.911437023,"data":"Writing infer.py\n"}
+,{"stream_name":"stdout","time":171.951169257,"data":"Writing comp_stack.py\n"}
+,{"stream_name":"stdout","time":171.986253999,"data":"R18 starting r18_preflight.py ; remaining seconds 742\n"}
+,{"stream_name":"stdout","time":274.420788243,"data":"R18_LIFECYCLE {\"adapter\": \"q14v5_f0\", \"allocated\": [0, 0], \"event\": \"before_load\", \"family\": \"q14v5\"}\n"}
+,{"stream_name":"stdout","time":274.420841878,"data":"\n"}
+,{"stream_name":"stdout","time":274.42084625,"data":"Loading weights:   0%|          | 0/299 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":274.42084999,"data":"Loading weights:   0%|          | 1/299 [00:11\u003c58:17, 11.74s/it]\n"}
+,{"stream_name":"stdout","time":274.420853074,"data":"Loading weights:  23%|██▎       | 69/299 [00:12\u003c00:28,  7.99it/s]\n"}
+,{"stream_name":"stdout","time":274.420865014,"data":"Loading weights:  29%|██▉       | 87/299 [00:13\u003c00:24,  8.53it/s]\n"}
+,{"stream_name":"stdout","time":274.42086771,"data":"Loading weights:  32%|███▏      | 95/299 [00:15\u003c00:25,  8.03it/s]\n"}
+,{"stream_name":"stdout","time":274.420870098,"data":"Loading weights:  34%|███▍      | 102/299 [00:16\u003c00:24,  8.09it/s]\n"}
+,{"stream_name":"stdout","time":274.420872761,"data":"Loading weights:  35%|███▌      | 106/299 [00:16\u003c00:23,  8.28it/s]\n"}
+,{"stream_name":"stdout","time":274.420875096,"data":"Loading weights:  38%|███▊      | 113/299 [00:17\u003c00:24,  7.61it/s]\n"}
+,{"stream_name":"stdout","time":274.420877439,"data":"Loading weights:  41%|████▏     | 124/299 [00:18\u003c00:21,  8.01it/s]\n"}
+,{"stream_name":"stdout","time":274.420879734,"data":"Loading weights:  42%|████▏     | 126/299 [00:18\u003c00:20,  8.25it/s]\n"}
+,{"stream_name":"stdout","time":274.420882003,"data":"Loading weights:  45%|████▌     | 135/299 [00:19\u003c00:19,  8.55it/s]\n"}
+,{"stream_name":"stdout","time":274.42088436,"data":"Loading weights:  46%|████▌     | 137/299 [00:20\u003c00:19,  8.17it/s]\n"}
+,{"stream_name":"stdout","time":274.420886636,"data":"Loading weights:  49%|████▉     | 146/299 [00:21\u003c00:18,  8.26it/s]\n"}
+,{"stream_name":"stdout","time":274.420888911,"data":"Loading weights:  49%|████▉     | 148/299 [00:21\u003c00:17,  8.53it/s]\n"}
+,{"stream_name":"stdout","time":274.420891273,"data":"Loading weights:  53%|█████▎    | 157/299 [00:22\u003c00:18,  7.70it/s]\n"}
+,{"stream_name":"stdout","time":274.420893628,"data":"Loading weights:  56%|█████▌    | 168/299 [00:23\u003c00:14,  8.95it/s]\n"}
+,{"stream_name":"stdout","time":274.420895947,"data":"Loading weights:  57%|█████▋    | 169/299 [00:24\u003c00:15,  8.55it/s]\n"}
+,{"stream_name":"stdout","time":274.420898279,"data":"Loading weights:  60%|█████▉    | 179/299 [00:25\u003c00:14,  8.36it/s]\n"}
+,{"stream_name":"stdout","time":274.420900556,"data":"Loading weights:  61%|██████    | 181/299 [00:25\u003c00:13,  8.64it/s]\n"}
+,{"stream_name":"stdout","time":274.42090292,"data":"Loading weights:  64%|██████▎   | 190/299 [00:26\u003c00:12,  8.62it/s]\n"}
+,{"stream_name":"stdout","time":274.42090522,"data":"Loading weights:  64%|██████▍   | 191/299 [00:26\u003c00:12,  8.40it/s]\n"}
+,{"stream_name":"stdout","time":274.420907509,"data":"Loading weights:  64%|██████▍   | 192/299 [00:26\u003c00:12,  8.25it/s]\n"}
+,{"stream_name":"stdout","time":274.420909798,"data":"Loading weights:  67%|██████▋   | 201/299 [00:27\u003c00:11,  8.30it/s]\n"}
+,{"stream_name":"stdout","time":274.420912234,"data":"Loading weights:  68%|██████▊   | 203/299 [00:28\u003c00:11,  8.61it/s]\n"}
+,{"stream_name":"stdout","time":274.420929858,"data":"Loading weights:  71%|███████   | 212/299 [00:29\u003c00:10,  7.95it/s]\n"}
+,{"stream_name":"stdout","time":274.420935478,"data":"Loading weights:  75%|███████▍  | 223/299 [00:30\u003c00:08,  8.45it/s]\n"}
+,{"stream_name":"stdout","time":274.420939106,"data":"Loading weights:  75%|███████▍  | 224/299 [00:30\u003c00:09,  8.01it/s]\n"}
+,{"stream_name":"stdout","time":274.420942855,"data":"Loading weights:  78%|███████▊  | 234/299 [00:31\u003c00:07,  8.87it/s]\n"}
+,{"stream_name":"stdout","time":274.420946927,"data":"Loading weights:  79%|███████▉  | 236/299 [00:32\u003c00:07,  8.36it/s]\n"}
+,{"stream_name":"stdout","time":274.420950834,"data":"Loading weights:  82%|████████▏ | 245/299 [00:33\u003c00:06,  8.38it/s]\n"}
+,{"stream_name":"stdout","time":274.420958971,"data":"Loading weights:  86%|████████▌ | 256/299 [00:34\u003c00:05,  8.41it/s]\n"}
+,{"stream_name":"stdout","time":274.420962643,"data":"Loading weights:  86%|████████▋ | 258/299 [00:34\u003c00:04,  8.79it/s]\n"}
+,{"stream_name":"stdout","time":274.42096651,"data":"Loading weights:  89%|████████▉ | 267/299 [00:35\u003c00:03,  8.52it/s]\n"}
+,{"stream_name":"stdout","time":274.420970009,"data":"Loading weights:  90%|████████▉ | 268/299 [00:35\u003c00:03,  8.16it/s]\n"}
+,{"stream_name":"stdout","time":274.420973145,"data":"Loading weights:  90%|████████▉ | 269/299 [00:35\u003c00:03,  8.18it/s]\n"}
+,{"stream_name":"stdout","time":274.420978208,"data":"Loading weights:  93%|█████████▎| 278/299 [00:36\u003c00:02,  8.64it/s]\n"}
+,{"stream_name":"stdout","time":274.420981786,"data":"Loading weights:  94%|█████████▎| 280/299 [00:37\u003c00:02,  8.46it/s]\n"}
+,{"stream_name":"stdout","time":274.420985229,"data":"Loading weights:  97%|█████████▋| 289/299 [00:38\u003c00:01,  8.31it/s]\n"}
+,{"stream_name":"stdout","time":274.420988574,"data":"Loading weights: 100%|██████████| 299/299 [00:38\u003c00:00,  7.78it/s]\n"}
+,{"stream_name":"stdout","time":274.420992018,"data":"[transformers] \u001b[1mQwen3Model LOAD REPORT\u001b[0m from: /kaggle/input/models/qwen-lm/qwen-3/transformers/14b-base/1\n"}
+,{"stream_name":"stdout","time":274.420997184,"data":"Key                                                    | Status     |  | \n"}
+,{"stream_name":"stdout","time":274.421000911,"data":"-------------------------------------------------------+------------+--+-\n"}
+,{"stream_name":"stdout","time":274.421004673,"data":"model.layers.{27...39}.input_layernorm.weight          | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421008168,"data":"model.layers.{27...39}.mlp.gate_proj.weight            | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421011764,"data":"model.layers.{27...39}.self_attn.k_proj.weight         | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421015286,"data":"model.layers.{27...39}.self_attn.q_proj.weight         | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421018808,"data":"model.layers.{27...39}.mlp.up_proj.weight              | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421022293,"data":"model.layers.{27...39}.mlp.down_proj.weight            | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421025476,"data":"model.layers.{27...39}.post_attention_layernorm.weight | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421028623,"data":"model.layers.{27...39}.self_attn.q_norm.weight         | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.42103268,"data":"model.layers.{27...39}.self_attn.k_norm.weight         | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421036646,"data":"model.layers.{27...39}.self_attn.v_proj.weight         | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421040198,"data":"model.layers.{27...39}.self_attn.o_proj.weight         | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421043447,"data":"lm_head.weight                                         | UNEXPECTED |  | \n"}
+,{"stream_name":"stdout","time":274.421047033,"data":"\n"}
+,{"stream_name":"stdout","time":274.421050357,"data":"Notes:\n"}
+,{"stream_name":"stdout","time":274.421053658,"data":"- UNEXPECTED:\tcan be ignored when loading from different task/architecture; not ok if you expect identical arch.\n"}
+,{"stream_name":"stdout","time":274.421060839,"data":"/pytorch/aten/src/ATen/native/cuda/IndexKernel.cu:111: operator(): block: [0,0,0], thread: [63,0,0] Assertion `-sizes[i] \u003c= index \u0026\u0026 index \u003c sizes[i] \u0026\u0026 \"index out of bounds\"` failed.\n"}
+,{"stream_name":"stdout","time":274.421067076,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":274.421070874,"data":"  File \"/kaggle/working/r18_preflight.py\", line 42, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":274.421074588,"data":"    p, c, features = l24_predict(spec, texts, groups=np.array([0, 0]), train_texts=texts)\n"}
+,{"stream_name":"stdout","time":274.421078294,"data":"                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":274.421081895,"data":"  File \"/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stdout","time":274.421085696,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":274.421089206,"data":"  File \"\u003cactual-r18-l24\u003e\", line 365, in l24_predict\n"}
+,{"stream_name":"stdout","time":274.421092605,"data":"  File \"/kaggle/working/r18_contract.py\", line 74, in loaded\n"}
+,{"stream_name":"stdout","time":274.421096604,"data":"    digest.update(flat[indexes].float().cpu().numpy().tobytes())\n"}
+,{"stream_name":"stdout","time":274.421100279,"data":"                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^\n"}
+,{"stream_name":"stdout","time":274.421103561,"data":"torch.AcceleratorError: CUDA error: device-side assert triggered\n"}
+,{"stream_name":"stdout","time":274.42110719,"data":"Search for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\n"}
+,{"stream_name":"stdout","time":274.421110893,"data":"CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\n"}
+,{"stream_name":"stdout","time":274.421114808,"data":"For debugging consider passing CUDA_LAUNCH_BLOCKING=1\n"}
+,{"stream_name":"stdout","time":274.421118351,"data":"Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"}
+,{"stream_name":"stdout","time":274.421121861,"data":"\n"}
+,{"stream_name":"stdout","time":274.421125159,"data":"\n"}
+,{"stream_name":"stderr","time":274.767583985,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":274.768340125,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":274.768357416,"data":"    import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)\n"}
+,{"stream_name":"stderr","time":274.768363795,"data":"                                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":274.768368598,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":274.768373079,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":274.768377036,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":274.768380866,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":274.768384503,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":274.768397351,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":274.768401683,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":274.768405689,"data":"Exception encountered at \"In [9]\":\n"}
+,{"stream_name":"stderr","time":274.768409596,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":274.768413873,"data":"CalledProcessError                        Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":274.768417279,"data":"/tmp/ipykernel_22/2641644225.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":274.768420898,"data":"     33     with open('/kaggle/working/r18_preflight_specs.json', 'w') as _f:\n"}
+,{"stream_name":"stderr","time":274.768424881,"data":"     34         json.dump({'specs': MODELS[:2], 'labels': _R14_LABELS}, _f)\n"}
+,{"stream_name":"stderr","time":274.768428789,"data":"---\u003e 35     run_logged([sys.executable, 'r18_preflight.py'], '/kaggle/working/r18_preflight.log', remaining_seconds(R18_START, 900))\n"}
+,{"stream_name":"stderr","time":274.768432557,"data":"     36     _r14placeholder = _r14pd.DataFrame({'id': _R14_TEST['id'], 'model': _R14_LABELS[0]})\n"}
+,{"stream_name":"stderr","time":274.768435879,"data":"     37     _r14_validate_submission(_r14placeholder, _R14_TEST['id'].astype(str).tolist())\n"}
+,{"stream_name":"stderr","time":274.768439406,"data":"\n"}
+,{"stream_name":"stderr","time":274.768445733,"data":"/kaggle/working/r18_contract.py in run_logged(command, log_path, timeout)\n"}
+,{"stream_name":"stderr","time":274.768449947,"data":"     24     try:\n"}
+,{"stream_name":"stderr","time":274.768453486,"data":"     25         with path.open('w', encoding='utf-8') as handle:\n"}
+,{"stream_name":"stderr","time":274.768456938,"data":"---\u003e 26             subprocess.run(command, check=True, stdout=handle, stderr=subprocess.STDOUT, timeout=timeout, text=True)\n"}
+,{"stream_name":"stderr","time":274.768460774,"data":"     27     finally:\n"}
+,{"stream_name":"stderr","time":274.768464276,"data":"     28         if path.exists():\n"}
+,{"stream_name":"stderr","time":274.768468169,"data":"\n"}
+,{"stream_name":"stderr","time":274.768472309,"data":"/usr/lib/python3.13/subprocess.py in run(input, capture_output, timeout, check, *popenargs, **kwargs)\n"}
+,{"stream_name":"stderr","time":274.768475962,"data":"    575         retcode = process.poll()\n"}
+,{"stream_name":"stderr","time":274.76847926,"data":"    576         if check and retcode:\n"}
+,{"stream_name":"stderr","time":274.768482648,"data":"--\u003e 577             raise CalledProcessError(retcode, process.args,\n"}
+,{"stream_name":"stderr","time":274.768486198,"data":"    578                                      output=stdout, stderr=stderr)\n"}
+,{"stream_name":"stderr","time":274.768489689,"data":"    579     return CompletedProcess(process.args, retcode, stdout, stderr)\n"}
+,{"stream_name":"stderr","time":274.768493294,"data":"\n"}
+,{"stream_name":"stderr","time":274.768496394,"data":"CalledProcessError: Command '['/usr/bin/python3', 'r18_preflight.py']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stderr","time":274.768500123,"data":"\n"}
+,{"stream_name":"stderr","time":277.035346392,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":277.035400829,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":277.23224464,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":277.232295432,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":278.130718672,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":278.214756007,"data":"[NbConvertApp] Writing 174932 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":280.804646362,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":281.855164603,"data":"[NbConvertApp] Writing 1094118 bytes to __results__.html\n"}
+]
