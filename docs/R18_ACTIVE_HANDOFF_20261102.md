@@ -1,6 +1,16 @@
 # R18 active execution handoff — 2026-11-02
 
-## LATEST: user accepted changed data; formal submission ALREADY SENT ONCE
+## LATEST: R18 V2 57891520 COMPLETE, public 0.659 (equal to R16 0.659)
+
+Final observation 2026-11-02 (Claude, official submissions CLI): 57891520
+COMPLETE, public 0.659; R16 57770646 also 0.659. No public gain from R18; the
+difference is inside the ~0.009 same-code public noise. R18 closed; R16 and R18
+remain tied as best established public score.
+
+
+Observation 2026-11-02 05:56:34 UTC: official competition submissions CLI
+reports ref 57891520 PENDING, with no public score; baseline ref 57770646
+remains COMPLETE with public score 0.659. No score difference is available.
 
 User answered "接受，直接提交当前 V2 一次". Scope amendment committed e99c545
 BEFORE submitting. Official CLI submitted EXACT V2 / 364615652 with -k and -v2,
