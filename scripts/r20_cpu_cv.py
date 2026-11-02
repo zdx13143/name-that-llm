@@ -12,14 +12,16 @@ import numpy as np
 import psutil
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from r19_cpu_cv import validate_data, load_source, filter_source, metrics
+from r19_cpu_cv import validate_data, load_source, filter_source, metrics, runtime_versions
 from r19_overlap_audit import FILES
 from r19_svc_component import R16_LABELS, norm, build_fit_frame, fit_predict
 
-OUT = Path(__file__).resolve().parent.parent / 'outputs' / 'r20' / 'cv'
-LIMIT_SECONDS = 4 * 60 * 60
-MIN_AVAILABLE = 24 * 1024**3
-MAX_RSS = 26 * 1024**3
+OUT = Path(os.environ.get('NTL_R20_OUT', str(Path(__file__).resolve().parent.parent / 'outputs' / 'r20' / 'cv')))
+LIMIT_SECONDS = float(os.environ.get('NTL_R20_LIMIT_SECONDS', 4 * 60 * 60))
+MIN_AVAILABLE = int(float(os.environ.get('NTL_R20_MIN_AVAILABLE_GIB', 24)) * 1024**3)
+MAX_RSS = int(float(os.environ.get('NTL_R20_MAX_RSS_GIB', 26)) * 1024**3)
+if not (0 < LIMIT_SECONDS <= 32400 and 22 * 1024**3 <= MIN_AVAILABLE and 0 < MAX_RSS <= 28 * 1024**3):
+    raise ValueError('invalid R20 resource limits')
 EXPECTED_UNION = 212889
 
 
@@ -92,7 +94,7 @@ def worker():
                    'input_sha256': {name: expected for name, (_, expected) in FILES.items()},
                    'fold_id_sha256': '96040086312dca7ce1d3d14bb3ee59640870ef35edba42c746c7f84ae7b827da',
                    'oof_row_order': 'development.json original row order; labels index development labels',
-                   'seed': 19, 'bootstrap_samples': 10000})
+                   'seed': 19, 'bootstrap_samples': 10000, 'runtime_versions': runtime_versions()})
     with (OUT / 'result.json').open('x', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2, allow_nan=False)
 
@@ -113,12 +115,12 @@ def kill_tree(process):
 def supervise():
     start = time.monotonic()
     if psutil.virtual_memory().available < MIN_AVAILABLE:
-        raise RuntimeError('available physical memory below 24 GiB; no claim created')
+        raise RuntimeError(f'available physical memory below {MIN_AVAILABLE / 1024**3:g} GiB; no claim created')
     supervisor = psutil.Process()
     cpu_start = sum(supervisor.cpu_times()[:2])
     validate_data()
     if psutil.virtual_memory().available < MIN_AVAILABLE:
-        raise RuntimeError('available physical memory below 24 GiB; no claim created')
+        raise RuntimeError(f'available physical memory below {MIN_AVAILABLE / 1024**3:g} GiB; no claim created')
     OUT.mkdir(parents=True, exist_ok=True)
     with (OUT / 'claim.json').open('x', encoding='utf-8') as f:
         json.dump({'created_unix': time.time(), 'pid': os.getpid(), 'limit_seconds': LIMIT_SECONDS,
@@ -138,9 +140,9 @@ def supervise():
                     peak = max(peak, rss)
                     cpu = sum(supervisor.cpu_times()[:2]) - cpu_start + sum(sum(p.cpu_times()[:2]) for p in tree if p.is_running())
                     if rss > MAX_RSS:
-                        reason = 'sampled process tree RSS exceeded 26 GiB'
+                        reason = f'sampled process tree RSS exceeded {MAX_RSS / 1024**3:g} GiB'
                     elif time.monotonic() - start >= LIMIT_SECONDS or cpu >= LIMIT_SECONDS:
-                        reason = 'four-hour budget exceeded'
+                        reason = 'wall or CPU budget exceeded'
                     if reason:
                         kill_tree(process)
                         proc.wait()
@@ -163,7 +165,8 @@ def supervise():
         with (OUT / 'receipt.json').open('x', encoding='utf-8') as f:
             json.dump({'status': status, 'reason': reason, 'returncode': returncode,
                        'wall_seconds': time.monotonic() - start, 'sampled_cpu_seconds': cpu,
-                       'peak_rss_bytes': peak}, f, indent=2)
+                       'peak_rss_bytes': peak, 'limit_seconds': LIMIT_SECONDS,
+                       'min_available_bytes': MIN_AVAILABLE, 'max_tree_rss_bytes': MAX_RSS}, f, indent=2)
     if status != 'complete':
         raise RuntimeError('CV failed or stopped; claim is retained')
 

@@ -1,0 +1,17 @@
+{
+  "id": "zephyrpong/ntl-r20-union-cv",
+  "title": "NTL R20 Union CV",
+  "code_file": "r20_union_cv_kaggle.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": [
+    "zephyrpong/ntl-r20-cv-package",
+    "crtproduction/name-that-llm-open-pool/11",
+    "dhruvtibarewal/nlm-matched-clean/3"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import os
 import time
 from pathlib import Path
 
@@ -9,9 +10,9 @@ import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import HashingVectorizer
 
-DEV = Path('D:/kaggle/name_that_llm/outputs/worktrees/team-e654-r15-20261029/outputs/r15_dev_export/development.json')
-BASE = Path('D:/kaggle/name_that_llm/data/external/dhruvtibarewal__nlm-matched-clean__v3')
-OPEN = Path('D:/kaggle/name_that_llm/data/external/crtproduction__name-that-llm-open-pool__v11')
+DEV = Path(os.environ.get('NTL_DEV', 'D:/kaggle/name_that_llm/outputs/worktrees/team-e654-r15-20261029/outputs/r15_dev_export/development.json'))
+BASE = Path(os.environ.get('NTL_BASE_DIR', 'D:/kaggle/name_that_llm/data/external/dhruvtibarewal__nlm-matched-clean__v3'))
+OPEN = Path(os.environ.get('NTL_OPEN_DIR', 'D:/kaggle/name_that_llm/data/external/crtproduction__name-that-llm-open-pool__v11'))
 FILES = {'development': (DEV, '1c9446efa6c8c477bd68448f1de212aadcc8dc90224b76728ec2f70e2ec2334f'),
          'baseline': (BASE / 'nlm_pool_v5.parquet', '040afb3609d7f6586d57c89ddb42d9bf4b58cc26426104b57390bdf6312b4650'),
          'open': (OPEN / 'ntl_open_pool.parquet', '38e48b40e1db0ab1bf6e4f29d3697e37307c49d1ae5020a7af3cd59c484657d5'),

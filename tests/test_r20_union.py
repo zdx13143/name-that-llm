@@ -1,4 +1,7 @@
 import json
+import os
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -10,6 +13,28 @@ from scripts import r20_cpu_cv as r20
 
 
 class UnionTest(unittest.TestCase):
+    def test_environment_overrides_in_fresh_process(self):
+        env = os.environ.copy()
+        env.update({'NTL_DEV': '/test/dev.json', 'NTL_BASE_DIR': '/test/base',
+                    'NTL_OPEN_DIR': '/test/open', 'NTL_R20_OUT': '/test/out',
+                    'NTL_R20_LIMIT_SECONDS': '32400', 'NTL_R20_MIN_AVAILABLE_GIB': '22.5',
+                    'NTL_R20_MAX_RSS_GIB': '28'})
+        code = "import json; from scripts import r20_cpu_cv as r; import r19_overlap_audit as a; print(json.dumps([str(a.DEV),str(a.BASE),str(a.OPEN),str(r.OUT),r.LIMIT_SECONDS,r.MIN_AVAILABLE,r.MAX_RSS]))"
+        got = json.loads(subprocess.check_output([sys.executable, '-c', code], env=env, text=True))
+        self.assertEqual(got, [str(Path('/test/dev.json')), str(Path('/test/base')), str(Path('/test/open')), str(Path('/test/out')), 32400, int(22.5 * 1024**3), 28 * 1024**3])
+
+    def test_version_override_does_not_bypass_hash(self):
+        import r19_cpu_cv as r19
+        with patch.object(r19, 'runtime_versions', return_value={'python': 'different'}), \
+             patch.object(r19, 'FILES', {'development': (Path('unused'), 'expected')}), \
+             patch.object(r19, 'digest', return_value='wrong'):
+            with patch.dict(os.environ, {}, clear=True):
+                with self.assertRaisesRegex(ValueError, 'versions differ'):
+                    r19.validate_data()
+            with patch.dict(os.environ, {'NTL_ALLOW_ENV_VERSIONS': '1'}, clear=True):
+                with self.assertRaisesRegex(ValueError, 'incorrect input hash'):
+                    r19.validate_data()
+
     def test_order_normalization_and_case(self):
         opened = [('Ａ  text', 'a'), ('Case', 'b')]
         baseline = [('A text', 'b'), ('case', 'a'), ('new', 'b'), ('new', 'a')]
@@ -52,6 +77,7 @@ class UnionTest(unittest.TestCase):
             r20.worker()
             result = json.loads((Path(tmp) / 'result.json').read_text())
             self.assertEqual(result['union_input_count'], 3)
+            self.assertEqual(result['runtime_versions'], r20.runtime_versions())
             self.assertEqual(result['oof_predictions'], {'baseline': [0] * 10, 'union': [0] * 10})
             self.assertEqual(result['final_training_rows'][0]['union'],
                              {'official': 8, 'extra': 1, 'open': 2, 'baseline': 1})
@@ -81,6 +107,9 @@ class UnionTest(unittest.TestCase):
             process.kill.assert_called_once()
             receipt = json.loads((r20.OUT / 'receipt.json').read_text())
             self.assertEqual(receipt['status'], 'failed')
+            claim = json.loads((r20.OUT / 'claim.json').read_text())
+            for key in ('limit_seconds', 'min_available_bytes', 'max_tree_rss_bytes'):
+                self.assertEqual(receipt[key], claim[key])
             self.assertIn('26 GiB', receipt['reason'])
             self.assertTrue((r20.OUT / 'claim.json').exists())
             with self.assertRaises(FileExistsError):

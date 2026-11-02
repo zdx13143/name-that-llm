@@ -23,10 +23,15 @@ OUT = Path('outputs/r19/cv')
 LIMIT_SECONDS = 4 * 60 * 60
 
 
+def runtime_versions():
+    return dict(zip(('python', 'numpy', 'scipy', 'scikit-learn', 'pandas', 'pyarrow'),
+                    (sys.version.split()[0], np.__version__, scipy.__version__, sklearn.__version__, pd.__version__, pyarrow.__version__)))
+
+
 def validate_data():
     import hashlib
-    actual_versions = (sys.version.split()[0], np.__version__, scipy.__version__, sklearn.__version__, pd.__version__, pyarrow.__version__)
-    if actual_versions != ('3.11.6', '2.4.3', '1.17.1', '1.9.0', '3.0.5', '25.0.1'):
+    actual_versions = tuple(runtime_versions().values())
+    if os.environ.get('NTL_ALLOW_ENV_VERSIONS') != '1' and actual_versions != ('3.11.6', '2.4.3', '1.17.1', '1.9.0', '3.0.5', '25.0.1'):
         raise ValueError('runtime package versions differ from preregistration')
     for name, (path, expected) in FILES.items():
         if digest(path) != expected:
@@ -120,7 +125,7 @@ def worker():
     if (pred['baseline'] < 0).any() or (pred['open'] < 0).any():
         raise ValueError('incomplete OOF')
     result = metrics(truth, pred['baseline'], pred['open'], folds, groups)
-    result.update({'labels': dev_labels, 'exclusions': exclusion, 'open_flag_removed': loaded['open'][1], 'seed': 19, 'bootstrap_samples': 10000})
+    result.update({'labels': dev_labels, 'exclusions': exclusion, 'open_flag_removed': loaded['open'][1], 'seed': 19, 'bootstrap_samples': 10000, 'runtime_versions': runtime_versions()})
     with (OUT / 'result.json').open('x', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2, allow_nan=False)
 
