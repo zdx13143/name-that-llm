@@ -1,0 +1,24 @@
+{
+  "recorded_utc": "2026-11-02T01:57:54Z",
+  "user_answer": "接受，直接提交当前 V2 一次",
+  "scope": "One exploratory formal submission of saved R18 V2, combining fresh-base LoRA isolation with two explicitly accepted external-data updates",
+  "kernel": "zephyrpong/ntl-r18-adapter-isolation-20261101",
+  "version": 2,
+  "scriptVersionId": 364615652,
+  "candidate_sha256": "867515c41bd5a7ceef51efb306ddc2235b3c4952ec915d26b41953f2cc20dc83",
+  "accepted_input_changes": [
+    {"dataset": "abdullah1afify/ntl-generations", "from": 4, "to": 9},
+    {"dataset": "lucasboesen/ntl-free-proxy-generations", "from": 11, "to": 12}
+  ],
+  "preflight_passed": true,
+  "release_gate_original_frozen_input_scope": "failed; preserved unchanged in r18_v2_release_gate_20261102.json",
+  "release_allowed_under_user_amended_scope": true,
+  "formal_submissions_max": 1,
+  "formal_python_seconds": 28800,
+  "total_envelope_hours": 8.3,
+  "extra_save_authorized_or_required": false,
+  "automations_authorized": false,
+  "causal_claim_limit": "Any score difference cannot be attributed solely to the LoRA isolation correction",
+  "private_score_claim": null,
+  "duplicate_check": "Official competition submissions list at recorded_utc contains no R18 submission"
+}
