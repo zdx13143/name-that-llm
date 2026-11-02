@@ -1,0 +1,43 @@
+Warning: Looks like you're using an outdated `kaggle` version (installed: 2.2.4), please consider upgrading to the latest version (2.2.5)
+ref,fileName,date,description,status,publicScore,privateScore
+
+57891520,submission.parquet,2026-11-02 01:59:36.260000,"R18 V2 364615652: fresh base per LoRA adapter; user accepted external data updates ntl-generations 4 to 9 and free-proxy 11 to 12. All 12 adapters passed preflight. One exploratory submission, 8h Python limit; no isolated CV or causal LoRA-only gain claim.",SubmissionStatus.PENDING,,
+
+57770646,submission.parquet,2026-10-29 12:21:55.630000,R16 one exploratory trial; V2 363487968. Typography strength 0.5; unavailable comp.lora24_public and main.ll8v5 omitted. Other parameters and 30 inputs retained. No local complete-ensemble OOF claim.,SubmissionStatus.COMPLETE,0.659,
+
+57739001,submission.parquet,2026-10-28 14:04:19.837000,"R12 fixed full-ensemble reproduction of public V4 363071115. Our V1 363188587; all 31 input IDs and score-producing code preserved. Checked COMP subprocess and stale-output cleanup. One fixed evaluation, no local full-ensemble CV claim.",SubmissionStatus.COMPLETE,0.654,
+
+57729154,submission.parquet,2026-10-28 07:30:16.720000,"R10 fixed topic-word SVC and alpha=0.5 group margin correction; dev BA 0.477404; one authorized score observation. CPU offline, no supervised test fitting.",SubmissionStatus.COMPLETE,0.416,
+
+57711087,submission.parquet,2026-10-27 19:06:40.430000,v13: 0.651 底座 + 补偿缺失成员（lora24_seed7 0.113->0.200）,SubmissionStatus.COMPLETE,0.649,
+
+57688773,submission.parquet,2026-10-27 04:21:59.937000,x,SubmissionStatus.COMPLETE,0.651,
+
+57678955,submission.parquet,2026-10-26 21:24:06.910000,"v12: 复现 0.651 (nlm-v27 verified reproduction, 免费T4x2配方)",SubmissionStatus.COMPLETE,0.651,
+
+57667550,submission.parquet,2026-10-26 13:14:53.070000,v11: 复现 0.643 (同栈，qwen/helper 融合权重 0.10->0.15),SubmissionStatus.COMPLETE,0.643,
+
+57658510,submission.parquet,2026-10-26 07:34:45.093000,"R7 frozen weighted SVC (official/external=4/1), 120-prompt dev fit; one user-requested score observation. Dev BA 0.445938; incremental gate failed. CPU offline, no fitting or group assignment.",SubmissionStatus.COMPLETE,0.414,
+
+57656834,submission.parquet,2026-10-26 06:34:10.353000,v10: 复现 lightningv08 0.642 (主干复用+NF4+ATLAS选择性调用)，修正 datasets 挂载路径,SubmissionStatus.COMPLETE,0.642,
+
+57620081,submission.parquet,2026-10-25 06:39:47.820000,"R6: fixed 80/20 style SVC + ModernBERT/Gaussian, nested grouped temperature calibration. Frozen development-only models; offline CPU inference; no test-time fitting.",SubmissionStatus.COMPLETE,0.365,
+
+57480521,submission.parquet,2026-10-21 11:55:25.950000,,SubmissionStatus.COMPLETE,0.351,
+
+57426016,submission.parquet,2026-10-20 06:32:27.727000,v8: 复现公开 0.600 方案 (kirilltym: two-stage LoRA + 去 prompt 化),SubmissionStatus.COMPLETE,0.601,
+
+57416852,submission.parquet,2026-10-20 01:34:14.110000,"v7: 复现公开 0.574 方案 (zbigniewkirchner in-style Qwen3-8B LoRA, 全公开依赖)",SubmissionStatus.COMPLETE,,
+
+57361652,submission.parquet,2026-10-18 16:37:50.263000,v6: 0.554复现 + 原创Gemini家族门控（本地CV +0.0086，族内召回+0.038）,SubmissionStatus.COMPLETE,0.553,
+
+57349879,submission.parquet,2026-10-18 10:08:31.777000,"v5: 复现公开 0.557 方案 (SmolLM3+TabPFN, 上游署名 lightningv08/Lucas Boesen/Lavrentev/Kirchner)",SubmissionStatus.COMPLETE,0.554,
+
+57345429,submission.parquet,2026-10-18 07:47:35.410000,"v4: 复现公开 0.554 方案 (lightningv08 LoRA+TabPFN+中心化, 上游署名 Lucas Boesen/Lavrentev/Kirchner)",SubmissionStatus.COMPLETE,0.554,
+
+57339829,submission.parquet,2026-10-18 05:14:31.773000,"v3: 复现公开集成方案 (Lucas Boesen / Lavrentev, LoRA+中心化+UltraBERT+Qwen隐藏状态)，署名原作者",SubmissionStatus.COMPLETE,0.547,
+
+57317728,submission.parquet,2026-10-17 16:14:32.930000,v2: blend_v1 + TF-IDF 聚类 + 带容量匈牙利分配（结构约束解码）,SubmissionStatus.COMPLETE,0.339,
+
+57295925,submission.parquet,2026-10-17 04:59:14.893000,blend_v1: 8 TF-IDF views + ModernBERT base/large embeddings,SubmissionStatus.COMPLETE,0.381,
+

@@ -1,5 +1,27 @@
 # R18 active execution handoff — 2026-11-02
 
+## LATEST: user accepted changed data; formal submission ALREADY SENT ONCE
+
+User answered "接受，直接提交当前 V2 一次". Scope amendment committed e99c545
+BEFORE submitting. Official CLI submitted EXACT V2 / 364615652 with -k and -v2,
+not a local file upload. Accepted submission **57891520**, UTC2026-11-02
+01:59:36.260000 / Singapore09:59:36.260000. CLI PENDING, UI Notebook Running;
+UI link independently identifies exact V2. No Public/Private score yet.
+Formal submission budget used1/1. NO second submission, NO new Save or automatic
+monitor. Save2/2 remains used. User acceptance resolves scope, not the historical
+frozen-input mismatch fact. Score must be interpreted as joint model-lifecycle
+and external-data change. Formal record configs/r18_formal_submission_20261102.json.
+Latest source/candidate unchanged; current README/report/ledger reflect running.
+
+Next action, when checking progress: read official competition submissions and
+select ref57891520. Do not use kernels status/output (those describe Save
+preflight). Verify completed score and any available formal runtime evidence.
+R16 baseline57770646/.659 freshly rechecked. Do not invent a score while pending.
+Browser r18FormalTab id1127720307 at competition submissions details, marked
+deliverable. Snapshot outputs/r18/formal_submission_running_20261102.png.
+This LATEST section overrides every pending-choice or pre-submit instruction
+below, which is retained only as historical evidence.
+
 ## CURRENT STATE — overrides the historical checkpoint below
 
 Latest user asked to continue and submit a validated result. V1 failed in the

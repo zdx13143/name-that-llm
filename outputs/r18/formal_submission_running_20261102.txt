@@ -1,0 +1,365 @@
+- navigation:
+  - button: menu
+  - link:
+    - /url: "#site-content"
+    - text: Skip to content
+  - link:
+    - /url: /
+  - button:
+    - paragraph: Create
+  - list:
+    - link:
+      - /url: /
+      - paragraph: Home
+    - link:
+      - /url: /competitions
+      - paragraph: Competitions
+    - link:
+      - /url: /benchmarks
+      - paragraph: Benchmarks
+    - link:
+      - /url: /arenas
+      - paragraph: Arenas
+    - link:
+      - /url: /game-arena
+      - paragraph: Game Arena
+  - list:
+    - link:
+      - /url: "#"
+      - paragraph: Data Hub
+    - button
+  - list:
+    - link:
+      - /url: "#"
+      - paragraph: More
+    - button
+  - separator
+  - list:
+    - link:
+      - /url: /work
+      - paragraph: Your Work
+    - button [expanded]
+    - link [expanded]:
+      - /url: "#"
+      - paragraph: Viewed
+    - button
+    - list:
+      - link:
+        - /url: /competitions/name-that-llm
+        - paragraph: Name That LLM
+      - link:
+        - /url: /code/vnton37nguyn/ntl-train-lora-qwen25-instyle
+        - paragraph: NTL train LoRA qwen25 instyle
+      - link:
+        - /url: /code/lucasboesen/name-that-llm-train-tokattn2
+        - paragraph: name-that-llm-train-tokattn2
+      - link:
+        - /url: /code/lucasboesen/name-that-llm-train-tokattn
+        - paragraph: name-that-llm-train-tokattn
+      - link:
+        - /url: /code/lucasboesen/name-that-llm-train-lora24-s7
+        - paragraph: name-that-llm-train-lora24-s7
+    - link [expanded]:
+      - /url: "#"
+      - paragraph: Edited
+    - button
+    - list:
+      - link:
+        - /url: /code/zephyrpong/ntl-r18-adapter-isolation-20261101
+        - paragraph: NTL R18 Adapter Isolation 20261101
+      - link:
+        - /url: /code/zephyrpong/ntl-r16-typography-half-20261029
+        - paragraph: NTL R16 Typography Half 20261029
+      - link:
+        - /url: /code/zephyrpong/ntl-full-ensemble-r12-20261028
+        - paragraph: NTL Full Ensemble R12 20261028
+      - link:
+        - /url: /code/zephyrpong/ntl-topic-margin-r10-20261028
+        - paragraph: NTL Topic Margin R10 20261028
+      - link:
+        - /url: /code/zephyrpong/ntl-weighted-svc-r7-20261026
+        - paragraph: NTL Weighted SVC R7 20261026
+  - button:
+    - generic: auto_awesome_motion
+    - generic: "1"
+    - paragraph: View Active Events
+- navigation:
+  - textbox:
+    - /placeholder: Search
+  - button:
+- main:
+  - link:
+    - /url: /organizations/kaggle
+  - generic: Kaggle
+  - generic: · Featured Code Competition · 2 months to go
+  - heading [level=1]: Name That LLM
+  - paragraph: Identify the model behind the text
+  - heading [level=2]: Name That LLM
+  - button:
+    - generic: Submit Prediction
+  - button: more_horiz
+  - tablist:
+    - tab:
+      - generic: Overview
+    - tab:
+      - generic: Data
+    - tab:
+      - generic: Code
+    - tab:
+      - generic: Models
+    - tab:
+      - generic: Discussion
+    - tab:
+      - generic: Leaderboard
+    - tab:
+      - generic: Rules
+    - tab:
+      - generic: Team
+    - tab [selected]:
+      - generic: Submissions
+  - separator
+  - heading [level=2]: Submissions
+  - paragraph:
+    - text: Select up to 2 submissions that will count towards your final leaderboard score. If less than 2 are selected, Kaggle will automatically select from your best scoring submissions.
+    - link:
+      - /url: /docs/competitions#submitting-predictions
+      - text: Learn More
+  - paragraph: Auto-selection candidates
+  - generic: help
+  - heading [level=6]: 0/2
+  - checkbox [checked]:
+    - generic: All
+  - checkbox:
+    - generic: Successful
+  - checkbox:
+    - generic: Selected
+  - checkbox:
+    - generic: Errors
+  - combobox:
+    - generic: Recent
+  - textbox: Recent
+  - separator
+  - paragraph: Submission and Description
+  - paragraph: Public Score
+  - generic: info
+  - paragraph: Select
+  - separator
+  - list:
+    - link:
+      - /url: "#"
+      - progressbar:
+      - link:
+        - /url: /code/zephyrpong/ntl-r18-adapter-isolation-20261101?scriptVersionId=364615652
+        - text: NTL R18 Adapter Isolation 20261101 - Version 2
+      - generic: "Notebook Running · Zephyr Pong · 2m ago · R18 V2 364615652: fresh base per LoRA adapter; user accepted external data updates ntl-generations 4 to 9 and free-proxy 11 to 12. All 12 adapters passed preflight. One exploratory submission, 8h Python limit; no isolated CV or causal LoRA-only gain claim."
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zephyrpong/ntl-r16-typography-half-20261029?scriptVersionId=363487968
+        - text: NTL R16 Typography Half 20261029 - R16 available inputs; asset initialization repair
+      - generic: Succeeded · Zephyr Pong · 4d ago · R16 one exploratory trial; V2 363487968. Typography strength 0.5; unavailable comp.lora24_public and main.ll8v5 omitted. Other parameters and 30 inputs retained. No local complete-ensemble OOF claim.
+      - paragraph: "0.659"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zephyrpong/ntl-full-ensemble-r12-20261028?scriptVersionId=363188587
+        - text: NTL Full Ensemble R12 20261028 - R12 frozen public654 V4 reproduction
+      - generic: Succeeded · Zephyr Pong · 4d ago · R12 fixed full-ensemble reproduction of public V4 363071115. Our V1 363188587; all 31 input IDs and score-producing code preserved. Checked COMP subprocess and stale-output cleanup. One fixed evaluation, no local full-ensemble CV claim.
+      - paragraph: "0.654"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zephyrpong/ntl-topic-margin-r10-20261028?scriptVersionId=363085022
+        - text: NTL Topic Margin R10 20261028 - R10 frozen topic-margin offline v1
+      - generic: Succeeded · Zephyr Pong · 5d ago · R10 fixed topic-word SVC and alpha=0.5 group margin correction; dev BA 0.477404; one authorized score observation. CPU offline, no supervised test fitting.
+      - paragraph: "0.416"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/ntl-e651b?scriptVersionId=362920738
+        - text: ntl-e651b - Version 1
+      - generic: "Succeeded · zhouruijie · 5d ago · v13: 0.651 底座 + 补偿缺失成员（lora24_seed7 0.113->0.200）"
+      - paragraph: "0.649"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/ntl-e651?scriptVersionId=362577633
+        - text: ntl-e651 - Version 1
+      - generic: Succeeded · zhouruijie · 6d ago · x
+      - paragraph: "0.651"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/ntl-e651?scriptVersionId=362577633
+        - text: ntl-e651 - Version 1
+      - generic: "Succeeded · zhouruijie · 6d ago · v12: 复现 0.651 (nlm-v27 verified reproduction, 免费T4x2配方)"
+      - paragraph: "0.651"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/ntl-e643?scriptVersionId=362503121
+        - text: ntl-e643 - Version 1
+      - generic: "Succeeded · zhouruijie · 7d ago · v11: 复现 0.643 (同栈，qwen/helper 融合权重 0.10->0.15)"
+      - paragraph: "0.643"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zephyrpong/ntl-weighted-svc-r7-20261026?scriptVersionId=362398792
+        - text: NTL Weighted SVC R7 20261026 - R7 frozen weighted SVC offline v1
+      - generic: Succeeded · Zephyr Pong · 7d ago · R7 frozen weighted SVC (official/external=4/1), 120-prompt dev fit; one user-requested score observation. Dev BA 0.445938; incremental gate failed. CPU offline, no fitting or group assignment.
+      - paragraph: "0.414"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/ntl-e642?scriptVersionId=362382146
+        - text: ntl-e642 - Version 2
+      - generic: "Succeeded · zhouruijie · 7d ago · v10: 复现 lightningv08 0.642 (主干复用+NF4+ATLAS选择性调用)，修正 datasets 挂载路径"
+      - paragraph: "0.642"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zephyrpong/ntl-calibrated-r6-20261025?scriptVersionId=362038537
+        - text: NTL Calibrated R6 20261025 - R6 calibrated frozen offline v1
+      - generic: "Succeeded · Zephyr Pong · 8d ago · R6: fixed 80/20 style SVC + ModernBERT/Gaussian, nested grouped temperature calibration. Frozen development-only models; offline CPU inference; no test-time fitting."
+      - paragraph: "0.365"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zephyrpong/ntl-blend-20261021?scriptVersionId=360768689
+        - text: NTL Blend 20261021 - Version 1
+      - generic: Succeeded · Zephyr Pong · 12d ago
+      - paragraph: "0.351"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/ntl-ensemble-600?scriptVersionId=360258830
+        - text: ntl-ensemble-600 - Version 1
+      - generic: "Succeeded · zhouruijie · 13d ago · v8: 复现公开 0.600 方案 (kirilltym: two-stage LoRA + 去 prompt 化)"
+      - paragraph: "0.601"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: warning
+      - link:
+        - /url: /code/zdx13143/ntl-ensemble-574?scriptVersionId=360073816
+        - text: ntl-ensemble-574 - Version 1
+      - generic: "Notebook Timeout · zhouruijie · 13d ago · v7: 复现公开 0.574 方案 (zbigniewkirchner in-style Qwen3-8B LoRA, 全公开依赖)"
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/ntl-ensemble-554-gemgate?scriptVersionId=359756128
+        - text: ntl-ensemble-554-gemgate - Version 1
+      - generic: "Succeeded · zhouruijie · 14d ago · v6: 0.554复现 + 原创Gemini家族门控（本地CV +0.0086，族内召回+0.038）"
+      - paragraph: "0.553"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/ntl-ensemble-557?scriptVersionId=359648350
+        - text: ntl-ensemble-557 - Version 1
+      - generic: "Succeeded · zhouruijie · 15d ago · v5: 复现公开 0.557 方案 (SmolLM3+TabPFN, 上游署名 lightningv08/Lucas Boesen/Lavrentev/Kirchner)"
+      - paragraph: "0.554"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/ntl-ensemble-554?scriptVersionId=359608981
+        - text: ntl-ensemble-554 - Version 1
+      - generic: "Succeeded · zhouruijie · 15d ago · v4: 复现公开 0.554 方案 (lightningv08 LoRA+TabPFN+中心化, 上游署名 Lucas Boesen/Lavrentev/Kirchner)"
+      - paragraph: "0.554"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/ntl-ensemble-repro?scriptVersionId=359578393
+        - text: ntl-ensemble-repro - Version 1
+      - generic: "Succeeded · zhouruijie · 15d ago · v3: 复现公开集成方案 (Lucas Boesen / Lavrentev, LoRA+中心化+UltraBERT+Qwen隐藏状态)，署名原作者"
+      - paragraph: "0.547"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/name-that-llm-submit?scriptVersionId=359417431
+        - text: name-that-llm-submit - Version 5
+      - generic: "Succeeded · zhouruijie · 15d ago · v2: blend_v1 + TF-IDF 聚类 + 带容量匈牙利分配（结构约束解码）"
+      - paragraph: "0.339"
+      - checkbox [disabled]
+    - separator
+    - link:
+      - /url: "#"
+      - generic: check_circle
+      - link:
+        - /url: /code/zdx13143/name-that-llm-submit?scriptVersionId=359231818
+        - text: name-that-llm-submit - Version 4
+      - generic: "Succeeded · zhouruijie · 16d ago · blend_v1: 8 TF-IDF views + ModernBERT base/large embeddings"
+      - paragraph: "0.381"
+      - checkbox [disabled]
+    - separator
+- alert
+- button "Close" [active]
+- heading "Submission Details" [level=2]
+- separator
+- progressbar "Loading":
+- paragraph:
+  - link "NTL R18 Adapter Isolation 20261101 - Version 2":
+    - /url: /code/zephyrpong/ntl-r18-adapter-isolation-20261101?scriptVersionId=364615652
+- paragraph: Notebook Running · Zephyr Pong · 2m ago
+- generic: Description
+- textbox "Description":
+  - /placeholder: Enter a description
+  - text: "R18 V2 364615652: fresh base per LoRA adapter; user accepted external data updates ntl-generations 4 to 9 and free-proxy 11 to 12. All 12 adapters passed preflight. One exploratory submission, 8h Python limit; no isolated CV or causal LoRA-only gain claim."
+- generic: Description
+- paragraph:
+  - alert:
+    - generic: 256 / 500
+- separator
+- button "Cancel":
+  - generic: Cancel
+- button "Save" [disabled]:
+  - generic: Save
