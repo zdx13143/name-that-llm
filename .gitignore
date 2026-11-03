@@ -25,6 +25,8 @@ models/
 kaggle/*
 !kaggle/r20_dev_dataset/
 kaggle/r20_dev_dataset/development.json
+!kaggle/r21_dataset/
+kaggle/r21_dataset/development.json
 submission*.parquet
 
 # Notebook

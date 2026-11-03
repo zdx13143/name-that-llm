@@ -1,0 +1,18 @@
+if a.tfidf_w > 0:
+    from sklearn.linear_model import LogisticRegression
+    mats_tr, mats_te = [], []
+    for kw in [dict(analyzer='char_wb', ngram_range=(2, 5), min_df=3, max_features=60000),
+               dict(token_pattern=r"\w+|[^\w\s]", ngram_range=(1, 2), min_df=3, max_features=30000)]:
+        vec = TfidfVectorizer(sublinear_tf=True, lowercase=False, **kw).fit(FIT_T if a.perpassage else train.text.values)
+        mats_tr.append(vec.transform(FIT_T if a.perpassage else train.text.values)); mats_te.append(vec.transform(test.text.values))
+    if a.perpassage:
+        LP['tfidf'] = LogisticRegression(C=20, max_iter=3000).fit(sp.hstack(mats_tr).tocsr(), FIT_Y, sample_weight=FIT_W).predict_log_proba(sp.hstack(mats_te).tocsr()) * a.tfidf_w
+    else:
+        Xtr = center_groups(sp.hstack(mats_tr).toarray().astype(np.float32), Gtr)
+        Xte = center_groups(sp.hstack(mats_te).toarray().astype(np.float32), Gte)
+        LP['tfidf'] = LogisticRegression(C=5, max_iter=3000).fit(Xtr, y).predict_log_proba(Xte) * a.tfidf_w
+        del Xtr, Xte
+    gc.collect(); log('tfidf done')
+else:
+    LP['tfidf'] = np.zeros((len(test), 18), dtype=np.float32)
+    log('tfidf skipped (zero ensemble weight)')

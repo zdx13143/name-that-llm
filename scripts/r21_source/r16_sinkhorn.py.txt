@@ -1,0 +1,18 @@
+if (a.sinkhorn > 0 and len(test) >= 18) or _bundles or COMP_P is not None:
+    wsum = sum(abs(v).max() > 0 for v in LP.values())
+    lpn = tot / max(1, wsum) if a.sk_div else tot; P = np.exp(lpn - lpn.max(1, keepdims=True)); P /= P.sum(1, keepdims=True)
+    Q = P.copy()
+    if not (a.sinkhorn > 0 and len(test) >= 18): tot = np.log(P + 1e-12)
+    if a.sinkhorn > 0 and len(test) >= 18:
+        # The competition states test class counts are unequal and Public/Private mixes differ.
+        # Avoid forcing a uniform marginal: shrink model-implied test marginals toward train priors.
+        _rho = float(np.clip(a.sinkhorn_target_mix, 0.0, 1.0))
+        _pred_marg = np.clip(P.mean(0), 1e-6, None); _pred_marg /= _pred_marg.sum()
+        _train_prior = np.bincount(y, minlength=18).astype(np.float64) + 1.0
+        _train_prior /= _train_prior.sum()
+        _target = (1.0 - _rho) * _pred_marg + _rho * _train_prior
+        _target = np.clip(_target, 1e-6, None); _target /= _target.sum()
+        for _ in range(100):
+            Q *= (len(Q) * _target[None, :]) / np.clip(Q.sum(0, keepdims=True), 1e-12, None)
+            Q /= np.clip(Q.sum(1, keepdims=True), 1e-12, None)
+        tot = (1 - a.sinkhorn) * np.log(P + 1e-12) + a.sinkhorn * np.log(Q + 1e-12)

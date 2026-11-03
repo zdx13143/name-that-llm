@@ -1,0 +1,30 @@
+EXTRA_DF = pd.DataFrame(columns=['text', 'model'])
+def _norm_text_key(value):
+    import unicodedata
+    return re.sub(r'\s+', ' ', unicodedata.normalize('NFKC', str(value or ''))).strip()
+if a.extra:
+    _E = pd.read_parquet(a.extra) if a.extra.endswith('.parquet') else pd.read_csv(a.extra)
+    if not {'text', 'model'}.issubset(_E.columns):
+        raise ValueError(f'External file must contain text/model columns: {a.extra}')
+    _E = _E[_E.model.isin(LABELS)].copy()
+    _E['text'] = _E.text.fillna('').astype(str)
+    # In --sim mode, remove any external exact-text matches to held-out official rows.
+    # For final submission, retain the public external pool as provided by the source.
+    if a.sim:
+        _held_keys = {_norm_text_key(t) for t in test.text.values}
+        _E = _E[~_E.text.map(_norm_text_key).isin(_held_keys)].copy()
+    _official_keys = {_norm_text_key(t) for t in train.text.values}
+    _seen = set(_official_keys)
+    _keep = []
+    for _t in _E.text.values:
+        _k = _norm_text_key(_t)
+        _ok = bool(_k) and _k not in _seen
+        _keep.append(_ok)
+        if _ok: _seen.add(_k)
+    EXTRA_DF = _E.loc[_keep, ['text', 'model']].reset_index(drop=True)
+    EXT_T = EXTRA_DF.text.astype(str).values
+    EXT_Y = EXTRA_DF.model.map(L2I).values.astype(int)
+    log('matched-clean extra rows after exact de-dup', len(EXT_T))
+FIT_T = np.concatenate([train.text.values, EXT_T])
+FIT_Y = np.concatenate([y, EXT_Y])
+FIT_W = np.concatenate([np.ones(len(train), dtype=np.float32), np.full(len(EXT_T), a.extra_w, dtype=np.float32)])
