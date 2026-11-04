@@ -74,7 +74,7 @@ def main():
                 'code_file': 'r21_scorebank_kaggle.ipynb', 'language': 'python', 'kernel_type': 'notebook',
                 'is_private': True, 'enable_gpu': False, 'enable_internet': False,
                 'dataset_sources': ['zephyrpong/ntl-r21-scorebank-package',
-                                    'crtproduction/name-that-llm-open-pool/11',
+                                    'zephyrpong/ntl-r21-open-pool-v11',  # private CC-BY-SA copy of crtproduction v11; Kaggle mounted latest despite /11
                                     'dhruvtibarewal/nlm-matched-clean/3',
                                     'zephyrpong/ntl-r21-parts-v1'],
                 'competition_sources': [], 'kernel_sources': [], 'model_sources': []}
