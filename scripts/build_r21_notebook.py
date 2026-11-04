@@ -38,6 +38,9 @@ os.environ.update({'NTL_DEV': str(dev), 'NTL_BASE_DIR': str(baseline.parent),
 run_dir = working / 'r21_run'
 output = working / 'r21_out'
 output.mkdir(exist_ok=False)
+import psutil
+print(json.dumps({'available_gib': psutil.virtual_memory().available / 1024**3,
+                  'total_gib': psutil.virtual_memory().total / 1024**3}))
 try:
     completed = subprocess.run([sys.executable, str(working / 'r21_scorebank_cv.py'), '--run',
                                 '--resume-from', str(resume)],
@@ -51,6 +54,8 @@ finally:
 receipt = output / 'receipt.json'
 print(receipt.read_text(encoding='utf-8') if receipt.is_file() else
       json.dumps({'status': 'failed', 'reason': 'runner stopped before receipt'}))
+print('runner stdout tail:', completed.stdout[-4000:])
+print('runner stderr tail:', completed.stderr[-4000:])
 if completed.returncode:
     raise RuntimeError('R21 runner failed; inspect worker.log and receipt')
 '''
