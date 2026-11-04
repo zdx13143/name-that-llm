@@ -36,7 +36,9 @@ def validate(data, bank):
     n = len(truth)
     if n != len(folds) or n != len(groups) or not np.array_equal(bank['row_index'], np.arange(n)):
         raise ValueError('row alignment mismatch')
-    if not np.array_equal(np.asarray(data['row_index']), np.arange(n)):
+    # development row_index holds source-row ids (strictly increasing subset), not positions.
+    source_rows = np.asarray(data['row_index'])
+    if len(source_rows) != n or not np.all(np.diff(source_rows) > 0):
         raise ValueError('development row alignment mismatch')
     if not np.array_equal(bank['truth'], truth) or not np.array_equal(bank['fold'], folds) or not np.array_equal(bank['group'], groups):
         raise ValueError('fold, truth or group mismatch')
