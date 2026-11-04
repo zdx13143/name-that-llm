@@ -1,0 +1,1001 @@
+{
+  "cutoff_utc": "2026-11-02T16:59:00Z",
+  "queried_at_utc": "2026-11-04T08:59:36.181195+00:00",
+  "sources": [
+    {
+      "type": "dataset_sources",
+      "source": "dhruvtibarewal/nlm-l24-adapters",
+      "version": 7,
+      "lastUpdated": "2026-10-21T16:52:23.293000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "nlm-l24-adapters",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "dhruvtibarewal/nlm-l24-adapters",
+        "title": "Identify the model behind text",
+        "size": 0,
+        "lastUpdated": "2026-10-21T16:52:23.293000",
+        "downloadCount": 6601,
+        "voteCount": 8,
+        "usabilityRating": 1
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 7,
+        "lastUpdated": "2026-10-21T16:52:23.293000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "crtproduction/name-that-llm-open-pool",
+      "version": 14,
+      "lastUpdated": "2026-11-03T10:49:46.303000",
+      "updated_after_cutoff": true,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "name-that-llm-open-pool",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "crtproduction/name-that-llm-open-pool",
+        "title": "Name That LLM Open Pool: 211k Clean Passages",
+        "size": 97903938,
+        "lastUpdated": "2026-11-03T10:49:46.303000",
+        "downloadCount": 8061,
+        "voteCount": 59,
+        "usabilityRating": 0.9411765
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 14,
+        "lastUpdated": "2026-11-03T10:49:46.303000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "seyitkaangunes/ntl-extra-api-passages",
+      "version": 2,
+      "lastUpdated": "2026-10-16T15:52:16.823000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "ntl-extra-api-passages",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "seyitkaangunes/ntl-extra-api-passages",
+        "title": "Name That LLM: Extra API Passages",
+        "size": 1608678,
+        "lastUpdated": "2026-10-16T15:52:16.823000",
+        "downloadCount": 4214,
+        "voteCount": 53,
+        "usabilityRating": 0.9411765
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 2,
+        "lastUpdated": "2026-10-16T15:52:16.823000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "abdullah1afify/ntl-generations",
+      "version": 11,
+      "lastUpdated": "2026-11-04T00:46:07.903000",
+      "updated_after_cutoff": true,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "--user",
+        "abdullah1afify",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "abdullah1afify/ntl-generations",
+        "lastUpdated": "2026-11-04T00:46:07.903000"
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 11,
+        "lastUpdated": "2026-11-04T00:46:07.903000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "dophuchung/ntl-proxy-generations",
+      "version": 1,
+      "lastUpdated": "2026-10-17T07:22:31.420000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "ntl-proxy-generations",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "dophuchung/ntl-proxy-generations",
+        "title": "Name That LLM: free-proxy generations",
+        "size": 322990,
+        "lastUpdated": "2026-10-17T07:22:31.420000",
+        "downloadCount": 2095,
+        "voteCount": 3,
+        "usabilityRating": 0.29411766
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 1,
+        "lastUpdated": "2026-10-17T07:22:31.420000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "zbigniewkirchner/ntl-qwen3-8b-lora-claude-head",
+      "version": 1,
+      "lastUpdated": "2026-10-16T21:51:36.877000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "ntl-qwen3-8b-lora-claude-head",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "zbigniewkirchner/ntl-qwen3-8b-lora-claude-head",
+        "title": "Name That LLM: Qwen3-8B LoRA + Claude Head",
+        "size": 294700686,
+        "lastUpdated": "2026-10-16T21:51:36.877000",
+        "downloadCount": 1763,
+        "voteCount": 10,
+        "usabilityRating": 0.6875
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 1,
+        "lastUpdated": "2026-10-16T21:51:36.877000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "dhruvtibarewal/nlm-matched-clean",
+      "version": 3,
+      "lastUpdated": "2026-10-23T17:10:01.517000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "nlm-matched-clean",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "dhruvtibarewal/nlm-matched-clean",
+        "title": "nlm-matched-clean",
+        "size": 72996203,
+        "lastUpdated": "2026-10-23T17:10:01.517000",
+        "downloadCount": 1779,
+        "voteCount": 4,
+        "usabilityRating": 0.88235295
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 3,
+        "lastUpdated": "2026-10-23T17:10:01.517000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "dhruvtibarewal/nlm-offline-wheels",
+      "version": 2,
+      "lastUpdated": "2026-10-17T12:20:52.603000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "nlm-offline-wheels",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "dhruvtibarewal/nlm-offline-wheels",
+        "title": "nlm-offline-wheels",
+        "size": 44574024,
+        "lastUpdated": "2026-10-17T12:20:52.603000",
+        "downloadCount": 249,
+        "voteCount": 3,
+        "usabilityRating": 0.3125
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 2,
+        "lastUpdated": "2026-10-17T12:20:52.603000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "josephadamski91/ntl-atlas-qwen3-8b-v1",
+      "version": 3,
+      "lastUpdated": "2026-10-20T14:22:33.173000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "ntl-atlas-qwen3-8b-v1",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "josephadamski91/ntl-atlas-qwen3-8b-v1",
+        "title": "NTL ATLAS Qwen3 8B v1",
+        "size": 428745101,
+        "lastUpdated": "2026-10-20T14:22:33.173000",
+        "downloadCount": 5685,
+        "voteCount": 6,
+        "usabilityRating": 1
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 3,
+        "lastUpdated": "2026-10-20T14:22:33.173000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "lucasboesen/ntl-free-proxy-generations",
+      "version": 12,
+      "lastUpdated": "2026-11-01T14:39:54",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "ntl-free-proxy-generations",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "lucasboesen/ntl-free-proxy-generations",
+        "title": "NTL free-proxy GPT and Gemini generations",
+        "size": 2684752,
+        "lastUpdated": "2026-11-01T14:39:54",
+        "downloadCount": 3506,
+        "voteCount": 7,
+        "usabilityRating": 0.64705884
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 12,
+        "lastUpdated": "2026-11-01T14:39:54"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "nishantdahal/ntl-two-stage-lora",
+      "version": 1,
+      "lastUpdated": "2026-10-19T01:34:11.527000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "ntl-two-stage-lora",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "nishantdahal/ntl-two-stage-lora",
+        "title": "NTL two-stage LoRA checkpoints and public pool",
+        "size": 293476127,
+        "lastUpdated": "2026-10-19T01:34:11.527000",
+        "downloadCount": 3516,
+        "voteCount": 6,
+        "usabilityRating": 0.64705884
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 1,
+        "lastUpdated": "2026-10-19T01:34:11.527000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "nishantdahal/ntl-handwriting-blend",
+      "version": 1,
+      "lastUpdated": "2026-10-23T02:17:46.923000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "ntl-handwriting-blend",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "nishantdahal/ntl-handwriting-blend",
+        "title": "NTL two-stage LoRA part two",
+        "size": 0,
+        "lastUpdated": "2026-10-23T02:17:46.923000",
+        "downloadCount": 5886,
+        "voteCount": 13,
+        "usabilityRating": 0.64705884
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 1,
+        "lastUpdated": "2026-10-23T02:17:46.923000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "dhruvtibarewal/nlm-l24-adapters-v5",
+      "version": 1,
+      "lastUpdated": "2026-10-25T04:45:56.100000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "nlm-l24-adapters-v5",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "dhruvtibarewal/nlm-l24-adapters-v5",
+        "title": "NTL Two-Stage LoRA24 Adapters (120k pool)",
+        "size": 0,
+        "lastUpdated": "2026-10-25T04:45:56.100000",
+        "downloadCount": 10046,
+        "voteCount": 2,
+        "usabilityRating": 0.4375
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 1,
+        "lastUpdated": "2026-10-25T04:45:56.100000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "prvsiyan/prvsiyans-extended-name-that-llm-dataset",
+      "version": 7,
+      "lastUpdated": "2026-10-28T19:20:27.140000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "prvsiyans-extended-name-that-llm-dataset",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "prvsiyan/prvsiyans-extended-name-that-llm-dataset",
+        "title": "prvsiyan's Extended Name That LLM Dataset",
+        "size": 22279261,
+        "lastUpdated": "2026-10-28T19:20:27.140000",
+        "downloadCount": 7224,
+        "voteCount": 56,
+        "usabilityRating": 0.9411765
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 7,
+        "lastUpdated": "2026-10-28T19:20:27.140000"
+      }
+    },
+    {
+      "type": "dataset_sources",
+      "source": "pjmathematician/ultrabert-380m-ntl",
+      "version": 1,
+      "lastUpdated": "2026-10-14T21:10:11.313000",
+      "updated_after_cutoff": false,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "ultrabert-380m-ntl",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "pjmathematician/ultrabert-380m-ntl",
+        "title": "UltraBERT-380M Name That LLM 5-fold",
+        "size": 0,
+        "lastUpdated": "2026-10-14T21:10:11.313000",
+        "downloadCount": 7965,
+        "voteCount": 6,
+        "usabilityRating": 0.5625
+      },
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 1,
+        "lastUpdated": "2026-10-14T21:10:11.313000"
+      }
+    },
+    {
+      "type": "kernel_sources",
+      "source": "lucasboesen/name-that-llm-glm4-9b-trunc25",
+      "version": 1,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "kernels",
+        "list",
+        "--user",
+        "lucasboesen",
+        "-s",
+        "name-that-llm-glm4-9b-trunc25",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "lucasboesen/name-that-llm-glm4-9b-trunc25",
+        "title": "name-that-llm-glm4-9b-trunc25",
+        "author": "Lucas Boesen",
+        "lastRunTime": "2026-10-15T13:01:44.050000",
+        "totalVotes": 2
+      },
+      "lastRunTime": "2026-11-01T09:04:57.735000",
+      "lastUpdated": null,
+      "note": "lastRunTime is not lastUpdated; update flag unknown.",
+      "detail_query": "read-only Kaggle SDK GetKernel metadata",
+      "detail_evidence": {
+        "currentVersionNumber": 1,
+        "lastRunTime": "2026-11-01T09:04:57.735000"
+      }
+    },
+    {
+      "type": "kernel_sources",
+      "source": "lucasboesen/name-that-llm-extract-encoders2",
+      "version": 1,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "kernels",
+        "list",
+        "--user",
+        "lucasboesen",
+        "-s",
+        "name-that-llm-extract-encoders2",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "lucasboesen/name-that-llm-extract-encoders2",
+        "title": "name-that-llm-extract-encoders2",
+        "author": "Lucas Boesen",
+        "lastRunTime": "2026-10-15T16:42:39.320000",
+        "totalVotes": 4
+      },
+      "lastRunTime": "2026-11-01T09:04:58.370000",
+      "lastUpdated": null,
+      "note": "lastRunTime is not lastUpdated; update flag unknown.",
+      "detail_query": "read-only Kaggle SDK GetKernel metadata",
+      "detail_evidence": {
+        "currentVersionNumber": 1,
+        "lastRunTime": "2026-11-01T09:04:58.370000"
+      }
+    },
+    {
+      "type": "kernel_sources",
+      "source": "lucasboesen/name-that-llm-electra-large-weights",
+      "version": 1,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "kernels",
+        "list",
+        "--user",
+        "lucasboesen",
+        "-s",
+        "name-that-llm-electra-large-weights",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "lucasboesen/name-that-llm-electra-large-weights",
+        "title": "name-that-llm-electra-large-weights",
+        "author": "Lucas Boesen",
+        "lastRunTime": "2026-10-15T17:31:17.843000",
+        "totalVotes": 1
+      },
+      "lastRunTime": "2026-11-01T09:04:57.700000",
+      "lastUpdated": null,
+      "note": "lastRunTime is not lastUpdated; update flag unknown.",
+      "detail_query": "read-only Kaggle SDK GetKernel metadata",
+      "detail_evidence": {
+        "currentVersionNumber": 1,
+        "lastRunTime": "2026-11-01T09:04:57.700000"
+      }
+    },
+    {
+      "type": "kernel_sources",
+      "source": "lucasboesen/name-that-llm-desklib-weights",
+      "version": 1,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "kernels",
+        "list",
+        "--user",
+        "lucasboesen",
+        "-s",
+        "name-that-llm-desklib-weights",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "lucasboesen/name-that-llm-desklib-weights",
+        "title": "name-that-llm-desklib-weights",
+        "author": "Lucas Boesen",
+        "lastRunTime": "2026-10-15T18:22:07.170000",
+        "totalVotes": 1
+      },
+      "lastRunTime": "2026-11-01T09:04:57.727000",
+      "lastUpdated": null,
+      "note": "lastRunTime is not lastUpdated; update flag unknown.",
+      "detail_query": "read-only Kaggle SDK GetKernel metadata",
+      "detail_evidence": {
+        "currentVersionNumber": 1,
+        "lastRunTime": "2026-11-01T09:04:57.727000"
+      }
+    },
+    {
+      "type": "kernel_sources",
+      "source": "lucasboesen/name-that-llm-train-lora24-s7",
+      "version": 1,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "kernels",
+        "list",
+        "--user",
+        "lucasboesen",
+        "-s",
+        "name-that-llm-train-lora24-s7",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "lucasboesen/name-that-llm-train-lora24-s7",
+        "title": "name-that-llm-train-lora24-s7",
+        "author": "Lucas Boesen",
+        "lastRunTime": "2026-10-16T06:24:48.677000",
+        "totalVotes": 16
+      },
+      "lastRunTime": "2026-11-01T09:04:57.517000",
+      "lastUpdated": null,
+      "note": "lastRunTime is not lastUpdated; update flag unknown.",
+      "detail_query": "read-only Kaggle SDK GetKernel metadata",
+      "detail_evidence": {
+        "currentVersionNumber": 1,
+        "lastRunTime": "2026-11-01T09:04:57.517000"
+      }
+    },
+    {
+      "type": "kernel_sources",
+      "source": "lucasboesen/name-that-llm-train-tokattn",
+      "version": 1,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "kernels",
+        "list",
+        "--user",
+        "lucasboesen",
+        "-s",
+        "name-that-llm-train-tokattn",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "lucasboesen/name-that-llm-train-tokattn",
+        "title": "name-that-llm-train-tokattn",
+        "author": "Lucas Boesen",
+        "lastRunTime": "2026-10-16T07:29:40.993000",
+        "totalVotes": 2
+      },
+      "lastRunTime": "2026-11-01T09:04:57.532000",
+      "lastUpdated": null,
+      "note": "lastRunTime is not lastUpdated; update flag unknown.",
+      "detail_query": "read-only Kaggle SDK GetKernel metadata",
+      "detail_evidence": {
+        "currentVersionNumber": 1,
+        "lastRunTime": "2026-11-01T09:04:57.532000"
+      }
+    },
+    {
+      "type": "kernel_sources",
+      "source": "lucasboesen/name-that-llm-train-tokattn2",
+      "version": 1,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "kernels",
+        "list",
+        "--user",
+        "lucasboesen",
+        "-s",
+        "name-that-llm-train-tokattn2",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "lucasboesen/name-that-llm-train-tokattn2",
+        "title": "name-that-llm-train-tokattn2",
+        "author": "Lucas Boesen",
+        "lastRunTime": "2026-10-16T08:49:43.927000",
+        "totalVotes": 3
+      },
+      "lastRunTime": "2026-11-01T09:04:57.791000",
+      "lastUpdated": null,
+      "note": "lastRunTime is not lastUpdated; update flag unknown.",
+      "detail_query": "read-only Kaggle SDK GetKernel metadata",
+      "detail_evidence": {
+        "currentVersionNumber": 1,
+        "lastRunTime": "2026-11-01T09:04:57.791000"
+      }
+    },
+    {
+      "type": "kernel_sources",
+      "source": "vnton37nguyn/ntl-train-lora-qwen25-instyle",
+      "version": 2,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "kernels",
+        "list",
+        "--user",
+        "vnton37nguyn",
+        "-s",
+        "ntl-train-lora-qwen25-instyle",
+        "--format",
+        "json"
+      ],
+      "evidence": {
+        "ref": "vnton37nguyn/ntl-train-lora-qwen25-instyle",
+        "title": "NTL train LoRA qwen25 instyle",
+        "author": "Travis Nguyen",
+        "lastRunTime": "2026-10-18T09:44:29.880000",
+        "totalVotes": 1
+      },
+      "lastRunTime": "2026-11-01T09:04:57.513000",
+      "lastUpdated": null,
+      "note": "lastRunTime is not lastUpdated; update flag unknown.",
+      "detail_query": "read-only Kaggle SDK GetKernel metadata",
+      "detail_evidence": {
+        "currentVersionNumber": 2,
+        "lastRunTime": "2026-11-01T09:04:57.513000"
+      }
+    },
+    {
+      "type": "model_sources",
+      "source": "alexchilton/llama-3-1-8b-base/Transformers/default/1",
+      "version": 1,
+      "lastUpdated": null,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "models",
+        "instances",
+        "versions",
+        "list",
+        "alexchilton/llama-3-1-8b-base/Transformers/default",
+        "--format",
+        "json",
+        "--page-size",
+        "200"
+      ],
+      "referenced_version": "1",
+      "versions_returned": [
+        1
+      ],
+      "evidence": [
+        {
+          "version": 1,
+          "variation": "default",
+          "title": "llama-3-1-8b-base",
+          "private": false
+        }
+      ]
+    },
+    {
+      "type": "model_sources",
+      "source": "qwen-lm/qwen-3/Transformers/14b-base/1",
+      "version": 1,
+      "lastUpdated": null,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "models",
+        "instances",
+        "versions",
+        "list",
+        "qwen-lm/qwen-3/Transformers/14b-base",
+        "--format",
+        "json",
+        "--page-size",
+        "200"
+      ],
+      "referenced_version": "1",
+      "versions_returned": [
+        1
+      ],
+      "evidence": [
+        {
+          "version": 1,
+          "variation": "14b-base",
+          "title": "Qwen 3",
+          "private": false
+        }
+      ]
+    },
+    {
+      "type": "model_sources",
+      "source": "qwen-lm/qwen-3/Transformers/14b/1",
+      "version": 1,
+      "lastUpdated": null,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "models",
+        "instances",
+        "versions",
+        "list",
+        "qwen-lm/qwen-3/Transformers/14b",
+        "--format",
+        "json",
+        "--page-size",
+        "200"
+      ],
+      "referenced_version": "1",
+      "versions_returned": [
+        1
+      ],
+      "evidence": [
+        {
+          "version": 1,
+          "variation": "14b",
+          "title": "Qwen 3",
+          "private": false
+        }
+      ]
+    },
+    {
+      "type": "model_sources",
+      "source": "qwen-lm/qwen-3/Transformers/8b/1",
+      "version": 1,
+      "lastUpdated": null,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "models",
+        "instances",
+        "versions",
+        "list",
+        "qwen-lm/qwen-3/Transformers/8b",
+        "--format",
+        "json",
+        "--page-size",
+        "200"
+      ],
+      "referenced_version": "1",
+      "versions_returned": [
+        1,
+        1
+      ],
+      "evidence": [
+        {
+          "version": 1,
+          "variation": "8b",
+          "title": "Qwen 3",
+          "private": false
+        },
+        {
+          "version": 1,
+          "variation": "8b",
+          "title": "Qwen 3",
+          "private": false
+        }
+      ]
+    },
+    {
+      "type": "model_sources",
+      "source": "qwen-lm/qwen-3/Transformers/8b-base/1",
+      "version": 1,
+      "lastUpdated": null,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "models",
+        "instances",
+        "versions",
+        "list",
+        "qwen-lm/qwen-3/Transformers/8b-base",
+        "--format",
+        "json",
+        "--page-size",
+        "200"
+      ],
+      "referenced_version": "1",
+      "versions_returned": [
+        1
+      ],
+      "evidence": [
+        {
+          "version": 1,
+          "variation": "8b-base",
+          "title": "Qwen 3",
+          "private": false
+        }
+      ]
+    },
+    {
+      "type": "model_sources",
+      "source": "qwen-lm/qwen-3/Transformers/4b-base/1",
+      "version": 1,
+      "lastUpdated": null,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "models",
+        "instances",
+        "versions",
+        "list",
+        "qwen-lm/qwen-3/Transformers/4b-base",
+        "--format",
+        "json",
+        "--page-size",
+        "200"
+      ],
+      "referenced_version": "1",
+      "versions_returned": [
+        1
+      ],
+      "evidence": [
+        {
+          "version": 1,
+          "variation": "4b-base",
+          "title": "Qwen 3",
+          "private": false
+        }
+      ]
+    },
+    {
+      "type": "model_sources",
+      "source": "qwen-lm/qwen2.5/Transformers/7b/1",
+      "version": 1,
+      "lastUpdated": null,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "models",
+        "instances",
+        "versions",
+        "list",
+        "qwen-lm/qwen2.5/Transformers/7b",
+        "--format",
+        "json",
+        "--page-size",
+        "200"
+      ],
+      "referenced_version": "1",
+      "versions_returned": [
+        1
+      ],
+      "evidence": [
+        {
+          "version": 1,
+          "variation": "7b",
+          "title": "Qwen2.5",
+          "private": false
+        }
+      ]
+    },
+    {
+      "type": "model_sources",
+      "source": "qwen-lm/qwen2.5/Transformers/14b/1",
+      "version": 1,
+      "lastUpdated": null,
+      "updated_after_cutoff": null,
+      "query": [
+        "kaggle",
+        "models",
+        "instances",
+        "versions",
+        "list",
+        "qwen-lm/qwen2.5/Transformers/14b",
+        "--format",
+        "json",
+        "--page-size",
+        "200"
+      ],
+      "referenced_version": "1",
+      "versions_returned": [
+        1
+      ],
+      "evidence": [
+        {
+          "version": 1,
+          "variation": "14b",
+          "title": "Qwen2.5",
+          "private": false
+        }
+      ]
+    },
+    {
+      "type": "private_copy",
+      "source": "zephyrpong/ntl-r21-open-pool-v11",
+      "version": 1,
+      "lastUpdated": "2026-11-04T07:06:45.103000",
+      "updated_after_cutoff": true,
+      "query": [
+        "kaggle",
+        "datasets",
+        "list",
+        "-s",
+        "ntl-r21-open-pool-v11",
+        "--format",
+        "json"
+      ],
+      "file_list": [
+        {
+          "name": "ntl_open_pool.parquet",
+          "size": 96388050,
+          "creationDate": "2026-11-04T07:06:53.465000"
+        }
+      ],
+      "file_list_query": [
+        "kaggle",
+        "datasets",
+        "files",
+        "zephyrpong/ntl-r21-open-pool-v11",
+        "--format",
+        "json"
+      ],
+      "note": "Private file exists; content hash not checked locally; runtime must verify.",
+      "detail_query": "read-only Kaggle SDK GetDataset /datasets/view/{owner}/{slug}",
+      "version_evidence": {
+        "currentVersionNumber": 1,
+        "lastUpdated": "2026-11-04T07:06:45.103000"
+      }
+    }
+  ],
+  "note": "Dataset detail uses read-only Kaggle GetDataset API. Kernel list exposes lastRunTime rather than lastUpdated. Model list results omit timestamps. Null values are unverified.",
+  "detail_queries_completed_at_utc": "2026-11-04T09:05:24.314048+00:00"
+}

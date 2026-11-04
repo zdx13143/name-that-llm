@@ -1,0 +1,103 @@
+--- v15/source
++++ r23/notebook
+@@ -134,9 +134,38 @@
+ # Name That LLM - full solution: fold-averaged two-stage LoRA24 (Qwen3-8B-Base, Qwen3-14B-Base, Qwen2.5-7B),
+ # Nishant two-stage checkpoints, 4-view n-gram SVM on train+pool, shared-prompt Gaussian, adaptive centred twins,
+ # 10% public ATLAS (source-conditioned likelihood, arXiv 2610.19583) before Sinkhorn balancing.
++# R23: inventory mounted inputs before any notebook input reads.
++import os as _r23_os, hashlib as _r23_hashlib, json as _r23_json
++_r23_files = []
++for _r23_dir, _r23_dirs, _r23_names in _r23_os.walk('/kaggle/input', followlinks=True):
++    _r23_dirs.sort()
++    for _r23_name in sorted(_r23_names):
++        _r23_path = _r23_os.path.join(_r23_dir, _r23_name)
++        if not _r23_os.path.isfile(_r23_path):
++            continue
++        _r23_size = _r23_os.path.getsize(_r23_path)
++        _r23_entry = {'path': _r23_path, 'size': _r23_size, 'sha256': None}
++        if _r23_size <= 200_000_000:
++            _r23_h = _r23_hashlib.sha256()
++            with open(_r23_path, 'rb') as _r23_f:
++                for _r23_chunk in iter(lambda: _r23_f.read(8 * 1024 * 1024), b''):
++                    _r23_h.update(_r23_chunk)
++            _r23_entry['sha256'] = _r23_h.hexdigest()
++        _r23_files.append(_r23_entry)
++_r23_manifest = {'hash_cap_bytes': 200000000, 'files': _r23_files}
++with open('/kaggle/working/r23_manifest.json', 'w') as _r23_f:
++    _r23_json.dump(_r23_manifest, _r23_f, sort_keys=True)
++print('R23_MANIFEST ' + _r23_json.dumps(_r23_manifest, sort_keys=True), flush=True)
++_r23_gen = [f for f in _r23_files if f['path'].endswith('/ntl_generations.csv')]
++if len(_r23_gen) != 1 or _r23_gen[0]['sha256'] != '33a47a1dda5ecc9c3d155d581afe0cb3851433d60deb87f209993162d5d197a5':
++    raise RuntimeError('R23 ntl_generations.csv must be the single pinned v9 copy')
++
+ import glob, os, subprocess, json, sys
+ whl = glob.glob('/kaggle/input/**/bitsandbytes-*.whl', recursive=True)
+-if whl: print(subprocess.run([sys.executable, '-m', 'pip', 'install', '--no-index', '--no-deps', '-q'] + whl, capture_output=True, text=True).returncode)
++if whl:
++    _r23_pip = subprocess.run([sys.executable, '-m', 'pip', 'install', '--no-index', '--no-deps', '-q'] + whl, capture_output=True, text=True)
++    print(_r23_pip.stdout, end=''); print(_r23_pip.stderr, end='', file=sys.stderr); print(_r23_pip.returncode)
++    _r23_pip.check_returncode()
+ cfgs = sorted(glob.glob('/kaggle/input/**/config.json', recursive=True))
+ def mdir(*parts):
+     c = [os.path.dirname(x) for x in cfgs if all(p in x.lower() for p in parts)]
+@@ -962,6 +991,39 @@
+         tot[_ii[_r]] = -1e9; tot[_ii[_r], _c] = 0.0
+     log(f'post: em-dash guard fixed {_nfix}, dense-cluster Hungarian changed {_nh}')
+ pred = tot.argmax(1) if a.perpassage else hungarian(tot, Gte)
++def r23_rule(tot, labels, pred, perpassage, post):
++    import numpy as np, json
++    if perpassage != 1 or post != 0:
++        raise ValueError("R23 requires perpassage=1 and post=0")
++    if len(labels) != 18 or labels.index("gemini-3.7-flash") != 7 or labels.index("gemini-3.8-flash") != 8:
++        raise ValueError("R23 label order changed")
++    tot = np.asarray(tot)
++    pred = np.asarray(pred)
++    if tot.ndim != 2 or tot.shape[1] != 18 or pred.shape != (len(tot),) or not np.isfinite(tot).all():
++        raise ValueError("R23 invalid or nonfinite scores")
++    if not np.array_equal(pred, tot.argmax(1)):
++        raise ValueError("R23 expected per-row argmax")
++    before = pred.copy()
++    eligible = before == 8
++    gaps = tot[eligible, 8] - tot[eligible, 7]
++    if not np.isfinite(gaps).all():
++        raise ValueError("R23 nonfinite gaps")
++    pred = before.copy()
++    pred[eligible & ((tot[:, 8] - tot[:, 7]) < 1.0)] = 7
++    changed = pred != before
++    if not np.all((before[changed] == 8) & (pred[changed] == 7)):
++        raise ValueError("R23 unexpected prediction change")
++    b = np.bincount(before, minlength=18)
++    c = np.bincount(pred, minlength=18)
++    expected = b.copy(); expected[7] += int(changed.sum()); expected[8] -= int(changed.sum())
++    if not np.array_equal(c, expected):
++        raise ValueError("R23 counts do not reconcile")
++    q = np.quantile(gaps, [0.05, 0.10, 0.25, 0.50, 0.75, 0.90]).tolist() if len(gaps) else [None] * 6
++    diag = {"n_rows": len(tot), "eligible_3_8": int(eligible.sum()), "switched": int(changed.sum()), "gap_quantiles": dict(zip(["5%", "10%", "25%", "50%", "75%", "90%"], q)), "counts_before": b.tolist(), "counts_after": c.tolist(), "all_finite": True}
++    print("R23_RULE " + json.dumps(diag, allow_nan=False, sort_keys=True), flush=True)
++    return pred
++
++pred = r23_rule(tot, LABELS, pred, a.perpassage, a.post)
+ if a.sim:
+     from sklearn.metrics import balanced_accuracy_score as bas
+     yt = test_truth.model.map(L2I).values
+@@ -2018,7 +2080,19 @@
+ import pandas as _pd, glob as _gl
+ 
+ # SVC pool: Open Pool v11 (crtproduction, CC BY-SA 4.0), all 190,588 rows; v11 already drops train-prompt regenerations and unverified gemini-3.7 rows
+-_op = _pd.read_parquet(_gl.glob('/kaggle/input/**/ntl_open_pool.parquet', recursive=True)[0], columns=['text', 'model', 'match_weight'])
++import hashlib as _r23_hashlib, os as _r23_os
++_r23_candidates = ['/kaggle/input/datasets/zephyrpong/ntl-r21-open-pool-v11/ntl_open_pool.parquet', '/kaggle/input/ntl-r21-open-pool-v11/ntl_open_pool.parquet']
++_r23_paths = {_r23_os.path.realpath(p) for p in _r23_candidates if _r23_os.path.isfile(p)}
++if len(_r23_paths) != 1:
++    raise RuntimeError('R23 private Open Pool missing or ambiguous')
++_r23_pool = next(iter(_r23_paths))
++_r23_digest = _r23_hashlib.sha256()
++with open(_r23_pool, 'rb') as _r23_f:
++    for _r23_chunk in iter(lambda: _r23_f.read(8 * 1024 * 1024), b''):
++        _r23_digest.update(_r23_chunk)
++if _r23_digest.hexdigest() != '38e48b40e1db0ab1bf6e4f29d3697e37307c49d1ae5020a7af3cd59c484657d5':
++    raise RuntimeError('R23 private Open Pool SHA256 mismatch')
++_op = _pd.read_parquet(_r23_pool, columns=['text', 'model', 'match_weight'])
+ POOL = '/kaggle/working/open_pool.parquet'; _op[['text', 'model']].to_parquet(POOL)
+ 
+ # External rows behind the TF-IDF, distort and SVC members. Upstream uses nlm_matched_clean (dhruvtibarewal, 24k rows after de-dup).
