@@ -10,7 +10,8 @@
   "dataset_sources": [
     "zephyrpong/ntl-r21-scorebank-package",
     "crtproduction/name-that-llm-open-pool/11",
-    "dhruvtibarewal/nlm-matched-clean/3"
+    "dhruvtibarewal/nlm-matched-clean/3",
+    "zephyrpong/ntl-r21-parts-v1"
   ],
   "competition_sources": [],
   "kernel_sources": [],

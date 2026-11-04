@@ -27,6 +27,8 @@ dev = find_one('development.json')
 baseline = find_one('nlm_pool_v5.parquet')
 extra = find_one('nlm_matched_clean.parquet')
 opened = find_one('ntl_open_pool.parquet')
+# Resume run (approved 2026-11-04): verified checkpoints from version 1.
+resume = find_one('baseline__f0__tfidf.npz').parent
 if baseline.parent != extra.parent:
     raise RuntimeError('matched-clean input files have different parents')
 os.environ.update({'NTL_DEV': str(dev), 'NTL_BASE_DIR': str(baseline.parent),
@@ -37,7 +39,8 @@ run_dir = working / 'r21_run'
 output = working / 'r21_out'
 output.mkdir(exist_ok=False)
 try:
-    completed = subprocess.run([sys.executable, str(working / 'r21_scorebank_cv.py'), '--run'],
+    completed = subprocess.run([sys.executable, str(working / 'r21_scorebank_cv.py'), '--run',
+                                '--resume-from', str(resume)],
                                cwd=working, capture_output=True, text=True)
 finally:
     for name in ('result.json', 'scores.npz', 'receipt.json', 'claim.json', 'progress.json', 'stages.jsonl', 'worker.log'):
@@ -67,7 +70,8 @@ def main():
                 'is_private': True, 'enable_gpu': False, 'enable_internet': False,
                 'dataset_sources': ['zephyrpong/ntl-r21-scorebank-package',
                                     'crtproduction/name-that-llm-open-pool/11',
-                                    'dhruvtibarewal/nlm-matched-clean/3'],
+                                    'dhruvtibarewal/nlm-matched-clean/3',
+                                    'zephyrpong/ntl-r21-parts-v1'],
                 'competition_sources': [], 'kernel_sources': [], 'model_sources': []}
     (folder / 'kernel-metadata.json').write_text(json.dumps(metadata, indent=2) + '\n', encoding='utf-8')
 
