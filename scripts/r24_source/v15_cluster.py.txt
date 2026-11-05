@@ -1,0 +1,12 @@
+def capped_agglo(S, cap=18, thr=0.02):
+    """Average linkage (Lance-Williams), never merging past `cap` members; stop when best avg sim < thr."""
+    n = len(S); A = S.astype(np.float32).copy(); np.fill_diagonal(A, -np.inf)
+    size = np.ones(n, np.int32); alive = np.ones(n, bool); lab = np.arange(n)
+    while True:
+        ok = (size[:, None] + size[None, :] <= cap) & alive[:, None] & alive[None, :]
+        M = np.where(ok, A, -np.inf); k = int(np.argmax(M)); i, j = divmod(k, n)
+        if not np.isfinite(M[i, j]) or M[i, j] < thr: break
+        new = (size[i] * A[i] + size[j] * A[j]) / (size[i] + size[j])
+        A[i] = new; A[:, i] = new; A[i, i] = -np.inf; A[j] = -np.inf; A[:, j] = -np.inf
+        size[i] += size[j]; alive[j] = False; lab[lab == j] = i
+    return lab
